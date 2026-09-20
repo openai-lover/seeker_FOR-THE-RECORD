@@ -1,6 +1,6 @@
 # Submission copy
 
-Use the sections that match the portal's actual fields. This is English copy grounded in the current source and known deployment state. Do not remove the implementation-status disclosure unless fresh evidence establishes the live path.
+The exact revised mobile-development answer saved in the portal is in [SUBMISSION_ENTRY_EN.md](SUBMISSION_ENTRY_EN.md). Use the sections below as supporting copy. This is English copy grounded in the current source and known deployment state. Do not remove the implementation-status disclosure unless fresh evidence establishes the live path.
 
 ## Project name
 
@@ -12,11 +12,11 @@ For the record, this is why I did it.
 
 ## Short description
 
-A private Android journal for the reasons behind your work and wallet decisions. Capture an intention, finish a focus session, and return to a clear next action. The Solana extension connects supported wallet activity to a guided reflection while keeping personal notes on the device.
+A decision journal for Seeker: leave your future self the reason behind today's choices. Revisit supported wallet activity with your own notes, and pick up unfinished work with your next step already waiting.
 
 ## Product description
 
-FOR THE RECORD helps Seeker users remember the thinking behind their decisions. A transaction history records what happened. A personal journal adds the reason, the original plan and what to do differently next time.
+A week after a swap, would you remember what you were thinking? FOR THE RECORD lets you save your reason, plan and next step beside supported wallet activity, then return to add what you learned. Your own words give past decisions their context back.
 
 The app starts with a useful offline workflow. Create a project, set an intention, choose a focus duration, then record the result and next action. Returning users choose “Continue from your bookmark” to begin with their last next action already filled in. Project books preserve the work over time. Users can edit or delete their records and export them as JSON.
 
