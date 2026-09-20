@@ -1,15 +1,18 @@
 # Saved contest entry — mobile development
 
-FOR THE RECORD is a decision journal for Seeker: leave your future self the reason behind today's choices.
+Seeker puts the freedom to explore Solana in your pocket. FOR THE RECORD gives that journey a personal memory: why you made a choice, what you learned, and what comes next.
 
-A week after a swap, would you remember what you were thinking? FOR THE RECORD lets you attach your reason, plan and next step to supported wallet activity, then reopen the record and add what you learned. Your past decisions become something you can revisit with context.
+I built an Android decision journal for people exploring Solana on their phones. Seeker's native wallet and dApp ecosystem make it a compelling home for this experience. FOR THE RECORD adds a personal layer: open supported wallet activity, capture your reason and plan, then return later to add what the experience taught you.
 
-The same idea makes everyday work easier to pick up again. Set one intention, run a focus session and leave one next action. When you return, your own words are already filled in. Try it: save "Test the first screen with a friend," leave the app, then choose "Continue from your bookmark." You have a place to start tomorrow.
+That same habit carries into the things you build. Set an intention, complete a focus session and leave one next action. Come back tomorrow and your own words are already waiting. A wallet decision becomes a lesson you can revisit; a work session becomes a starting point for tomorrow.
 
-Built for moments on a phone, the Android app combines native Mobile Wallet Adapter account connection, read-only Solana activity, guided reflection and offline work journaling. The current parser supports finalized Jupiter v6 swaps using classic SPL tokens and clearly identifies unsupported activity. Notes stay on the device; the core journal needs no account or network. The default flow requests no transaction or message signatures and needs no paid Firebase backend.
+The mobile development brings these moments together:
+- Native Mobile Wallet Adapter account connection and read-only Solana activity, with guided reflections that can be saved, reopened and reviewed.
+- Offline work sessions, native timing and session recovery, plus "Continue from your bookmark" to pick up your saved next action.
+- Notes stored on the device, JSON export, optional reminders and haptics, eight languages with English as the default, and an original skippable launch animation.
 
-New mobile work includes native timing and session recovery, JSON export, optional reminders and haptics, a skippable original launch animation, and eight languages with English as the default.
+The current wallet parser supports finalized Jupiter v6 swaps using classic SPL tokens and identifies unsupported activity. The submitted build passes 88 Flutter tests and clean static analysis. Android emulator testing covers local persistence and timing; manual official-mock-wallet testing covers approval, account return, empty mainnet history, cancellation, disconnect and retry. Demo trades are labeled sample data. Physical Seeker, Seed Vault and a supported live trade-to-reflection run remain unverified.
 
-Evidence and current limits: 88 Flutter tests pass; static analysis is clean. Android emulator checks cover local persistence and native timing. Separate layout checks cover a 360-pixel width at 200% text scale. A manual official-mock-wallet test verifies approval, account return, empty mainnet history, cancellation, disconnect and retry. Demo trade examples are clearly labeled sample data. Physical Seeker, Seed Vault and a supported live trade-to-reflection run remain unverified.
+Our goal is to make each Seeker experience something you can learn from and build on.
 
 For the record, this is why I did it.

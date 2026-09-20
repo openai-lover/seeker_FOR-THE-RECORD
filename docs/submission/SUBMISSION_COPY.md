@@ -12,7 +12,7 @@ For the record, this is why I did it.
 
 ## Short description
 
-A decision journal for Seeker: leave your future self the reason behind today's choices. Revisit supported wallet activity with your own notes, and pick up unfinished work with your next step already waiting.
+Seeker puts the freedom to explore Solana in your pocket. FOR THE RECORD gives that journey a personal memory: why you made a choice, what you learned, and what comes next.
 
 ## Product description
 
