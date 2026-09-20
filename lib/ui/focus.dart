@@ -131,7 +131,7 @@ class _PrepareState extends State<_Prepare> {
           ),
           const SizedBox(height: 28),
           PaperCard(
-            color: const Color(0xFFE8ECDD),
+            color: const Color(0xFFE1F4EF),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -240,7 +240,7 @@ class _Focus extends StatelessWidget {
               tooltip: uiText(context, '작업실로'),
               onPressed: () =>
                   Navigator.popUntil(context, (route) => route.isFirst),
-              icon: const Icon(Icons.chair_outlined),
+              icon: const Icon(Icons.home_outlined),
             ),
           ],
         ),
@@ -265,7 +265,8 @@ class _Focus extends StatelessWidget {
                 child: Text(
                   '${(seconds ~/ 60).toString().padLeft(2, '0')}:${(seconds % 60).toString().padLeft(2, '0')}',
                   style: const TextStyle(
-                    fontFamily: 'Lora',
+                    fontFamily: 'NotoSansKR',
+                    fontWeight: FontWeight.w800,
                     fontFeatures: [FontFeature.tabularFigures()],
                     fontSize: 68,
                     color: green,
@@ -288,14 +289,14 @@ class _Focus extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 28),
-            RoomScene(
-              projects: c.state.projects
-                  .where((p) => p.status != ProjectStatus.archived)
-                  .toList(),
-              pages: c.state.saved.length,
-              shared: a.roomId != null,
-              pack: r.room?['pack'] == true,
-              focus: true,
+            ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: LinearProgressIndicator(
+                value: 1 - remaining / (a.plannedSec * 1000),
+                minHeight: 8,
+                backgroundColor: line,
+                color: green,
+              ),
             ),
             const SizedBox(height: 24),
             Text(

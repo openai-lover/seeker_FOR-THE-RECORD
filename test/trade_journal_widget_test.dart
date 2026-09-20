@@ -74,7 +74,10 @@ void main() {
     tester,
   ) async {
     await show(tester);
-    expect(find.text('READ ONLY'), findsOneWidget);
+    expect(
+      find.text('Read only. No transfers. Notes stay here.'),
+      findsOneWidget,
+    );
     expect(find.text('Connect Seeker wallet'), findsOneWidget);
     expect(find.textContaining('Notes stay on this device'), findsOneWidget);
   });

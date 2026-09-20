@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 import '../l10n/strings.dart';
 import '../l10n/legacy_catalog.dart';
 
-const ink = Color(0xFF152F2C),
-    muted = Color(0xFF526762),
-    green = Color(0xFF096B61),
-    paper = Color(0xFFFFFEFA),
-    cream = Color(0xFFF0F5F1),
-    brass = Color(0xFF9B552F),
-    line = Color(0xFFD9E3DD);
+const ink = Color(0xFF191F28),
+    muted = Color(0xFF667085),
+    green = Color(0xFF007F78),
+    paper = Color(0xFFFFFFFF),
+    cream = Color(0xFFF4F5F7),
+    brass = Color(0xFFC74528),
+    line = Color(0xFFE5E8EB),
+    coral = Color(0xFFFF6B4A),
+    lime = Color(0xFFD5F56B);
 const bookColors = [
   Color(0xFF466451),
   Color(0xFF97523E),
@@ -31,19 +33,19 @@ ThemeData workroomTheme() => ThemeData(
   textTheme: const TextTheme(
     headlineLarge: TextStyle(
       fontSize: 30,
-      fontWeight: FontWeight.w600,
-      height: 1.4,
+      fontWeight: FontWeight.w800,
+      height: 1.25,
       letterSpacing: -1,
     ),
     headlineMedium: TextStyle(
       fontSize: 26,
-      fontWeight: FontWeight.w600,
-      height: 1.4,
+      fontWeight: FontWeight.w800,
+      height: 1.3,
       letterSpacing: -.8,
     ),
     titleLarge: TextStyle(
       fontSize: 20,
-      fontWeight: FontWeight.w600,
+      fontWeight: FontWeight.w700,
       height: 1.4,
     ),
     titleMedium: TextStyle(
@@ -51,8 +53,8 @@ ThemeData workroomTheme() => ThemeData(
       fontWeight: FontWeight.w600,
       height: 1.5,
     ),
-    bodyLarge: TextStyle(fontSize: 16, height: 1.6),
-    bodyMedium: TextStyle(fontSize: 14, height: 1.6),
+    bodyLarge: TextStyle(fontSize: 16, height: 1.5),
+    bodyMedium: TextStyle(fontSize: 14, height: 1.5),
     labelLarge: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
   ),
   appBarTheme: const AppBarTheme(
@@ -88,7 +90,7 @@ ThemeData workroomTheme() => ThemeData(
   ),
   inputDecorationTheme: InputDecorationTheme(
     filled: true,
-    fillColor: paper,
+    fillColor: cream,
     contentPadding: const EdgeInsets.all(18),
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(14),
@@ -105,7 +107,7 @@ ThemeData workroomTheme() => ThemeData(
   ),
   navigationBarTheme: const NavigationBarThemeData(
     backgroundColor: paper,
-    indicatorColor: Color(0xFFD5EDE2),
+    indicatorColor: Color(0xFFDFF3EF),
     labelTextStyle: WidgetStatePropertyAll(
       TextStyle(
         fontFamily: 'NotoSansKR',
@@ -137,10 +139,7 @@ class PaperCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Material(
     color: color,
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(22),
-      side: const BorderSide(color: line, width: .8),
-    ),
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(22)),
     clipBehavior: Clip.antiAlias,
     child: InkWell(
       onTap: onTap,
@@ -157,9 +156,9 @@ class Eyebrow extends StatelessWidget {
   Widget build(BuildContext context) => Text(
     uiText(context, text),
     style: TextStyle(
-      fontSize: 11,
+      fontSize: 12,
       fontWeight: FontWeight.w600,
-      letterSpacing: 2.2,
+      letterSpacing: .3,
       color: color,
     ),
   );

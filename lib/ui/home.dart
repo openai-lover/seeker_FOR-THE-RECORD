@@ -25,13 +25,16 @@ class _Home extends StatelessWidget {
     final active = state.active;
     return PageBody(
       children: [
-        RecordHero(compact: current != null || active != null),
+        const RecordHero(compact: true),
         const SizedBox(height: 24),
-        Eyebrow(tr(context, '오늘 이어갈 한 가지', 'ONE THING TO CONTINUE')),
+        Text(
+          tr(context, '다음 한 걸음', 'Your next step'),
+          style: Theme.of(context).textTheme.headlineMedium,
+        ),
         const SizedBox(height: 12),
         if (active != null) ...[
           PaperCard(
-            color: const Color(0xFFE8ECDD),
+            color: const Color(0xFFE1F4EF),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -137,15 +140,19 @@ class _Home extends StatelessWidget {
         ] else ...[
           PaperCard(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                LocalizedText(
-                  '첫 번째 책은 무슨 이야기인가요?',
-                  style: Theme.of(context).textTheme.titleMedium,
+                Text(
+                  tr(context, '한 가지부터 시작해요.', 'Start with one thing.'),
+                  style: Theme.of(context).textTheme.titleLarge,
                 ),
                 const SizedBox(height: 8),
-                const LocalizedText(
-                  '만들고 싶은 것 하나면 충분해요.\n로그인 없이, 이 기기에 안전하게 저장합니다.',
+                Text(
+                  tr(
+                    context,
+                    '프로젝트를 고르고, 해볼 일을 정하고, 배운 것을 남겨요.',
+                    'Pick a project. Set an intention. Save what you learned.',
+                  ),
                   style: TextStyle(color: muted),
                 ),
                 const SizedBox(height: 20),
@@ -197,42 +204,66 @@ class _Home extends StatelessWidget {
           ),
           const SizedBox(height: 18),
         ],
-        Padding(
-          padding: const EdgeInsets.only(bottom: 16),
-          child: OutlinedButton.icon(
-            icon: const Icon(Icons.edit_note_rounded),
-            label: Text(tr(context, '매매 일지 열기', 'Open trade journal')),
-            onPressed: () => openPage(
-              context,
-              Scaffold(
-                appBar: AppBar(
-                  title: Text(tr(context, '매매 일지', 'Trade journal')),
+        PaperCard(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    padding: const EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFE1F4EF),
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    child: const Icon(
+                      Icons.edit_note_rounded,
+                      color: green,
+                      size: 28,
+                    ),
+                  ),
+                  const SizedBox(width: 14),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          tr(context, '매매 일지', 'Trade journal'),
+                          style: Theme.of(context).textTheme.titleLarge,
+                        ),
+                        const SizedBox(height: 5),
+                        Text(
+                          tr(
+                            context,
+                            '거래에 담긴 나의 이유를 남겨요.',
+                            'Your trades show what. Add the why.',
+                          ),
+                          style: const TextStyle(color: muted),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 18),
+              OutlinedButton.icon(
+                icon: const Icon(Icons.arrow_forward_rounded, size: 18),
+                label: Text(tr(context, '매매 일지 열기', 'Open trade journal')),
+                onPressed: () => openPage(
+                  context,
+                  Scaffold(
+                    appBar: AppBar(
+                      title: Text(tr(context, '매매 일지', 'Trade journal')),
+                    ),
+                    body: _TradeJournal(c: c, r: r),
+                  ),
                 ),
-                body: _TradeJournal(c: c, r: r),
               ),
-            ),
+            ],
           ),
         ),
-        RoomScene(
-          projects: projects,
-          pages: state.saved.length,
-          shared: r.room?['status'] == 'running',
-          pack: r.room?['pack'] == true,
-          onTap: onBooks,
-          onProject: (p) =>
-              openPage(context, _Book(c: c, r: r, projectId: p.id)),
-          onAchievement: () => openPage(context, _Achievements(c: c, r: r)),
-          onJournal: () => openPage(
-            context,
-            Scaffold(
-              appBar: AppBar(
-                title: Text(tr(context, '매매 일지', 'Trade journal')),
-              ),
-              body: _TradeJournal(c: c, r: r),
-            ),
-          ),
-        ),
-        const SizedBox(height: 16),
+        const SizedBox(height: 24),
         if (r.room != null &&
             ['waiting', 'ready', 'running'].contains(r.room!['status'])) ...[
           PaperCard(
@@ -264,28 +295,29 @@ class _Home extends StatelessWidget {
           ),
           const SizedBox(height: 12),
         ],
-        Wrap(
-          alignment: WrapAlignment.spaceBetween,
-          crossAxisAlignment: WrapCrossAlignment.center,
-          spacing: 16,
-          runSpacing: 8,
-          children: [
-            const LocalizedText(
-              '나의 프로젝트',
-              style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
-            ),
-            TextButton.icon(
-              onPressed: () async {
-                final id = await _newProject(context, c);
-                if (id != null && context.mounted) {
-                  openPage(context, _Book(c: c, r: r, projectId: id));
-                }
-              },
-              icon: const Icon(Icons.add, size: 18),
-              label: const LocalizedText('새 책'),
-            ),
-          ],
-        ),
+        if (projects.isNotEmpty)
+          Wrap(
+            alignment: WrapAlignment.spaceBetween,
+            crossAxisAlignment: WrapCrossAlignment.center,
+            spacing: 16,
+            runSpacing: 8,
+            children: [
+              const LocalizedText(
+                '나의 프로젝트',
+                style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
+              ),
+              TextButton.icon(
+                onPressed: () async {
+                  final id = await _newProject(context, c);
+                  if (id != null && context.mounted) {
+                    openPage(context, _Book(c: c, r: r, projectId: id));
+                  }
+                },
+                icon: const Icon(Icons.add, size: 18),
+                label: const LocalizedText('새 책'),
+              ),
+            ],
+          ),
         if (projects.isNotEmpty)
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
@@ -310,8 +342,8 @@ class _Home extends StatelessWidget {
           ),
         const SizedBox(height: 24),
         Center(
-          child: LocalizedText(
-            '서두르지 않아도, 한 페이지씩.',
+          child: Text(
+            tr(context, '기록은 이 기기에 저장됩니다.', 'Your notes stay on this device.'),
             style: TextStyle(fontSize: 12, color: muted.withValues(alpha: .8)),
           ),
         ),

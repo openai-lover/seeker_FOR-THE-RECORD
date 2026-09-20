@@ -216,7 +216,10 @@ class _WorkroomAppState extends State<WorkroomApp> with WidgetsBindingObserver {
         ),
         child: child!,
       ),
-      home: _Shell(c: widget.controller, r: widget.remote),
+      home: RecordLaunch(
+        enabled: widget.controller.state.active == null,
+        child: _Shell(c: widget.controller, r: widget.remote),
+      ),
     ),
   );
 }
@@ -251,8 +254,8 @@ class _ShellState extends State<_Shell> {
         onDestinationSelected: (v) => setState(() => tab = v),
         destinations: [
           NavigationDestination(
-            icon: Icon(Icons.chair_outlined),
-            selectedIcon: Icon(Icons.chair),
+            icon: Icon(Icons.home_outlined),
+            selectedIcon: Icon(Icons.home_rounded),
             label: uiText(context, '작업실'),
           ),
           NavigationDestination(

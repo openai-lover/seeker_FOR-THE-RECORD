@@ -68,8 +68,6 @@ class _TradeJournalState extends State<_TradeJournal> {
       final r = widget.r, j = widget.c.journals;
       return PageBody(
         children: [
-          const Eyebrow('THE THOUGHT BEHIND THE TRADE'),
-          const SizedBox(height: 10),
           Text(
             tr(context, '판단을 남기는 일지', 'Remember your why.'),
             style: Theme.of(context).textTheme.headlineLarge,
@@ -78,43 +76,46 @@ class _TradeJournalState extends State<_TradeJournal> {
           Text(
             tr(
               context,
-              '지갑은 무엇을 거래했는지,\nWorkroom은 왜 그랬는지 기억합니다.',
+              '지갑은 무엇을 거래했는지,\nFOR THE RECORD는 왜 그랬는지 기억합니다.',
               'Your wallet remembers what you traded.\nFOR THE RECORD remembers why.',
             ),
             style: const TextStyle(color: muted),
           ),
           const SizedBox(height: 22),
-          PaperCard(
-            color: const Color(0xFFEAF0E8),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const QuietTag('READ ONLY', icon: Icons.visibility_outlined),
-                const SizedBox(height: 10),
-                Text(
+          Row(
+            children: [
+              const Icon(Icons.shield_outlined, size: 18, color: green),
+              const SizedBox(width: 8),
+              Expanded(
+                child: Text(
                   tr(
                     context,
-                    '지갑 활동을 읽어와 기록만 합니다.\nWorkroom에서 자산을 거래하거나 이동하지 않습니다.',
-                    'Read your wallet history and reflect.\nNo trades or asset transfers happen here.',
+                    '조회만 · 자산 이동 없음 · 메모는 기기에',
+                    'Read only. No transfers. Notes stay here.',
+                  ),
+                  style: const TextStyle(
+                    fontSize: 12,
+                    color: green,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
           const SizedBox(height: 20),
           if (!r.signedIn)
             PaperCard(
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Text(
                     tr(
                       context,
                       r.onlineAvailable
-                          ? '지갑에서 시작한 일, 여기서 돌아보기'
+                          ? '연결하고, 돌아보고, 기억해요.'
                           : '이 미리보기에서는 지갑에 연결할 수 없습니다.',
                       r.onlineAvailable
-                          ? 'Bring your decisions into focus'
+                          ? 'Connect. Reflect. Remember.'
                           : 'Wallet connection is not available in this preview.',
                     ),
                     style: Theme.of(context).textTheme.titleLarge,
@@ -679,8 +680,8 @@ class _JournalEditorState extends State<_JournalEditor> {
             Text(
               tr(
                 context,
-                '개인 메모는 Firebase에 업로드되지 않습니다.',
-                'Personal notes are never uploaded to Firebase.',
+                '기록은 이 기기에 저장됩니다.',
+                'Your notes stay on this device.',
               ),
               style: const TextStyle(fontSize: 12, color: muted),
             ),

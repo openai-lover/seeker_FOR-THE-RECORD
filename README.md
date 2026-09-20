@@ -2,11 +2,16 @@
 
 > “For the record, this is why I did it.”
 
-![FOR THE RECORD — a private home for your decisions](docs/brand/github-hero.png)
+<picture>
+  <source media="(prefers-reduced-motion: reduce)" srcset="docs/brand/github-hero.png">
+  <img src="docs/brand/github-intro.gif" alt="FOR THE RECORD — For the record, this is why I did it." width="960">
+</picture>
+
+[View the still brand image](docs/brand/github-hero.png).
 
 A private Android journal for meaningful work and wallet decisions. Keep what you did, why you did it, and the next step worth remembering.
 
-**Version 0.3.0 · CLOCK IN development preview · English by default**
+**Version 0.3.1 · CLOCK IN development preview · English by default**
 
 [Submission kit](docs/submission/README.md) · [Pitch](docs/submission/PITCH_CONTENT.md) · [Build instructions](docs/SETUP.md) · [UX review](docs/UX_REVIEW.md)
 
@@ -15,14 +20,15 @@ A private Android journal for meaningful work and wallet decisions. Keep what yo
 1. Create a project without a wallet or account.
 2. Write an intention and choose a focus period.
 3. Pause or finish when you need to. Record an outcome, including a sticking point.
-4. Leave one next action. Pick it up from your home screen next time.
+4. Leave one next action. Choose **Continue from your bookmark** next time to start with that action already filled in.
 
-Wallet reflections follow a separate read-only flow: connect an MWA wallet, choose a supported historical swap, and answer four optional prompts — reason, plan, emotion and next action. Personal reflections stay on the device. A transaction's facts cannot be rewritten through the journal.
+Wallet reflections follow a separate read-only flow: connect an MWA wallet, choose a supported historical swap, and move through four optional prompts — reason, plan, emotion and next action — one question at a time. Save, reopen and add a later reflection on what you learned. Personal writing stays on the device; the transaction facts remain fixed.
 
 ## Built to feel considerate
 
 - **Eight languages:** English, 한국어, 日本語, 简体中文, हिन्दी, Español, Português and Français. English is the first-run default; your choice persists in Settings. User-written notes are never translated.
-- **An original identity:** vector record mark, bold teal/paper typography, a short entrance animation and a matching Android launcher icon. No blocking splash or repeating animation. System and in-app reduced motion are respected.
+- **An original identity:** an ink-and-white vector mark with a coral record dot, clear typography and vivid teal actions. The 1.3-second launch signature can be skipped; active sessions and reduced-motion settings bypass it.
+- **A calmer first screen:** one next action, a direct bookmark return and fewer nested cards. Guided reflections show one question at a time.
 - **Local first:** SQLite records, no sign-in wall for personal work, recoverable drafts and JSON export.
 - **Mobile details:** monotonic time, reboot handling, optional reminders and haptics, scrolling forms, large-text support, visible validation and duplicate-action protection.
 - **Honest states:** read-only MWA authorization works without an app account or a paid backend; rate limits and unsupported activity have explicit states. Simulated wallets and trades are confined to tests.
@@ -32,6 +38,8 @@ Wallet reflections follow a separate read-only flow: connect an MWA wallet, choo
 The default APK runs the local work journal and direct read-only wallet journal without Firebase configuration or billing. MWA supplies the selected public address; the device queries the official Solana mainnet public RPC and parses supported finalized swaps locally. It never requests a message signature or transaction signature in this mode.
 
 **A real Seeker/wallet rehearsal remains required before competition submission.** Automated tests and an Android emulator walkthrough are documented; a successful physical-wallet flow is not claimed. Public RPC is best-effort and may rate-limit or reject traffic. Shared rooms, SGT verification and purchases remain optional server features and are hidden in the default edition. They require a separate configured backend. The preview APK uses a development signing key. See [the free approach](docs/submission/FREE_PREVIEW_APPROACH.md).
+
+Version 0.3.1 passes 88 Flutter tests and clean analysis. A separate manual check of the release app with the official Solana mock wallet on an Android emulator verified approve, account return, an empty mainnet history response, disconnect, cancellation and retry. It involved no message/transaction signing or asset movement. This is separate from the labeled sample reflection flow and does not establish physical Seeker or supported live event-to-reflection behavior.
 
 The activity parser deliberately accepts only a supported subset of successful Jupiter v6 classic SPL-token swaps. Unsupported, ambiguous and failed transactions remain read-only activity rather than being presented as successful swaps. This is not a complete trading history, trading venue or profit/loss service.
 
@@ -61,17 +69,19 @@ For isolated Android verification:
 
 ```powershell
 $env:WORKROOM_ISOLATED_TEST='1'
-flutter drive --driver=test_driver/walkthrough.dart --target=integration_test/english_walkthrough_test.dart -d <dedicated-emulator-id>
+flutter drive --driver=test_driver/walkthrough.dart --target=integration_test/final_walkthrough_test.dart -d <dedicated-emulator-id>
 ```
 
 ## Competition materials
 
 The [English submission kit](docs/submission/README.md) contains the requirements, official registration link, product description, pitch copy, three-minute demo script, captions and release checklist. The accompanying delivery package contains the pitch deck and media. Required contest materials are an Android APK, GitHub source, demo video and pitch presentation. Verify the final entry's live integration before submitting.
 
+The final walkthrough uses real local storage and native time. Its sample transaction-to-reflection sequence is visibly labeled **SAMPLE DATA · UI DEMONSTRATION · NOT A LIVE TRADE**. The fixture lives only in the integration test and is never enabled in the released application. It demonstrates implemented UI and persistence, while live-wallet operation remains a separate evidence gate.
+
 ## Privacy and project history
 
 Local notes are not uploaded automatically. The free wallet journal sends only public wallet addresses, transaction IDs and read parameters to Solana public RPC. It does not send notes or project names. Optional server features use wallet addresses and service state; chain transactions are public. Exported files contain your notes and should be stored privately. Cloud backup and import/restore are not implemented; export is an archive, not a one-tap restore promise.
 
-Original architecture and earlier validation are retained in `docs/`. Their dates and versions matter: historical 0.2.0 evidence does not validate 0.3.0. Earlier reference prompts and diagnostic exports remain in the original local archive and are excluded from the published source.
+Original architecture and earlier validation are retained in `docs/`. Their dates and versions matter: 0.2.0 and 0.3.0 results do not automatically validate 0.3.1. Earlier reference prompts and diagnostic exports remain in the original local archive and are excluded from the published source.
 
 The app was previously named Workroom. Its package identity is `app.workroom.seeker_workroom`; the current product name is **FOR THE RECORD**.

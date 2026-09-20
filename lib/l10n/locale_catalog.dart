@@ -236,7 +236,7 @@ const additionalEnglishCatalog = <String, String>{
   '프로젝트·진행 중인 집중·저장한 결과·매매일지·설정이 삭제됩니다. 진행 중인 결제의 확인 정보는 보존합니다. 내보내지 않은 기록은 복구할 수 없습니다.':
       'Projects, focus sessions, outcomes, trade journals and settings will be deleted. Pending payment verification is preserved. Records that have not been exported cannot be recovered.',
   'Workroom 0.2.0 · 개발 검증 빌드\n지갑 없는 개인 사용은 지금 가능합니다.':
-      'FOR THE RECORD 0.3.0 · Development preview\nPersonal work works without a wallet.',
+      'FOR THE RECORD 0.3.1 · Development preview\nPersonal work works without a wallet.',
   '개인 작업 기록과 매매일지는 SQLite로 이 기기에만 저장됩니다. 클라우드 백업은 제공하지 않습니다.\n\n공동 작업을 선택하면 지갑 주소, SGT 확인 정보, 방의 준비·마무리 상태와 선택한 작업 분류만 서버에 저장됩니다. 프로젝트명과 결과 원문은 전송하지 않습니다.\n\n구매는 공개 Solana 거래입니다. 거래 기록과 재사용 방지 정보는 서버 계정 삭제 후에도 보존됩니다. 연결 해제는 구매 취소나 로컬 기록 삭제가 아닙니다. 서버 계정 삭제는 앱 내 구매 복원 권한을 제거합니다.\n\n알림은 선택이며 정확 알람·연락처·위치 권한을 요구하지 않습니다. 광고·분석 SDK는 포함하지 않습니다.\n\n이 빌드는 개발 검증용입니다. 지원 주소·운영자·보관 기간 정책은 출시 전 설정해야 합니다.':
       'Personal work records and trade journals are stored only on this device. There is no automatic cloud backup. Export before uninstalling.\n\nWallet activity is read by the server from the authenticated wallet. Personal notes are never uploaded. Shared sessions store wallet and Seeker verification, room state and the selected work category; project titles and outcomes stay private.\n\nPurchases are public Solana transactions. Receipts and replay-prevention records remain after server account deletion. Disconnecting does not delete local records or cancel purchases.\n\nNotifications are optional. No contacts, location, exact alarm, advertising or analytics SDK is used.\n\nThis is a development preview. Support contact and the final operator and retention policy will be published before release.',
   '첫 페이지': 'The first page',
@@ -476,6 +476,15 @@ const additionalEnglishCatalog = <String, String>{
   '마지막 한 줄': 'ONE LAST LINE',
   '나만의 조용한 시간': 'YOUR QUIET TIME',
   '서명': 'Signature',
+  '인트로 건너뛰기': 'Skip intro',
+  '다음 한 걸음': 'Your next step',
+  '한 가지부터 시작해요.': 'Start with one thing.',
+  '프로젝트를 고르고, 해볼 일을 정하고, 배운 것을 남겨요.':
+      'Pick a project. Set an intention. Save what you learned.',
+  '거래에 담긴 나의 이유를 남겨요.': 'Your trades show what. Add the why.',
+  '기록은 이 기기에 저장됩니다.': 'Your notes stay on this device.',
+  '조회만 · 자산 이동 없음 · 메모는 기기에': 'Read only. No transfers. Notes stay here.',
+  '연결하고, 돌아보고, 기억해요.': 'Connect. Reflect. Remember.',
   '공동 작업실은 이 버전에서 제공하지 않습니다.':
       'Shared rooms are not available in this edition.',
   '구매는 이 버전에서 제공하지 않습니다.': 'Purchases are not available in this edition.',
@@ -490,6 +499,8 @@ const additionalEnglishCatalog = <String, String>{
       'If public RPC is busy, try again shortly. Your personal records remain available.',
   '개인 작업 기록과 매매일지는 이 기기에만 저장됩니다. 앱 삭제 전에 JSON 파일로 내보내 주세요. 자동 백업과 가져오기는 제공하지 않습니다.\n\n지갑을 연결하면 공개 지갑 주소와 거래 ID를 Solana 공개 RPC로 직접 전송하여 거래를 조회합니다. 메모와 프로젝트명은 전송하지 않습니다. 연결은 읽기 전용이며 메시지 서명, 거래 서명, 송금을 요청하지 않습니다. 연결 해제 후에도 저장한 기록은 남습니다.\n\n공개 RPC는 호출 제한과 장애가 있을 수 있습니다. 공동 작업실과 구매는 이 버전에서 제공하지 않습니다.\n\n알림은 선택입니다. 광고·분석 SDK는 포함하지 않습니다.':
       'Your work notes and trade journal stay on this device. Export a JSON file before uninstalling. Automatic backup and import are not provided.\n\nWhen you connect a wallet, your public address and transaction IDs go directly to Solana public RPC to read activity. Notes and project names are not sent. Connection is read-only: no message signing, transaction signing or transfers are requested. Saved records remain after disconnecting.\n\nPublic RPC may be rate-limited or unavailable. Shared rooms and purchases are not available in this edition.\n\nNotifications are optional. No advertising or analytics SDKs are included.',
+  '지갑은 무엇을 거래했는지,\nFOR THE RECORD는 왜 그랬는지 기억합니다.':
+      'Your wallet remembers what you traded.\nFOR THE RECORD remembers why.',
 };
 const koreanCatalog = <String, String>{
   'Private journal': '나만의 기록',
@@ -964,6 +975,15 @@ const koreanCatalog = <String, String>{
   'ONE LAST LINE': '마지막 한 줄',
   'YOUR QUIET TIME': '나만의 조용한 시간',
   'Signature': '서명',
+  'Skip intro': '인트로 건너뛰기',
+  'Your next step': '다음 한 걸음',
+  'Start with one thing.': '한 가지부터 시작해요.',
+  'Pick a project. Set an intention. Save what you learned.':
+      '프로젝트를 고르고, 해볼 일을 정하고, 배운 것을 남겨요.',
+  'Your trades show what. Add the why.': '거래에 담긴 나의 이유를 남겨요.',
+  'Your notes stay on this device.': '기록은 이 기기에 저장됩니다.',
+  'Read only. No transfers. Notes stay here.': '조회만 · 자산 이동 없음 · 메모는 기기에',
+  'Connect. Reflect. Remember.': '연결하고, 돌아보고, 기억해요.',
   'Shared rooms are not available in this edition.':
       '공동 작업실은 이 버전에서 제공하지 않습니다.',
   'Purchases are not available in this edition.': '구매는 이 버전에서 제공하지 않습니다.',
@@ -979,13 +999,13 @@ const koreanCatalog = <String, String>{
   'Your work notes and trade journal stay on this device. Export a JSON file before uninstalling. Automatic backup and import are not provided.\n\nWhen you connect a wallet, your public address and transaction IDs go directly to Solana public RPC to read activity. Notes and project names are not sent. Connection is read-only: no message signing, transaction signing or transfers are requested. Saved records remain after disconnecting.\n\nPublic RPC may be rate-limited or unavailable. Shared rooms and purchases are not available in this edition.\n\nNotifications are optional. No advertising or analytics SDKs are included.':
       '개인 작업 기록과 매매일지는 이 기기에만 저장됩니다. 앱 삭제 전에 JSON 파일로 내보내 주세요. 자동 백업과 가져오기는 제공하지 않습니다.\n\n지갑을 연결하면 공개 지갑 주소와 거래 ID를 Solana 공개 RPC로 직접 전송하여 거래를 조회합니다. 메모와 프로젝트명은 전송하지 않습니다. 연결은 읽기 전용이며 메시지 서명, 거래 서명, 송금을 요청하지 않습니다. 연결 해제 후에도 저장한 기록은 남습니다.\n\n공개 RPC는 호출 제한과 장애가 있을 수 있습니다. 공동 작업실과 구매는 이 버전에서 제공하지 않습니다.\n\n알림은 선택입니다. 광고·분석 SDK는 포함하지 않습니다.',
   'Your wallet remembers what you traded.\nFOR THE RECORD remembers why.':
-      '지갑은 무엇을 거래했는지,\nWorkroom은 왜 그랬는지 기억합니다.',
+      '지갑은 무엇을 거래했는지,\nFOR THE RECORD는 왜 그랬는지 기억합니다.',
   'Read your wallet history and reflect.\nNo trades or asset transfers happen here.':
       '지갑 활동을 읽어와 기록만 합니다.\nWorkroom에서 자산을 거래하거나 이동하지 않습니다.',
-  'FOR THE RECORD 0.3.0 · Development preview\nPersonal work works without a wallet.':
-      'Workroom 0.2.0 · 개발 검증 빌드\n지갑 없는 개인 사용은 지금 가능합니다.',
+  'FOR THE RECORD 0.3.1 · Development preview\nPersonal work works without a wallet.':
+      'FOR THE RECORD 0.3.1 · 개발 미리보기\n지갑 없이 개인 작업을 사용할 수 있습니다.',
   'Workroom 0.2.0 · 개발 검증 빌드\n지갑 없는 개인 사용은 지금 가능합니다.':
-      'FOR THE RECORD 0.3.0 · 개발 미리보기\n지갑 없이 개인 작업을 사용할 수 있습니다.',
+      'FOR THE RECORD 0.3.1 · 개발 미리보기\n지갑 없이 개인 작업을 사용할 수 있습니다.',
 };
 const translatedCatalog = <String, List<String>>{
   'Private journal': [
@@ -2414,12 +2434,12 @@ const translatedCatalog = <String, List<String>>{
     'Projets, séances, résultats, journaux et paramètres seront supprimés. La vérification des paiements en attente est conservée. Les données non exportées seront irrécupérables.',
   ],
   'Workroom 0.2.0 · Development preview\nPersonal work works without a wallet.': [
-    'FOR THE RECORD 0.3.0 · 開発プレビュー\n個人利用はウォレットなしで可能です。',
-    'FOR THE RECORD 0.3.0 · 开发预览\n个人工作无需钱包。',
-    'FOR THE RECORD 0.3.0 · विकास पूर्वावलोकन\nनिजी काम के लिए वॉलेट नहीं चाहिए।',
-    'FOR THE RECORD 0.3.0 · Vista previa de desarrollo\nEl uso personal funciona sin cartera.',
-    'FOR THE RECORD 0.3.0 · Prévia de desenvolvimento\nO uso pessoal funciona sem carteira.',
-    'FOR THE RECORD 0.3.0 · Aperçu de développement\nL\'usage personnel fonctionne sans portefeuille.',
+    'FOR THE RECORD 0.3.1 · 開発プレビュー\n個人利用はウォレットなしで可能です。',
+    'FOR THE RECORD 0.3.1 · 开发预览\n个人工作无需钱包。',
+    'FOR THE RECORD 0.3.1 · विकास पूर्वावलोकन\nनिजी काम के लिए वॉलेट नहीं चाहिए।',
+    'FOR THE RECORD 0.3.1 · Vista previa de desarrollo\nEl uso personal funciona sin cartera.',
+    'FOR THE RECORD 0.3.1 · Prévia de desenvolvimento\nO uso pessoal funciona sem carteira.',
+    'FOR THE RECORD 0.3.1 · Aperçu de développement\nL\'usage personnel fonctionne sans portefeuille.',
   ],
   'Personal work records and trade journals are stored only on this device. There is no automatic cloud backup. Export before uninstalling.\n\nWallet activity is read by the server from the authenticated wallet. Personal notes are never uploaded. Shared sessions store wallet and Seeker verification, room state and the selected work category; project titles and outcomes stay private.\n\nPurchases are public Solana transactions. Receipts and replay-prevention records remain after server account deletion. Disconnecting does not delete local records or cancel purchases.\n\nNotifications are optional. No contacts, location, exact alarm, advertising or analytics SDK is used.\n\nThis is a development preview. Support contact and the final operator and retention policy will be published before release.': [
     '個人の作業記録と取引日誌はこの端末だけに保存され、自動クラウドバックアップはありません。削除前にエクスポートしてください。\n\nサーバーは認証済みウォレットの履歴を読み取ります。個人メモは送信しません。共同セッションではウォレット、Seeker確認、部屋の状態、作業分類を保存します。プロジェクト名と結果は非公開です。\n\n購入は公開Solana取引です。アカウント削除後も領収情報と再利用防止情報は残ります。接続解除で記録や購入は消えません。\n\n通知は任意です。連絡先、位置、正確なアラームの権限、広告・分析SDKは使いません。\n\n開発プレビューです。連絡先、運営者、保存期間は公開前に確定します。',
@@ -4049,6 +4069,70 @@ const translatedCatalog = <String, List<String>>{
     '{0} momento de progresso · {1}',
     '{0} moment de progrès · {1}',
   ],
+  'Skip intro': [
+    'イントロをスキップ',
+    '跳过开场',
+    'परिचय छोड़ें',
+    'Omitir introducción',
+    'Pular introdução',
+    'Passer l\'introduction',
+  ],
+  'Your next step': [
+    '次の一歩',
+    '你的下一步',
+    'आपका अगला कदम',
+    'Tu próximo paso',
+    'Seu próximo passo',
+    'Votre prochaine étape',
+  ],
+  'Start with one thing.': [
+    'まずは一つから。',
+    '从一件事开始。',
+    'एक काम से शुरू करें।',
+    'Empieza con una cosa.',
+    'Comece com uma coisa.',
+    'Commencez par une chose.',
+  ],
+  'Pick a project. Set an intention. Save what you learned.': [
+    'プロジェクトを選び、取り組むことを決め、学んだことを残しましょう。',
+    '选择项目，设定目标，记录所学。',
+    'प्रोजेक्ट चुनें। इरादा तय करें। जो सीखा, उसे सहेजें।',
+    'Elige un proyecto. Fija una intención. Guarda lo aprendido.',
+    'Escolha um projeto. Defina uma intenção. Guarde o que aprendeu.',
+    'Choisissez un projet. Fixez une intention. Notez ce que vous avez appris.',
+  ],
+  'Your trades show what. Add the why.': [
+    '取引に残るのは、何をしたか。理由も残しましょう。',
+    '交易记录了做什么，再写下为什么。',
+    'ट्रेड बताते हैं क्या किया। आप लिखें क्यों।',
+    'Tus operaciones muestran qué hiciste. Añade el porqué.',
+    'Suas operações mostram o que fez. Acrescente o porquê.',
+    'Vos transactions montrent ce que vous avez fait. Ajoutez le pourquoi.',
+  ],
+  'Your notes stay on this device.': [
+    'メモはこの端末に保存されます。',
+    '笔记保存在此设备上。',
+    'आपके नोट इसी डिवाइस पर रहते हैं।',
+    'Tus notas se guardan en este dispositivo.',
+    'Suas notas ficam neste dispositivo.',
+    'Vos notes restent sur cet appareil.',
+  ],
+  'Read only. No transfers. Notes stay here.': [
+    '読み取り専用。送金なし。メモはこの端末に。',
+    '只读，无转账，笔记保存在此设备。',
+    'केवल पढ़ें। कोई हस्तांतरण नहीं। नोट यहीं रहते हैं।',
+    'Solo lectura. Sin transferencias. Tus notas se quedan aquí.',
+    'Somente leitura. Sem transferências. Suas notas ficam aqui.',
+    'Lecture seule. Aucun transfert. Vos notes restent ici.',
+  ],
+  'Connect. Reflect. Remember.': [
+    'つないで、振り返って、覚えておく。',
+    '连接，回顾，铭记。',
+    'जुड़ें। विचार करें। याद रखें।',
+    'Conecta. Reflexiona. Recuerda.',
+    'Conecte. Reflita. Lembre-se.',
+    'Connectez-vous. Réfléchissez. Souvenez-vous.',
+  ],
   'Shared rooms are not available in this edition.': [
     'このバージョンでは共同ルームは利用できません。',
     '此版本不提供共享房间。',
@@ -4137,13 +4221,13 @@ const translatedCatalog = <String, List<String>>{
     'Leia seu histórico e reflita.\nNão há negociações nem transferências de ativos aqui.',
     'Lisez votre historique et prenez du recul.\nAucun échange ni transfert d\'actifs n\'a lieu ici.',
   ],
-  'FOR THE RECORD 0.3.0 · Development preview\nPersonal work works without a wallet.': [
-    'FOR THE RECORD 0.3.0 · 開発プレビュー\n個人利用はウォレットなしで可能です。',
-    'FOR THE RECORD 0.3.0 · 开发预览\n个人工作无需钱包。',
-    'FOR THE RECORD 0.3.0 · विकास पूर्वावलोकन\nनिजी काम के लिए वॉलेट नहीं चाहिए।',
-    'FOR THE RECORD 0.3.0 · Vista previa de desarrollo\nEl uso personal funciona sin cartera.',
-    'FOR THE RECORD 0.3.0 · Prévia de desenvolvimento\nO uso pessoal funciona sem carteira.',
-    'FOR THE RECORD 0.3.0 · Aperçu de développement\nL\'usage personnel fonctionne sans portefeuille.',
+  'FOR THE RECORD 0.3.1 · Development preview\nPersonal work works without a wallet.': [
+    'FOR THE RECORD 0.3.1 · 開発プレビュー\n個人利用はウォレットなしで可能です。',
+    'FOR THE RECORD 0.3.1 · 开发预览\n个人工作无需钱包。',
+    'FOR THE RECORD 0.3.1 · विकास पूर्वावलोकन\nनिजी काम के लिए वॉलेट नहीं चाहिए।',
+    'FOR THE RECORD 0.3.1 · Vista previa de desarrollo\nEl uso personal funciona sin cartera.',
+    'FOR THE RECORD 0.3.1 · Prévia de desenvolvimento\nO uso pessoal funciona sem carteira.',
+    'FOR THE RECORD 0.3.1 · Aperçu de développement\nL\'usage personnel fonctionne sans portefeuille.',
   ],
 };
 

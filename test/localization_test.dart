@@ -52,6 +52,11 @@ void main() {
   test('static bilingual UI messages cannot silently lose locale coverage', () {
     final literal = r"'((?:[^'\\]|\\.)*)'";
     final calls = RegExp('tr\\(\\s*context,\\s*$literal\\s*,\\s*$literal');
+    // Both branches need coverage when availability determines the copy.
+    final condition = r'[a-zA-Z_][\w.]*\s*\?\s*';
+    final conditionalCalls = RegExp(
+      'tr\\(\\s*context,\\s*$condition$literal\\s*:\\s*$literal\\s*,\\s*$condition$literal\\s*:\\s*$literal',
+    );
     for (final file
         in Directory('lib/ui')
             .listSync(recursive: true)
@@ -68,6 +73,22 @@ void main() {
           isTrue,
           reason: '${file.path}: $english',
         );
+      }
+      for (final match in conditionalCalls.allMatches(
+        file.readAsStringSync(),
+      )) {
+        for (final group in [3, 4]) {
+          final english = match
+              .group(group)!
+              .replaceAll(r'\n', '\n')
+              .replaceAll(r"\'", "'");
+          if (english.contains(r'$')) continue;
+          expect(
+            translatedCatalog.containsKey(english),
+            isTrue,
+            reason: '${file.path}, conditional branch: $english',
+          );
+        }
       }
     }
   });
@@ -181,6 +202,14 @@ void main() {
       await tester.pumpAndSettle();
       final strings = WorkroomStrings.of(localizedContext);
       expect(strings.locale.languageCode, language);
+      expect(
+        uiText(
+          localizedContext,
+          'Workroom 0.2.0 · 개발 검증 빌드\n지갑 없는 개인 사용은 지금 가능합니다.',
+        ),
+        startsWith('FOR THE RECORD 0.3.1'),
+        reason: 'Version footer must be current in every locale',
+      );
       expect(find.text(strings.choose('설정', 'Settings')), findsOneWidget);
       final translatedError = activityErrorText(
         localizedContext,

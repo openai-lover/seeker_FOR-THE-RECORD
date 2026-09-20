@@ -33,4 +33,6 @@ Without android/key.properties, optimized APKs use a development signing certifi
 
 Run flutter analyze and flutter test for the app. Optional backend tests are pnpm --dir functions test and pnpm --dir functions build.
 
-The English walkthrough uses an isolated package suffix and a temporary SQLite database. Set WORKROOM_ISOLATED_TEST=1, then run flutter drive --driver=test_driver/walkthrough.dart --target=integration_test/english_walkthrough_test.dart -d a-dedicated-emulator. Never run a data-resetting test on a user's installed app.
+The English walkthrough uses an isolated package suffix and a temporary SQLite database. Set WORKROOM_ISOLATED_TEST=1, then run flutter drive --driver=test_driver/walkthrough.dart --target=integration_test/final_walkthrough_test.dart -d a-dedicated-emulator. Its sample trade is labeled on every screen and exists only in the integration test. Use a dedicated emulator without a wallet for the missing-wallet assertion. Never run a data-resetting test on a user's installed app.
+
+The separately gated official mock-wallet harness is described in [wallet validation](WALLET_VALIDATION.md). Its automated runner is not claimed as passed; the final release's approval, cancellation, disconnect and retry were verified through its actual UI.
