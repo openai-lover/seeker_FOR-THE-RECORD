@@ -1,0 +1,13 @@
+{
+  "syntheticFixture": true,
+  "wallet": "BPX6bRyJf1drkpbnq6DhgMBjNXhmsaNpNRDSjt4PjxjS",
+  "mint": "SKRbvo6Gf7GondiT3BbTfuRDPqLWei4j2Qy2NPGZhW3",
+  "recipient": "HDTsGi9JTFKBQYgru7kt3qw5LrsqPSg7au4RwDJW9AB5",
+  "recipientAta": "4MSLeH9Lhh3euY14c3gTvDzmfwQWQdzWS246Nr5EyntM",
+  "sourceAta": "6npko3vgiVQNCCGnWoRoEapSo6Wv5mMRfWZPpEcPzF4H",
+  "reference": "3K14t6nsHkuBb1pNbvfhEJ346z2TzSHWpDSgStci5KpU",
+  "blockhash": "DjTQFes6rsmiYtQKiYoFAePw1G1ZFvbEp8AHB337ST9S",
+  "amountAtomic": "1234567",
+  "decimals": 6,
+  "transactionBase64": "AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAMGmlmtXjFI+Ie8VCvIlKSo62fzFNbEXBlkSF13YlH4Z+kxz1PV9fWFxJthYKSBzraA6EwAA3RPwEBwp2IWqCIRxlYHkV/QGk/xibkNh6NX6LObFAwHtKpgeM6aqFD+AXieIlPncYwQBl8yauAe4EQBm9QzTQcmQd/BBv8BYknbOpkGfFo+Bf5BRxKnour+Qr52ELzZDL9XFid1g3PLitDYpAbd9uHXZaGT2cvhRs7reawctIXtX1s3kTqM9YV+/wCpvSx9G1rtkrVfSj1AVyw/anhU4bA4o8RkpN7m+NmispkBBQUCBAEAAwoMh9YSAAAAAAAG"
+}

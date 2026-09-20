@@ -1,0 +1,5 @@
+# Copy to key.properties only on the signing machine. This example contains no secrets.
+storeFile=C:/private-signing/workroom.jks
+storePassword=
+keyAlias=workroom
+keyPassword=

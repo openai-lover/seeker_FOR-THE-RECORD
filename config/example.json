@@ -1,0 +1,8 @@
+{
+  "API_URL": "https://asia-northeast3-YOUR_PROJECT.cloudfunctions.net/api",
+  "IDENTITY_URI": "https://YOUR_OWN_DOMAIN",
+  "FIREBASE_API_KEY": "firebase-public-api-key",
+  "FIREBASE_APP_ID": "1:000000000000:android:YOUR_APP_ID",
+  "FIREBASE_PROJECT_ID": "YOUR_PROJECT",
+  "FIREBASE_SENDER_ID": "000000000000"
+}

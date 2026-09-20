@@ -1,0 +1,163 @@
+1
+00:00:00,000 --> 00:00:04,909
+For the record, this is why I did it.
+
+2
+00:00:04,909 --> 00:00:12,000
+A private Android journal for the reasons behind your work and wallet decisions.
+
+3
+00:00:12,000 --> 00:00:15,103
+The app starts with something useful.
+
+4
+00:00:15,103 --> 00:00:21,828
+Create a project and choose the one thing you want to move forward.
+
+5
+00:00:21,828 --> 00:00:27,000
+Your first work session needs no account, wallet, or network.
+
+6
+00:00:27,000 --> 00:00:31,870
+Here is the actual Android emulator recording.
+
+7
+00:00:31,870 --> 00:00:40,217
+I create a project, write an intention, and choose a focus duration.
+
+8
+00:00:40,217 --> 00:00:45,087
+The timer gives me room to work.
+
+9
+00:00:45,087 --> 00:00:49,261
+I can pause or finish early.
+
+10
+00:00:49,261 --> 00:00:59,000
+This demonstration shows an early finish after a few seconds.
+
+11
+00:00:59,000 --> 00:01:01,609
+At the end, I record what actually changed.
+
+12
+00:01:01,609 --> 00:01:03,891
+A blocked attempt can be useful too.
+
+13
+00:01:03,891 --> 00:01:07,804
+The next action is a small, specific place to start next time.
+
+14
+00:01:07,804 --> 00:01:11,717
+The app saves progress only when I choose to save a record.
+
+15
+00:01:11,717 --> 00:01:14,000
+A timer does not invent an outcome.
+
+16
+00:01:14,000 --> 00:01:18,286
+My last next action comes back on the home screen.
+
+17
+00:01:18,286 --> 00:01:21,714
+The next visit has a clear starting point.
+
+18
+00:01:21,714 --> 00:01:26,000
+Core work journaling continues offline without a wallet or account.
+
+19
+00:01:26,000 --> 00:01:29,073
+The project book makes previous work easy to revisit.
+
+20
+00:01:29,073 --> 00:01:34,195
+I can see my starting intention, read the result, and continue from the next action.
+
+21
+00:01:34,195 --> 00:01:35,902
+My own writing remains editable.
+
+22
+00:01:35,902 --> 00:01:40,000
+This gives the next visit context without asking me to remember everything.
+
+23
+00:01:40,000 --> 00:01:41,905
+English is the default.
+
+24
+00:01:41,905 --> 00:01:47,619
+Settings also offer Korean, Japanese, Simplified Chinese, Hindi, Spanish, Portuguese, and French.
+
+25
+00:01:47,619 --> 00:01:50,952
+My own writing keeps its original language.
+
+26
+00:01:50,952 --> 00:01:54,286
+The language choice belongs to the user.
+
+27
+00:01:54,286 --> 00:02:00,000
+Fluent speakers should still review the translations before a broad public release.
+
+28
+00:02:00,000 --> 00:02:07,500
+The journal uses native Mobile Wallet Adapter to select an account and reads supported public Solana activity directly.
+
+29
+00:02:07,500 --> 00:02:12,500
+No Firebase billing upgrade or paid server is needed for this path.
+
+30
+00:02:12,500 --> 00:02:16,667
+Public RPC has rate limits and no production service guarantee.
+
+31
+00:02:16,667 --> 00:02:22,083
+A successful real-wallet run on a physical device remains an open evidence gate.
+
+32
+00:02:22,083 --> 00:02:25,000
+Optional cloud rooms and purchases remain separate.
+
+33
+00:02:25,000 --> 00:02:29,091
+Work records and reflection text stay on the device.
+
+34
+00:02:29,091 --> 00:02:32,273
+JSON export gives me a portable copy.
+
+35
+00:02:32,273 --> 00:02:35,000
+Reminders, haptics, and motion are optional.
+
+36
+00:02:35,000 --> 00:02:39,545
+The local workflow stays useful when the network is unavailable.
+
+37
+00:02:39,545 --> 00:02:45,000
+The journal does not execute trades, forecast returns, or reward trading volume.
+
+38
+00:02:45,000 --> 00:02:50,270
+The next milestone is to prove the wallet-to-reflection path on a real device.
+
+39
+00:02:50,270 --> 00:02:53,108
+The offline preview is ready to try.
+
+40
+00:02:53,108 --> 00:02:56,757
+For the record, this is why I did it.
+
+41
+00:02:56,757 --> 00:03:00,000
+Source and release materials accompany this submission preview.

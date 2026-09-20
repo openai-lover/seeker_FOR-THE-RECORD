@@ -1,0 +1,1 @@
+{"indexes": [], "fieldOverrides": [{"collectionGroup": "challenges", "fieldPath": "ttl", "ttl": true, "indexes": []}, {"collectionGroup": "rateLimits", "fieldPath": "ttl", "ttl": true, "indexes": []}]}
