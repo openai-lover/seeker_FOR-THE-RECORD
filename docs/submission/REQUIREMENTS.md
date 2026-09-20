@@ -28,6 +28,12 @@ The portal's Brief requests a **three-minute demo** and says the app should run 
 
 Source: [official portal, Information → The Brief / Hackathon / FAQ](https://solanamobile.radiant.nexus/).
 
+## Repository visibility
+
+Rechecked on **21 September 2026**: the official FAQ explicitly asks whether the GitHub repository must be public. Its answer requires judges to be able to review the code and commit history; it does not require universal public access. Terms §6.4 likewise requires organizer/judge access to the materials by the deadline. Accordingly, this repository remains **private**, following the owner's instruction. Obtain the organizer's designated GitHub reviewer accounts and grant access before submission. Those accounts are not yet known. The local source ZIP is retained for the owner and is not published on the preview website.
+
+Sources: [official FAQ, Information → FAQ → Building & Submissions](https://solanamobile.radiant.nexus/), [Terms §6.4](https://solanamobile.radiant.nexus/legal/clock-in-terms.pdf).
+
 ## Technical and eligibility gates
 
 The entry needs an Android APK, Solana Mobile Stack/Mobile Wallet Adapter integration and meaningful Solana network use. A generic web wrapper is weak evidence of mobile development. The project must have started no earlier than three months before launch, with substantial new mobile work during the event. The creator must verify the actual start date and ownership.

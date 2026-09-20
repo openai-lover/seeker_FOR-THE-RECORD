@@ -18,9 +18,9 @@ A private Android journal for the reasons behind your work and wallet decisions.
 
 FOR THE RECORD helps Seeker users remember the thinking behind their decisions. A transaction history records what happened. A personal journal adds the reason, the original plan and what to do differently next time.
 
-The app starts with a useful offline workflow. Create a project, set an intention, choose a focus duration, then record the result and next action. Returning users can resume from their last next action. Project books preserve the work over time. Users can edit or delete their records and export them as JSON.
+The app starts with a useful offline workflow. Create a project, set an intention, choose a focus duration, then record the result and next action. Returning users choose “Continue from your bookmark” to begin with their last next action already filled in. Project books preserve the work over time. Users can edit or delete their records and export them as JSON.
 
-The Solana extension uses native Mobile Wallet Adapter to select an account and reads supported finalized activity directly through public RPC. This keeps the journal usable without a paid backend or Firebase billing upgrade. A conservative local parser recognizes a narrow set of Jupiter v6 classic SPL swaps. Guided prompts capture reason, plan, emotion and next action. Chain facts stay separate from editable personal notes. Unsupported or ambiguous activity remains explicitly unsupported.
+The Solana extension uses native Mobile Wallet Adapter to select an account and reads supported finalized activity directly through public RPC. This keeps the journal usable without a paid backend or Firebase billing upgrade. A conservative local parser recognizes a narrow set of Jupiter v6 classic SPL swaps. Four guided steps capture reason, plan, emotion and next action; each can be left blank. Later, users reopen the record and add what they learned. Chain facts stay separate from editable personal notes. Unsupported or ambiguous activity remains explicitly unsupported.
 
 Private writing stays in local SQLite. Core work journaling needs no wallet, account or network. The journal does not execute trades, predict returns or reward trading volume.
 
@@ -42,17 +42,19 @@ Flutter and Dart for the app. Kotlin for Android Mobile Wallet Adapter, elapsed-
 
 ## Current implementation status — include this disclosure
 
-The 0.3.0 source contains the native MWA bridge, conservative activity parser and local journal flow. Direct wallet reads remove the journal's paid-server dependency. All 84 Flutter tests pass and analysis is clean. The updated interface has an Android emulator walkthrough. These checks establish local logic and emulator behavior; they do not establish successful physical-device wallet operation.
+The 0.3.1 source contains the native MWA bridge, conservative activity parser and local journal flow. It adds a more focused home screen, a direct bookmark return, four-step reflection writing and an original skippable launch signature. Direct wallet reads remove the journal's paid-server dependency. Automated and emulator results must be read against their exact build versions. Those checks establish local logic and emulator behavior; they do not establish successful physical-device wallet operation.
 
 The direct journal path does not require Firebase Functions or a paid RPC account. Public RPC is shared infrastructure with rate limits and no production service guarantee. A successful real-wallet run on a physical device remains unverified. SKR purchases and optional cloud rooms remain unavailable in the free preview. Complete the live wallet-to-reflection evidence before claiming that the entry meets the hackathon's functional network requirement. Sample screenshots containing transactions use synthetic test fixtures and are not live trading evidence.
 
 ## Development during the hackathon
 
-The repository includes work-session persistence and recovery, native wallet integration, server-side verification and transaction guards, a conservative wallet activity parser, and private trade reflections. The latest iteration adds the FOR THE RECORD identity, an English default, eight-language selection and a more direct first-use experience. Preserve commit history and list the actual start date and new work in the final entry. Do not infer the project's origin or team membership from archive timestamps.
+The repository includes work-session persistence and recovery, native wallet integration, server-side verification and transaction guards, a conservative wallet activity parser, and private trade reflections. The latest iteration adds the FOR THE RECORD identity, an English default, eight-language selection, a bookmark return and guided reflection writing. Preserve commit history and list the actual start date and new work in the final entry. Do not infer the project's origin or team membership from archive timestamps.
 
 ## Validation statement
 
-Version 0.3.0 passes 84 Flutter tests with clean analysis. Localization and layout checks cover all eight languages and a 360-pixel viewport at 200% text scale. The existing backend suite passes 40 tests. Android emulator interaction covers the project, intention, focus, result and return-to-next-action path with SQLite and the native clock. Public-RPC handling and parser tests use controlled responses and fixtures; they are not live wallet evidence. Physical-device, TalkBack and fluent-speaker checks remain separate release tasks.
+Version 0.3.1 passes 88 Flutter tests and clean static analysis, including eight languages at a 360-pixel viewport and 200% text size. The optional backend's unchanged suite previously passed 40 tests. The new Android integration walkthrough passes with actual SQLite and native time: project, intention, early finish, saved next action and bookmark return. It also checks native missing-wallet handling and a persistently labeled sample event-to-reflection-to-later-review sequence. Test fixtures are absent from the release app.
+
+A separate manual test of the 0.3.1 app with the official Solana mock wallet on an Android emulator verified connection approval, account return, public mainnet empty history, disconnect, cancellation and retry. It requested no transaction or message signature and moved no assets. This is native integration evidence; it is not physical Seeker, Seed Vault, or supported live trade-to-reflection evidence. The automated wallet driver did not pass, so this wallet result is reported as manual. Physical-device accessibility and fluent-speaker review remain open.
 
 ## Roadmap
 
@@ -60,14 +62,13 @@ First complete the live wallet and device evidence. Then validate the translatio
 
 ## Links to enter
 
-- Source repository target: https://github.com/openai-lover/seeker_FOR-THE-RECORD — publication and access remain pending verification.
-- Source archive: https://workroom-seeker-6984.web.app/downloads/FOR-THE-RECORD-source-0.3.0.zip
-- ARM64 preview APK: https://drive.google.com/file/d/1XmaIHwQJuxsvF0Pu23NqsDKx-NvYOJL0/view?usp=drivesdk
+- Source repository target: https://github.com/openai-lover/seeker_FOR-THE-RECORD — source is pushed; the repository is currently private and judge access must be established.
+- ARM64 preview APK: https://drive.google.com/file/d/1RRoXhRGLURsLRY5CxN0sMFqo9fUa8kAD/view?usp=drivesdk
 - Playable demo page: https://workroom-seeker-6984.web.app/#preview
 - Video file: https://workroom-seeker-6984.web.app/downloads/FOR-THE-RECORD-demo.mp4
 - English pitch PDF: https://workroom-seeker-6984.web.app/downloads/FOR-THE-RECORD-pitch.pdf
 
-Verify the final public links after deployment. [Download details and APK SHA-256](DOWNLOAD_LINKS.md) identify the exact preview artifact. The source archive is a useful download; it does not by itself establish the required accessible GitHub history.
+Verify the final public links after deployment. [Download details and APK SHA-256](DOWNLOAD_LINKS.md) identify the exact preview artifact. A local source archive is included in the owner's complete delivery. It is not publicly hosted and does not replace judge access to the GitHub repository and its history.
 
 ## Owner-supplied fields
 

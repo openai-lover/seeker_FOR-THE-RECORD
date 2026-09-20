@@ -2,7 +2,7 @@
 
 **For the record, this is why I did it.**
 
-English materials for the CLOCK IN Solana Mobile Hackathon. Requirements checked against official pages on **20 September 2026**. This kit prepares a submission. It does not claim that registration, submission, production deployment, or real-wallet validation has happened.
+English materials for the CLOCK IN Solana Mobile Hackathon. Requirements checked against official pages on **20 September 2026**. This kit prepares a submission. It does not claim that registration, submission, production release, physical-Seeker validation, or contest submission has happened.
 
 ## Start here
 
@@ -17,23 +17,25 @@ English materials for the CLOCK IN Solana Mobile Hackathon. Requirements checked
 
 The English pitch is available as an [editable PowerPoint](FOR-THE-RECORD-pitch.pptx) and [PDF](FOR-THE-RECORD-pitch.pdf). The editable source of its copy is [PITCH_CONTENT.md](PITCH_CONTENT.md).
 
-The [three-minute demo video](FOR-THE-RECORD-demo-3min.mp4) combines actual Android emulator interaction with still captures of the running app. It has English on-screen explanations and no audio. [Supplemental English captions](FOR-THE-RECORD-demo-3min.srt) match the final chapter edit. This is an edited preview walkthrough, not continuous physical-device or live-wallet evidence.
+The [three-minute demo video](FOR-THE-RECORD-demo-3min.mp4) contains **123 seconds of actual recorded app footage**, original motion typography and close views of saved records. It uses English on-screen explanations, a quiet original two-note brand sound and [matching English captions](FOR-THE-RECORD-demo-3min.srt). There is no spoken narration or stock media. See [capture details and chapters](DEMO_VIDEO.md).
 
 ## Current readiness
 
-The current source supports an offline work journal, local trade reflections, Android recovery behavior, native Mobile Wallet Adapter and direct read-only Solana activity. The version 0.3.0 Flutter suite passes all 84 tests and analysis is clean. The localization and layout checks include eight languages and a 360-pixel viewport at 200% text scale. Forty backend tests also pass; the optional backend is separate from the free journal path.
+Version **0.3.1** passes **88 Flutter tests** with clean analysis. Language/layout checks include eight languages, a 360-pixel viewport and 200% text size. The optional backend's unchanged suite previously passed 40 tests.
 
-On September 20, an Android emulator walkthrough of the updated interface completed the project, intention, focus, result and journal path using SQLite and the native clock. The final direct-mode run also verified the native missing-wallet path. The screenshots in [screenshots](screenshots) document the run. This is emulator evidence, not a physical Seeker or successful live-wallet test.
+The final Android emulator integration walkthrough passes with real SQLite and the native clock. It shows the local project-to-bookmark loop, native missing-wallet handling, and a persistently labeled sample event-to-reflection-to-later-review sequence. The sample data exists only in the integration test, never in the released APK. The [screenshots](screenshots) document those results.
 
-The preview uses a **direct read-only wallet path** so the journal does not require Firebase billing or a paid server. MWA supplies the selected account, and the app reads public Solana activity. Optional shared rooms and purchases remain separate cloud features. See [the free preview approach](FREE_PREVIEW_APPROACH.md).
+Separate manual testing of the 0.3.1 release app with the **official Solana mock wallet on an Android emulator** verified connection approval, public account return, public mainnet empty history, disconnect, cancellation and retry. It requested no message/transaction signature and moved no assets. The video labels this evidence explicitly. The automated wallet driver did not pass; do not describe the manual result as an automated wallet E2E pass.
 
-The open evidence gate is a successful **real-wallet run on a physical device**. Parser tests and emulator screens do not establish that result. Public RPC also has rate limits and no production service guarantee. Keep these limits visible in the entry and verify the live wallet-to-reflection path before final submission.
+The preview uses native MWA and a direct read-only public-RPC path, so the journal requires no paid server or Firebase billing upgrade. Optional shared rooms and purchases remain separate unavailable cloud features. Public RPC is rate-limited infrastructure with no production service guarantee. See [the free preview approach](FREE_PREVIEW_APPROACH.md).
+
+**Physical Seeker, Seed Vault and a supported live event-to-reflection run remain unverified.** The manual empty-history result and labeled fixture flow are distinct evidence. Complete that live path before claiming the competition's meaningful network requirement is established. No user research, retention, profit or performance result is claimed.
 
 ## Links
 
 - [Official registration and submission portal](https://solanamobile.radiant.nexus/) — open **HACKATHON HUB**, sign in to Align, complete the builder profile, then open Clock In Registration.
 - [Preview website and delivery materials](https://workroom-seeker-6984.web.app/)
-- [Requested project repository](https://github.com/openai-lover/seeker_FOR-THE-RECORD) — publication and access require final verification.
+- [Requested project repository](https://github.com/openai-lover/seeker_FOR-THE-RECORD) — source is pushed; private repository visibility requires judge-access verification.
 - [Official announcement](https://solanamobile.com/blog/clock-in-the-solana-mobile-hackathon)
 - [Binding terms](https://solanamobile.radiant.nexus/legal/clock-in-terms.pdf)
 

@@ -1,39 +1,38 @@
-# Three-minute demo
+# Final three-minute demo script
 
-**Format:** 180-second English walkthrough. Use the exact release APK. Keep the capture source visible in the description, for example “Android emulator, version 0.3.0.” A physical Seeker clip is still needed to substantiate Seeker-specific behavior. Music is optional and must be licensed. Screen captions make the demo usable without audio.
+Version **0.3.1**. This is the script of the delivered edit, not a proposed recording plan. The video contains English on-screen explanations and supplemental captions; it has no spoken narrator. The first eight seconds use original kinetic typography and a quiet original brand sound. The remaining audio is silent.
 
-[DEMO_CAPTIONS.srt](DEMO_CAPTIONS.srt) follows this storyboard. Conform its timings to the actual final edit before uploading it as captions.
+The final edit combines 123 seconds of recorded app footage, 32 seconds of actual still captures and 25 seconds of original motion/graphics. The local and sample workflow is from a passed Android integration test with real SQLite and native time. The separate wallet recording is a manual test of the 0.3.1 app with the official Solana mock wallet on an Android emulator. No physical Seeker footage is claimed.
 
-This script describes the free preview. The wallet segment must show the actual direct-mode connection state. A missing-wallet or RPC error screen is useful failure handling evidence, but it does not establish that a successful live-wallet flow has been validated.
+| Time | Moment | Evidence | English caption text |
+|---|---|---|---|
+| 0:00–0:08 | Keep the why. | Original motion | You remember what. Keep the why. For the record, this is why I did it. |
+| 0:08–0:20 | Start with one intention. | Recorded app interaction | Create a project and give the next session a clear intention. Your work journal needs no account or wallet. |
+| 0:20–0:36 | Focus. Then leave a record. | Recorded app interaction | Choose a focus duration and start. This demonstration finishes early after a few seconds. Record what actually changed. |
+| 0:36–0:44 | Make progress easy to return to. | Recorded app interaction | Save the result and a specific next action. Saving is an explicit choice. |
+| 0:44–0:57 | Pick up your next step. | Recorded app interaction | Open the project book, then return to the bookmark. The next session starts with your previous next action already filled in. |
+| 0:57–1:05 | Your own words. Already waiting. | Actual capture still | The saved next action is now the next intention. This is the same text from the previous record. |
+| 1:05–1:10 | A transaction keeps the event. | Original graphic | A transaction keeps the event. Your journal keeps the reason. |
+| 1:10–1:21 | Read-only. On your terms. | Recorded app interaction | The journal requests read-only wallet access. This emulator has no compatible wallet installed, so it shows a clear message and keeps the local record. |
+| 1:21–1:28 | Keep the context of a decision. | Recorded app interaction; SAMPLE DATA | The next sequence uses a labeled sample transaction. It demonstrates the actual app interface and local storage, not a live trade. |
+| 1:28–1:41 | One question at a time. | Recorded app interaction; SAMPLE DATA | Write the reason, then the plan. Each prompt is optional. These are demonstration notes attached to sample activity. |
+| 1:41–1:50 | Name the feeling. Choose a next step. | Recorded app interaction; SAMPLE DATA | Choose an emotion and leave a next action. The journal does not score returns or reward trading volume. |
+| 1:50–1:58 | Save it here. | Recorded app interaction; SAMPLE DATA | Save the reflection on this device, then reopen the same record from the sample activity. |
+| 1:58–2:11 | Come back with perspective. | Recorded app interaction; SAMPLE DATA | The saved reason, plan and next action remain. Open Reflect to add what you learned later. The fixture stays visibly labeled throughout. |
+| 2:11–2:18 | A reason you can revisit. | Actual capture still; SAMPLE DATA | The later reflection is saved in the same local record. This demonstrates persistence with sample activity. |
+| 2:18–2:29 | Personal by default. | Actual capture still | Notes stay on this device. Settings offer a portable JSON export, optional reminders and reduced motion. |
+| 2:29–2:35 | Eight ways to feel at home. | Actual capture still | English is the default, with seven more language choices. Your own writing is never translated. |
+| 2:35–2:41 | Wallet handoff, checked. | Recorded app interaction; official mock wallet / Android emulator | In a separate manual emulator test, the official Solana mock wallet presented a native connection approval. |
+| 2:41–2:48 | Connected. Read-only. | Recorded app interaction; official mock wallet / Android emulator | Approval returned a public account and a mainnet activity read returned an empty history. This verifies connection and reading, not a live swap reflection. |
+| 2:48–2:53 | Physical Seeker. Supported live activity. | Original graphic | Physical Seeker, Seed Vault and a supported live event-to-reflection run remain to be verified. |
+| 2:53–3:00 | FOR THE RECORD | Original graphic | Leave tomorrow a starting point. For the record, this is why I did it. Try the preview at workroom-seeker-6984.web.app. |
 
-| Time | Show | Narration |
-|---|---|---|
-| 0:00–0:15 | New branded home. Keep the main action visible. | “For the record, this is why I did it. This is a private Android journal for remembering the reasons behind your work and wallet decisions.” |
-| 0:15–0:35 | Create a project called “My next release.” Enter “Make the first screen easier to understand.” | “Start with something useful. There is no account or wallet step before your first work session. I create a project and write the one thing I want to move forward.” |
-| 0:35–0:55 | Choose a short focus duration and start. Show pause and resume if those actions are visible. | “I choose a focus duration and begin. The timer supports a deliberate pause and an early finish. A timer ending does not invent a result or automatically award progress.” |
-| 0:55–1:20 | Finish early. Save “Made the primary action clearer” and next action “Test the screen with one new user.” | “At the end, I record what happened. A blocked attempt can be a valid record too. The next action is the most useful part: it gives tomorrow a clear starting point.” |
-| 1:20–1:40 | Return home, open the saved record, show the project book. | “The project book keeps the history. My next action comes back when I return. I can edit my writing, remove a record, or export a copy through Android's file picker.” |
-| 1:40–2:00 | Settings. Change to Japanese or Spanish, then return to English. Show motion/reminder options. | “English is the default. Settings offer eight languages, including Hindi. My own writing keeps its original language. Motion, haptics and reminders are optional, and core journaling continues offline.” |
-| 2:00–2:30 | Trade journal and direct wallet connection state. Show actual missing-wallet or RPC errors if encountered. Do not insert fake success. | “The Solana extension connects supported wallet events to a private reflection: my reason, my plan, my emotion and my next action. Native Mobile Wallet Adapter and public RPC keep this journal path free of paid backend requirements. Public RPC has limits, and a verified real-wallet run remains a release gate.” |
-| 2:30–2:45 | Journal/source architecture slide or real UI. Clearly label any fixture image. | “Private notes stay on this device. On-chain facts and personal interpretation stay separate. Unsupported activity remains unsupported. The journal does not execute trades or promise returns.” |
-| 2:45–3:00 | Brand plus repository. End on the saved next action if possible. | “The offline workflow is ready to try. Live Solana and physical-device evidence are the next release gates. FOR THE RECORD helps me keep the reason, so my next decision has context.” |
+## Evidence boundaries
 
-## Captions and recording discipline
+- The focus session is finished early; the edit does not imply the selected duration elapsed.
+- All sample transaction scenes carry an explicit persistent sample-data badge. They show implemented UI and persistence, not on-chain trading.
+- The wallet clip shows genuine native approval and an empty mainnet history response. It contains no transaction signing, payment or live swap. Physical Seeker, Seed Vault and a supported live event-to-reflection run remain unverified.
+- The language still shows the eight available choices. It is not evidence of a full language-change walkthrough.
+- All visual assets and the two-note sound were created for this project. No Envato asset or external music is used.
 
-- Capture actual taps and results. Cut long typing pauses without altering what the app did.
-- Never imply 25 minutes elapsed when demonstrating an early finish. Leave the shortened duration visible.
-- Use synthetic personal text, a test project and an owner-approved demonstration wallet. Hide unrelated notifications and personal balances.
-- Label test-fixture transactions directly on screen. Do not call fixture screenshots “live mainnet activity.”
-- If showing a real successful wallet flow later, replace the 2:00–2:30 narration with a fact-specific account of what the clip demonstrates. Retain the transaction signature and validation log separately.
-- Export H.264 MP4 with English captions and readable phone content. These are delivery choices, not claimed contest rules.
-- Check the whole 180-second file after export. Check its public link while signed out.
-
-## Video description
-
-FOR THE RECORD — “For the record, this is why I did it.”
-
-An Android journal for work intentions and private reflections on supported Solana wallet activity. This preview demonstrates the offline workflow and the current direct-wallet connection state. Capture source and build version must match the final recording. No paid backend is required for the journal, but public RPC has availability limits and a verified real-wallet run remains an open release gate. No sample activity should be interpreted as real user trading or performance.
-
-Source: https://github.com/openai-lover/seeker_FOR-THE-RECORD
-
-Prepared for CLOCK IN: https://solanamobile.radiant.nexus/
+Use [the final SRT](FOR-THE-RECORD-demo-3min.srt) or matching VTT from the delivery package for upload captions. [Delivery details](DEMO_VIDEO.md) describe the final file.

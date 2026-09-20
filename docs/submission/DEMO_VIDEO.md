@@ -2,40 +2,42 @@
 
 File: [FOR-THE-RECORD-demo-3min.mp4](FOR-THE-RECORD-demo-3min.mp4)
 
-- Duration: 180 seconds.
-- Picture: 1920 × 1080, H.264, 30 frames per second.
-- Audio: none. English explanations appear directly in the picture.
-- Optional text track: [English SRT](FOR-THE-RECORD-demo-3min.srt).
+- Picture: 1920 × 1080, H.264, 30 frames per second; 5,400 video frames / 180 seconds.
+- Audio: a quiet, original two-note sound in the opening, then silence. No spoken narration or external music.
+- English explanations are visible in the picture. [Optional SRT captions](FOR-THE-RECORD-demo-3min.srt) and a matching VTT accompany the edit.
+- Capture: Android emulator, app 0.3.1. Recorded interaction totals 123 seconds.
 
-The edit combines recorded interaction with still captures from an Android emulator running the updated app. It uses disposable demonstration records and the current 0.3.0 source. The Android walkthrough exercised local SQLite and the native clock. The recording is a development/test walkthrough, not a claim that the final distributed ARM64 APK has been validated on a physical Seeker.
+The local walkthrough uses real SQLite and native time. It creates a project, finishes a focus session early, saves a next action and returns to that action already filled in. A persistently labeled synthetic transaction then demonstrates the real guided reflection UI, save, reopen and later reflection. The released APK contains no test fixtures.
 
-The video shows an early finish. It does not imply that the full selected focus duration elapsed. The wallet chapter shows the actual direct read-only connection screen. It contains no simulated wallet approval, invented live transaction or payment. A real-wallet success claim would need separate physical-device evidence.
+At 2:35, a separate manual release-app recording shows genuine native connection approval through the official Solana mock wallet, followed by an empty mainnet activity response. The picture labels this “Official mock wallet / Android emulator.” This is distinct from the synthetic activity sequence. Physical Seeker, Seed Vault and a supported live event-to-reflection run remain unverified. No assets moved and no message/transaction signature was requested.
 
-The PPTX/PDF deck and video share the same original FOR THE RECORD brand mark. No Envato stock media or external music is included.
+The original F mark, kinetic typography and sound were created for this project. No Envato template or external music is included.
 
-## Chapters
-
-| Start | Section |
+| Start | Chapter |
 |---|---|
-| 0:00 | Product introduction |
-| 0:12 | First use |
-| 0:27 | Actual project and focus interaction |
-| 0:59 | Result and next action |
-| 1:14 | Return to the saved next action |
-| 1:26 | Project history |
-| 1:40 | Language choices |
-| 2:00 | Direct read-only wallet connection screen |
-| 2:25 | Local data and settings |
-| 2:45 | Next release gate and repository |
+| 0:00 | Remember what. Keep the why. |
+| 0:08 | Project, intention and early finish |
+| 0:36 | Save progress and a next action |
+| 0:44 | Return to the saved next action |
+| 1:05 | Why context belongs with a decision |
+| 1:10 | Native missing-wallet feedback |
+| 1:21 | Labeled sample: four-step reflection |
+| 1:50 | Save, reopen and add a later reflection |
+| 2:18 | Local settings and language choices |
+| 2:35 | Genuine native mock-wallet approval and mainnet empty history |
+| 2:48 | Remaining physical-device/live-activity evidence |
+| 2:53 | FOR THE RECORD |
 
 ## Suggested upload description
 
 FOR THE RECORD — “For the record, this is why I did it.”
 
-A three-minute preview of an Android journal for work intentions and private reflections on supported Solana wallet activity. This edited emulator walkthrough uses actual interaction and still captures. It includes English on-screen explanations and no audio. The journal does not require a paid backend. Public RPC has availability limits, and verified live-wallet operation on a physical device remains an open release gate.
+A three-minute Android journal demo: intention, action, a saved next step and a reason to return. Version 0.3.1 uses local SQLite, native Mobile Wallet Adapter and public Solana RPC without requiring a paid backend. The edited Android emulator capture includes a clearly labeled sample reflection flow and a separate genuine native connection test with the official Solana mock wallet. That test returned an empty mainnet history. Physical Seeker, Seed Vault and supported live activity-to-reflection remain to be verified. No assets were moved.
+
+English on-screen explanations and captions. Original motion identity and a quiet original opening sound; no spoken narration or stock media.
 
 Preview and release materials: https://workroom-seeker-6984.web.app/
 
-Requested repository target: https://github.com/openai-lover/seeker_FOR-THE-RECORD
+Source target: https://github.com/openai-lover/seeker_FOR-THE-RECORD
 
 Prepared for CLOCK IN: https://solanamobile.radiant.nexus/

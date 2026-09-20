@@ -14,26 +14,27 @@ This list distinguishes a useful preview from a complete competition entry.
 
 ## Build and evidence
 
-- [x] Current Flutter analysis is clean and all 84 tests pass; the backend suite passes 40 tests.
+- [x] Current Flutter analysis is clean and all 88 tests pass; the unchanged optional backend suite previously passed 40 tests.
 - [x] Eight-language layout checks pass, including a 360-pixel viewport at 200% text scale.
 - [x] Android emulator integration passes with real SQLite, native elapsed time and native missing-wallet handling.
-- [x] Build the ARM64 preview APK, version 0.3.0/code 2003. [Signing type and SHA-256 are recorded](DOWNLOAD_LINKS.md).
-- [ ] Retain the final published source commit alongside the artifact hashes.
+- [x] Build the ARM64 preview APK, version 0.3.1/code 2004. [Signing type and SHA-256 are recorded](DOWNLOAD_LINKS.md).
+- [x] Retain the final published source commit alongside the artifact hashes.
 - [ ] Install and complete the new APK's main journey on a physical Android device.
 - [ ] Complete physical-device TalkBack, keyboard interaction, font and reduced-motion checks.
-- [ ] Verify the direct MWA/public-RPC journal path, including account changes, timeouts and rate limits.
+- [x] Manually verify native MWA approval, public account return, empty mainnet history, disconnect, cancellation and retry on the 0.3.1 app with the official mock wallet on an Android emulator.
+- [ ] Verify account changes, timeouts and rate limits on a physical device; retain controlled parser/RPC tests separately.
 - [ ] Capture successful real-wallet connection and supported finalized activity.
-- [ ] Keep optional cloud rooms and SKR purchases unavailable until their separate backend is configured.
-- [ ] Keep offline behavior and honest unavailable states intact.
-- [ ] Check source and artifacts for private notes, credentials and signing material.
+- [x] Keep optional cloud rooms and SKR purchases unavailable until their separate backend is configured.
+- [x] Keep offline behavior and honest unavailable states intact.
+- [x] Check source and artifacts for private notes, credentials and signing material.
 
-## Required public artifacts
+## Required accessible artifacts
 
-- [ ] Public or explicitly judge-accessible source and commit history.
-- [ ] Exact installable ARM64 APK download with SHA-256 and preview/production signing disclosure.
-- [ ] Playable three-minute demo link with honest capture source and build version.
-- [ ] English PDF/PPTX pitch link.
-- [ ] Test every link without the owner's existing sign-in session.
+- [ ] Grant designated judges access to the private source repository and commit history. Public visibility is not stated as mandatory in the official FAQ.
+- [x] Exact installable ARM64 APK download with SHA-256 and preview/production signing disclosure.
+- [x] Playable three-minute demo link with honest capture source and build version.
+- [x] English PDF/PPTX pitch link.
+- [x] Verify anonymous access to APK page, demo, pitch and kit; hosted media bytes match local files. GitHub correctly remains inaccessible anonymously. Judge access is the separate unchecked gate above.
 
 ## Owner decisions and final submission
 

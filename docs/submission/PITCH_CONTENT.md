@@ -6,7 +6,7 @@ For the record, this is why I did it.
 
 A private Android journal for work and wallet decisions.
 
-CLOCK IN 2026 · Preview
+CLOCK IN 2026 · Preview 0.3.1
 
 ## 2. The reason is easy to lose
 
@@ -16,19 +16,19 @@ FOR THE RECORD keeps an intention, a result and a useful next action together. T
 
 Product hypothesis: a clear next action makes returning easier. Retention and product-market fit are not yet measured.
 
-## 3. A useful first session
+## 3. Leave tomorrow a starting point
 
-Create a project. Write one intention. Focus for a chosen duration. Save the result and next action.
+Set an intention. Do the work. Save one next action. Return to your own words, already filled in. The slide shows the actual saved next action, “Test the same flow with large text,” prefilled on returning.
 
-Core journaling works offline without an account or wallet. The next action gives the next visit a starting point.
+Core journaling works offline without an account or wallet. Continue from your bookmark brings the saved next action into the next session.
 
-## 4. Context for a wallet decision
+## 4. Keep the reason. Return with context.
 
-Supported wallet activity can anchor a private reflection: reason, plan, emotion and next action.
+Supported wallet activity can anchor a private reflection: reason, plan, emotion and next action. One optional question appears at a time. Reopen the record later to add what you learned.
 
 Native Mobile Wallet Adapter supplies the selected account. The app reads public Solana activity directly. Immutable chain facts stay separate from editable personal writing.
 
-No paid backend is required for the journal. Public RPC is best effort. Real-wallet validation remains a release gate.
+The enlarged screenshot shows saved reason, plan and emotion from a synthetic sample event, visibly labeled SAMPLE DATA / RECORDED APP. The release app contains no sample fixtures. Native MWA and public RPC supply the direct read-only path. Physical Seeker and supported live activity remain to be verified.
 
 ## 5. Clear data boundaries
 
@@ -42,23 +42,23 @@ Unsupported transactions remain unsupported. No trade execution, return forecast
 
 English by default. Eight language choices. User-written notes retain their language.
 
-Optional motion, haptics and reminders. Clear save and recovery states. Local usefulness when the network is unavailable.
+Optional motion, haptics and reminders. A short, skippable launch signature. Clear save and recovery states. Local usefulness when the network is unavailable.
 
 Languages: English, Korean, Japanese, Simplified Chinese, Hindi, Spanish, Portuguese and French. Fluent-speaker and physical-device accessibility review remain release tasks.
 
 ## 7. Delivery status
 
-Working offline workflow and updated Android source. Native wallet and direct read-only activity components. Automated and emulator evidence retained.
+Working offline workflow and updated Android source. Native wallet and direct read-only activity components. 88 Flutter tests pass; analysis is clean. Separate manual official-mock-wallet connection on an Android emulator is verified.
 
-Open gates: real-wallet device evidence, fluent-speaker review, production RPC strategy and production signing.
+Open gates: physical Seeker and supported live activity evidence, fluent-speaker review, production RPC strategy and production signing.
 
 Fixtures demonstrate parsing and UI only. They are not live trading evidence or user traction.
 
-## 8. The next release gate
+## 8. Leave tomorrow a starting point
 
-Prove wallet reads on a device. Record the verified live flow. Prepare the dApp Store release.
+Keep the intention. Remember the reason. Return to a clear next action.
 
-Then test whether users return to their next action and improve the workflow from observed use.
+Next: verify live activity on Seeker, then learn from returning users.
 
 FOR THE RECORD
 
