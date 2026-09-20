@@ -28,7 +28,7 @@ A separate manual Android emulator test using the official Solana mock wallet ve
 
 Work records and reflection text stay in local SQLite. JSON export creates a portable copy containing private writing, so use a demonstration project for review. The export is not a cloud synchronization or restore service.
 
-- [Requested source repository](https://github.com/openai-lover/seeker_FOR-THE-RECORD) — source is pushed; private repository visibility requires judge-access verification.
+- [Requested source repository](https://github.com/openai-lover/seeker_FOR-THE-RECORD) — public source and commit history are available without signing in.
 - [Free preview implementation and limits](FREE_PREVIEW_APPROACH.md)
 - [Current release checklist](RELEASE_CHECKLIST.md)
 

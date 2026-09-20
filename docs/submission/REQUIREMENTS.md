@@ -30,7 +30,7 @@ Source: [official portal, Information → The Brief / Hackathon / FAQ](https://s
 
 ## Repository visibility
 
-Rechecked on **21 September 2026**: the official FAQ explicitly asks whether the GitHub repository must be public. Its answer requires judges to be able to review the code and commit history; it does not require universal public access. Terms §6.4 likewise requires organizer/judge access to the materials by the deadline. Accordingly, this repository remains **private**, following the owner's instruction. Obtain the organizer's designated GitHub reviewer accounts and grant access before submission. Those accounts are not yet known. The local source ZIP is retained for the owner and is not published on the preview website.
+Rechecked on **21 September 2026**: the official FAQ explicitly asks whether the GitHub repository must be public. Its answer requires judges to be able to review the code and commit history; it does not require universal public access. Terms §6.4 likewise requires organizer/judge access to the materials by the deadline. The owner subsequently explicitly approved public access to the repository and its full history. The repository is now public, so judges can review it without a separate invitation. The local source ZIP is retained for the owner and is not published on the preview website.
 
 Sources: [official FAQ, Information → FAQ → Building & Submissions](https://solanamobile.radiant.nexus/), [Terms §6.4](https://solanamobile.radiant.nexus/legal/clock-in-terms.pdf).
 
@@ -52,4 +52,4 @@ Source: [official portal, Information → Judges](https://solanamobile.radiant.n
 
 Open [CLOCK IN](https://solanamobile.radiant.nexus/) → **HACKATHON HUB** → sign in to Align → complete the builder profile → Clock In Registration. The public FAQ says drafts can change before the deadline, but final submission agreement locks editing. Review all links and the fixed roster before that final action.
 
-No registration, agreement acceptance or final submission was performed while preparing this kit. Exact private form fields require the owner's authenticated session.
+Solo registration and the builder profile are complete. The authenticated project form has been filled and saved as a draft. Final project submission remains pending owner review and approval.

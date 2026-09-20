@@ -2,7 +2,7 @@
 
 **For the record, this is why I did it.**
 
-English materials for the CLOCK IN Solana Mobile Hackathon. Requirements checked against official pages on **20 September 2026**. This kit prepares a submission. It does not claim that registration, submission, production release, physical-Seeker validation, or contest submission has happened.
+English materials for the CLOCK IN Solana Mobile Hackathon. Requirements checked against official pages on **20 September 2026**. This kit prepares a submission. Solo registration is complete and the project draft is saved. Final contest submission awaits owner review. Production release and physical-Seeker validation remain incomplete.
 
 ## Start here
 
@@ -35,8 +35,8 @@ The preview uses native MWA and a direct read-only public-RPC path, so the journ
 
 - [Official registration and submission portal](https://solanamobile.radiant.nexus/) — open **HACKATHON HUB**, sign in to Align, complete the builder profile, then open Clock In Registration.
 - [Preview website and delivery materials](https://workroom-seeker-6984.web.app/)
-- [Requested project repository](https://github.com/openai-lover/seeker_FOR-THE-RECORD) — source is pushed; private repository visibility requires judge-access verification.
+- [Requested project repository](https://github.com/openai-lover/seeker_FOR-THE-RECORD) — public source and commit history are available without signing in.
 - [Official announcement](https://solanamobile.com/blog/clock-in-the-solana-mobile-hackathon)
 - [Binding terms](https://solanamobile.radiant.nexus/legal/clock-in-terms.pdf)
 
-The portal's private submission form was behind sign-in during this review. The exact private field labels, character limits and upload restrictions have therefore not been verified. The prepared copy is organized by content purpose for transfer into that form.
+The authenticated submission form was reviewed on 21 September 2026. The draft contains the project title, owner-confirmed eligibility answers, mobile development and SKR disclosures, and links to the pitch, public Drive demo, public GitHub source and direct APK download. Final submission has not been performed.

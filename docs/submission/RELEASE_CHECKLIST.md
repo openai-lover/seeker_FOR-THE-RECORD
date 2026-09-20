@@ -30,18 +30,18 @@ This list distinguishes a useful preview from a complete competition entry.
 
 ## Required accessible artifacts
 
-- [ ] Grant designated judges access to the private source repository and commit history. Public visibility is not stated as mandatory in the official FAQ.
+- [x] Publish the source repository and commit history with explicit owner approval; judges can access both without signing in.
 - [x] Exact installable ARM64 APK download with SHA-256 and preview/production signing disclosure.
 - [x] Playable three-minute demo link with honest capture source and build version.
 - [x] English PDF/PPTX pitch link.
-- [x] Verify anonymous access to APK page, demo, pitch and kit; hosted media bytes match local files. GitHub correctly remains inaccessible anonymously. Judge access is the separate unchecked gate above.
+- [x] Verify anonymous access to APK page, demo, pitch and kit; hosted media bytes match local files. GitHub source and the release APK are now public.
 
 ## Owner decisions and final submission
 
-- [ ] Sign in to the [official portal](https://solanamobile.radiant.nexus/) and complete the builder profile and registration.
-- [ ] Verify actual project start date, ownership, funding status and eligibility.
-- [ ] Confirm the final team roster and representative. AI development assistance does not invent human team members.
-- [ ] Transfer prepared text into the actual private form, respecting its displayed limits.
+- [x] Sign in to the [official portal](https://solanamobile.radiant.nexus/) and complete the builder profile and registration.
+- [x] Record owner declarations: development began within the last three months, no VC/angel funding and no previous hackathon wins. No exact start date is inferred.
+- [x] Confirm Solo participation with the owner.
+- [x] Fill the actual authenticated form and save the project draft; final submission remains pending owner approval.
 - [ ] Ensure any new live claims match fresh device/video evidence.
 - [ ] Review all materials before the final agreement, because the FAQ says final submission locks editing.
 - [ ] Owner completes the required agreement and final submission before **9 October 2026, 15:59 KST**; recheck the live portal.

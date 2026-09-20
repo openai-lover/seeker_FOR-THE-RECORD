@@ -62,8 +62,8 @@ First complete the live wallet and device evidence. Then validate the translatio
 
 ## Links to enter
 
-- Source repository target: https://github.com/openai-lover/seeker_FOR-THE-RECORD — source is pushed; the repository is currently private and judge access must be established.
-- ARM64 preview APK: https://drive.google.com/file/d/1RRoXhRGLURsLRY5CxN0sMFqo9fUa8kAD/view?usp=drivesdk
+- Source repository target: https://github.com/openai-lover/seeker_FOR-THE-RECORD — source and full commit history are public and accessible to judges.
+- ARM64 preview APK: https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.3.1/FOR-THE-RECORD-0.3.1-arm64.apk
 - Playable demo page: https://workroom-seeker-6984.web.app/#preview
 - Video file: https://workroom-seeker-6984.web.app/downloads/FOR-THE-RECORD-demo.mp4
 - English pitch PDF: https://workroom-seeker-6984.web.app/downloads/FOR-THE-RECORD-pitch.pdf
@@ -73,3 +73,5 @@ Verify the final public links after deployment. [Download details and APK SHA-25
 ## Owner-supplied fields
 
 The account owner must supply or verify the builder's name, contact email, team roster, representative, residence, age/eligibility declarations, funding status and actual project start date. No identity or declaration has been invented in this kit.
+
+Public Google Drive demo used in the actual submission draft: https://drive.google.com/file/d/14Dk5ewt73P9MhbMu5d-tpu5zE1UTfOsI/view?usp=drivesdk
