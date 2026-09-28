@@ -35,16 +35,27 @@ void main() {
           wallClock: () => DateTime(2026, 9, 15),
         );
     await c.load();
+    await c.setting('roomWelcome', 1);
+    await c.setting('reduceMotion', true);
     await c.setting('language', 'ko');
     final remote = RemoteService(NativePlatform(), c);
     await tester.pumpWidget(WorkroomApp(controller: c, remote: remote));
+    await tester.runAsync(() async {
+      final context = tester.element(find.byType(MaterialApp));
+      for (final asset in ['study', 'lamp', 'journal']) {
+        await precacheImage(
+          ResizeImage(AssetImage('assets/room/$asset.png'), width: 1200),
+          context,
+        );
+      }
+    });
     await tester.pumpAndSettle();
     await expectLater(
       find.byType(MaterialApp),
       matchesGoldenFile('goldens/01-empty-workroom.png'),
     );
-    await tester.ensureVisible(find.text('내 프로젝트 만들기'));
-    await tester.tap(find.text('내 프로젝트 만들기'));
+    await tester.ensureVisible(find.text('집중 시작'));
+    await tester.tap(find.text('집중 시작'));
     await tester.pumpAndSettle();
     await tester.enterText(find.byType(TextField).at(0), '나의 작은 앱');
     await tester.enterText(find.byType(TextField).at(1), '친구에게 첫 버전 보여주기');
@@ -82,7 +93,7 @@ void main() {
       find.byType(MaterialApp),
       matchesGoldenFile('goldens/04-returning-workroom.png'),
     );
-    await tester.tap(find.text('기록'));
+    await tester.tap(find.byType(NavigationDestination).at(1));
     await tester.pumpAndSettle();
     expect(find.text('만료된 토큰이 원인이라는 것을 찾았다.'), findsOneWidget);
     await expectLater(
@@ -120,17 +131,19 @@ void main() {
     addTearDown(tester.platformDispatcher.clearTextScaleFactorTestValue);
     final c = WorkroomController(MemoryRepository(), FakeClock());
     await c.load();
+    await c.setting('roomWelcome', 1);
+    await c.setting('reduceMotion', true);
     await c.setting('language', 'ko');
     final remote = RemoteService(NativePlatform(), c);
     await tester.pumpWidget(WorkroomApp(controller: c, remote: remote));
     await tester.pumpAndSettle();
     await tester.scrollUntilVisible(
-      find.text('내 프로젝트 만들기'),
+      find.text('집중 시작'),
       300,
       scrollable: find.byType(Scrollable).first,
     );
     expect(tester.takeException(), isNull);
-    await tester.tap(find.text('내 프로젝트 만들기'));
+    await tester.tap(find.text('집중 시작'));
     await tester.pumpAndSettle();
     expect(tester.takeException(), isNull);
     await tester.pumpWidget(const SizedBox());

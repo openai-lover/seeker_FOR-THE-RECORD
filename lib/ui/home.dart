@@ -5,351 +5,360 @@ class _Home extends StatelessWidget {
   final WorkroomController c;
   final RemoteService r;
   final VoidCallback onBooks;
+
   @override
   Widget build(BuildContext context) {
-    final state = c.state;
-    final projects = state.projects
-        .where((p) => p.status != ProjectStatus.archived)
-        .toList();
-    final activeProjects = projects
+    final projects = c.state.projects
         .where((p) => p.status == ProjectStatus.active)
         .toList();
-    final recentProject = state.saved
-        .where((s) => activeProjects.any((p) => p.id == s.projectId))
+    final active = c.state.active;
+    final recentId = c.state.saved
+        .where((s) => projects.any((p) => p.id == s.projectId))
         .firstOrNull
         ?.projectId;
     final current =
-        activeProjects.where((p) => p.id == recentProject).firstOrNull ??
-        activeProjects.firstOrNull;
-    final last = current == null ? null : state.pages(current.id).firstOrNull;
-    final active = state.active;
+        projects.where((p) => p.id == recentId).firstOrNull ??
+        projects.firstOrNull;
+    final last = current == null ? null : c.state.pages(current.id).firstOrNull;
+    final due = c.journals.entries
+        .where((e) => e.isDue(c.wallClock().millisecondsSinceEpoch))
+        .length;
+    void journal() => openPage(
+      context,
+      Scaffold(
+        appBar: AppBar(title: Text(tr(context, '선택의 기록', 'My decisions'))),
+        body: _TradeJournal(c: c, r: r),
+      ),
+    );
+    Future<void> focus() async {
+      if (active != null) {
+        openPage(context, _Focus(c: c, r: r));
+        return;
+      }
+      final id = current?.id ?? await _newProject(context, c);
+      if (id != null && context.mounted) {
+        openPage(context, _Prepare(c: c, r: r, projectId: id));
+      }
+    }
+
     return PageBody(
+      padding: const EdgeInsets.fromLTRB(24, 12, 24, 32),
       children: [
-        const RecordHero(compact: true),
-        const SizedBox(height: 24),
-        Text(
-          tr(context, '다음 한 걸음', 'Your next step'),
-          style: Theme.of(context).textTheme.headlineMedium,
-        ),
-        const SizedBox(height: 12),
-        if (active != null) ...[
-          PaperCard(
-            color: const Color(0xFFE1F4EF),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Eyebrow(
-                  active.needsRecovery
-                      ? 'RECOVER YOUR SESSION'
-                      : active.status == SessionStatus.awaitingOutcome
-                      ? 'ONE LAST LINE'
-                      : 'YOUR QUIET TIME',
-                ),
-                const SizedBox(height: 12),
-                Text(
-                  active.intent,
-                  style: Theme.of(context).textTheme.titleLarge,
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  active.needsRecovery
-                      ? uiText(context, '시간을 확인하고 이어가 주세요.')
-                      : active.status == SessionStatus.awaitingOutcome
-                      ? uiText(context, '예정 시간이 끝났어요. 어떤 진전이 있었나요?')
-                      : tr(
-                          context,
-                          '${minutesLabel(context, (active.plannedSec * 1000 - active.elapsedAt(c.now!)) ~/ 1000)} 남음',
-                          '${minutesLabel(context, (active.plannedSec * 1000 - active.elapsedAt(c.now!)) ~/ 1000)} remaining',
-                        ),
-                  style: const TextStyle(color: muted),
-                ),
-                const SizedBox(height: 16),
-                SizedBox(
-                  width: double.infinity,
-                  child: FilledButton(
-                    onPressed: () => openPage(context, _Focus(c: c, r: r)),
-                    child: Text(
-                      active.status == SessionStatus.awaitingOutcome
-                          ? uiText(context, '결과 한 줄 남기기')
-                          : uiText(context, '집중으로 돌아가기'),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ] else if (current != null) ...[
-          PaperCard(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
-                    Container(
-                      width: 5,
-                      height: 28,
-                      decoration: BoxDecoration(
-                        color: bookColors[current.color],
-                        borderRadius: BorderRadius.circular(4),
-                      ),
-                    ),
-                    const SizedBox(width: 10),
-                    Expanded(
-                      child: Text(
-                        current.title,
-                        style: Theme.of(context).textTheme.titleMedium,
-                      ),
-                    ),
-                    const Icon(
-                      Icons.bookmark_outline_rounded,
-                      color: brass,
-                      size: 22,
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 16),
-                Text(
-                  last?.nextAction.isNotEmpty == true
-                      ? uiText(context, '지난번에 남긴 다음 행동')
-                      : uiText(context, '오늘 이어갈 작은 일'),
-                  style: const TextStyle(fontSize: 12, color: muted),
-                ),
-                const SizedBox(height: 6),
-                Text(
-                  last?.nextAction.isNotEmpty == true
-                      ? last!.nextAction
-                      : last?.outcome ??
-                            uiText(context, '한 번의 집중으로 어디까지 가볼까요?'),
-                  style: const TextStyle(fontSize: 17, height: 1.6),
-                ),
-                const SizedBox(height: 20),
-                SizedBox(
-                  width: double.infinity,
-                  child: FilledButton.icon(
-                    onPressed: () => openPage(
-                      context,
-                      _Prepare(c: c, r: r, projectId: current.id),
-                    ),
-                    icon: const Icon(Icons.play_arrow_rounded, size: 20),
-                    label: const LocalizedText('책갈피에서 이어가기'),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ] else ...[
-          PaperCard(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Text(
-                  tr(context, '한 가지부터 시작해요.', 'Start with one thing.'),
-                  style: Theme.of(context).textTheme.titleLarge,
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  tr(
-                    context,
-                    '프로젝트를 고르고, 해볼 일을 정하고, 배운 것을 남겨요.',
-                    'Pick a project. Set an intention. Save what you learned.',
-                  ),
-                  style: TextStyle(color: muted),
-                ),
-                const SizedBox(height: 20),
-                ActionButton(
-                  label: uiText(context, '내 프로젝트 만들기'),
-                  icon: Icons.add_rounded,
-                  action: () async {
-                    final id = await _newProject(context, c);
-                    if (id != null && context.mounted) {
-                      openPage(context, _Prepare(c: c, r: r, projectId: id));
-                    }
+        Row(
+          children: [
+            const Expanded(child: _RoomWordmark()),
+            IconButton(
+              tooltip: tr(context, '작업실 안내', 'Room guide'),
+              onPressed: () => openPage(
+                context,
+                _RoomWelcome(
+                  onDone: () async {
+                    Navigator.pop(context);
                   },
                 ),
-              ],
+              ),
+              icon: const Icon(
+                Icons.help_outline_rounded,
+                size: 20,
+                color: muted,
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
         const SizedBox(height: 18),
-        if (r.signedIn &&
-            r.activities.any(
-              (a) =>
-                  a.canJournal &&
-                  c.journals.find(r.wallet!, a.signature) == null,
-            )) ...[
-          PaperCard(
-            onTap: () => openPage(
-              context,
-              Scaffold(
-                appBar: AppBar(title: Text(tr(context, '기록', 'Journal'))),
-                body: _Records(c: c, r: r, initialTrade: true),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            Expanded(
+              child: Text(
+                tr(context, '오늘도,\n나의 작은 방.', 'Your quiet\ncorner.'),
+                style: _roomTitle(context, 37),
               ),
             ),
-            child: Row(
-              children: [
-                const Icon(Icons.edit_note_rounded, color: brass),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: Text(
-                    tr(
-                      context,
-                      '돌아볼 거래가 남아 있어요. 짧게 기록해 보세요.',
-                      'A recent trade is waiting for reflection.',
-                    ),
+            ConstrainedBox(
+              constraints: const BoxConstraints(maxWidth: 120),
+              child: Padding(
+                padding: const EdgeInsets.only(bottom: 5),
+                child: Text(
+                  tr(context, '기록을 위한 공간', 'SPACE TO REFLECT'),
+                  style: const TextStyle(
+                    fontSize: 9,
+                    letterSpacing: 1.1,
+                    color: muted,
                   ),
                 ),
-                const Icon(Icons.chevron_right),
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(height: 8),
+        AspectRatio(
+          aspectRatio: 1.06,
+          child: _RoomObject(
+            asset: 'study',
+            child: Stack(
+              children: [
+                Positioned(
+                  left: 0,
+                  top: 102,
+                  child: _RoomSpot(
+                    label: tr(context, '집중', 'Focus'),
+                    icon: Icons.light_outlined,
+                    onTap: focus,
+                  ),
+                ),
+                Positioned(
+                  right: 0,
+                  top: 70,
+                  child: _RoomSpot(
+                    label: tr(context, '책장', 'Shelf'),
+                    icon: Icons.auto_stories_outlined,
+                    onTap: onBooks,
+                  ),
+                ),
+                Positioned(
+                  left: 74,
+                  bottom: 22,
+                  child: _RoomSpot(
+                    label: tr(context, '기록', 'Journal'),
+                    icon: Icons.edit_outlined,
+                    onTap: journal,
+                  ),
+                ),
               ],
             ),
           ),
-          const SizedBox(height: 18),
-        ],
-        PaperCard(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+        ),
+        const SizedBox(height: 4),
+        Text(
+          tr(
+            context,
+            '잠깐의 기록이, 다음 선택의 기준이 되도록.',
+            'A small note today. A little clarity tomorrow.',
+          ),
+          textAlign: TextAlign.center,
+          style: const TextStyle(color: muted, fontSize: 12, height: 1.7),
+        ),
+        const SizedBox(height: 22),
+        FilledButton(
+          key: const ValueKey('decision-replay-open'),
+          onPressed: journal,
+          style: FilledButton.styleFrom(
+            minimumSize: const Size.fromHeight(58),
+            shape: const StadiumBorder(),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    padding: const EdgeInsets.all(12),
-                    decoration: BoxDecoration(
-                      color: const Color(0xFFE1F4EF),
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                    child: const Icon(
-                      Icons.edit_note_rounded,
-                      color: green,
-                      size: 28,
-                    ),
-                  ),
-                  const SizedBox(width: 14),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          tr(context, '매매 일지', 'Trade journal'),
-                          style: Theme.of(context).textTheme.titleLarge,
-                        ),
-                        const SizedBox(height: 5),
-                        Text(
-                          tr(
-                            context,
-                            '거래에 담긴 나의 이유를 남겨요.',
-                            'Your trades show what. Add the why.',
-                          ),
-                          style: const TextStyle(color: muted),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 18),
-              OutlinedButton.icon(
-                icon: const Icon(Icons.arrow_forward_rounded, size: 18),
-                label: Text(tr(context, '매매 일지 열기', 'Open trade journal')),
-                onPressed: () => openPage(
-                  context,
-                  Scaffold(
-                    appBar: AppBar(
-                      title: Text(tr(context, '매매 일지', 'Trade journal')),
-                    ),
-                    body: _TradeJournal(c: c, r: r),
-                  ),
+              const Icon(Icons.edit_note_rounded, size: 22),
+              const SizedBox(width: 10),
+              Expanded(
+                child: Text(
+                  tr(context, '선택의 이유 남기기', 'Leave a reason'),
+                  textAlign: TextAlign.center,
                 ),
               ),
+              const SizedBox(width: 18),
+              const Icon(Icons.arrow_forward_rounded, size: 18),
             ],
           ),
         ),
-        const SizedBox(height: 24),
-        if (r.room != null &&
-            ['waiting', 'ready', 'running'].contains(r.room!['status'])) ...[
+        const SizedBox(height: 16),
+        Row(
+          children: [
+            Expanded(
+              child: _RoomAction(
+                motion: 'activity',
+                title: active != null
+                    ? tr(context, '집중 이어가기', 'Resume focus')
+                    : tr(context, '집중 시작', 'Make some space'),
+                subtitle: tr(context, '램프를 켜고 한 가지에', 'One thing at a time'),
+                onTap: focus,
+              ),
+            ),
+            const SizedBox(width: 12),
+            Expanded(
+              child: _RoomAction(
+                motion: 'bookmark',
+                title: tr(context, '나의 책장', 'My bookshelf'),
+                subtitle: tr(context, '차곡차곡 쌓인 기록', 'Notes to come back to'),
+                onTap: onBooks,
+              ),
+            ),
+          ],
+        ),
+        if (active != null || last != null) ...[
+          const SizedBox(height: 24),
           PaperCard(
-            onTap: () => openPage(context, _Shared(c: c, r: r)),
+            onTap: focus,
             child: Row(
               children: [
-                const Icon(Icons.people_outline_rounded, color: green),
+                const _RoomMotion('checkmark'),
                 const SizedBox(width: 14),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const LocalizedText(
-                        '동료와의 작업실',
-                        style: TextStyle(fontWeight: FontWeight.w600),
-                      ),
                       Text(
-                        r.offline
-                            ? uiText(context, '연결 확인 중 · 내 기록은 계속')
-                            : uiText(context, '진행 중인 초대와 두 자리 보기'),
-                        style: const TextStyle(color: muted, fontSize: 12),
+                        active != null
+                            ? tr(
+                                context,
+                                '켜둔 램프가 기다려요',
+                                'Your lamp is still on',
+                              )
+                            : tr(context, '지난번의 책갈피', 'Where you left off'),
+                        style: const TextStyle(color: muted, fontSize: 11),
+                      ),
+                      const SizedBox(height: 5),
+                      Text(
+                        active?.intent ??
+                            (last!.nextAction.isNotEmpty
+                                ? last.nextAction
+                                : last.outcome),
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(fontSize: 14),
                       ),
                     ],
                   ),
                 ),
-                const Icon(Icons.arrow_forward_rounded, size: 19),
+                const Icon(Icons.arrow_forward_rounded, size: 18),
               ],
             ),
           ),
-          const SizedBox(height: 12),
         ],
-        if (projects.isNotEmpty)
-          Wrap(
-            alignment: WrapAlignment.spaceBetween,
-            crossAxisAlignment: WrapCrossAlignment.center,
-            spacing: 16,
-            runSpacing: 8,
-            children: [
-              const LocalizedText(
-                '나의 프로젝트',
-                style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
+        if (c.journals.entries.isNotEmpty) ...[
+          const SizedBox(height: 24),
+          _RoomAction(
+            motion: 'bookmark',
+            title: due > 0
+                ? tr(context, '다시 펼쳐볼 기록 $due개', '$due notes to revisit')
+                : tr(context, '선택을 돌아보는 시간', 'Time to reflect'),
+            subtitle: tr(
+              context,
+              '당시의 이유와 내가 남긴 기준',
+              'Your reasons and saved lessons',
+            ),
+            onTap: () => openPage(
+              context,
+              Scaffold(
+                appBar: AppBar(title: Text(tr(context, '돌아보기', 'Reflect'))),
+                body: AnimatedBuilder(
+                  animation: c.journals,
+                  builder: (context, _) => PageBody(
+                    children: [_DecisionReplayCard(c: c, r: r)],
+                  ),
+                ),
               ),
-              TextButton.icon(
-                onPressed: () async {
-                  final id = await _newProject(context, c);
-                  if (id != null && context.mounted) {
-                    openPage(context, _Book(c: c, r: r, projectId: id));
-                  }
-                },
-                icon: const Icon(Icons.add, size: 18),
-                label: const LocalizedText('새 책'),
+            ),
+          ),
+        ],
+        if (r.room != null &&
+            ['waiting', 'ready', 'running'].contains(r.room!['status'])) ...[
+          const SizedBox(height: 16),
+          ListTile(
+            leading: const Icon(Icons.people_outline),
+            title: const LocalizedText('동료와의 작업실'),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () => openPage(context, _Shared(c: c, r: r)),
+          ),
+        ],
+        if (c.state.projects.any(
+          (p) => p.status != ProjectStatus.archived,
+        )) ...[
+          const SizedBox(height: 24),
+          Row(
+            children: [
+              Expanded(
+                child: Text(
+                  tr(context, '나의 프로젝트', 'My projects'),
+                  style: const TextStyle(fontWeight: FontWeight.w600),
+                ),
+              ),
+              Flexible(
+                child: TextButton.icon(
+                  onPressed: () async {
+                    final id = await _newProject(context, c);
+                    if (id != null && context.mounted) {
+                      openPage(context, _Book(c: c, r: r, projectId: id));
+                    }
+                  },
+                  icon: const Icon(Icons.add, size: 18),
+                  label: const LocalizedText('새 책'),
+                ),
               ),
             ],
           ),
-        if (projects.isNotEmpty)
+          const SizedBox(height: 8),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: projects
-                  .map(
-                    (p) => Padding(
-                      padding: const EdgeInsets.only(right: 12),
-                      child: _BookCover(
-                        project: p,
-                        pages: state.pages(p.id).length,
-                        onTap: () => openPage(
-                          context,
-                          _Book(c: c, r: r, projectId: p.id),
-                        ),
-                      ),
+              children: [
+                for (final p in c.state.projects.where(
+                  (p) => p.status != ProjectStatus.archived,
+                ))
+                  Padding(
+                    padding: const EdgeInsets.only(right: 12, bottom: 10),
+                    child: _BookCover(
+                      project: p,
+                      pages: c.state.pages(p.id).length,
+                      onTap: () =>
+                          openPage(context, _Book(c: c, r: r, projectId: p.id)),
                     ),
-                  )
-                  .toList(),
+                  ),
+              ],
             ),
           ),
-        const SizedBox(height: 24),
-        Center(
-          child: Text(
-            tr(context, '기록은 이 기기에 저장됩니다.', 'Your notes stay on this device.'),
-            style: TextStyle(fontSize: 12, color: muted.withValues(alpha: .8)),
-          ),
-        ),
+        ],
       ],
     );
   }
+}
+
+class _RoomAction extends StatelessWidget {
+  const _RoomAction({
+    required this.motion,
+    required this.title,
+    required this.subtitle,
+    required this.onTap,
+  });
+  final String motion, title, subtitle;
+  final VoidCallback onTap;
+  @override
+  Widget build(BuildContext context) => Material(
+    color: paper,
+    borderRadius: BorderRadius.circular(20),
+    clipBehavior: Clip.antiAlias,
+    child: InkWell(
+      onTap: onTap,
+      child: Padding(
+        padding: const EdgeInsets.all(17),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                _RoomMotion(motion, size: 28),
+                const Spacer(),
+                const Icon(Icons.north_east_rounded, size: 15, color: muted),
+              ],
+            ),
+            const SizedBox(height: 12),
+            Text(
+              title,
+              style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w600),
+            ),
+            const SizedBox(height: 4),
+            Text(
+              subtitle,
+              style: const TextStyle(fontSize: 10, color: muted, height: 1.5),
+            ),
+          ],
+        ),
+      ),
+    ),
+  );
 }
 
 class _BookCover extends StatelessWidget {

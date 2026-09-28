@@ -11,16 +11,32 @@ if($aliasInfo.LinkType -ne 'Junction' -or $aliasInfo.Target.TrimEnd('\') -ne $so
 Push-Location $buildAlias
 try{
   . ./tools/env.ps1
-  $mode=if($Release){'--release'}else{'--debug'}
-  $buildArgs=@('build','apk',$mode,'--target','lib/main.dart')
-  if($Release){$buildArgs+='--split-per-abi'}
-  if($Config){$buildArgs+="--dart-define-from-file=$Config"}
-  & flutter @buildArgs
-  if($LASTEXITCODE -ne 0){throw 'Flutter build failed'}
+  # Invoke Gradle with the project JDK. A global Flutter jdk-dir can otherwise
+  # override JAVA_HOME and select an incompatible Java installation.
+  $mode=if($Release){'release'}else{'debug'}
+  # Flutter prepares the release-specific plugin registrant and SDK/version
+  # properties, without invoking its globally selected Java installation.
+  $prepareArgs=@('build','apk','--config-only',"--$mode",'--target','lib/main.dart','--split-per-abi','--target-platform','android-arm64,android-x64')
+  if($Config){$prepareArgs+="--dart-define-from-file=$Config"}
+  & flutter @prepareArgs
+  if($LASTEXITCODE -ne 0){throw 'Flutter build configuration failed'}
+  $task=if($Release){'assembleRelease'}else{'assembleDebug'}
+  $buildArgs=@('-p','android',$task,'-Ptarget=lib/main.dart','-Ptarget-platform=android-arm64,android-x64','-Psplit-per-abi=true')
+  if($Release){$buildArgs+='-Ptree-shake-icons=true'}
+  if($Config){
+    $defines=Get-Content -LiteralPath $Config -Raw | ConvertFrom-Json
+    $encoded=@($defines.PSObject.Properties | ForEach-Object {
+      $value=if($_.Value -is [bool]){$_.Value.ToString().ToLowerInvariant()}else{[string]$_.Value}
+      [Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes("$($_.Name)=$value"))
+    })
+    $buildArgs+="-Pdart-defines=$($encoded -join ',')"
+  }
+  & ./android/gradlew.bat @buildArgs
+  if($LASTEXITCODE -ne 0){throw 'Android build failed'}
   if($Release){
     New-Item -ItemType Directory -Force artifacts | Out-Null
-    Copy-Item build/app/outputs/flutter-apk/app-arm64-v8a-release.apk artifacts/for-the-record-arm64-preview.apk
-    Copy-Item build/app/outputs/flutter-apk/app-x86_64-release.apk artifacts/for-the-record-x64-preview.apk
+    Copy-Item build/app/outputs/apk/release/app-arm64-v8a-release.apk artifacts/for-the-record-arm64-preview.apk
+    Copy-Item build/app/outputs/apk/release/app-x86_64-release.apk artifacts/for-the-record-x64-preview.apk
     Get-ChildItem artifacts/*.apk | ForEach-Object { '{0}  {1}' -f (Get-FileHash $_.FullName -Algorithm SHA256).Hash.ToLower(),$_.Name } | Set-Content artifacts/SHA256SUMS.txt
   }
 }finally{Pop-Location}

@@ -21,6 +21,7 @@ import io.flutter.plugin.common.MethodChannel
 import kotlinx.coroutines.launch
 
 class WorkroomActivity : FlutterFragmentActivity() {
+    private var reflectionAssistant: ReflectionAssistant? = null
     private var adapter: MobileWalletAdapter? = null
     private lateinit var sender: ActivityResultSender
     private var walletBusy = false
@@ -41,6 +42,9 @@ class WorkroomActivity : FlutterFragmentActivity() {
 
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
+        reflectionAssistant = ReflectionAssistant(applicationContext)
+        MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "app.workroom/reflection")
+            .setMethodCallHandler(reflectionAssistant)
         sender = ActivityResultSender(this)
         getSystemService(NotificationManager::class.java).createNotificationChannel(NotificationChannel("focus", "Focus reminders", NotificationManager.IMPORTANCE_DEFAULT))
         MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "app.workroom/native").setMethodCallHandler { call, result ->
@@ -122,5 +126,14 @@ class WorkroomActivity : FlutterFragmentActivity() {
         }
     }
     private fun b64(value:ByteArray)=Base64.encodeToString(value,Base64.NO_WRAP)
+    override fun onStop() {
+        reflectionAssistant?.background()
+        super.onStop()
+    }
+
+    override fun onDestroy() {
+        reflectionAssistant?.close()
+        super.onDestroy()
+    }
     private fun alarmIntent()=PendingIntent.getBroadcast(this,17,Intent(this,FocusAlarmReceiver::class.java),PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
 }

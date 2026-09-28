@@ -4,6 +4,18 @@
 
 English materials for the CLOCK IN Solana Mobile Hackathon. Requirements checked against official pages on **20 September 2026**. This kit prepares a submission. Solo registration is complete and the project draft is saved. Final contest submission awaits owner review. Production release and physical-Seeker validation remain incomplete.
 
+## Current 0.5.1 AI evidence
+
+The [28 September checkpoint](CHECKPOINT_051.md) preserves the latest source, new 0.5.1 pitch and remaining work. The competition entry remains a draft; AI Coach has not yet been rerun. The 0.3.1 public demo and download links below are historical.
+
+The [current AI implementation and evidence](../ON_DEVICE_REFLECTION.md) describes the 133 MB E5 semantic assistant, optimized on-device timings and 64 synthetic examples. Thirty further authored examples were fixed before final evaluation: 26 matching first suggestions, with the remaining four handled as ambiguous user choices. This is a small synthetic evaluation, not independent user research or a contest judging score. The 0.5.1 release was installed on the physical Seeker, and download plus question selection were also checked in the normal app. The [historical Seeker report](../SEEKER_DEVICE_041.md) records the earlier wallet connection and public activity retrieval. Supported live swap-to-journal completion remains unverified. The older pitch/demo material below must be updated to the current APK before submission.
+
+## 28 September revision
+
+The local 0.4.0 changes and new pitch/narration copy are in [REVISION_040.md](REVISION_040.md). The linked PDF, PowerPoint and video below are the historical 0.3.1 package and need replacement after the physical-device run. The supplied AI Coach report could not read the image-only PDF or connected source and did not obtain useful video narration. Do not treat the old package as current evidence.
+
+A new [0.4.0 PDF draft](FOR-THE-RECORD-pitch-0.4.0-draft.pdf) contains selectable text on all eight pages. It accurately marks device evidence as pending. The matching pitch copy and narrated recording plan are in the revision document. The draft is not published to the competition portal.
+
 ## Start here
 
 [Download links, APK details and the submission route](DOWNLOAD_LINKS.md).
@@ -19,7 +31,7 @@ The English pitch is available as an [editable PowerPoint](FOR-THE-RECORD-pitch.
 
 The [three-minute demo video](FOR-THE-RECORD-demo-3min.mp4) contains **123 seconds of actual recorded app footage**, original motion typography and close views of saved records. It uses English on-screen explanations, a quiet original two-note brand sound and [matching English captions](FOR-THE-RECORD-demo-3min.srt). There is no spoken narration or stock media. See [capture details and chapters](DEMO_VIDEO.md).
 
-## Current readiness
+## Historical 0.3.1 readiness
 
 Version **0.3.1** passes **88 Flutter tests** with clean analysis. Language/layout checks include eight languages, a 360-pixel viewport and 200% text size. The optional backend's unchanged suite previously passed 40 tests.
 

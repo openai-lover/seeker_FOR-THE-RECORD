@@ -36,6 +36,7 @@ class _PrepareState extends State<_Prepare> {
       body: PageBody(
         children: [
           const Eyebrow('SET A SMALL INTENTION'),
+          const SizedBox(height: 140, child: _RoomObject(asset: 'lamp')),
           const SizedBox(height: 12),
           LocalizedText(
             '이번 페이지에는\n무엇을 남길까요?',
@@ -258,7 +259,14 @@ class _Focus extends StatelessWidget {
                     : 'MAKE ROOM FOR ONE THING',
               ),
             ),
-            const SizedBox(height: 24),
+            SizedBox(
+              height: 180,
+              child: _RoomObject(
+                asset: 'lamp',
+                moving: !done && a.status != SessionStatus.paused,
+              ),
+            ),
+            const SizedBox(height: 16),
             Center(
               child: FittedBox(
                 fit: BoxFit.scaleDown,
@@ -462,6 +470,7 @@ class _OutcomeState extends State<_Outcome> with WidgetsBindingObserver {
   late ResultState result;
   late WorkSession initial;
   bool saved = false, allowLeave = false, leaving = false;
+  Map<String, dynamic>? reflectionQuestion;
   Timer? draftTimer;
   @override
   void initState() {
@@ -621,6 +630,24 @@ class _OutcomeState extends State<_Outcome> with WidgetsBindingObserver {
                 ),
               ),
             ),
+          ExpansionTile(
+            tilePadding: EdgeInsets.zero,
+            title: Text(
+              tr(context, '잠깐 돌아볼 질문이 필요할 때', 'Find a question to reflect on'),
+            ),
+            children: [
+              _ReflectionAssistantPanel(
+                contextText: () => ReflectionAssistant.contextFor(
+                  initial.intent,
+                  '',
+                  outcome.text,
+                ),
+                selection: reflectionQuestion,
+                onSelected: (value) =>
+                    setState(() => reflectionQuestion = value),
+              ),
+            ],
+          ),
           const SizedBox(height: 24),
           ActionButton(
             label: widget.edit

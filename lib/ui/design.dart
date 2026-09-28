@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import '../l10n/strings.dart';
 import '../l10n/legacy_catalog.dart';
 
-const ink = Color(0xFF191F28),
-    muted = Color(0xFF667085),
-    green = Color(0xFF007F78),
-    paper = Color(0xFFFFFFFF),
-    cream = Color(0xFFF4F5F7),
-    brass = Color(0xFFC74528),
-    line = Color(0xFFE5E8EB),
-    coral = Color(0xFFFF6B4A),
+const ink = Color(0xFF292D26),
+    muted = Color(0xFF73766A),
+    green = Color(0xFF465C45),
+    paper = Color(0xFFFFFDF8),
+    cream = Color(0xFFF6F2E9),
+    brass = Color(0xFF965A40),
+    line = Color(0xFFE5E0D4),
+    coral = Color(0xFFB5674B),
     lime = Color(0xFFD5F56B);
 const bookColors = [
   Color(0xFF466451),
@@ -107,7 +107,7 @@ ThemeData workroomTheme() => ThemeData(
   ),
   navigationBarTheme: const NavigationBarThemeData(
     backgroundColor: paper,
-    indicatorColor: Color(0xFFDFF3EF),
+    indicatorColor: Color(0xFFE7EADC),
     labelTextStyle: WidgetStatePropertyAll(
       TextStyle(
         fontFamily: 'NotoSansKR',

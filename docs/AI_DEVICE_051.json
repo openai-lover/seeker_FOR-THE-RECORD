@@ -1,0 +1,727 @@
+{
+  "model": "multilingual-e5-small Q8 · semantic-v2 · llama.cpp 0.5.0",
+  "synthetic": true,
+  "modelBytes": 132439008,
+  "results": [
+    {
+      "case": "dev-social-en",
+      "group": "previous-development",
+      "questionId": 3,
+      "expectedQuestionId": 3,
+      "candidates": [
+        3,
+        2
+      ],
+      "cold": true,
+      "nativeMs": 1657,
+      "wallMs": 1661
+    },
+    {
+      "case": "dev-expectation-en",
+      "group": "previous-development",
+      "questionId": 2,
+      "expectedQuestionId": 2,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 60,
+      "wallMs": 62
+    },
+    {
+      "case": "dev-social-ko",
+      "group": "previous-development",
+      "questionId": 3,
+      "expectedQuestionId": 3,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 38,
+      "wallMs": 42
+    },
+    {
+      "case": "dev-unclear-en",
+      "group": "previous-development",
+      "questionId": 1,
+      "expectedQuestionId": 1,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 28,
+      "wallMs": 30
+    },
+    {
+      "case": "dev-next-en",
+      "group": "previous-development",
+      "questionId": 4,
+      "expectedQuestionId": 4,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 34,
+      "wallMs": 35
+    },
+    {
+      "case": "dev-repeat-en",
+      "group": "previous-development",
+      "questionId": 5,
+      "expectedQuestionId": 5,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 41,
+      "wallMs": 42
+    },
+    {
+      "case": "dev-expectation-ko",
+      "group": "previous-development",
+      "questionId": 2,
+      "expectedQuestionId": 2,
+      "candidates": [
+        2,
+        1
+      ],
+      "cold": false,
+      "nativeMs": 66,
+      "wallMs": 67
+    },
+    {
+      "case": "dev-repeat-ko",
+      "group": "previous-development",
+      "questionId": 5,
+      "expectedQuestionId": 5,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 41,
+      "wallMs": 42
+    },
+    {
+      "case": "intent-en-a",
+      "group": "new-evaluation",
+      "questionId": 1,
+      "expectedQuestionId": 1,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 35,
+      "wallMs": 36
+    },
+    {
+      "case": "intent-en-b",
+      "group": "new-evaluation",
+      "questionId": 1,
+      "expectedQuestionId": 1,
+      "candidates": [
+        1,
+        4
+      ],
+      "cold": false,
+      "nativeMs": 49,
+      "wallMs": 51
+    },
+    {
+      "case": "intent-ko-a",
+      "group": "new-evaluation",
+      "questionId": 1,
+      "expectedQuestionId": 1,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 39,
+      "wallMs": 40
+    },
+    {
+      "case": "intent-ko-b",
+      "group": "new-evaluation",
+      "questionId": 1,
+      "expectedQuestionId": 1,
+      "candidates": [
+        1,
+        2
+      ],
+      "cold": false,
+      "nativeMs": 36,
+      "wallMs": 38
+    },
+    {
+      "case": "gap-en-a",
+      "group": "new-evaluation",
+      "questionId": 2,
+      "expectedQuestionId": 2,
+      "candidates": [
+        2,
+        1
+      ],
+      "cold": false,
+      "nativeMs": 48,
+      "wallMs": 50
+    },
+    {
+      "case": "gap-en-b",
+      "group": "new-evaluation",
+      "questionId": 2,
+      "expectedQuestionId": 2,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 43,
+      "wallMs": 45
+    },
+    {
+      "case": "gap-ko-a",
+      "group": "new-evaluation",
+      "questionId": 2,
+      "expectedQuestionId": 2,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 49,
+      "wallMs": 49
+    },
+    {
+      "case": "gap-ko-b",
+      "group": "new-evaluation",
+      "questionId": 2,
+      "expectedQuestionId": 2,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 44,
+      "wallMs": 44
+    },
+    {
+      "case": "pressure-en-a",
+      "group": "new-evaluation",
+      "questionId": 3,
+      "expectedQuestionId": 3,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 40,
+      "wallMs": 41
+    },
+    {
+      "case": "pressure-en-b",
+      "group": "new-evaluation",
+      "questionId": 3,
+      "expectedQuestionId": 3,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 43,
+      "wallMs": 45
+    },
+    {
+      "case": "pressure-ko-a",
+      "group": "new-evaluation",
+      "questionId": 3,
+      "expectedQuestionId": 3,
+      "candidates": [
+        3,
+        5
+      ],
+      "cold": false,
+      "nativeMs": 44,
+      "wallMs": 45
+    },
+    {
+      "case": "pressure-ko-b",
+      "group": "new-evaluation",
+      "questionId": 3,
+      "expectedQuestionId": 3,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 38,
+      "wallMs": 39
+    },
+    {
+      "case": "next-en-a",
+      "group": "new-evaluation",
+      "questionId": 4,
+      "expectedQuestionId": 4,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 43,
+      "wallMs": 44
+    },
+    {
+      "case": "next-en-b",
+      "group": "new-evaluation",
+      "questionId": 4,
+      "expectedQuestionId": 4,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 46,
+      "wallMs": 47
+    },
+    {
+      "case": "next-ko-a",
+      "group": "new-evaluation",
+      "questionId": 4,
+      "expectedQuestionId": 4,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 38,
+      "wallMs": 39
+    },
+    {
+      "case": "next-ko-b",
+      "group": "new-evaluation",
+      "questionId": 4,
+      "expectedQuestionId": 4,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 46,
+      "wallMs": 46
+    },
+    {
+      "case": "repeat-en-a",
+      "group": "new-evaluation",
+      "questionId": 5,
+      "expectedQuestionId": 5,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 38,
+      "wallMs": 40
+    },
+    {
+      "case": "repeat-en-b",
+      "group": "new-evaluation",
+      "questionId": 5,
+      "expectedQuestionId": 5,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 43,
+      "wallMs": 44
+    },
+    {
+      "case": "repeat-ko-a",
+      "group": "new-evaluation",
+      "questionId": 5,
+      "expectedQuestionId": 5,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 47,
+      "wallMs": 48
+    },
+    {
+      "case": "repeat-ko-b",
+      "group": "new-evaluation",
+      "questionId": 5,
+      "expectedQuestionId": 5,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 44,
+      "wallMs": 45
+    },
+    {
+      "case": "language-ja",
+      "group": "language-probe",
+      "questionId": 3,
+      "expectedQuestionId": 3,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 40,
+      "wallMs": 41
+    },
+    {
+      "case": "language-zh",
+      "group": "language-probe",
+      "questionId": 2,
+      "expectedQuestionId": 2,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 35,
+      "wallMs": 36
+    },
+    {
+      "case": "language-es",
+      "group": "language-probe",
+      "questionId": 1,
+      "expectedQuestionId": 1,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 50,
+      "wallMs": 51
+    },
+    {
+      "case": "language-pt",
+      "group": "language-probe",
+      "questionId": 5,
+      "expectedQuestionId": 5,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 40,
+      "wallMs": 40
+    },
+    {
+      "case": "language-fr",
+      "group": "language-probe",
+      "questionId": 4,
+      "expectedQuestionId": 4,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 41,
+      "wallMs": 42
+    },
+    {
+      "case": "language-hi",
+      "group": "language-probe",
+      "questionId": 5,
+      "expectedQuestionId": 5,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 50,
+      "wallMs": 52
+    },
+    {
+      "case": "h01",
+      "group": "held-out",
+      "questionId": 1,
+      "expectedQuestionId": 1,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 40,
+      "wallMs": 40
+    },
+    {
+      "case": "h02",
+      "group": "held-out",
+      "questionId": 1,
+      "expectedQuestionId": 1,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 41,
+      "wallMs": 43
+    },
+    {
+      "case": "h03",
+      "group": "held-out",
+      "questionId": 1,
+      "expectedQuestionId": 1,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 53,
+      "wallMs": 54
+    },
+    {
+      "case": "h04",
+      "group": "held-out",
+      "questionId": 1,
+      "expectedQuestionId": 1,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 35,
+      "wallMs": 37
+    },
+    {
+      "case": "h05",
+      "group": "held-out",
+      "questionId": 1,
+      "expectedQuestionId": 1,
+      "candidates": [
+        1,
+        3
+      ],
+      "cold": false,
+      "nativeMs": 48,
+      "wallMs": 49
+    },
+    {
+      "case": "h06",
+      "group": "held-out",
+      "questionId": 1,
+      "expectedQuestionId": 1,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 42,
+      "wallMs": 43
+    },
+    {
+      "case": "h07",
+      "group": "held-out",
+      "questionId": 2,
+      "expectedQuestionId": 2,
+      "candidates": [
+        2,
+        3
+      ],
+      "cold": false,
+      "nativeMs": 43,
+      "wallMs": 44
+    },
+    {
+      "case": "h08",
+      "group": "held-out",
+      "questionId": 5,
+      "expectedQuestionId": 2,
+      "candidates": [
+        5,
+        2
+      ],
+      "cold": false,
+      "nativeMs": 45,
+      "wallMs": 46
+    },
+    {
+      "case": "h09",
+      "group": "held-out",
+      "questionId": 1,
+      "expectedQuestionId": 2,
+      "candidates": [
+        1,
+        2
+      ],
+      "cold": false,
+      "nativeMs": 46,
+      "wallMs": 47
+    },
+    {
+      "case": "h10",
+      "group": "held-out",
+      "questionId": 2,
+      "expectedQuestionId": 2,
+      "candidates": [
+        2,
+        1
+      ],
+      "cold": false,
+      "nativeMs": 44,
+      "wallMs": 45
+    },
+    {
+      "case": "h11",
+      "group": "held-out",
+      "questionId": 5,
+      "expectedQuestionId": 2,
+      "candidates": [
+        5,
+        2
+      ],
+      "cold": false,
+      "nativeMs": 56,
+      "wallMs": 57
+    },
+    {
+      "case": "h12",
+      "group": "held-out",
+      "questionId": 2,
+      "expectedQuestionId": 2,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 51,
+      "wallMs": 52
+    },
+    {
+      "case": "h13",
+      "group": "held-out",
+      "questionId": 3,
+      "expectedQuestionId": 3,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 44,
+      "wallMs": 45
+    },
+    {
+      "case": "h14",
+      "group": "held-out",
+      "questionId": 3,
+      "expectedQuestionId": 3,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 42,
+      "wallMs": 43
+    },
+    {
+      "case": "h15",
+      "group": "held-out",
+      "questionId": 3,
+      "expectedQuestionId": 3,
+      "candidates": [
+        3,
+        1
+      ],
+      "cold": false,
+      "nativeMs": 42,
+      "wallMs": 42
+    },
+    {
+      "case": "h16",
+      "group": "held-out",
+      "questionId": 3,
+      "expectedQuestionId": 3,
+      "candidates": [
+        3,
+        2
+      ],
+      "cold": false,
+      "nativeMs": 48,
+      "wallMs": 48
+    },
+    {
+      "case": "h17",
+      "group": "held-out",
+      "questionId": 3,
+      "expectedQuestionId": 3,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 50,
+      "wallMs": 51
+    },
+    {
+      "case": "h18",
+      "group": "held-out",
+      "questionId": 1,
+      "expectedQuestionId": 3,
+      "candidates": [
+        1,
+        3
+      ],
+      "cold": false,
+      "nativeMs": 48,
+      "wallMs": 49
+    },
+    {
+      "case": "h19",
+      "group": "held-out",
+      "questionId": 4,
+      "expectedQuestionId": 4,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 40,
+      "wallMs": 41
+    },
+    {
+      "case": "h20",
+      "group": "held-out",
+      "questionId": 4,
+      "expectedQuestionId": 4,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 42,
+      "wallMs": 43
+    },
+    {
+      "case": "h21",
+      "group": "held-out",
+      "questionId": 4,
+      "expectedQuestionId": 4,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 34,
+      "wallMs": 35
+    },
+    {
+      "case": "h22",
+      "group": "held-out",
+      "questionId": 4,
+      "expectedQuestionId": 4,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 33,
+      "wallMs": 33
+    },
+    {
+      "case": "h23",
+      "group": "held-out",
+      "questionId": 4,
+      "expectedQuestionId": 4,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 42,
+      "wallMs": 43
+    },
+    {
+      "case": "h24",
+      "group": "held-out",
+      "questionId": 4,
+      "expectedQuestionId": 4,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 38,
+      "wallMs": 39
+    },
+    {
+      "case": "h25",
+      "group": "held-out",
+      "questionId": 5,
+      "expectedQuestionId": 5,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 46,
+      "wallMs": 47
+    },
+    {
+      "case": "h26",
+      "group": "held-out",
+      "questionId": 5,
+      "expectedQuestionId": 5,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 41,
+      "wallMs": 42
+    },
+    {
+      "case": "h27",
+      "group": "held-out",
+      "questionId": 5,
+      "expectedQuestionId": 5,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 42,
+      "wallMs": 43
+    },
+    {
+      "case": "h28",
+      "group": "held-out",
+      "questionId": 5,
+      "expectedQuestionId": 5,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 45,
+      "wallMs": 45
+    },
+    {
+      "case": "h29",
+      "group": "held-out",
+      "questionId": 5,
+      "expectedQuestionId": 5,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 47,
+      "wallMs": 48
+    },
+    {
+      "case": "h30",
+      "group": "held-out",
+      "questionId": 5,
+      "expectedQuestionId": 5,
+      "candidates": null,
+      "cold": false,
+      "nativeMs": 44,
+      "wallMs": 45
+    }
+  ],
+  "firstChoiceMatches": 60,
+  "ambiguousChoices": 15,
+  "unicodeInput": "passed",
+  "cancellationAndRecovery": "passed",
+  "environment": {
+    "wifiDuring": "0",
+    "wifiBefore": "1",
+    "checkedAt": "2026-09-28T13:54:29.1203312+09:00",
+    "dataBefore": "1",
+    "defaultNetwork": "Active default network: none"
+  },
+  "measurementNotes": [
+    "Physical Seeker Android 15; Flutter bridge with optimized native RelWithDebInfo build.",
+    "Synthetic authored examples only. 34 development examples; 30 further examples fixed before final prototype evaluation.",
+    "Primary choice: 60/64. Held-out primary choice: 26/30. All four held-out errors were flagged ambiguous and the expected topic appeared in the two choices.",
+    "The app asks users to choose when ambiguous. These small tests do not establish general accuracy or a competition judging score.",
+    "Wi-Fi and mobile data were disabled; active default network was none before launch. Original settings restored afterward."
+  ],
+  "modelRevision": "b6cac9615d4ecce28d7f22539b7322d695fc2886",
+  "modelSha256": "e011debc1208e31bf7b6aebee2d9fc8bd2ca11694a77ed66ac9d0c9d0a877c93",
+  "releaseVerification": {
+    "nativeQuestionDisplayed": true,
+    "syntheticNoteOnly": true,
+    "temporaryProjectRemoved": true,
+    "androidVersionCode": 2008,
+    "version": "0.5.1",
+    "isolatedTestAppRemoved": true,
+    "accuracyEvaluation": false,
+    "deviceBenchmarkFilesRemoved": true,
+    "apkBytes": 37811704,
+    "modelDownloadReady": true,
+    "apkSha256": "234ba0ca6ae9e93d0ff5767b14098e3211ff197317bde663b894f266d3498ea0",
+    "wifiReconnected": true,
+    "existingAppUpdated": true
+  }
+}

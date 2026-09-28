@@ -1,7 +1,7 @@
 name: seeker_workroom
 description: Remember the reason behind your work and wallet decisions.
 publish_to: none
-version: 0.3.1+4
+version: 0.5.1+8
 environment:
   sdk: '>=3.10.0 <4.0.0'
 dependencies:
@@ -17,6 +17,7 @@ dependencies:
   cloud_firestore: 6.0.2
   http: 1.5.0
   bs58: 1.0.2
+  lottie: 3.6.1
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -26,6 +27,10 @@ dev_dependencies:
   sqflite_common_ffi: ^2.3.6
 flutter:
   uses-material-design: true
+  assets:
+    - assets/ai/
+    - assets/room/
+    - assets/motion/
   fonts:
     - family: NotoSansKR
       fonts:

@@ -70,7 +70,7 @@ class _TradeJournalState extends State<_TradeJournal> {
         children: [
           Text(
             tr(context, '판단을 남기는 일지', 'Remember your why.'),
-            style: Theme.of(context).textTheme.headlineLarge,
+            style: _roomTitle(context, 32),
           ),
           const SizedBox(height: 10),
           Text(
@@ -454,20 +454,86 @@ class _JournalEditorState extends State<_JournalEditor> {
   late final reason = TextEditingController(text: widget.entry?.reason),
       plan = TextEditingController(text: widget.entry?.plan),
       next = TextEditingController(text: widget.entry?.nextAction),
-      review = TextEditingController(text: widget.entry?.review);
+      review = TextEditingController(text: widget.entry?.review),
+      rule = TextEditingController(text: widget.entry?.decisionRule);
   late String emotion = widget.entry?.emotion ?? '';
   late String? project = widget.c.state
       .project(widget.entry?.projectId ?? '')
       ?.id;
+  late int? dueAt = widget.entry == null
+      ? widget.c.wallClock().add(const Duration(days: 3)).millisecondsSinceEpoch
+      : widget.entry?.reviewDueAt;
+  late Map<String, dynamic>? selection = widget.entry?.assistantSelection;
   int step = 0;
   bool saved = false, dirty = false;
+  String get assistantContext => ReflectionAssistant.contextFor(
+    widget.entry?.originalReason ?? reason.text,
+    widget.entry?.originalPlan ?? plan.text,
+    review.text,
+  );
+
   @override
   void dispose() {
     reason.dispose();
     plan.dispose();
     next.dispose();
     review.dispose();
+    rule.dispose();
     super.dispose();
+  }
+
+  Future<void> save() async {
+    if (!widget.reviewOnly &&
+        reason.text.trim().isEmpty &&
+        plan.text.trim().isEmpty &&
+        next.text.trim().isEmpty &&
+        emotion.isEmpty) {
+      throw StateError(
+        tr(context, '이유 한 줄을 먼저 남겨주세요.', 'Add one reason before saving.'),
+      );
+    }
+    final now = widget.c.wallClock().millisecondsSinceEpoch;
+    final old =
+        widget.entry ??
+        widget.c.journals.find(widget.wallet, widget.activity.signature);
+    final base =
+        old ??
+        TradeJournalEntry(
+          id: const Uuid().v4(),
+          wallet: widget.wallet,
+          activity: widget.activity,
+          createdAt: now,
+          updatedAt: now,
+        );
+    final entry = widget.reviewOnly
+        ? base.edit(
+            review: review.text.trim(),
+            decisionRule: rule.text.trim(),
+            reviewedAt: review.text.trim().isEmpty ? null : now,
+            ruleSavedAt: rule.text.trim().isEmpty
+                ? null
+                : (rule.text.trim() == base.decisionRule
+                      ? base.ruleSavedAt
+                      : now),
+            assistantSelection: selection,
+            updatedAt: now,
+          )
+        : base.edit(
+            projectId: project,
+            reason: reason.text.trim(),
+            plan: plan.text.trim(),
+            emotion: emotion,
+            nextAction: next.text.trim(),
+            reviewDueAt: dueAt,
+            updatedAt: now,
+          );
+    await widget.c.journals.save(entry);
+    if (mounted) {
+      setState(() => saved = true);
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) Navigator.pop(context);
+      });
+    }
   }
 
   @override
@@ -523,6 +589,10 @@ class _JournalEditorState extends State<_JournalEditor> {
               style: const TextStyle(fontSize: 12, color: muted),
             ),
             const SizedBox(height: 24),
+            if (widget.reviewOnly && widget.entry != null) ...[
+              _SavedReason(widget.entry!),
+              const SizedBox(height: 20),
+            ],
             if (!widget.reviewOnly) ...[
               LinearProgressIndicator(value: (step + 1) / 4, minHeight: 3),
               const SizedBox(height: 12),
@@ -531,7 +601,7 @@ class _JournalEditorState extends State<_JournalEditor> {
             ],
             Text(
               widget.reviewOnly
-                  ? tr(context, '무엇을 배웠나요?', 'What did you learn?')
+                  ? tr(context, '지금 돌아보면 어떤가요?', 'How does it look now?')
                   : questions[step],
               style: Theme.of(context).textTheme.headlineMedium,
             ),
@@ -540,20 +610,22 @@ class _JournalEditorState extends State<_JournalEditor> {
               widget.reviewOnly
                   ? tr(
                       context,
-                      '잘한 점과 다음에 바꾸고 싶은 점을 남겨 보세요.',
-                      'Reflect on what went well and what you would change.',
+                      '예상과 실제로 경험한 점을 비교해 보세요.',
+                      'Compare what you expected with what you experienced.',
                     )
                   : tr(
                       context,
-                      '짧은 한 문장이면 충분해요. 비워 두어도 괜찮습니다.',
-                      'A short sentence is enough. You can leave this blank.',
+                      '이유 한 줄이면 저장할 수 있어요. 나머지는 선택입니다.',
+                      'One reason is enough to save. The rest is optional.',
                     ),
               style: const TextStyle(color: muted),
             ),
-            const SizedBox(height: 24),
+            const SizedBox(height: 20),
             if (widget.reviewOnly || step != 2)
               TextField(
-                key: ValueKey(widget.reviewOnly ? 'review' : step),
+                key: widget.reviewOnly
+                    ? const ValueKey('review')
+                    : ValueKey(step),
                 controller: widget.reviewOnly
                     ? review
                     : step == 0
@@ -561,8 +633,8 @@ class _JournalEditorState extends State<_JournalEditor> {
                     : step == 1
                     ? plan
                     : next,
-                minLines: 5,
-                maxLines: 10,
+                minLines: 3,
+                maxLines: 8,
                 maxLength: 4000,
                 textCapitalization: TextCapitalization.sentences,
                 onChanged: (_) => setState(() => dirty = true),
@@ -597,7 +669,96 @@ class _JournalEditorState extends State<_JournalEditor> {
                     ),
                 ],
               ),
-            const SizedBox(height: 24),
+            const SizedBox(height: 20),
+            if (widget.reviewOnly) ...[
+              _ReflectionAssistantPanel(
+                contextText: () => assistantContext,
+                selection: selection,
+                onSelected: (value) => setState(() {
+                  selection = value;
+                  dirty = true;
+                }),
+              ),
+              const SizedBox(height: 24),
+              Text(
+                tr(context, '다음 선택을 위한 나의 기준', 'My lesson for the next choice'),
+                style: Theme.of(context).textTheme.titleLarge,
+              ),
+              const SizedBox(height: 10),
+              TextField(
+                key: const ValueKey('decision-rule'),
+                controller: rule,
+                minLines: 2,
+                maxLines: 5,
+                maxLength: 1000,
+                onChanged: (_) => setState(() => dirty = true),
+                decoration: InputDecoration(
+                  hintText: tr(
+                    context,
+                    '다음에는 무엇을 확인하고 선택할까요?',
+                    'What will you check before choosing next time?',
+                  ),
+                ),
+              ),
+              const SizedBox(height: 20),
+            ],
+            if (!widget.reviewOnly && step == 0) ...[
+              Text(
+                tr(context, '언제 다시 돌아볼까요?', 'When will you revisit this?'),
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+              const SizedBox(height: 10),
+              Wrap(
+                spacing: 8,
+                children: [
+                  for (final days in [1, 3, 7])
+                    ChoiceChip(
+                      label: Text(
+                        tr(
+                          context,
+                          '$days일 뒤',
+                          days == 1 ? 'In 1 day' : 'In $days days',
+                        ),
+                      ),
+                      selected:
+                          dueAt != null &&
+                          (DateTime.fromMillisecondsSinceEpoch(dueAt!)
+                                          .difference(widget.c.wallClock())
+                                          .inHours /
+                                      24)
+                                  .round() ==
+                              days,
+                      onSelected: (_) => setState(() {
+                        dueAt = widget.c
+                            .wallClock()
+                            .add(Duration(days: days))
+                            .millisecondsSinceEpoch;
+                        dirty = true;
+                      }),
+                    ),
+                  ChoiceChip(
+                    label: Text(tr(context, '정하지 않기', 'No date')),
+                    selected: dueAt == null,
+                    onSelected: (_) => setState(() {
+                      dueAt = null;
+                      dirty = true;
+                    }),
+                  ),
+                ],
+              ),
+              if (dueAt != null)
+                Text(
+                  '${dateLabel(context, dueAt!)} · ${tr(context, '그날 홈에서 보여드려요.', 'Appears on your home screen that day.')}',
+                  style: const TextStyle(fontSize: 12, color: muted),
+                ),
+              const SizedBox(height: 20),
+              ActionButton(
+                label: tr(context, '이유 저장', 'Save reason'),
+                icon: Icons.bookmark_added_outlined,
+                action: save,
+              ),
+              const SizedBox(height: 10),
+            ],
             if (!widget.reviewOnly && step == 3) ...[
               DropdownButtonFormField<String>(
                 initialValue: project,
@@ -631,43 +792,10 @@ class _JournalEditorState extends State<_JournalEditor> {
               ActionButton(
                 label: tr(context, '이 기기에 저장', 'Save on this device'),
                 icon: Icons.bookmark_added_outlined,
-                action: () async {
-                  final now = DateTime.now().millisecondsSinceEpoch;
-                  final old =
-                      widget.entry ??
-                      widget.c.journals.find(
-                        widget.wallet,
-                        widget.activity.signature,
-                      );
-                  final entry =
-                      (old ??
-                              TradeJournalEntry(
-                                id: const Uuid().v4(),
-                                wallet: widget.wallet,
-                                activity: widget.activity,
-                                createdAt: now,
-                                updatedAt: now,
-                              ))
-                          .edit(
-                            projectId: project,
-                            reason: reason.text.trim(),
-                            plan: plan.text.trim(),
-                            emotion: emotion,
-                            review: review.text.trim(),
-                            nextAction: next.text.trim(),
-                            updatedAt: now,
-                          );
-                  await widget.c.journals.save(entry);
-                  if (context.mounted) {
-                    setState(() => saved = true);
-                    WidgetsBinding.instance.addPostFrameCallback((_) {
-                      if (context.mounted) Navigator.pop(context);
-                    });
-                  }
-                },
+                action: save,
               )
             else
-              FilledButton(
+              OutlinedButton(
                 onPressed: () => setState(() => step++),
                 child: Text(tr(context, '다음', 'Next')),
               ),
@@ -755,12 +883,27 @@ class _JournalDetail extends StatelessWidget {
                 icon: const Icon(Icons.book_outlined),
                 label: Text(c.state.project(e.projectId!)!.title),
               ),
+            _SavedReason(e),
+            const SizedBox(height: 20),
+            if (e.reviewDueAt != null && e.reviewedAt == null)
+              Padding(
+                padding: const EdgeInsets.only(bottom: 16),
+                child: Text(
+                  '${tr(context, '다음 돌아보기', 'Next revisit')} · ${dateLabel(context, e.reviewDueAt!)}',
+                  style: const TextStyle(color: green),
+                ),
+              ),
             for (final field in {
-              tr(context, '이유', 'Reason'): e.reason,
-              tr(context, '계획', 'Plan'): e.plan,
+              if (e.reason != (e.originalReason ?? e.reason))
+                tr(context, '수정한 이유', 'Edited reason'): e.reason,
+              if (e.plan != (e.originalPlan ?? e.plan))
+                tr(context, '수정한 계획', 'Edited plan'): e.plan,
               tr(context, '감정', 'Emotion'): _emotionLabel(context, e.emotion),
               tr(context, '다음 행동', 'Next action'): e.nextAction,
               tr(context, '복기', 'Reflection'): e.review,
+              if (e.decisionRule.isNotEmpty)
+                tr(context, '다음 선택을 위한 나의 기준', 'My lesson for the next choice'):
+                    e.decisionRule,
             }.entries) ...[
               Text(
                 field.key,

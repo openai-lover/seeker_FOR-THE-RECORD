@@ -45,7 +45,11 @@ class _Harness {
     directWalletEnabled: directWalletEnabled,
   );
 
-  Future<void> initialize() => controller.load();
+  Future<void> initialize() async {
+    await controller.load();
+    await controller.setting('roomWelcome', 1);
+    await controller.setting('reduceMotion', true);
+  }
 
   Future<void> prepareOutcome({bool saved = false}) async {
     final project = await controller.addProject('A thoughtful project', '', 0);
@@ -92,7 +96,7 @@ Future<void> _tap(WidgetTester tester, String label) async {
 
 Future<void> _openOutcome(WidgetTester tester) async {
   // The home card opens the focus screen, which then opens the outcome editor.
-  await _tap(tester, 'Leave an outcome');
+  await _tap(tester, 'Resume focus');
   await _tap(tester, 'Leave an outcome');
   expect(find.text('Your page today'), findsOneWidget);
 }
@@ -129,7 +133,7 @@ void main() {
       tester.widget<MaterialApp>(find.byType(MaterialApp)).locale,
       const Locale('en'),
     );
-    expect(find.text('Create my project'), findsOneWidget);
+    expect(find.text('Leave a reason'), findsOneWidget);
     expect(find.text('Settings'), findsOneWidget);
     expect(find.text('내 프로젝트 만들기'), findsNothing);
     expect(tester.takeException(), isNull);
@@ -244,7 +248,7 @@ void main() {
     await app.initialize();
     await app.prepareOutcome(saved: true);
     await app.show(tester);
-    await _tap(tester, 'Journal');
+    await _navigate(tester, 1);
     await _tap(tester, 'The original outcome');
     await tester.ensureVisible(find.byTooltip('Edit page'));
     await tester.tap(find.byTooltip('Edit page'));
@@ -281,7 +285,7 @@ void main() {
       await app.initialize();
       await app.controller.addProject('Choose a duration', '', 0);
       await app.show(tester);
-      await _tap(tester, 'Continue from your bookmark');
+      await _tap(tester, 'Make some space');
       await _tap(tester, 'Choose duration');
       final input = find.descendant(
         of: find.byType(AlertDialog),
@@ -311,7 +315,7 @@ void main() {
     await app.initialize();
     await app.show(tester);
     expect(app.remote.onlineAvailable, isFalse);
-    await _tap(tester, 'Journal');
+    await _navigate(tester, 1);
     await _tap(tester, 'Trade journal');
 
     expect(
@@ -339,7 +343,7 @@ void main() {
       await app.controller.setting('language', 'fr');
       await app.controller.addProject('Settings', '', 0);
       await app.show(tester);
-      await _tap(tester, translateEnglish('fr', 'Continue from your bookmark'));
+      await _tap(tester, translateEnglish('fr', 'Make some space'));
 
       final projectTag = find.byType(QuietTag);
       expect(projectTag, findsOneWidget);

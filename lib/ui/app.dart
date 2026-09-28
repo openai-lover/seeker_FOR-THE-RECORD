@@ -1,8 +1,11 @@
 import 'dart:async';
+import 'dart:math' as math;
+import 'package:lottie/lottie.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import '../config.dart';
+import '../data/reflection_assistant.dart';
 import '../l10n/strings.dart';
 import '../l10n/legacy_catalog.dart';
 import '../domain/trade_journal.dart';
@@ -20,6 +23,8 @@ part 'books.dart';
 part 'settings.dart';
 part 'shared.dart';
 part 'trade_journal.dart';
+part 'decision_replay.dart';
+part 'room_experience.dart';
 
 Future<bool> perform(
   BuildContext context,
@@ -216,10 +221,7 @@ class _WorkroomAppState extends State<WorkroomApp> with WidgetsBindingObserver {
         ),
         child: child!,
       ),
-      home: RecordLaunch(
-        enabled: widget.controller.state.active == null,
-        child: _Shell(c: widget.controller, r: widget.remote),
-      ),
+      home: _RoomEntry(c: widget.controller, r: widget.remote),
     ),
   );
 }
@@ -245,7 +247,7 @@ class _ShellState extends State<_Shell> {
             r: widget.r,
             onBooks: () => setState(() => tab = 1),
           ),
-          1 => _Records(c: widget.c, r: widget.r),
+          1 => _Records(c: widget.c, r: widget.r, initialTrade: false),
           _ => _Settings(c: widget.c, r: widget.r),
         },
       ),

@@ -95,6 +95,7 @@ class LocalRepository implements Repository {
         whereArgs: [entry.wallet, entry.signature],
       );
       if (old.isEmpty) {
+        entry = entry.preserveBaseline(entry);
         await tx.insert('trade_journals', {
           'id': entry.id,
           'wallet': entry.wallet,
@@ -110,6 +111,17 @@ class LocalRepository implements Repository {
             old.single['created_at'] != entry.createdAt) {
           throw StateError('immutable-activity');
         }
+        entry = entry.preserveBaseline(
+          TradeJournalEntry.fromJson({
+            'id': old.single['id'],
+            'wallet': old.single['wallet'],
+            'activity': jsonDecode(old.single['snapshot'] as String),
+            'createdAt': old.single['created_at'],
+            'updatedAt': old.single['updated_at'],
+            ...jsonDecode(old.single['notes'] as String)
+                as Map<String, dynamic>,
+          }),
+        );
         await tx.update(
           'trade_journals',
           {'notes': jsonEncode(entry.notes), 'updated_at': entry.updatedAt},
@@ -169,7 +181,7 @@ class MemoryRepository implements Repository {
     if (old == null && _journals.containsKey(entry.id)) {
       throw StateError('immutable-activity');
     }
-    _journals[entry.id] = entry;
+    _journals[entry.id] = entry.preserveBaseline(old ?? entry);
   }
 
   @override

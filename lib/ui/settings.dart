@@ -8,6 +8,93 @@ class _Settings extends StatelessWidget {
   Widget build(BuildContext context) => PageBody(
     children: [
       const Eyebrow('MAKE YOURSELF AT HOME'),
+      ListTile(
+        contentPadding: EdgeInsets.zero,
+        leading: const Icon(Icons.auto_awesome_outlined),
+        title: Text(
+          tr(context, '기기 안의 AI 회고 도우미', 'On-device reflection assistant'),
+        ),
+        subtitle: Text(
+          tr(
+            context,
+            '무료 · 한 번 준비하면 오프라인으로',
+            'Free · works offline after setup',
+          ),
+        ),
+        trailing: const Icon(Icons.chevron_right),
+        onTap: () => openPage(
+          context,
+          Scaffold(
+            appBar: AppBar(
+              title: Text(tr(context, '회고 도우미', 'Reflection assistant')),
+            ),
+            body: PageBody(
+              children: [
+                _ReflectionAssistantPanel(
+                  manageOnly: true,
+                  contextText: () => '',
+                  onSelected: (_) {},
+                ),
+                const SizedBox(height: 16),
+                Text(
+                  tr(
+                    context,
+                    '작업을 마무리하거나 매매 일지를 돌아볼 때 내 글의 의미와 가까운 질문을 찾아줘요. 제안이 맞지 않으면 언제든 다른 질문을 고를 수 있어요.',
+                    'Find a question that fits your writing when finishing a work session or revisiting a trade. You can always choose a different question.',
+                  ),
+                ),
+                TextButton(
+                  onPressed: () async {
+                    final notices = await rootBundle.loadString(
+                      'assets/ai/LICENSES.txt',
+                    );
+                    if (!context.mounted) return;
+                    showDialog<void>(
+                      context: context,
+                      builder: (context) => AlertDialog(
+                        title: const Text('On-device AI · licenses'),
+                        content: SingleChildScrollView(
+                          child: Text(
+                            notices,
+                            style: const TextStyle(fontSize: 11),
+                          ),
+                        ),
+                        actions: [
+                          TextButton(
+                            onPressed: () => Navigator.pop(context),
+                            child: const LocalizedText('닫기'),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                  child: Text(
+                    tr(
+                      context,
+                      '모델과 오픈소스 라이선스',
+                      'Model and open-source licenses',
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+      ListTile(
+        contentPadding: EdgeInsets.zero,
+        leading: const Icon(Icons.door_front_door_outlined),
+        title: Text(tr(context, '작업실 안내 다시 보기', 'Replay the room guide')),
+        trailing: const Icon(Icons.chevron_right),
+        onTap: () => openPage(
+          context,
+          _RoomWelcome(
+            onDone: () async {
+              Navigator.pop(context);
+            },
+          ),
+        ),
+      ),
       DropdownButtonFormField<String>(
         initialValue:
             WorkroomStrings.supportedLanguageCodes.contains(
@@ -113,6 +200,28 @@ class _Settings extends StatelessWidget {
         subtitle: LocalizedText(
           '집중 경과 시간은 벽시계 변경의 영향을 받지 않습니다.',
           style: TextStyle(fontSize: 12),
+        ),
+      ),
+      ListTile(
+        contentPadding: EdgeInsets.zero,
+        leading: const Icon(Icons.favorite_border_rounded),
+        title: const Text('Art & motion'),
+        onTap: () => showDialog<void>(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: const Text('Art & motion'),
+            content: const SingleChildScrollView(
+              child: Text(
+                'Room, journal and lamp: original AI-generated artwork for FOR THE RECORD.\n\nMotion icons: useAnimations\nhttps://useanimations.com\nCC BY 4.0 (Creative Commons Attribution)\nhttps://creativecommons.org/licenses/by/4.0/\n\nBookmark, activity and checkmark animations. Colors adapted to the workroom palette.',
+              ),
+            ),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(context),
+                child: const LocalizedText('닫기'),
+              ),
+            ],
+          ),
         ),
       ),
       const Divider(),

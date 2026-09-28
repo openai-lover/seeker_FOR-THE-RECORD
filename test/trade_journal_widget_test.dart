@@ -55,15 +55,21 @@ void main() {
     tester.view.devicePixelRatio = 1;
     addTearDown(tester.view.resetPhysicalSize);
     addTearDown(tester.view.resetDevicePixelRatio);
-    final c = WorkroomController(MemoryRepository(), FakeClock());
+    final c = WorkroomController(
+      MemoryRepository(),
+      FakeClock(),
+      wallClock: () => DateTime(2026, 9, 28, 10),
+    );
     await c.load();
+    await c.setting('roomWelcome', 1);
+    await c.setting('reduceMotion', true);
     await c.setting('language', 'en');
     final r = FakeRemote(NativePlatform(), c, connected: connected)
       ..rows = rows ?? []
       ..failure = failure;
     await tester.pumpWidget(WorkroomApp(controller: c, remote: r));
     await tester.pumpAndSettle();
-    await tester.tap(find.text('Journal'));
+    await tester.tap(find.byType(NavigationDestination).at(1));
     await tester.pumpAndSettle();
     await tester.tap(find.text('Trade journal'));
     await tester.pumpAndSettle();

@@ -82,12 +82,26 @@ class TradeJournalEntry {
     this.emotion = '',
     this.review = '',
     this.nextAction = '',
+    this.originalReason,
+    this.originalPlan,
+    this.baselineSavedAt,
+    this.reviewDueAt,
+    this.reviewedAt,
+    this.decisionRule = '',
+    this.ruleSavedAt,
+    this.assistantSelection,
   });
   final String id, wallet;
   final WalletActivity activity;
   final int createdAt, updatedAt;
   final String? projectId;
   final String reason, plan, emotion, review, nextAction;
+  final String? originalReason, originalPlan;
+  final int? baselineSavedAt, reviewDueAt, reviewedAt, ruleSavedAt;
+  final String decisionRule;
+  final Map<String, dynamic>? assistantSelection;
+  bool isDue(int now) =>
+      reviewDueAt != null && reviewDueAt! <= now && reviewedAt == null;
   String get signature => activity.signature;
   Map<String, dynamic> get notes => {
     'projectId': projectId,
@@ -96,6 +110,14 @@ class TradeJournalEntry {
     'emotion': emotion,
     'review': review,
     'nextAction': nextAction,
+    'originalReason': originalReason,
+    'originalPlan': originalPlan,
+    'baselineSavedAt': baselineSavedAt,
+    'reviewDueAt': reviewDueAt,
+    'reviewedAt': reviewedAt,
+    'decisionRule': decisionRule,
+    'ruleSavedAt': ruleSavedAt,
+    'assistantSelection': assistantSelection,
   };
   Map<String, dynamic> toJson() => {
     'id': id,
@@ -120,6 +142,16 @@ class TradeJournalEntry {
         emotion: j['emotion'] as String? ?? '',
         review: j['review'] as String? ?? '',
         nextAction: j['nextAction'] as String? ?? '',
+        originalReason: j['originalReason'] as String?,
+        originalPlan: j['originalPlan'] as String?,
+        baselineSavedAt: j['baselineSavedAt'] as int?,
+        reviewDueAt: j['reviewDueAt'] as int?,
+        reviewedAt: j['reviewedAt'] as int?,
+        decisionRule: j['decisionRule'] as String? ?? '',
+        ruleSavedAt: j['ruleSavedAt'] as int?,
+        assistantSelection: j['assistantSelection'] == null
+            ? null
+            : Map<String, dynamic>.from(j['assistantSelection']),
       );
   TradeJournalEntry edit({
     Object? projectId = _unchanged,
@@ -128,6 +160,11 @@ class TradeJournalEntry {
     String? emotion,
     String? review,
     String? nextAction,
+    Object? reviewDueAt = _unchanged,
+    Object? reviewedAt = _unchanged,
+    String? decisionRule,
+    Object? ruleSavedAt = _unchanged,
+    Object? assistantSelection = _unchanged,
     required int updatedAt,
   }) => TradeJournalEntry(
     id: id,
@@ -143,5 +180,31 @@ class TradeJournalEntry {
     emotion: emotion ?? this.emotion,
     review: review ?? this.review,
     nextAction: nextAction ?? this.nextAction,
+    originalReason: originalReason,
+    originalPlan: originalPlan,
+    baselineSavedAt: baselineSavedAt,
+    reviewDueAt: identical(reviewDueAt, _unchanged)
+        ? this.reviewDueAt
+        : reviewDueAt as int?,
+    reviewedAt: identical(reviewedAt, _unchanged)
+        ? this.reviewedAt
+        : reviewedAt as int?,
+    decisionRule: decisionRule ?? this.decisionRule,
+    ruleSavedAt: identical(ruleSavedAt, _unchanged)
+        ? this.ruleSavedAt
+        : ruleSavedAt as int?,
+    assistantSelection: identical(assistantSelection, _unchanged)
+        ? this.assistantSelection
+        : assistantSelection as Map<String, dynamic>?,
   );
+
+  /// Called by storage, not by the editor. Legacy entries capture their last
+  /// saved text; this does not pretend to recover a missing earlier revision.
+  TradeJournalEntry preserveBaseline(TradeJournalEntry previous) =>
+      TradeJournalEntry.fromJson({
+        ...toJson(),
+        'originalReason': previous.originalReason ?? previous.reason,
+        'originalPlan': previous.originalPlan ?? previous.plan,
+        'baselineSavedAt': previous.baselineSavedAt ?? previous.updatedAt,
+      });
 }

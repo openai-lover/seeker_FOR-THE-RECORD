@@ -96,7 +96,7 @@ class _LibraryState extends State<_Library> {
           const PaperCard(
             child: Column(
               children: [
-                Icon(Icons.menu_book_outlined, size: 38, color: green),
+                SizedBox(height: 170, child: _RoomObject(asset: 'journal')),
                 SizedBox(height: 16),
                 LocalizedText(
                   '아직 펼쳐진 페이지가 없어요.',

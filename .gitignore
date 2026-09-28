@@ -4,6 +4,8 @@
 .flutter-plugins-dependencies
 build/
 android/.gradle/
+android/.kotlin/
+android/app/.cxx/
 android/local.properties
 android/key.properties
 *.jks

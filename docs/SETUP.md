@@ -15,7 +15,7 @@ Verified toolchain: Flutter 3.47.4, Dart 3.13.3, JDK 17, Android API 36.
 ./tools/build.ps1 -Release
 ```
 
-The bootstrap installs the project's local toolchain. Alternatively use your Flutter installation: run flutter pub get, flutter analyze, flutter test, then flutter build apk --release --split-per-abi --target-platform android-arm64,android-x64. ARM64 is the physical Seeker download; x64 is provided for emulator review.
+The build script uses the project JDK 17 directly through Gradle, so a globally configured Flutter Java path does not override it. The native reflection engine uses NDK 28.2 and CMake 3.22.1. CMake fetches a pinned, SHA-256-checked llama.cpp archive; the AI weights are an optional runtime download. Kotlin 2.4.0 and the existing R8 override are retained. The bootstrap installs the project's local toolchain. Alternatively use your Flutter installation: run flutter pub get, flutter analyze, flutter test, then flutter build apk --release --split-per-abi --target-platform android-arm64,android-x64. ARM64 is the physical Seeker download; x64 is provided for emulator review.
 
 The native MWA identity defaults to the existing HTTPS project site. Set IDENTITY_URI with a Dart define for a different deployment. Setting DIRECT_WALLET=false disables direct wallet access when no cloud backend is configured. Never put a paid private RPC key in a distributed APK.
 
@@ -36,3 +36,10 @@ Run flutter analyze and flutter test for the app. Optional backend tests are pnp
 The English walkthrough uses an isolated package suffix and a temporary SQLite database. Set WORKROOM_ISOLATED_TEST=1, then run flutter drive --driver=test_driver/walkthrough.dart --target=integration_test/final_walkthrough_test.dart -d a-dedicated-emulator. Its sample trade is labeled on every screen and exists only in the integration test. Use a dedicated emulator without a wallet for the missing-wallet assertion. Never run a data-resetting test on a user's installed app.
 
 The separately gated official mock-wallet harness is described in [wallet validation](WALLET_VALIDATION.md). Its automated runner is not claimed as passed; the final release's approval, cancellation, disconnect and retry were verified through its actual UI.
+
+
+### Native AI on Windows
+
+If CMake/Ninja reports a missing executable under a non-ASCII SDK path, copy the SDK's `cmake/3.22.1` directory into the ignored project `work/native-cmake/3.22.1` directory, then set `cmake.dir` in the ignored `android/local.properties` to that absolute ASCII path (forward slashes work). This avoids a CMake file-API path encoding issue without changing the shared SDK. Do not commit local machine paths. The app CMake file constrains compiler concurrency; ARM64 and x64 are the release targets.
+
+For the isolated device checks, set `WORKROOM_ISOLATED_TEST=1`, configure a debug APK targeting `integration_test/local_reflection_test.dart`, and build with the project JDK. Drive the resulting debug APK using `test_driver/local_reflection.dart` and `--keep-app-running`. This keeps synthetic cases in the `.integration` package and preserves its downloaded model for an offline second run. The native debug engine uses RelWithDebInfo for representative CPU inference speed. Always restore network settings after an offline check and leave the normal app installed.

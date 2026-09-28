@@ -11,23 +11,43 @@
 
 A private Android journal for meaningful work and wallet decisions. Keep what you did, why you did it, and the next step worth remembering.
 
-**Version 0.3.1 · CLOCK IN development preview · English by default**
+**Version 0.5.1 · Local development preview · English by default**
+
+## Your quiet corner in 0.5.0
+
+A warm room returns to the home screen, with original room, journal and lamp artwork. Three swipeable welcome pages introduce the room with large type, a skip action and persistent completion. Desk, lamp and bookshelf open the decision journal, focus flow and work records. A room entrance, subtle object motion and three bundled Lottie icons respect reduced motion. Replay the guide from the home help button or Settings. Artwork and motion credits are in [asset attributions](assets/ATTRIBUTIONS.md).
+
+The 0.5.0 room was installed and visually checked on Seeker: next/swipe/enter/skip, return after restart, and all three room destinations. Version 0.5.1 keeps that design, adds a much lighter reflection assistant, and fixes large-text layout and revisit refresh issues.
 
 [Submission kit](docs/submission/README.md) · [Pitch](docs/submission/PITCH_CONTENT.md) · [Build instructions](docs/SETUP.md) · [UX review](docs/UX_REVIEW.md)
 
-## One useful loop
+## Decision Replay in 0.4.1
+
+Save one reason alongside a supported wallet transaction. Choose a revisit date (1, 3 or 7 days), return to the original saved writing, and keep a personal lesson for the next choice. Due entries appear on the home screen; these are in-app reminders, not scheduled push notifications. The existing work journal remains available.
+
+The optional assistant now uses **multilingual-e5-small Q8** for semantic question retrieval: **133 MB**, no API account, and fully local inference. On a physical Seeker with no active network, the optimized Flutter bridge measured **1.661 s cold** and **30–67 ms warm (median 44 ms)**. The engine unloads after 60 seconds idle or when the app goes into the background. These are synthetic-note measurements, not end-to-end interaction timings. Settings can prepare/remove the model; both work outcomes and trade revisits can request a question.
+
+Thirty additional English/Korean examples yielded 26 matching first suggestions. All four errors were flagged ambiguous, with the expected topic among two options; the UI asks the user to choose. Another 34 development examples matched after tuning and are not independent evidence. This is a small authored evaluation, not a general accuracy claim or a contest score. See [implementation, sources and limits](docs/ON_DEVICE_REFLECTION.md) and [raw device results](docs/AI_DEVICE_051.json).
+
+New records preserve their first saved reason and plan separately from later edits. For older records, the baseline is the last persisted note at the first update after upgrading; earlier revisions cannot be reconstructed.
+
+The 0.5.1 changes are local. Existing public downloads, presentation and demo may still describe 0.3.1. See [the revised submission draft](docs/submission/REVISION_040.md).
+
+Local 0.5.1 verification on 28 September: 93 Flutter tests passed, static analysis reported no issues, and 64 synthetic-note device checks plus Unicode, cancellation and recovery checks passed without an active network. The supported live swap-to-journal release gate below remains separate.
+
+## Existing work loop
 
 1. Create a project without a wallet or account.
 2. Write an intention and choose a focus period.
 3. Pause or finish when you need to. Record an outcome, including a sticking point.
-4. Leave one next action. Choose **Continue from your bookmark** next time to start with that action already filled in.
+4. Leave one next action. Choose **Make some space** or the last bookmark next time to start with that action already filled in.
 
-Wallet reflections follow a separate read-only flow: connect an MWA wallet, choose a supported historical swap, and move through four optional prompts — reason, plan, emotion and next action — one question at a time. Save, reopen and add a later reflection on what you learned. Personal writing stays on the device; the transaction facts remain fixed.
+Wallet reflections use a read-only flow: connect an MWA wallet, choose a supported historical swap and save a reason immediately. Optional prompts capture a plan, emotion and next action. Revisit the saved writing later and keep a lesson. Personal writing stays on the device; transaction facts remain fixed.
 
 ## Built to feel considerate
 
 - **Eight languages:** English, 한국어, 日本語, 简体中文, हिन्दी, Español, Português and Français. English is the first-run default; your choice persists in Settings. User-written notes are never translated.
-- **An original identity:** an ink-and-white vector mark with a coral record dot, clear typography and vivid teal actions. The 1.3-second launch signature can be skipped; active sessions and reduced-motion settings bypass it.
+- **An original identity:** a warm illustrated room, cream paper, green accents and a three-page introduction with skip. An active session bypasses the introduction; motion respects the system and app preferences.
 - **A calmer first screen:** one next action, a direct bookmark return and fewer nested cards. Guided reflections show one question at a time.
 - **Local first:** SQLite records, no sign-in wall for personal work, recoverable drafts and JSON export.
 - **Mobile details:** monotonic time, reboot handling, optional reminders and haptics, scrolling forms, large-text support, visible validation and duplicate-action protection.
@@ -37,9 +57,9 @@ Wallet reflections follow a separate read-only flow: connect an MWA wallet, choo
 
 The default APK runs the local work journal and direct read-only wallet journal without Firebase configuration or billing. MWA supplies the selected public address; the device queries the official Solana mainnet public RPC and parses supported finalized swaps locally. It never requests a message signature or transaction signature in this mode.
 
-**A real Seeker/wallet rehearsal remains required before competition submission.** Automated tests and an Android emulator walkthrough are documented; a successful physical-wallet flow is not claimed. Public RPC is best-effort and may rate-limit or reject traffic. Shared rooms, SGT verification and purchases remain optional server features and are hidden in the default edition. They require a separate configured backend. The preview APK uses a development signing key. See [the free approach](docs/submission/FREE_PREVIEW_APPROACH.md).
+**The supported live swap-to-journal rehearsal remains required before competition submission.** A real Seeker wallet connection and public activity read succeeded on 28 September; the retrieved activity was outside the supported swap subset. Automated tests and an Android emulator walkthrough are documented; a complete supported live swap-to-reflection flow is not claimed. Public RPC is best-effort and may rate-limit or reject traffic. Shared rooms, SGT verification and purchases remain optional server features and are hidden in the default edition. They require a separate configured backend. The preview APK uses a development signing key. See [the free approach](docs/submission/FREE_PREVIEW_APPROACH.md).
 
-Version 0.3.1 passes 88 Flutter tests and clean analysis. A separate manual check of the release app with the official Solana mock wallet on an Android emulator verified approve, account return, an empty mainnet history response, disconnect, cancellation and retry. It involved no message/transaction signing or asset movement. This is separate from the labeled sample reflection flow and does not establish physical Seeker or supported live event-to-reflection behavior.
+The prior 0.3.1 release passed 88 Flutter tests and clean analysis; these historical results do not establish 0.4.1 device readiness. A separate manual check of the release app with the official Solana mock wallet on an Android emulator verified approve, account return, an empty mainnet history response, disconnect, cancellation and retry. It involved no message/transaction signing or asset movement. This is separate from the labeled sample reflection flow and does not establish physical Seeker or supported live event-to-reflection behavior.
 
 The activity parser deliberately accepts only a supported subset of successful Jupiter v6 classic SPL-token swaps. Unsupported, ambiguous and failed transactions remain read-only activity rather than being presented as successful swaps. This is not a complete trading history, trading venue or profit/loss service.
 
@@ -80,8 +100,10 @@ The final walkthrough uses real local storage and native time. Its sample transa
 
 ## Privacy and project history
 
-Local notes are not uploaded automatically. The free wallet journal sends only public wallet addresses, transaction IDs and read parameters to Solana public RPC. It does not send notes or project names. Optional server features use wallet addresses and service state; chain transactions are public. Exported files contain your notes and should be stored privately. Cloud backup and import/restore are not implemented; export is an archive, not a one-tap restore promise.
+Local notes are not uploaded automatically. The optional AI download contacts Hugging Face and its HTTPS CDN; inference uses local writing on the device. The model can be removed without deleting notes. The free wallet journal sends only public wallet addresses, transaction IDs and read parameters to Solana public RPC. It does not send notes or project names. Optional server features use wallet addresses and service state; chain transactions are public. Exported files contain your notes and should be stored privately. Cloud backup and import/restore are not implemented; export is an archive, not a one-tap restore promise.
 
 Original architecture and earlier validation are retained in `docs/`. Their dates and versions matter: 0.2.0 and 0.3.0 results do not automatically validate 0.3.1. Earlier reference prompts and diagnostic exports remain in the original local archive and are excluded from the published source.
 
 The app was previously named Workroom. Its package identity is `app.workroom.seeker_workroom`; the current product name is **FOR THE RECORD**.
+
+See [the dated Seeker evidence](docs/SEEKER_DEVICE_041.md).

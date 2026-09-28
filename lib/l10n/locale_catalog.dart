@@ -1,4 +1,7 @@
 // Bundled interface translations. User-authored content is never submitted to a translator.
+import 'replay_catalog.dart';
+import 'room_catalog.dart';
+
 const translationLanguages = ['ja', 'zh', 'hi', 'es', 'pt', 'fr'];
 const additionalEnglishCatalog = <String, String>{
   '나만의 기록': 'Private journal',
@@ -1008,6 +1011,8 @@ const koreanCatalog = <String, String>{
       'FOR THE RECORD 0.3.1 · 개발 미리보기\n지갑 없이 개인 작업을 사용할 수 있습니다.',
 };
 const translatedCatalog = <String, List<String>>{
+  ...replayCatalog,
+  ...roomCatalog,
   'Private journal': [
     '非公開の日誌',
     '私人日记',
@@ -4253,6 +4258,8 @@ String englishCountText(String value) {
 }
 
 final _messageTemplates = <(RegExp, String)>[
+  (RegExp(r'^In (\d+) days$'), 'In {0} days'),
+  (RegExp(r'^Saved lessons \((\d+)\)$'), 'Saved lessons ({0})'),
   (
     RegExp(
       r'^Unable to complete the request\. Please try again\. \(([^\r\n]+)\)$',
