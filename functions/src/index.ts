@@ -4,11 +4,11 @@ import {getFirestore, Timestamp} from 'firebase-admin/firestore';
 import {onRequest} from 'firebase-functions/v2/https';
 import {defineSecret, defineString, defineBoolean} from 'firebase-functions/params';
 import {createHash, randomBytes} from 'node:crypto';
-import {PublicKey} from '@solana/web3.js';
 import bs58 from 'bs58';
 import {z} from 'zod';
 import {Fault, requireThat, randomId, uidFor, siwsMessage, verifyChallenge, joinRoom, changeRoom, SKU, SKR_MINT, type Challenge, type Room, type Order, type Seat} from './domain.js';
 import {connection, findSgt, buildOrder, validateSignedOrder, checkReceipt} from './chain.js';
+import {verifiedTokenUid, verifiedWalletIdentity, walletKey} from './identity.js';
 
 import {ActivityService, SolanaActivityProvider} from './activity.js';
 
@@ -20,7 +20,7 @@ const appUri = defineString('APP_URI');
 const payments = defineBoolean('PAYMENTS_ENABLED', {default:false});
 const merchant = defineString('MERCHANT_WALLET', {default:''});
 const amount = defineString('SKR_AMOUNT_ATOMIC', {default:''});
-const key = z.string().min(32).max(44).refine(v => {try {return new PublicKey(v).toBytes().length === 32;} catch {return false;}});
+const key = walletKey;
 const id = z.string().regex(/^[a-f0-9]{36}$/);
 const category = z.enum(['build','design','write','learn','other']);
 const parse = <T>(schema: z.ZodType<T>, input: unknown) => {const result = schema.safeParse(input); if (!result.success) throw new Fault('invalid-input'); return result.data;};
@@ -39,9 +39,10 @@ async function userFor(token: string) {
   requireThat(token.startsWith('Bearer '), 'sign-in-required', 401);
   let decoded;
   try { decoded = await getAuth().verifyIdToken(token.slice(7), true); } catch { throw new Fault('sign-in-expired', 401); }
-  const user = (await db.doc(`users/${decoded.uid}`).get()).data();
-  requireThat(user?.wallet, 'sign-in-required', 401);
-  return {uid:decoded.uid, wallet:user.wallet as string};
+  const uid = verifiedTokenUid(decoded.uid);
+  // Collection-scoped lookup: never interpolate a token claim into a Firestore path.
+  const user = (await db.collection('users').doc(uid).get()).data();
+  return verifiedWalletIdentity(uid, user?.wallet);
 }
 async function currentSgt(wallet: string) {
   const mint = await findSgt(rpc(), wallet);
