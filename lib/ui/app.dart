@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:convert';
 import 'dart:math' as math;
 import 'package:lottie/lottie.dart';
 import 'package:flutter/material.dart';
@@ -158,6 +159,7 @@ class WorkroomApp extends StatefulWidget {
 
 class _WorkroomAppState extends State<WorkroomApp> with WidgetsBindingObserver {
   Timer? ticker;
+  String _dueChoices = '';
   @override
   void initState() {
     super.initState();
@@ -168,7 +170,14 @@ class _WorkroomAppState extends State<WorkroomApp> with WidgetsBindingObserver {
   void _tick() {
     ticker?.cancel();
     ticker = Timer.periodic(const Duration(seconds: 1), (_) {
-      if (widget.controller.state.active != null) {
+      final now = widget.controller.wallClock().millisecondsSinceEpoch;
+      final dueChoices = widget.controller.journals.entries
+          .where((entry) => entry.isDue(now))
+          .map((entry) => entry.id)
+          .join(',');
+      final dueChanged = dueChoices != _dueChoices;
+      _dueChoices = dueChoices;
+      if (widget.controller.state.active != null || dueChanged) {
         unawaited(widget.controller.refresh().catchError((_) {}));
       }
     });

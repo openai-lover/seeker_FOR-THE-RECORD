@@ -1,5 +1,9 @@
 # FOR THE RECORD · Judge quickstart
 
+For the current 0.5.2 room and Decision Replay, use the
+[current judge quickstart](JUDGE_QUICKSTART_052.md).
+The workflow and results below describe the historical 0.3.1 preview.
+
 **For the record, this is why I did it.**
 
 [Download the Android preview and release materials](DOWNLOAD_LINKS.md).

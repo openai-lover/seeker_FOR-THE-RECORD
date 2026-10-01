@@ -11,7 +11,23 @@
 
 A private Android journal for meaningful work and wallet decisions. Keep what you did, why you did it, and the next step worth remembering.
 
-**Version 0.5.1 · Local development preview · English by default**
+**Version 0.5.2 · Local development preview · English by default**
+
+## A clearer revisit in 0.5.2
+
+The primary home action opens the oldest due reason directly. Due dates refresh
+while the room stays open, even without a focus timer. Saving a first record
+requires its reason; optional prompts cannot accidentally save an empty original
+explanation. A short lesson completes a revisit, and later edits preserve its
+first completion time. Changed reflection text clears its previous AI selection.
+Each decision also has a local JSON export action.
+
+The current isolated Android walkthrough substitutes only a visibly labeled
+synthetic RPC response, while running the production reader/parser, current room
+screens and real SQLite. It checks original writing, a simulated due date,
+reflection, lesson, close/reopen persistence and JSON content. See the
+[current judge quickstart](docs/submission/JUDGE_QUICKSTART_052.md) and
+[0.5.2 changes and limits](docs/submission/REVISION_052.md).
 
 ## Your quiet corner in 0.5.0
 

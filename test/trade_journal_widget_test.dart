@@ -102,6 +102,96 @@ void main() {
       expect(find.byType(CircularProgressIndicator), findsNothing);
     });
   }
+  testWidgets('optional plan and emotion cannot bypass the first reason', (
+    tester,
+  ) async {
+    final (c, _) = await show(
+      tester,
+      connected: true,
+      rows: [activity.toJson()],
+    );
+    await tester.ensureVisible(find.text('Write reflection'));
+    await tester.tap(find.text('Write reflection'));
+    await tester.pumpAndSettle();
+    await tester.ensureVisible(find.text('Next'));
+    await tester.tap(find.text('Next'));
+    await tester.pumpAndSettle();
+    await tester.enterText(
+      find.byType(TextField).first,
+      'An optional plan alone',
+    );
+    await tester.tap(find.text('Next'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Calm'));
+    await tester.tap(find.text('Next'));
+    await tester.pumpAndSettle();
+    await tester.ensureVisible(find.text('Save on this device'));
+    await tester.tap(find.text('Save on this device'));
+    await tester.pumpAndSettle();
+    expect(find.text('Add one reason before saving.'), findsOneWidget);
+    expect(c.journals.entries, isEmpty);
+  });
+  testWidgets('export one record includes its source and preserved reason', (
+    tester,
+  ) async {
+    final (c, _) = await show(
+      tester,
+      connected: true,
+      rows: [activity.toJson()],
+    );
+    await c.journals.save(entry);
+    await tester.pumpAndSettle();
+    await tester.ensureVisible(find.text('Recorded · Open journal').first);
+    await tester.tap(find.text('Recorded · Open journal').first);
+    await tester.pumpAndSettle();
+    String? contents;
+    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+        .setMockMethodCallHandler(NativePlatform.channel, (call) async {
+          if (call.method == 'export') {
+            contents = (call.arguments as Map)['content'] as String;
+          }
+          return null;
+        });
+    addTearDown(
+      () => TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+          .setMockMethodCallHandler(NativePlatform.channel, null),
+    );
+    await tester.ensureVisible(find.text('Export this record'));
+    await tester.tap(find.text('Export this record'));
+    await tester.pumpAndSettle();
+    expect(contents, contains(entry.reason));
+    expect(contents, contains(entry.signature));
+    expect(contents, contains('originalReason'));
+    expect(contents, contains('schemaVersion'));
+    expect(tester.takeException(), isNull);
+  });
+  testWidgets('scheduling another date reopens a completed revisit', (
+    tester,
+  ) async {
+    final (c, _) = await show(
+      tester,
+      connected: true,
+      rows: [activity.toJson()],
+    );
+    await c.journals.save(
+      entry.edit(reviewDueAt: 1, reviewedAt: 2, updatedAt: 3),
+    );
+    await tester.pumpAndSettle();
+    await tester.ensureVisible(find.text('Recorded · Open journal').first);
+    await tester.tap(find.text('Recorded · Open journal').first);
+    await tester.pumpAndSettle();
+    await tester.ensureVisible(find.text('Edit notes'));
+    await tester.tap(find.text('Edit notes'));
+    await tester.pumpAndSettle();
+    await tester.ensureVisible(find.text('In 1 day'));
+    await tester.tap(find.text('In 1 day'));
+    await tester.ensureVisible(find.text('Save reason'));
+    await tester.tap(find.text('Save reason'));
+    await tester.pumpAndSettle();
+    expect(c.journals.entries.single.reviewedAt, isNull);
+    expect(c.journals.entries.single.reviewDueAt, greaterThan(3));
+    expect(c.journals.entries.single.originalReason, entry.reason);
+  });
   testWidgets(
     'supported swap guided form saves, survives controller reload, edits and deletes',
     (tester) async {

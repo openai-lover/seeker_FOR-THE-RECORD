@@ -38,8 +38,7 @@ android {
         minSdk = 26
         externalNativeBuild {
             cmake {
-                abiFilters += if (System.getenv("WORKROOM_ISOLATED_TEST") == "1")
-                    listOf("arm64-v8a") else listOf("arm64-v8a", "x86_64")
+                abiFilters += listOf("arm64-v8a", "x86_64")
             }
         }
         targetSdk = 36

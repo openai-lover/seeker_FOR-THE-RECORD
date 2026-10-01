@@ -20,9 +20,12 @@ class _Home extends StatelessWidget {
         projects.where((p) => p.id == recentId).firstOrNull ??
         projects.firstOrNull;
     final last = current == null ? null : c.state.pages(current.id).firstOrNull;
-    final due = c.journals.entries
-        .where((e) => e.isDue(c.wallClock().millisecondsSinceEpoch))
-        .length;
+    final dueEntries =
+        c.journals.entries
+            .where((e) => e.isDue(c.wallClock().millisecondsSinceEpoch))
+            .toList()
+          ..sort((a, b) => a.reviewDueAt!.compareTo(b.reviewDueAt!));
+    final due = dueEntries.length;
     void journal() => openPage(
       context,
       Scaffold(
@@ -142,7 +145,18 @@ class _Home extends StatelessWidget {
         const SizedBox(height: 22),
         FilledButton(
           key: const ValueKey('decision-replay-open'),
-          onPressed: journal,
+          onPressed: dueEntries.isEmpty
+              ? journal
+              : () => openPage(
+                  context,
+                  _JournalEditor(
+                    c: c,
+                    wallet: dueEntries.first.wallet,
+                    activity: dueEntries.first.activity,
+                    entry: dueEntries.first,
+                    reviewOnly: true,
+                  ),
+                ),
           style: FilledButton.styleFrom(
             minimumSize: const Size.fromHeight(58),
             shape: const StadiumBorder(),
@@ -154,7 +168,9 @@ class _Home extends StatelessWidget {
               const SizedBox(width: 10),
               Expanded(
                 child: Text(
-                  tr(context, '선택의 이유 남기기', 'Leave a reason'),
+                  dueEntries.isEmpty
+                      ? tr(context, '선택의 이유 남기기', 'Leave a reason')
+                      : tr(context, '당시 생각 다시 보기', 'Revisit my reason'),
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -163,6 +179,16 @@ class _Home extends StatelessWidget {
             ],
           ),
         ),
+        if (dueEntries.isNotEmpty) ...[
+          const SizedBox(height: 10),
+          Text(
+            dueEntries.first.originalReason ?? dueEntries.first.reason,
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+            textAlign: TextAlign.center,
+            style: const TextStyle(color: muted, fontSize: 12),
+          ),
+        ],
         const SizedBox(height: 16),
         Row(
           children: [

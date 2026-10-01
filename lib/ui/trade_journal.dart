@@ -483,13 +483,20 @@ class _JournalEditorState extends State<_JournalEditor> {
   }
 
   Future<void> save() async {
-    if (!widget.reviewOnly &&
-        reason.text.trim().isEmpty &&
-        plan.text.trim().isEmpty &&
-        next.text.trim().isEmpty &&
-        emotion.isEmpty) {
+    if (!widget.reviewOnly && reason.text.trim().isEmpty) {
       throw StateError(
         tr(context, '이유 한 줄을 먼저 남겨주세요.', 'Add one reason before saving.'),
+      );
+    }
+    if (widget.reviewOnly &&
+        review.text.trim().isEmpty &&
+        rule.text.trim().isEmpty) {
+      throw StateError(
+        tr(
+          context,
+          '회고나 다음 기준을 한 줄 남겨주세요.',
+          'Add a reflection or a lesson before saving.',
+        ),
       );
     }
     final now = widget.c.wallClock().millisecondsSinceEpoch;
@@ -506,17 +513,15 @@ class _JournalEditorState extends State<_JournalEditor> {
           updatedAt: now,
         );
     final entry = widget.reviewOnly
-        ? base.edit(
-            review: review.text.trim(),
-            decisionRule: rule.text.trim(),
-            reviewedAt: review.text.trim().isEmpty ? null : now,
-            ruleSavedAt: rule.text.trim().isEmpty
+        ? base.reflect(
+            reflection: review.text,
+            lesson: rule.text,
+            assistant:
+                selection?['source'] == 'ai' &&
+                    selection?['context'] != assistantContext
                 ? null
-                : (rule.text.trim() == base.decisionRule
-                      ? base.ruleSavedAt
-                      : now),
-            assistantSelection: selection,
-            updatedAt: now,
+                : selection,
+            now: now,
           )
         : base.edit(
             projectId: project,
@@ -525,6 +530,9 @@ class _JournalEditorState extends State<_JournalEditor> {
             emotion: emotion,
             nextAction: next.text.trim(),
             reviewDueAt: dueAt,
+            reviewedAt: dueAt != null && dueAt != base.reviewDueAt
+                ? null
+                : base.reviewedAt,
             updatedAt: now,
           );
     await widget.c.journals.save(entry);
@@ -637,7 +645,13 @@ class _JournalEditorState extends State<_JournalEditor> {
                 maxLines: 8,
                 maxLength: 4000,
                 textCapitalization: TextCapitalization.sentences,
-                onChanged: (_) => setState(() => dirty = true),
+                onChanged: (_) => setState(() {
+                  dirty = true;
+                  if (selection?['source'] == 'ai' &&
+                      selection?['context'] != assistantContext) {
+                    selection = null;
+                  }
+                }),
                 decoration: InputDecoration(
                   hintText: tr(
                     context,
@@ -941,6 +955,20 @@ class _JournalDetail extends StatelessWidget {
                 ),
               ),
               child: Text(tr(context, '메모 수정', 'Edit notes')),
+            ),
+            const SizedBox(height: 10),
+            ActionButton(
+              label: tr(context, '이 기록 내보내기', 'Export this record'),
+              icon: Icons.ios_share_rounded,
+              outlined: true,
+              action: () => r.native.export(
+                const JsonEncoder.withIndent('  ').convert({
+                  'app': AppConfig.name,
+                  'schemaVersion': 1,
+                  'exportedAt': DateTime.now().toUtc().toIso8601String(),
+                  'tradeJournals': [e.toJson()],
+                }),
+              ),
             ),
             TextButton(
               onPressed: () => Clipboard.setData(

@@ -248,6 +248,15 @@ class _ReflectionAssistantPanelState extends State<_ReflectionAssistantPanel> {
     unawaited(_status());
   }
 
+  @override
+  void didUpdateWidget(covariant _ReflectionAssistantPanel oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (pending != null && pending!['context'] != widget.contextText()) {
+      pending = null;
+      error = 'changed';
+    }
+  }
+
   Future<void> _status() async {
     try {
       final s = await assistant.status();

@@ -110,6 +110,120 @@ void main() {
   );
 
   test(
+    'a lesson completes a revisit and later edits keep its first completion',
+    () {
+      final completed = entry.reflect(
+        reflection: '',
+        lesson: '  Check the assumption first.  ',
+        assistant: null,
+        now: 100,
+      );
+      expect(completed.reviewedAt, 100);
+      expect(completed.ruleSavedAt, 100);
+      expect(completed.decisionRule, 'Check the assumption first.');
+      expect(
+        completed.edit(reviewDueAt: 1, updatedAt: 100).isDue(101),
+        isFalse,
+      );
+      final edited = completed.reflect(
+        reflection: 'A clearer reason helped.',
+        lesson: 'Check the assumption first.',
+        assistant: null,
+        now: 200,
+      );
+      expect(edited.reviewedAt, 100);
+      expect(edited.ruleSavedAt, 100);
+      final changed = edited.reflect(
+        reflection: edited.review,
+        lesson: 'Check two assumptions.',
+        assistant: null,
+        now: 300,
+      );
+      expect(changed.reviewedAt, 100);
+      expect(changed.ruleSavedAt, 300);
+    },
+  );
+
+  testWidgets(
+    'home opens the oldest due reason directly and saves a lesson alone',
+    (tester) async {
+      tester.view.physicalSize = const Size(430, 960);
+      tester.view.devicePixelRatio = 1;
+      addTearDown(tester.view.resetPhysicalSize);
+      addTearDown(tester.view.resetDevicePixelRatio);
+      final repo = MemoryRepository();
+      await repo.saveJournal(entry.edit(reviewDueAt: 1, updatedAt: 2));
+      final c = WorkroomController(repo, FakeClock());
+      await c.load();
+      await c.setting('roomWelcome', 1);
+      await c.setting('reduceMotion', true);
+      final remote = RemoteService(NativePlatform(), c);
+      await tester.pumpWidget(WorkroomApp(controller: c, remote: remote));
+      await tester.pumpAndSettle();
+      await tester.ensureVisible(
+        find.byKey(const ValueKey('decision-replay-open')),
+      );
+      await tester.tap(find.byKey(const ValueKey('decision-replay-open')));
+      await tester.pumpAndSettle();
+      expect(find.text('Reflect on your decision'), findsOneWidget);
+      expect(find.text(entry.reason), findsOneWidget);
+      await tester.ensureVisible(find.text('Save on this device'));
+      await tester.tap(find.text('Save on this device'));
+      await tester.pumpAndSettle();
+      expect(
+        find.text('Add a reflection or a lesson before saving.'),
+        findsOneWidget,
+      );
+      expect(c.journals.entries.single.reviewedAt, isNull);
+      await tester.ensureVisible(find.byKey(const ValueKey('decision-rule')));
+      await tester.enterText(
+        find.byKey(const ValueKey('decision-rule')),
+        'Check one assumption.',
+      );
+      await tester.ensureVisible(find.text('Save on this device'));
+      await tester.tap(find.text('Save on this device'));
+      await tester.pumpAndSettle();
+      expect(c.journals.entries.single.reviewedAt, isNotNull);
+      expect(c.journals.entries.single.originalReason, entry.reason);
+      expect(find.text('Revisit my reason'), findsNothing);
+      expect(tester.takeException(), isNull);
+      await tester.pumpWidget(const SizedBox());
+      remote.dispose();
+      c.dispose();
+    },
+  );
+
+  testWidgets('a due date updates an open home without a focus session', (
+    tester,
+  ) async {
+    var wall = DateTime.utc(2026, 10, 1);
+    final repo = MemoryRepository();
+    await repo.saveJournal(
+      entry.edit(
+        reviewDueAt: wall
+            .add(const Duration(seconds: 2))
+            .millisecondsSinceEpoch,
+        updatedAt: 2,
+      ),
+    );
+    final c = WorkroomController(repo, FakeClock(), wallClock: () => wall);
+    await c.load();
+    await c.setting('roomWelcome', 1);
+    await c.setting('reduceMotion', true);
+    final remote = RemoteService(NativePlatform(), c);
+    await tester.pumpWidget(WorkroomApp(controller: c, remote: remote));
+    await tester.pumpAndSettle();
+    expect(find.text('Revisit my reason'), findsNothing);
+    wall = wall.add(const Duration(seconds: 3));
+    await tester.pump(const Duration(seconds: 1));
+    await tester.pumpAndSettle();
+    expect(find.text('Revisit my reason'), findsOneWidget);
+    await tester.pumpWidget(const SizedBox());
+    remote.dispose();
+    c.dispose();
+  });
+
+  test(
     'assistant sends bounded writing only and rejects invalid model output',
     () async {
       final messenger =
@@ -259,12 +373,11 @@ void main() {
       find.byKey(const ValueKey('review')),
       'My motive was unclear.',
     );
+    await tester.pumpAndSettle();
     final motive = find.text(
       'What did you want to find out by making this choice?',
     );
-    await tester.ensureVisible(motive);
-    await tester.tap(motive);
-    await tester.pumpAndSettle();
+    expect(motive, findsNothing);
     expect(
       find.text('Your writing changed. Choose a question again.'),
       findsOneWidget,
@@ -274,6 +387,13 @@ void main() {
     await tester.tap(motive);
     await tester.pumpAndSettle();
     expect(find.text('Your choice from AI suggestions'), findsOneWidget);
+    await tester.ensureVisible(find.byKey(const ValueKey('review')));
+    await tester.enterText(
+      find.byKey(const ValueKey('review')),
+      'A different reason now.',
+    );
+    await tester.pumpAndSettle();
+    expect(find.text('Your choice from AI suggestions'), findsNothing);
     expect(tester.takeException(), isNull);
     await tester.pumpWidget(const SizedBox());
     remote.dispose();

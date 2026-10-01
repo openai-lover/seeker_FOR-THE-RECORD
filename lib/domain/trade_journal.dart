@@ -207,4 +207,27 @@ class TradeJournalEntry {
         'originalPlan': previous.originalPlan ?? previous.plan,
         'baselineSavedAt': previous.baselineSavedAt ?? previous.updatedAt,
       });
+
+  /// Keep the first completed revisit time when an existing reflection is edited.
+  /// A personal lesson alone completes a revisit, even without a longer answer.
+  TradeJournalEntry reflect({
+    required String reflection,
+    required String lesson,
+    required Map<String, dynamic>? assistant,
+    required int now,
+  }) {
+    final answer = reflection.trim(), rule = lesson.trim();
+    return edit(
+      review: answer,
+      decisionRule: rule,
+      reviewedAt: answer.isEmpty && rule.isEmpty ? null : reviewedAt ?? now,
+      ruleSavedAt: rule.isEmpty
+          ? null
+          : rule == decisionRule && ruleSavedAt != null
+          ? ruleSavedAt
+          : now,
+      assistantSelection: assistant,
+      updatedAt: now,
+    );
+  }
 }

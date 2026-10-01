@@ -1,5 +1,21 @@
 // Interface copy only. Personal writing stays in its original language.
 const replayCatalog = <String, List<String>>{
+  'Add a reflection or a lesson before saving.': [
+    '保存する前に、振り返りや次の選択への学びを一言書いてください。',
+    '保存前，请写下回顾或下次选择的经验。',
+    'सहेजने से पहले अपना चिंतन या अगली पसंद के लिए एक सीख लिखें।',
+    'Antes de guardar, escribe una reflexión o una lección.',
+    'Antes de salvar, escreva uma reflexão ou uma lição.',
+    'Avant d’enregistrer, ajoutez une réflexion ou une leçon.',
+  ],
+  'Export this record': [
+    'この記録を書き出す',
+    '导出这条记录',
+    'यह रिकॉर्ड निर्यात करें',
+    'Exportar este registro',
+    'Exportar este registro',
+    'Exporter cette note',
+  ],
   'Your choice from AI suggestions': [
     'AIの提案から選んだ質問',
     '你从 AI 建议中选择的问题',
