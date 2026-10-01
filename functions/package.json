@@ -1,6 +1,7 @@
 {
   "name": "seeker-workroom-functions",
   "private": true,
+  "packageManager": "pnpm@12.8.1",
   "type": "module",
   "main": "lib/index.js",
   "engines": { "node": "22" },

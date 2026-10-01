@@ -34,27 +34,34 @@ lookup과 UID 형태 검증은 경로 경계를 실제로 강화하지만, 이 �
 `@solana/web3.js` v1 import는 실제 선택형 체인 기능의 도달 가능한 의존성이다. 유지보수
 상태 패턴 경고를 취약점 해결로 오인하거나 단순 import 제거로 숨기지 않았다.
 
-## 생산 의존성 감사: 미해결 항목
+## 생산 의존성 감사: 패치와 미해결 항목
 
-코디네이터가 2026-10-01에 현재 `functions/pnpm-lock.yaml`로 기록한 production audit의
-7개 advisory(2 high, 4 moderate, 1 low)는 **해결되었다고 주장하지 않는다**:
+2026-10-01 production audit에서 처음에는 7개 advisory(2 high, 4 moderate, 1 low)가
+나왔다. Cloud 환경에서는 registry가 HTTP 403을 반환해 패키지를 갱신하지 못했다.
+이후 로컬의 지정된 Node 22.23.2 / pnpm 12.8.1 환경에서 공식 registry를 통해
+`qs`를 6.16.0, `@grpc/grpc-js`를 1.14.5로 갱신했다. `pnpm-workspace.yaml`의
+overrides는 기존 주요 버전의 취약 범위에만 적용하며, lockfile은 pnpm으로 생성했다.
+다른 주요 버전으로 강제 교체하거나 audit ignore를 추가하지 않았다.
+
+새 lockfile을 별도 폴더에서 `pnpm install --frozen-lockfile`로 설치한 뒤 빌드와
+테스트 44개가 통과했다. `pnpm audit --prod --json` 재실행 결과는 **3개 advisory
+(1 high, 2 moderate, 0 low, 0 critical)**이다. `qs`와 `@grpc/grpc-js` 관련 4개
+advisory는 이 production audit 결과에서 사라졌으며, 다음 3개는 계속 미해결이다.
 
 | advisory | 현재 production 경로 | 상태 |
 | --- | --- | --- |
 | GHSA-3gc7-fjrx-p6mg (`bigint-buffer <=1.1.5`) | `@solana/spl-token → @solana/buffer-layout-utils` | published patch 없음으로 보고됨 |
 | GHSA-w5hq-g745-h8pq (`uuid <11.1.1`) | `@solana/web3.js → jayson → uuid@8.3.2` | v1 호환 교체 미검증 |
-| GHSA-x5fp-wj9c-mxmx, GHSA-4mjr-xmp4-gh2g (`qs <6.16.0`) | `firebase-functions → express → qs@6.15.3` | patch 후보, registry 접근 차단으로 lock 갱신 미수행 |
 | GHSA-528h-pc64-c93x (`stream-json <=3.4.0`) | `@solana/web3.js → jayson → stream-json@1.9.1` | v1 의존성 교체 미검증 |
-| GHSA-m9gg-hp2v-232j, GHSA-f596-whhp-79r4 (`@grpc/grpc-js 1.14.0..<1.14.5`) | `firebase-admin → Firestore → google-gax → @grpc/grpc-js@1.14.4` | patch 후보, registry 접근 차단으로 lock 갱신 미수행 |
 
-이 환경에서 다시 실행한 `pnpm audit --prod --json`은 npm audit endpoint의 HTTP 403으로
-`ERR_PNPM_AUDIT_BAD_RESPONSE`가 되어, 현재 registry 결과를 독립적으로 재확인하지
-못했다. GitHub Advisory의 각 GHSA URL과 `pnpm view`도 이 실행 환경의 403 정책으로
-접근하지 못했으며, patch 업데이트도 같은 이유로 수행할 수 없었다. 그래서 ignore
-목록, 거짓 zero-count, major override, 수동 lockfile 조작은 사용하지 않았다. 다음 허용된
-환경에서 공식 npm/GitHub advisory와 해당 package release notes를 다시 확인한 뒤,
-호환되는 `qs`/`@grpc/grpc-js` patch를 lockfile에 정상 설치·테스트하고, Solana v1 전환은
-`@solana/spl-token` API를 포함한 별도 migration으로 검토해야 한다.
+공식 patch 범위는 [qs arrayLimit advisory](https://github.com/advisories/GHSA-x5fp-wj9c-mxmx),
+[qs DoS advisory](https://github.com/advisories/GHSA-4mjr-xmp4-gh2g),
+[gRPC TLS advisory](https://github.com/advisories/GHSA-m9gg-hp2v-232j),
+[gRPC memory advisory](https://github.com/advisories/GHSA-f596-whhp-79r4)로 확인했다.
+재현 명령은 `functions`에서 `corepack pnpm install --frozen-lockfile`,
+`corepack pnpm run build`, `corepack pnpm run test`, `corepack pnpm audit --prod --json`이다.
+남은 경고가 있어서 audit 명령은 exit 1을 반환하는 것이 예상 결과다.
+Solana v1 전환은 `@solana/spl-token` API를 포함한 별도 migration으로 검토해야 한다.
 
 기본 APK가 이 선택형 Node backend를 포함하지 않는다는 점은 노출 범위를 제한할 뿐,
 위 production dependency 항목을 "cleared"로 만들지는 않는다. 실제 배포, 실기기,
