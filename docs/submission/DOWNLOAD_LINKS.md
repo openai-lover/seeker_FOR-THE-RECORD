@@ -8,9 +8,9 @@
 | Source | [Exact v0.5.3 tag](https://github.com/openai-lover/seeker_FOR-THE-RECORD/tree/v0.5.3) |
 | Changes and current physical Seeker evidence | [0.5.3 verification](REVISION_053.md) |
 | Short physical AI screen recording | [45-second device clip](https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.3/FOR-THE-RECORD-Seeker-AI-0.5.3.mp4), silent, actual inference; authored verification text |
-| English native Slides | [Open Slides](https://docs.google.com/presentation/d/1tO0GQsr-iQCSKIODwrkbODu2ENiVbRopWM78R8wwcNA/edit), currently 0.5.2 evidence; read the 0.5.3 addendum above |
-| Narrated emulator walkthrough | [0.5.2 Drive video](https://drive.google.com/file/d/1JeE2C5iJb-CIFL8v9uv40Cn15s_BIfwl/view), synthetic RPC, advanced clock, manual question choice; not live trades |
-| English PPT, PDF, transcript and subtitles | [0.5.2 release assets](https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/tag/v0.5.2) |
+| English native Slides | [Open Slides](https://docs.google.com/presentation/d/1tO0GQsr-iQCSKIODwrkbODu2ENiVbRopWM78R8wwcNA/edit), 11 slides updated for 0.5.3 with current device evidence |
+| Narrated physical Seeker walkthrough | [0.5.3 Drive video](https://drive.google.com/file/d/1JeE2C5iJb-CIFL8v9uv40Cn15s_BIfwl/view), 2:13, actual AI recording plus reviewed device screenshots, authored verification text, manual immediate revisit |
+| English PPT, PDF, transcript and subtitles | [0.5.3 release assets](https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/tag/v0.5.3) |
 
 0.5.3 ARM64: versionCode **2010**, minimum API **26**, **37,811,704 bytes**,
 development signing. SHA-256:
@@ -20,6 +20,9 @@ The 0.5.3 tests and physical device scope are documented in the revision above.
 The most recent observed AI Coach score is 50/100 from the earlier materials;
 0.5.3 has not been reassessed. The portal draft save is blocked by its GitHub
 connection check. Publishing artifacts does not finalize the contest entry.
+
+The Slides and Drive links track the latest materials. Immutable 0.5.2 PPT/PDF,
+transcript and subtitles remain in the [historical 0.5.2 release](https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/tag/v0.5.2).
 
 ## Historical 0.3.1 materials
 

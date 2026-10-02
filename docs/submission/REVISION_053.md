@@ -54,6 +54,12 @@ are excluded from the public evidence. The screenshots show authored verificatio
 writing only. The 45-second device recording shows AI inference and its ambiguity
 choices; it is not a complete wallet connection or live trade recording.
 
+The current 2:13 narrated walkthrough combines the uncut AI segment with reviewed
+device screenshots and an English explanation of the evidence and limits.
+Its narration uses Microsoft Zira Desktop synthesis. The 11-slide native deck,
+PPT and PDF now show the current physical device evidence. All versioned exports,
+the video transcript and subtitles are available in release v0.5.3.
+
 ## Current device screens
 
 | Personal note | AI suggestions | Saved reflection and lesson |
