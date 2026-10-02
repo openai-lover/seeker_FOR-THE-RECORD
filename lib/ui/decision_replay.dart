@@ -157,7 +157,7 @@ class _DecisionReplayCard extends StatelessWidget {
                                 ),
                                 const SizedBox(height: 8),
                                 Text(
-                                  '${e.activity.input!.symbol} → ${e.activity.output!.symbol} · ${tr(context, '출처 기록 열기', 'Open source record')}',
+                                  '${_activityLabel(context, e.activity)} · ${tr(context, '출처 기록 열기', 'Open source record')}',
                                   style: const TextStyle(
                                     color: muted,
                                     fontSize: 12,

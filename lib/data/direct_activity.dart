@@ -53,7 +53,7 @@ String _decimal(BigInt amount, int places) {
       .replaceFirst(RegExp(r'\.?0+$'), '');
 }
 
-/// Conservative local parser. Unknown or ambiguous activity stays non-journalable.
+/// Conservative local parser. Unknown or ambiguous activity never becomes a swap.
 /// No fiat-price inference, native-SOL inference, or transaction construction.
 WalletActivity normalizeDirectActivity(
   String wallet,

@@ -30,6 +30,90 @@ const entry = TradeJournalEntry(
 );
 void main() {
   test(
+    'successful unclassified activity persists without invented swap facts',
+    () async {
+      sqfliteFfiInit();
+      final dir = await Directory.systemTemp.createTemp(
+        'record-activity-note-',
+      );
+      final path = '${dir.path}/record.sqlite';
+      var repo = await LocalRepository.open(
+        databasePath: path,
+        factory: databaseFactoryFfi,
+      );
+      final other = WalletActivity(
+        id: activity.id,
+        signature: activity.signature,
+        blockTime: activity.blockTime,
+        status: 'success',
+        type: 'other',
+        issue: 'unsupported-activity',
+        fee: activity.fee,
+      );
+      expect(other.canJournal, isFalse);
+      final note = TradeJournalEntry.fromJson({
+        ...entry.toJson(),
+        'activity': other.toJson(),
+      });
+      await repo.saveJournal(note);
+      await repo.saveJournal(
+        note.reflect(
+          reflection: 'I checked the source.',
+          lesson: 'Read the transaction first.',
+          assistant: null,
+          now: 20,
+        ),
+      );
+      await repo.database.close();
+      repo = await LocalRepository.open(
+        databasePath: path,
+        factory: databaseFactoryFfi,
+      );
+      final saved = (await repo.readJournals()).single;
+      expect(saved.originalReason, entry.reason);
+      expect(saved.activity.toJson(), other.toJson());
+      expect(saved.activity.input, isNull);
+      expect(saved.activity.output, isNull);
+      expect(saved.activity.source, isNull);
+      expect(saved.decisionRule, 'Read the transaction first.');
+      final forged = TradeJournalEntry.fromJson({
+        ...saved.toJson(),
+        'activity': activity.toJson(),
+      });
+      await expectLater(repo.saveJournal(forged), throwsStateError);
+      await repo.database.close();
+      await dir.delete(recursive: true);
+    },
+  );
+  test(
+    'failed, unavailable and malformed activity cannot be saved as confirmed notes',
+    () async {
+      for (final candidate in [
+        {'status': 'failed', 'issue': 'unsupported-activity'},
+        {'status': 'unavailable', 'issue': 'transaction-unavailable'},
+        {'status': 'success', 'issue': 'parse-unavailable'},
+        {'status': 'success', 'issue': null},
+      ]) {
+        final other = WalletActivity.fromJson({
+          ...activity.toJson(),
+          'type': 'other',
+          'input': null,
+          'output': null,
+          'source': null,
+          ...candidate,
+        });
+        final note = TradeJournalEntry.fromJson({
+          ...entry.toJson(),
+          'activity': other.toJson(),
+        });
+        await expectLater(
+          MemoryRepository().saveJournal(note),
+          throwsStateError,
+        );
+      }
+    },
+  );
+  test(
     'serialization retains exact amounts, immutable facts and personal thoughts',
     () {
       final result = TradeJournalEntry.fromJson(

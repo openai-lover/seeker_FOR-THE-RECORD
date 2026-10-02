@@ -37,6 +37,16 @@ class WalletActivity {
   final ActivityAsset? input, output;
   bool get canJournal =>
       status == 'success' && type == 'swap' && input != null && output != null;
+
+  /// A personal note may reference verified successful activity even when its
+  /// transaction type cannot be classified. This never turns it into a swap.
+  bool get canRecordReason =>
+      canJournal ||
+      (status == 'success' &&
+          type == 'other' &&
+          issue == 'unsupported-activity' &&
+          input == null &&
+          output == null);
   String get explorerUrl => 'https://explorer.solana.com/tx/$signature';
   factory WalletActivity.fromJson(Map<String, dynamic> j) => WalletActivity(
     id: j['id'] as String,

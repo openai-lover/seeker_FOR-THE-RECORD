@@ -76,6 +76,63 @@ void main() {
     return (c, r);
   }
 
+  testWidgets(
+    'unclassified activity opens a labeled note and completes reflection',
+    (tester) async {
+      final other = {
+        ...activity.toJson(),
+        'type': 'other',
+        'source': null,
+        'input': null,
+        'output': null,
+        'issue': 'unsupported-activity',
+      };
+      final (c, r) = await show(tester, connected: true, rows: [other]);
+      expect(find.text('Other wallet activity'), findsOneWidget);
+      expect(find.text('Write reflection'), findsNothing);
+      await tester.ensureVisible(find.text('Add a personal note'));
+      await tester.tap(find.text('Add a personal note'));
+      await tester.pumpAndSettle();
+      expect(find.text('Wallet activity note'), findsOneWidget);
+      expect(find.text('Why did you make this trade?'), findsNothing);
+      expect(
+        find.text('What would you like to remember about this activity?'),
+        findsOneWidget,
+      );
+      expect(find.textContaining('its type is unclassified'), findsOneWidget);
+      await tester.enterText(
+        find.byKey(const ValueKey(0)),
+        'A demonstration reason.',
+      );
+      await tester.ensureVisible(find.text('Save reason'));
+      await tester.tap(find.text('Save reason'));
+      await tester.pumpAndSettle();
+      await tester.ensureVisible(find.text('Recorded · Open journal').first);
+      await tester.tap(find.text('Recorded · Open journal').first);
+      await tester.pumpAndSettle();
+      await tester.ensureVisible(find.text('Reflect'));
+      await tester.tap(find.text('Reflect'));
+      await tester.pumpAndSettle();
+      await tester.ensureVisible(find.byKey(const ValueKey('decision-rule')));
+      await tester.enterText(
+        find.byKey(const ValueKey('decision-rule')),
+        'Check the source before the next choice.',
+      );
+      await tester.ensureVisible(find.text('Save on this device'));
+      await tester.tap(find.text('Save on this device'));
+      await tester.pumpAndSettle();
+      expect(
+        c.journals.entries.single.originalReason,
+        'A demonstration reason.',
+      );
+      expect(c.journals.entries.single.activity.toJson(), other);
+      expect(c.journals.entries.single.reviewedAt, isNotNull);
+      expect(tester.takeException(), isNull);
+      await tester.pumpWidget(const SizedBox());
+      r.dispose();
+      c.dispose();
+    },
+  );
   testWidgets('disconnected state explains read-only and opens connection', (
     tester,
   ) async {

@@ -1,5 +1,11 @@
 # Trade Journal implementation — 2026-09-17
 
+**Current behavior:** this document records the initial server integration.
+The default release now uses direct read-only MWA/public RPC without a signed
+message or Firebase. In 0.5.3, successful unclassified activity may hold a clearly
+labeled personal note while remaining unclassified. Failed/unavailable/parse-error
+activity is still excluded. See [the current revision](submission/REVISION_053.md).
+
 This extends the original Workroom repository on `codex/wallet-trade-journal`. The original source was snapshotted before modification. The personal focus workflow, monotonic-clock recovery, shared rooms and SKR purchase guard remain in place.
 
 ## Data and request flow

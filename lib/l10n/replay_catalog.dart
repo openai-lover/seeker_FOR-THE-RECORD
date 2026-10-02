@@ -1,5 +1,45 @@
 // Interface copy only. Personal writing stays in its original language.
 const replayCatalog = <String, List<String>>{
+  'What would you like to remember about this activity?': [
+    'この履歴について、何を覚えておきたいですか？',
+    '关于这次活动，你想记住什么？',
+    'इस गतिविधि के बारे में आप क्या याद रखना चाहेंगे?',
+    '¿Qué te gustaría recordar sobre esta actividad?',
+    'O que você gostaria de lembrar sobre esta atividade?',
+    'Que souhaitez-vous retenir de cette activité ?',
+  ],
+  'Save a reason on confirmed wallet activity to keep it here.': [
+    '確認済みのウォレット履歴に理由を残すと、ここに保存されます。',
+    '为已确认的钱包活动写下理由，即可保存在这里。',
+    'पुष्ट वॉलेट गतिविधि पर कारण लिखें और उसे यहाँ सहेजें।',
+    'Guarda una razón sobre una actividad confirmada de tu cartera para conservarla aquí.',
+    'Salve um motivo sobre uma atividade confirmada da carteira para guardá-lo aqui.',
+    'Notez une raison liée à une activité confirmée du portefeuille pour la conserver ici.',
+  ],
+  'Add a personal note': [
+    '個人メモを残す',
+    '添加个人笔记',
+    'निजी नोट जोड़ें',
+    'Añadir una nota personal',
+    'Adicionar uma nota pessoal',
+    'Ajouter une note personnelle',
+  ],
+  'Wallet activity note': [
+    'ウォレット履歴のメモ',
+    '钱包活动笔记',
+    'वॉलेट गतिविधि का नोट',
+    'Nota sobre la actividad de la cartera',
+    'Nota sobre a atividade da carteira',
+    'Note sur l’activité du portefeuille',
+  ],
+  'The transaction succeeded, but its type is unclassified. You can keep a personal note with its source.': [
+    '取引は成功しましたが、種類は判別できていません。元の取引に個人メモを残せます。',
+    '交易已成功，但类型尚未识别。你可以为原始交易留下个人笔记。',
+    'लेनदेन सफल हुआ, लेकिन उसका प्रकार पहचाना नहीं गया। उसके स्रोत के साथ एक निजी नोट रख सकते हैं।',
+    'La transacción se completó, pero su tipo no está identificado. Puedes guardar una nota personal junto a su origen.',
+    'A transação foi concluída, mas seu tipo não foi identificado. Você pode guardar uma nota pessoal junto à origem.',
+    'La transaction a réussi, mais son type n’est pas identifié. Vous pouvez conserver une note personnelle liée à sa source.',
+  ],
   'Add a reflection or a lesson before saving.': [
     '保存する前に、振り返りや次の選択への学びを一言書いてください。',
     '保存前，请写下回顾或下次选择的经验。',

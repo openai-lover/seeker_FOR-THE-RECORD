@@ -87,7 +87,9 @@ class LocalRepository implements Repository {
           .toList();
   @override
   Future<void> saveJournal(TradeJournalEntry entry) async {
-    if (!entry.activity.canJournal) throw StateError('unsupported-activity');
+    if (!entry.activity.canRecordReason) {
+      throw StateError('unsupported-activity');
+    }
     await database.transaction((tx) async {
       final old = await tx.query(
         'trade_journals',
@@ -165,7 +167,9 @@ class MemoryRepository implements Repository {
         ..sort((a, b) => b.updatedAt.compareTo(a.updatedAt));
   @override
   Future<void> saveJournal(TradeJournalEntry entry) async {
-    if (!entry.activity.canJournal) throw StateError('unsupported-activity');
+    if (!entry.activity.canRecordReason) {
+      throw StateError('unsupported-activity');
+    }
     final old = _journals.values
         .where(
           (e) => e.wallet == entry.wallet && e.signature == entry.signature,

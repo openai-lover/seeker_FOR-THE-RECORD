@@ -11,7 +11,26 @@
 
 A private Android journal for meaningful work and wallet decisions. Keep what you did, why you did it, and the next step worth remembering.
 
-**Version 0.5.2 · Local development preview · English by default**
+**Version 0.5.3 · Local development preview · English by default**
+
+## A usable record beyond recognized swaps
+
+On a physical Seeker, the connected wallet's recent activity fell outside the
+strict swap parser. Version 0.5.3 now lets a confirmed successful, unclassified
+activity hold a personal note, original reason, later reflection and lesson.
+It stays **Other wallet activity**; no trade type, token amount or return is
+invented. Failed, unavailable and parse-error records still cannot be saved.
+
+The normal APK was checked on Seeker on 2 October: Seed Vault account connection,
+public activity retrieval, note save, manual revisit, native AI suggestions,
+lesson, Android JSON file save and persistence after process restart. The writing
+was explicitly authored for verification. A final-build cold AI request took
+2,099 ms and offered two candidates for the person to choose; this is one
+observation, not an accuracy or performance benchmark. The supported live
+Jupiter swap path remains unverified.
+
+[0.5.3 verification and limits](docs/submission/REVISION_053.md) ·
+[Current downloads](docs/submission/DOWNLOAD_LINKS.md)
 
 ## A clearer revisit in 0.5.2
 
@@ -58,7 +77,7 @@ Local 0.5.1 verification on 28 September: 93 Flutter tests passed, static analys
 3. Pause or finish when you need to. Record an outcome, including a sticking point.
 4. Leave one next action. Choose **Make some space** or the last bookmark next time to start with that action already filled in.
 
-Wallet reflections use a read-only flow: connect an MWA wallet, choose a supported historical swap and save a reason immediately. Optional prompts capture a plan, emotion and next action. Revisit the saved writing later and keep a lesson. Personal writing stays on the device; transaction facts remain fixed.
+Wallet reflections use a read-only flow: connect an MWA wallet and save a reason beside a supported historical swap, or a clearly labeled personal note beside successful unclassified activity. Optional prompts capture a plan, emotion and next action. Revisit the saved writing later and keep a lesson. Personal writing stays on the device; transaction facts remain fixed.
 
 ## Built to feel considerate
 

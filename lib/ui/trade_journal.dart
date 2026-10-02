@@ -226,7 +226,7 @@ class _TradeJournalState extends State<_TradeJournal> {
                 child: _ActivityCard(
                   activity: a,
                   entry: j.find(r.wallet!, a.signature),
-                  onOpen: a.canJournal
+                  onOpen: a.canRecordReason
                       ? () => _openJournal(
                           context,
                           widget.c,
@@ -265,8 +265,8 @@ class _TradeJournalState extends State<_TradeJournal> {
             Text(
               tr(
                 context,
-                '거래에서 일지를 작성하면 여기에 보관됩니다.',
-                'Write a reflection on a supported swap to keep it here.',
+                '확인된 지갑 활동에 이유를 남기면 여기에 보관됩니다.',
+                'Save a reason on confirmed wallet activity to keep it here.',
               ),
               style: const TextStyle(color: muted),
             ),
@@ -294,6 +294,15 @@ class _TradeJournalState extends State<_TradeJournal> {
 String _shortAddress(String value) => value.length < 14
     ? value
     : '${value.substring(0, 5)}…${value.substring(value.length - 5)}';
+String _activityLabel(BuildContext context, WalletActivity activity) =>
+    activity.canJournal
+    ? '${activity.input!.symbol} → ${activity.output!.symbol}'
+    : tr(context, '기타 지갑 활동', 'Other wallet activity');
+String _unclassifiedNoteText(BuildContext context) => tr(
+  context,
+  '거래는 성공했지만 종류는 판별하지 못했어요. 원본 거래에 개인 메모를 남길 수 있습니다.',
+  'The transaction succeeded, but its type is unclassified. You can keep a personal note with its source.',
+);
 void _openJournal(
   BuildContext context,
   WorkroomController c,
@@ -391,7 +400,9 @@ class _ActivityCard extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(top: 10),
               child: Text(
-                a.issue == 'parse-unavailable'
+                a.canRecordReason
+                    ? _unclassifiedNoteText(context)
+                    : a.issue == 'parse-unavailable'
                     ? activityErrorText(context, 'parse-unavailable')
                     : tr(
                         context,
@@ -422,7 +433,9 @@ class _ActivityCard extends StatelessWidget {
               ),
               label: Text(
                 entry == null
-                    ? tr(context, '매매일지 작성', 'Write reflection')
+                    ? a.canJournal
+                          ? tr(context, '매매일지 작성', 'Write reflection')
+                          : tr(context, '개인 메모 남기기', 'Add a personal note')
                     : tr(context, '기록 완료 · 일지 열기', 'Recorded · Open journal'),
               ),
             ),
@@ -547,7 +560,13 @@ class _JournalEditorState extends State<_JournalEditor> {
   @override
   Widget build(BuildContext context) {
     final questions = [
-      tr(context, '왜 이 거래를 했나요?', 'Why did you make this trade?'),
+      widget.activity.canJournal
+          ? tr(context, '왜 이 거래를 했나요?', 'Why did you make this trade?')
+          : tr(
+              context,
+              '이 활동에 대해 무엇을 기억하고 싶나요?',
+              'What would you like to remember about this activity?',
+            ),
       tr(context, '거래 전에 어떤 계획이 있었나요?', 'What was your plan beforehand?'),
       tr(context, '당시 감정은 어땠나요?', 'How did you feel at the time?'),
       tr(context, '다음에 확인할 것은?', 'What will you check next?'),
@@ -578,13 +597,15 @@ class _JournalEditorState extends State<_JournalEditor> {
           title: Text(
             widget.reviewOnly
                 ? tr(context, '판단 복기', 'Reflect on your decision')
-                : tr(context, '매매 일지', 'Trade journal'),
+                : widget.activity.canJournal
+                ? tr(context, '매매 일지', 'Trade journal')
+                : tr(context, '지갑 활동 메모', 'Wallet activity note'),
           ),
         ),
         body: PageBody(
           children: [
             Text(
-              '${widget.activity.input!.symbol} → ${widget.activity.output!.symbol}',
+              _activityLabel(context, widget.activity),
               style: Theme.of(context).textTheme.titleMedium,
             ),
             const SizedBox(height: 8),
@@ -597,6 +618,13 @@ class _JournalEditorState extends State<_JournalEditor> {
               style: const TextStyle(fontSize: 12, color: muted),
             ),
             const SizedBox(height: 24),
+            if (!widget.activity.canJournal) ...[
+              Text(
+                _unclassifiedNoteText(context),
+                style: const TextStyle(fontSize: 12, color: muted),
+              ),
+              const SizedBox(height: 16),
+            ],
             if (widget.reviewOnly && widget.entry != null) ...[
               _SavedReason(widget.entry!),
               const SizedBox(height: 20),
