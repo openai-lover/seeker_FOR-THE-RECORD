@@ -1,0 +1,1823 @@
+{
+  "summary": {
+    "appSource": "07a0cb388e5395f24b3a75c9923aa2f4df5dc7cd",
+    "mode": "isolated debug harness; physical Seeker; network available",
+    "uniqueNotes": 40,
+    "themes": 5,
+    "languages": 8,
+    "passes": 3,
+    "requests": 120,
+    "top1Unique": 33,
+    "candidateCoverageUnique": 38,
+    "identicalSelectionsAcrossPasses": true,
+    "coldNativeMs": 2025,
+    "warmCount": 119,
+    "warmMedianMs": 30,
+    "warmP95Ms": 49,
+    "warmRangeMs": [
+      16,
+      57
+    ],
+    "processPssKiB": {
+      "before": 302911,
+      "after": 597105
+    },
+    "fixtureSha256": "84739c388edecd9f157067a35dcef983dbc1f3eb3d014d7480cfb1eab50cc284",
+    "limits": "Five translated themes, author assigned labels, no independent raters or general accuracy. Debug process PSS snapshots are not production peak memory. No private journal or wallet data."
+  },
+  "events": [
+    {
+      "kind": "initial",
+      "status": {
+        "supported": true,
+        "ready": false,
+        "busy": false,
+        "downloaded": 0,
+        "modelBytes": 132439008,
+        "warm": false
+      },
+      "sourceVersion": "0.5.5",
+      "mode": "isolated-debug"
+    },
+    {
+      "kind": "missingModel",
+      "result": "model-missing"
+    },
+    {
+      "kind": "download",
+      "milliseconds": 36973,
+      "bytes": 132439008
+    },
+    {
+      "kind": "start",
+      "utc": "2026-10-03T14:56:09.007632Z",
+      "cases": 40,
+      "passes": 3,
+      "model": "multilingual-e5-small Q8 · semantic-v2 · llama.cpp 0.5.0"
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "case": "en-1",
+      "language": "en",
+      "expected": 1,
+      "selected": 1,
+      "candidates": [
+        1
+      ],
+      "nativeMs": 2025,
+      "wallMs": 2033,
+      "cold": true
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "case": "en-2",
+      "language": "en",
+      "expected": 2,
+      "selected": 2,
+      "candidates": [
+        2
+      ],
+      "nativeMs": 21,
+      "wallMs": 22,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "case": "en-3",
+      "language": "en",
+      "expected": 3,
+      "selected": 3,
+      "candidates": [
+        3
+      ],
+      "nativeMs": 48,
+      "wallMs": 49,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "case": "en-4",
+      "language": "en",
+      "expected": 4,
+      "selected": 4,
+      "candidates": [
+        4
+      ],
+      "nativeMs": 33,
+      "wallMs": 34,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "case": "en-5",
+      "language": "en",
+      "expected": 5,
+      "selected": 5,
+      "candidates": [
+        5
+      ],
+      "nativeMs": 36,
+      "wallMs": 37,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "case": "ko-1",
+      "language": "ko",
+      "expected": 1,
+      "selected": 1,
+      "candidates": [
+        1
+      ],
+      "nativeMs": 27,
+      "wallMs": 31,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "case": "ko-2",
+      "language": "ko",
+      "expected": 2,
+      "selected": 3,
+      "candidates": [
+        3,
+        5
+      ],
+      "nativeMs": 42,
+      "wallMs": 45,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "case": "ko-3",
+      "language": "ko",
+      "expected": 3,
+      "selected": 3,
+      "candidates": [
+        3
+      ],
+      "nativeMs": 27,
+      "wallMs": 28,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "case": "ko-4",
+      "language": "ko",
+      "expected": 4,
+      "selected": 4,
+      "candidates": [
+        4
+      ],
+      "nativeMs": 19,
+      "wallMs": 21,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "case": "ko-5",
+      "language": "ko",
+      "expected": 5,
+      "selected": 5,
+      "candidates": [
+        5
+      ],
+      "nativeMs": 26,
+      "wallMs": 28,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "case": "ja-1",
+      "language": "ja",
+      "expected": 1,
+      "selected": 1,
+      "candidates": [
+        1,
+        4
+      ],
+      "nativeMs": 24,
+      "wallMs": 25,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "case": "ja-2",
+      "language": "ja",
+      "expected": 2,
+      "selected": 5,
+      "candidates": [
+        5,
+        1
+      ],
+      "nativeMs": 21,
+      "wallMs": 22,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "case": "ja-3",
+      "language": "ja",
+      "expected": 3,
+      "selected": 3,
+      "candidates": [
+        3,
+        1
+      ],
+      "nativeMs": 24,
+      "wallMs": 26,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "case": "ja-4",
+      "language": "ja",
+      "expected": 4,
+      "selected": 5,
+      "candidates": [
+        5,
+        4
+      ],
+      "nativeMs": 17,
+      "wallMs": 19,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "case": "ja-5",
+      "language": "ja",
+      "expected": 5,
+      "selected": 5,
+      "candidates": [
+        5
+      ],
+      "nativeMs": 21,
+      "wallMs": 23,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "case": "es-1",
+      "language": "es",
+      "expected": 1,
+      "selected": 1,
+      "candidates": [
+        1,
+        2
+      ],
+      "nativeMs": 26,
+      "wallMs": 29,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "case": "es-2",
+      "language": "es",
+      "expected": 2,
+      "selected": 5,
+      "candidates": [
+        5,
+        2
+      ],
+      "nativeMs": 37,
+      "wallMs": 38,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "case": "es-3",
+      "language": "es",
+      "expected": 3,
+      "selected": 3,
+      "candidates": [
+        3
+      ],
+      "nativeMs": 33,
+      "wallMs": 34,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "case": "es-4",
+      "language": "es",
+      "expected": 4,
+      "selected": 4,
+      "candidates": [
+        4
+      ],
+      "nativeMs": 46,
+      "wallMs": 47,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "case": "es-5",
+      "language": "es",
+      "expected": 5,
+      "selected": 5,
+      "candidates": [
+        5
+      ],
+      "nativeMs": 21,
+      "wallMs": 23,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "case": "fr-1",
+      "language": "fr",
+      "expected": 1,
+      "selected": 1,
+      "candidates": [
+        1
+      ],
+      "nativeMs": 25,
+      "wallMs": 27,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "case": "fr-2",
+      "language": "fr",
+      "expected": 2,
+      "selected": 2,
+      "candidates": [
+        2,
+        5
+      ],
+      "nativeMs": 34,
+      "wallMs": 36,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "case": "fr-3",
+      "language": "fr",
+      "expected": 3,
+      "selected": 3,
+      "candidates": [
+        3
+      ],
+      "nativeMs": 48,
+      "wallMs": 50,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "case": "fr-4",
+      "language": "fr",
+      "expected": 4,
+      "selected": 4,
+      "candidates": [
+        4
+      ],
+      "nativeMs": 19,
+      "wallMs": 20,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "case": "fr-5",
+      "language": "fr",
+      "expected": 5,
+      "selected": 5,
+      "candidates": [
+        5
+      ],
+      "nativeMs": 26,
+      "wallMs": 27,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "case": "pt-1",
+      "language": "pt",
+      "expected": 1,
+      "selected": 1,
+      "candidates": [
+        1,
+        4
+      ],
+      "nativeMs": 42,
+      "wallMs": 44,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "case": "pt-2",
+      "language": "pt",
+      "expected": 2,
+      "selected": 4,
+      "candidates": [
+        4,
+        2
+      ],
+      "nativeMs": 28,
+      "wallMs": 30,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "case": "pt-3",
+      "language": "pt",
+      "expected": 3,
+      "selected": 3,
+      "candidates": [
+        3
+      ],
+      "nativeMs": 23,
+      "wallMs": 24,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "case": "pt-4",
+      "language": "pt",
+      "expected": 4,
+      "selected": 4,
+      "candidates": [
+        4
+      ],
+      "nativeMs": 22,
+      "wallMs": 23,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "case": "pt-5",
+      "language": "pt",
+      "expected": 5,
+      "selected": 5,
+      "candidates": [
+        5,
+        1
+      ],
+      "nativeMs": 21,
+      "wallMs": 23,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "case": "hi-1",
+      "language": "hi",
+      "expected": 1,
+      "selected": 1,
+      "candidates": [
+        1
+      ],
+      "nativeMs": 38,
+      "wallMs": 42,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "case": "hi-2",
+      "language": "hi",
+      "expected": 2,
+      "selected": 2,
+      "candidates": [
+        2,
+        1
+      ],
+      "nativeMs": 25,
+      "wallMs": 27,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "case": "hi-3",
+      "language": "hi",
+      "expected": 3,
+      "selected": 1,
+      "candidates": [
+        1,
+        3
+      ],
+      "nativeMs": 36,
+      "wallMs": 37,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "case": "hi-4",
+      "language": "hi",
+      "expected": 4,
+      "selected": 4,
+      "candidates": [
+        4
+      ],
+      "nativeMs": 25,
+      "wallMs": 26,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "case": "hi-5",
+      "language": "hi",
+      "expected": 5,
+      "selected": 5,
+      "candidates": [
+        5,
+        1
+      ],
+      "nativeMs": 33,
+      "wallMs": 35,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "case": "zh-1",
+      "language": "zh",
+      "expected": 1,
+      "selected": 1,
+      "candidates": [
+        1,
+        2
+      ],
+      "nativeMs": 20,
+      "wallMs": 21,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "case": "zh-2",
+      "language": "zh",
+      "expected": 2,
+      "selected": 2,
+      "candidates": [
+        2,
+        5
+      ],
+      "nativeMs": 45,
+      "wallMs": 46,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "case": "zh-3",
+      "language": "zh",
+      "expected": 3,
+      "selected": 2,
+      "candidates": [
+        2,
+        3
+      ],
+      "nativeMs": 27,
+      "wallMs": 29,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "case": "zh-4",
+      "language": "zh",
+      "expected": 4,
+      "selected": 4,
+      "candidates": [
+        4,
+        2
+      ],
+      "nativeMs": 23,
+      "wallMs": 25,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "case": "zh-5",
+      "language": "zh",
+      "expected": 5,
+      "selected": 5,
+      "candidates": [
+        5,
+        4
+      ],
+      "nativeMs": 26,
+      "wallMs": 27,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "case": "en-1",
+      "language": "en",
+      "expected": 1,
+      "selected": 1,
+      "candidates": [
+        1
+      ],
+      "nativeMs": 27,
+      "wallMs": 28,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "case": "en-2",
+      "language": "en",
+      "expected": 2,
+      "selected": 2,
+      "candidates": [
+        2
+      ],
+      "nativeMs": 41,
+      "wallMs": 43,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "case": "en-3",
+      "language": "en",
+      "expected": 3,
+      "selected": 3,
+      "candidates": [
+        3
+      ],
+      "nativeMs": 32,
+      "wallMs": 33,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "case": "en-4",
+      "language": "en",
+      "expected": 4,
+      "selected": 4,
+      "candidates": [
+        4
+      ],
+      "nativeMs": 35,
+      "wallMs": 36,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "case": "en-5",
+      "language": "en",
+      "expected": 5,
+      "selected": 5,
+      "candidates": [
+        5
+      ],
+      "nativeMs": 22,
+      "wallMs": 23,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "case": "ko-1",
+      "language": "ko",
+      "expected": 1,
+      "selected": 1,
+      "candidates": [
+        1
+      ],
+      "nativeMs": 32,
+      "wallMs": 34,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "case": "ko-2",
+      "language": "ko",
+      "expected": 2,
+      "selected": 3,
+      "candidates": [
+        3,
+        5
+      ],
+      "nativeMs": 21,
+      "wallMs": 23,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "case": "ko-3",
+      "language": "ko",
+      "expected": 3,
+      "selected": 3,
+      "candidates": [
+        3
+      ],
+      "nativeMs": 36,
+      "wallMs": 37,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "case": "ko-4",
+      "language": "ko",
+      "expected": 4,
+      "selected": 4,
+      "candidates": [
+        4
+      ],
+      "nativeMs": 31,
+      "wallMs": 32,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "case": "ko-5",
+      "language": "ko",
+      "expected": 5,
+      "selected": 5,
+      "candidates": [
+        5
+      ],
+      "nativeMs": 24,
+      "wallMs": 25,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "case": "ja-1",
+      "language": "ja",
+      "expected": 1,
+      "selected": 1,
+      "candidates": [
+        1,
+        4
+      ],
+      "nativeMs": 25,
+      "wallMs": 26,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "case": "ja-2",
+      "language": "ja",
+      "expected": 2,
+      "selected": 5,
+      "candidates": [
+        5,
+        1
+      ],
+      "nativeMs": 32,
+      "wallMs": 34,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "case": "ja-3",
+      "language": "ja",
+      "expected": 3,
+      "selected": 3,
+      "candidates": [
+        3,
+        1
+      ],
+      "nativeMs": 49,
+      "wallMs": 50,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "case": "ja-4",
+      "language": "ja",
+      "expected": 4,
+      "selected": 5,
+      "candidates": [
+        5,
+        4
+      ],
+      "nativeMs": 16,
+      "wallMs": 17,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "case": "ja-5",
+      "language": "ja",
+      "expected": 5,
+      "selected": 5,
+      "candidates": [
+        5
+      ],
+      "nativeMs": 27,
+      "wallMs": 29,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "case": "es-1",
+      "language": "es",
+      "expected": 1,
+      "selected": 1,
+      "candidates": [
+        1,
+        2
+      ],
+      "nativeMs": 37,
+      "wallMs": 38,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "case": "es-2",
+      "language": "es",
+      "expected": 2,
+      "selected": 5,
+      "candidates": [
+        5,
+        2
+      ],
+      "nativeMs": 22,
+      "wallMs": 23,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "case": "es-3",
+      "language": "es",
+      "expected": 3,
+      "selected": 3,
+      "candidates": [
+        3
+      ],
+      "nativeMs": 33,
+      "wallMs": 34,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "case": "es-4",
+      "language": "es",
+      "expected": 4,
+      "selected": 4,
+      "candidates": [
+        4
+      ],
+      "nativeMs": 19,
+      "wallMs": 20,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "case": "es-5",
+      "language": "es",
+      "expected": 5,
+      "selected": 5,
+      "candidates": [
+        5
+      ],
+      "nativeMs": 28,
+      "wallMs": 30,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "case": "fr-1",
+      "language": "fr",
+      "expected": 1,
+      "selected": 1,
+      "candidates": [
+        1
+      ],
+      "nativeMs": 33,
+      "wallMs": 35,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "case": "fr-2",
+      "language": "fr",
+      "expected": 2,
+      "selected": 2,
+      "candidates": [
+        2,
+        5
+      ],
+      "nativeMs": 31,
+      "wallMs": 33,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "case": "fr-3",
+      "language": "fr",
+      "expected": 3,
+      "selected": 3,
+      "candidates": [
+        3
+      ],
+      "nativeMs": 35,
+      "wallMs": 37,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "case": "fr-4",
+      "language": "fr",
+      "expected": 4,
+      "selected": 4,
+      "candidates": [
+        4
+      ],
+      "nativeMs": 19,
+      "wallMs": 21,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "case": "fr-5",
+      "language": "fr",
+      "expected": 5,
+      "selected": 5,
+      "candidates": [
+        5
+      ],
+      "nativeMs": 31,
+      "wallMs": 33,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "case": "pt-1",
+      "language": "pt",
+      "expected": 1,
+      "selected": 1,
+      "candidates": [
+        1,
+        4
+      ],
+      "nativeMs": 23,
+      "wallMs": 24,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "case": "pt-2",
+      "language": "pt",
+      "expected": 2,
+      "selected": 4,
+      "candidates": [
+        4,
+        2
+      ],
+      "nativeMs": 26,
+      "wallMs": 27,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "case": "pt-3",
+      "language": "pt",
+      "expected": 3,
+      "selected": 3,
+      "candidates": [
+        3
+      ],
+      "nativeMs": 43,
+      "wallMs": 45,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "case": "pt-4",
+      "language": "pt",
+      "expected": 4,
+      "selected": 4,
+      "candidates": [
+        4
+      ],
+      "nativeMs": 22,
+      "wallMs": 24,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "case": "pt-5",
+      "language": "pt",
+      "expected": 5,
+      "selected": 5,
+      "candidates": [
+        5,
+        1
+      ],
+      "nativeMs": 29,
+      "wallMs": 31,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "case": "hi-1",
+      "language": "hi",
+      "expected": 1,
+      "selected": 1,
+      "candidates": [
+        1
+      ],
+      "nativeMs": 38,
+      "wallMs": 39,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "case": "hi-2",
+      "language": "hi",
+      "expected": 2,
+      "selected": 2,
+      "candidates": [
+        2,
+        1
+      ],
+      "nativeMs": 29,
+      "wallMs": 31,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "case": "hi-3",
+      "language": "hi",
+      "expected": 3,
+      "selected": 1,
+      "candidates": [
+        1,
+        3
+      ],
+      "nativeMs": 26,
+      "wallMs": 27,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "case": "hi-4",
+      "language": "hi",
+      "expected": 4,
+      "selected": 4,
+      "candidates": [
+        4
+      ],
+      "nativeMs": 24,
+      "wallMs": 26,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "case": "hi-5",
+      "language": "hi",
+      "expected": 5,
+      "selected": 5,
+      "candidates": [
+        5,
+        1
+      ],
+      "nativeMs": 20,
+      "wallMs": 21,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "case": "zh-1",
+      "language": "zh",
+      "expected": 1,
+      "selected": 1,
+      "candidates": [
+        1,
+        2
+      ],
+      "nativeMs": 17,
+      "wallMs": 18,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "case": "zh-2",
+      "language": "zh",
+      "expected": 2,
+      "selected": 2,
+      "candidates": [
+        2,
+        5
+      ],
+      "nativeMs": 21,
+      "wallMs": 23,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "case": "zh-3",
+      "language": "zh",
+      "expected": 3,
+      "selected": 2,
+      "candidates": [
+        2,
+        3
+      ],
+      "nativeMs": 21,
+      "wallMs": 23,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "case": "zh-4",
+      "language": "zh",
+      "expected": 4,
+      "selected": 4,
+      "candidates": [
+        4,
+        2
+      ],
+      "nativeMs": 32,
+      "wallMs": 34,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "case": "zh-5",
+      "language": "zh",
+      "expected": 5,
+      "selected": 5,
+      "candidates": [
+        5,
+        4
+      ],
+      "nativeMs": 23,
+      "wallMs": 25,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 2,
+      "case": "en-1",
+      "language": "en",
+      "expected": 1,
+      "selected": 1,
+      "candidates": [
+        1
+      ],
+      "nativeMs": 25,
+      "wallMs": 27,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 2,
+      "case": "en-2",
+      "language": "en",
+      "expected": 2,
+      "selected": 2,
+      "candidates": [
+        2
+      ],
+      "nativeMs": 38,
+      "wallMs": 39,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 2,
+      "case": "en-3",
+      "language": "en",
+      "expected": 3,
+      "selected": 3,
+      "candidates": [
+        3
+      ],
+      "nativeMs": 25,
+      "wallMs": 26,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 2,
+      "case": "en-4",
+      "language": "en",
+      "expected": 4,
+      "selected": 4,
+      "candidates": [
+        4
+      ],
+      "nativeMs": 24,
+      "wallMs": 25,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 2,
+      "case": "en-5",
+      "language": "en",
+      "expected": 5,
+      "selected": 5,
+      "candidates": [
+        5
+      ],
+      "nativeMs": 32,
+      "wallMs": 34,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 2,
+      "case": "ko-1",
+      "language": "ko",
+      "expected": 1,
+      "selected": 1,
+      "candidates": [
+        1
+      ],
+      "nativeMs": 31,
+      "wallMs": 33,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 2,
+      "case": "ko-2",
+      "language": "ko",
+      "expected": 2,
+      "selected": 3,
+      "candidates": [
+        3,
+        5
+      ],
+      "nativeMs": 28,
+      "wallMs": 29,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 2,
+      "case": "ko-3",
+      "language": "ko",
+      "expected": 3,
+      "selected": 3,
+      "candidates": [
+        3
+      ],
+      "nativeMs": 23,
+      "wallMs": 25,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 2,
+      "case": "ko-4",
+      "language": "ko",
+      "expected": 4,
+      "selected": 4,
+      "candidates": [
+        4
+      ],
+      "nativeMs": 21,
+      "wallMs": 23,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 2,
+      "case": "ko-5",
+      "language": "ko",
+      "expected": 5,
+      "selected": 5,
+      "candidates": [
+        5
+      ],
+      "nativeMs": 27,
+      "wallMs": 29,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 2,
+      "case": "ja-1",
+      "language": "ja",
+      "expected": 1,
+      "selected": 1,
+      "candidates": [
+        1,
+        4
+      ],
+      "nativeMs": 45,
+      "wallMs": 46,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 2,
+      "case": "ja-2",
+      "language": "ja",
+      "expected": 2,
+      "selected": 5,
+      "candidates": [
+        5,
+        1
+      ],
+      "nativeMs": 43,
+      "wallMs": 44,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 2,
+      "case": "ja-3",
+      "language": "ja",
+      "expected": 3,
+      "selected": 3,
+      "candidates": [
+        3,
+        1
+      ],
+      "nativeMs": 23,
+      "wallMs": 25,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 2,
+      "case": "ja-4",
+      "language": "ja",
+      "expected": 4,
+      "selected": 5,
+      "candidates": [
+        5,
+        4
+      ],
+      "nativeMs": 19,
+      "wallMs": 21,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 2,
+      "case": "ja-5",
+      "language": "ja",
+      "expected": 5,
+      "selected": 5,
+      "candidates": [
+        5
+      ],
+      "nativeMs": 55,
+      "wallMs": 56,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 2,
+      "case": "es-1",
+      "language": "es",
+      "expected": 1,
+      "selected": 1,
+      "candidates": [
+        1,
+        2
+      ],
+      "nativeMs": 48,
+      "wallMs": 50,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 2,
+      "case": "es-2",
+      "language": "es",
+      "expected": 2,
+      "selected": 5,
+      "candidates": [
+        5,
+        2
+      ],
+      "nativeMs": 49,
+      "wallMs": 50,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 2,
+      "case": "es-3",
+      "language": "es",
+      "expected": 3,
+      "selected": 3,
+      "candidates": [
+        3
+      ],
+      "nativeMs": 36,
+      "wallMs": 36,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 2,
+      "case": "es-4",
+      "language": "es",
+      "expected": 4,
+      "selected": 4,
+      "candidates": [
+        4
+      ],
+      "nativeMs": 41,
+      "wallMs": 42,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 2,
+      "case": "es-5",
+      "language": "es",
+      "expected": 5,
+      "selected": 5,
+      "candidates": [
+        5
+      ],
+      "nativeMs": 37,
+      "wallMs": 39,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 2,
+      "case": "fr-1",
+      "language": "fr",
+      "expected": 1,
+      "selected": 1,
+      "candidates": [
+        1
+      ],
+      "nativeMs": 38,
+      "wallMs": 39,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 2,
+      "case": "fr-2",
+      "language": "fr",
+      "expected": 2,
+      "selected": 2,
+      "candidates": [
+        2,
+        5
+      ],
+      "nativeMs": 38,
+      "wallMs": 40,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 2,
+      "case": "fr-3",
+      "language": "fr",
+      "expected": 3,
+      "selected": 3,
+      "candidates": [
+        3
+      ],
+      "nativeMs": 30,
+      "wallMs": 30,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 2,
+      "case": "fr-4",
+      "language": "fr",
+      "expected": 4,
+      "selected": 4,
+      "candidates": [
+        4
+      ],
+      "nativeMs": 36,
+      "wallMs": 38,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 2,
+      "case": "fr-5",
+      "language": "fr",
+      "expected": 5,
+      "selected": 5,
+      "candidates": [
+        5
+      ],
+      "nativeMs": 25,
+      "wallMs": 25,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 2,
+      "case": "pt-1",
+      "language": "pt",
+      "expected": 1,
+      "selected": 1,
+      "candidates": [
+        1,
+        4
+      ],
+      "nativeMs": 41,
+      "wallMs": 42,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 2,
+      "case": "pt-2",
+      "language": "pt",
+      "expected": 2,
+      "selected": 4,
+      "candidates": [
+        4,
+        2
+      ],
+      "nativeMs": 51,
+      "wallMs": 52,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 2,
+      "case": "pt-3",
+      "language": "pt",
+      "expected": 3,
+      "selected": 3,
+      "candidates": [
+        3
+      ],
+      "nativeMs": 57,
+      "wallMs": 58,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 2,
+      "case": "pt-4",
+      "language": "pt",
+      "expected": 4,
+      "selected": 4,
+      "candidates": [
+        4
+      ],
+      "nativeMs": 32,
+      "wallMs": 33,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 2,
+      "case": "pt-5",
+      "language": "pt",
+      "expected": 5,
+      "selected": 5,
+      "candidates": [
+        5,
+        1
+      ],
+      "nativeMs": 36,
+      "wallMs": 37,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 2,
+      "case": "hi-1",
+      "language": "hi",
+      "expected": 1,
+      "selected": 1,
+      "candidates": [
+        1
+      ],
+      "nativeMs": 50,
+      "wallMs": 52,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 2,
+      "case": "hi-2",
+      "language": "hi",
+      "expected": 2,
+      "selected": 2,
+      "candidates": [
+        2,
+        1
+      ],
+      "nativeMs": 47,
+      "wallMs": 48,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 2,
+      "case": "hi-3",
+      "language": "hi",
+      "expected": 3,
+      "selected": 1,
+      "candidates": [
+        1,
+        3
+      ],
+      "nativeMs": 38,
+      "wallMs": 39,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 2,
+      "case": "hi-4",
+      "language": "hi",
+      "expected": 4,
+      "selected": 4,
+      "candidates": [
+        4
+      ],
+      "nativeMs": 33,
+      "wallMs": 33,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 2,
+      "case": "hi-5",
+      "language": "hi",
+      "expected": 5,
+      "selected": 5,
+      "candidates": [
+        5,
+        1
+      ],
+      "nativeMs": 44,
+      "wallMs": 45,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 2,
+      "case": "zh-1",
+      "language": "zh",
+      "expected": 1,
+      "selected": 1,
+      "candidates": [
+        1,
+        2
+      ],
+      "nativeMs": 34,
+      "wallMs": 35,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 2,
+      "case": "zh-2",
+      "language": "zh",
+      "expected": 2,
+      "selected": 2,
+      "candidates": [
+        2,
+        5
+      ],
+      "nativeMs": 19,
+      "wallMs": 20,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 2,
+      "case": "zh-3",
+      "language": "zh",
+      "expected": 3,
+      "selected": 2,
+      "candidates": [
+        2,
+        3
+      ],
+      "nativeMs": 33,
+      "wallMs": 35,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 2,
+      "case": "zh-4",
+      "language": "zh",
+      "expected": 4,
+      "selected": 4,
+      "candidates": [
+        4,
+        2
+      ],
+      "nativeMs": 35,
+      "wallMs": 36,
+      "cold": false
+    },
+    {
+      "kind": "row",
+      "pass": 2,
+      "case": "zh-5",
+      "language": "zh",
+      "expected": 5,
+      "selected": 5,
+      "candidates": [
+        5,
+        4
+      ],
+      "nativeMs": 39,
+      "wallMs": 40,
+      "cold": false
+    },
+    {
+      "kind": "empty",
+      "result": "empty-note"
+    },
+    {
+      "kind": "unicode",
+      "selected": 4,
+      "nativeMs": 229
+    },
+    {
+      "kind": "cancel",
+      "result": "cancelled"
+    },
+    {
+      "kind": "recovery",
+      "selected": 5,
+      "nativeMs": 2102,
+      "cold": true
+    },
+    {
+      "kind": "done",
+      "requests": 120,
+      "top1Matches": 99,
+      "candidateCoverage": 114,
+      "synthetic": true,
+      "independentLabels": false
+    }
+  ]
+}
