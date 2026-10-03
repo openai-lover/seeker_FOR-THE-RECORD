@@ -29,12 +29,17 @@ class WorkroomActivity : FlutterFragmentActivity() {
     private var exportContent: String? = null
     private var notificationResult: MethodChannel.Result? = null
     private val createDocument = registerForActivityResult(ActivityResultContracts.CreateDocument("application/json")) { uri ->
-        val pending = exportResult
+        val pending = exportResult ?: return@registerForActivityResult
         try {
-            if (uri != null) contentResolver.openOutputStream(uri)?.use { it.write((exportContent ?: "").toByteArray(Charsets.UTF_8)) }
-            pending?.success(uri != null)
-        } catch (e: Exception) { pending?.error("export-failed", "파일을 저장하지 못했습니다.", null) }
-        exportResult = null; exportContent = null
+            pending.success(completeJournalExport(uri != null, exportContent) {
+                contentResolver.openOutputStream(requireNotNull(uri), "wt")
+            })
+        } catch (e: Exception) {
+            pending.error("export-failed", "파일을 저장하지 못했습니다.", null)
+        } finally {
+            exportResult = null
+            exportContent = null
+        }
     }
     private val notificationPermission = registerForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
         notificationResult?.success(granted); notificationResult = null
@@ -74,7 +79,21 @@ class WorkroomActivity : FlutterFragmentActivity() {
                 "cancelAlarm" -> { getSystemService(AlarmManager::class.java).cancel(alarmIntent()); getSystemService(NotificationManager::class.java).cancel(17); result.success(null) }
                 "export" -> {
                     if (exportResult != null) result.error("busy", "내보내기 중입니다.", null)
-                    else { exportContent=call.argument<String>("content"); exportResult=result; createDocument.launch("for-the-record-${System.currentTimeMillis()}.json") }
+                    else {
+                        val content = call.argument<String>("content")
+                        if (content.isNullOrBlank()) result.error("export-failed", "파일을 저장하지 못했습니다.", null)
+                        else {
+                            exportContent = content
+                            exportResult = result
+                            try {
+                                createDocument.launch("for-the-record-${System.currentTimeMillis()}.json")
+                            } catch (e: Exception) {
+                                exportResult = null
+                                exportContent = null
+                                result.error("export-failed", "파일을 저장하지 못했습니다.", null)
+                            }
+                        }
+                    }
                 }
                 "walletConnect", "walletSignMessage", "walletSignTransaction", "walletDisconnect" -> {
                     if (walletBusy) { result.error("wallet-busy", "지갑 요청이 진행 중입니다.", null); return@setMethodCallHandler }

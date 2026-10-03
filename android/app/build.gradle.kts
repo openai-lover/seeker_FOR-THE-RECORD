@@ -90,6 +90,7 @@ flutter {
 }
 
 dependencies {
+    testImplementation("junit:junit:4.13.2")
     implementation("com.solanamobile:mobile-wallet-adapter-clientlib-ktx:2.0.3")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.9.4")
 }
