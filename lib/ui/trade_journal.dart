@@ -70,17 +70,18 @@ class _TradeJournalState extends State<_TradeJournal> {
         children: [
           Text(
             tr(context, '판단을 남기는 일지', 'Remember your why.'),
-            style: _roomTitle(context, 32),
+            style: _roomTitle(context, 28),
           ),
           const SizedBox(height: 10),
-          Text(
-            tr(
-              context,
-              '지갑은 무엇을 거래했는지,\nFOR THE RECORD는 왜 그랬는지 기억합니다.',
-              'Your wallet remembers what you traded.\nFOR THE RECORD remembers why.',
+          if (j.entries.isEmpty)
+            Text(
+              tr(
+                context,
+                '지갑은 무엇을 거래했는지,\nFOR THE RECORD는 왜 그랬는지 기억합니다.',
+                'Your wallet remembers what you traded.\nFOR THE RECORD remembers why.',
+              ),
+              style: const TextStyle(color: muted),
             ),
-            style: const TextStyle(color: muted),
-          ),
           const SizedBox(height: 22),
           Row(
             children: [
@@ -352,17 +353,55 @@ class _ActivityCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final a = activity;
     return PaperCard(
+      padding: const EdgeInsets.all(16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            a.blockTime == null
-                ? tr(context, '시간 정보 없음', 'Time unavailable')
-                : dateLabel(context, a.blockTime! * 1000),
-            style: const TextStyle(fontSize: 12, color: muted),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                width: 40,
+                height: 40,
+                decoration: BoxDecoration(
+                  color: green.withValues(alpha: .07),
+                  borderRadius: BorderRadius.circular(14),
+                ),
+                child: Icon(
+                  a.canJournal
+                      ? Icons.swap_horiz_rounded
+                      : Icons.receipt_long_outlined,
+                  size: 21,
+                  color: green,
+                ),
+              ),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      a.status == 'failed'
+                          ? tr(context, '실패한 거래', 'Failed transaction')
+                          : _activityLabel(context, a),
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
+                    const SizedBox(height: 3),
+                    Text(
+                      a.blockTime == null
+                          ? tr(context, '시간 정보 없음', 'Time unavailable')
+                          : dateLabel(context, a.blockTime! * 1000),
+                      style: const TextStyle(fontSize: 12, color: muted),
+                    ),
+                  ],
+                ),
+              ),
+              if (entry != null)
+                const Icon(Icons.bookmark_rounded, size: 18, color: green),
+            ],
           ),
-          const SizedBox(height: 12),
           if (a.canJournal) ...[
+            const SizedBox(height: 14),
             Text(
               '${a.input!.amount} ${a.input!.symbol}',
               style: Theme.of(context).textTheme.titleLarge,
@@ -377,32 +416,16 @@ class _ActivityCard extends StatelessWidget {
                 context,
               ).textTheme.titleLarge?.copyWith(color: green),
             ),
-          ] else
-            Text(
-              a.status == 'failed'
-                  ? tr(context, '실패한 거래', 'Failed transaction')
-                  : tr(context, '기타 지갑 활동', 'Other wallet activity'),
-              style: Theme.of(context).textTheme.titleMedium,
-            ),
-          const SizedBox(height: 12),
-          Wrap(
-            spacing: 10,
-            runSpacing: 6,
-            children: [
-              if (a.source != null) QuietTag(a.source!, localize: false),
-              Text(
-                _shortAddress(a.signature),
-                style: const TextStyle(fontSize: 12, color: muted),
-              ),
-            ],
-          ),
-          if (!a.canJournal)
+          ],
+          if (a.source != null) ...[
+            const SizedBox(height: 10),
+            Text(a.source!, style: const TextStyle(fontSize: 12, color: muted)),
+          ],
+          if (!a.canRecordReason)
             Padding(
               padding: const EdgeInsets.only(top: 10),
               child: Text(
-                a.canRecordReason
-                    ? _unclassifiedNoteText(context)
-                    : a.issue == 'parse-unavailable'
+                a.issue == 'parse-unavailable'
                     ? activityErrorText(context, 'parse-unavailable')
                     : tr(
                         context,
@@ -422,8 +445,8 @@ class _ActivityCard extends StatelessWidget {
               ),
             ),
           if (onOpen != null) ...[
-            const SizedBox(height: 14),
-            OutlinedButton.icon(
+            const SizedBox(height: 6),
+            TextButton.icon(
               onPressed: onOpen,
               icon: Icon(
                 entry == null
@@ -444,6 +467,102 @@ class _ActivityCard extends StatelessWidget {
       ),
     );
   }
+}
+
+/// Source metadata is available without competing with the person's writing.
+class _ActivityContext extends StatelessWidget {
+  const _ActivityContext(this.activity, {this.wallet});
+  final WalletActivity activity;
+  final String? wallet;
+
+  @override
+  Widget build(BuildContext context) => Container(
+    decoration: BoxDecoration(
+      color: paper,
+      borderRadius: BorderRadius.circular(16),
+    ),
+    child: ExpansionTile(
+      tilePadding: const EdgeInsets.symmetric(horizontal: 16),
+      childrenPadding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+      shape: const Border(),
+      collapsedShape: const Border(),
+      leading: const Icon(Icons.receipt_long_outlined, size: 20, color: muted),
+      title: Text(
+        _activityLabel(context, activity),
+        style: Theme.of(context).textTheme.titleSmall,
+      ),
+      subtitle: Text(
+        tr(context, '온체인 사실', 'On-chain facts'),
+        style: const TextStyle(fontSize: 12, color: muted),
+      ),
+      children: [
+        Text(
+          activity.canJournal
+              ? tr(
+                  context,
+                  '온체인 거래 사실은 수정되지 않습니다.',
+                  'The on-chain facts stay unchanged.',
+                )
+              : _unclassifiedNoteText(context),
+          style: const TextStyle(fontSize: 13, color: muted),
+        ),
+        const SizedBox(height: 12),
+        for (final fact in {
+          tr(context, '지갑', 'Wallet'): ?wallet,
+          tr(context, '서명', 'Signature'): activity.signature,
+          tr(context, '입력 토큰 주소', 'Input mint'): activity.input?.mint ?? '—',
+          tr(context, '출력 토큰 주소', 'Output mint'): activity.output?.mint ?? '—',
+          tr(context, '네트워크 수수료', 'Network fee'): '${activity.fee ?? "—"} SOL',
+        }.entries)
+          Padding(
+            padding: const EdgeInsets.only(bottom: 10),
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    fact.key,
+                    style: const TextStyle(fontSize: 12, color: muted),
+                  ),
+                  const SizedBox(height: 3),
+                  SelectableText(
+                    fact.value,
+                    style: const TextStyle(fontSize: 13),
+                  ),
+                ],
+              ),
+            ),
+          ),
+      ],
+    ),
+  );
+}
+
+class _JournalActionBar extends StatelessWidget {
+  const _JournalActionBar({required this.primary, this.secondary});
+  final Widget primary;
+  final Widget? secondary;
+
+  @override
+  Widget build(BuildContext context) => Padding(
+    padding: EdgeInsets.only(bottom: MediaQuery.viewInsetsOf(context).bottom),
+    child: DecoratedBox(
+      decoration: const BoxDecoration(
+        color: paper,
+        border: Border(top: BorderSide(color: line)),
+      ),
+      child: SafeArea(
+        top: false,
+        minimum: const EdgeInsets.fromLTRB(20, 12, 20, 12),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [primary, ?secondary],
+        ),
+      ),
+    ),
+  );
 }
 
 class _JournalEditor extends StatefulWidget {
@@ -602,44 +721,82 @@ class _JournalEditorState extends State<_JournalEditor> {
                 : tr(context, '지갑 활동 메모', 'Wallet activity note'),
           ),
         ),
+        bottomNavigationBar: _JournalActionBar(
+          primary: ActionButton(
+            label: widget.reviewOnly || step == 3
+                ? tr(context, '이 기기에 저장', 'Save on this device')
+                : step == 0
+                ? tr(context, '이유 저장', 'Save reason')
+                : tr(context, '다음', 'Next'),
+            icon: widget.reviewOnly || step == 0 || step == 3
+                ? Icons.bookmark_added_outlined
+                : Icons.arrow_forward_rounded,
+            action: widget.reviewOnly || step == 0 || step == 3
+                ? save
+                : () async => setState(() => step++),
+          ),
+          secondary: widget.reviewOnly
+              ? null
+              : Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    if (step > 0)
+                      Flexible(
+                        child: TextButton(
+                          onPressed: () => setState(() => step--),
+                          child: Text(
+                            tr(context, '이전 질문', 'Previous question'),
+                          ),
+                        ),
+                      )
+                    else
+                      const SizedBox.shrink(),
+                    if (step == 0)
+                      Flexible(
+                        child: TextButton(
+                          onPressed: () => setState(() => step++),
+                          child: Text(tr(context, '다음', 'Next')),
+                        ),
+                      ),
+                  ],
+                ),
+        ),
         body: PageBody(
           children: [
-            Text(
-              _activityLabel(context, widget.activity),
-              style: Theme.of(context).textTheme.titleMedium,
-            ),
-            const SizedBox(height: 8),
-            Text(
-              tr(
-                context,
-                '온체인 거래 사실은 수정되지 않습니다.',
-                'The on-chain facts stay unchanged.',
-              ),
-              style: const TextStyle(fontSize: 12, color: muted),
-            ),
+            _ActivityContext(widget.activity),
             const SizedBox(height: 24),
-            if (!widget.activity.canJournal) ...[
-              Text(
-                _unclassifiedNoteText(context),
-                style: const TextStyle(fontSize: 12, color: muted),
-              ),
-              const SizedBox(height: 16),
-            ],
             if (widget.reviewOnly && widget.entry != null) ...[
               _SavedReason(widget.entry!),
               const SizedBox(height: 20),
             ],
             if (!widget.reviewOnly) ...[
-              LinearProgressIndicator(value: (step + 1) / 4, minHeight: 3),
-              const SizedBox(height: 12),
-              Eyebrow('${step + 1} / 4'),
+              Row(
+                children: [
+                  Eyebrow('${step + 1} / 4'),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(4),
+                      child: LinearProgressIndicator(
+                        value: (step + 1) / 4,
+                        minHeight: 3,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
               const SizedBox(height: 20),
             ],
             Text(
               widget.reviewOnly
                   ? tr(context, '지금 돌아보면 어떤가요?', 'How does it look now?')
                   : questions[step],
-              style: Theme.of(context).textTheme.headlineMedium,
+              style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                fontSize: 24,
+                fontWeight: FontWeight.w700,
+                height: 1.4,
+                letterSpacing: -.4,
+              ),
             ),
             const SizedBox(height: 12),
             Text(
@@ -654,7 +811,7 @@ class _JournalEditorState extends State<_JournalEditor> {
                       '이유 한 줄이면 저장할 수 있어요. 나머지는 선택입니다.',
                       'One reason is enough to save. The rest is optional.',
                     ),
-              style: const TextStyle(color: muted),
+              style: const TextStyle(fontSize: 13, color: muted),
             ),
             const SizedBox(height: 20),
             if (widget.reviewOnly || step != 2)
@@ -793,12 +950,6 @@ class _JournalEditorState extends State<_JournalEditor> {
                   '${dateLabel(context, dueAt!)} · ${tr(context, '그날 홈에서 보여드려요.', 'Appears on your home screen that day.')}',
                   style: const TextStyle(fontSize: 12, color: muted),
                 ),
-              const SizedBox(height: 20),
-              ActionButton(
-                label: tr(context, '이유 저장', 'Save reason'),
-                icon: Icons.bookmark_added_outlined,
-                action: save,
-              ),
               const SizedBox(height: 10),
             ],
             if (!widget.reviewOnly && step == 3) ...[
@@ -830,22 +981,6 @@ class _JournalEditorState extends State<_JournalEditor> {
               ),
               const SizedBox(height: 24),
             ],
-            if (widget.reviewOnly || step == 3)
-              ActionButton(
-                label: tr(context, '이 기기에 저장', 'Save on this device'),
-                icon: Icons.bookmark_added_outlined,
-                action: save,
-              )
-            else
-              OutlinedButton(
-                onPressed: () => setState(() => step++),
-                child: Text(tr(context, '다음', 'Next')),
-              ),
-            if (!widget.reviewOnly && step > 0)
-              TextButton(
-                onPressed: () => setState(() => step--),
-                child: Text(tr(context, '이전 질문', 'Previous question')),
-              ),
             const SizedBox(height: 20),
             Text(
               tr(
@@ -888,34 +1023,10 @@ class _JournalDetail extends StatelessWidget {
         ),
         body: PageBody(
           children: [
-            _ActivityCard(activity: e.activity),
+            _SavedReason(e),
+            const SizedBox(height: 16),
+            _ActivityContext(e.activity, wallet: e.wallet),
             const SizedBox(height: 20),
-            Text(
-              tr(context, '지갑', 'Wallet'),
-              style: const TextStyle(color: muted),
-            ),
-            SelectableText(e.wallet),
-            ExpansionTile(
-              tilePadding: EdgeInsets.zero,
-              title: Text(tr(context, '온체인 사실', 'On-chain facts')),
-              children: [
-                for (final fact in {
-                  tr(context, '서명', 'Signature'): e.signature,
-                  tr(context, '입력 토큰 주소', 'Input mint'):
-                      e.activity.input?.mint ?? '—',
-                  tr(context, '출력 토큰 주소', 'Output mint'):
-                      e.activity.output?.mint ?? '—',
-                  tr(context, '네트워크 수수료', 'Network fee'):
-                      '${e.activity.fee ?? "—"} SOL',
-                }.entries)
-                  ListTile(
-                    contentPadding: EdgeInsets.zero,
-                    title: Text(fact.key),
-                    subtitle: SelectableText(fact.value),
-                  ),
-              ],
-            ),
-            const SizedBox(height: 12),
             if (e.projectId != null && c.state.project(e.projectId!) != null)
               TextButton.icon(
                 onPressed: () => openPage(
@@ -925,8 +1036,6 @@ class _JournalDetail extends StatelessWidget {
                 icon: const Icon(Icons.book_outlined),
                 label: Text(c.state.project(e.projectId!)!.title),
               ),
-            _SavedReason(e),
-            const SizedBox(height: 20),
             if (e.reviewDueAt != null && e.reviewedAt == null)
               Padding(
                 padding: const EdgeInsets.only(bottom: 16),
@@ -946,14 +1055,14 @@ class _JournalDetail extends StatelessWidget {
               if (e.decisionRule.isNotEmpty)
                 tr(context, '다음 선택을 위한 나의 기준', 'My lesson for the next choice'):
                     e.decisionRule,
-            }.entries) ...[
+            }.entries.where((field) => field.value.isNotEmpty)) ...[
               Text(
                 field.key,
                 style: const TextStyle(fontSize: 12, color: muted),
               ),
               const SizedBox(height: 6),
               Text(
-                field.value.isEmpty ? '—' : field.value,
+                field.value,
                 style: const TextStyle(fontSize: 17, height: 1.6),
               ),
               const SizedBox(height: 24),

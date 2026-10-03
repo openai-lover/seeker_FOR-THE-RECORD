@@ -337,9 +337,21 @@ class _ReflectionAssistantPanelState extends State<_ReflectionAssistantPanel> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Text(
-            tr(context, '기기 안의 AI 회고 도우미', 'On-device reflection assistant'),
-            style: Theme.of(context).textTheme.titleMedium,
+          Row(
+            children: [
+              const Icon(Icons.auto_awesome_outlined, size: 20, color: green),
+              const SizedBox(width: 10),
+              Expanded(
+                child: Text(
+                  tr(
+                    context,
+                    '기기 안의 AI 회고 도우미',
+                    'On-device reflection assistant',
+                  ),
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
+              ),
+            ],
           ),
           const SizedBox(height: 8),
           Text(
@@ -492,7 +504,7 @@ class _ReflectionAssistantPanelState extends State<_ReflectionAssistantPanel> {
             ),
           ] else ...[
             if (!widget.manageOnly)
-              OutlinedButton.icon(
+              FilledButton.tonalIcon(
                 onPressed: () => _run(false),
                 icon: const Icon(Icons.auto_awesome_outlined),
                 label: Text(
@@ -503,19 +515,20 @@ class _ReflectionAssistantPanelState extends State<_ReflectionAssistantPanel> {
                   ),
                 ),
               ),
-            TextButton(
-              onPressed: () async {
-                await perform(context, assistant.remove);
-                await _status();
-              },
-              child: Text(
-                tr(
-                  context,
-                  'AI 모델 삭제 · 기록은 유지',
-                  'Remove AI model · keep my notes',
+            if (widget.manageOnly)
+              TextButton(
+                onPressed: () async {
+                  await perform(context, assistant.remove);
+                  await _status();
+                },
+                child: Text(
+                  tr(
+                    context,
+                    'AI 모델 삭제 · 기록은 유지',
+                    'Remove AI model · keep my notes',
+                  ),
                 ),
               ),
-            ),
           ],
           if (!widget.manageOnly)
             TextButton(
@@ -554,11 +567,12 @@ class _ReflectionAssistantPanelState extends State<_ReflectionAssistantPanel> {
                     },
               child: Text(tr(context, '질문 직접 고르기', 'Choose a question myself')),
             ),
-          const SizedBox(height: 4),
-          const Text(
-            'multilingual-e5-small Q8 · MIT',
-            style: TextStyle(fontSize: 10, color: muted),
-          ),
+          if (widget.manageOnly) const SizedBox(height: 4),
+          if (widget.manageOnly)
+            const Text(
+              'multilingual-e5-small Q8 · MIT',
+              style: TextStyle(fontSize: 10, color: muted),
+            ),
         ],
       ),
     );

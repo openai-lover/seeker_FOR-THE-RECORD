@@ -99,7 +99,12 @@ void main() {
         find.text('What would you like to remember about this activity?'),
         findsOneWidget,
       );
+      expect(find.textContaining('its type is unclassified'), findsNothing);
+      await tester.tap(find.text('On-chain facts'));
+      await tester.pumpAndSettle();
       expect(find.textContaining('its type is unclassified'), findsOneWidget);
+      await tester.tap(find.text('On-chain facts'));
+      await tester.pumpAndSettle();
       await tester.enterText(
         find.byKey(const ValueKey(0)),
         'A demonstration reason.',
@@ -133,6 +138,44 @@ void main() {
       c.dispose();
     },
   );
+  testWidgets('save stays above the keyboard and source details are opt-in', (
+    tester,
+  ) async {
+    final (c, r) = await show(
+      tester,
+      connected: true,
+      rows: [activity.toJson()],
+    );
+    tester.view.physicalSize = const Size(360, 800);
+    await tester.pumpAndSettle();
+    await tester.ensureVisible(find.text('Write reflection'));
+    await tester.tap(find.text('Write reflection'));
+    await tester.pumpAndSettle();
+    await tester.enterText(
+      find.byKey(const ValueKey(0)),
+      'A reason worth keeping.',
+    );
+    tester.view.viewInsets = const FakeViewPadding(bottom: 300);
+    addTearDown(tester.view.resetViewInsets);
+    await tester.pumpAndSettle();
+    expect(find.text('Save reason').hitTestable(), findsOneWidget);
+    expect(tester.getBottomRight(find.text('Save reason')).dy, lessThan(500));
+    await tester.tap(find.text('Save reason'));
+    tester.view.resetViewInsets();
+    await tester.pumpAndSettle();
+    await tester.ensureVisible(find.text('Recorded · Open journal').first);
+    await tester.tap(find.text('Recorded · Open journal').first);
+    await tester.pumpAndSettle();
+    expect(find.textContaining('wallet-1'), findsNothing);
+    await tester.tap(find.text('On-chain facts'));
+    await tester.pumpAndSettle();
+    expect(find.textContaining('wallet-1'), findsOneWidget);
+    expect(c.journals.entries.single.originalReason, 'A reason worth keeping.');
+    expect(tester.takeException(), isNull);
+    await tester.pumpWidget(const SizedBox());
+    r.dispose();
+    c.dispose();
+  });
   testWidgets('disconnected state explains read-only and opens connection', (
     tester,
   ) async {
