@@ -1,5 +1,53 @@
 // Interface translations only. Saved personal writing remains verbatim.
 const relatedCatalog = <String, List<String>>{
+  'My notes': [
+    '自分の記録',
+    '我的记录',
+    'मेरे नोट्स',
+    'Mis notas',
+    'Minhas notas',
+    'Mes notes',
+  ],
+  'Activity': [
+    'ウォレット履歴',
+    '钱包活动',
+    'वॉलेट गतिविधि',
+    'Actividad',
+    'Atividade',
+    'Activité',
+  ],
+  'Add details': [
+    '詳しく書く',
+    '补充内容',
+    'विवरण जोड़ें',
+    'Añadir detalles',
+    'Adicionar detalhes',
+    'Ajouter des détails',
+  ],
+  'Optional details': [
+    '任意の内容',
+    '选填内容',
+    'वैकल्पिक विवरण',
+    'Detalles opcionales',
+    'Detalhes opcionais',
+    'Détails facultatifs',
+  ],
+  'Your latest reason': [
+    '最近残した理由',
+    '最近记录的原因',
+    'आपका नवीनतम कारण',
+    'Tu último motivo',
+    'Seu último motivo',
+    'Votre dernier motif',
+  ],
+  'Find a reason or lesson you saved.': [
+    '保存した理由や学びを探せます。',
+    '找回保存的原因与心得。',
+    'अपना सहेजा कारण या सीख खोजें।',
+    'Busca un motivo o aprendizaje guardado.',
+    'Encontre um motivo ou aprendizado salvo.',
+    'Retrouvez un motif ou une leçon enregistrée.',
+  ],
   'Write a reason first.': [
     'まず理由を書いてください。',
     '请先写下原因。',

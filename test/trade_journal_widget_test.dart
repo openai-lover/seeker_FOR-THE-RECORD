@@ -78,6 +78,57 @@ void main() {
     return (c, r);
   }
 
+  testWidgets('home new-reason action opens activity even with saved notes', (
+    tester,
+  ) async {
+    final (c, _) = await show(
+      tester,
+      connected: true,
+      rows: [activity.toJson()],
+    );
+    await c.journals.save(entry);
+    await tester.pumpAndSettle();
+    await tester.tap(find.byType(NavigationDestination).first);
+    await tester.pumpAndSettle();
+    await tester.ensureVisible(
+      find.byKey(const ValueKey('decision-replay-open')),
+    );
+    await tester.tap(find.byKey(const ValueKey('decision-replay-open')));
+    await tester.pumpAndSettle();
+    expect(find.text('Recent wallet activity'), findsOneWidget);
+    expect(find.text('Saved on this device'), findsNothing);
+    expect(tester.takeException(), isNull);
+  });
+
+  testWidgets(
+    'returning readers see original reason and a reachable revisit action',
+    (tester) async {
+      final (c, _) = await show(
+        tester,
+        connected: true,
+        rows: [activity.toJson()],
+      );
+      await c.journals.save(
+        TradeJournalEntry.fromJson({
+          ...entry.toJson(),
+          'originalReason': 'Original reason worth remembering',
+          'reason': 'A later edit',
+          'decisionRule': 'Check one original source',
+        }),
+      );
+      await tester.pumpAndSettle();
+      expect(find.text('Original reason worth remembering'), findsOneWidget);
+      expect(find.text('A later edit'), findsNothing);
+      expect(find.text('Recent wallet activity'), findsNothing);
+      await tester.ensureVisible(find.text('Recorded · Open journal'));
+      await tester.tap(find.text('Recorded · Open journal'));
+      await tester.pumpAndSettle();
+      final action = tester.getRect(find.text('Reflect'));
+      expect(action.bottom, lessThan(1100));
+      expect(tester.takeException(), isNull);
+    },
+  );
+
   testWidgets(
     'unclassified activity opens a labeled note and completes reflection',
     (tester) async {
@@ -96,6 +147,8 @@ void main() {
       await tester.tap(find.text('Add a personal note'));
       await tester.pumpAndSettle();
       expect(find.text('Wallet activity note'), findsOneWidget);
+      expect(find.text('1 / 4'), findsNothing);
+      expect(find.text('Add details'), findsOneWidget);
       expect(find.text('Why did you make this trade?'), findsNothing);
       expect(
         find.text('What would you like to remember about this activity?'),
@@ -215,8 +268,8 @@ void main() {
     await tester.ensureVisible(find.text('Write reflection'));
     await tester.tap(find.text('Write reflection'));
     await tester.pumpAndSettle();
-    await tester.ensureVisible(find.text('Next'));
-    await tester.tap(find.text('Next'));
+    await tester.ensureVisible(find.text('Add details'));
+    await tester.tap(find.text('Add details'));
     await tester.pumpAndSettle();
     await tester.enterText(
       find.byType(TextField).first,
@@ -310,8 +363,8 @@ void main() {
         find.byType(TextField).first,
         'Testing my original thesis',
       );
-      await tester.ensureVisible(find.text('Next'));
-      await tester.tap(find.text('Next'));
+      await tester.ensureVisible(find.text('Add details'));
+      await tester.tap(find.text('Add details'));
       await tester.pumpAndSettle();
       await tester.enterText(
         find.byType(TextField).first,
@@ -414,10 +467,21 @@ void main() {
         );
       }
       await tester.pumpAndSettle();
+      await tester.tap(find.byKey(const ValueKey('journal-activity-tab')));
+      await tester.pumpAndSettle();
       await tester.ensureVisible(find.text('Write reflection'));
       await tester.tap(find.text('Write reflection'));
       await tester.pumpAndSettle();
       await tester.enterText(find.byType(TextField).first, 'Check my evidence');
+      expect(
+        find.byKey(const ValueKey('related-records-search')),
+        findsNothing,
+      );
+      await tester.ensureVisible(
+        find.byKey(const ValueKey('related-records-expand')),
+      );
+      await tester.tap(find.text('A similar choice from your past'));
+      await tester.pumpAndSettle();
       final messenger =
           TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger;
       messenger.setMockMethodCallHandler(ReflectionAssistant.channel, (
@@ -512,7 +576,7 @@ void main() {
     tester.platformDispatcher.textScaleFactorTestValue = 2;
     addTearDown(tester.platformDispatcher.clearTextScaleFactorTestValue);
     await tester.pumpAndSettle();
-    await tester.ensureVisible(find.text('다음'));
+    await tester.ensureVisible(find.text('내용 더하기'));
     expect(tester.takeException(), isNull);
     await tester.pumpWidget(const SizedBox());
     r.dispose();

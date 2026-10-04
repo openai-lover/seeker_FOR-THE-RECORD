@@ -43,14 +43,16 @@ class _RecordsState extends State<_Records> {
 }
 
 class _TradeJournal extends StatefulWidget {
-  const _TradeJournal({required this.c, required this.r});
+  const _TradeJournal({required this.c, required this.r, this.initialSaved});
   final WorkroomController c;
   final RemoteService r;
+  final bool? initialSaved;
   @override
   State<_TradeJournal> createState() => _TradeJournalState();
 }
 
 class _TradeJournalState extends State<_TradeJournal> {
+  late bool? savedView = widget.initialSaved;
   @override
   void initState() {
     super.initState();
@@ -66,6 +68,7 @@ class _TradeJournalState extends State<_TradeJournal> {
     listenable: Listenable.merge([widget.r, widget.c.journals]),
     builder: (context, _) {
       final r = widget.r, j = widget.c.journals;
+      final showingSaved = savedView ?? j.entries.isNotEmpty;
       return PageBody(
         children: [
           Text(
@@ -104,191 +107,301 @@ class _TradeJournalState extends State<_TradeJournal> {
             ],
           ),
           const SizedBox(height: 20),
-          if (!r.signedIn)
-            PaperCard(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Text(
-                    tr(
-                      context,
-                      r.onlineAvailable
-                          ? '연결하고, 돌아보고, 기억해요.'
-                          : '이 미리보기에서는 지갑에 연결할 수 없습니다.',
-                      r.onlineAvailable
-                          ? 'Connect. Reflect. Remember.'
-                          : 'Wallet connection is not available in this preview.',
+          Wrap(
+            spacing: 10,
+            runSpacing: 8,
+            children: [
+              ChoiceChip(
+                key: const ValueKey('journal-saved-tab'),
+                avatar: const Icon(Icons.bookmark_outline_rounded, size: 18),
+                label: Text(tr(context, '내 기록', 'My notes')),
+                selected: showingSaved,
+                onSelected: (_) => setState(() => savedView = true),
+              ),
+              ChoiceChip(
+                key: const ValueKey('journal-activity-tab'),
+                avatar: const Icon(Icons.receipt_long_outlined, size: 18),
+                label: Text(tr(context, '지갑 활동', 'Activity')),
+                selected: !showingSaved,
+                onSelected: (_) => setState(() => savedView = false),
+              ),
+            ],
+          ),
+          const SizedBox(height: 24),
+          if (!showingSaved) ...[
+            if (!r.signedIn)
+              PaperCard(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Text(
+                      tr(
+                        context,
+                        r.onlineAvailable
+                            ? '연결하고, 돌아보고, 기억해요.'
+                            : '이 미리보기에서는 지갑에 연결할 수 없습니다.',
+                        r.onlineAvailable
+                            ? 'Connect. Reflect. Remember.'
+                            : 'Wallet connection is not available in this preview.',
+                      ),
+                      style: Theme.of(context).textTheme.titleLarge,
                     ),
-                    style: Theme.of(context).textTheme.titleLarge,
-                  ),
-                  const SizedBox(height: 12),
-                  Text(
-                    tr(
-                      context,
-                      r.onlineAvailable
-                          ? 'Seed Vault Wallet 또는 MWA 호환 지갑을 연결하세요. 메모는 이 기기에만 저장됩니다.'
-                          : '작업 기록은 오프라인에서 사용할 수 있습니다. 지갑 활동을 불러오려면 온라인 서비스 설정이 필요합니다.',
-                      r.onlineAvailable
-                          ? 'Connect Seed Vault Wallet or an MWA compatible wallet. Notes stay on this device.'
-                          : 'Your work journal is ready to use offline. Online services must be configured before you can load wallet activity.',
-                    ),
-                  ),
-                  if (r.directMode) ...[
                     const SizedBox(height: 12),
                     Text(
                       tr(
                         context,
-                        '공개 지갑 주소와 거래 ID를 Solana 공개 RPC로 직접 전송합니다. 메모는 이 기기에 남습니다.',
-                        'Your public wallet address and transaction IDs go directly to Solana public RPC. Your notes stay here.',
+                        r.onlineAvailable
+                            ? 'Seed Vault Wallet 또는 MWA 호환 지갑을 연결하세요. 메모는 이 기기에만 저장됩니다.'
+                            : '작업 기록은 오프라인에서 사용할 수 있습니다. 지갑 활동을 불러오려면 온라인 서비스 설정이 필요합니다.',
+                        r.onlineAvailable
+                            ? 'Connect Seed Vault Wallet or an MWA compatible wallet. Notes stay on this device.'
+                            : 'Your work journal is ready to use offline. Online services must be configured before you can load wallet activity.',
                       ),
-                      style: const TextStyle(fontSize: 12, color: muted),
+                    ),
+                    if (r.directMode) ...[
+                      const SizedBox(height: 12),
+                      Text(
+                        tr(
+                          context,
+                          '공개 지갑 주소와 거래 ID를 Solana 공개 RPC로 직접 전송합니다. 메모는 이 기기에 남습니다.',
+                          'Your public wallet address and transaction IDs go directly to Solana public RPC. Your notes stay here.',
+                        ),
+                        style: const TextStyle(fontSize: 12, color: muted),
+                      ),
+                    ],
+                    const SizedBox(height: 20),
+                    ActionButton(
+                      label: tr(
+                        context,
+                        'Seeker 지갑 연결',
+                        'Connect Seeker wallet',
+                      ),
+                      icon: Icons.account_balance_wallet_outlined,
+                      action: !r.onlineAvailable
+                          ? null
+                          : () async {
+                              await r.connect();
+                              await r.loadActivity();
+                            },
                     ),
                   ],
-                  const SizedBox(height: 20),
-                  ActionButton(
-                    label: tr(context, 'Seeker 지갑 연결', 'Connect Seeker wallet'),
-                    icon: Icons.account_balance_wallet_outlined,
-                    action: !r.onlineAvailable
+                ),
+              )
+            else ...[
+              Row(
+                children: [
+                  const Icon(
+                    Icons.account_balance_wallet_outlined,
+                    color: green,
+                  ),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          tr(context, '연결된 지갑', 'Wallet connected'),
+                          style: const TextStyle(fontWeight: FontWeight.w600),
+                        ),
+                        Text(
+                          _shortAddress(r.wallet ?? ''),
+                          style: const TextStyle(color: muted),
+                        ),
+                      ],
+                    ),
+                  ),
+                  IconButton(
+                    onPressed: r.activityLoading
                         ? null
-                        : () async {
-                            await r.connect();
-                            await r.loadActivity();
-                          },
+                        : () => r.loadActivity(),
+                    tooltip: tr(context, '새로고침', 'Refresh'),
+                    icon: const Icon(Icons.refresh),
                   ),
                 ],
               ),
-            )
-          else ...[
-            Row(
-              children: [
-                const Icon(Icons.account_balance_wallet_outlined, color: green),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        tr(context, '연결된 지갑', 'Wallet connected'),
-                        style: const TextStyle(fontWeight: FontWeight.w600),
-                      ),
-                      Text(
-                        _shortAddress(r.wallet ?? ''),
-                        style: const TextStyle(color: muted),
-                      ),
-                    ],
+              if (r.seeker)
+                Padding(
+                  padding: const EdgeInsets.only(top: 12),
+                  child: QuietTag(
+                    tr(context, 'Seeker 보유 확인됨', 'Seeker Verified'),
+                    icon: Icons.verified_outlined,
                   ),
                 ),
-                IconButton(
-                  onPressed: r.activityLoading ? null : () => r.loadActivity(),
-                  tooltip: tr(context, '새로고침', 'Refresh'),
-                  icon: const Icon(Icons.refresh),
-                ),
-              ],
-            ),
-            if (r.seeker)
-              Padding(
-                padding: const EdgeInsets.only(top: 12),
-                child: QuietTag(
-                  tr(context, 'Seeker 보유 확인됨', 'Seeker Verified'),
-                  icon: Icons.verified_outlined,
-                ),
+              const SizedBox(height: 24),
+              Text(
+                tr(context, '최근 지갑 활동', 'Recent wallet activity'),
+                style: Theme.of(context).textTheme.titleLarge,
               ),
-            const SizedBox(height: 24),
+              const SizedBox(height: 12),
+              if (r.activityLoading && r.activities.isEmpty)
+                const Padding(
+                  padding: EdgeInsets.all(24),
+                  child: Center(child: CircularProgressIndicator()),
+                ),
+              if (r.activityError != null)
+                _JournalNotice(
+                  message: activityErrorText(context, r.activityError!),
+                  action: () => r.loadActivity(
+                    more: r.activities.isNotEmpty && r.activityCursor != null,
+                  ),
+                ),
+              if (r.activityLoaded &&
+                  r.activities.isEmpty &&
+                  r.activityError == null)
+                _JournalNotice(
+                  message: tr(
+                    context,
+                    '아직 조회된 거래가 없어요. 나중에 다시 확인해 주세요.',
+                    'No activity found yet. Check back later.',
+                  ),
+                ),
+              for (final a in r.activities)
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 12),
+                  child: _ActivityCard(
+                    activity: a,
+                    entry: j.find(r.wallet!, a.signature),
+                    onOpen: a.canRecordReason
+                        ? () => _openJournal(
+                            context,
+                            widget.c,
+                            widget.r,
+                            r.wallet!,
+                            a,
+                          )
+                        : null,
+                  ),
+                ),
+              if (r.activityCursor != null)
+                ActionButton(
+                  label: tr(context, '이전 거래 불러오기', 'Load earlier activity'),
+                  outlined: true,
+                  icon: Icons.expand_more,
+                  action: r.activityLoading
+                      ? null
+                      : () => r.loadActivity(more: true),
+                ),
+              if (r.activityLoading && r.activities.isNotEmpty)
+                const LinearProgressIndicator(),
+            ],
+          ],
+          if (showingSaved) ...[
             Text(
-              tr(context, '최근 지갑 활동', 'Recent wallet activity'),
+              tr(context, '이 기기에 남긴 일지', 'Saved on this device'),
               style: Theme.of(context).textTheme.titleLarge,
             ),
             const SizedBox(height: 12),
-            if (r.activityLoading && r.activities.isEmpty)
-              const Padding(
-                padding: EdgeInsets.all(24),
-                child: Center(child: CircularProgressIndicator()),
-              ),
-            if (r.activityError != null)
+            if (j.loading) const LinearProgressIndicator(),
+            if (j.error != null)
               _JournalNotice(
-                message: activityErrorText(context, r.activityError!),
-                action: () => r.loadActivity(
-                  more: r.activities.isNotEmpty && r.activityCursor != null,
-                ),
+                message: activityErrorText(context, j.error!),
+                action: j.load,
               ),
-            if (r.activityLoaded &&
-                r.activities.isEmpty &&
-                r.activityError == null)
-              _JournalNotice(
-                message: tr(
+            if (!j.loading && j.entries.isEmpty && j.error == null)
+              Text(
+                tr(
                   context,
-                  '아직 조회된 거래가 없어요. 나중에 다시 확인해 주세요.',
-                  'No activity found yet. Check back later.',
+                  '확인된 지갑 활동에 이유를 남기면 여기에 보관됩니다.',
+                  'Save a reason on confirmed wallet activity to keep it here.',
                 ),
+                style: const TextStyle(color: muted),
               ),
-            for (final a in r.activities)
+            for (final entry in j.entries)
               Padding(
                 padding: const EdgeInsets.only(bottom: 12),
-                child: _ActivityCard(
-                  activity: a,
-                  entry: j.find(r.wallet!, a.signature),
-                  onOpen: a.canRecordReason
-                      ? () => _openJournal(
-                          context,
-                          widget.c,
-                          widget.r,
-                          r.wallet!,
-                          a,
-                        )
-                      : null,
+                child: _SavedJournalCard(
+                  entry: entry,
+                  onOpen: () => _openJournal(
+                    context,
+                    widget.c,
+                    widget.r,
+                    entry.wallet,
+                    entry.activity,
+                  ),
                 ),
               ),
-            if (r.activityCursor != null)
-              ActionButton(
-                label: tr(context, '이전 거래 불러오기', 'Load earlier activity'),
-                outlined: true,
-                icon: Icons.expand_more,
-                action: r.activityLoading
-                    ? null
-                    : () => r.loadActivity(more: true),
-              ),
-            if (r.activityLoading && r.activities.isNotEmpty)
-              const LinearProgressIndicator(),
           ],
-          const SizedBox(height: 30),
-          Text(
-            tr(context, '이 기기에 남긴 일지', 'Saved on this device'),
-            style: Theme.of(context).textTheme.titleLarge,
-          ),
-          const SizedBox(height: 12),
-          if (j.loading) const LinearProgressIndicator(),
-          if (j.error != null)
-            _JournalNotice(
-              message: activityErrorText(context, j.error!),
-              action: j.load,
-            ),
-          if (!j.loading && j.entries.isEmpty && j.error == null)
-            Text(
-              tr(
-                context,
-                '확인된 지갑 활동에 이유를 남기면 여기에 보관됩니다.',
-                'Save a reason on confirmed wallet activity to keep it here.',
-              ),
-              style: const TextStyle(color: muted),
-            ),
-          for (final entry in j.entries)
-            Padding(
-              padding: const EdgeInsets.only(bottom: 12),
-              child: _ActivityCard(
-                activity: entry.activity,
-                entry: entry,
-                onOpen: () => _openJournal(
-                  context,
-                  widget.c,
-                  widget.r,
-                  entry.wallet,
-                  entry.activity,
-                ),
-              ),
-            ),
         ],
       );
     },
+  );
+}
+
+/// Returning readers should recognize their own words before transaction data.
+class _SavedJournalCard extends StatelessWidget {
+  const _SavedJournalCard({required this.entry, required this.onOpen});
+  final TradeJournalEntry entry;
+  final VoidCallback onOpen;
+  @override
+  Widget build(BuildContext context) => PaperCard(
+    key: ValueKey('saved-note-${entry.id}'),
+    onTap: onOpen,
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          children: [
+            const Icon(Icons.bookmark_rounded, color: green, size: 18),
+            const SizedBox(width: 8),
+            Expanded(
+              child: Text(
+                dateLabel(context, entry.baselineSavedAt ?? entry.createdAt),
+                style: const TextStyle(fontSize: 12, color: muted),
+              ),
+            ),
+            const Icon(Icons.chevron_right_rounded, color: muted, size: 20),
+          ],
+        ),
+        const SizedBox(height: 16),
+        Text(
+          entry.originalReason ?? entry.reason,
+          maxLines: 3,
+          overflow: TextOverflow.ellipsis,
+          style: const TextStyle(
+            fontSize: 18,
+            height: 1.55,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+        if (entry.decisionRule.trim().isNotEmpty) ...[
+          const SizedBox(height: 16),
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(14),
+            decoration: BoxDecoration(
+              color: green.withValues(alpha: .06),
+              borderRadius: BorderRadius.circular(14),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  tr(context, '남긴 기준', 'Saved lesson'),
+                  style: const TextStyle(
+                    fontSize: 11,
+                    color: green,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+                const SizedBox(height: 6),
+                Text(
+                  entry.decisionRule,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(color: green),
+                ),
+              ],
+            ),
+          ),
+        ],
+        const SizedBox(height: 8),
+        TextButton.icon(
+          onPressed: onOpen,
+          icon: const Icon(Icons.arrow_forward_rounded, size: 17),
+          label: Text(tr(context, '기록 완료 · 일지 열기', 'Recorded · Open journal')),
+        ),
+      ],
+    ),
   );
 }
 
@@ -356,6 +469,7 @@ class _ActivityCard extends StatelessWidget {
     final a = activity;
     return PaperCard(
       padding: const EdgeInsets.all(16),
+      onTap: onOpen,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -370,7 +484,11 @@ class _ActivityCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(14),
                 ),
                 child: Icon(
-                  a.canJournal
+                  a.isTransfer
+                      ? a.type == 'transfer-in'
+                            ? Icons.south_west_rounded
+                            : Icons.north_east_rounded
+                      : a.canJournal
                       ? Icons.swap_horiz_rounded
                       : Icons.receipt_long_outlined,
                   size: 21,
@@ -764,7 +882,7 @@ class _JournalEditorState extends State<_JournalEditor> {
                       Flexible(
                         child: TextButton(
                           onPressed: () => setState(() => step++),
-                          child: Text(tr(context, '다음', 'Next')),
+                          child: Text(tr(context, '내용 더하기', 'Add details')),
                         ),
                       ),
                   ],
@@ -778,12 +896,15 @@ class _JournalEditorState extends State<_JournalEditor> {
               _SavedReason(widget.entry!),
               const SizedBox(height: 20),
             ],
-            if (!widget.reviewOnly) ...[
+            if (!widget.reviewOnly && step > 0) ...[
               Row(
                 children: [
-                  Eyebrow('${step + 1} / 4'),
-                  const SizedBox(width: 12),
                   Expanded(
+                    child: Eyebrow(tr(context, '선택 입력', 'Optional details')),
+                  ),
+                  const SizedBox(width: 12),
+                  SizedBox(
+                    width: 64,
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(4),
                       child: LinearProgressIndicator(
@@ -1047,6 +1168,22 @@ class _JournalDetail extends StatelessWidget {
         appBar: AppBar(
           title: Text(tr(context, '판단의 기록', 'A record of your decision')),
         ),
+        bottomNavigationBar: _JournalActionBar(
+          primary: ActionButton(
+            label: tr(context, '복기하기', 'Reflect'),
+            icon: Icons.history_edu_outlined,
+            action: () async => openPage(
+              context,
+              _JournalEditor(
+                c: c,
+                wallet: e.wallet,
+                activity: e.activity,
+                entry: e,
+                reviewOnly: true,
+              ),
+            ),
+          ),
+        ),
         body: PageBody(
           children: [
             _SavedReason(e),
@@ -1093,20 +1230,6 @@ class _JournalDetail extends StatelessWidget {
               ),
               const SizedBox(height: 24),
             ],
-            ActionButton(
-              label: tr(context, '복기하기', 'Reflect'),
-              icon: Icons.history_edu_outlined,
-              action: () async => openPage(
-                context,
-                _JournalEditor(
-                  c: c,
-                  wallet: e.wallet,
-                  activity: e.activity,
-                  entry: e,
-                  reviewOnly: true,
-                ),
-              ),
-            ),
             OutlinedButton(
               onPressed: () => openPage(
                 context,

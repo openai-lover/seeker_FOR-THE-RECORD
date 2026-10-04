@@ -128,6 +128,7 @@ class _RelatedRecordsPanelState extends State<_RelatedRecordsPanel> {
     context: context,
     isScrollControlled: true,
     useSafeArea: true,
+    showDragHandle: true,
     builder: (ctx) => DraggableScrollableSheet(
       expand: false,
       initialChildSize: .7,
@@ -136,9 +137,20 @@ class _RelatedRecordsPanelState extends State<_RelatedRecordsPanel> {
         controller: scroll,
         padding: const EdgeInsets.all(24),
         children: [
-          Text(
-            tr(ctx, '내가 남긴 원문', 'Your original record'),
-            style: Theme.of(ctx).textTheme.headlineSmall,
+          Row(
+            children: [
+              Expanded(
+                child: Text(
+                  tr(ctx, '내가 남긴 원문', 'Your original record'),
+                  style: Theme.of(ctx).textTheme.headlineSmall,
+                ),
+              ),
+              IconButton(
+                tooltip: uiText(ctx, '닫기'),
+                onPressed: () => Navigator.pop(ctx),
+                icon: const Icon(Icons.close_rounded),
+              ),
+            ],
           ),
           const SizedBox(height: 8),
           Text(
@@ -185,14 +197,34 @@ class _RelatedRecordsPanelState extends State<_RelatedRecordsPanel> {
     );
     if (records.isEmpty) return const SizedBox.shrink();
     return PaperCard(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Text(
-            tr(context, '비슷했던 나의 선택', 'A similar choice from your past'),
-            style: Theme.of(context).textTheme.titleMedium,
+      color: green.withValues(alpha: .045),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+      child: ExpansionTile(
+        key: const ValueKey('related-records-expand'),
+        tilePadding: EdgeInsets.zero,
+        childrenPadding: const EdgeInsets.only(bottom: 12),
+        shape: const Border(),
+        collapsedShape: const Border(),
+        leading: const Icon(Icons.history_edu_outlined, color: green),
+        title: Text(
+          tr(context, '비슷했던 나의 선택', 'A similar choice from your past'),
+          style: Theme.of(
+            context,
+          ).textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w600),
+        ),
+        subtitle: Padding(
+          padding: const EdgeInsets.only(top: 4),
+          child: Text(
+            tr(
+              context,
+              '남겨둔 이유와 교훈을 찾아보세요.',
+              'Find a reason or lesson you saved.',
+            ),
+            style: const TextStyle(fontSize: 12, color: muted),
           ),
-          const SizedBox(height: 8),
+        ),
+        children: [
+          const SizedBox(height: 12),
           Text(
             records.isEmpty
                 ? tr(

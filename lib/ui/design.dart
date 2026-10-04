@@ -3,7 +3,7 @@ import '../l10n/strings.dart';
 import '../l10n/legacy_catalog.dart';
 
 const ink = Color(0xFF292D26),
-    muted = Color(0xFF73766A),
+    muted = Color(0xFF646B61),
     green = Color(0xFF465C45),
     paper = Color(0xFFFFFDF8),
     cream = Color(0xFFF6F2E9),
@@ -88,9 +88,23 @@ ThemeData workroomTheme() => ThemeData(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
     ),
   ),
+  textButtonTheme: TextButtonThemeData(
+    style: TextButton.styleFrom(
+      minimumSize: const Size(48, 48),
+      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+    ),
+  ),
+  bottomSheetTheme: const BottomSheetThemeData(
+    backgroundColor: paper,
+    surfaceTintColor: Colors.transparent,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.vertical(top: Radius.circular(28)),
+    ),
+  ),
   inputDecorationTheme: InputDecorationTheme(
     filled: true,
-    fillColor: cream,
+    fillColor: paper,
     contentPadding: const EdgeInsets.all(18),
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(14),

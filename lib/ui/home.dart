@@ -30,7 +30,7 @@ class _Home extends StatelessWidget {
       context,
       Scaffold(
         appBar: AppBar(title: Text(tr(context, '선택의 기록', 'My decisions'))),
-        body: _TradeJournal(c: c, r: r),
+        body: _TradeJournal(c: c, r: r, initialSaved: false),
       ),
     );
     Future<void> focus() async {
@@ -159,7 +159,9 @@ class _Home extends StatelessWidget {
                 ),
           style: FilledButton.styleFrom(
             minimumSize: const Size.fromHeight(58),
-            shape: const StadiumBorder(),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(18),
+            ),
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -190,6 +192,51 @@ class _Home extends StatelessWidget {
           ),
         ],
         const SizedBox(height: 16),
+        if (dueEntries.isEmpty && c.journals.entries.isNotEmpty) ...[
+          PaperCard(
+            padding: const EdgeInsets.all(18),
+            onTap: () => openPage(
+              context,
+              _JournalDetail(c: c, r: r, id: c.journals.entries.first.id),
+            ),
+            child: Row(
+              children: [
+                const Icon(
+                  Icons.bookmark_outline_rounded,
+                  color: green,
+                  size: 22,
+                ),
+                const SizedBox(width: 14),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        tr(context, '최근에 남긴 이유', 'Your latest reason'),
+                        style: const TextStyle(fontSize: 12, color: muted),
+                      ),
+                      const SizedBox(height: 6),
+                      Text(
+                        c.journals.entries.first.originalReason ??
+                            c.journals.entries.first.reason,
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(
+                          fontSize: 15,
+                          height: 1.5,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(width: 12),
+                const Icon(Icons.chevron_right_rounded, color: muted, size: 20),
+              ],
+            ),
+          ),
+          const SizedBox(height: 16),
+        ],
         Row(
           children: [
             Expanded(
