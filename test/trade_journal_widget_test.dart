@@ -6,6 +6,8 @@ import 'package:seeker_workroom/data/repository.dart';
 import 'package:seeker_workroom/domain/controller.dart';
 import 'package:seeker_workroom/platform/native.dart';
 import 'package:seeker_workroom/ui/app.dart';
+import 'package:seeker_workroom/data/reflection_assistant.dart';
+import 'package:seeker_workroom/domain/trade_journal.dart';
 import 'controller_test.dart' show FakeClock;
 import 'trade_journal_test.dart' show activity, entry;
 
@@ -382,6 +384,100 @@ void main() {
       r.clearActivity();
       await tester.pumpAndSettle();
       expect(find.text('Recorded · Open journal'), findsOneWidget);
+    },
+  );
+  testWidgets(
+    'related records preserve quotes, isolate wallets and clear stale results',
+    (tester) async {
+      final (c, _) = await show(
+        tester,
+        connected: true,
+        rows: [activity.toJson()],
+      );
+      for (final wallet in ['wallet-1', 'foreign-wallet']) {
+        await c.journals.save(
+          TradeJournalEntry.fromJson({
+            ...entry.toJson(),
+            'id': 'past-$wallet',
+            'wallet': wallet,
+            'activity': {
+              ...activity.toJson(),
+              'id': 'past-$wallet',
+              'signature': 'past-$wallet',
+            },
+            'originalReason': wallet == 'wallet-1'
+                ? 'Original source words'
+                : 'Foreign private words',
+            'review': 'A later observation',
+            'decisionRule': 'Read the primary source',
+          }),
+        );
+      }
+      await tester.pumpAndSettle();
+      await tester.ensureVisible(find.text('Write reflection'));
+      await tester.tap(find.text('Write reflection'));
+      await tester.pumpAndSettle();
+      await tester.enterText(find.byType(TextField).first, 'Check my evidence');
+      final messenger =
+          TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger;
+      messenger.setMockMethodCallHandler(ReflectionAssistant.channel, (
+        call,
+      ) async {
+        expect(call.method, 'rank');
+        expect((call.arguments as Map)['records'], hasLength(1));
+        expect(
+          call.arguments.toString(),
+          isNot(contains('Foreign private words')),
+        );
+        return {
+          'scores': [.91],
+        };
+      });
+      addTearDown(
+        () => messenger.setMockMethodCallHandler(
+          ReflectionAssistant.channel,
+          null,
+        ),
+      );
+      await tester.ensureVisible(
+        find.byKey(const ValueKey('related-records-search')),
+      );
+      await tester.tap(find.byKey(const ValueKey('related-records-search')));
+      await tester.pumpAndSettle();
+      expect(find.text('Original source words'), findsOneWidget);
+      expect(find.text('Foreign private words'), findsNothing);
+      await tester.ensureVisible(find.text('Original source words'));
+      await tester.tap(find.text('Original source words'));
+      await tester.pumpAndSettle();
+      expect(find.text('Your original record'), findsOneWidget);
+      expect(find.text('A later observation'), findsOneWidget);
+      Navigator.of(tester.element(find.text('Your original record'))).pop();
+      await tester.pumpAndSettle();
+      await tester.ensureVisible(find.byType(TextField).first);
+      await tester.enterText(
+        find.byType(TextField).first,
+        'A different choice',
+      );
+      await tester.pumpAndSettle();
+      expect(find.text('Original source words'), findsNothing);
+      messenger.setMockMethodCallHandler(
+        ReflectionAssistant.channel,
+        (_) async => throw PlatformException(code: 'model-missing'),
+      );
+      await tester.ensureVisible(
+        find.byKey(const ValueKey('related-records-search')),
+      );
+      await tester.tap(find.byKey(const ValueKey('related-records-search')));
+      await tester.pumpAndSettle();
+      expect(
+        find.textContaining('Download the local AI model'),
+        findsOneWidget,
+      );
+      await tester.ensureVisible(find.text('Browse saved records'));
+      await tester.tap(find.text('Browse saved records'));
+      await tester.pumpAndSettle();
+      expect(find.text('Original source words'), findsOneWidget);
+      expect(tester.takeException(), isNull);
     },
   );
   testWidgets('English journal visual and Korean large text remain usable', (

@@ -9,6 +9,7 @@ internal object ReflectionNative {
     external fun create(path: String): Long
     external fun prepare(handle: Long)
     external fun select(handle: Long, note: ByteArray, background: ByteArray): IntArray
+    external fun rank(handle: Long, query: ByteArray, records: Array<ByteArray>): FloatArray
     external fun cancel(handle: Long)
     external fun close(handle: Long)
 }

@@ -72,7 +72,7 @@ class ReflectionAssistant(context: Context) : MethodChannel.MethodCallHandler {
                 "modelBytes" to MODEL_BYTES, "warm" to (handle != 0L),
             ))
             "cancel" -> { operation?.let { cancelOperation(it, "cancelled") }; result.success(null) }
-            "download", "suggest", "remove" -> {
+            "download", "suggest", "rank", "remove" -> {
                 if (operation != null) { result.error("busy", "A request is finishing.", null); return }
                 if (!Build.SUPPORTED_ABIS.contains("arm64-v8a")) { result.error("unsupported", "ARM64 Android required.", null); return }
                 main.removeCallbacks(idleRelease)
@@ -93,6 +93,7 @@ class ReflectionAssistant(context: Context) : MethodChannel.MethodCallHandler {
                                 downloaded = 0
                                 finish(op)
                             }
+                            "rank" -> finish(op, rank(op, call))
                             else -> finish(op, suggest(op, call.argument<String>("context") ?: ""))
                         }
                     } catch (_: InterruptedException) { finish(op, error = "cancelled") }
@@ -190,6 +191,22 @@ class ReflectionAssistant(context: Context) : MethodChannel.MethodCallHandler {
         require(selected.size == 3 && selected[0] in 1..5 && selected[1] in 1..5)
         return mapOf("questionId" to selected[0], "alternativeId" to selected[1], "uncertain" to (selected[2] == 1),
             "cold" to cold, "durationMs" to (SystemClock.elapsedRealtime() - start))
+    }
+    private fun rank(op: Operation, call: MethodCall): Map<String, Any> {
+        val query = call.argument<String>("query")?.trim() ?: ""
+        val records = call.argument<List<String>>("records") ?: emptyList()
+        require(query.isNotBlank() && query.length <= 1800 && records.size in 1..32 &&
+            records.all { it.isNotBlank() && it.length <= 1800 }) { "empty-note" }
+        val start = SystemClock.elapsedRealtime()
+        val cold = handle == 0L
+        if (cold) { verifyModel(op); checkCancelled(op); handle = ReflectionNative.create(model.path) }
+        ReflectionNative.prepare(handle); checkCancelled(op)
+        val scores = ReflectionNative.rank(handle, query.toByteArray(Charsets.UTF_8),
+            records.map { it.toByteArray(Charsets.UTF_8) }.toTypedArray())
+        checkCancelled(op)
+        require(scores.size == records.size && scores.all { it.isFinite() })
+        return mapOf("scores" to scores.map { it.toDouble() }, "cold" to cold,
+            "durationMs" to (SystemClock.elapsedRealtime() - start))
     }
     fun background() {
         main.removeCallbacks(idleRelease)

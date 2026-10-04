@@ -122,3 +122,20 @@ ReflectionChoice ReflectionCore::select(const std::string &note,const std::strin
     if(cancelled.load())throw std::runtime_error("cancelled");
     return result;
 }
+
+// No persistent index: private record embeddings live only during this request.
+std::vector<float> ReflectionCore::rank(const std::string &query, const std::vector<std::string> &records) {
+    if(query.empty() || query.size()>6000 || records.empty() || records.size()>32)
+        throw std::runtime_error("empty-note");
+    auto q=embed(query);
+    std::vector<float> scores;
+    for(const auto &record:records) {
+        if(record.empty() || record.size()>6000) throw std::runtime_error("empty-note");
+        auto v=embed(record);
+        const double score=std::inner_product(q.begin(),q.end(),v.begin(),0.0);
+        if(!std::isfinite(score))throw std::runtime_error("embeddings");
+        scores.push_back(static_cast<float>(score));
+    }
+    if(cancelled.load())throw std::runtime_error("cancelled");
+    return scores;
+}

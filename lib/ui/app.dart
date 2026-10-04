@@ -7,9 +7,11 @@ import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import '../config.dart';
 import '../data/reflection_assistant.dart';
+import '../data/related_records.dart';
 import '../l10n/strings.dart';
 import '../l10n/legacy_catalog.dart';
 import '../domain/trade_journal.dart';
+import '../domain/trade_journal_controller.dart';
 import 'package:uuid/uuid.dart';
 import '../data/remote.dart';
 import '../domain/controller.dart';
@@ -25,6 +27,7 @@ part 'settings.dart';
 part 'shared.dart';
 part 'trade_journal.dart';
 part 'decision_replay.dart';
+part 'related_records.dart';
 part 'room_experience.dart';
 
 Future<bool> perform(

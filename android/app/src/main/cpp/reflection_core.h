@@ -22,6 +22,7 @@ public:
     ReflectionCore(const ReflectionCore &) = delete;
     ReflectionCore & operator=(const ReflectionCore &) = delete;
     ReflectionChoice select(const std::string &note, const std::string &background = "");
+    std::vector<float> rank(const std::string &query, const std::vector<std::string> &records);
     void prepare() { cancelled.store(false); }
     void cancel() { cancelled.store(true); }
 private:

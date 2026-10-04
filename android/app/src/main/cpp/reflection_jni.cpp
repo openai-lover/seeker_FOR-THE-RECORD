@@ -63,3 +63,32 @@ extern "C" JNIEXPORT void JNICALL
 Java_app_workroom_seeker_1workroom_ReflectionNative_close(JNIEnv *,jobject,jlong id) {
     std::lock_guard<std::mutex> lock(handlesMutex); handles.erase(id);
 }
+
+extern "C" JNIEXPORT jfloatArray JNICALL
+Java_app_workroom_seeker_1workroom_ReflectionNative_rank(JNIEnv *env,jobject,jlong id,jbyteArray query,jobjectArray records) {
+    try {
+        auto read=[&](jbyteArray bytes) {
+            if(!bytes)throw std::runtime_error("empty-note");
+            const auto length=env->GetArrayLength(bytes);
+            if(length<=0 || length>6000)throw std::runtime_error("empty-note");
+            std::string text(length,'\0');
+            env->GetByteArrayRegion(bytes,0,length,reinterpret_cast<jbyte*>(text.data()));
+            return text;
+        };
+        if(!records)throw std::runtime_error("empty-note");
+        const auto count=env->GetArrayLength(records);
+        if(count<=0 || count>32)throw std::runtime_error("empty-note");
+        std::vector<std::string> texts;
+        for(int i=0;i<count;++i) {
+            auto bytes=static_cast<jbyteArray>(env->GetObjectArrayElement(records,i));
+            texts.push_back(read(bytes));env->DeleteLocalRef(bytes);
+            if(env->ExceptionCheck())return nullptr;
+        }
+        const auto input=read(query);
+        if(env->ExceptionCheck())return nullptr;
+        auto scores=acquire(id)->rank(input,texts);
+        auto result=env->NewFloatArray(scores.size());
+        if(result)env->SetFloatArrayRegion(result,0,scores.size(),scores.data());
+        return result;
+    }catch(const std::exception &e){fail(env,e.what());return nullptr;}
+}

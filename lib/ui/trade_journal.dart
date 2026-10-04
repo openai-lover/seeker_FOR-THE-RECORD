@@ -298,6 +298,8 @@ String _shortAddress(String value) => value.length < 14
 String _activityLabel(BuildContext context, WalletActivity activity) =>
     activity.canJournal
     ? '${activity.input!.symbol} → ${activity.output!.symbol}'
+    : activity.isTransfer
+    ? '${activity.type == 'transfer-in' ? tr(context, '받음', 'Received') : tr(context, '보냄', 'Sent')} · ${(activity.input ?? activity.output)!.symbol}'
     : tr(context, '기타 지갑 활동', 'Other wallet activity');
 String _unclassifiedNoteText(BuildContext context) => tr(
   context,
@@ -417,6 +419,13 @@ class _ActivityCard extends StatelessWidget {
               ).textTheme.titleLarge?.copyWith(color: green),
             ),
           ],
+          if (a.isTransfer) ...[
+            const SizedBox(height: 12),
+            Text(
+              '${(a.input ?? a.output)!.amount} ${(a.input ?? a.output)!.symbol}',
+              style: Theme.of(context).textTheme.titleLarge,
+            ),
+          ],
           if (a.source != null) ...[
             const SizedBox(height: 10),
             Text(a.source!, style: const TextStyle(fontSize: 12, color: muted)),
@@ -497,7 +506,7 @@ class _ActivityContext extends StatelessWidget {
       ),
       children: [
         Text(
-          activity.canJournal
+          (activity.canJournal || activity.isTransfer)
               ? tr(
                   context,
                   '온체인 거래 사실은 수정되지 않습니다.',
@@ -869,6 +878,23 @@ class _JournalEditorState extends State<_JournalEditor> {
                 ],
               ),
             const SizedBox(height: 20),
+            if (RelatedRecords.candidates(
+              widget.c.journals.entries,
+              widget.wallet,
+              widget.entry?.id,
+            ).isNotEmpty) ...[
+              _RelatedRecordsPanel(
+                journals: widget.c.journals,
+                wallet: widget.wallet,
+                currentId: widget.entry?.id,
+                query: () => [
+                  reason.text,
+                  plan.text,
+                  review.text,
+                ].where((s) => s.trim().isNotEmpty).join('\n'),
+              ),
+              const SizedBox(height: 16),
+            ],
             if (widget.reviewOnly) ...[
               _ReflectionAssistantPanel(
                 contextText: () => assistantContext,

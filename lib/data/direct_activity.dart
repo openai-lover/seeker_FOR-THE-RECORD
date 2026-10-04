@@ -13,6 +13,7 @@ class DirectActivityError implements Exception {
   String toString() => code;
 }
 
+const _system = '11111111111111111111111111111111';
 const _jupiter = 'JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4';
 const _token = 'TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA';
 const _compute = 'ComputeBudget111111111111111111111111111111';
@@ -54,7 +55,7 @@ String _decimal(BigInt amount, int places) {
 }
 
 /// Conservative local parser. Unknown or ambiguous activity never becomes a swap.
-/// No fiat-price inference, native-SOL inference, or transaction construction.
+/// Transfers require parsed instructions and matching balance evidence. No signing.
 WalletActivity normalizeDirectActivity(
   String wallet,
   Map<String, dynamic> info,
@@ -94,6 +95,8 @@ WalletActivity normalizeDirectActivity(
         !meta.containsKey('err') ||
         !_safeInt(meta['fee']) ||
         (tx['blockTime'] != null && !_safeInt(tx['blockTime'])) ||
+        keys.isEmpty ||
+        keys.map((k) => k['pubkey']).toSet().length != keys.length ||
         keys.any(
           (k) =>
               !_base58Size(k['pubkey'], 32) ||
@@ -109,6 +112,18 @@ WalletActivity normalizeDirectActivity(
       return result();
     }
     status = 'success';
+    final transfer = _verifiedTransfer(
+      wallet,
+      signature,
+      info['blockTime'] as int?,
+      fee,
+      keys,
+      instructions,
+      meta,
+      pre,
+      post,
+    );
+    if (transfer != null) return transfer;
     if (!keys.any((k) => k['pubkey'] == wallet && k['signer'] == true)) {
       return result(issue: 'unsupported-activity');
     }
@@ -204,6 +219,173 @@ WalletActivity normalizeDirectActivity(
   } catch (_) {
     return result(issue: 'parse-unavailable');
   }
+}
+
+/// Deliberately narrow: one top-level transfer plus compute-budget instructions.
+/// No CPI, ATA creation, multisig/delegate, Token-2022 extensions or inferred swaps.
+WalletActivity? _verifiedTransfer(
+  String wallet,
+  String signature,
+  int? blockTime,
+  String? fee,
+  List<Map> keys,
+  List<Map> instructions,
+  Map meta,
+  List<Map> pre,
+  List<Map> post,
+) {
+  final actionable = instructions
+      .where((i) => i['programId'] != _compute)
+      .toList();
+  if (actionable.length != 1) return null;
+  final inner = meta['innerInstructions'];
+  if (inner != null && (inner is! List || inner.isNotEmpty)) return null;
+  final i = actionable.single;
+  if (i['parsed'] is! Map) return null;
+  final parsed = i['parsed'] as Map;
+  if (parsed['info'] is! Map) return null;
+  final v = parsed['info'] as Map;
+  final source = v['source'], destination = v['destination'];
+  if (!_base58Size(source, 32) ||
+      !_base58Size(destination, 32) ||
+      source == destination) {
+    return null;
+  }
+  int index(Object? address) => keys.indexWhere((k) => k['pubkey'] == address);
+  final si = index(source), di = index(destination);
+  if (si < 0 ||
+      di < 0 ||
+      keys[si]['writable'] != true ||
+      keys[di]['writable'] != true) {
+    return null;
+  }
+  WalletActivity make(bool outgoing, ActivityAsset asset, String program) =>
+      WalletActivity(
+        id: signature,
+        signature: signature,
+        blockTime: blockTime,
+        status: 'success',
+        type: outgoing ? 'transfer-out' : 'transfer-in',
+        source: program,
+        fee: fee,
+        input: outgoing ? asset : null,
+        output: outgoing ? null : asset,
+      );
+  if (i['programId'] == _system && parsed['type'] == 'transfer') {
+    final amount = v['lamports'];
+    if (!_safeInt(amount) ||
+        amount == 0 ||
+        keys[si]['signer'] != true ||
+        (source != wallet && destination != wallet) ||
+        pre.isNotEmpty ||
+        post.isNotEmpty) {
+      return null;
+    }
+    final before = meta['preBalances'], after = meta['postBalances'];
+    if (before is! List ||
+        after is! List ||
+        before.length != keys.length ||
+        after.length != keys.length ||
+        before.any((n) => !_safeInt(n)) ||
+        after.any((n) => !_safeInt(n))) {
+      return null;
+    }
+    for (var k = 0; k < keys.length; k++) {
+      final delta =
+          BigInt.from(after[k] as int) - BigInt.from(before[k] as int);
+      var expected = BigInt.zero;
+      if (k == si) expected -= BigInt.from(amount as int);
+      if (k == di) expected += BigInt.from(amount as int);
+      if (k == 0) expected -= BigInt.from(meta['fee'] as int);
+      if (delta != expected) return null;
+    }
+    return make(
+      source == wallet,
+      ActivityAsset(
+        mint: _system,
+        symbol: 'SOL',
+        amount: _decimal(BigInt.from(amount as int), 9),
+      ),
+      'Solana System',
+    );
+  }
+  if (i['programId'] != _token || parsed['type'] != 'transferChecked') {
+    return null;
+  }
+  if (!_base58Size(v['mint'], 32) ||
+      !_base58Size(v['authority'], 32) ||
+      !keys.any((k) => k['pubkey'] == v['authority'] && k['signer'] == true) ||
+      v['tokenAmount'] is! Map) {
+    return null;
+  }
+  final ta = v['tokenAmount'] as Map;
+  final raw = ta['amount'], decimals = ta['decimals'];
+  if (raw is! String ||
+      !RegExp(r'^\d{1,20}$').hasMatch(raw) ||
+      decimals is! int ||
+      decimals < 0 ||
+      decimals > 18) {
+    return null;
+  }
+  final amount = BigInt.parse(raw);
+  if (amount <= BigInt.zero || amount > (BigInt.one << 64) - BigInt.one) {
+    return null;
+  }
+  // A single classic transfer changes exactly these two token accounts.
+  // Additional balance entries could conceal unsupported compound activity.
+  if (pre.length != 2 || post.length != 2) return null;
+  Map? balance(List<Map> balances, int at) {
+    final found = balances.where((b) => b['accountIndex'] == at).toList();
+    return found.length == 1 ? found.single : null;
+  }
+
+  final sb = balance(pre, si),
+      sa = balance(post, si),
+      db = balance(pre, di),
+      da = balance(post, di);
+  if ([sb, sa, db, da].any((b) => b == null)) return null;
+  BigInt? quantity(Map b) {
+    if (b['mint'] != v['mint'] ||
+        b['programId'] != _token ||
+        !_base58Size(b['owner'], 32) ||
+        b['uiTokenAmount'] is! Map) {
+      return null;
+    }
+    final n = b['uiTokenAmount'] as Map;
+    if (n['decimals'] != decimals ||
+        n['amount'] is! String ||
+        !RegExp(r'^\d{1,20}$').hasMatch(n['amount'] as String)) {
+      return null;
+    }
+    final q = BigInt.parse(n['amount'] as String);
+    return q <= (BigInt.one << 64) - BigInt.one ? q : null;
+  }
+
+  final quantities = [
+    for (final b in [sb!, sa!, db!, da!]) quantity(b),
+  ];
+  if (quantities.any((q) => q == null) ||
+      sb['owner'] != sa['owner'] ||
+      db['owner'] != da['owner'] ||
+      sb['owner'] != v['authority'] ||
+      sb['owner'] == db['owner'] ||
+      (sb['owner'] != wallet && db['owner'] != wallet) ||
+      quantities[0]! - quantities[1]! != amount ||
+      quantities[3]! - quantities[2]! != amount) {
+    return null;
+  }
+  final mint = v['mint'] as String;
+  return make(
+    sb['owner'] == wallet,
+    ActivityAsset(
+      mint: mint,
+      symbol:
+          _symbols[mint] ??
+          '${mint.substring(0, 4)}…${mint.substring(mint.length - 4)}',
+      amount: _decimal(amount, decimals),
+    ),
+    'SPL Token',
+  );
 }
 
 /// Read-only public RPC. Only wallet address, pagination cursor and transaction

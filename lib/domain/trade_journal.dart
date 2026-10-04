@@ -38,10 +38,17 @@ class WalletActivity {
   bool get canJournal =>
       status == 'success' && type == 'swap' && input != null && output != null;
 
+  bool get isTransfer =>
+      status == 'success' &&
+      issue == null &&
+      ((type == 'transfer-out' && input != null && output == null) ||
+          (type == 'transfer-in' && output != null && input == null));
+
   /// A personal note may reference verified successful activity even when its
   /// transaction type cannot be classified. This never turns it into a swap.
   bool get canRecordReason =>
       canJournal ||
+      isTransfer ||
       (status == 'success' &&
           type == 'other' &&
           issue == 'unsupported-activity' &&
