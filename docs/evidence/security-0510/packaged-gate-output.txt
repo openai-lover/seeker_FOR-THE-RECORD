@@ -1,0 +1,7 @@
+VERBATIM EXCERPTS FROM THE OCTOBER 4 RELEASE CHECKS
+0.5.10 ARM64 and x64 build output (not rerun for this document):
+Release manifest verified: app-arm64-v8a-release.apk
+Release manifest verified: app-x86_64-release.apk
+
+0.5.9 ARM64 negative control error:
+Release APK contains a test component. Inspect releaseRuntimeClasspath before publishing.

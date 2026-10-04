@@ -1,0 +1,426 @@
+TAP version 13
+# Subtest: crafted activity input is rejected before rate-limit, cache access or RPC
+    # Subtest: SQL quote/comment
+    ok 1 - SQL quote/comment
+      ---
+      duration_ms: 6.3874
+      type: 'test'
+      ...
+    # Subtest: SQL union
+    ok 2 - SQL union
+      ---
+      duration_ms: 0.9761
+      type: 'test'
+      ...
+    # Subtest: encoded SQL
+    ok 3 - encoded SQL
+      ---
+      duration_ms: 1.7761
+      type: 'test'
+      ...
+    # Subtest: JSON-RPC escape text
+    ok 4 - JSON-RPC escape text
+      ---
+      duration_ms: 1.0021
+      type: 'test'
+      ...
+    # Subtest: path traversal
+    ok 5 - path traversal
+      ---
+      duration_ms: 1.4909
+      type: 'test'
+      ...
+    # Subtest: URL in cursor
+    ok 6 - URL in cursor
+      ---
+      duration_ms: 0.9786
+      type: 'test'
+      ...
+    # Subtest: operator object
+    ok 7 - operator object
+      ---
+      duration_ms: 0.777
+      type: 'test'
+      ...
+    # Subtest: array cursor
+    ok 8 - array cursor
+      ---
+      duration_ms: 0.6079
+      type: 'test'
+      ...
+    # Subtest: numeric cursor
+    ok 9 - numeric cursor
+      ---
+      duration_ms: 1.2338
+      type: 'test'
+      ...
+    # Subtest: null cursor
+    ok 10 - null cursor
+      ---
+      duration_ms: 0.6226
+      type: 'test'
+      ...
+    # Subtest: empty cursor
+    ok 11 - empty cursor
+      ---
+      duration_ms: 0.5125
+      type: 'test'
+      ...
+    # Subtest: invalid base58 alphabet
+    ok 12 - invalid base58 alphabet
+      ---
+      duration_ms: 0.4506
+      type: 'test'
+      ...
+    # Subtest: 63-byte decoded cursor
+    ok 13 - 63-byte decoded cursor
+      ---
+      duration_ms: 0.6972
+      type: 'test'
+      ...
+    # Subtest: 65-byte decoded cursor
+    ok 14 - 65-byte decoded cursor
+      ---
+      duration_ms: 0.8047
+      type: 'test'
+      ...
+    # Subtest: body wallet override
+    ok 15 - body wallet override
+      ---
+      duration_ms: 0.9056
+      type: 'test'
+      ...
+    # Subtest: body RPC method override
+    ok 16 - body RPC method override
+      ---
+      duration_ms: 0.7214
+      type: 'test'
+      ...
+    # Subtest: body RPC endpoint override
+    ok 17 - body RPC endpoint override
+      ---
+      duration_ms: 0.9013
+      type: 'test'
+      ...
+    # Subtest: body signed transaction
+    ok 18 - body signed transaction
+      ---
+      duration_ms: 0.7955
+      type: 'test'
+      ...
+    # Subtest: JSON prototype key
+    ok 19 - JSON prototype key
+      ---
+      duration_ms: 0.516
+      type: 'test'
+      ...
+    # Subtest: array body
+    ok 20 - array body
+      ---
+      duration_ms: 0.6032
+      type: 'test'
+      ...
+    # Subtest: null body
+    ok 21 - null body
+      ---
+      duration_ms: 0.215
+      type: 'test'
+      ...
+    1..21
+ok 1 - crafted activity input is rejected before rate-limit, cache access or RPC
+  ---
+  duration_ms: 32.568
+  type: 'test'
+  ...
+# Subtest: authentication failure precedes input validation and provider creation
+ok 2 - authentication failure precedes input validation and provider creation
+  ---
+  duration_ms: 0.2619
+  type: 'test'
+  ...
+# Subtest: valid 64-byte cursors retain exact value and authenticated wallet
+ok 3 - valid 64-byte cursors retain exact value and authenticated wallet
+  ---
+  duration_ms: 3.2659
+  type: 'test'
+  ...
+# Subtest: accepted input reaches only fixed read-only JSON-RPC methods and structured parameters
+ok 4 - accepted input reaches only fixed read-only JSON-RPC methods and structured parameters
+  ---
+  duration_ms: 41.9444
+  type: 'test'
+  ...
+# Subtest: Jupiter route endpoints and owner deltas produce an asset-to-asset snapshot
+ok 5 - Jupiter route endpoints and owner deltas produce an asset-to-asset snapshot
+  ---
+  duration_ms: 18.0311
+  type: 'test'
+  ...
+# Subtest: failed signatures and failed metadata can never become a successful swap
+ok 6 - failed signatures and failed metadata can never become a successful swap
+  ---
+  duration_ms: 0.8961
+  type: 'test'
+  ...
+# Subtest: unknown program, instruction, missing source ownership, multi-asset and bundles fail closed
+ok 7 - unknown program, instruction, missing source ownership, multi-asset and bundles fail closed
+  ---
+  duration_ms: 6.7961
+  type: 'test'
+  ...
+# Subtest: missing metadata, unsupported future versions and signature mismatch are unavailable
+ok 8 - missing metadata, unsupported future versions and signature mismatch are unavailable
+  ---
+  duration_ms: 1.354
+  type: 'test'
+  ...
+# Subtest: raw token amounts do not lose precision
+ok 9 - raw token amounts do not lose precision
+  ---
+  duration_ms: 0.5205
+  type: 'test'
+  ...
+# Subtest: auth rejects an unauthenticated request before any provider call
+ok 10 - auth rejects an unauthenticated request before any provider call
+  ---
+  duration_ms: 1.2375
+  type: 'test'
+  ...
+# Subtest: wallet is always obtained from authenticated user and body wallet is rejected
+ok 11 - wallet is always obtained from authenticated user and body wallet is rejected
+  ---
+  duration_ms: 16.2405
+  type: 'test'
+  ...
+# Subtest: page size, exact cursor, failed tx short circuit, per-wallet cache and bounded rate
+ok 12 - page size, exact cursor, failed tx short circuit, per-wallet cache and bounded rate
+  ---
+  duration_ms: 6.3082
+  type: 'test'
+  ...
+# Subtest: invalid cursor rejected without RPC
+ok 13 - invalid cursor rejected without RPC
+  ---
+  duration_ms: 1.2919
+  type: 'test'
+  ...
+# bigint: Failed to load bindings, pure JS will be used (try npm run rebuild?)
+# Subtest: SIWS accepts an exact issued message and valid Ed25519 signature
+ok 14 - SIWS accepts an exact issued message and valid Ed25519 signature
+  ---
+  duration_ms: 14.364
+  type: 'test'
+  ...
+# Subtest: SIWS rejects replayed nonce
+ok 15 - SIWS rejects replayed nonce
+  ---
+  duration_ms: 0.8634
+  type: 'test'
+  ...
+# Subtest: SIWS rejects expired challenge
+ok 16 - SIWS rejects expired challenge
+  ---
+  duration_ms: 0.2023
+  type: 'test'
+  ...
+# Subtest: SIWS rejects future issue
+ok 17 - SIWS rejects future issue
+  ---
+  duration_ms: 0.1258
+  type: 'test'
+  ...
+# Subtest: SIWS rejects domain substitution
+ok 18 - SIWS rejects domain substitution
+  ---
+  duration_ms: 0.1462
+  type: 'test'
+  ...
+# Subtest: SIWS rejects different wallet
+ok 19 - SIWS rejects different wallet
+  ---
+  duration_ms: 0.1102
+  type: 'test'
+  ...
+# Subtest: SIWS rejects modified signed message
+ok 20 - SIWS rejects modified signed message
+  ---
+  duration_ms: 0.2394
+  type: 'test'
+  ...
+# Subtest: SIWS rejects bad signature
+ok 21 - SIWS rejects bad signature
+  ---
+  duration_ms: 12.833
+  type: 'test'
+  ...
+# Subtest: SGT accepts all official on-chain fields together
+ok 22 - SGT accepts all official on-chain fields together
+  ---
+  duration_ms: 0.6045
+  type: 'test'
+  ...
+# Subtest: SGT rejects forged program
+ok 23 - SGT rejects forged program
+  ---
+  duration_ms: 0.5282
+  type: 'test'
+  ...
+# Subtest: SGT rejects forged authority
+ok 24 - SGT rejects forged authority
+  ---
+  duration_ms: 0.13
+  type: 'test'
+  ...
+# Subtest: SGT rejects forged metadataAuthority
+ok 25 - SGT rejects forged metadataAuthority
+  ---
+  duration_ms: 0.0809
+  type: 'test'
+  ...
+# Subtest: SGT rejects forged metadataAddress
+ok 26 - SGT rejects forged metadataAddress
+  ---
+  duration_ms: 0.0714
+  type: 'test'
+  ...
+# Subtest: SGT rejects forged group
+ok 27 - SGT rejects forged group
+  ---
+  duration_ms: 0.0648
+  type: 'test'
+  ...
+# Subtest: SGT excludes the zero-balance account left by a transfer
+ok 28 - SGT excludes the zero-balance account left by a transfer
+  ---
+  duration_ms: 0.1245
+  type: 'test'
+  ...
+# Subtest: room accepts only two distinct SGT seats; admission is idempotent
+ok 29 - room accepts only two distinct SGT seats; admission is idempotent
+  ---
+  duration_ms: 0.7265
+  type: 'test'
+  ...
+# Subtest: both ready, only host starts; early personal finish does not finish partner
+ok 30 - both ready, only host starts; early personal finish does not finish partner
+  ---
+  duration_ms: 0.8812
+  type: 'test'
+  ...
+# Subtest: room projection has no private notes
+ok 31 - room projection has no private notes
+  ---
+  duration_ms: 0.8135
+  type: 'test'
+  ...
+# Subtest: payment accepts an exact successful receipt
+ok 32 - payment accepts an exact successful receipt
+  ---
+  duration_ms: 0.1347
+  type: 'test'
+  ...
+# Subtest: delayed finalization honors the exact authorized payment after quote expiry
+ok 33 - delayed finalization honors the exact authorized payment after quote expiry
+  ---
+  duration_ms: 0.0813
+  type: 'test'
+  ...
+# Subtest: payment rejects a missing block time
+ok 34 - payment rejects a missing block time
+  ---
+  duration_ms: 0.1001
+  type: 'test'
+  ...
+# Subtest: payment rejects messageBase64 mismatch
+ok 35 - payment rejects messageBase64 mismatch
+  ---
+  duration_ms: 0.1027
+  type: 'test'
+  ...
+# Subtest: payment rejects error mismatch
+ok 36 - payment rejects error mismatch
+  ---
+  duration_ms: 0.0713
+  type: 'test'
+  ...
+# Subtest: payment rejects blockTime mismatch
+ok 37 - payment rejects blockTime mismatch
+  ---
+  duration_ms: 0.0534
+  type: 'test'
+  ...
+# Subtest: payment rejects signers mismatch
+ok 38 - payment rejects signers mismatch
+  ---
+  duration_ms: 0.0691
+  type: 'test'
+  ...
+# Subtest: payment rejects mint mismatch
+ok 39 - payment rejects mint mismatch
+  ---
+  duration_ms: 0.0646
+  type: 'test'
+  ...
+# Subtest: payment rejects amountAtomic mismatch
+ok 40 - payment rejects amountAtomic mismatch
+  ---
+  duration_ms: 0.0571
+  type: 'test'
+  ...
+# Subtest: payment rejects recipientAta mismatch
+ok 41 - payment rejects recipientAta mismatch
+  ---
+  duration_ms: 0.0542
+  type: 'test'
+  ...
+# Subtest: payment rejects sourceAta mismatch
+ok 42 - payment rejects sourceAta mismatch
+  ---
+  duration_ms: 0.0529
+  type: 'test'
+  ...
+# Subtest: payment rejects reference mismatch
+ok 43 - payment rejects reference mismatch
+  ---
+  duration_ms: 0.0544
+  type: 'test'
+  ...
+# Subtest: signed transaction must preserve the exact order and signer
+ok 44 - signed transaction must preserve the exact order and signer
+  ---
+  duration_ms: 147.6164
+  type: 'test'
+  ...
+# Subtest: accepts the canonical wallet bound to its SHA-256 UID
+ok 45 - accepts the canonical wallet bound to its SHA-256 UID
+  ---
+  duration_ms: 2.9301
+  type: 'test'
+  ...
+# Subtest: rejects token UIDs that could create a nested or non-user document path
+ok 46 - rejects token UIDs that could create a nested or non-user document path
+  ---
+  duration_ms: 1.2585
+  type: 'test'
+  ...
+# Subtest: rejects a valid wallet stored under another UID
+ok 47 - rejects a valid wallet stored under another UID
+  ---
+  duration_ms: 1.3944
+  type: 'test'
+  ...
+# Subtest: rejects malformed and non-canonical stored wallets
+ok 48 - rejects malformed and non-canonical stored wallets
+  ---
+  duration_ms: 0.6909
+  type: 'test'
+  ...
+1..48
+# tests 69
+# suites 0
+# pass 69
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 4865.7377

@@ -1,0 +1,47 @@
+{
+  "dateKST": "2026-10-04",
+  "appTagSource": "9de8139614cfd0c6374036e0b0ceb68abeee7602",
+  "appVersion": "0.5.10+17",
+  "runtime": "Node.js 22.23.2",
+  "productionSourceChanged": false,
+  "apkChanged": false,
+  "inputProof": {
+    "targetedPassed": 25,
+    "targetedStructure": "4 top-level tests including 21 named malformed-body subtests",
+    "fullBackendPassed": 69,
+    "fullBackendStructure": "48 top-level tests plus 21 malformed-body subtests",
+    "failures": 0,
+    "skipped": 0,
+    "typecheck": "new test and imported modules, strict, no emit: exit0",
+    "malformedBodyCases": 21,
+    "additionalValidCursorValues": 5,
+    "invalidEffects": "Only mocked authentication observed; no rate-limit/provider call. Next valid request remains correct.",
+    "rpcTransport": "Actual SolanaActivityProvider with mocked fetch; exact getGenesisHash/getSignaturesForAddress/getTransaction methods and structured parameters asserted.",
+    "authentication": "Injected fake identity; real Firebase token verification and deployed HTTP stack not exercised.",
+    "network": "No live RPC or Firebase; synthetic values only."
+  },
+  "packaging": {
+    "arm64Sha256": "3b2e8a11ad1a322dfcc510d46d90097c246fd995adaa1c7ff9d2984d94f19564",
+    "arm64VersionCode": 2017,
+    "gateResults": {
+      "arm64": "passed",
+      "x64": "passed",
+      "old059Arm64": "rejected"
+    },
+    "manifestSource": "Existing aapt dump xmltree of the actual published ARM64 APK; full output attached unchanged.",
+    "rerunThisHeartbeat": false
+  },
+  "sourceSha256": {
+    "functions/src/activity.ts": "db538539d4342071e7ef5371bf9f18c700cdd7afb8938871acc9db019f9746d8",
+    "functions/src/index.ts": "34ef9d2062eef976ce6622cbbbe922ea4d40626e407dfd4d1df71f9f416adcb0",
+    "functions/test/activity-input.test.ts": "4b58decb65ecfcb0485df106c6b9801c3a6b57601862fd904b45063cc6df2d0e",
+    "tools/verify-release.ps1": "16e0b40e83938c1510d49ab47ea78b8086abf6ce5801692f70f354e70e54c18d"
+  },
+  "artifactSha256": {
+    "activity-input-tap.txt": "af7b2d5f56a568a5f2219ff4b71cf2a1b28aa1fa5787f96b0107268f88b85a56",
+    "backend-tests-tap.txt": "859e94e0d5c91cdbd087d99c816fe30ec2e674785ebe5b02b9c027703aebf860",
+    "packaged-arm64-manifest.txt": "1682dce24ddc31a76786fee51d6ce80a6beaa4f665783315050dbb32c3b2af54",
+    "packaged-gate-output.txt": "8bf62a03c1f9f18a973e9f2cfbd9da6eac8c7d4400999b7b0cee17d76de56436"
+  },
+  "limitations": "Focused local regression and packaging evidence, not a new portal audit, independent penetration test, full security clearance, deployed backend verification or current production full-flow recording. Three backend advisories and v1 migration remain open."
+}

@@ -18,6 +18,8 @@ ARM64 APK: 37,713,149 bytes; SHA256 `3b2e8a11ad1a322dfcc510d46d90097c246fd995ada
 
 ## The four historical portal leads
 
+After the 79-point review, [focused input and package evidence](SECURITY_PROOF_0510.md) added 21 malformed-body cases, exact RPC serialization assertions, and actual packaged-manifest/gate output. The targeted run passed 25 checks and the full local backend suite passed 69. This is a test/evidence update against unchanged production code, not a new portal audit or a new app release.
+
 The portal audit examined commit `414acebb41d0b23169ff15e16456ec175b1ac67c`, was partial and scoreless, and called every listed finding unconfirmed. Its report says 230 files were read, but some checks did not run, including known dependency vulnerabilities. That is not proof of comprehensive coverage. No additional portal audit was consumed.
 
 | Historical lead | Source-level finding and current disposition |

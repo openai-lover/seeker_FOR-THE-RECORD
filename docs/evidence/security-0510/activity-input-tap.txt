@@ -1,0 +1,161 @@
+TAP version 13
+# Subtest: crafted activity input is rejected before rate-limit, cache access or RPC
+    # Subtest: SQL quote/comment
+    ok 1 - SQL quote/comment
+      ---
+      duration_ms: 4.516
+      type: 'test'
+      ...
+    # Subtest: SQL union
+    ok 2 - SQL union
+      ---
+      duration_ms: 0.5645
+      type: 'test'
+      ...
+    # Subtest: encoded SQL
+    ok 3 - encoded SQL
+      ---
+      duration_ms: 0.6407
+      type: 'test'
+      ...
+    # Subtest: JSON-RPC escape text
+    ok 4 - JSON-RPC escape text
+      ---
+      duration_ms: 0.7583
+      type: 'test'
+      ...
+    # Subtest: path traversal
+    ok 5 - path traversal
+      ---
+      duration_ms: 1.0844
+      type: 'test'
+      ...
+    # Subtest: URL in cursor
+    ok 6 - URL in cursor
+      ---
+      duration_ms: 0.7488
+      type: 'test'
+      ...
+    # Subtest: operator object
+    ok 7 - operator object
+      ---
+      duration_ms: 0.7417
+      type: 'test'
+      ...
+    # Subtest: array cursor
+    ok 8 - array cursor
+      ---
+      duration_ms: 0.5023
+      type: 'test'
+      ...
+    # Subtest: numeric cursor
+    ok 9 - numeric cursor
+      ---
+      duration_ms: 0.941
+      type: 'test'
+      ...
+    # Subtest: null cursor
+    ok 10 - null cursor
+      ---
+      duration_ms: 0.6802
+      type: 'test'
+      ...
+    # Subtest: empty cursor
+    ok 11 - empty cursor
+      ---
+      duration_ms: 0.4341
+      type: 'test'
+      ...
+    # Subtest: invalid base58 alphabet
+    ok 12 - invalid base58 alphabet
+      ---
+      duration_ms: 0.4277
+      type: 'test'
+      ...
+    # Subtest: 63-byte decoded cursor
+    ok 13 - 63-byte decoded cursor
+      ---
+      duration_ms: 0.5566
+      type: 'test'
+      ...
+    # Subtest: 65-byte decoded cursor
+    ok 14 - 65-byte decoded cursor
+      ---
+      duration_ms: 1.6803
+      type: 'test'
+      ...
+    # Subtest: body wallet override
+    ok 15 - body wallet override
+      ---
+      duration_ms: 0.498
+      type: 'test'
+      ...
+    # Subtest: body RPC method override
+    ok 16 - body RPC method override
+      ---
+      duration_ms: 0.3606
+      type: 'test'
+      ...
+    # Subtest: body RPC endpoint override
+    ok 17 - body RPC endpoint override
+      ---
+      duration_ms: 0.3467
+      type: 'test'
+      ...
+    # Subtest: body signed transaction
+    ok 18 - body signed transaction
+      ---
+      duration_ms: 0.3415
+      type: 'test'
+      ...
+    # Subtest: JSON prototype key
+    ok 19 - JSON prototype key
+      ---
+      duration_ms: 0.261
+      type: 'test'
+      ...
+    # Subtest: array body
+    ok 20 - array body
+      ---
+      duration_ms: 0.225
+      type: 'test'
+      ...
+    # Subtest: null body
+    ok 21 - null body
+      ---
+      duration_ms: 0.2138
+      type: 'test'
+      ...
+    1..21
+ok 1 - crafted activity input is rejected before rate-limit, cache access or RPC
+  ---
+  duration_ms: 20.4481
+  type: 'test'
+  ...
+# Subtest: authentication failure precedes input validation and provider creation
+ok 2 - authentication failure precedes input validation and provider creation
+  ---
+  duration_ms: 0.2251
+  type: 'test'
+  ...
+# Subtest: valid 64-byte cursors retain exact value and authenticated wallet
+ok 3 - valid 64-byte cursors retain exact value and authenticated wallet
+  ---
+  duration_ms: 1.6371
+  type: 'test'
+  ...
+# Subtest: accepted input reaches only fixed read-only JSON-RPC methods and structured parameters
+ok 4 - accepted input reaches only fixed read-only JSON-RPC methods and structured parameters
+  ---
+  duration_ms: 43.6198
+  type: 'test'
+  ...
+1..4
+# tests 25
+# suites 0
+# pass 25
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1184.521
