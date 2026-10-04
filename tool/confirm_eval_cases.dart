@@ -1,0 +1,87 @@
+// Authored before this confirmation run; not independently rated.
+export 'broad_eval_cases.dart' show broadRecords;
+
+const broadCases = <(String, String, String, String, List<int>)>[
+  (
+    'confirm-source',
+    'related',
+    'en',
+    'Before copying that influencer, I want to trace the claim back to the official announcement.',
+    [0],
+  ),
+  ('confirm-dinner', 'related', 'ko', '어제 저녁 식사비를 먼저 낸 친구에게 내 몫을 돌려줄 거야.', [1]),
+  ('confirm-storage', 'related', 'ja', '普段の支払い用とは別に、自分の保管用ウォレットに貯金を移したい。', [2]),
+  ('confirm-rush', 'related', 'zh', '价格突然上涨让我害怕错过机会，我需要先冷静一下。', [3]),
+  (
+    'confirm-budget',
+    'related',
+    'es',
+    'Quiero mantener el límite de gasto que fijé antes, aunque ahora me sienta muy seguro.',
+    [4],
+  ),
+  (
+    'confirm-fatigue',
+    'related',
+    'fr',
+    'Je suis épuisé ce soir et je préfère vérifier les détails après avoir dormi.',
+    [5],
+  ),
+  (
+    'confirm-recipient',
+    'related',
+    'pt',
+    'Vou comparar o endereço completo do destinatário para não enviar para a pessoa errada.',
+    [6],
+  ),
+  (
+    'confirm-fee',
+    'related',
+    'hi',
+    'भुगतान करने से पहले मुझे शुल्क सहित कुल खर्च की जाँच करनी है।',
+    [7],
+  ),
+  (
+    'confirm-unrelated1',
+    'unrelated',
+    'en',
+    'How many moons does Neptune have?',
+    [],
+  ),
+  ('confirm-unrelated2', 'unrelated', 'ko', '프린터 용지가 계속 걸리는데 어떻게 고치지?', []),
+  ('confirm-unrelated3', 'unrelated', 'ja', '次の電車は何番ホームから出発しますか。', []),
+  (
+    'confirm-unrelated4',
+    'unrelated',
+    'es',
+    '¿Cuál es la altura de esta montaña?',
+    [],
+  ),
+  (
+    'confirm-generic',
+    'ambiguous',
+    'en',
+    'I want to do this properly next time.',
+    [],
+  ),
+  (
+    'confirm-mixed',
+    'ambiguous',
+    'ko',
+    '피곤하지만 받는 사람의 주소를 다시 확인하고 보내려 해.',
+    [5, 6],
+  ),
+  (
+    'confirm-typos',
+    'edge',
+    'en',
+    'I shoud chek the full recpient adress befor sendng.',
+    [6],
+  ),
+  (
+    'confirm-negation',
+    'edge',
+    'en',
+    'I will not follow a viral recommendation until I have checked the primary source.',
+    [0],
+  ),
+];

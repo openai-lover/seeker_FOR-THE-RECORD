@@ -1,0 +1,200 @@
+{
+  "related": {
+    "unique": 24,
+    "displayed": 21,
+    "abstained": 3,
+    "labelled": 24,
+    "rawTop1LabelMatches": 24,
+    "displayedTop1LabelMatches": 21,
+    "anyWrongCandidateWhenDisplayed": 4
+  },
+  "unrelated": {
+    "unique": 10,
+    "displayed": 0,
+    "abstained": 10,
+    "labelled": 0,
+    "rawTop1LabelMatches": 0,
+    "displayedTop1LabelMatches": 0,
+    "anyWrongCandidateWhenDisplayed": 0
+  },
+  "ambiguous": {
+    "unique": 8,
+    "displayed": 4,
+    "abstained": 4,
+    "labelled": 4,
+    "rawTop1LabelMatches": 4,
+    "displayedTop1LabelMatches": 1,
+    "anyWrongCandidateWhenDisplayed": 1
+  },
+  "edge": {
+    "unique": 6,
+    "displayed": 6,
+    "abstained": 0,
+    "labelled": 6,
+    "rawTop1LabelMatches": 6,
+    "displayedTop1LabelMatches": 6,
+    "anyWrongCandidateWhenDisplayed": 2
+  },
+  "timing": {
+    "coldMs": [
+      1452
+    ],
+    "warmCount": 95,
+    "warmMedianMs": 558,
+    "warmP95NearestRankMs": 606,
+    "warmMinMs": 369,
+    "warmMaxMs": 689
+  },
+  "identicalRepeatSelections": true,
+  "limits": "Fresh authored fixtures, not independent raters or user research. Policy and weights frozen. Correlated translations. Debug native timing with network available; not production UI or offline.",
+  "fixtureSHA256": "e7cb0988d79b429e3917e42adbae20d33d2e1ef975a3a1c438e9f26cc1de6d05",
+  "failures": [
+    {
+      "id": "dinner-zh",
+      "category": "related",
+      "expected": [
+        1
+      ],
+      "top1": 1,
+      "shown": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": "storage-fr",
+      "category": "related",
+      "expected": [
+        2
+      ],
+      "top1": 2,
+      "shown": [
+        2,
+        6
+      ]
+    },
+    {
+      "id": "budget-en",
+      "category": "related",
+      "expected": [
+        4
+      ],
+      "top1": 4,
+      "shown": [
+        4,
+        2,
+        7
+      ]
+    },
+    {
+      "id": "budget-ja",
+      "category": "related",
+      "expected": [
+        4
+      ],
+      "top1": 4,
+      "shown": []
+    },
+    {
+      "id": "budget-zh",
+      "category": "related",
+      "expected": [
+        4
+      ],
+      "top1": 4,
+      "shown": []
+    },
+    {
+      "id": "recipient-hi",
+      "category": "related",
+      "expected": [
+        6
+      ],
+      "top1": 6,
+      "shown": []
+    },
+    {
+      "id": "fee-ja",
+      "category": "related",
+      "expected": [
+        7
+      ],
+      "top1": 7,
+      "shown": [
+        7,
+        1,
+        4
+      ]
+    },
+    {
+      "id": "mixed-source-rush",
+      "category": "ambiguous",
+      "expected": [
+        0,
+        3
+      ],
+      "top1": 0,
+      "shown": []
+    },
+    {
+      "id": "mixed-budget-fee",
+      "category": "ambiguous",
+      "expected": [
+        4,
+        7
+      ],
+      "top1": 7,
+      "shown": [
+        7,
+        4,
+        1
+      ]
+    },
+    {
+      "id": "mixed-fatigue-address",
+      "category": "ambiguous",
+      "expected": [
+        5,
+        6
+      ],
+      "top1": 6,
+      "shown": []
+    },
+    {
+      "id": "mixed-storage-recipient",
+      "category": "ambiguous",
+      "expected": [
+        2,
+        6
+      ],
+      "top1": 6,
+      "shown": []
+    },
+    {
+      "id": "typos",
+      "category": "edge",
+      "expected": [
+        6
+      ],
+      "top1": 6,
+      "shown": [
+        6,
+        1,
+        4
+      ]
+    },
+    {
+      "id": "quoted-command",
+      "category": "edge",
+      "expected": [
+        0
+      ],
+      "top1": 0,
+      "shown": [
+        0,
+        10,
+        6
+      ]
+    }
+  ]
+}

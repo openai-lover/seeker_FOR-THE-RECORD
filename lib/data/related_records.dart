@@ -27,10 +27,9 @@ class RelatedRecords {
     if (best < .82 || (order.length > 1 && best - scores[order[1]] < .018)) {
       return [];
     }
-    return order
-        .where((i) => scores[i] >= .82 && best - scores[i] <= .035)
-        .take(3)
-        .toList();
+    // Nearby scores do not establish that additional records are relevant.
+    // Offer one original source; the user can browse all records separately.
+    return [order.first];
   }
 
   static String clip(String s) =>

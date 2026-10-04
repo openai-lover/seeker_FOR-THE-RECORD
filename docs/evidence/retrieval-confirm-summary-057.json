@@ -1,0 +1,52 @@
+{
+  "related": {
+    "unique": 8,
+    "displayed": 8,
+    "abstained": 0,
+    "labelled": 8,
+    "rawTop1LabelMatches": 8,
+    "displayedTop1LabelMatches": 8,
+    "anyWrongCandidateWhenDisplayed": 0
+  },
+  "unrelated": {
+    "unique": 4,
+    "displayed": 0,
+    "abstained": 4,
+    "labelled": 0,
+    "rawTop1LabelMatches": 0,
+    "displayedTop1LabelMatches": 0,
+    "anyWrongCandidateWhenDisplayed": 0
+  },
+  "ambiguous": {
+    "unique": 2,
+    "displayed": 1,
+    "abstained": 1,
+    "labelled": 1,
+    "rawTop1LabelMatches": 1,
+    "displayedTop1LabelMatches": 1,
+    "anyWrongCandidateWhenDisplayed": 0
+  },
+  "edge": {
+    "unique": 2,
+    "displayed": 2,
+    "abstained": 0,
+    "labelled": 2,
+    "rawTop1LabelMatches": 2,
+    "displayedTop1LabelMatches": 2,
+    "anyWrongCandidateWhenDisplayed": 0
+  },
+  "timing": {
+    "coldMs": [
+      1459
+    ],
+    "warmCount": 31,
+    "warmMedianMs": 377,
+    "warmP95NearestRankMs": 391,
+    "warmMinMs": 370,
+    "warmMaxMs": 427
+  },
+  "identicalRepeatSelections": true,
+  "limits": "Fresh authored fixtures, not independent raters or user research. Policy and weights frozen. Correlated translations. Debug native timing with network available; not production UI or offline.",
+  "fixtureSHA256": "f3d5eaec0b3cbfd4e6eb84d9fb41db4f513a0fab290b8cbc16872874715c2f68",
+  "failures": []
+}

@@ -73,7 +73,7 @@ void main() {
         'Check my source',
         records,
       );
-      expect(matches.map((e) => e.entry.id), ['b', 'a']);
+      expect(matches.map((e) => e.entry.id), ['b']);
       expect(identical(matches.first.entry, records[1]), true);
     },
   );
@@ -98,7 +98,7 @@ void main() {
   test('weak or ambiguous scores abstain instead of claiming a match', () {
     expect(RelatedRecords.choose([.81, .79]), isEmpty);
     expect(RelatedRecords.choose([.88, .875]), isEmpty);
-    expect(RelatedRecords.choose([.91, .88, .84]), [0, 1]);
+    expect(RelatedRecords.choose([.91, .88, .84]), [0]);
     expect(RelatedRecords.choose([double.nan]), isEmpty);
     expect(RelatedRecords.choose([]), isEmpty);
   });
