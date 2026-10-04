@@ -1,0 +1,117 @@
+{
+  "rpc": "https://api.mainnet-beta.solana.com",
+  "requestedAt": "2026-10-04T17:05:05.201715+09:00",
+  "selection": "15 consecutive public Jupiter signatures: initial five, then ten older with before cursor. Expanded after initial five had no supported swap. No personal wallet queried; exploratory, not representative.",
+  "rows": [
+    {
+      "file": "public-mainnet-0.json",
+      "signature": "4HCGqxkitYte1g7rMe2cZ5J12ZKEr6BFPWxLqCjyYxkp2ymdEDPKcKJFQMArv86fPZnNHsSScUDwBBQpXxA1LgAn",
+      "slot": 453197269,
+      "sha256": "4d34ab1bef4b044813360d18f824b563b660ead3f474bed32700361b9341f5ea",
+      "available": true,
+      "rpcError": null
+    },
+    {
+      "file": "public-mainnet-1.json",
+      "signature": "rg2e2QrAXK1d8a8mf9uRr7z7LeNnVMcwjsnTdsaKGPHx94yD6bbpXbpdXo1FSWkH8BMXJRmWwEmo3Vs8MouAFYX",
+      "slot": 453197269,
+      "sha256": "71c8c3c09d9e82df34aff7e5800bdbcfafb1192588a1fc6f5954c22f5db12495",
+      "available": true,
+      "rpcError": null
+    },
+    {
+      "file": "public-mainnet-2.json",
+      "signature": "PLvQWrcYALbrbVCVRXM3J6p9gFc9m9bqtN4Go3QzRQX1cF4RLQcYg7XeEvBSjbbmmEMTwoV4e4yeAqVe94YUY1g",
+      "slot": 453197269,
+      "sha256": "a5b5245fc86be0b8777d71b3f5dd9f2de4e15728b96d33fdfd5a811804e03f31",
+      "available": true,
+      "rpcError": null
+    },
+    {
+      "file": "public-mainnet-3.json",
+      "signature": "2ZqUK1LcUquMEdix2L8BSpVK4wddCMD4D59jhe2uNnoCZL4KwVPd3Td6Zbkeo8MmszoDc7F1WrD97E4Z7YBUzdVB",
+      "slot": 453197269,
+      "sha256": "6b6b0407ba3214f1a3041f538e7facc23109c307146291ca7a5735b79216db5f",
+      "available": true,
+      "rpcError": null
+    },
+    {
+      "file": "public-mainnet-4.json",
+      "signature": "iNjAoD9uvzrWrLu2tiDLuJ1m7pPu5mzGTxYxm5T8yUZVCap58LJBk8jzFq1ehDnyxTaWqH2BW2zxBz7BPBXZ7j6",
+      "slot": 453197269,
+      "sha256": "202ff223431484418d1c77f6549627d462bf3af00eac1a85faf9fd12d0229b85",
+      "available": true,
+      "rpcError": null
+    },
+    {
+      "file": "public-mainnet-5.json",
+      "signature": "3tjXSooYtr3kfDHM5TqjKzZ4WzLhxrxn53BCgGx9JLs2kdxm2XMtcgGr9JAbzNwcGw3r9zzRTbymv4BQaDD2GGoS",
+      "slot": 453197269,
+      "sha256": "16d529c94276b43e28580a860a15ab4723904b7b1c9b100f42d82d70189775f9",
+      "available": true
+    },
+    {
+      "file": "public-mainnet-6.json",
+      "signature": "43NXKMopoipnEGFRAdo4uR3ymJo3n8Q4e5XDKaFt7rLuYpc9DpoVt9gVrWenfpH2EvSgV5M23MNrHfYS3trzNbJg",
+      "slot": 453197269,
+      "sha256": "a4f122108bb6eb44f1bf9a34c7d715c1e4a09476bef71a7a346444a5b0f1c3de",
+      "available": true
+    },
+    {
+      "file": "public-mainnet-7.json",
+      "signature": "2wqYRt4s4gPzgsAx1m6W2yE7YEhAMvDphSpD5LPsNjDRdpH8JXq3ipFn92aHMqtFfLpMzyxKVwF8j3Rasz8LqRQi",
+      "slot": 453197269,
+      "sha256": "31245860bdb98fbc9565a42170e7e76e65d52624e53f5aad9edb83aacefa6951",
+      "available": true
+    },
+    {
+      "file": "public-mainnet-8.json",
+      "signature": "2vCgWskb1AV9UVvhmv1vuQdh8pdH5tAWyoqzsgXnF5z3ohpT9RALaPFb7tGiN8xCViJb7kdcLgBXWqe3pvGLuSY8",
+      "slot": 453197269,
+      "sha256": "c88cc8ad756dbbd3cff75f7193ed62cab35b1b16dfd9b79c243816faf5009380",
+      "available": true
+    },
+    {
+      "file": "public-mainnet-9.json",
+      "signature": "2bVp95XBJA7JK2ux2sXgzQQMKh7HNwwUtgvNFDnEcU8H8LoRFhEUj5MpqJJ4XSHC2cn3GQ2A9e7EBQkg1GJXjHNo",
+      "slot": 453197269,
+      "sha256": "06afee2ba174c6764af8a935465097c2f2a8efd3e4a6bce703dfc54510ae75d8",
+      "available": true
+    },
+    {
+      "file": "public-mainnet-10.json",
+      "signature": "4g9DCULV81WFJRNr3Kza7bGAmBaaHjUUcT3SYXrRowfR5Cmg1rK1UrNCFDAAr9fTfkvc5T1YuRByXYHiRFCp4VwH",
+      "slot": 453197269,
+      "sha256": "9a91fe04d7842628f642caed650ed1b8f55a89c396bc8419dd520c7b3fb4b9ca",
+      "available": true
+    },
+    {
+      "file": "public-mainnet-11.json",
+      "signature": "gPHLaPidFFmRkVKLCnSApLo4C3dN5KACZDfXHh8ba9EC2FGSSjJYqGXtw21pdKnqJNUjy5JMrAwmaUghLTifvYD",
+      "slot": 453197269,
+      "sha256": "340ec4160041421cb11c5301d4028b55c26d70afb7c264d4ff7fdceb211090b8",
+      "available": true
+    },
+    {
+      "file": "public-mainnet-12.json",
+      "signature": "2pewCiRTQHUc1J92Pdsb3vzFJpgJY5oJbQaRpHvrLzxLBTKzkTuVEyoxS9FyLbtTJL3gGrQ4s67Nh6XaJJLhqV7V",
+      "slot": 453197269,
+      "sha256": "1ece5829eff4684179ddb2bc6d45d25fb680d18fb14f608ee56551c8c78d541a",
+      "available": true
+    },
+    {
+      "file": "public-mainnet-13.json",
+      "signature": "3sMdc1RsyGBepXqUkDQHCYRhyM9SuQoCzVWfV6nAAmcbxJ1WdRPUS2qJAXLXsV2AhmpT73WAbP79kmn4kqM4m6nE",
+      "slot": 453197269,
+      "sha256": "d86235d2cf3939d1be1d6ec3a60eb5e1bfb38d30b30c228b6ef52c171577c772",
+      "available": true
+    },
+    {
+      "file": "public-mainnet-14.json",
+      "signature": "4yTrsJBYf2nez4LVdi6hhpASTLDDCn8eibNH3HhPT9ng2tTT8QpPaP8KNf9WkiAMeau2HQvQEQjVKEmdTTxEuRDf",
+      "slot": 453197268,
+      "sha256": "1e18576d5143e281815c67ae038732ebf16bdd13569e6dbb6ddb035a0a919630",
+      "available": true
+    }
+  ]
+}
