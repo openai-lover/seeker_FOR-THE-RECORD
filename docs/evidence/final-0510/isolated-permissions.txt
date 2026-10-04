@@ -1,0 +1,6 @@
+package: app.workroom.seeker_workroom.integration
+uses-permission: name='android.permission.POST_NOTIFICATIONS'
+uses-permission: name='android.permission.ACCESS_NETWORK_STATE'
+uses-permission: name='com.google.android.providers.gsf.permission.READ_GSERVICES'
+permission: app.workroom.seeker_workroom.integration.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+uses-permission: name='app.workroom.seeker_workroom.integration.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION'

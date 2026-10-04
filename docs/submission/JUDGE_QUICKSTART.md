@@ -1,39 +1,24 @@
-# FOR THE RECORD · Judge quickstart
+# FOR THE RECORD · Current product walkthrough
 
-For the current 0.5.2 room and Decision Replay, use the
-[current judge quickstart](JUDGE_QUICKSTART_052.md).
-The workflow and results below describe the historical 0.3.1 preview.
+**0.5.10+17**, development-signed ARM64 app. [Download and exact checksum](DOWNLOAD_LINKS.md). This page describes the current interface; versioned old walkthroughs remain historical.
 
-**For the record, this is why I did it.**
+## The room and personal work
 
-[Download the Android preview and release materials](DOWNLOAD_LINKS.md).
+Three welcome pages support swipe and Skip. The desk opens the decision journal, the lamp opens focus, and the shelf opens saved work. A personal work project needs no wallet or paid AI service. Eight UI languages and reduced motion are available in Settings.
 
-The preview demonstrates a private Android work journal and a direct read-only path for supported wallet activity. The journal does not require a paid backend. Public RPC has availability limits, and real-wallet physical-device validation remains an open evidence gate.
+## A reason connected to existing activity
 
-## Try the local workflow
+1. **Leave a reason** opens the journal. Native MWA/Seed Vault selects an account for read-only activity; no message or transaction signing is needed.
+2. **Activity** shows finalized history. A confidently recognized swap has **Write reflection**. A successful Other activity has **Add a personal note**, with its original source and no invented swap amounts. Failed, unavailable and unparseable activity cannot become a saved wallet note.
+3. One reason enables **Save reason**. **Add details** is optional. A revisit can be in 1, 3 or 7 days, or have no date.
+4. **My notes** and the room's latest reason reopen saved writing. The saved reason appears first; source facts expand separately. **Reflect** supports an immediate manual revisit, while due notes also appear on the home screen when their real due time arrives.
+5. The user writes the reflection and lesson. Optional local AI recalls an exact original record or suggests a question. Suggestions may be wrong; original text and manual browsing remain available. Edited queries invalidate old results.
+6. **Export this record** uses Android's file picker. The interface distinguishes pending, saved, cancelled and failed states. A saved result follows native write, flush and close. Records remain in SQLite after export. JSON contains private writing; it is not cloud backup or import/restore.
 
-1. Install the supplied **ARM64 preview APK** on a compatible Android phone. Use the x64 build only for a compatible emulator. The release notes identify the exact version, hash and signing type.
-2. Open FOR THE RECORD. English is the default.
-3. Create a project named “My next release.” Set the intention to “Make the first screen easier to understand.”
-4. Choose a duration and start a focus session. Pause and resume if desired. Finish early for this short walkthrough.
-5. Save a result and a next action. Suggested result: “Made the primary action clearer.” Suggested next action: “Test the screen with one new user.”
-6. Return home and open the project book. Choose “Continue from your bookmark” and confirm the next action is already filled in. Check that the saved record remains after restarting the app.
-7. Open Settings, change the interface language, and return to English. User-written content should not change.
+The optional multilingual-e5-small Q8 model is 132,439,008 bytes. It retrieves existing text; it does not generate a person's reason or lesson. After preparation, inference works without app Internet access. The normal activity reader still needs an available RPC connection; public infrastructure can rate-limit.
 
-The local workflow requires no account, wallet or network. A saved record comes from the user's explicit action. Letting the timer expire does not fabricate a result.
+## Reproduction and evidence
 
-## What the wallet preview demonstrates
+[CURRENT_PROOF_0510.md](CURRENT_PROOF_0510.md) documents an 8:08 continuous physical Seeker run of the current UI, parser, real isolated SQLite and native AI with public finalized response fixtures and authored notes. Both 2,264-byte exports have identical journal payloads after restart. The separate `.integration` app has no INTERNET permission and never opens the production database. Its displayed account context comes from public response fixtures, not wallet ownership or authorization.
 
-The source contains a native Mobile Wallet Adapter bridge and a conservative parser for supported finalized activity. The direct mode uses the selected wallet account and public RPC without requiring Firebase Authentication or Functions. The journal separates event facts from private reflection. Unsupported activity stays unsupported.
-
-A separate manual Android emulator test using the official Solana mock wallet verified native approval and an empty mainnet history response. A supported live activity-to-reflection run on physical Seeker remains unverified. Automated test fixtures are not real transactions. Public RPC can rate-limit or reject requests, so retry states should preserve local records. Optional cloud rooms and payment functionality remain unavailable. No live trade or payment is necessary to try the local workflow or inspect an already-existing supported transaction.
-
-## Data and code
-
-Work records and reflection text stay in local SQLite. JSON export creates a portable copy containing private writing, so use a demonstration project for review. The export is not a cloud synchronization or restore service.
-
-- [Requested source repository](https://github.com/openai-lover/seeker_FOR-THE-RECORD) — public source and commit history are available without signing in.
-- [Free preview implementation and limits](FREE_PREVIEW_APPROACH.md)
-- [Current release checklist](RELEASE_CHECKLIST.md)
-
-Historical results apply to the versions they name. The current release is 0.3.1: 88 Flutter tests pass, Android local integration passes, and official-mock-wallet native integration was checked manually. Physical Seeker and supported live activity remain open evidence gates.
+The same report includes 48 fresh frozen authored queries and all false positives/abstentions, not independent human accuracy. [SECURITY_PROOF_0510.md](SECURITY_PROOF_0510.md) gives focused malformed-input regressions and actual packaging outputs. The normal app's current account connection and older complete production recordings are separately dated. No supported live user trade, consented repeat-use pilot or comprehensive security clearance is asserted.

@@ -1,0 +1,354 @@
+{
+  "fixture": {
+    "createdAt": "2026-10-04T21:06:19.165520+09:00",
+    "fixtureSha256": "e16233902723a4dc2ba3f3706320a1d1daf5a2fbdc0eb73af9be9f0d0e16ac22",
+    "records": 24,
+    "corpora": 3,
+    "cases": 48,
+    "groups": {
+      "related": 24,
+      "unrelated": 12,
+      "ambiguous": 6,
+      "edge": 6
+    },
+    "policy": ".82 minimum/.018 margin/single source; unchanged",
+    "author": "assistant",
+    "independentHumanLabels": false,
+    "plan": "Two passes, then3 mixed-corpus24record probes. All errors/abstentions retained. No policy tuning."
+  },
+  "groups": {
+    "related": {
+      "uniqueCases": 24,
+      "correctSource": 21,
+      "falsePositive": 0,
+      "abstained": 3
+    },
+    "unrelated": {
+      "uniqueCases": 12,
+      "correctSource": 0,
+      "falsePositive": 0,
+      "abstained": 12
+    },
+    "ambiguous": {
+      "uniqueCases": 6,
+      "correctSource": 2,
+      "falsePositive": 1,
+      "abstained": 3
+    },
+    "edge": {
+      "uniqueCases": 6,
+      "correctSource": 6,
+      "falsePositive": 0,
+      "abstained": 0
+    }
+  },
+  "repeatsIdentical": true,
+  "nativeCold": [
+    1597
+  ],
+  "nativeWarmMs": {
+    "n": 95,
+    "median": 336,
+    "p95NearestRank": 375,
+    "minimum": 286,
+    "maximum": 469
+  },
+  "diagnosticFrameWarmMs": {
+    "n": 95,
+    "median": 355,
+    "p95NearestRank": 390,
+    "minimum": 296,
+    "maximum": 484
+  },
+  "mixedCorpusProbes": [
+    {
+      "kind": "mixedCorpusProbe",
+      "id": "fresh-0-related-0",
+      "records": 24,
+      "acceptable": [
+        0
+      ],
+      "shown": [
+        0
+      ],
+      "scores": [
+        0.91991126537323,
+        0.8364295959472656,
+        0.8551693558692932,
+        0.7920863032341003,
+        0.8341576457023621,
+        0.8190950155258179,
+        0.8358614444732666,
+        0.8149558901786804,
+        0.8467874526977539,
+        0.8181169033050537,
+        0.8397853374481201,
+        0.8543050289154053,
+        0.816825807094574,
+        0.831739068031311,
+        0.8077279329299927,
+        0.8246934413909912,
+        0.8097118735313416,
+        0.8189712762832642,
+        0.8152179718017578,
+        0.8344430327415466,
+        0.8195964694023132,
+        0.8481037616729736,
+        0.8313595056533813,
+        0.82181316614151
+      ],
+      "nativeMs": 1020
+    },
+    {
+      "kind": "mixedCorpusProbe",
+      "id": "fresh-1-related-0",
+      "records": 24,
+      "acceptable": [
+        8
+      ],
+      "shown": [
+        8
+      ],
+      "scores": [
+        0.8424713611602783,
+        0.8486677408218384,
+        0.8442713022232056,
+        0.8010737299919128,
+        0.8368751406669617,
+        0.8344956636428833,
+        0.851091206073761,
+        0.8135721683502197,
+        0.9095698595046997,
+        0.8505449295043945,
+        0.8253684043884277,
+        0.8411207795143127,
+        0.8365248441696167,
+        0.8211244940757751,
+        0.8280690312385559,
+        0.8454577922821045,
+        0.8527840375900269,
+        0.8043298125267029,
+        0.8317451477050781,
+        0.8403650522232056,
+        0.8424791097640991,
+        0.8365017175674438,
+        0.8405504822731018,
+        0.8275573253631592
+      ],
+      "nativeMs": 971
+    },
+    {
+      "kind": "mixedCorpusProbe",
+      "id": "fresh-2-related-0",
+      "records": 24,
+      "acceptable": [
+        16
+      ],
+      "shown": [
+        16
+      ],
+      "scores": [
+        0.8003475666046143,
+        0.8596146106719971,
+        0.8200516104698181,
+        0.8020243048667908,
+        0.8274317979812622,
+        0.8005717992782593,
+        0.8381966352462769,
+        0.814382791519165,
+        0.8424947261810303,
+        0.8263217806816101,
+        0.8211464285850525,
+        0.7977906465530396,
+        0.8314129710197449,
+        0.8118590116500854,
+        0.825380265712738,
+        0.8047540187835693,
+        0.8796272873878479,
+        0.79641193151474,
+        0.8003697395324707,
+        0.8184375166893005,
+        0.8101654052734375,
+        0.8121525049209595,
+        0.8440904021263123,
+        0.8381274342536926
+      ],
+      "nativeMs": 951
+    }
+  ],
+  "failuresAndAbstentions": [
+    {
+      "id": "fresh-0-related-6",
+      "category": "related",
+      "language": "pt",
+      "acceptable": [
+        6
+      ],
+      "shown": [],
+      "outcome": "abstained"
+    },
+    {
+      "id": "fresh-0-related-7",
+      "category": "related",
+      "language": "hi",
+      "acceptable": [
+        7
+      ],
+      "shown": [],
+      "outcome": "abstained"
+    },
+    {
+      "id": "fresh-1-related-2",
+      "category": "related",
+      "language": "ja",
+      "acceptable": [
+        2
+      ],
+      "shown": [],
+      "outcome": "abstained"
+    },
+    {
+      "id": "fresh-0-unrelated-0",
+      "category": "unrelated",
+      "language": "en",
+      "acceptable": [],
+      "shown": [],
+      "outcome": "abstained"
+    },
+    {
+      "id": "fresh-0-unrelated-1",
+      "category": "unrelated",
+      "language": "ko",
+      "acceptable": [],
+      "shown": [],
+      "outcome": "abstained"
+    },
+    {
+      "id": "fresh-0-unrelated-2",
+      "category": "unrelated",
+      "language": "ja",
+      "acceptable": [],
+      "shown": [],
+      "outcome": "abstained"
+    },
+    {
+      "id": "fresh-0-unrelated-3",
+      "category": "unrelated",
+      "language": "es",
+      "acceptable": [],
+      "shown": [],
+      "outcome": "abstained"
+    },
+    {
+      "id": "fresh-1-unrelated-0",
+      "category": "unrelated",
+      "language": "en",
+      "acceptable": [],
+      "shown": [],
+      "outcome": "abstained"
+    },
+    {
+      "id": "fresh-1-unrelated-1",
+      "category": "unrelated",
+      "language": "zh",
+      "acceptable": [],
+      "shown": [],
+      "outcome": "abstained"
+    },
+    {
+      "id": "fresh-1-unrelated-2",
+      "category": "unrelated",
+      "language": "fr",
+      "acceptable": [],
+      "shown": [],
+      "outcome": "abstained"
+    },
+    {
+      "id": "fresh-1-unrelated-3",
+      "category": "unrelated",
+      "language": "pt",
+      "acceptable": [],
+      "shown": [],
+      "outcome": "abstained"
+    },
+    {
+      "id": "fresh-2-unrelated-0",
+      "category": "unrelated",
+      "language": "en",
+      "acceptable": [],
+      "shown": [],
+      "outcome": "abstained"
+    },
+    {
+      "id": "fresh-2-unrelated-1",
+      "category": "unrelated",
+      "language": "ko",
+      "acceptable": [],
+      "shown": [],
+      "outcome": "abstained"
+    },
+    {
+      "id": "fresh-2-unrelated-2",
+      "category": "unrelated",
+      "language": "ja",
+      "acceptable": [],
+      "shown": [],
+      "outcome": "abstained"
+    },
+    {
+      "id": "fresh-2-unrelated-3",
+      "category": "unrelated",
+      "language": "hi",
+      "acceptable": [],
+      "shown": [],
+      "outcome": "abstained"
+    },
+    {
+      "id": "fresh-ambiguous-0",
+      "category": "ambiguous",
+      "language": "en",
+      "acceptable": [],
+      "shown": [],
+      "outcome": "abstained"
+    },
+    {
+      "id": "fresh-ambiguous-1",
+      "category": "ambiguous",
+      "language": "ko",
+      "acceptable": [
+        1,
+        4,
+        6
+      ],
+      "shown": [],
+      "outcome": "abstained"
+    },
+    {
+      "id": "fresh-ambiguous-2",
+      "category": "ambiguous",
+      "language": "en",
+      "acceptable": [],
+      "shown": [
+        4
+      ],
+      "outcome": "falsePositive"
+    },
+    {
+      "id": "fresh-ambiguous-4",
+      "category": "ambiguous",
+      "language": "en",
+      "acceptable": [],
+      "shown": [],
+      "outcome": "abstained"
+    }
+  ],
+  "limits": [
+    "Assistant-authored cases and labels, not independent humans or representative accuracy.",
+    "New cases frozen before first execution; no model or policy tuning on these cases.",
+    "Isolated debug APK without INTERNET, prepared model; not production UI end-to-end latency.",
+    "Two passes do not double the number of unique cases.",
+    "Three 24-record probes are exploratory and reported separately."
+  ],
+  "debugPssBeforeKiB": 335584,
+  "debugPssAfterKiB": 621062
+}

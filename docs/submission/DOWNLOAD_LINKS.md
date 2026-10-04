@@ -1,28 +1,24 @@
 # FOR THE RECORD · Release links
 
-## Current app: 0.5.3 · 2 October 2026
+## Current app: 0.5.10+17 · 4 October 2026
 
 | Material | Link / scope |
 |---|---|
-| ARM64 APK | [0.5.3 download](https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.3/FOR-THE-RECORD-0.5.3-arm64.apk) |
-| Source | [Exact v0.5.3 tag](https://github.com/openai-lover/seeker_FOR-THE-RECORD/tree/v0.5.3) |
-| Changes and current physical Seeker evidence | [0.5.3 verification](REVISION_053.md) |
-| Short physical AI screen recording | [45-second device clip](https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.3/FOR-THE-RECORD-Seeker-AI-0.5.3.mp4), silent, actual inference; authored verification text |
-| English native Slides | [Open Slides](https://docs.google.com/presentation/d/1tO0GQsr-iQCSKIODwrkbODu2ENiVbRopWM78R8wwcNA/edit), 11 slides updated for 0.5.3 with current device evidence |
-| Narrated physical Seeker walkthrough | [0.5.3 Drive video](https://drive.google.com/file/d/1JeE2C5iJb-CIFL8v9uv40Cn15s_BIfwl/view), 2:13, actual AI recording plus reviewed device screenshots, authored verification text, manual immediate revisit |
-| English PPT, PDF, transcript and subtitles | [0.5.3 release assets](https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/tag/v0.5.3) |
+| ARM64 APK | [0.5.10 download](https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.10/FOR-THE-RECORD-0.5.10-arm64.apk) |
+| App source | [Exact v0.5.10 tag](https://github.com/openai-lover/seeker_FOR-THE-RECORD/tree/v0.5.10), commit `9de8139614cfd0c6374036e0b0ceb68abeee7602` |
+| Current device and AI proof | [Methods, results and limits](CURRENT_PROOF_0510.md) |
+| English native Slides | [11 current slides](https://docs.google.com/presentation/d/1tO0GQsr-iQCSKIODwrkbODu2ENiVbRopWM78R8wwcNA/edit) |
+| English narrated overview | [Drive video](https://drive.google.com/file/d/1JeE2C5iJb-CIFL8v9uv40Cn15s_BIfwl/view), updated in place; exact revision is recorded with release materials |
+| English PPT, PDF, videos and captions | [0.5.10 release assets](https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/tag/v0.5.10) |
 
-0.5.3 ARM64: versionCode **2010**, minimum API **26**, **37,811,704 bytes**,
-development signing. SHA-256:
-`fb9d1181826437f7b0072504280aa7344a50c28c12d4d33da71a7ace2accabfb`.
+ARM64 versionCode **2017**, minimum API **26**, **37,713,149 bytes**, development signing. SHA256:
+`3b2e8a11ad1a322dfcc510d46d90097c246fd995adaa1c7ff9d2984d94f19564`.
 
-The 0.5.3 tests and physical device scope are documented in the revision above.
-The most recent observed AI Coach score is 50/100 from the earlier materials;
-0.5.3 has not been reassessed. The portal draft save is blocked by its GitHub
-connection check. Publishing artifacts does not finalize the contest entry.
+Production APK/source are unchanged by the latest diagnostic and documentation follow-up. Main may contain newer evidence than the release tag. Current Seeker screenshots and the 8:08 continuous public replay use a separate debug package, public finalized responses and authored notes. They do not assert a live user swap or current production wallet-to-export flow. Full scope is linked above.
 
-The Slides and Drive links track the latest materials. Immutable 0.5.2 PPT/PDF,
-transcript and subtitles remain in the [historical 0.5.2 release](https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/tag/v0.5.2).
+The most recent observed AI Coach score is **79/100** from October 4 around 20:22 KST, before the new public-replay/fresh-AI/security follow-up. The project remains **DRAFT**. Ordinary SAVE's GitHub gate did not prevent the previous AI Coach rerun; publishing assets does not finalize the entry.
+
+Older releases and the material below are historical. Shared native Slides and Drive video URLs track current content; immutable exported files retain their versions in each release.
 
 ## Historical 0.3.1 materials
 

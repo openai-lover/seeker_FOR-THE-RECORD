@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-10-04T21:06:19.165520+09:00",
+  "fixtureSha256": "e16233902723a4dc2ba3f3706320a1d1daf5a2fbdc0eb73af9be9f0d0e16ac22",
+  "records": 24,
+  "corpora": 3,
+  "cases": 48,
+  "groups": {
+    "related": 24,
+    "unrelated": 12,
+    "ambiguous": 6,
+    "edge": 6
+  },
+  "policy": ".82 minimum/.018 margin/single source; unchanged",
+  "author": "assistant",
+  "independentHumanLabels": false,
+  "plan": "Two passes, then3 mixed-corpus24record probes. All errors/abstentions retained. No policy tuning."
+}

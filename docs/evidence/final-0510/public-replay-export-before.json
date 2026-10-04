@@ -1,0 +1,60 @@
+{
+  "app": "FOR THE RECORD",
+  "schemaVersion": 1,
+  "exportedAt": "2026-10-04T12:25:48.109263Z",
+  "tradeJournals": [
+    {
+      "id": "172b3602-422c-4db2-80e7-54ac19e63b80",
+      "wallet": "GU1RfjwNS5yxzEd3bW5CoZ3mQJoCoRymcm7VUpFsBGQe",
+      "activity": {
+        "id": "2vCgWskb1AV9UVvhmv1vuQdh8pdH5tAWyoqzsgXnF5z3ohpT9RALaPFb7tGiN8xCViJb7kdcLgBXWqe3pvGLuSY8",
+        "signature": "2vCgWskb1AV9UVvhmv1vuQdh8pdH5tAWyoqzsgXnF5z3ohpT9RALaPFb7tGiN8xCViJb7kdcLgBXWqe3pvGLuSY8",
+        "blockTime": 1791101054,
+        "status": "success",
+        "type": "swap",
+        "source": "Jupiter",
+        "fee": "0.000008405",
+        "input": {
+          "mint": "BPxxfRCXkUVhig4HS1Lh7kZqV6SPJhzfEk4x6fVBjPCy",
+          "symbol": "BPxx…jPCy",
+          "amount": "278.854695534"
+        },
+        "output": {
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "symbol": "USDC",
+          "amount": "348.72045"
+        },
+        "issue": null
+      },
+      "createdAt": 1791116473300,
+      "updatedAt": 1791116705262,
+      "projectId": null,
+      "reason": "Demo: I followed a popular claim before reading the original announcement.",
+      "plan": "",
+      "emotion": "",
+      "review": "Demo: The claim had no primary source. I should read the original announcement.",
+      "nextAction": "",
+      "originalReason": "Demo: I followed a popular claim before reading the original announcement.",
+      "originalPlan": "",
+      "baselineSavedAt": 1791116473300,
+      "reviewDueAt": 1791202870690,
+      "reviewedAt": 1791116705262,
+      "decisionRule": "Demo: Read the source before following a popular claim.",
+      "ruleSavedAt": 1791116705262,
+      "assistantSelection": {
+        "questionId": 2,
+        "source": "ai",
+        "model": "multilingual-e5-small Q8 · semantic-v2 · llama.cpp 0.5.0",
+        "generatedAt": 1791116651965,
+        "durationMs": 2580,
+        "cold": true,
+        "candidates": [
+          1,
+          2
+        ],
+        "context": "{\"reason\":\"Demo: I followed a popular claim before reading the original announcement.\",\"plan\":\"\",\"reflection\":\"Demo: The claim had no primary source. I should read the original announcement.\"}",
+        "userChosen": true
+      }
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-# FOR THE RECORD · Current judge quickstart
+# FOR THE RECORD · Historical 0.5.2 walkthrough
 
 Version 0.5.2+9, local development preview. Public download versions are listed
 separately in [DOWNLOAD_LINKS.md](DOWNLOAD_LINKS.md). The entry remains a draft.

@@ -1,0 +1,3062 @@
+{
+  "summary": {
+    "fixture": {
+      "createdAt": "2026-10-04T21:06:19.165520+09:00",
+      "fixtureSha256": "e16233902723a4dc2ba3f3706320a1d1daf5a2fbdc0eb73af9be9f0d0e16ac22",
+      "records": 24,
+      "corpora": 3,
+      "cases": 48,
+      "groups": {
+        "related": 24,
+        "unrelated": 12,
+        "ambiguous": 6,
+        "edge": 6
+      },
+      "policy": ".82 minimum/.018 margin/single source; unchanged",
+      "author": "assistant",
+      "independentHumanLabels": false,
+      "plan": "Two passes, then3 mixed-corpus24record probes. All errors/abstentions retained. No policy tuning."
+    },
+    "groups": {
+      "related": {
+        "uniqueCases": 24,
+        "correctSource": 21,
+        "falsePositive": 0,
+        "abstained": 3
+      },
+      "unrelated": {
+        "uniqueCases": 12,
+        "correctSource": 0,
+        "falsePositive": 0,
+        "abstained": 12
+      },
+      "ambiguous": {
+        "uniqueCases": 6,
+        "correctSource": 2,
+        "falsePositive": 1,
+        "abstained": 3
+      },
+      "edge": {
+        "uniqueCases": 6,
+        "correctSource": 6,
+        "falsePositive": 0,
+        "abstained": 0
+      }
+    },
+    "repeatsIdentical": true,
+    "nativeCold": [
+      1597
+    ],
+    "nativeWarmMs": {
+      "n": 95,
+      "median": 336,
+      "p95NearestRank": 375,
+      "minimum": 286,
+      "maximum": 469
+    },
+    "diagnosticFrameWarmMs": {
+      "n": 95,
+      "median": 355,
+      "p95NearestRank": 390,
+      "minimum": 296,
+      "maximum": 484
+    },
+    "mixedCorpusProbes": [
+      {
+        "kind": "mixedCorpusProbe",
+        "id": "fresh-0-related-0",
+        "records": 24,
+        "acceptable": [
+          0
+        ],
+        "shown": [
+          0
+        ],
+        "scores": [
+          0.91991126537323,
+          0.8364295959472656,
+          0.8551693558692932,
+          0.7920863032341003,
+          0.8341576457023621,
+          0.8190950155258179,
+          0.8358614444732666,
+          0.8149558901786804,
+          0.8467874526977539,
+          0.8181169033050537,
+          0.8397853374481201,
+          0.8543050289154053,
+          0.816825807094574,
+          0.831739068031311,
+          0.8077279329299927,
+          0.8246934413909912,
+          0.8097118735313416,
+          0.8189712762832642,
+          0.8152179718017578,
+          0.8344430327415466,
+          0.8195964694023132,
+          0.8481037616729736,
+          0.8313595056533813,
+          0.82181316614151
+        ],
+        "nativeMs": 1020
+      },
+      {
+        "kind": "mixedCorpusProbe",
+        "id": "fresh-1-related-0",
+        "records": 24,
+        "acceptable": [
+          8
+        ],
+        "shown": [
+          8
+        ],
+        "scores": [
+          0.8424713611602783,
+          0.8486677408218384,
+          0.8442713022232056,
+          0.8010737299919128,
+          0.8368751406669617,
+          0.8344956636428833,
+          0.851091206073761,
+          0.8135721683502197,
+          0.9095698595046997,
+          0.8505449295043945,
+          0.8253684043884277,
+          0.8411207795143127,
+          0.8365248441696167,
+          0.8211244940757751,
+          0.8280690312385559,
+          0.8454577922821045,
+          0.8527840375900269,
+          0.8043298125267029,
+          0.8317451477050781,
+          0.8403650522232056,
+          0.8424791097640991,
+          0.8365017175674438,
+          0.8405504822731018,
+          0.8275573253631592
+        ],
+        "nativeMs": 971
+      },
+      {
+        "kind": "mixedCorpusProbe",
+        "id": "fresh-2-related-0",
+        "records": 24,
+        "acceptable": [
+          16
+        ],
+        "shown": [
+          16
+        ],
+        "scores": [
+          0.8003475666046143,
+          0.8596146106719971,
+          0.8200516104698181,
+          0.8020243048667908,
+          0.8274317979812622,
+          0.8005717992782593,
+          0.8381966352462769,
+          0.814382791519165,
+          0.8424947261810303,
+          0.8263217806816101,
+          0.8211464285850525,
+          0.7977906465530396,
+          0.8314129710197449,
+          0.8118590116500854,
+          0.825380265712738,
+          0.8047540187835693,
+          0.8796272873878479,
+          0.79641193151474,
+          0.8003697395324707,
+          0.8184375166893005,
+          0.8101654052734375,
+          0.8121525049209595,
+          0.8440904021263123,
+          0.8381274342536926
+        ],
+        "nativeMs": 951
+      }
+    ],
+    "failuresAndAbstentions": [
+      {
+        "id": "fresh-0-related-6",
+        "category": "related",
+        "language": "pt",
+        "acceptable": [
+          6
+        ],
+        "shown": [],
+        "outcome": "abstained"
+      },
+      {
+        "id": "fresh-0-related-7",
+        "category": "related",
+        "language": "hi",
+        "acceptable": [
+          7
+        ],
+        "shown": [],
+        "outcome": "abstained"
+      },
+      {
+        "id": "fresh-1-related-2",
+        "category": "related",
+        "language": "ja",
+        "acceptable": [
+          2
+        ],
+        "shown": [],
+        "outcome": "abstained"
+      },
+      {
+        "id": "fresh-0-unrelated-0",
+        "category": "unrelated",
+        "language": "en",
+        "acceptable": [],
+        "shown": [],
+        "outcome": "abstained"
+      },
+      {
+        "id": "fresh-0-unrelated-1",
+        "category": "unrelated",
+        "language": "ko",
+        "acceptable": [],
+        "shown": [],
+        "outcome": "abstained"
+      },
+      {
+        "id": "fresh-0-unrelated-2",
+        "category": "unrelated",
+        "language": "ja",
+        "acceptable": [],
+        "shown": [],
+        "outcome": "abstained"
+      },
+      {
+        "id": "fresh-0-unrelated-3",
+        "category": "unrelated",
+        "language": "es",
+        "acceptable": [],
+        "shown": [],
+        "outcome": "abstained"
+      },
+      {
+        "id": "fresh-1-unrelated-0",
+        "category": "unrelated",
+        "language": "en",
+        "acceptable": [],
+        "shown": [],
+        "outcome": "abstained"
+      },
+      {
+        "id": "fresh-1-unrelated-1",
+        "category": "unrelated",
+        "language": "zh",
+        "acceptable": [],
+        "shown": [],
+        "outcome": "abstained"
+      },
+      {
+        "id": "fresh-1-unrelated-2",
+        "category": "unrelated",
+        "language": "fr",
+        "acceptable": [],
+        "shown": [],
+        "outcome": "abstained"
+      },
+      {
+        "id": "fresh-1-unrelated-3",
+        "category": "unrelated",
+        "language": "pt",
+        "acceptable": [],
+        "shown": [],
+        "outcome": "abstained"
+      },
+      {
+        "id": "fresh-2-unrelated-0",
+        "category": "unrelated",
+        "language": "en",
+        "acceptable": [],
+        "shown": [],
+        "outcome": "abstained"
+      },
+      {
+        "id": "fresh-2-unrelated-1",
+        "category": "unrelated",
+        "language": "ko",
+        "acceptable": [],
+        "shown": [],
+        "outcome": "abstained"
+      },
+      {
+        "id": "fresh-2-unrelated-2",
+        "category": "unrelated",
+        "language": "ja",
+        "acceptable": [],
+        "shown": [],
+        "outcome": "abstained"
+      },
+      {
+        "id": "fresh-2-unrelated-3",
+        "category": "unrelated",
+        "language": "hi",
+        "acceptable": [],
+        "shown": [],
+        "outcome": "abstained"
+      },
+      {
+        "id": "fresh-ambiguous-0",
+        "category": "ambiguous",
+        "language": "en",
+        "acceptable": [],
+        "shown": [],
+        "outcome": "abstained"
+      },
+      {
+        "id": "fresh-ambiguous-1",
+        "category": "ambiguous",
+        "language": "ko",
+        "acceptable": [
+          1,
+          4,
+          6
+        ],
+        "shown": [],
+        "outcome": "abstained"
+      },
+      {
+        "id": "fresh-ambiguous-2",
+        "category": "ambiguous",
+        "language": "en",
+        "acceptable": [],
+        "shown": [
+          4
+        ],
+        "outcome": "falsePositive"
+      },
+      {
+        "id": "fresh-ambiguous-4",
+        "category": "ambiguous",
+        "language": "en",
+        "acceptable": [],
+        "shown": [],
+        "outcome": "abstained"
+      }
+    ],
+    "limits": [
+      "Assistant-authored cases and labels, not independent humans or representative accuracy.",
+      "New cases frozen before first execution; no model or policy tuning on these cases.",
+      "Isolated debug APK without INTERNET, prepared model; not production UI end-to-end latency.",
+      "Two passes do not double the number of unique cases.",
+      "Three 24-record probes are exploratory and reported separately."
+    ],
+    "debugPssBeforeKiB": 335584,
+    "debugPssAfterKiB": 621062
+  },
+  "events": [
+    {
+      "kind": "start",
+      "utc": "2026-10-04T12:17:28.665944Z",
+      "cases": 48,
+      "records": 24,
+      "passes": 2,
+      "engine": {
+        "supported": true,
+        "ready": true,
+        "busy": false,
+        "downloaded": 0,
+        "modelBytes": 132439008,
+        "warm": false
+      },
+      "policyChanged": false,
+      "independentHumanLabels": false
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "id": "fresh-0-related-0",
+      "corpus": 0,
+      "category": "related",
+      "language": "en",
+      "acceptable": [
+        0
+      ],
+      "shown": [
+        0
+      ],
+      "scores": [
+        0.91991126537323,
+        0.8364295959472656,
+        0.8551693558692932,
+        0.7920863032341003,
+        0.8341576457023621,
+        0.8190950155258179,
+        0.8358614444732666,
+        0.8149558901786804
+      ],
+      "nativeMs": 1597,
+      "cold": true,
+      "bridgeMs": 1616,
+      "diagnosticFrameMs": 1636
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "id": "fresh-0-related-1",
+      "corpus": 0,
+      "category": "related",
+      "language": "ko",
+      "acceptable": [
+        1
+      ],
+      "shown": [
+        1
+      ],
+      "scores": [
+        0.7808021306991577,
+        0.8463732600212097,
+        0.8006126880645752,
+        0.7712281346321106,
+        0.7993161678314209,
+        0.7891231179237366,
+        0.8041488528251648,
+        0.7843128442764282
+      ],
+      "nativeMs": 359,
+      "cold": false,
+      "bridgeMs": 363,
+      "diagnosticFrameMs": 381
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "id": "fresh-0-related-2",
+      "corpus": 0,
+      "category": "related",
+      "language": "ja",
+      "acceptable": [
+        2
+      ],
+      "shown": [
+        2
+      ],
+      "scores": [
+        0.8169600367546082,
+        0.7837170362472534,
+        0.8486312031745911,
+        0.7895628809928894,
+        0.811676561832428,
+        0.8167895674705505,
+        0.8174134492874146,
+        0.7986162900924683
+      ],
+      "nativeMs": 356,
+      "cold": false,
+      "bridgeMs": 358,
+      "diagnosticFrameMs": 370
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "id": "fresh-0-related-3",
+      "corpus": 0,
+      "category": "related",
+      "language": "zh",
+      "acceptable": [
+        3
+      ],
+      "shown": [
+        3
+      ],
+      "scores": [
+        0.8119863271713257,
+        0.8197046518325806,
+        0.8108677864074707,
+        0.8818308115005493,
+        0.8195434212684631,
+        0.7890344858169556,
+        0.8262400031089783,
+        0.8220618367195129
+      ],
+      "nativeMs": 357,
+      "cold": false,
+      "bridgeMs": 358,
+      "diagnosticFrameMs": 373
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "id": "fresh-0-related-4",
+      "corpus": 0,
+      "category": "related",
+      "language": "es",
+      "acceptable": [
+        4
+      ],
+      "shown": [
+        4
+      ],
+      "scores": [
+        0.8412829041481018,
+        0.8266003131866455,
+        0.8661192059516907,
+        0.8212141990661621,
+        0.9010213613510132,
+        0.8374285697937012,
+        0.8583934903144836,
+        0.8338050246238708
+      ],
+      "nativeMs": 346,
+      "cold": false,
+      "bridgeMs": 348,
+      "diagnosticFrameMs": 369
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "id": "fresh-0-related-5",
+      "corpus": 0,
+      "category": "related",
+      "language": "fr",
+      "acceptable": [
+        5
+      ],
+      "shown": [
+        5
+      ],
+      "scores": [
+        0.8416500687599182,
+        0.8468856811523438,
+        0.8450665473937988,
+        0.806499183177948,
+        0.8383655548095703,
+        0.8669626116752625,
+        0.8452798128128052,
+        0.8348181843757629
+      ],
+      "nativeMs": 338,
+      "cold": false,
+      "bridgeMs": 340,
+      "diagnosticFrameMs": 351
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "id": "fresh-0-related-6",
+      "corpus": 0,
+      "category": "related",
+      "language": "pt",
+      "acceptable": [
+        6
+      ],
+      "shown": [],
+      "scores": [
+        0.8106665015220642,
+        0.813730776309967,
+        0.8316008448600769,
+        0.7950676083564758,
+        0.817231297492981,
+        0.8190303444862366,
+        0.8291230797767639,
+        0.8083348870277405
+      ],
+      "nativeMs": 344,
+      "cold": false,
+      "bridgeMs": 345,
+      "diagnosticFrameMs": 354
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "id": "fresh-0-related-7",
+      "corpus": 0,
+      "category": "related",
+      "language": "hi",
+      "acceptable": [
+        7
+      ],
+      "shown": [],
+      "scores": [
+        0.8224613070487976,
+        0.8156071901321411,
+        0.8431202173233032,
+        0.8291125893592834,
+        0.8299161195755005,
+        0.8173342943191528,
+        0.8361639976501465,
+        0.858250081539154
+      ],
+      "nativeMs": 297,
+      "cold": false,
+      "bridgeMs": 298,
+      "diagnosticFrameMs": 306
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "id": "fresh-1-related-0",
+      "corpus": 1,
+      "category": "related",
+      "language": "en",
+      "acceptable": [
+        0
+      ],
+      "shown": [
+        0
+      ],
+      "scores": [
+        0.9095698595046997,
+        0.8505449295043945,
+        0.8253684043884277,
+        0.8411207795143127,
+        0.8365248441696167,
+        0.8211244940757751,
+        0.8280690312385559,
+        0.8454577922821045
+      ],
+      "nativeMs": 366,
+      "cold": false,
+      "bridgeMs": 367,
+      "diagnosticFrameMs": 382
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "id": "fresh-1-related-1",
+      "corpus": 1,
+      "category": "related",
+      "language": "ko",
+      "acceptable": [
+        1
+      ],
+      "shown": [
+        1
+      ],
+      "scores": [
+        0.8241406679153442,
+        0.8529669046401978,
+        0.8083779215812683,
+        0.8158606886863708,
+        0.8012576699256897,
+        0.7943251729011536,
+        0.8200870752334595,
+        0.8137775659561157
+      ],
+      "nativeMs": 343,
+      "cold": false,
+      "bridgeMs": 345,
+      "diagnosticFrameMs": 360
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "id": "fresh-1-related-2",
+      "corpus": 1,
+      "category": "related",
+      "language": "ja",
+      "acceptable": [
+        2
+      ],
+      "shown": [],
+      "scores": [
+        0.8417364358901978,
+        0.826786458492279,
+        0.85645592212677,
+        0.8090969324111938,
+        0.8041883707046509,
+        0.8142204880714417,
+        0.7964054942131042,
+        0.832622766494751
+      ],
+      "nativeMs": 351,
+      "cold": false,
+      "bridgeMs": 352,
+      "diagnosticFrameMs": 376
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "id": "fresh-1-related-3",
+      "corpus": 1,
+      "category": "related",
+      "language": "zh",
+      "acceptable": [
+        3
+      ],
+      "shown": [
+        3
+      ],
+      "scores": [
+        0.794651448726654,
+        0.8002299666404724,
+        0.7971799969673157,
+        0.8429561853408813,
+        0.8040435910224915,
+        0.8159663081169128,
+        0.789306104183197,
+        0.7865306735038757
+      ],
+      "nativeMs": 345,
+      "cold": false,
+      "bridgeMs": 347,
+      "diagnosticFrameMs": 368
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "id": "fresh-1-related-4",
+      "corpus": 1,
+      "category": "related",
+      "language": "es",
+      "acceptable": [
+        4
+      ],
+      "shown": [
+        4
+      ],
+      "scores": [
+        0.8215503692626953,
+        0.8120096325874329,
+        0.810794472694397,
+        0.7934192419052124,
+        0.8531413674354553,
+        0.8173063397407532,
+        0.8258386850357056,
+        0.8224014043807983
+      ],
+      "nativeMs": 355,
+      "cold": false,
+      "bridgeMs": 357,
+      "diagnosticFrameMs": 369
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "id": "fresh-1-related-5",
+      "corpus": 1,
+      "category": "related",
+      "language": "fr",
+      "acceptable": [
+        5
+      ],
+      "shown": [
+        5
+      ],
+      "scores": [
+        0.8079954981803894,
+        0.8224576711654663,
+        0.8254584074020386,
+        0.8472235202789307,
+        0.8032768368721008,
+        0.9075092077255249,
+        0.8129879832267761,
+        0.8293159604072571
+      ],
+      "nativeMs": 323,
+      "cold": false,
+      "bridgeMs": 324,
+      "diagnosticFrameMs": 339
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "id": "fresh-1-related-6",
+      "corpus": 1,
+      "category": "related",
+      "language": "pt",
+      "acceptable": [
+        6
+      ],
+      "shown": [
+        6
+      ],
+      "scores": [
+        0.8224799633026123,
+        0.8342674374580383,
+        0.8176566958427429,
+        0.8027167916297913,
+        0.7857220768928528,
+        0.7898634076118469,
+        0.8527496457099915,
+        0.7855337262153625
+      ],
+      "nativeMs": 357,
+      "cold": false,
+      "bridgeMs": 358,
+      "diagnosticFrameMs": 372
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "id": "fresh-1-related-7",
+      "corpus": 1,
+      "category": "related",
+      "language": "hi",
+      "acceptable": [
+        7
+      ],
+      "shown": [
+        7
+      ],
+      "scores": [
+        0.8376975059509277,
+        0.8334904313087463,
+        0.8361126184463501,
+        0.8107787370681763,
+        0.8281561136245728,
+        0.8341039419174194,
+        0.828714907169342,
+        0.8916097283363342
+      ],
+      "nativeMs": 322,
+      "cold": false,
+      "bridgeMs": 323,
+      "diagnosticFrameMs": 350
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "id": "fresh-2-related-0",
+      "corpus": 2,
+      "category": "related",
+      "language": "en",
+      "acceptable": [
+        0
+      ],
+      "shown": [
+        0
+      ],
+      "scores": [
+        0.8796272873878479,
+        0.79641193151474,
+        0.8003697395324707,
+        0.8184375166893005,
+        0.8101654052734375,
+        0.8121525049209595,
+        0.8440904021263123,
+        0.8381274342536926
+      ],
+      "nativeMs": 349,
+      "cold": false,
+      "bridgeMs": 351,
+      "diagnosticFrameMs": 362
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "id": "fresh-2-related-1",
+      "corpus": 2,
+      "category": "related",
+      "language": "ko",
+      "acceptable": [
+        1
+      ],
+      "shown": [
+        1
+      ],
+      "scores": [
+        0.7779263257980347,
+        0.8517564535140991,
+        0.7935062050819397,
+        0.83167964220047,
+        0.8276787996292114,
+        0.8056754469871521,
+        0.8085256218910217,
+        0.8170205354690552
+      ],
+      "nativeMs": 320,
+      "cold": false,
+      "bridgeMs": 321,
+      "diagnosticFrameMs": 328
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "id": "fresh-2-related-2",
+      "corpus": 2,
+      "category": "related",
+      "language": "ja",
+      "acceptable": [
+        2
+      ],
+      "shown": [
+        2
+      ],
+      "scores": [
+        0.81574946641922,
+        0.7988660931587219,
+        0.8685406446456909,
+        0.8004089593887329,
+        0.8133118152618408,
+        0.7949074506759644,
+        0.8116265535354614,
+        0.8319807052612305
+      ],
+      "nativeMs": 359,
+      "cold": false,
+      "bridgeMs": 359,
+      "diagnosticFrameMs": 377
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "id": "fresh-2-related-3",
+      "corpus": 2,
+      "category": "related",
+      "language": "zh",
+      "acceptable": [
+        3
+      ],
+      "shown": [
+        3
+      ],
+      "scores": [
+        0.7809997797012329,
+        0.790183424949646,
+        0.7759577035903931,
+        0.8674425482749939,
+        0.7992681860923767,
+        0.788708508014679,
+        0.8088957071304321,
+        0.8217223286628723
+      ],
+      "nativeMs": 469,
+      "cold": false,
+      "bridgeMs": 470,
+      "diagnosticFrameMs": 484
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "id": "fresh-2-related-4",
+      "corpus": 2,
+      "category": "related",
+      "language": "es",
+      "acceptable": [
+        4
+      ],
+      "shown": [
+        4
+      ],
+      "scores": [
+        0.8039585947990417,
+        0.8390747308731079,
+        0.8096230626106262,
+        0.8381584882736206,
+        0.9025508165359497,
+        0.8323185443878174,
+        0.825854480266571,
+        0.8281757235527039
+      ],
+      "nativeMs": 385,
+      "cold": false,
+      "bridgeMs": 386,
+      "diagnosticFrameMs": 397
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "id": "fresh-2-related-5",
+      "corpus": 2,
+      "category": "related",
+      "language": "fr",
+      "acceptable": [
+        5
+      ],
+      "shown": [
+        5
+      ],
+      "scores": [
+        0.7879273295402527,
+        0.7835745811462402,
+        0.7822189927101135,
+        0.8132005333900452,
+        0.8193495273590088,
+        0.8480170965194702,
+        0.825689971446991,
+        0.8012487292289734
+      ],
+      "nativeMs": 372,
+      "cold": false,
+      "bridgeMs": 372,
+      "diagnosticFrameMs": 380
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "id": "fresh-2-related-6",
+      "corpus": 2,
+      "category": "related",
+      "language": "pt",
+      "acceptable": [
+        6
+      ],
+      "shown": [
+        6
+      ],
+      "scores": [
+        0.7849746346473694,
+        0.7620258927345276,
+        0.7702568173408508,
+        0.7970353960990906,
+        0.7944190502166748,
+        0.82027268409729,
+        0.8520780801773071,
+        0.7879641652107239
+      ],
+      "nativeMs": 420,
+      "cold": false,
+      "bridgeMs": 421,
+      "diagnosticFrameMs": 436
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "id": "fresh-2-related-7",
+      "corpus": 2,
+      "category": "related",
+      "language": "hi",
+      "acceptable": [
+        7
+      ],
+      "shown": [
+        7
+      ],
+      "scores": [
+        0.8120887875556946,
+        0.8051149845123291,
+        0.7823876738548279,
+        0.7933638691902161,
+        0.817818284034729,
+        0.7819433212280273,
+        0.8266206383705139,
+        0.9038084149360657
+      ],
+      "nativeMs": 359,
+      "cold": false,
+      "bridgeMs": 360,
+      "diagnosticFrameMs": 380
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "id": "fresh-0-unrelated-0",
+      "corpus": 0,
+      "category": "unrelated",
+      "language": "en",
+      "acceptable": [],
+      "shown": [],
+      "scores": [
+        0.7538483738899231,
+        0.7505770325660706,
+        0.7665032148361206,
+        0.7369086146354675,
+        0.7580329179763794,
+        0.7608623504638672,
+        0.7555108666419983,
+        0.7545314431190491
+      ],
+      "nativeMs": 327,
+      "cold": false,
+      "bridgeMs": 329,
+      "diagnosticFrameMs": 344
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "id": "fresh-0-unrelated-1",
+      "corpus": 0,
+      "category": "unrelated",
+      "language": "ko",
+      "acceptable": [],
+      "shown": [],
+      "scores": [
+        0.6959110498428345,
+        0.7258018851280212,
+        0.6928526759147644,
+        0.7130751609802246,
+        0.7229630351066589,
+        0.7250459790229797,
+        0.709010899066925,
+        0.7188772559165955
+      ],
+      "nativeMs": 351,
+      "cold": false,
+      "bridgeMs": 352,
+      "diagnosticFrameMs": 363
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "id": "fresh-0-unrelated-2",
+      "corpus": 0,
+      "category": "unrelated",
+      "language": "ja",
+      "acceptable": [],
+      "shown": [],
+      "scores": [
+        0.6995243430137634,
+        0.7085138559341431,
+        0.7181344032287598,
+        0.7048256993293762,
+        0.7128407955169678,
+        0.7293202877044678,
+        0.7027308940887451,
+        0.7091606259346008
+      ],
+      "nativeMs": 343,
+      "cold": false,
+      "bridgeMs": 344,
+      "diagnosticFrameMs": 356
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "id": "fresh-0-unrelated-3",
+      "corpus": 0,
+      "category": "unrelated",
+      "language": "es",
+      "acceptable": [],
+      "shown": [],
+      "scores": [
+        0.7028248906135559,
+        0.7040361166000366,
+        0.7191611528396606,
+        0.6876639723777771,
+        0.7173048257827759,
+        0.717275857925415,
+        0.7093915939331055,
+        0.7079924941062927
+      ],
+      "nativeMs": 320,
+      "cold": false,
+      "bridgeMs": 320,
+      "diagnosticFrameMs": 332
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "id": "fresh-1-unrelated-0",
+      "corpus": 1,
+      "category": "unrelated",
+      "language": "en",
+      "acceptable": [],
+      "shown": [],
+      "scores": [
+        0.7408716678619385,
+        0.7489988803863525,
+        0.7429437637329102,
+        0.7488511800765991,
+        0.7419016361236572,
+        0.7544991374015808,
+        0.7523204684257507,
+        0.7309533953666687
+      ],
+      "nativeMs": 335,
+      "cold": false,
+      "bridgeMs": 337,
+      "diagnosticFrameMs": 346
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "id": "fresh-1-unrelated-1",
+      "corpus": 1,
+      "category": "unrelated",
+      "language": "zh",
+      "acceptable": [],
+      "shown": [],
+      "scores": [
+        0.7227295637130737,
+        0.7247880697250366,
+        0.7371491193771362,
+        0.7296713590621948,
+        0.7371934056282043,
+        0.7395465970039368,
+        0.7510444521903992,
+        0.7109425663948059
+      ],
+      "nativeMs": 350,
+      "cold": false,
+      "bridgeMs": 351,
+      "diagnosticFrameMs": 365
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "id": "fresh-1-unrelated-2",
+      "corpus": 1,
+      "category": "unrelated",
+      "language": "fr",
+      "acceptable": [],
+      "shown": [],
+      "scores": [
+        0.7006853818893433,
+        0.6836890578269958,
+        0.6925680637359619,
+        0.6780466437339783,
+        0.6687000393867493,
+        0.6844648122787476,
+        0.6930238604545593,
+        0.6624652743339539
+      ],
+      "nativeMs": 351,
+      "cold": false,
+      "bridgeMs": 353,
+      "diagnosticFrameMs": 362
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "id": "fresh-1-unrelated-3",
+      "corpus": 1,
+      "category": "unrelated",
+      "language": "pt",
+      "acceptable": [],
+      "shown": [],
+      "scores": [
+        0.7318777441978455,
+        0.723538339138031,
+        0.7305709719657898,
+        0.7236176133155823,
+        0.7204129695892334,
+        0.718068540096283,
+        0.7095094323158264,
+        0.7080338001251221
+      ],
+      "nativeMs": 375,
+      "cold": false,
+      "bridgeMs": 376,
+      "diagnosticFrameMs": 390
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "id": "fresh-2-unrelated-0",
+      "corpus": 2,
+      "category": "unrelated",
+      "language": "en",
+      "acceptable": [],
+      "shown": [],
+      "scores": [
+        0.7787529230117798,
+        0.7628555297851562,
+        0.7932184338569641,
+        0.7730226516723633,
+        0.79459547996521,
+        0.7871688008308411,
+        0.80122309923172,
+        0.7822399735450745
+      ],
+      "nativeMs": 286,
+      "cold": false,
+      "bridgeMs": 287,
+      "diagnosticFrameMs": 296
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "id": "fresh-2-unrelated-1",
+      "corpus": 2,
+      "category": "unrelated",
+      "language": "ko",
+      "acceptable": [],
+      "shown": [],
+      "scores": [
+        0.6940417885780334,
+        0.7098580002784729,
+        0.7150718569755554,
+        0.7623120546340942,
+        0.730945348739624,
+        0.7725489139556885,
+        0.7515878677368164,
+        0.7391860485076904
+      ],
+      "nativeMs": 329,
+      "cold": false,
+      "bridgeMs": 330,
+      "diagnosticFrameMs": 339
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "id": "fresh-2-unrelated-2",
+      "corpus": 2,
+      "category": "unrelated",
+      "language": "ja",
+      "acceptable": [],
+      "shown": [],
+      "scores": [
+        0.69316565990448,
+        0.7140293717384338,
+        0.6942330002784729,
+        0.7158163189888,
+        0.732363224029541,
+        0.725166380405426,
+        0.7103090286254883,
+        0.7121230959892273
+      ],
+      "nativeMs": 297,
+      "cold": false,
+      "bridgeMs": 298,
+      "diagnosticFrameMs": 306
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "id": "fresh-2-unrelated-3",
+      "corpus": 2,
+      "category": "unrelated",
+      "language": "hi",
+      "acceptable": [],
+      "shown": [],
+      "scores": [
+        0.721002459526062,
+        0.7234921455383301,
+        0.7318777441978455,
+        0.7156482934951782,
+        0.7339702248573303,
+        0.7231262922286987,
+        0.7236401438713074,
+        0.7342572808265686
+      ],
+      "nativeMs": 312,
+      "cold": false,
+      "bridgeMs": 313,
+      "diagnosticFrameMs": 324
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "id": "fresh-ambiguous-0",
+      "corpus": 0,
+      "category": "ambiguous",
+      "language": "en",
+      "acceptable": [],
+      "shown": [],
+      "scores": [
+        0.804530143737793,
+        0.8011887073516846,
+        0.815162181854248,
+        0.7805036902427673,
+        0.8116133809089661,
+        0.7989936470985413,
+        0.805208683013916,
+        0.7919003963470459
+      ],
+      "nativeMs": 319,
+      "cold": false,
+      "bridgeMs": 321,
+      "diagnosticFrameMs": 330
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "id": "fresh-ambiguous-1",
+      "corpus": 0,
+      "category": "ambiguous",
+      "language": "ko",
+      "acceptable": [
+        1,
+        4,
+        6
+      ],
+      "shown": [],
+      "scores": [
+        0.8030490279197693,
+        0.812242865562439,
+        0.8149392008781433,
+        0.8130757808685303,
+        0.840968906879425,
+        0.8269694447517395,
+        0.8213832974433899,
+        0.8086878657341003
+      ],
+      "nativeMs": 289,
+      "cold": false,
+      "bridgeMs": 290,
+      "diagnosticFrameMs": 306
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "id": "fresh-ambiguous-2",
+      "corpus": 1,
+      "category": "ambiguous",
+      "language": "en",
+      "acceptable": [],
+      "shown": [
+        4
+      ],
+      "scores": [
+        0.8184357285499573,
+        0.8018462061882019,
+        0.8046854734420776,
+        0.7875856757164001,
+        0.8369057774543762,
+        0.8076823353767395,
+        0.815229058265686,
+        0.813568651676178
+      ],
+      "nativeMs": 300,
+      "cold": false,
+      "bridgeMs": 302,
+      "diagnosticFrameMs": 313
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "id": "fresh-ambiguous-3",
+      "corpus": 1,
+      "category": "ambiguous",
+      "language": "es",
+      "acceptable": [
+        0,
+        1,
+        7
+      ],
+      "shown": [
+        7
+      ],
+      "scores": [
+        0.8467877507209778,
+        0.8412961959838867,
+        0.832984447479248,
+        0.8282334208488464,
+        0.8373216390609741,
+        0.8299777507781982,
+        0.8398401737213135,
+        0.8724319934844971
+      ],
+      "nativeMs": 327,
+      "cold": false,
+      "bridgeMs": 328,
+      "diagnosticFrameMs": 355
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "id": "fresh-ambiguous-4",
+      "corpus": 2,
+      "category": "ambiguous",
+      "language": "en",
+      "acceptable": [],
+      "shown": [],
+      "scores": [
+        0.7378654479980469,
+        0.7758577466011047,
+        0.7825703024864197,
+        0.7857036590576172,
+        0.7901665568351746,
+        0.7877089977264404,
+        0.7901071906089783,
+        0.7692319750785828
+      ],
+      "nativeMs": 347,
+      "cold": false,
+      "bridgeMs": 349,
+      "diagnosticFrameMs": 366
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "id": "fresh-ambiguous-5",
+      "corpus": 2,
+      "category": "ambiguous",
+      "language": "fr",
+      "acceptable": [
+        1,
+        4
+      ],
+      "shown": [
+        4
+      ],
+      "scores": [
+        0.7616496682167053,
+        0.8059878349304199,
+        0.7734750509262085,
+        0.8192278146743774,
+        0.8423915505409241,
+        0.7999414801597595,
+        0.812030553817749,
+        0.789064884185791
+      ],
+      "nativeMs": 359,
+      "cold": false,
+      "bridgeMs": 360,
+      "diagnosticFrameMs": 371
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "id": "fresh-edge-0",
+      "corpus": 0,
+      "category": "edge",
+      "language": "en",
+      "acceptable": [
+        5
+      ],
+      "shown": [
+        5
+      ],
+      "scores": [
+        0.8455343842506409,
+        0.8276645541191101,
+        0.8461064100265503,
+        0.8073970079421997,
+        0.827322781085968,
+        0.894741952419281,
+        0.8443940281867981,
+        0.8356611132621765
+      ],
+      "nativeMs": 339,
+      "cold": false,
+      "bridgeMs": 340,
+      "diagnosticFrameMs": 355
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "id": "fresh-edge-1",
+      "corpus": 0,
+      "category": "edge",
+      "language": "mixed",
+      "acceptable": [
+        2
+      ],
+      "shown": [
+        2
+      ],
+      "scores": [
+        0.8220640420913696,
+        0.8066520690917969,
+        0.8711262345314026,
+        0.7793936133384705,
+        0.8174742460250854,
+        0.8457663655281067,
+        0.8336038589477539,
+        0.8140383362770081
+      ],
+      "nativeMs": 334,
+      "cold": false,
+      "bridgeMs": 334,
+      "diagnosticFrameMs": 349
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "id": "fresh-edge-2",
+      "corpus": 1,
+      "category": "edge",
+      "language": "en",
+      "acceptable": [
+        6
+      ],
+      "shown": [
+        6
+      ],
+      "scores": [
+        0.8287271857261658,
+        0.8271194696426392,
+        0.8274137377738953,
+        0.8240129351615906,
+        0.811427652835846,
+        0.8134281635284424,
+        0.8843905329704285,
+        0.8010737299919128
+      ],
+      "nativeMs": 363,
+      "cold": false,
+      "bridgeMs": 365,
+      "diagnosticFrameMs": 388
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "id": "fresh-edge-3",
+      "corpus": 1,
+      "category": "edge",
+      "language": "mixed",
+      "acceptable": [
+        7
+      ],
+      "shown": [
+        7
+      ],
+      "scores": [
+        0.8422093987464905,
+        0.8444445133209229,
+        0.819815993309021,
+        0.8155480027198792,
+        0.831378698348999,
+        0.8459071516990662,
+        0.8286046385765076,
+        0.893276035785675
+      ],
+      "nativeMs": 342,
+      "cold": false,
+      "bridgeMs": 345,
+      "diagnosticFrameMs": 371
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "id": "fresh-edge-4",
+      "corpus": 2,
+      "category": "edge",
+      "language": "en",
+      "acceptable": [
+        0
+      ],
+      "shown": [
+        0
+      ],
+      "scores": [
+        0.8902893662452698,
+        0.7802621722221375,
+        0.7990822196006775,
+        0.7941116094589233,
+        0.7814998626708984,
+        0.8110612630844116,
+        0.8079191446304321,
+        0.7968554496765137
+      ],
+      "nativeMs": 334,
+      "cold": false,
+      "bridgeMs": 336,
+      "diagnosticFrameMs": 347
+    },
+    {
+      "kind": "row",
+      "pass": 0,
+      "id": "fresh-edge-5",
+      "corpus": 2,
+      "category": "edge",
+      "language": "mixed",
+      "acceptable": [
+        4
+      ],
+      "shown": [
+        4
+      ],
+      "scores": [
+        0.7813084125518799,
+        0.8263000845909119,
+        0.8076983094215393,
+        0.8382255434989929,
+        0.9058573842048645,
+        0.804427444934845,
+        0.814533531665802,
+        0.8192601799964905
+      ],
+      "nativeMs": 332,
+      "cold": false,
+      "bridgeMs": 334,
+      "diagnosticFrameMs": 348
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "id": "fresh-0-related-0",
+      "corpus": 0,
+      "category": "related",
+      "language": "en",
+      "acceptable": [
+        0
+      ],
+      "shown": [
+        0
+      ],
+      "scores": [
+        0.91991126537323,
+        0.8364295959472656,
+        0.8551693558692932,
+        0.7920863032341003,
+        0.8341576457023621,
+        0.8190950155258179,
+        0.8358614444732666,
+        0.8149558901786804
+      ],
+      "nativeMs": 369,
+      "cold": false,
+      "bridgeMs": 370,
+      "diagnosticFrameMs": 379
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "id": "fresh-0-related-1",
+      "corpus": 0,
+      "category": "related",
+      "language": "ko",
+      "acceptable": [
+        1
+      ],
+      "shown": [
+        1
+      ],
+      "scores": [
+        0.7808021306991577,
+        0.8463732600212097,
+        0.8006126880645752,
+        0.7712281346321106,
+        0.7993161678314209,
+        0.7891231179237366,
+        0.8041488528251648,
+        0.7843128442764282
+      ],
+      "nativeMs": 331,
+      "cold": false,
+      "bridgeMs": 332,
+      "diagnosticFrameMs": 356
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "id": "fresh-0-related-2",
+      "corpus": 0,
+      "category": "related",
+      "language": "ja",
+      "acceptable": [
+        2
+      ],
+      "shown": [
+        2
+      ],
+      "scores": [
+        0.8169600367546082,
+        0.7837170362472534,
+        0.8486312031745911,
+        0.7895628809928894,
+        0.811676561832428,
+        0.8167895674705505,
+        0.8174134492874146,
+        0.7986162900924683
+      ],
+      "nativeMs": 327,
+      "cold": false,
+      "bridgeMs": 330,
+      "diagnosticFrameMs": 339
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "id": "fresh-0-related-3",
+      "corpus": 0,
+      "category": "related",
+      "language": "zh",
+      "acceptable": [
+        3
+      ],
+      "shown": [
+        3
+      ],
+      "scores": [
+        0.8119863271713257,
+        0.8197046518325806,
+        0.8108677864074707,
+        0.8818308115005493,
+        0.8195434212684631,
+        0.7890344858169556,
+        0.8262400031089783,
+        0.8220618367195129
+      ],
+      "nativeMs": 359,
+      "cold": false,
+      "bridgeMs": 361,
+      "diagnosticFrameMs": 373
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "id": "fresh-0-related-4",
+      "corpus": 0,
+      "category": "related",
+      "language": "es",
+      "acceptable": [
+        4
+      ],
+      "shown": [
+        4
+      ],
+      "scores": [
+        0.8412829041481018,
+        0.8266003131866455,
+        0.8661192059516907,
+        0.8212141990661621,
+        0.9010213613510132,
+        0.8374285697937012,
+        0.8583934903144836,
+        0.8338050246238708
+      ],
+      "nativeMs": 316,
+      "cold": false,
+      "bridgeMs": 317,
+      "diagnosticFrameMs": 334
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "id": "fresh-0-related-5",
+      "corpus": 0,
+      "category": "related",
+      "language": "fr",
+      "acceptable": [
+        5
+      ],
+      "shown": [
+        5
+      ],
+      "scores": [
+        0.8416500687599182,
+        0.8468856811523438,
+        0.8450665473937988,
+        0.806499183177948,
+        0.8383655548095703,
+        0.8669626116752625,
+        0.8452798128128052,
+        0.8348181843757629
+      ],
+      "nativeMs": 362,
+      "cold": false,
+      "bridgeMs": 363,
+      "diagnosticFrameMs": 376
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "id": "fresh-0-related-6",
+      "corpus": 0,
+      "category": "related",
+      "language": "pt",
+      "acceptable": [
+        6
+      ],
+      "shown": [],
+      "scores": [
+        0.8106665015220642,
+        0.813730776309967,
+        0.8316008448600769,
+        0.7950676083564758,
+        0.817231297492981,
+        0.8190303444862366,
+        0.8291230797767639,
+        0.8083348870277405
+      ],
+      "nativeMs": 353,
+      "cold": false,
+      "bridgeMs": 354,
+      "diagnosticFrameMs": 370
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "id": "fresh-0-related-7",
+      "corpus": 0,
+      "category": "related",
+      "language": "hi",
+      "acceptable": [
+        7
+      ],
+      "shown": [],
+      "scores": [
+        0.8224613070487976,
+        0.8156071901321411,
+        0.8431202173233032,
+        0.8291125893592834,
+        0.8299161195755005,
+        0.8173342943191528,
+        0.8361639976501465,
+        0.858250081539154
+      ],
+      "nativeMs": 358,
+      "cold": false,
+      "bridgeMs": 359,
+      "diagnosticFrameMs": 378
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "id": "fresh-1-related-0",
+      "corpus": 1,
+      "category": "related",
+      "language": "en",
+      "acceptable": [
+        0
+      ],
+      "shown": [
+        0
+      ],
+      "scores": [
+        0.9095698595046997,
+        0.8505449295043945,
+        0.8253684043884277,
+        0.8411207795143127,
+        0.8365248441696167,
+        0.8211244940757751,
+        0.8280690312385559,
+        0.8454577922821045
+      ],
+      "nativeMs": 334,
+      "cold": false,
+      "bridgeMs": 336,
+      "diagnosticFrameMs": 351
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "id": "fresh-1-related-1",
+      "corpus": 1,
+      "category": "related",
+      "language": "ko",
+      "acceptable": [
+        1
+      ],
+      "shown": [
+        1
+      ],
+      "scores": [
+        0.8241406679153442,
+        0.8529669046401978,
+        0.8083779215812683,
+        0.8158606886863708,
+        0.8012576699256897,
+        0.7943251729011536,
+        0.8200870752334595,
+        0.8137775659561157
+      ],
+      "nativeMs": 341,
+      "cold": false,
+      "bridgeMs": 343,
+      "diagnosticFrameMs": 362
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "id": "fresh-1-related-2",
+      "corpus": 1,
+      "category": "related",
+      "language": "ja",
+      "acceptable": [
+        2
+      ],
+      "shown": [],
+      "scores": [
+        0.8417364358901978,
+        0.826786458492279,
+        0.85645592212677,
+        0.8090969324111938,
+        0.8041883707046509,
+        0.8142204880714417,
+        0.7964054942131042,
+        0.832622766494751
+      ],
+      "nativeMs": 331,
+      "cold": false,
+      "bridgeMs": 333,
+      "diagnosticFrameMs": 345
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "id": "fresh-1-related-3",
+      "corpus": 1,
+      "category": "related",
+      "language": "zh",
+      "acceptable": [
+        3
+      ],
+      "shown": [
+        3
+      ],
+      "scores": [
+        0.794651448726654,
+        0.8002299666404724,
+        0.7971799969673157,
+        0.8429561853408813,
+        0.8040435910224915,
+        0.8159663081169128,
+        0.789306104183197,
+        0.7865306735038757
+      ],
+      "nativeMs": 325,
+      "cold": false,
+      "bridgeMs": 326,
+      "diagnosticFrameMs": 338
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "id": "fresh-1-related-4",
+      "corpus": 1,
+      "category": "related",
+      "language": "es",
+      "acceptable": [
+        4
+      ],
+      "shown": [
+        4
+      ],
+      "scores": [
+        0.8215503692626953,
+        0.8120096325874329,
+        0.810794472694397,
+        0.7934192419052124,
+        0.8531413674354553,
+        0.8173063397407532,
+        0.8258386850357056,
+        0.8224014043807983
+      ],
+      "nativeMs": 342,
+      "cold": false,
+      "bridgeMs": 344,
+      "diagnosticFrameMs": 357
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "id": "fresh-1-related-5",
+      "corpus": 1,
+      "category": "related",
+      "language": "fr",
+      "acceptable": [
+        5
+      ],
+      "shown": [
+        5
+      ],
+      "scores": [
+        0.8079954981803894,
+        0.8224576711654663,
+        0.8254584074020386,
+        0.8472235202789307,
+        0.8032768368721008,
+        0.9075092077255249,
+        0.8129879832267761,
+        0.8293159604072571
+      ],
+      "nativeMs": 337,
+      "cold": false,
+      "bridgeMs": 337,
+      "diagnosticFrameMs": 357
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "id": "fresh-1-related-6",
+      "corpus": 1,
+      "category": "related",
+      "language": "pt",
+      "acceptable": [
+        6
+      ],
+      "shown": [
+        6
+      ],
+      "scores": [
+        0.8224799633026123,
+        0.8342674374580383,
+        0.8176566958427429,
+        0.8027167916297913,
+        0.7857220768928528,
+        0.7898634076118469,
+        0.8527496457099915,
+        0.7855337262153625
+      ],
+      "nativeMs": 335,
+      "cold": false,
+      "bridgeMs": 337,
+      "diagnosticFrameMs": 364
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "id": "fresh-1-related-7",
+      "corpus": 1,
+      "category": "related",
+      "language": "hi",
+      "acceptable": [
+        7
+      ],
+      "shown": [
+        7
+      ],
+      "scores": [
+        0.8376975059509277,
+        0.8334904313087463,
+        0.8361126184463501,
+        0.8107787370681763,
+        0.8281561136245728,
+        0.8341039419174194,
+        0.828714907169342,
+        0.8916097283363342
+      ],
+      "nativeMs": 352,
+      "cold": false,
+      "bridgeMs": 353,
+      "diagnosticFrameMs": 370
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "id": "fresh-2-related-0",
+      "corpus": 2,
+      "category": "related",
+      "language": "en",
+      "acceptable": [
+        0
+      ],
+      "shown": [
+        0
+      ],
+      "scores": [
+        0.8796272873878479,
+        0.79641193151474,
+        0.8003697395324707,
+        0.8184375166893005,
+        0.8101654052734375,
+        0.8121525049209595,
+        0.8440904021263123,
+        0.8381274342536926
+      ],
+      "nativeMs": 324,
+      "cold": false,
+      "bridgeMs": 325,
+      "diagnosticFrameMs": 344
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "id": "fresh-2-related-1",
+      "corpus": 2,
+      "category": "related",
+      "language": "ko",
+      "acceptable": [
+        1
+      ],
+      "shown": [
+        1
+      ],
+      "scores": [
+        0.7779263257980347,
+        0.8517564535140991,
+        0.7935062050819397,
+        0.83167964220047,
+        0.8276787996292114,
+        0.8056754469871521,
+        0.8085256218910217,
+        0.8170205354690552
+      ],
+      "nativeMs": 314,
+      "cold": false,
+      "bridgeMs": 315,
+      "diagnosticFrameMs": 327
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "id": "fresh-2-related-2",
+      "corpus": 2,
+      "category": "related",
+      "language": "ja",
+      "acceptable": [
+        2
+      ],
+      "shown": [
+        2
+      ],
+      "scores": [
+        0.81574946641922,
+        0.7988660931587219,
+        0.8685406446456909,
+        0.8004089593887329,
+        0.8133118152618408,
+        0.7949074506759644,
+        0.8116265535354614,
+        0.8319807052612305
+      ],
+      "nativeMs": 313,
+      "cold": false,
+      "bridgeMs": 314,
+      "diagnosticFrameMs": 352
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "id": "fresh-2-related-3",
+      "corpus": 2,
+      "category": "related",
+      "language": "zh",
+      "acceptable": [
+        3
+      ],
+      "shown": [
+        3
+      ],
+      "scores": [
+        0.7809997797012329,
+        0.790183424949646,
+        0.7759577035903931,
+        0.8674425482749939,
+        0.7992681860923767,
+        0.788708508014679,
+        0.8088957071304321,
+        0.8217223286628723
+      ],
+      "nativeMs": 298,
+      "cold": false,
+      "bridgeMs": 300,
+      "diagnosticFrameMs": 321
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "id": "fresh-2-related-4",
+      "corpus": 2,
+      "category": "related",
+      "language": "es",
+      "acceptable": [
+        4
+      ],
+      "shown": [
+        4
+      ],
+      "scores": [
+        0.8039585947990417,
+        0.8390747308731079,
+        0.8096230626106262,
+        0.8381584882736206,
+        0.9025508165359497,
+        0.8323185443878174,
+        0.825854480266571,
+        0.8281757235527039
+      ],
+      "nativeMs": 294,
+      "cold": false,
+      "bridgeMs": 296,
+      "diagnosticFrameMs": 311
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "id": "fresh-2-related-5",
+      "corpus": 2,
+      "category": "related",
+      "language": "fr",
+      "acceptable": [
+        5
+      ],
+      "shown": [
+        5
+      ],
+      "scores": [
+        0.7879273295402527,
+        0.7835745811462402,
+        0.7822189927101135,
+        0.8132005333900452,
+        0.8193495273590088,
+        0.8480170965194702,
+        0.825689971446991,
+        0.8012487292289734
+      ],
+      "nativeMs": 319,
+      "cold": false,
+      "bridgeMs": 321,
+      "diagnosticFrameMs": 339
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "id": "fresh-2-related-6",
+      "corpus": 2,
+      "category": "related",
+      "language": "pt",
+      "acceptable": [
+        6
+      ],
+      "shown": [
+        6
+      ],
+      "scores": [
+        0.7849746346473694,
+        0.7620258927345276,
+        0.7702568173408508,
+        0.7970353960990906,
+        0.7944190502166748,
+        0.82027268409729,
+        0.8520780801773071,
+        0.7879641652107239
+      ],
+      "nativeMs": 336,
+      "cold": false,
+      "bridgeMs": 337,
+      "diagnosticFrameMs": 355
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "id": "fresh-2-related-7",
+      "corpus": 2,
+      "category": "related",
+      "language": "hi",
+      "acceptable": [
+        7
+      ],
+      "shown": [
+        7
+      ],
+      "scores": [
+        0.8120887875556946,
+        0.8051149845123291,
+        0.7823876738548279,
+        0.7933638691902161,
+        0.817818284034729,
+        0.7819433212280273,
+        0.8266206383705139,
+        0.9038084149360657
+      ],
+      "nativeMs": 335,
+      "cold": false,
+      "bridgeMs": 336,
+      "diagnosticFrameMs": 345
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "id": "fresh-0-unrelated-0",
+      "corpus": 0,
+      "category": "unrelated",
+      "language": "en",
+      "acceptable": [],
+      "shown": [],
+      "scores": [
+        0.7538483738899231,
+        0.7505770325660706,
+        0.7665032148361206,
+        0.7369086146354675,
+        0.7580329179763794,
+        0.7608623504638672,
+        0.7555108666419983,
+        0.7545314431190491
+      ],
+      "nativeMs": 345,
+      "cold": false,
+      "bridgeMs": 346,
+      "diagnosticFrameMs": 357
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "id": "fresh-0-unrelated-1",
+      "corpus": 0,
+      "category": "unrelated",
+      "language": "ko",
+      "acceptable": [],
+      "shown": [],
+      "scores": [
+        0.6959110498428345,
+        0.7258018851280212,
+        0.6928526759147644,
+        0.7130751609802246,
+        0.7229630351066589,
+        0.7250459790229797,
+        0.709010899066925,
+        0.7188772559165955
+      ],
+      "nativeMs": 338,
+      "cold": false,
+      "bridgeMs": 339,
+      "diagnosticFrameMs": 363
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "id": "fresh-0-unrelated-2",
+      "corpus": 0,
+      "category": "unrelated",
+      "language": "ja",
+      "acceptable": [],
+      "shown": [],
+      "scores": [
+        0.6995243430137634,
+        0.7085138559341431,
+        0.7181344032287598,
+        0.7048256993293762,
+        0.7128407955169678,
+        0.7293202877044678,
+        0.7027308940887451,
+        0.7091606259346008
+      ],
+      "nativeMs": 328,
+      "cold": false,
+      "bridgeMs": 329,
+      "diagnosticFrameMs": 339
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "id": "fresh-0-unrelated-3",
+      "corpus": 0,
+      "category": "unrelated",
+      "language": "es",
+      "acceptable": [],
+      "shown": [],
+      "scores": [
+        0.7028248906135559,
+        0.7040361166000366,
+        0.7191611528396606,
+        0.6876639723777771,
+        0.7173048257827759,
+        0.717275857925415,
+        0.7093915939331055,
+        0.7079924941062927
+      ],
+      "nativeMs": 347,
+      "cold": false,
+      "bridgeMs": 349,
+      "diagnosticFrameMs": 367
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "id": "fresh-1-unrelated-0",
+      "corpus": 1,
+      "category": "unrelated",
+      "language": "en",
+      "acceptable": [],
+      "shown": [],
+      "scores": [
+        0.7408716678619385,
+        0.7489988803863525,
+        0.7429437637329102,
+        0.7488511800765991,
+        0.7419016361236572,
+        0.7544991374015808,
+        0.7523204684257507,
+        0.7309533953666687
+      ],
+      "nativeMs": 334,
+      "cold": false,
+      "bridgeMs": 336,
+      "diagnosticFrameMs": 356
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "id": "fresh-1-unrelated-1",
+      "corpus": 1,
+      "category": "unrelated",
+      "language": "zh",
+      "acceptable": [],
+      "shown": [],
+      "scores": [
+        0.7227295637130737,
+        0.7247880697250366,
+        0.7371491193771362,
+        0.7296713590621948,
+        0.7371934056282043,
+        0.7395465970039368,
+        0.7510444521903992,
+        0.7109425663948059
+      ],
+      "nativeMs": 345,
+      "cold": false,
+      "bridgeMs": 347,
+      "diagnosticFrameMs": 365
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "id": "fresh-1-unrelated-2",
+      "corpus": 1,
+      "category": "unrelated",
+      "language": "fr",
+      "acceptable": [],
+      "shown": [],
+      "scores": [
+        0.7006853818893433,
+        0.6836890578269958,
+        0.6925680637359619,
+        0.6780466437339783,
+        0.6687000393867493,
+        0.6844648122787476,
+        0.6930238604545593,
+        0.6624652743339539
+      ],
+      "nativeMs": 329,
+      "cold": false,
+      "bridgeMs": 330,
+      "diagnosticFrameMs": 343
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "id": "fresh-1-unrelated-3",
+      "corpus": 1,
+      "category": "unrelated",
+      "language": "pt",
+      "acceptable": [],
+      "shown": [],
+      "scores": [
+        0.7318777441978455,
+        0.723538339138031,
+        0.7305709719657898,
+        0.7236176133155823,
+        0.7204129695892334,
+        0.718068540096283,
+        0.7095094323158264,
+        0.7080338001251221
+      ],
+      "nativeMs": 337,
+      "cold": false,
+      "bridgeMs": 338,
+      "diagnosticFrameMs": 358
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "id": "fresh-2-unrelated-0",
+      "corpus": 2,
+      "category": "unrelated",
+      "language": "en",
+      "acceptable": [],
+      "shown": [],
+      "scores": [
+        0.7787529230117798,
+        0.7628555297851562,
+        0.7932184338569641,
+        0.7730226516723633,
+        0.79459547996521,
+        0.7871688008308411,
+        0.80122309923172,
+        0.7822399735450745
+      ],
+      "nativeMs": 341,
+      "cold": false,
+      "bridgeMs": 342,
+      "diagnosticFrameMs": 354
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "id": "fresh-2-unrelated-1",
+      "corpus": 2,
+      "category": "unrelated",
+      "language": "ko",
+      "acceptable": [],
+      "shown": [],
+      "scores": [
+        0.6940417885780334,
+        0.7098580002784729,
+        0.7150718569755554,
+        0.7623120546340942,
+        0.730945348739624,
+        0.7725489139556885,
+        0.7515878677368164,
+        0.7391860485076904
+      ],
+      "nativeMs": 320,
+      "cold": false,
+      "bridgeMs": 321,
+      "diagnosticFrameMs": 348
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "id": "fresh-2-unrelated-2",
+      "corpus": 2,
+      "category": "unrelated",
+      "language": "ja",
+      "acceptable": [],
+      "shown": [],
+      "scores": [
+        0.69316565990448,
+        0.7140293717384338,
+        0.6942330002784729,
+        0.7158163189888,
+        0.732363224029541,
+        0.725166380405426,
+        0.7103090286254883,
+        0.7121230959892273
+      ],
+      "nativeMs": 313,
+      "cold": false,
+      "bridgeMs": 315,
+      "diagnosticFrameMs": 332
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "id": "fresh-2-unrelated-3",
+      "corpus": 2,
+      "category": "unrelated",
+      "language": "hi",
+      "acceptable": [],
+      "shown": [],
+      "scores": [
+        0.721002459526062,
+        0.7234921455383301,
+        0.7318777441978455,
+        0.7156482934951782,
+        0.7339702248573303,
+        0.7231262922286987,
+        0.7236401438713074,
+        0.7342572808265686
+      ],
+      "nativeMs": 308,
+      "cold": false,
+      "bridgeMs": 310,
+      "diagnosticFrameMs": 316
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "id": "fresh-ambiguous-0",
+      "corpus": 0,
+      "category": "ambiguous",
+      "language": "en",
+      "acceptable": [],
+      "shown": [],
+      "scores": [
+        0.804530143737793,
+        0.8011887073516846,
+        0.815162181854248,
+        0.7805036902427673,
+        0.8116133809089661,
+        0.7989936470985413,
+        0.805208683013916,
+        0.7919003963470459
+      ],
+      "nativeMs": 313,
+      "cold": false,
+      "bridgeMs": 313,
+      "diagnosticFrameMs": 325
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "id": "fresh-ambiguous-1",
+      "corpus": 0,
+      "category": "ambiguous",
+      "language": "ko",
+      "acceptable": [
+        1,
+        4,
+        6
+      ],
+      "shown": [],
+      "scores": [
+        0.8030490279197693,
+        0.812242865562439,
+        0.8149392008781433,
+        0.8130757808685303,
+        0.840968906879425,
+        0.8269694447517395,
+        0.8213832974433899,
+        0.8086878657341003
+      ],
+      "nativeMs": 304,
+      "cold": false,
+      "bridgeMs": 306,
+      "diagnosticFrameMs": 333
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "id": "fresh-ambiguous-2",
+      "corpus": 1,
+      "category": "ambiguous",
+      "language": "en",
+      "acceptable": [],
+      "shown": [
+        4
+      ],
+      "scores": [
+        0.8184357285499573,
+        0.8018462061882019,
+        0.8046854734420776,
+        0.7875856757164001,
+        0.8369057774543762,
+        0.8076823353767395,
+        0.815229058265686,
+        0.813568651676178
+      ],
+      "nativeMs": 314,
+      "cold": false,
+      "bridgeMs": 315,
+      "diagnosticFrameMs": 341
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "id": "fresh-ambiguous-3",
+      "corpus": 1,
+      "category": "ambiguous",
+      "language": "es",
+      "acceptable": [
+        0,
+        1,
+        7
+      ],
+      "shown": [
+        7
+      ],
+      "scores": [
+        0.8467877507209778,
+        0.8412961959838867,
+        0.832984447479248,
+        0.8282334208488464,
+        0.8373216390609741,
+        0.8299777507781982,
+        0.8398401737213135,
+        0.8724319934844971
+      ],
+      "nativeMs": 310,
+      "cold": false,
+      "bridgeMs": 313,
+      "diagnosticFrameMs": 324
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "id": "fresh-ambiguous-4",
+      "corpus": 2,
+      "category": "ambiguous",
+      "language": "en",
+      "acceptable": [],
+      "shown": [],
+      "scores": [
+        0.7378654479980469,
+        0.7758577466011047,
+        0.7825703024864197,
+        0.7857036590576172,
+        0.7901665568351746,
+        0.7877089977264404,
+        0.7901071906089783,
+        0.7692319750785828
+      ],
+      "nativeMs": 294,
+      "cold": false,
+      "bridgeMs": 296,
+      "diagnosticFrameMs": 305
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "id": "fresh-ambiguous-5",
+      "corpus": 2,
+      "category": "ambiguous",
+      "language": "fr",
+      "acceptable": [
+        1,
+        4
+      ],
+      "shown": [
+        4
+      ],
+      "scores": [
+        0.7616496682167053,
+        0.8059878349304199,
+        0.7734750509262085,
+        0.8192278146743774,
+        0.8423915505409241,
+        0.7999414801597595,
+        0.812030553817749,
+        0.789064884185791
+      ],
+      "nativeMs": 301,
+      "cold": false,
+      "bridgeMs": 302,
+      "diagnosticFrameMs": 318
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "id": "fresh-edge-0",
+      "corpus": 0,
+      "category": "edge",
+      "language": "en",
+      "acceptable": [
+        5
+      ],
+      "shown": [
+        5
+      ],
+      "scores": [
+        0.8455343842506409,
+        0.8276645541191101,
+        0.8461064100265503,
+        0.8073970079421997,
+        0.827322781085968,
+        0.894741952419281,
+        0.8443940281867981,
+        0.8356611132621765
+      ],
+      "nativeMs": 319,
+      "cold": false,
+      "bridgeMs": 320,
+      "diagnosticFrameMs": 328
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "id": "fresh-edge-1",
+      "corpus": 0,
+      "category": "edge",
+      "language": "mixed",
+      "acceptable": [
+        2
+      ],
+      "shown": [
+        2
+      ],
+      "scores": [
+        0.8220640420913696,
+        0.8066520690917969,
+        0.8711262345314026,
+        0.7793936133384705,
+        0.8174742460250854,
+        0.8457663655281067,
+        0.8336038589477539,
+        0.8140383362770081
+      ],
+      "nativeMs": 326,
+      "cold": false,
+      "bridgeMs": 328,
+      "diagnosticFrameMs": 342
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "id": "fresh-edge-2",
+      "corpus": 1,
+      "category": "edge",
+      "language": "en",
+      "acceptable": [
+        6
+      ],
+      "shown": [
+        6
+      ],
+      "scores": [
+        0.8287271857261658,
+        0.8271194696426392,
+        0.8274137377738953,
+        0.8240129351615906,
+        0.811427652835846,
+        0.8134281635284424,
+        0.8843905329704285,
+        0.8010737299919128
+      ],
+      "nativeMs": 338,
+      "cold": false,
+      "bridgeMs": 342,
+      "diagnosticFrameMs": 366
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "id": "fresh-edge-3",
+      "corpus": 1,
+      "category": "edge",
+      "language": "mixed",
+      "acceptable": [
+        7
+      ],
+      "shown": [
+        7
+      ],
+      "scores": [
+        0.8422093987464905,
+        0.8444445133209229,
+        0.819815993309021,
+        0.8155480027198792,
+        0.831378698348999,
+        0.8459071516990662,
+        0.8286046385765076,
+        0.893276035785675
+      ],
+      "nativeMs": 357,
+      "cold": false,
+      "bridgeMs": 359,
+      "diagnosticFrameMs": 371
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "id": "fresh-edge-4",
+      "corpus": 2,
+      "category": "edge",
+      "language": "en",
+      "acceptable": [
+        0
+      ],
+      "shown": [
+        0
+      ],
+      "scores": [
+        0.8902893662452698,
+        0.7802621722221375,
+        0.7990822196006775,
+        0.7941116094589233,
+        0.7814998626708984,
+        0.8110612630844116,
+        0.8079191446304321,
+        0.7968554496765137
+      ],
+      "nativeMs": 389,
+      "cold": false,
+      "bridgeMs": 391,
+      "diagnosticFrameMs": 403
+    },
+    {
+      "kind": "row",
+      "pass": 1,
+      "id": "fresh-edge-5",
+      "corpus": 2,
+      "category": "edge",
+      "language": "mixed",
+      "acceptable": [
+        4
+      ],
+      "shown": [
+        4
+      ],
+      "scores": [
+        0.7813084125518799,
+        0.8263000845909119,
+        0.8076983094215393,
+        0.8382255434989929,
+        0.9058573842048645,
+        0.804427444934845,
+        0.814533531665802,
+        0.8192601799964905
+      ],
+      "nativeMs": 317,
+      "cold": false,
+      "bridgeMs": 319,
+      "diagnosticFrameMs": 334
+    },
+    {
+      "kind": "mixedCorpusProbe",
+      "id": "fresh-0-related-0",
+      "records": 24,
+      "acceptable": [
+        0
+      ],
+      "shown": [
+        0
+      ],
+      "scores": [
+        0.91991126537323,
+        0.8364295959472656,
+        0.8551693558692932,
+        0.7920863032341003,
+        0.8341576457023621,
+        0.8190950155258179,
+        0.8358614444732666,
+        0.8149558901786804,
+        0.8467874526977539,
+        0.8181169033050537,
+        0.8397853374481201,
+        0.8543050289154053,
+        0.816825807094574,
+        0.831739068031311,
+        0.8077279329299927,
+        0.8246934413909912,
+        0.8097118735313416,
+        0.8189712762832642,
+        0.8152179718017578,
+        0.8344430327415466,
+        0.8195964694023132,
+        0.8481037616729736,
+        0.8313595056533813,
+        0.82181316614151
+      ],
+      "nativeMs": 1020
+    },
+    {
+      "kind": "mixedCorpusProbe",
+      "id": "fresh-1-related-0",
+      "records": 24,
+      "acceptable": [
+        8
+      ],
+      "shown": [
+        8
+      ],
+      "scores": [
+        0.8424713611602783,
+        0.8486677408218384,
+        0.8442713022232056,
+        0.8010737299919128,
+        0.8368751406669617,
+        0.8344956636428833,
+        0.851091206073761,
+        0.8135721683502197,
+        0.9095698595046997,
+        0.8505449295043945,
+        0.8253684043884277,
+        0.8411207795143127,
+        0.8365248441696167,
+        0.8211244940757751,
+        0.8280690312385559,
+        0.8454577922821045,
+        0.8527840375900269,
+        0.8043298125267029,
+        0.8317451477050781,
+        0.8403650522232056,
+        0.8424791097640991,
+        0.8365017175674438,
+        0.8405504822731018,
+        0.8275573253631592
+      ],
+      "nativeMs": 971
+    },
+    {
+      "kind": "mixedCorpusProbe",
+      "id": "fresh-2-related-0",
+      "records": 24,
+      "acceptable": [
+        16
+      ],
+      "shown": [
+        16
+      ],
+      "scores": [
+        0.8003475666046143,
+        0.8596146106719971,
+        0.8200516104698181,
+        0.8020243048667908,
+        0.8274317979812622,
+        0.8005717992782593,
+        0.8381966352462769,
+        0.814382791519165,
+        0.8424947261810303,
+        0.8263217806816101,
+        0.8211464285850525,
+        0.7977906465530396,
+        0.8314129710197449,
+        0.8118590116500854,
+        0.825380265712738,
+        0.8047540187835693,
+        0.8796272873878479,
+        0.79641193151474,
+        0.8003697395324707,
+        0.8184375166893005,
+        0.8101654052734375,
+        0.8121525049209595,
+        0.8440904021263123,
+        0.8381274342536926
+      ],
+      "nativeMs": 951
+    },
+    {
+      "kind": "done",
+      "mainCalls": 96,
+      "extraMixedCorpusCalls": 3,
+      "weightsChanged": false,
+      "policyChanged": false
+    }
+  ]
+}
