@@ -554,10 +554,6 @@ class _Achievements extends StatelessWidget {
             style: Theme.of(context).textTheme.headlineLarge,
           ),
           const SizedBox(height: 10),
-          const LocalizedText(
-            '내가 남긴 행동의 요약입니다.\n집중의 진실성이나 업무 품질을 인증하지 않습니다.',
-            style: TextStyle(color: muted),
-          ),
           const SizedBox(height: 24),
           for (final a in achievements(c.state, seeker: r.seeker))
             Padding(

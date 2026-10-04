@@ -7,13 +7,12 @@ class _Settings extends StatelessWidget {
   @override
   Widget build(BuildContext context) => PageBody(
     children: [
-      const Eyebrow('MAKE YOURSELF AT HOME'),
+      LocalizedText('작업실 설정', style: Theme.of(context).textTheme.headlineLarge),
+      const SizedBox(height: 20),
       ListTile(
         contentPadding: EdgeInsets.zero,
         leading: const Icon(Icons.auto_awesome_outlined),
-        title: Text(
-          tr(context, '기기 안의 AI 회고 도우미', 'On-device reflection assistant'),
-        ),
+        title: Text(tr(context, '회고 도우미', 'Reflection assistant')),
         subtitle: Text(
           tr(
             context,
@@ -52,7 +51,9 @@ class _Settings extends StatelessWidget {
                     showDialog<void>(
                       context: context,
                       builder: (context) => AlertDialog(
-                        title: const Text('On-device AI · licenses'),
+                        title: Text(
+                          tr(context, '오픈소스 라이선스', 'Open-source licenses'),
+                        ),
                         content: SingleChildScrollView(
                           child: Text(
                             notices,
@@ -68,13 +69,7 @@ class _Settings extends StatelessWidget {
                       ),
                     );
                   },
-                  child: Text(
-                    tr(
-                      context,
-                      '모델과 오픈소스 라이선스',
-                      'Model and open-source licenses',
-                    ),
-                  ),
+                  child: Text(tr(context, '오픈소스 라이선스', 'Open-source licenses')),
                 ),
               ],
             ),
@@ -121,9 +116,7 @@ class _Settings extends StatelessWidget {
         }),
       ),
       const SizedBox(height: 20),
-      const SizedBox(height: 10),
-      LocalizedText('작업실 설정', style: Theme.of(context).textTheme.headlineLarge),
-      const SizedBox(height: 26),
+
       PaperCard(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -147,7 +140,7 @@ class _Settings extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             ExportButton(
-              label: uiText(context, 'JSON 파일로 내보내기'),
+              label: tr(context, '기록 내보내기', 'Export records'),
               native: r.native,
               content: c.exportJson,
             ),
@@ -189,15 +182,6 @@ class _Settings extends StatelessWidget {
         ),
         value: c.state.settings['reduceMotion'] == true,
         onChanged: (v) => perform(context, () => c.setting('reduceMotion', v)),
-      ),
-      const ListTile(
-        contentPadding: EdgeInsets.zero,
-        leading: Icon(Icons.schedule_outlined),
-        title: LocalizedText('기기 시간대 사용'),
-        subtitle: LocalizedText(
-          '집중 경과 시간은 벽시계 변경의 영향을 받지 않습니다.',
-          style: TextStyle(fontSize: 12),
-        ),
       ),
       ListTile(
         contentPadding: EdgeInsets.zero,
@@ -279,8 +263,12 @@ class _Settings extends StatelessWidget {
                         'Your work notes and trade journal stay on this device. Export a JSON file before uninstalling. Automatic backup and import are not provided.\n\nWhen you connect a wallet, your public address and transaction IDs go directly to Solana public RPC to read activity. Notes and project names are not sent. Connection is read-only: no message signing, transaction signing or transfers are requested. Saved records remain after disconnecting.\n\nPublic RPC may be rate-limited or unavailable. Shared rooms and purchases are not available in this edition.\n\nNotifications are optional. No advertising or analytics SDKs are included.',
                       ),
                     )
-                  : const LocalizedText(
-                      '개인 작업 기록과 매매일지는 SQLite로 이 기기에만 저장됩니다. 클라우드 백업은 제공하지 않습니다.\n\n공동 작업을 선택하면 지갑 주소, SGT 확인 정보, 방의 준비·마무리 상태와 선택한 작업 분류만 서버에 저장됩니다. 프로젝트명과 결과 원문은 전송하지 않습니다.\n\n구매는 공개 Solana 거래입니다. 거래 기록과 재사용 방지 정보는 서버 계정 삭제 후에도 보존됩니다. 연결 해제는 구매 취소나 로컬 기록 삭제가 아닙니다. 서버 계정 삭제는 앱 내 구매 복원 권한을 제거합니다.\n\n알림은 선택이며 정확 알람·연락처·위치 권한을 요구하지 않습니다. 광고·분석 SDK는 포함하지 않습니다.\n\n이 빌드는 개발 검증용입니다. 지원 주소·운영자·보관 기간 정책은 출시 전 설정해야 합니다.',
+                  : Text(
+                      tr(
+                        context,
+                        "기록은 이 기기에 보관됩니다. 공동 작업에서는 지갑 주소와 Seeker 확인 정보, 방 상태만 공유합니다. 개인 메모는 공유하지 않습니다. 구매 내역은 공개 거래로 남으며 계정 삭제 후에도 보존됩니다. 연결 해제는 기록 삭제나 구매 취소가 아닙니다. 서버 계정 삭제 시 구매 복원 권한이 제거됩니다. 자동 백업은 제공하지 않습니다.",
+                        "Notes stay on this device. Shared rooms use your wallet address, Seeker verification and room status. Personal notes are not shared. Purchases are public transactions and remain after account deletion. Disconnecting does not erase records or cancel purchases. Deleting the server account removes purchase restoration. Automatic backup is not available.",
+                      ),
                     ),
             ),
             actions: [
@@ -296,26 +284,17 @@ class _Settings extends StatelessWidget {
         contentPadding: EdgeInsets.zero,
         leading: const Icon(Icons.delete_outline, color: Color(0xFF965442)),
         title: const LocalizedText('이 기기의 기록 삭제'),
-        subtitle: const LocalizedText(
-          '지갑 구매 권한과는 별개입니다.',
-          style: TextStyle(fontSize: 12),
-        ),
+
         onTap: () async {
           if (await confirm(
                 context,
                 '모든 개인 기록을 삭제할까요?',
-                '프로젝트·진행 중인 집중·저장한 결과·매매일지·설정이 삭제됩니다. 진행 중인 결제의 확인 정보는 보존합니다. 내보내지 않은 기록은 복구할 수 없습니다.',
+                '프로젝트·진행 중인 집중·저장한 결과·매매일지·설정이 삭제됩니다. 내보내지 않은 기록은 복구할 수 없습니다.',
               ) &&
               context.mounted) {
             await perform(context, c.deleteAll);
           }
         },
-      ),
-      const SizedBox(height: 24),
-      const LocalizedText(
-        'Workroom 0.2.0 · 개발 검증 빌드\n지갑 없는 개인 사용은 지금 가능합니다.',
-        textAlign: TextAlign.center,
-        style: TextStyle(fontSize: 11, color: muted),
       ),
     ],
   );
@@ -382,7 +361,7 @@ class _Wallet extends StatelessWidget {
                   const PaperCard(
                     color: Color(0xFFE8ECDD),
                     child: LocalizedText(
-                      '연결 서비스 설정이 필요한 빌드입니다.\nFirebase 프로젝트와 앱 도메인 설정 후 지갑 연결을 사용할 수 있습니다.\n\n개인 작업실은 지갑 없이 완성되어 있습니다.',
+                      '지금은 지갑을 연결할 수 없어요. 잠시 후 다시 시도해 주세요.',
                       style: TextStyle(fontSize: 13, color: green),
                     ),
                   ),
@@ -477,7 +456,7 @@ class _DirectWallet extends StatelessWidget {
           ),
           const SizedBox(height: 24),
           Text(
-            tr(context, '읽기 전용 지갑 연결', 'Read-only wallet connection'),
+            tr(context, '지갑 활동 돌아보기', 'Revisit your wallet activity'),
             style: Theme.of(context).textTheme.headlineLarge,
           ),
           const SizedBox(height: 16),
@@ -506,8 +485,8 @@ class _DirectWallet extends StatelessWidget {
                 Text(
                   tr(
                     context,
-                    '공개 지갑 주소와 거래 ID를 Solana 공개 RPC로 직접 전송합니다. 메모는 이 기기에 남습니다.',
-                    'Your public wallet address and transaction IDs go directly to Solana public RPC. Your notes stay here.',
+                    '공개 주소로 거래 내역만 불러와요. 메모는 이 기기에 보관해요.',
+                    'Your public address is used to load activity. Your notes stay on this device.',
                   ),
                   style: const TextStyle(color: muted),
                 ),
@@ -536,15 +515,6 @@ class _DirectWallet extends StatelessWidget {
               child: const LocalizedText('연결 해제'),
             ),
           ],
-          const SizedBox(height: 20),
-          Text(
-            tr(
-              context,
-              '공개 RPC가 혼잡하면 잠시 후 다시 시도해 주세요. 개인 기록은 계속 사용할 수 있습니다.',
-              'If public RPC is busy, try again shortly. Your personal records remain available.',
-            ),
-            style: const TextStyle(color: muted, fontSize: 12),
-          ),
         ],
       ),
     ),

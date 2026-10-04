@@ -139,10 +139,10 @@ class _TradeJournalState extends State<_TradeJournal> {
                         context,
                         r.onlineAvailable
                             ? '연결하고, 돌아보고, 기억해요.'
-                            : '이 미리보기에서는 지갑에 연결할 수 없습니다.',
+                            : '지금은 지갑을 연결할 수 없어요.',
                         r.onlineAvailable
                             ? 'Connect. Reflect. Remember.'
-                            : 'Wallet connection is not available in this preview.',
+                            : 'Wallet connection is unavailable right now.',
                       ),
                       style: Theme.of(context).textTheme.titleLarge,
                     ),
@@ -163,8 +163,8 @@ class _TradeJournalState extends State<_TradeJournal> {
                       Text(
                         tr(
                           context,
-                          '공개 지갑 주소와 거래 ID를 Solana 공개 RPC로 직접 전송합니다. 메모는 이 기기에 남습니다.',
-                          'Your public wallet address and transaction IDs go directly to Solana public RPC. Your notes stay here.',
+                          '공개 주소로 거래 내역만 불러와요. 메모는 이 기기에 보관해요.',
+                          'Your public address is used to load activity. Your notes stay on this device.',
                         ),
                         style: const TextStyle(fontSize: 12, color: muted),
                       ),
@@ -556,8 +556,8 @@ class _ActivityCard extends StatelessWidget {
                     ? activityErrorText(context, 'parse-unavailable')
                     : tr(
                         context,
-                        '확실히 확인된 스왑만 일지로 기록할 수 있어요.',
-                        'Only confidently identified swaps can become trade journals.',
+                        '완료되지 않은 활동에는 메모를 남길 수 없어요.',
+                        'You can add a note after the activity is confirmed.',
                       ),
                 style: const TextStyle(fontSize: 12, color: muted),
               ),
@@ -619,27 +619,26 @@ class _ActivityContext extends StatelessWidget {
         style: Theme.of(context).textTheme.titleSmall,
       ),
       subtitle: Text(
-        tr(context, '온체인 사실', 'On-chain facts'),
+        tr(context, '거래 상세', 'Transaction details'),
         style: const TextStyle(fontSize: 12, color: muted),
       ),
       children: [
-        Text(
-          (activity.canJournal || activity.isTransfer)
-              ? tr(
-                  context,
-                  '온체인 거래 사실은 수정되지 않습니다.',
-                  'The on-chain facts stay unchanged.',
-                )
-              : _unclassifiedNoteText(context),
-          style: const TextStyle(fontSize: 13, color: muted),
-        ),
-        const SizedBox(height: 12),
+        if (!activity.canJournal && !activity.isTransfer) ...[
+          Text(
+            _unclassifiedNoteText(context),
+            style: const TextStyle(fontSize: 13, color: muted),
+          ),
+          const SizedBox(height: 12),
+        ],
         for (final fact in {
           tr(context, '지갑', 'Wallet'): ?wallet,
           tr(context, '서명', 'Signature'): activity.signature,
-          tr(context, '입력 토큰 주소', 'Input mint'): activity.input?.mint ?? '—',
-          tr(context, '출력 토큰 주소', 'Output mint'): activity.output?.mint ?? '—',
-          tr(context, '네트워크 수수료', 'Network fee'): '${activity.fee ?? "—"} SOL',
+          if (activity.input != null)
+            tr(context, '입력 토큰 주소', 'Input mint'): activity.input!.mint,
+          if (activity.output != null)
+            tr(context, '출력 토큰 주소', 'Output mint'): activity.output!.mint,
+          if (activity.fee != null)
+            tr(context, '네트워크 수수료', 'Network fee'): '${activity.fee} SOL',
         }.entries)
           Padding(
             padding: const EdgeInsets.only(bottom: 10),

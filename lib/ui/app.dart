@@ -10,6 +10,8 @@ import '../data/reflection_assistant.dart';
 import '../data/related_records.dart';
 import '../l10n/strings.dart';
 import '../l10n/legacy_catalog.dart';
+import '../l10n/locale_catalog.dart'
+    show additionalEnglishCatalog, translatedCatalog;
 import '../domain/trade_journal.dart';
 import '../domain/trade_journal_controller.dart';
 import 'package:uuid/uuid.dart';
@@ -46,12 +48,23 @@ Future<bool> perform(
     return true;
   } catch (e) {
     if (context.mounted) {
-      final message = e is PlatformException
+      final rawMessage = e is PlatformException
           ? errorText(e.code)
           : e
                 .toString()
                 .replaceFirst('Bad state: ', '')
                 .replaceFirst('Invalid argument(s): ', '');
+      final known =
+          englishCatalog.containsKey(rawMessage) ||
+          additionalEnglishCatalog.containsKey(rawMessage) ||
+          translatedCatalog.containsKey(rawMessage);
+      final message = known
+          ? uiText(context, rawMessage)
+          : tr(
+              context,
+              '요청을 완료하지 못했어요. 잠시 후 다시 시도해 주세요.',
+              'Unable to complete this action. Please try again.',
+            );
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(
@@ -62,14 +75,7 @@ Future<bool> perform(
                       'parse-unavailable',
                     ].contains(e.code)
                 ? activityErrorText(context, e.code)
-                : (uiText(context, message) == message &&
-                          RegExp(r'[가-힣]').hasMatch(message)
-                      ? tr(
-                          context,
-                          message,
-                          'Unable to complete this action. Please try again.',
-                        )
-                      : uiText(context, message)),
+                : message,
           ),
         ),
       );

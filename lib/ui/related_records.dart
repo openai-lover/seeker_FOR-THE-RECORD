@@ -100,7 +100,7 @@ class _RelatedRecordsPanelState extends State<_RelatedRecordsPanel> {
               ? tr(
                   context,
                   '설정에서 로컬 AI 모델을 먼저 내려받아 주세요. 기록은 아래에서 직접 볼 수 있어요.',
-                  'Download the local AI model in Settings first. You can still browse your records below.',
+                  'Set up AI in Settings, or browse your saved notes below.',
                 )
               : tr(
                   context,
@@ -234,8 +234,8 @@ class _RelatedRecordsPanelState extends State<_RelatedRecordsPanel> {
                   )
                 : tr(
                     context,
-                    '같은 지갑의 최근 기록 32개 안에서 찾습니다. 내용은 기기 밖으로 보내지 않아요.',
-                    'Search up to 32 recent records for this wallet. Your writing stays on this device.',
+                    '이 지갑에 남긴 최근 기록에서 찾아요. 글은 기기 밖으로 보내지 않아요.',
+                    'Search recent notes for this wallet. Your writing stays on this device.',
                   ),
             style: const TextStyle(color: muted, fontSize: 13),
           ),

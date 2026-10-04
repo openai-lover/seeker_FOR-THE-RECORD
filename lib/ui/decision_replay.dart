@@ -205,14 +205,6 @@ class _SavedReason extends StatelessWidget {
           '${tr(context, '메모 저장', 'Note saved')} · ${dateLabel(context, entry.baselineSavedAt ?? entry.updatedAt)}',
           style: const TextStyle(fontSize: 12, color: muted),
         ),
-        Text(
-          tr(
-            context,
-            '거래 후 작성한 기록이며, 온체인으로 증명된 동기는 아닙니다.',
-            'Written after the transaction; the chain does not prove your intention.',
-          ),
-          style: const TextStyle(fontSize: 11, color: muted),
-        ),
       ],
     ),
   );
@@ -343,11 +335,7 @@ class _ReflectionAssistantPanelState extends State<_ReflectionAssistantPanel> {
               const SizedBox(width: 10),
               Expanded(
                 child: Text(
-                  tr(
-                    context,
-                    '기기 안의 AI 회고 도우미',
-                    'On-device reflection assistant',
-                  ),
+                  tr(context, '회고 도우미', 'Reflection assistant'),
                   style: Theme.of(context).textTheme.titleMedium,
                 ),
               ),
@@ -456,7 +444,7 @@ class _ReflectionAssistantPanelState extends State<_ReflectionAssistantPanel> {
             const SizedBox(height: 8),
             Text(
               downloading
-                  ? tr(context, 'AI 모델 내려받는 중…', 'Downloading the AI model…')
+                  ? tr(context, 'AI 준비 중…', 'Setting up AI…')
                   : tr(
                       context,
                       '기기에서 질문을 고르는 중…',
@@ -481,8 +469,8 @@ class _ReflectionAssistantPanelState extends State<_ReflectionAssistantPanel> {
             Text(
               tr(
                 context,
-                '이 기능은 ARM64 Android 기기에서 사용할 수 있어요.',
-                'Available on ARM64 Android devices.',
+                '이 기기에서는 AI를 사용할 수 없어요. 질문을 직접 골라주세요.',
+                'AI is unavailable on this device. You can choose a question yourself.',
               ),
               style: const TextStyle(fontSize: 12, color: muted),
             )
@@ -490,17 +478,15 @@ class _ReflectionAssistantPanelState extends State<_ReflectionAssistantPanel> {
             Text(
               tr(
                 context,
-                '처음 한 번 약 133MB를 Hugging Face에서 내려받습니다. Wi-Fi를 권장해요. 이후에는 오프라인으로 사용할 수 있어요.',
-                'One 133 MB model download from Hugging Face. Wi-Fi recommended. Then it works offline.',
+                '처음 한 번 133MB를 내려받으면 인터넷 없이 사용할 수 있어요. Wi-Fi 연결을 권장해요.',
+                'Download 133 MB once to use AI offline. Wi-Fi recommended.',
               ),
               style: const TextStyle(fontSize: 12),
             ),
             const SizedBox(height: 10),
             OutlinedButton(
               onPressed: () => _run(true),
-              child: Text(
-                tr(context, '무료 AI 모델 내려받기', 'Download free AI model'),
-              ),
+              child: Text(tr(context, 'AI 준비하기 · 133MB', 'Set up AI · 133 MB')),
             ),
           ] else ...[
             if (!widget.manageOnly)
@@ -521,13 +507,7 @@ class _ReflectionAssistantPanelState extends State<_ReflectionAssistantPanel> {
                   await perform(context, assistant.remove);
                   await _status();
                 },
-                child: Text(
-                  tr(
-                    context,
-                    'AI 모델 삭제 · 기록은 유지',
-                    'Remove AI model · keep my notes',
-                  ),
-                ),
+                child: Text(tr(context, 'AI 다운로드 삭제', 'Remove AI download')),
               ),
           ],
           if (!widget.manageOnly)
@@ -566,12 +546,6 @@ class _ReflectionAssistantPanelState extends State<_ReflectionAssistantPanel> {
                       }
                     },
               child: Text(tr(context, '질문 직접 고르기', 'Choose a question myself')),
-            ),
-          if (widget.manageOnly) const SizedBox(height: 4),
-          if (widget.manageOnly)
-            const Text(
-              'multilingual-e5-small Q8 · MIT',
-              style: TextStyle(fontSize: 10, color: muted),
             ),
         ],
       ),

@@ -200,7 +200,10 @@ void main() {
       tester.widget<TextField>(find.byType(TextField).first).controller!.text,
       'Do not lose this draft',
     );
-    expect(find.text('Storage is temporarily unavailable.'), findsOneWidget);
+    expect(
+      find.text('Unable to complete this action. Please try again.'),
+      findsOneWidget,
+    );
     expect((await app.repository.read()).active!.outcome, isEmpty);
     expect(tester.takeException(), isNull);
   });
@@ -319,7 +322,7 @@ void main() {
     await _tap(tester, 'Trade journal');
 
     expect(
-      find.text('Wallet connection is not available in this preview.'),
+      find.text('Wallet connection is unavailable right now.'),
       findsOneWidget,
     );
     expect(

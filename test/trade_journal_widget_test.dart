@@ -155,10 +155,10 @@ void main() {
         findsOneWidget,
       );
       expect(find.textContaining('its type is unclassified'), findsNothing);
-      await tester.tap(find.text('On-chain facts'));
+      await tester.tap(find.text('Transaction details'));
       await tester.pumpAndSettle();
       expect(find.textContaining('its type is unclassified'), findsOneWidget);
-      await tester.tap(find.text('On-chain facts'));
+      await tester.tap(find.text('Transaction details'));
       await tester.pumpAndSettle();
       await tester.enterText(
         find.byKey(const ValueKey(0)),
@@ -222,7 +222,7 @@ void main() {
     await tester.tap(find.text('Recorded · Open journal').first);
     await tester.pumpAndSettle();
     expect(find.textContaining('wallet-1'), findsNothing);
-    await tester.tap(find.text('On-chain facts'));
+    await tester.tap(find.text('Transaction details'));
     await tester.pumpAndSettle();
     expect(find.textContaining('wallet-1'), findsOneWidget);
     expect(c.journals.entries.single.originalReason, 'A reason worth keeping.');
@@ -538,10 +538,7 @@ void main() {
       );
       await tester.tap(find.byKey(const ValueKey('related-records-search')));
       await tester.pumpAndSettle();
-      expect(
-        find.textContaining('Download the local AI model'),
-        findsOneWidget,
-      );
+      expect(find.textContaining('Set up AI in Settings'), findsOneWidget);
       await tester.ensureVisible(find.text('Browse saved records'));
       await tester.tap(find.text('Browse saved records'));
       await tester.pumpAndSettle();
