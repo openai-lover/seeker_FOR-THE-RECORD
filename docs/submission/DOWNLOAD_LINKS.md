@@ -16,7 +16,7 @@ ARM64 versionCode **2018**, minimum API **26**, **37,717,677 bytes**, developmen
 
 The 0.5.11 production APK contains the UI cleanup described in [PRODUCT_UI_0511.md](PRODUCT_UI_0511.md). Main may contain newer documentation than the exact release tag. New screenshots show 0.5.11 product UI in the separate isolated package. The continuous 8:08 public replay and fresh AI measurements remain dated 0.5.10: public finalized responses, authored notes, real isolated SQLite and no production wallet authorization. Model/parser/export behavior is unchanged; older evidence is not relabelled current.
 
-The most recent observed AI Coach score is **79/100** from October 4 around 20:22 KST, before the new public-replay/fresh-AI/security follow-up. The project remains **DRAFT**. Ordinary SAVE's GitHub gate did not prevent the previous AI Coach rerun; publishing assets does not finalize the entry.
+The most recent observed AI Coach score is **80/100** from October 4 around 23:35 KST, after the 0.5.11 UI/material refresh and the dated public-replay, fresh-AI and security evidence. A fresh portal reload confirmed current fields and **DRAFT**. All four evidence categories were marked READ. This advisory score is not a contest result. [Review and remaining evidence gaps](REVIEW_80_0511.md).
 
 Older releases and the material below are historical. Shared native Slides and Drive video URLs track current content; immutable exported files retain their versions in each release.
 
