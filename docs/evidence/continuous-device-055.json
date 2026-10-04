@@ -1,0 +1,32 @@
+{
+  "appVersion": "0.5.5+12",
+  "versionCode": 2012,
+  "appSource": "07a0cb388e5395f24b3a75c9923aa2f4df5dc7cd",
+  "device": "physical Seeker",
+  "recordingDateKst": "2026-10-04",
+  "newSyntheticNote": true,
+  "priorRecordsEdited": false,
+  "activity": "successful unclassified Other; not supported live swap",
+  "accountFlow": "reconnect using existing MWA authorization; no fresh account consent in this recording",
+  "newReasonSaved": true,
+  "immediateManualReflection": true,
+  "lessonSaved": true,
+  "nativeAiMs": 2249,
+  "aiQuestionId": 4,
+  "aiQuestionSource": "ai",
+  "modelAlreadyInstalled": true,
+  "networkAvailable": true,
+  "exportCancelledThenRetried": true,
+  "completedExportBytes": 1876,
+  "completeJournalPayloadIdenticalAfterRestart": true,
+  "validation": "JSON parsing and exact full journal equality performed locally outside the phone video; raw exports private",
+  "rawVideoSha256": "37a871e1ffeccff334f524373698d4cef8ef5dd507d43ca6f418e0908485436c",
+  "publishedVideoScope": "First 388 seconds of one recording at 1x, no internal cuts; visible privacy covers. Prior-record detour covered. Repeated second export is outside published segment. Raw capture has a decode warning near 24 seconds on the room screen; this is not a tail-only issue. Published re-encode was visually reviewed; action evidence is limited to the observed flow and separate local JSON checks.",
+  "limits": [
+    "No supported live swap",
+    "No actual due-date wait",
+    "No user research",
+    "Single AI timing, not general latency or offline accuracy",
+    "Not a new installation; existing current release opened"
+  ]
+}
