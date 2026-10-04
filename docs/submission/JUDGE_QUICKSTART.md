@@ -1,6 +1,6 @@
 # FOR THE RECORD · Current product walkthrough
 
-**0.5.10+17**, development-signed ARM64 app. [Download and exact checksum](DOWNLOAD_LINKS.md). This page describes the current interface; versioned old walkthroughs remain historical.
+**0.5.11+18**, development-signed ARM64 app. [Download and exact checksum](DOWNLOAD_LINKS.md). This page describes the current interface; versioned old walkthroughs remain historical.
 
 ## The room and personal work
 
@@ -19,6 +19,8 @@ The optional multilingual-e5-small Q8 model is 132,439,008 bytes. It retrieves e
 
 ## Reproduction and evidence
 
-[CURRENT_PROOF_0510.md](CURRENT_PROOF_0510.md) documents an 8:08 continuous physical Seeker run of the current UI, parser, real isolated SQLite and native AI with public finalized response fixtures and authored notes. Both 2,264-byte exports have identical journal payloads after restart. The separate `.integration` app has no INTERNET permission and never opens the production database. Its displayed account context comes from public response fixtures, not wallet ownership or authorization.
+[CURRENT_PROOF_0510.md](CURRENT_PROOF_0510.md) documents an 8:08 continuous physical Seeker run of the 0.5.10 UI, parser, real isolated SQLite and native AI with public finalized response fixtures and authored notes. Both 2,264-byte exports have identical journal payloads after restart. The separate `.integration` app has no INTERNET permission and never opens the production database. Its displayed account context comes from public response fixtures, not wallet ownership or authorization.
 
-The same report includes 48 fresh frozen authored queries and all false positives/abstentions, not independent human accuracy. [SECURITY_PROOF_0510.md](SECURITY_PROOF_0510.md) gives focused malformed-input regressions and actual packaging outputs. The normal app's current account connection and older complete production recordings are separately dated. No supported live user trade, consented repeat-use pilot or comprehensive security clearance is asserted.
+The 0.5.11 UI cleanup retains the same parser, AI and export behavior. [PRODUCT_UI_0511.md](PRODUCT_UI_0511.md) describes the new user-facing copy and current checks.
+
+The same dated report includes 48 fresh frozen authored queries and all false positives/abstentions, not independent human accuracy. [SECURITY_PROOF_0510.md](SECURITY_PROOF_0510.md) gives focused malformed-input regressions and actual packaging outputs. The normal app's current account connection and older complete production recordings are separately dated. No supported live user trade, consented repeat-use pilot or comprehensive security clearance is asserted.

@@ -17,3 +17,11 @@ Validation: 155 Flutter tests passed, including ten new product-copy checks, eig
 The `tool/product_ui_0511.dart` harness is an isolated debug entrypoint, not part of the production entrypoint. Its public replay and authored notes retain visible evidence labels. Product UI cleanup does not remove those labels from evidence or relabel earlier 0.5.10 AI measurements as newly measured.
 
 Historical evidence: [current 0.5.10 public replay and fresh AI](CURRENT_PROOF_0510.md), [focused security proof](SECURITY_PROOF_0510.md). These retain their original dates, source, scope and limitations. Independent human validation remains open.
+
+## Physical UI and release checks
+
+Both packaged release ABIs passed manifest and required-asset checks. ARM64 was installed in place as versionCode 2018 and launched on Seeker. In a separate no-INTERNET debug package, empty-state home/settings, licenses, privacy and deletion cancellation were checked; public case 8 and authored journal editing/saving were checked with Save visible above the keyboard. The original note timestamp and saved lesson remained visible. No new AI inference, export or current production full flow is claimed. The main app was restored to the foreground.
+
+![Current isolated UI](../evidence/ui-0511/overview.jpg)
+
+[Device check receipt](../evidence/ui-0511/checks.json) · [Both package checks](../evidence/ui-0511/package-checks.json).

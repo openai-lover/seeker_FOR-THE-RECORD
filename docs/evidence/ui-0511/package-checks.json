@@ -1,0 +1,16 @@
+[
+  {
+    "bytes": 37717677,
+    "assets": "pass",
+    "abi": "arm64-v8a",
+    "manifest": "pass",
+    "sha256": "29ba3bc74bad0221246aef3a5306681f81a5282f4da8518045c87cfa3339786c"
+  },
+  {
+    "bytes": 39675145,
+    "assets": "pass",
+    "abi": "x86_64",
+    "manifest": "pass",
+    "sha256": "978a0c353939124c1bb8a261ff15adc90b910ea4ad85fe56417efaec9f486374"
+  }
+]

@@ -1,20 +1,20 @@
 # FOR THE RECORD · Release links
 
-## Current app: 0.5.10+17 · 4 October 2026
+## Current app: 0.5.11+18 · 4 October 2026
 
 | Material | Link / scope |
 |---|---|
-| ARM64 APK | [0.5.10 download](https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.10/FOR-THE-RECORD-0.5.10-arm64.apk) |
-| App source | [Exact v0.5.10 tag](https://github.com/openai-lover/seeker_FOR-THE-RECORD/tree/v0.5.10), commit `9de8139614cfd0c6374036e0b0ceb68abeee7602` |
-| Current device and AI proof | [Methods, results and limits](CURRENT_PROOF_0510.md) |
+| ARM64 APK | [0.5.11 download](https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.11/FOR-THE-RECORD-0.5.11-arm64.apk) |
+| App source | [Exact v0.5.11 tag](https://github.com/openai-lover/seeker_FOR-THE-RECORD/tree/v0.5.11), commit `0c5dfd70243940d6598804e9ff3d111ae920051d` |
+| Dated 0.5.10 device and AI proof | [Methods, results and limits](CURRENT_PROOF_0510.md) |
 | English native Slides | [11 current slides](https://docs.google.com/presentation/d/1tO0GQsr-iQCSKIODwrkbODu2ENiVbRopWM78R8wwcNA/edit) |
 | English narrated overview | [Drive video](https://drive.google.com/file/d/1JeE2C5iJb-CIFL8v9uv40Cn15s_BIfwl/view), updated in place; exact revision is recorded with release materials |
-| English PPT, PDF, videos and captions | [0.5.10 release assets](https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/tag/v0.5.10) |
+| English PPT, PDF, videos and captions | [0.5.11 release assets](https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/tag/v0.5.11) |
 
-ARM64 versionCode **2017**, minimum API **26**, **37,713,149 bytes**, development signing. SHA256:
-`3b2e8a11ad1a322dfcc510d46d90097c246fd995adaa1c7ff9d2984d94f19564`.
+ARM64 versionCode **2018**, minimum API **26**, **37,717,677 bytes**, development signing. SHA256:
+`29ba3bc74bad0221246aef3a5306681f81a5282f4da8518045c87cfa3339786c`.
 
-Production APK/source are unchanged by the latest diagnostic and documentation follow-up. Main may contain newer evidence than the release tag. Current Seeker screenshots and the 8:08 continuous public replay use a separate debug package, public finalized responses and authored notes. They do not assert a live user swap or current production wallet-to-export flow. Full scope is linked above.
+The 0.5.11 production APK contains the UI cleanup described in [PRODUCT_UI_0511.md](PRODUCT_UI_0511.md). Main may contain newer documentation than the exact release tag. New screenshots show 0.5.11 product UI in the separate isolated package. The continuous 8:08 public replay and fresh AI measurements remain dated 0.5.10: public finalized responses, authored notes, real isolated SQLite and no production wallet authorization. Model/parser/export behavior is unchanged; older evidence is not relabelled current.
 
 The most recent observed AI Coach score is **79/100** from October 4 around 20:22 KST, before the new public-replay/fresh-AI/security follow-up. The project remains **DRAFT**. Ordinary SAVE's GitHub gate did not prevent the previous AI Coach rerun; publishing assets does not finalize the entry.
 

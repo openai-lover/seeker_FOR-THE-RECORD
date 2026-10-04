@@ -1,0 +1,33 @@
+{
+  "version": "0.5.11+18",
+  "source": "0c5dfd70243940d6598804e9ff3d111ae920051d",
+  "production": {
+    "inPlaceUpdate": true,
+    "versionCode": 2018,
+    "startup": "success",
+    "personalScreensCollected": false
+  },
+  "isolated": {
+    "package": "app.workroom.seeker_workroom.integration",
+    "internetPermission": false,
+    "requiredAssets": "present",
+    "homeAndSettings": "empty local memory state",
+    "publicReplay": "case 8, previously captured finalized public mainnet response",
+    "writing": "authored Demo records only",
+    "checks": [
+      "home icons and art",
+      "settings upper and lower",
+      "AI licensing dialog opens",
+      "privacy disclosure opens",
+      "delete confirmation inspected and cancelled",
+      "supported public replay visible",
+      "existing reason edited without content change and saved",
+      "Save visible above keyboard",
+      "original note timestamp and lesson retained"
+    ],
+    "noNewInference": true,
+    "noNewExport": true,
+    "realDayDueRecord": "isolated case 0, preserved; check after October 5 21:30 KST"
+  },
+  "productionForegroundRestored": true
+}

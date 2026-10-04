@@ -11,31 +11,32 @@
 
 A private Android journal for meaningful work and wallet decisions. Keep what you did, why you did it, and the next step worth remembering.
 
-**Version 0.5.10+17 · Development-signed Android app · English by default**
+**Version 0.5.11+18 · Development-signed Android app · English by default**
 
 ## Current release and evidence — 4 October 2026
 
-- [Install 0.5.10 and identify its exact source/APK](docs/submission/DOWNLOAD_LINKS.md).
+- [Install 0.5.11 and identify its exact source/APK](docs/submission/DOWNLOAD_LINKS.md).
 - [Current product walkthrough](docs/submission/JUDGE_QUICKSTART.md).
-- [Current physical Seeker UI, public-mainnet replay, export/restart and fresh AI evaluation](docs/submission/CURRENT_PROOF_0510.md).
+- [Dated 0.5.10 public-mainnet replay, export/restart and AI evaluation](docs/submission/CURRENT_PROOF_0510.md).
 - [Crafted-input regression proof and packaged-manifest outputs](docs/submission/SECURITY_PROOF_0510.md).
+
+The 0.5.11 update removes development footers, internal model/build labels, raw unexpected errors and empty transaction rows. Privacy, licenses and deletion confirmation remain available. [UI changes and checks](docs/submission/PRODUCT_UI_0511.md).
 
 The room now opens saved reasons and lessons first. One reason is enough to
 save; optional details stay secondary. Local semantic recall shows one original
 record, and JSON export distinguishes pending, saved, cancelled and failed
 states. The 0.5.10 release also removes three unnecessary AndroidX test activities
-from the packaged app. Its source is `9de8139`; newer documentation and diagnostic
-commits do not change the APK.
+from the packaged app. The current 0.5.11 app source is `0c5dfd7`; later documentation commits do not change that APK.
 
-Current evidence includes an **8:08 continuous physical Seeker replay** using
-actual public mainnet responses, authored notes, the current UI and isolated
+Dated 0.5.10 evidence includes an **8:08 continuous physical Seeker replay** using
+actual public mainnet responses, authored notes, the 0.5.10 UI and isolated
 SQLite. It is not a production wallet connection or new live trade. Two native
 exports are 2,264 bytes with identical journal payloads after restart. A fresh,
 frozen 48-query evaluation reports wrong suggestions and abstentions separately;
 labels are assistant-authored, not independent user research. Full methods,
 failures and scope boundaries are in the linked report.
 
-The production build passed 145 Flutter tests and clean analysis; both release
+The 0.5.11 production build passed 155 Flutter tests and clean analysis; both release
 packages passed the manifest gate. Focused backend follow-up passed 25 targeted
 checks and 69 full-suite checks. These do not establish a complete security audit.
 Real-user impact and a current continuous production account-to-RPC flow remain
