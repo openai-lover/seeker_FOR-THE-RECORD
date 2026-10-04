@@ -6,3 +6,4 @@ android/gradlew text eol=lf
 *.gif binary
 *.mp4 binary
 *.zip binary
+test/fixtures/public_mainnet_058/public-mainnet-*.json -text
