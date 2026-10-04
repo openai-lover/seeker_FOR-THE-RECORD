@@ -5,9 +5,10 @@ App/tag source: `9de8139614cfd0c6374036e0b0ceb68abeee7602`, version `0.5.10+17`,
 ## Current English materials
 
 - The same eleven-slide native deck, PPT and PDF now identify 0.5.10. All eleven slides were rendered and inspected. All eleven exported speaker notes match the native notes. Source links and the evidence table distinguish current packaging from earlier functional measurements.
-- The final edited video is **2:55** (approximately 175.08 seconds), filename `FOR-THE-RECORD-features-0.5.10-final.mp4`. Its 3,198,690 bytes have SHA256 `7b8f6583f72b2ba99f83841155a9a9826d6a001ac1e74afcd0dae046feca7fb4`. The older 3:00 MP4 has been superseded by this final file. Only trailing silence was removed; the spoken content is unchanged.
+- The final edited video is **2:55** (175 seconds), filename `FOR-THE-RECORD-demo-0.5.10.mp4`. Its 3,906,589 bytes have SHA256 `dcc1c0c4e764d612645d84a321858055fd5239267e2ce23a713359a1c69de1a3`. The older features MP4s are superseded by this H.264 Main / 48 kHz AAC file. Trailing silence was removed and encoding compatibility adjusted; the footage and spoken content are unchanged.
 - The video explains the current packaging fix, then uses explicitly dated 0.5.8 typing, 0.5.9 export footage with a labelled final-frame hold, and evidence stills. English synthetic narration, transcript and SRT accompany it. It is not a continuous current production wallet flow.
 - Existing native Slides and Drive video IDs and their anyone-reader permissions were retained. No new access grant was made. The APK, PPT, PDF, final video, transcript and SRT have matching local/server SHA256 receipts.
+- Drive preview subsequently played the 2:55 file. Portal FROM AUDIO regeneration then returned 2,377 characters with the correct version, metrics and limitations. An earlier 3:00 transcription had appended an unrelated NCBI URL not present in the narration; that suffix is absent from the current transcription. Temporary HTTP errors occurred while the replacement video was being prepared. The cause of those errors was not independently established. ASR changed “Historical mainnet” to “Simple mainnet”; the writeup and methods retain the exact provenance.
 
 ## Evidence dates and limitations
 
