@@ -16,4 +16,12 @@ The 0.5.9 export check used synthetic records, actual separate SQLite, and the A
 
 The historical 0.5.5 production flow remains a separate 6:28 video with a 1,876-byte export. The older 1,953-byte result belongs to October 3. Neither figure is substituted for the 0.5.9 synthetic export. No current complete production recording, supported live user swap, independent user study or comprehensive security clearance is claimed.
 
-The actual Coach result before reassessing these materials is 78/100. This file does not claim a new score. The competition entry remains DRAFT. Methods: [packaging and audit triage](AUDIT_TRIAGE_0510.md), [dated offline/export evidence](RELIABLE_USE_059.md), [mainnet replay](PUBLIC_MAINNET_REPLAY_058.md).
+## AI Coach reassessment on October 4
+
+The actual result after these improvements is **79/100**, up from 78, completed around 20:22 KST. A fresh portal reload confirmed 79, all four evidence categories READ, the 0.5.10 writeup and APK, and DRAFT status. The conservative observation at 20:30 sets the next review minimum at 23:30 KST, and another review requires substantive new evidence.
+
+Criteria: AI 85, SKR integration 77, UX 85, UI 82, innovation 76, ecosystem impact 65. The Coach credited packaging checks, export completion/persistence, offline diagnostics and 145 tests. It still requested a current continuous production Seeker flow, a supported real/mainnet activity shown inside the app, independently labelled AI evaluation, actual repeat-use participants, minimal crafted-input proof for the historical SQL lead, and packaged-manifest check output.
+
+The Coach described the deck as 0.5.8 despite the verified 0.5.10 cover, evidence table, source and notes; older screenshots are explicitly dated. The cause of this discrepancy is unproven. The warning about reviewer-directed instructions also remains; no removal is claimed. READ status does not establish a new complete source audit. No additional audit or final submission was performed.
+
+Methods: [packaging and audit triage](AUDIT_TRIAGE_0510.md), [dated offline/export evidence](RELIABLE_USE_059.md), [mainnet replay](PUBLIC_MAINNET_REPLAY_058.md).
