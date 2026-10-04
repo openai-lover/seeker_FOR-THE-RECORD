@@ -1,6 +1,6 @@
 # Current Seeker proof — 0.5.10
 
-Observed on a physical Seeker on 4 October 2026, approximately 21:17–21:30 KST. The production app remains **0.5.10+17 / source `9de8139`**. This follow-up adds diagnostic code and evidence, not an application release or a changed AI model.
+Observed on a physical Seeker on 4 October 2026, approximately 21:17–21:32 KST. The production app remains **0.5.10+17 / source `9de8139`**. This follow-up adds diagnostic code and evidence, not an application release or a changed AI model.
 
 ## Current UI with public mainnet responses
 
@@ -12,7 +12,7 @@ The current screen shows case 8 exchanging exactly **278.854695534 BPxx…jPCy f
 
 ## Continuous recording and completed export
 
-A new **487.88-second (about 8:08), 1× continuous screen recording** shows the current room, public swap, authored reason, immediate manual reflection, local related-record lookup, exact original quote, question selection, lesson save, Android file picker, completed export, force-stop/reopen and preserved record. The full file preserves time and has no internal cuts. A separate edited feature overview may use excerpts; it is not described as continuous.
+A new **487.88-second (about 8:08), 1× continuous screen recording** shows the current room, public swap, authored reason, immediate manual reflection, local related-record lookup, exact original quote, question selection, lesson save, Android file picker, completed export, force-stop/reopen and preserved record. The full file preserves time and has no internal cuts. The separate [4:00 English overview](https://drive.google.com/file/d/1JeE2C5iJb-CIFL8v9uv40Cn15s_BIfwl/view) uses excerpts and is labelled edited. The [full 8:08 public replay](https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.10/FOR-THE-RECORD-continuous-public-replay-0.5.10.mp4) is silent and uninterrupted.
 
 The demo reason begins “Demo: I followed a popular claim…” and the three seeded comparison records are explicitly authored. Their dates are fixtures, not claimed user history. The phone clock was not changed. The lookup returned the intended seeded source; its exact reason, reflection and lesson were opened. Question suggestions were 1 and 2; the operator chose 2. The exported question-selection observation was 2,580 ms cold, one isolated UI request, not a latency distribution or production measurement.
 

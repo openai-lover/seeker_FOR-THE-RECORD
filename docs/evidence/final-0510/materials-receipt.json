@@ -1,0 +1,50 @@
+{
+  "reviewPending": true,
+  "assets": [
+    {
+      "url": "https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.10/FOR-THE-RECORD-pitch-0.5.10-current.pptx",
+      "serverDigest": "sha256:53b42a67b1d444597cb5d0812cbe2c89137793c6031b947a2d4c8e98610b922a",
+      "bytes": 9210224,
+      "sha256": "53b42a67b1d444597cb5d0812cbe2c89137793c6031b947a2d4c8e98610b922a",
+      "name": "FOR-THE-RECORD-pitch-0.5.10-current.pptx"
+    },
+    {
+      "url": "https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.10/FOR-THE-RECORD-pitch-0.5.10-current.pdf",
+      "serverDigest": "sha256:420646c1822faf96b1c132e5158f8d82cead98621e06ccff290bcac69b50c87c",
+      "bytes": 1668933,
+      "sha256": "420646c1822faf96b1c132e5158f8d82cead98621e06ccff290bcac69b50c87c",
+      "name": "FOR-THE-RECORD-pitch-0.5.10-current.pdf"
+    },
+    {
+      "url": "https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.10/FOR-THE-RECORD-demo-0.5.10-current.mp4",
+      "serverDigest": "sha256:60988e6a93ef5da8820f00632cfb5c22a784cff1611dd8e44503fe824bd269ec",
+      "bytes": 4769395,
+      "sha256": "60988e6a93ef5da8820f00632cfb5c22a784cff1611dd8e44503fe824bd269ec",
+      "name": "FOR-THE-RECORD-demo-0.5.10-current.mp4"
+    },
+    {
+      "url": "https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.10/FOR-THE-RECORD-demo-0.5.10-current.srt",
+      "serverDigest": "sha256:02118c6dcbce7598b7b01d797e07933cf752dce4fb28da3b618f4c4207072aa0",
+      "bytes": 4444,
+      "sha256": "02118c6dcbce7598b7b01d797e07933cf752dce4fb28da3b618f4c4207072aa0",
+      "name": "FOR-THE-RECORD-demo-0.5.10-current.srt"
+    },
+    {
+      "url": "https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.10/FOR-THE-RECORD-demo-0.5.10-current.transcript.txt",
+      "serverDigest": "sha256:a5d1eb2dfd722f7a573baf168c5c94623833b985ecb3dd68212a426232c34a80",
+      "bytes": 2815,
+      "sha256": "a5d1eb2dfd722f7a573baf168c5c94623833b985ecb3dd68212a426232c34a80",
+      "name": "FOR-THE-RECORD-demo-0.5.10-current.transcript.txt"
+    },
+    {
+      "url": "https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.10/FOR-THE-RECORD-continuous-public-replay-0.5.10.mp4",
+      "serverDigest": "sha256:0967075f4aef491011b8e94d0ce6fea14a2cdee186d6a9048efa8154e5a06eaa",
+      "bytes": 53271159,
+      "sha256": "0967075f4aef491011b8e94d0ce6fea14a2cdee186d6a9048efa8154e5a06eaa",
+      "name": "FOR-THE-RECORD-continuous-public-replay-0.5.10.mp4"
+    }
+  ],
+  "evidenceCommit": "d61f17a",
+  "verifiedAt": "2026-10-04T21:52:52.6081490+09:00",
+  "sourceUnchanged": "9de8139614cfd0c6374036e0b0ceb68abeee7602"
+}
