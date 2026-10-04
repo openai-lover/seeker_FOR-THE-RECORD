@@ -34,6 +34,8 @@ try{
   & ./android/gradlew.bat @buildArgs
   if($LASTEXITCODE -ne 0){throw 'Android build failed'}
   if($Release){
+    & ./tools/verify-release.ps1 -ApkPath build/app/outputs/apk/release/app-arm64-v8a-release.apk
+    & ./tools/verify-release.ps1 -ApkPath build/app/outputs/apk/release/app-x86_64-release.apk
     New-Item -ItemType Directory -Force artifacts | Out-Null
     Copy-Item build/app/outputs/apk/release/app-arm64-v8a-release.apk artifacts/for-the-record-arm64-preview.apk
     Copy-Item build/app/outputs/apk/release/app-x86_64-release.apk artifacts/for-the-record-x64-preview.apk

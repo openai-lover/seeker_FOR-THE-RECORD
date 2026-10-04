@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-04",
+  "version": "0.5.10+17",
+  "arm64VersionCode": 2017,
+  "arm64Bytes": 37713149,
+  "arm64Sha256": "3b2e8a11ad1a322dfcc510d46d90097c246fd995adaa1c7ff9d2984d94f19564",
+  "previousVersion": "0.5.9+16",
+  "previousArm64Sha256": "c7c561e48d54183b82e43ea3d544bc50aef7c1afcc9af16114681fc78aa7cb33",
+  "previousGateResult": "Rejected: release APK contains a test component",
+  "newGateResults": {"arm64": "passed", "x64": "passed"},
+  "removedExportedActivities": [
+    "androidx.test.core.app.InstrumentationActivityInvoker$BootstrapActivity",
+    "androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity",
+    "androidx.test.core.app.InstrumentationActivityInvoker$EmptyFloatingActivity"
+  ],
+  "origin": "mobile-wallet-adapter-clientlib-ktx:2.0.3 -> androidx.test.ext:junit-ktx:1.1.5 -> androidx.test.ext:junit:1.1.5 -> androidx.test:core:1.5.0",
+  "excludedFromAdapterEdge": ["androidx.test.ext:junit-ktx", "org.mockito.kotlin:mockito-kotlin", "org.mockito:mockito-inline"],
+  "adapterProductionClassesInspected": 49,
+  "testLibraryConstantPoolReferencesFound": 0,
+  "flutterTestsPassed": 145,
+  "analysis": "No issues found",
+  "device": {
+    "type": "physical Seeker",
+    "inPlaceInstall": true,
+    "versionCode": 2017,
+    "startup": true,
+    "readOnlyMwaConnection": "Wallet connected after connection sheet returned",
+    "signaturesOrTransactions": false,
+    "personalFilesCollected": false
+  },
+  "limits": "Targeted packaging/source review, not a penetration test or security clearance. No observed exploit. Other merged SDK components were not comprehensively audited. Optional backend advisories remain open. No current complete production flow or new AI benchmark."
+}

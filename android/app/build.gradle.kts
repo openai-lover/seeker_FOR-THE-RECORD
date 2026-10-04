@@ -99,6 +99,13 @@ flutter {
 
 dependencies {
     testImplementation("junit:junit:4.13.2")
-    implementation("com.solanamobile:mobile-wallet-adapter-clientlib-ktx:2.0.3")
+    implementation("com.solanamobile:mobile-wallet-adapter-clientlib-ktx:2.0.3") {
+        // 2.0.3 publishes test libraries as runtime dependencies. They add three
+        // exported InstrumentationActivityInvoker activities to the release APK.
+        // None is referenced by the adapter's 49 production classes.
+        exclude(group = "androidx.test.ext", module = "junit-ktx")
+        exclude(group = "org.mockito.kotlin", module = "mockito-kotlin")
+        exclude(group = "org.mockito", module = "mockito-inline")
+    }
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.9.4")
 }
