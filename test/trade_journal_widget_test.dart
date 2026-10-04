@@ -304,6 +304,7 @@ void main() {
         .setMockMethodCallHandler(NativePlatform.channel, (call) async {
           if (call.method == 'export') {
             contents = (call.arguments as Map)['content'] as String;
+            return true;
           }
           return null;
         });
@@ -318,6 +319,10 @@ void main() {
     expect(contents, contains(entry.signature));
     expect(contents, contains('originalReason'));
     expect(contents, contains('schemaVersion'));
+    expect(
+      find.text('File saved. Your records remain in the app.'),
+      findsOneWidget,
+    );
     expect(tester.takeException(), isNull);
   });
   testWidgets('scheduling another date reopens a completed revisit', (

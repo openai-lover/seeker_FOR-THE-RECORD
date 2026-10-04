@@ -10,9 +10,17 @@ plugins {
 val signingProperties = Properties()
 val signingPropertiesFile = rootProject.file("key.properties")
 if (signingPropertiesFile.exists()) signingPropertiesFile.inputStream().use { signingProperties.load(it) }
+val offlineDiagnostic = System.getenv("WORKROOM_OFFLINE_DIAGNOSTIC") == "1"
+if (offlineDiagnostic) {
+    check(System.getenv("WORKROOM_ISOLATED_TEST") == "1") { "Offline diagnostic requires the isolated package" }
+    check(gradle.startParameter.taskNames.none { it.contains("release", ignoreCase = true) }) { "Offline diagnostic is debug-only" }
+}
 
 android {
     namespace = "app.workroom.seeker_workroom"
+    if (offlineDiagnostic) {
+        sourceSets.getByName("debug").manifest.srcFile("src/offlineDiagnostic/AndroidManifest.xml")
+    }
     compileSdk = 36
     ndkVersion = flutter.ndkVersion
     externalNativeBuild {

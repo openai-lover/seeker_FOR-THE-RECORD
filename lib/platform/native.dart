@@ -40,8 +40,14 @@ class NativePlatform implements WorkroomPlatform {
 
   Future<bool> notifications() async =>
       await channel.invokeMethod<bool>('requestNotifications') ?? false;
-  Future<void> export(String value) async {
-    await channel.invokeMethod('export', {'content': value});
+  Future<bool> export(String value) async {
+    final result = await channel.invokeMethod<Object?>('export', {
+      'content': value,
+    });
+    // Only the native writer can confirm completion after flush/close.
+    // A picker cancellation is a distinct outcome, never a saved file.
+    if (result is! bool) throw PlatformException(code: 'export-failed');
+    return result;
   }
 
   Future<Map<String, dynamic>> wallet(

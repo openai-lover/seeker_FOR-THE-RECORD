@@ -1243,18 +1243,15 @@ class _JournalDetail extends StatelessWidget {
               child: Text(tr(context, '메모 수정', 'Edit notes')),
             ),
             const SizedBox(height: 10),
-            ActionButton(
+            ExportButton(
               label: tr(context, '이 기록 내보내기', 'Export this record'),
-              icon: Icons.ios_share_rounded,
-              outlined: true,
-              action: () => r.native.export(
-                const JsonEncoder.withIndent('  ').convert({
-                  'app': AppConfig.name,
-                  'schemaVersion': 1,
-                  'exportedAt': DateTime.now().toUtc().toIso8601String(),
-                  'tradeJournals': [e.toJson()],
-                }),
-              ),
+              native: r.native,
+              content: () => const JsonEncoder.withIndent('  ').convert({
+                'app': AppConfig.name,
+                'schemaVersion': 1,
+                'exportedAt': DateTime.now().toUtc().toIso8601String(),
+                'tradeJournals': [e.toJson()],
+              }),
             ),
             TextButton(
               onPressed: () => Clipboard.setData(

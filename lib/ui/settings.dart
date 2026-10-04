@@ -146,13 +146,10 @@ class _Settings extends StatelessWidget {
               style: TextStyle(color: muted, fontSize: 13),
             ),
             const SizedBox(height: 16),
-            ActionButton(
+            ExportButton(
               label: uiText(context, 'JSON 파일로 내보내기'),
-              icon: Icons.ios_share_rounded,
-              outlined: true,
-              action: () async {
-                await r.native.export(c.exportJson());
-              },
+              native: r.native,
+              content: c.exportJson,
             ),
           ],
         ),

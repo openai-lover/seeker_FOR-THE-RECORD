@@ -1,5 +1,29 @@
 // Interface translations only. Saved personal writing remains verbatim.
 const relatedCatalog = <String, List<String>>{
+  'Export in progress…': [
+    'エクスポート中…',
+    '正在导出…',
+    'निर्यात जारी है…',
+    'Exportando…',
+    'Exportando…',
+    'Exportation en cours…',
+  ],
+  'File saved. Your records remain in the app.': [
+    'ファイルを保存しました。記録はアプリにも残っています。',
+    '文件已保存。记录仍保留在应用中。',
+    'फ़ाइल सहेजी गई। आपके रिकॉर्ड ऐप में भी सुरक्षित हैं।',
+    'Archivo guardado. Tus registros siguen en la app.',
+    'Arquivo salvo. Seus registros continuam no aplicativo.',
+    'Fichier enregistré. Vos notes restent dans l’application.',
+  ],
+  'Export cancelled. Your records remain in the app.': [
+    'エクスポートをキャンセルしました。記録はアプリに残っています。',
+    '已取消导出。记录仍保留在应用中。',
+    'निर्यात रद्द हुआ। आपके रिकॉर्ड ऐप में सुरक्षित हैं।',
+    'Exportación cancelada. Tus registros siguen en la app.',
+    'Exportação cancelada. Seus registros continuam no aplicativo.',
+    'Exportation annulée. Vos notes restent dans l’application.',
+  ],
   'My notes': [
     '自分の記録',
     '我的记录',

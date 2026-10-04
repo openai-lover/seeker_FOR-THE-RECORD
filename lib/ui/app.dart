@@ -14,6 +14,7 @@ import '../domain/trade_journal.dart';
 import '../domain/trade_journal_controller.dart';
 import 'package:uuid/uuid.dart';
 import '../data/remote.dart';
+import '../platform/native.dart';
 import '../domain/controller.dart';
 import '../domain/models.dart';
 import 'design.dart';
@@ -111,11 +112,13 @@ class ActionButton extends StatefulWidget {
     required this.action,
     this.icon = Icons.arrow_forward_rounded,
     this.outlined = false,
+    this.busyLabel,
   });
   final String label;
   final Future<void> Function()? action;
   final IconData icon;
   final bool outlined;
+  final String? busyLabel;
   @override
   State<ActionButton> createState() => _ActionButtonState();
 }
@@ -134,18 +137,63 @@ class _ActionButtonState extends State<ActionButton> {
     final icon = busy
         ? const Icon(Icons.hourglass_empty_rounded, size: 18)
         : Icon(widget.icon, size: 18);
+    final label = busy ? widget.busyLabel ?? widget.label : widget.label;
     return widget.outlined
         ? OutlinedButton.icon(
             onPressed: onPressed,
             icon: icon,
-            label: Text(uiText(context, widget.label)),
+            label: Text(uiText(context, label)),
           )
         : FilledButton.icon(
             onPressed: onPressed,
             icon: icon,
-            label: Text(uiText(context, widget.label)),
+            label: Text(uiText(context, label)),
           );
   }
+}
+
+/// Both export entry points show the actual native completion result.
+class ExportButton extends StatelessWidget {
+  const ExportButton({
+    super.key,
+    required this.native,
+    required this.content,
+    required this.label,
+  });
+  final NativePlatform native;
+  final String Function() content;
+  final String label;
+
+  @override
+  Widget build(BuildContext context) => ActionButton(
+    label: label,
+    busyLabel: tr(context, '파일 내보내는 중…', 'Export in progress…'),
+    icon: Icons.ios_share_rounded,
+    outlined: true,
+    action: () async {
+      final saved = await native.export(content());
+      if (!context.mounted) return;
+      final messenger = ScaffoldMessenger.of(context);
+      messenger.hideCurrentSnackBar();
+      messenger.showSnackBar(
+        SnackBar(
+          content: Text(
+            saved
+                ? tr(
+                    context,
+                    '파일을 저장했어요. 기록은 앱에도 그대로 남아 있어요.',
+                    'File saved. Your records remain in the app.',
+                  )
+                : tr(
+                    context,
+                    '내보내기를 취소했어요. 기록은 앱에 그대로 있어요.',
+                    'Export cancelled. Your records remain in the app.',
+                  ),
+          ),
+        ),
+      );
+    },
+  );
 }
 
 class WorkroomApp extends StatefulWidget {

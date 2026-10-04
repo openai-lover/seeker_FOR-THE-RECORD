@@ -113,8 +113,11 @@ class SyntheticRemote extends RemoteService {
   };
 }
 
-Future<void> launchEvidenceDemo() async {
-  final c = WorkroomController(MemoryRepository(), NativePlatform());
+Future<void> launchEvidenceDemo({Repository? repository}) async {
+  final c = WorkroomController(
+    repository ?? MemoryRepository(),
+    NativePlatform(),
+  );
   await c.load();
   await c.setting('roomWelcome', 1);
   await c.setting('language', 'en');
@@ -145,6 +148,7 @@ Future<void> launchEvidenceDemo() async {
       issue: 'unsupported-activity',
     );
     final now = DateTime(2026, 10, 3, 10 + i).millisecondsSinceEpoch;
+    if (c.journals.find(demoWallet, a.signature) != null) continue;
     await c.journals.save(
       TradeJournalEntry(
         id: 'synthetic-note-$i',
