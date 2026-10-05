@@ -1,0 +1,612 @@
+{
+  "observedAtKST": "2026-10-05T15:46:51.488116+09:00",
+  "appVersion": "0.5.12+19",
+  "appSource": "ee650639670c7ab35081a92e3435a185b73a6642",
+  "historical0511Source": "0c5dfd70243940d6598804e9ff3d111ae920051d",
+  "historicalPartialAuditSource": "414acebb41d0b23169ff15e16456ec175b1ac67c",
+  "tool": "Android build-tools 36.0.0 aapt dump xmltree APK AndroidManifest.xml, zip central-directory/read checks, read-only release gate on retained incomplete controls",
+  "artifactHashesVerifiedBeforeDump": true,
+  "testsBuildCommitPushOrDeviceWorkByThisAgent": false,
+  "independentSecurityAudit": false,
+  "newPortalAudit": false,
+  "sourcePaths": {
+    "functions/src/index.ts": {
+      "source": "ee650639670c7ab35081a92e3435a185b73a6642",
+      "gitContentSha256": "a39a37bb70613722f265a8a53e486f417e0339bc82f2d049c04e9e78cc0535b6",
+      "unchangedFrom0511": true
+    },
+    "functions/src/activity.ts": {
+      "source": "ee650639670c7ab35081a92e3435a185b73a6642",
+      "gitContentSha256": "665b1ccb28d1b21355732f62d373c7ac2124bc14537d31960757f8199d384191",
+      "unchangedFrom0511": false
+    },
+    "android/app/src/main/AndroidManifest.xml": {
+      "source": "ee650639670c7ab35081a92e3435a185b73a6642",
+      "gitContentSha256": "33bd9a65c33c2d06ef0ee27fd3578abaa9013d0f9e719392a30474b0d8b5a64a",
+      "unchangedFrom0511": true
+    },
+    "android/app/src/main/kotlin/app/workroom/seeker_workroom/WorkroomActivity.kt": {
+      "source": "ee650639670c7ab35081a92e3435a185b73a6642",
+      "gitContentSha256": "eeb105dfd9bd16be81f589b3377041a764adff194f62fc09c364b512ac588d72",
+      "unchangedFrom0511": true
+    },
+    "tools/verify-release.ps1": {
+      "source": "ee650639670c7ab35081a92e3435a185b73a6642",
+      "gitContentSha256": "4b20dd47ea59f6b691332df444ebed17e888921c5afd8645bd60f5c53320ab2c",
+      "unchangedFrom0511": false
+    }
+  },
+  "rootCompletedValidation": {
+    "flutterTests": 274,
+    "backendTests": 97,
+    "cleanAnalysis": true,
+    "backendCompiled": true,
+    "scope": "Root local regression/build results; not deployed backend or independent security audit."
+  },
+  "artifacts": [
+    {
+      "abi": "arm64-v8a",
+      "apkFilename": "FOR-THE-RECORD-0.5.12-arm64.apk",
+      "apkBytes": 37713101,
+      "apkSha256": "ac4b86ef0f32616f88b0dc4e66b212d013c33a1f01f8e3192b935e970c9a23e3",
+      "versionCode": 2019,
+      "rawFilename": "packaged-arm64-v8a-manifest.txt",
+      "rawBytes": 15920,
+      "rawSha256": "9e7cb5b31b86db0733ffbfc3ed85d8e3f4f857d8e8db2026fc618c7ee7db2114",
+      "components": [
+        {
+          "type": "activity",
+          "name": "app.workroom.seeker_workroom.WorkroomActivity",
+          "mergedXmlLine": 51,
+          "explicitExported": true,
+          "permission": null,
+          "intentActions": [
+            "android.intent.action.MAIN"
+          ],
+          "intentCategories": [
+            "android.intent.category.LAUNCHER"
+          ]
+        },
+        {
+          "type": "receiver",
+          "name": "app.workroom.seeker_workroom.FocusAlarmReceiver",
+          "mergedXmlLine": 78,
+          "explicitExported": false,
+          "permission": null,
+          "intentActions": [],
+          "intentCategories": []
+        },
+        {
+          "type": "service",
+          "name": "com.google.firebase.components.ComponentDiscoveryService",
+          "mergedXmlLine": 89,
+          "explicitExported": false,
+          "permission": null,
+          "intentActions": [],
+          "intentCategories": []
+        },
+        {
+          "type": "activity",
+          "name": "com.google.firebase.auth.internal.GenericIdpActivity",
+          "mergedXmlLine": 116,
+          "explicitExported": true,
+          "permission": null,
+          "intentActions": [
+            "android.intent.action.VIEW"
+          ],
+          "intentCategories": [
+            "android.intent.category.DEFAULT",
+            "android.intent.category.BROWSABLE"
+          ]
+        },
+        {
+          "type": "activity",
+          "name": "com.google.firebase.auth.internal.RecaptchaActivity",
+          "mergedXmlLine": 134,
+          "explicitExported": true,
+          "permission": null,
+          "intentActions": [
+            "android.intent.action.VIEW"
+          ],
+          "intentCategories": [
+            "android.intent.category.DEFAULT",
+            "android.intent.category.BROWSABLE"
+          ]
+        },
+        {
+          "type": "provider",
+          "name": "com.google.firebase.provider.FirebaseInitProvider",
+          "mergedXmlLine": 153,
+          "explicitExported": false,
+          "permission": null,
+          "intentActions": [],
+          "intentCategories": []
+        },
+        {
+          "type": "service",
+          "name": "androidx.credentials.playservices.CredentialProviderMetadataHolder",
+          "mergedXmlLine": 160,
+          "explicitExported": false,
+          "permission": null,
+          "intentActions": [],
+          "intentCategories": []
+        },
+        {
+          "type": "activity",
+          "name": "androidx.credentials.playservices.HiddenActivity",
+          "mergedXmlLine": 169,
+          "explicitExported": false,
+          "permission": null,
+          "intentActions": [],
+          "intentCategories": []
+        },
+        {
+          "type": "activity",
+          "name": "com.google.android.gms.auth.api.signin.internal.SignInHubActivity",
+          "mergedXmlLine": 177,
+          "explicitExported": false,
+          "permission": null,
+          "intentActions": [],
+          "intentCategories": []
+        },
+        {
+          "type": "service",
+          "name": "com.google.android.gms.auth.api.signin.RevocationBoundService",
+          "mergedXmlLine": 186,
+          "explicitExported": true,
+          "permission": "com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION",
+          "intentActions": [],
+          "intentCategories": []
+        },
+        {
+          "type": "activity",
+          "name": "com.google.android.gms.common.api.GoogleApiActivity",
+          "mergedXmlLine": 199,
+          "explicitExported": false,
+          "permission": null,
+          "intentActions": [],
+          "intentCategories": []
+        },
+        {
+          "type": "provider",
+          "name": "androidx.startup.InitializationProvider",
+          "mergedXmlLine": 204,
+          "explicitExported": false,
+          "permission": null,
+          "intentActions": [],
+          "intentCategories": []
+        },
+        {
+          "type": "receiver",
+          "name": "androidx.profileinstaller.ProfileInstallReceiver",
+          "mergedXmlLine": 220,
+          "explicitExported": true,
+          "permission": "android.permission.DUMP",
+          "intentActions": [],
+          "intentCategories": []
+        },
+        {
+          "type": "activity",
+          "name": "com.google.android.play.core.common.PlayCoreDialogWrapperActivity",
+          "mergedXmlLine": 239,
+          "explicitExported": false,
+          "permission": null,
+          "intentActions": [],
+          "intentCategories": []
+        }
+      ],
+      "sameComponentExportPermissionInventoryAs0511": true,
+      "usesPermissions": [
+        "android.permission.INTERNET",
+        "android.permission.POST_NOTIFICATIONS",
+        "android.permission.ACCESS_NETWORK_STATE",
+        "com.google.android.providers.gsf.permission.READ_GSERVICES",
+        "app.workroom.seeker_workroom.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+      ],
+      "flutterAssetEntries": 17,
+      "mandatoryAssets": [
+        {
+          "name": "AssetManifest.bin",
+          "bytes": 662,
+          "sha256": "48f943ae0d4df791963813b7ed8f4657fd7808202a5c2abc07eaebc7638c55cf"
+        },
+        {
+          "name": "FontManifest.json",
+          "bytes": 218,
+          "sha256": "ec943bdecd5243f219178598d1ca0d58df4a4f3633871bb4e1284aada2a58701"
+        },
+        {
+          "name": "NativeAssetsManifest.json",
+          "bytes": 45,
+          "sha256": "9548a31e4a048135c1d94f919328bfb62ae2c7bb3cab96557c7941daa97776cb"
+        },
+        {
+          "name": "assets/room/study.png",
+          "bytes": 2195465,
+          "sha256": "be730edc7e6249ab21291034ea35e30e113371ca2083c9a8a706499ee1bb55e6"
+        },
+        {
+          "name": "assets/room/lamp.png",
+          "bytes": 992050,
+          "sha256": "2e7d534a9798ac4d39d5dd6d10ee0718761003e4f7a4966a8cf105e1bf04cdd6"
+        },
+        {
+          "name": "assets/room/journal.png",
+          "bytes": 1324977,
+          "sha256": "a9ed8d3ac0780806acab0f6cdeee5ff7a3c2e605afd69d33b2819f619fa36c22"
+        },
+        {
+          "name": "assets/fonts/NotoSansKR.ttf",
+          "bytes": 10414588,
+          "sha256": "194018e6b2b293a7964f037b25c0249ce1418bc9ab3c971060a03aa57861e252"
+        },
+        {
+          "name": "assets/fonts/Lora.ttf",
+          "bytes": 212196,
+          "sha256": "822a6621ccbe8d97d20ac88c1c41f5615c9c2c202eaa75f272cd452aac6475a7"
+        },
+        {
+          "name": "assets/ai/LICENSES.txt",
+          "bytes": 2525,
+          "sha256": "42cf9e84c4742b1f6301a5f12b6f8f23a9882d4564254582cf810aa27c32dcdd"
+        },
+        {
+          "name": "assets/motion/activity.json",
+          "bytes": 2583,
+          "sha256": "bc0f2c7f1918d7a0a6e031d0f194aa040d83635399fee8289a8325f000dcc8f4"
+        },
+        {
+          "name": "assets/motion/bookmark.json",
+          "bytes": 2578,
+          "sha256": "ca727f040a341404bad39d9fd764afd9077b76f9b07077b3d0a9acf42e107969"
+        },
+        {
+          "name": "assets/motion/checkmark.json",
+          "bytes": 1424,
+          "sha256": "c30ed48be555dbcbb5f73edb58c70cf0c0ad2a2c402fab726b92e845c2988928"
+        },
+        {
+          "name": "assets/motion/LICENSE-useAnimations.txt",
+          "bytes": 1270,
+          "sha256": "265eff6c7f8b81002077c7392bd8b65b5c1e7704bef90312ff9cb386707fd8f9"
+        }
+      ],
+      "nativeLibraries": [
+        {
+          "name": "libapp.so",
+          "bytes": 7930760,
+          "sha256": "77b55a6c84730ffe2980bc7e803d6adc6f17e57f8f8d92cde318d531c543cb45"
+        },
+        {
+          "name": "libflutter.so",
+          "bytes": 11747864,
+          "sha256": "9cad0ddc4fb535c7d53b4bb19e81af863fc9dbc0407277d3af089a1a2f11a2b3"
+        },
+        {
+          "name": "libreflection_native.so",
+          "bytes": 5846432,
+          "sha256": "abf2271de5ffbd7a4f60946c98c1fd40f1b7b32a7301daa9933fe1d1b9692a2b"
+        }
+      ],
+      "singleSupportedAbi": true,
+      "sameUsesPermissionsAs0511": true
+    },
+    {
+      "abi": "x86_64",
+      "apkFilename": "FOR-THE-RECORD-0.5.12-x64.apk",
+      "apkBytes": 39670569,
+      "apkSha256": "2a695ff0c043407a14f9aaa9b6becdfb366d01cc0fac57f7a9560e68b659baf7",
+      "versionCode": 4019,
+      "rawFilename": "packaged-x86_64-manifest.txt",
+      "rawBytes": 15920,
+      "rawSha256": "42873e6c4e0150871e3db9ebeefe464697a37c88d1b8bbc375bf6bb5b8438971",
+      "components": [
+        {
+          "type": "activity",
+          "name": "app.workroom.seeker_workroom.WorkroomActivity",
+          "mergedXmlLine": 51,
+          "explicitExported": true,
+          "permission": null,
+          "intentActions": [
+            "android.intent.action.MAIN"
+          ],
+          "intentCategories": [
+            "android.intent.category.LAUNCHER"
+          ]
+        },
+        {
+          "type": "receiver",
+          "name": "app.workroom.seeker_workroom.FocusAlarmReceiver",
+          "mergedXmlLine": 78,
+          "explicitExported": false,
+          "permission": null,
+          "intentActions": [],
+          "intentCategories": []
+        },
+        {
+          "type": "service",
+          "name": "com.google.firebase.components.ComponentDiscoveryService",
+          "mergedXmlLine": 89,
+          "explicitExported": false,
+          "permission": null,
+          "intentActions": [],
+          "intentCategories": []
+        },
+        {
+          "type": "activity",
+          "name": "com.google.firebase.auth.internal.GenericIdpActivity",
+          "mergedXmlLine": 116,
+          "explicitExported": true,
+          "permission": null,
+          "intentActions": [
+            "android.intent.action.VIEW"
+          ],
+          "intentCategories": [
+            "android.intent.category.DEFAULT",
+            "android.intent.category.BROWSABLE"
+          ]
+        },
+        {
+          "type": "activity",
+          "name": "com.google.firebase.auth.internal.RecaptchaActivity",
+          "mergedXmlLine": 134,
+          "explicitExported": true,
+          "permission": null,
+          "intentActions": [
+            "android.intent.action.VIEW"
+          ],
+          "intentCategories": [
+            "android.intent.category.DEFAULT",
+            "android.intent.category.BROWSABLE"
+          ]
+        },
+        {
+          "type": "provider",
+          "name": "com.google.firebase.provider.FirebaseInitProvider",
+          "mergedXmlLine": 153,
+          "explicitExported": false,
+          "permission": null,
+          "intentActions": [],
+          "intentCategories": []
+        },
+        {
+          "type": "service",
+          "name": "androidx.credentials.playservices.CredentialProviderMetadataHolder",
+          "mergedXmlLine": 160,
+          "explicitExported": false,
+          "permission": null,
+          "intentActions": [],
+          "intentCategories": []
+        },
+        {
+          "type": "activity",
+          "name": "androidx.credentials.playservices.HiddenActivity",
+          "mergedXmlLine": 169,
+          "explicitExported": false,
+          "permission": null,
+          "intentActions": [],
+          "intentCategories": []
+        },
+        {
+          "type": "activity",
+          "name": "com.google.android.gms.auth.api.signin.internal.SignInHubActivity",
+          "mergedXmlLine": 177,
+          "explicitExported": false,
+          "permission": null,
+          "intentActions": [],
+          "intentCategories": []
+        },
+        {
+          "type": "service",
+          "name": "com.google.android.gms.auth.api.signin.RevocationBoundService",
+          "mergedXmlLine": 186,
+          "explicitExported": true,
+          "permission": "com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION",
+          "intentActions": [],
+          "intentCategories": []
+        },
+        {
+          "type": "activity",
+          "name": "com.google.android.gms.common.api.GoogleApiActivity",
+          "mergedXmlLine": 199,
+          "explicitExported": false,
+          "permission": null,
+          "intentActions": [],
+          "intentCategories": []
+        },
+        {
+          "type": "provider",
+          "name": "androidx.startup.InitializationProvider",
+          "mergedXmlLine": 204,
+          "explicitExported": false,
+          "permission": null,
+          "intentActions": [],
+          "intentCategories": []
+        },
+        {
+          "type": "receiver",
+          "name": "androidx.profileinstaller.ProfileInstallReceiver",
+          "mergedXmlLine": 220,
+          "explicitExported": true,
+          "permission": "android.permission.DUMP",
+          "intentActions": [],
+          "intentCategories": []
+        },
+        {
+          "type": "activity",
+          "name": "com.google.android.play.core.common.PlayCoreDialogWrapperActivity",
+          "mergedXmlLine": 239,
+          "explicitExported": false,
+          "permission": null,
+          "intentActions": [],
+          "intentCategories": []
+        }
+      ],
+      "sameComponentExportPermissionInventoryAs0511": true,
+      "usesPermissions": [
+        "android.permission.INTERNET",
+        "android.permission.POST_NOTIFICATIONS",
+        "android.permission.ACCESS_NETWORK_STATE",
+        "com.google.android.providers.gsf.permission.READ_GSERVICES",
+        "app.workroom.seeker_workroom.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+      ],
+      "flutterAssetEntries": 17,
+      "mandatoryAssets": [
+        {
+          "name": "AssetManifest.bin",
+          "bytes": 662,
+          "sha256": "48f943ae0d4df791963813b7ed8f4657fd7808202a5c2abc07eaebc7638c55cf"
+        },
+        {
+          "name": "FontManifest.json",
+          "bytes": 218,
+          "sha256": "ec943bdecd5243f219178598d1ca0d58df4a4f3633871bb4e1284aada2a58701"
+        },
+        {
+          "name": "NativeAssetsManifest.json",
+          "bytes": 45,
+          "sha256": "9548a31e4a048135c1d94f919328bfb62ae2c7bb3cab96557c7941daa97776cb"
+        },
+        {
+          "name": "assets/room/study.png",
+          "bytes": 2195465,
+          "sha256": "be730edc7e6249ab21291034ea35e30e113371ca2083c9a8a706499ee1bb55e6"
+        },
+        {
+          "name": "assets/room/lamp.png",
+          "bytes": 992050,
+          "sha256": "2e7d534a9798ac4d39d5dd6d10ee0718761003e4f7a4966a8cf105e1bf04cdd6"
+        },
+        {
+          "name": "assets/room/journal.png",
+          "bytes": 1324977,
+          "sha256": "a9ed8d3ac0780806acab0f6cdeee5ff7a3c2e605afd69d33b2819f619fa36c22"
+        },
+        {
+          "name": "assets/fonts/NotoSansKR.ttf",
+          "bytes": 10414588,
+          "sha256": "194018e6b2b293a7964f037b25c0249ce1418bc9ab3c971060a03aa57861e252"
+        },
+        {
+          "name": "assets/fonts/Lora.ttf",
+          "bytes": 212196,
+          "sha256": "822a6621ccbe8d97d20ac88c1c41f5615c9c2c202eaa75f272cd452aac6475a7"
+        },
+        {
+          "name": "assets/ai/LICENSES.txt",
+          "bytes": 2525,
+          "sha256": "42cf9e84c4742b1f6301a5f12b6f8f23a9882d4564254582cf810aa27c32dcdd"
+        },
+        {
+          "name": "assets/motion/activity.json",
+          "bytes": 2583,
+          "sha256": "bc0f2c7f1918d7a0a6e031d0f194aa040d83635399fee8289a8325f000dcc8f4"
+        },
+        {
+          "name": "assets/motion/bookmark.json",
+          "bytes": 2578,
+          "sha256": "ca727f040a341404bad39d9fd764afd9077b76f9b07077b3d0a9acf42e107969"
+        },
+        {
+          "name": "assets/motion/checkmark.json",
+          "bytes": 1424,
+          "sha256": "c30ed48be555dbcbb5f73edb58c70cf0c0ad2a2c402fab726b92e845c2988928"
+        },
+        {
+          "name": "assets/motion/LICENSE-useAnimations.txt",
+          "bytes": 1270,
+          "sha256": "265eff6c7f8b81002077c7392bd8b65b5c1e7704bef90312ff9cb386707fd8f9"
+        }
+      ],
+      "nativeLibraries": [
+        {
+          "name": "libapp.so",
+          "bytes": 8192904,
+          "sha256": "a979129d90eef13af8099b67f0a8092872acbc1dadaddbf1425e8fc8bb6d435a"
+        },
+        {
+          "name": "libflutter.so",
+          "bytes": 13051424,
+          "sha256": "d46a9925e1ae44c1a6beacb5c04e1f9edaf48fdaba1fa79458539f6be82daa03"
+        },
+        {
+          "name": "libreflection_native.so",
+          "bytes": 6247432,
+          "sha256": "365c31b48a7f74fe767bec9bf5b1331956e9189b77b0ccf8c7e07ce04dc32f14"
+        }
+      ],
+      "singleSupportedAbi": true,
+      "sameUsesPermissionsAs0511": true
+    }
+  ],
+  "negativeControls": [
+    {
+      "abi": "arm64-v8a",
+      "privateFilenameOnly": "incomplete-negative-control-arm64.apk",
+      "apkBytes": 27627600,
+      "apkSha256": "87b5c346db9887ad138beeb504e608ac60f44451bdd2a62b05c5389e73281023",
+      "flutterAssetEntries": 0,
+      "missingMandatoryAssets": [
+        "AssetManifest.bin",
+        "FontManifest.json",
+        "NativeAssetsManifest.json",
+        "assets/room/study.png",
+        "assets/room/lamp.png",
+        "assets/room/journal.png",
+        "assets/fonts/NotoSansKR.ttf",
+        "assets/fonts/Lora.ttf",
+        "assets/ai/LICENSES.txt",
+        "assets/motion/activity.json",
+        "assets/motion/bookmark.json",
+        "assets/motion/checkmark.json",
+        "assets/motion/LICENSE-useAnimations.txt"
+      ],
+      "aotSha256": "77b55a6c84730ffe2980bc7e803d6adc6f17e57f8f8d92cde318d531c543cb45",
+      "sameAotAsFinal": true,
+      "currentGateExitCode": 1,
+      "currentGateError": "Release APK is missing a required Flutter asset: AssetManifest.bin",
+      "rootReportedNotInstalledOrPublished": true,
+      "rawApkPublished": false
+    },
+    {
+      "abi": "x86_64",
+      "privateFilenameOnly": "incomplete-negative-control-x64.apk",
+      "apkBytes": 29585068,
+      "apkSha256": "cec5cad41267cc44ea3662f0d3a7cd8362fd6037f42febddf6f39b485780c5ac",
+      "flutterAssetEntries": 0,
+      "missingMandatoryAssets": [
+        "AssetManifest.bin",
+        "FontManifest.json",
+        "NativeAssetsManifest.json",
+        "assets/room/study.png",
+        "assets/room/lamp.png",
+        "assets/room/journal.png",
+        "assets/fonts/NotoSansKR.ttf",
+        "assets/fonts/Lora.ttf",
+        "assets/ai/LICENSES.txt",
+        "assets/motion/activity.json",
+        "assets/motion/bookmark.json",
+        "assets/motion/checkmark.json",
+        "assets/motion/LICENSE-useAnimations.txt"
+      ],
+      "aotSha256": "a979129d90eef13af8099b67f0a8092872acbc1dadaddbf1425e8fc8bb6d435a",
+      "sameAotAsFinal": true,
+      "currentGateExitCode": 1,
+      "currentGateError": "Release APK is missing a required Flutter asset: AssetManifest.bin",
+      "rootReportedNotInstalledOrPublished": true,
+      "rawApkPublished": false
+    }
+  ],
+  "capturedGateOutput": {
+    "filename": "package-gate-output.txt",
+    "sha256": "4553acccb383111557100eb0d654238a331f68a8e1e0f79c9800352f39689b3c"
+  },
+  "limits": [
+    "Historical audit remains partial/scoreless; two SDK-v1 migration leads remain.",
+    "No SQL sink found in reviewed activity path; not exhaustive route/input or deployed-backend review.",
+    "Remaining Firebase and AndroidX/Google SDK exported components and inherited intent behavior are not comprehensively audited.",
+    "Optional backend remains undeployed; three production advisories (one high, two moderate) remain.",
+    "Artifact checks establish exact package contents and selected gate rules, not complete security clearance.",
+    "Incomplete APK controls are retained privately and were not installed or published; root caught asset absence before device installation/public release."
+  ]
+}

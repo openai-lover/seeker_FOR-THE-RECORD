@@ -1,0 +1,9 @@
+Captured from root final release build, 2026-10-05; final source ee650639670c7ab35081a92e3435a185b73a6642
+Release manifest verified: app-arm64-v8a-release.apk
+Release assets and native libraries verified: app-arm64-v8a-release.apk
+Release manifest verified: app-x86_64-release.apk
+Release assets and native libraries verified: app-x86_64-release.apk
+
+Read-only artifact negative-control gate observations:
+arm64-v8a: exit 1; Release APK is missing a required Flutter asset: AssetManifest.bin
+x86_64: exit 1; Release APK is missing a required Flutter asset: AssetManifest.bin
