@@ -1,0 +1,29 @@
+{
+  "appVersion": "0.5.12+19",
+  "appSource": "ee650639670c7ab35081a92e3435a185b73a6642",
+  "actualProductionScreens": true,
+  "rootVisualPrivacyReviewed": true,
+  "approvedForPublication": true,
+  "newAgentAuthoredDemoOnly": true,
+  "noWalletTransactionIdentifiers": true,
+  "source": "Selected opaque-masked phone crops at207/343/424.8 seconds of current production capture. This individual-image approval does not approve the full video.",
+  "files": [
+    {
+      "name": "editor-0512.png",
+      "sha256": "b12b4590833b4bc21e137ea667551a00dfb4a560bedab1d8caafc7c2b3a6d11f",
+      "bytes": 105336
+    },
+    {
+      "name": "questions-0512.png",
+      "sha256": "6f8b7f461bb953b5bd6509ae59d4a18530ac3d051b2bccf23028adacce0d64f3",
+      "bytes": 121191
+    },
+    {
+      "name": "saved-0512.png",
+      "sha256": "e4caf24634422c7c0f4e2c4778faee5f4d583f7f517bad3738fc8d4465b62b6c",
+      "bytes": 110598
+    }
+  ],
+  "noIndependentHumanStudy": true,
+  "reviewedAtKst": "2026-10-05T16:26:09.719766+09:00"
+}
