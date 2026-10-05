@@ -62,7 +62,7 @@
     "allSlideRendersInspectedByRoot": true,
     "allNativeAndPptSpeakerNotesExactlyMatch": true,
     "images": "Current 0.5.12 production and isolated proof; explicitly dated 0.5.10 authored AI evidence.",
-    "newCoachDeckReadVerified": false
+    "newCoachDeckReadVerified": true
   },
   "mainTimeline": {
     "seconds": 180,
@@ -135,13 +135,28 @@
     "savedSnapshotSha256": "6929ba8e59f1622df26a82573c852198c5648343b63d6615471f1bdfa76ffdc4",
     "rootContentVerified": true,
     "minorAsrDifference": "Jupiter transcribed as Jupyter.",
-    "newCoachReviewHasReadIt": false
+    "newCoachReviewHasReadIt": true
   },
   "reviewState": {
-    "lastObservedScoreReportedByRoot": 76,
+    "lastObservedScoreReportedByRoot": 77,
     "competitionStatusReportedByRoot": "DRAFT",
-    "newCoachReassessmentRun": false,
-    "competitionFinalSubmissionRun": false
+    "newCoachReassessmentRun": true,
+    "competitionFinalSubmissionRun": false,
+    "actualCriteria": {
+      "AI": 78,
+      "SKR": 78,
+      "UX": 84,
+      "UI": 82,
+      "innovation": 74,
+      "ecosystem": 67
+    },
+    "approximateCompletedAtKst": "2026-10-05T20:13:00+09:00",
+    "freshServerFieldsConfirmed": true,
+    "writeupCharacters": 4992,
+    "skrCharacters": 770,
+    "transcriptCharacters": 1549,
+    "allEvidenceRead": true,
+    "unchangedMaterialsMustNotBeReassessed": true
   },
   "preservation": {
     "appTagAndApkAssetsUnchanged": true,
