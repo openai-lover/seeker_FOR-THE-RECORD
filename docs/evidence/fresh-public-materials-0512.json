@@ -1,0 +1,155 @@
+{
+  "schema": "ftr-fresh-public-materials-0512-v1",
+  "appSourceTag": "ee650639670c7ab35081a92e3435a185b73a6642",
+  "releaseTag": "v0.5.12",
+  "toolingEvidenceHeadShortAtPublication": "890f9c",
+  "publicationReadbackAt": "2026-10-05T18:44:18.8194239+09:00",
+  "allSixServerDigestsMatch": true,
+  "assets": [
+    {
+      "role": "main_video",
+      "name": "FOR-THE-RECORD-demo-0.5.12-fresh-rpc-3min.mp4",
+      "bytes": 5937665,
+      "sha256": "303f40604e0b550f4b84eeb8599b3a3e2c2a4bd052cdbc9d9d3d4b1352731fea",
+      "serverDigest": "sha256:303f40604e0b550f4b84eeb8599b3a3e2c2a4bd052cdbc9d9d3d4b1352731fea",
+      "url": "https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.12/FOR-THE-RECORD-demo-0.5.12-fresh-rpc-3min.mp4"
+    },
+    {
+      "role": "main_srt",
+      "name": "FOR-THE-RECORD-demo-0.5.12-fresh-rpc-3min.srt",
+      "bytes": 2540,
+      "sha256": "c760ad112717714703e61fa8e368706bdf65ba04fac00ea6f49d96837196f8cb",
+      "serverDigest": "sha256:c760ad112717714703e61fa8e368706bdf65ba04fac00ea6f49d96837196f8cb",
+      "url": "https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.12/FOR-THE-RECORD-demo-0.5.12-fresh-rpc-3min.srt"
+    },
+    {
+      "role": "main_transcript",
+      "name": "FOR-THE-RECORD-demo-0.5.12-fresh-rpc-3min-transcript.txt",
+      "bytes": 1673,
+      "sha256": "6e8cb509b5da65406691ab0ea1ea1f0a8cab5e46d09d0f7c2a452a9802f7e505",
+      "serverDigest": "sha256:6e8cb509b5da65406691ab0ea1ea1f0a8cab5e46d09d0f7c2a452a9802f7e505",
+      "url": "https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.12/FOR-THE-RECORD-demo-0.5.12-fresh-rpc-3min-transcript.txt"
+    },
+    {
+      "role": "full_video",
+      "name": "FOR-THE-RECORD-continuous-fresh-public-case8-0.5.12.mp4",
+      "bytes": 7877505,
+      "sha256": "67981381e3fe2fcc0d9768b30481e1b3cb8a36e02b9827044c857741525860b7",
+      "serverDigest": "sha256:67981381e3fe2fcc0d9768b30481e1b3cb8a36e02b9827044c857741525860b7",
+      "url": "https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.12/FOR-THE-RECORD-continuous-fresh-public-case8-0.5.12.mp4"
+    },
+    {
+      "role": "pitch_pdf",
+      "name": "FOR-THE-RECORD-pitch-0.5.12-fresh-rpc.pdf",
+      "bytes": 1021958,
+      "sha256": "8d1b8531515a89733bf17f331f1f27d4bd20a78305bbd1f30d28b783b545afd0",
+      "serverDigest": "sha256:8d1b8531515a89733bf17f331f1f27d4bd20a78305bbd1f30d28b783b545afd0",
+      "url": "https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.12/FOR-THE-RECORD-pitch-0.5.12-fresh-rpc.pdf"
+    },
+    {
+      "role": "pitch_pptx",
+      "name": "FOR-THE-RECORD-pitch-0.5.12-fresh-rpc.pptx",
+      "bytes": 7949413,
+      "sha256": "bee4118f4576763f6ff3b47b9a29995322eefd7c611cdc09f7c59750bfff9044",
+      "serverDigest": "sha256:bee4118f4576763f6ff3b47b9a29995322eefd7c611cdc09f7c59750bfff9044",
+      "url": "https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.12/FOR-THE-RECORD-pitch-0.5.12-fresh-rpc.pptx"
+    }
+  ],
+  "nativeDeck": {
+    "publicUrl": "https://docs.google.com/presentation/d/1tO0GQsr-iQCSKIODwrkbODu2ENiVbRopWM78R8wwcNA/edit?usp=drivesdk",
+    "revision": "DbxmWUmCNetFVg",
+    "slideCount": 11,
+    "allSlideRendersInspectedByRoot": true,
+    "allNativeAndPptSpeakerNotesExactlyMatch": true,
+    "images": "Current 0.5.12 production and isolated proof; explicitly dated 0.5.10 authored AI evidence.",
+    "newCoachDeckReadVerified": false
+  },
+  "mainTimeline": {
+    "seconds": 180,
+    "clips": 17,
+    "internalCuts": 16,
+    "actionSpeed": 1,
+    "productionSeconds": 150,
+    "isolatedSeconds": 30,
+    "editedHighlights": true,
+    "continuousCombinedSession": false
+  },
+  "normalProductionEvidence": {
+    "preservedFullVideoUrl": "https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.12/FOR-THE-RECORD-continuous-production-0.5.12.mp4",
+    "preservedFullVideoSha256": "6c8b172dd984733bd2b57f8435f794ed2ed845fd45783b15d19ee89667d88761",
+    "recordedSourceSeconds": 557.41,
+    "internalCuts": 0,
+    "actionSpeed": 1,
+    "scope": "Existing read-only MWA/SeedVault authorization and actual successful Other RPC activity; authored DEMO reason, immediate manual revisit, local question, lesson, native exports and restart.",
+    "completedPrivateExportsBytesEach": 2029,
+    "wholeJournalPayloadIdentical": true,
+    "firstPrivatelyValidatedBeforeForceStop": true,
+    "nativeAiMilliseconds": 2355,
+    "preparedModelNetworkAvailable": true,
+    "candidateQuestionIds": [
+      5,
+      2
+    ],
+    "operatorQuestionId": 5,
+    "generalAccuracyOrLatencyDistribution": false,
+    "supportedOwnerLiveSwapClaimed": false
+  },
+  "isolatedKnownPublicEvidence": {
+    "recordedSourceSeconds": 790.7306,
+    "publishedContainerSeconds": 790.75,
+    "internalCuts": 0,
+    "actionSpeed": 1,
+    "silent": true,
+    "initialFetchAlreadyInFlight": true,
+    "initialFetchTapCaptured": false,
+    "secondFreshRequestCaptured": true,
+    "completeInitialTapToEndRecording": false,
+    "package": "app.workroom.seeker_workroom.integration",
+    "privateExportBytesEach": 2392,
+    "wholeJournalPayloadIdentical": true,
+    "firstPrivatelyValidatedBeforeForceStop": true,
+    "manualQuestionId": 4,
+    "newAiInference": false,
+    "ownerAccountOrOwnershipClaimed": false,
+    "newTrade": false,
+    "heldOutOrRepresentativeCoverage": false,
+    "methodDocument": "docs/submission/FRESH_PUBLIC_CASE8_0512.md",
+    "safeRecordingReceipt": "docs/evidence/fresh-public-case8-recording-0512.json"
+  },
+  "driveMainDeliveryReportedByRoot": {
+    "publicUrl": "https://drive.google.com/file/d/1JeE2C5iJb-CIFL8v9uv40Cn15s_BIfwl/view?usp=drivesdk",
+    "remoteDownloadSha256": "303f40604e0b550f4b84eeb8599b3a3e2c2a4bd052cdbc9d9d3d4b1352731fea",
+    "remoteDownloadMatched": true,
+    "anyoneReaderPermissionUnchanged": true,
+    "fullBrowserPlaybackVerified": false,
+    "processingCauseProven": false,
+    "beginningBrowserPlaybackVerified": true,
+    "observedPlaybackSeconds": 7,
+    "observedDurationSeconds": 180,
+    "previousLoadFailureSuperseded": true
+  },
+  "portalAudioTranscript": {
+    "generationReportedSuccessfulByRoot": true,
+    "normalizedTrimmedContentCharacters": 1549,
+    "savedSnapshotBytes": 1551,
+    "savedSnapshotSha256": "6929ba8e59f1622df26a82573c852198c5648343b63d6615471f1bdfa76ffdc4",
+    "rootContentVerified": true,
+    "minorAsrDifference": "Jupiter transcribed as Jupyter.",
+    "newCoachReviewHasReadIt": false
+  },
+  "reviewState": {
+    "lastObservedScoreReportedByRoot": 76,
+    "competitionStatusReportedByRoot": "DRAFT",
+    "newCoachReassessmentRun": false,
+    "competitionFinalSubmissionRun": false
+  },
+  "preservation": {
+    "appTagAndApkAssetsUnchanged": true,
+    "allPreviousReleaseAssetsUnchanged": true,
+    "rawVideoAndExportsPublished": false
+  },
+  "independentHumanParticipants": 0,
+  "broaderAiEvidence": "Dated 0.5.10 authored fixtures and failures remain unchanged; no new independent labels, new isolated inference or human repeat-use claim.",
+  "qaAuthority": "Agent/root artifact/privacy/source QA, not independent human validation or comprehensive security clearance.",
+  "sixAssetPublicationReceiptSha256": "c2bc266db0866d38d40df82204ddcba74938e670f6ef8cd305f0e56a17aff03c"
+}

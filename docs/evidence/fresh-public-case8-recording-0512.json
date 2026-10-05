@@ -1,5 +1,5 @@
 {
-  "schema": "ftr-public-case8-recording-approval-0512-v1",
+  "schema": "ftr-public-case8-recording-publication-0512-v2",
   "sourceAppTag": "ee650639670c7ab35081a92e3435a185b73a6642",
   "productionParserSha256": "5acb14ea6c56ac658766bf4d3ba5e0199762afc2e7313f997631568083a30760",
   "publicMethodDocument": "docs/submission/FRESH_PUBLIC_CASE8_0512.md",
@@ -21,11 +21,14 @@
     "rootPrivacyQaApproved": true,
     "approvalSource": "Root agent independently approved this exact derivative SHA256 after visual review of all 791 one-second samples and 14 dense contact sheets.",
     "rootQaCovered": "Status bar, keyboard, picker and restart views received privacy covers.",
-    "derivativePublicationState": "approved, pending publication",
-    "derivativePublished": false,
+    "derivativePublicationState": "published with verified GitHub server digest",
+    "derivativePublished": true,
     "rawPublished": false,
     "safeReceipt": "docs/evidence/fresh-public-case8-recording-0512.json",
-    "scope": "Continuous recorded timeline for the isolated known historical case proof; the first fetch was already in flight before recording. No production account/MWA, new trade, owner assertion, human study or new AI inference."
+    "scope": "Continuous recorded timeline for the isolated known historical case proof; the first fetch was already in flight before recording. No production account/MWA, new trade, owner assertion, human study or new AI inference.",
+    "publicUrl": "https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.12/FOR-THE-RECORD-continuous-fresh-public-case8-0.5.12.mp4",
+    "serverDigest": "sha256:67981381e3fe2fcc0d9768b30481e1b3cb8a36e02b9827044c857741525860b7",
+    "publicationReadbackAt": "2026-10-05T18:44:18.8194239+09:00"
   },
   "executionEvidenceScope": {
     "package": "app.workroom.seeker_workroom.integration",
@@ -62,5 +65,15 @@
     "Personal records",
     "Credentials"
   ],
-  "published": false
+  "published": true,
+  "publication": {
+    "releaseTag": "v0.5.12",
+    "publishedAssetUrl": "https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.12/FOR-THE-RECORD-continuous-fresh-public-case8-0.5.12.mp4",
+    "bytes": 7877505,
+    "sha256": "67981381e3fe2fcc0d9768b30481e1b3cb8a36e02b9827044c857741525860b7",
+    "serverDigest": "sha256:67981381e3fe2fcc0d9768b30481e1b3cb8a36e02b9827044c857741525860b7",
+    "rootPublicationReadbackAt": "2026-10-05T18:44:18.8194239+09:00",
+    "sixAssetPublicationReceiptSha256": "c2bc266db0866d38d40df82204ddcba74938e670f6ef8cd305f0e56a17aff03c",
+    "tagAndExistingAssetsPreserved": true
+  }
 }

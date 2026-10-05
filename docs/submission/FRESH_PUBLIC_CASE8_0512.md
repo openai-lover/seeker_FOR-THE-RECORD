@@ -24,13 +24,13 @@ The request uses `jsonParsed`, numeric `maxSupportedTransactionVersion=1` and fi
 
 The frozen protocol and earlier desktop check are preserved. Both phone request/raw hashes match [the existing public request and raw fixture](../../test/fixtures/public_mainnet_0512_known_refresh/). Phone raw files were not copied into public fixtures. [The safe aggregate](../evidence/fresh-known-public-case8-0512.json) contains exact fetch times, hashes, classification and export validation booleans; private storage paths and writing are excluded. The normal production app was restored to the foreground after the isolated proof. No new production APK, parser policy, model, schema or UI change was required.
 
-## Recorded timeline and publication status
+## Recorded timeline and verified publication
 
 The private source screen capture is **790.7306 seconds**. The exact privacy-covered, constant-frame-rate derivative is **790.75 seconds (13:10.75)**, **7,877,505 bytes**, SHA256 **67981381e3fe2fcc0d9768b30481e1b3cb8a36e02b9827044c857741525860b7**. It has **zero internal cuts, 1x action speed and no audio**. Root agent visual/privacy QA independently checked all 791 one-second samples and 14 dense contact sheets, including status-bar, keyboard, picker and restart covers. This is agent QA, not independent human validation.
 
 **The first fetch was already in flight when recording began, so its initiating tap is absent.** The recorded timeline shows the resulting fresh read and subsequent product use, completed export, force-stop/relaunch and the **second fresh request**. It is continuous within its recorded interval; it is not a complete first-fetch-tap-to-end recording. The two external JSON validations are not visible as phone actions.
 
-Root approved only this exact privacy-covered derivative for public use. **Publication is pending**; no release upload or published-video URL is claimed here. The raw source remains private. [The safe recording receipt](../evidence/fresh-public-case8-recording-0512.json) records the approved derivative hash and boundaries without private media paths. Manual question 4 and no new AI inference remain the scope of this proof.
+Root approved only this exact privacy-covered derivative for public use. It is now [published in v0.5.12](https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.12/FOR-THE-RECORD-continuous-fresh-public-case8-0.5.12.mp4) with the GitHub server digest matching SHA256 **67981381e3fe2fcc0d9768b30481e1b3cb8a36e02b9827044c857741525860b7**, verified at **2026-10-05T18:44:18.8194239+09:00**. The raw source remains private. [The safe recording receipt](../evidence/fresh-public-case8-recording-0512.json) records the published derivative hash and boundaries without private media paths. Manual question 4 and no new AI inference remain the scope of this proof. [The matched-material summary](MATERIALS_FRESH_RPC_0512.md) separates this supplement from the edited main and normal production flow.
 
 ## Delayed due state and reminder limitation
 

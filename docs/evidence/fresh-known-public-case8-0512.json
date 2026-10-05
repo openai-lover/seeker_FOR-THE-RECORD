@@ -1,5 +1,5 @@
 {
-  "schema": "ftr-fresh-known-public-case8-0512-v3",
+  "schema": "ftr-fresh-known-public-case8-0512-v4",
   "selection": "One deliberately selected historical already-public supported case8 signature. No new search, replacement, success sampling, owner account or trade.",
   "historicalTransactionSignature": "2vCgWskb1AV9UVvhmv1vuQdh8pdH5tAWyoqzsgXnF5z3ohpT9RALaPFb7tGiN8xCViJb7kdcLgBXWqe3pvGLuSY8",
   "historicalSlot": 453197269,
@@ -43,7 +43,7 @@
     "The isolated debug harness exercised current production parser/product UI and a new real SQLite/native exporter. It is not the installed production account/MWA path.",
     "The product UI Refresh consumes the freshly fetched snapshot. It is not another RPC request. The second actual RPC request occurred after force-stop and relaunch.",
     "Only manual question4 was selected in this phone proof; no new AI inference, model quality, independent user labels, repeat-use or retention was measured.",
-    "Both private exports were validated outside the phone UI. Raw exports, raw phone video, personal notes and private paths remain private. The exact privacy-covered CFR derivative is root-approved but not yet published.",
+    "Both private exports were validated outside the phone UI. Raw exports, raw phone video, personal notes and private paths remain private. Only the exact root-approved privacy-covered CFR derivative is published, with its server digest verified.",
     "The older delayed-due DB main-file hash was preserved, but native alarm continuity and an actual due UI transition have not been established.",
     "A zero-internal-cut 1x recorded timeline exists, but the initial fetch tap was not recorded because the first request was already in flight. The second fresh request after force-stop is captured. This is not a complete initial-tap-to-end recording."
   ],
@@ -249,11 +249,15 @@
       "rootPrivacyQaApproved": true,
       "approvalSource": "Root agent independently approved this exact derivative SHA256 after visual review of all 791 one-second samples and 14 dense contact sheets.",
       "rootQaCovered": "Status bar, keyboard, picker and restart views received privacy covers.",
-      "derivativePublicationState": "approved, pending publication",
-      "derivativePublished": false,
+      "derivativePublicationState": "published with verified GitHub server digest",
+      "derivativePublished": true,
       "rawPublished": false,
       "safeReceipt": "docs/evidence/fresh-public-case8-recording-0512.json",
-      "scope": "Continuous recorded timeline for the isolated known historical case proof; the first fetch was already in flight before recording. No production account/MWA, new trade, owner assertion, human study or new AI inference."
+      "scope": "Continuous recorded timeline for the isolated known historical case proof; the first fetch was already in flight before recording. No production account/MWA, new trade, owner assertion, human study or new AI inference.",
+      "publicUrl": "https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.12/FOR-THE-RECORD-continuous-fresh-public-case8-0.5.12.mp4",
+      "serverDigest": "sha256:67981381e3fe2fcc0d9768b30481e1b3cb8a36e02b9827044c857741525860b7",
+      "publicationReadbackAt": "2026-10-05T18:44:18.8194239+09:00",
+      "publicationReceipt": "docs/evidence/fresh-public-case8-recording-0512.json"
     }
   },
   "reminderSourceInspection": {
