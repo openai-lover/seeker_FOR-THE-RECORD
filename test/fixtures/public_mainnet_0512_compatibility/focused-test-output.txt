@@ -1,0 +1,45 @@
+00:00 +0: loading C:/Users/kk454/Documents/Codex/2026-09-20/2-codex-codex-ui-ux/work/for-the-record/test/public_compatibility_0512_test.dart
+00:00 +0: exact same36 signatures and contexts; no new selection
+00:00 +1: separate max1 protocol frozen before requests and links immutable baseline
+00:00 +2: all36 raw attempts retain exact hashes and only same-signature getTransaction
+00:00 +3: actual captured response versions are10v1 plus21v0 plus5legacy
+00:00 +4: same26 previously available parser activities stay unchanged
+00:00 +5: all15 failed listing flags preserved, not mistaken for successful unavailability
+00:00 +6: classified proof accounting recorded separately from accuracy
+00:00 +7: same sample e0-jupiter-0 reproduces candidate parser outcome
+00:00 +8: same sample e0-jupiter-1 reproduces candidate parser outcome
+00:00 +9: same sample e0-jupiter-2 reproduces candidate parser outcome
+00:00 +10: same sample e0-jupiter-3 reproduces candidate parser outcome
+00:00 +11: same sample e0-system-0 reproduces candidate parser outcome
+00:00 +12: same sample e0-system-1 reproduces candidate parser outcome
+00:00 +13: same sample e0-system-2 reproduces candidate parser outcome
+00:00 +14: same sample e0-system-3 reproduces candidate parser outcome
+00:00 +15: same sample e0-classic-token-0 reproduces candidate parser outcome
+00:00 +16: same sample e0-classic-token-1 reproduces candidate parser outcome
+00:00 +17: same sample e0-classic-token-2 reproduces candidate parser outcome
+00:00 +18: same sample e0-classic-token-3 reproduces candidate parser outcome
+00:00 +19: same sample e1-jupiter-0 reproduces candidate parser outcome
+00:00 +20: same sample e1-jupiter-1 reproduces candidate parser outcome
+00:00 +21: same sample e1-jupiter-2 reproduces candidate parser outcome
+00:00 +22: same sample e1-jupiter-3 reproduces candidate parser outcome
+00:00 +23: same sample e1-system-0 reproduces candidate parser outcome
+00:00 +24: same sample e1-system-1 reproduces candidate parser outcome
+00:00 +25: same sample e1-system-2 reproduces candidate parser outcome
+00:00 +26: same sample e1-system-3 reproduces candidate parser outcome
+00:00 +27: same sample e1-classic-token-0 reproduces candidate parser outcome
+00:00 +28: same sample e1-classic-token-1 reproduces candidate parser outcome
+00:00 +29: same sample e1-classic-token-2 reproduces candidate parser outcome
+00:00 +30: same sample e1-classic-token-3 reproduces candidate parser outcome
+00:00 +31: same sample e2-jupiter-0 reproduces candidate parser outcome
+00:00 +32: same sample e2-jupiter-1 reproduces candidate parser outcome
+00:00 +33: same sample e2-jupiter-2 reproduces candidate parser outcome
+00:00 +34: same sample e2-jupiter-3 reproduces candidate parser outcome
+00:00 +35: same sample e2-system-0 reproduces candidate parser outcome
+00:00 +36: same sample e2-system-1 reproduces candidate parser outcome
+00:00 +37: same sample e2-system-2 reproduces candidate parser outcome
+00:00 +38: same sample e2-system-3 reproduces candidate parser outcome
+00:00 +39: same sample e2-classic-token-0 reproduces candidate parser outcome
+00:00 +40: same sample e2-classic-token-1 reproduces candidate parser outcome
+00:00 +41: same sample e2-classic-token-2 reproduces candidate parser outcome
+00:00 +42: same sample e2-classic-token-3 reproduces candidate parser outcome
+00:00 +43: All tests passed!

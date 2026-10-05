@@ -7,3 +7,19 @@ android/gradlew text eol=lf
 *.mp4 binary
 *.zip binary
 test/fixtures/public_mainnet_058/public-mainnet-*.json -text
+
+# Preserve bytes in source-bound RPC evidence and measured readers.
+lib/data/direct_activity.dart -text
+functions/src/activity.ts -text
+tool/public_parser_protocol_0511.dart -text
+tool/replay_public_compatibility_0512.dart -text
+test/fixtures/public_mainnet_0511_protocol/** -text
+test/fixtures/public_mainnet_0512_compatibility/** -text
+docs/evidence/public-parser-0511-protocol.json -text
+docs/evidence/public-rpc-v1-0512.json -text
+docs/evidence/note-recordability-0512.json -text
+docs/evidence/security-0511/** -text
+docs/evidence/security-0512/** -text
+docs/submission/PUBLIC_PARSER_PROTOCOL_0511.md -text
+docs/submission/PUBLIC_RPC_V1_COMPATIBILITY_0512.md -text
+docs/submission/AUDIT_LEAD_MATRIX_0511.md -text

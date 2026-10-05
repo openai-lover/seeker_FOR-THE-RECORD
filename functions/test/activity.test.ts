@@ -11,7 +11,7 @@ const signature=bs58.encode(new Uint8Array(64).fill(7));
 const info:SignatureInfo={signature,blockTime:1700000000,err:null};
 function fixture() {
   const balance=(accountIndex:number,mint:string,amount:string,decimals:number)=>({accountIndex,mint,owner:wallet,programId:'TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA',uiTokenAmount:{amount,decimals}});
-  return {blockTime:1700000000,transaction:{signatures:[signature],message:{
+  return {version:'legacy',blockTime:1700000000,transaction:{signatures:[signature],message:{
     accountKeys:[wallet,src,dst].map((pubkey,index)=>({pubkey,signer:index===0,writable:true})),
     instructions:[{programId:JUPITER,accounts:['TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA',wallet,src,dst],
       data:bs58.encode(Buffer.from([229,23,203,151,122,227,173,42,0,0,0,0]))}]}},

@@ -13,6 +13,7 @@ Map<String, dynamic> transfer({bool spl = false}) {
     'uiTokenAmount': {'amount': amount, 'decimals': 6},
   };
   return {
+    'version': 'legacy',
     'transaction': {
       'signatures': [signature()],
       'message': {

@@ -1,0 +1,710 @@
+{
+  "protocolId": "public-rpc-version1-same36-0512-v1",
+  "frozenAtUtc": "2026-10-05T05:59:32.329041+00:00",
+  "baselineProtocolSha256": "abc98638dcebe6472604e4e2305f43079c2953c5b1a11cfa68265da1feca72d7",
+  "baselineFetchReceiptSha256": "90a88d773d02232a81f9c56187fdd1d0363fc6abf29f3a147aeeef51ac1e3738",
+  "baselineProductionAppSource": "0c5dfd70243940d6598804e9ff3d111ae920051d",
+  "baselineProductionParserFileSha256": "6ddd4790be2a16272ba9f76e72d9c0d5d81c6527338b7e455f47f193fd0864d7",
+  "rpc": "https://api.mainnet-beta.solana.com",
+  "method": "getTransaction",
+  "params": {
+    "commitment": "finalized",
+    "encoding": "jsonParsed",
+    "maxSupportedTransactionVersion": 1
+  },
+  "selection": "EXACTsame36 baseline selected signatures, in identical epoch/program/rank order. No getSignaturesForAddress, extra search, replacement, provider switching or success filter.",
+  "selectionRows": [
+    {
+      "caseId": "e0-jupiter-0",
+      "epoch": 0,
+      "program": "jupiter",
+      "rank": 0,
+      "selectionInfo": {
+        "blockTime": 1791178947,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "p45ufD64H5bSthKjHePDcrCwcgyAwZ7btC8at1rQNsNSG4S6FVNJuNwG7o4mv5jDkxBkvuikVXSzdKRsZ5urxuT",
+        "slot": 453488052,
+        "transactionIndex": 1275
+      },
+      "duplicateOf": null
+    },
+    {
+      "caseId": "e0-jupiter-1",
+      "epoch": 0,
+      "program": "jupiter",
+      "rank": 1,
+      "selectionInfo": {
+        "blockTime": 1791178947,
+        "confirmationStatus": "finalized",
+        "err": {
+          "InstructionError": [
+            1,
+            {
+              "Custom": 5
+            }
+          ]
+        },
+        "memo": null,
+        "signature": "2Uk4bv6RrwRyXgHPLvi7uyer6TRPhaWmS9HYGpBnQ46REMPSLBiksaMcuUiDQX8pBJ6QdJK7y8ojuB5KVkmMQCVH",
+        "slot": 453488052,
+        "transactionIndex": 1253
+      },
+      "duplicateOf": null
+    },
+    {
+      "caseId": "e0-jupiter-2",
+      "epoch": 0,
+      "program": "jupiter",
+      "rank": 2,
+      "selectionInfo": {
+        "blockTime": 1791178947,
+        "confirmationStatus": "finalized",
+        "err": {
+          "InstructionError": [
+            1,
+            {
+              "Custom": 5
+            }
+          ]
+        },
+        "memo": null,
+        "signature": "4DcnHvsjUQKyNsoVzKw1ejYJwGKsXTXvQpBU7xuPZRPkbYgfypcq9Waqvn2DuMGpfwWdm1s9JqQ1qn2PXGzvAefT",
+        "slot": 453488052,
+        "transactionIndex": 1076
+      },
+      "duplicateOf": null
+    },
+    {
+      "caseId": "e0-jupiter-3",
+      "epoch": 0,
+      "program": "jupiter",
+      "rank": 3,
+      "selectionInfo": {
+        "blockTime": 1791178947,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "5n8kzPjP5DKvshzn4JKE9MzhoLZV3gstqh7ysav93aXesKNHLevM1y2tqpoPp8ae9mW9PVSkbm9X9Uu6VTGNE75J",
+        "slot": 453488052,
+        "transactionIndex": 1030
+      },
+      "duplicateOf": null
+    },
+    {
+      "caseId": "e0-system-0",
+      "epoch": 0,
+      "program": "system",
+      "rank": 0,
+      "selectionInfo": {
+        "blockTime": 1791178957,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "5Tfcbe6MM8aNeSLK82EPptoxfmwpMZ46CWY7v8V9BLdqSu8U43CN9S9V6ZEme2WcCQKAf2Se1RnBG4Z9U3ewm4n4",
+        "slot": 453488090,
+        "transactionIndex": 1075
+      },
+      "duplicateOf": null
+    },
+    {
+      "caseId": "e0-system-1",
+      "epoch": 0,
+      "program": "system",
+      "rank": 1,
+      "selectionInfo": {
+        "blockTime": 1791178957,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "3qyaB3ryM6hB4jpQzTHQWcCnXiFwgxBBe1KbWX8caSme4WABDHkVkNgmjR5E7azgGXxw5MxU8cxznQqYZjjkih3S",
+        "slot": 453488090,
+        "transactionIndex": 1074
+      },
+      "duplicateOf": null
+    },
+    {
+      "caseId": "e0-system-2",
+      "epoch": 0,
+      "program": "system",
+      "rank": 2,
+      "selectionInfo": {
+        "blockTime": 1791178957,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "25ERDAmHb1H9ZUArLfCVkLW5gRzANzAx1AauAXw4VJXwdcJp6Gbh6Q4sMb6cQ2GEVGy1k1NwjZuiVaqRRj9QrjVq",
+        "slot": 453488090,
+        "transactionIndex": 1073
+      },
+      "duplicateOf": null
+    },
+    {
+      "caseId": "e0-system-3",
+      "epoch": 0,
+      "program": "system",
+      "rank": 3,
+      "selectionInfo": {
+        "blockTime": 1791178957,
+        "confirmationStatus": "finalized",
+        "err": {
+          "InstructionError": [
+            2,
+            {
+              "Custom": 5000
+            }
+          ]
+        },
+        "memo": null,
+        "signature": "3miDgA5qcYuQsybGb1ynbE75deqy9J41wewjTTFZcNkStbZtSq4hv1QMvto1y1FcxRB3RdSQtVBu1SaD1yhnWaJy",
+        "slot": 453488090,
+        "transactionIndex": 1071
+      },
+      "duplicateOf": null
+    },
+    {
+      "caseId": "e0-classic-token-0",
+      "epoch": 0,
+      "program": "classic-token",
+      "rank": 0,
+      "selectionInfo": {
+        "blockTime": 1791178967,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "31aK1xsNaf1cvHMnpUUE2JEs7ma3VCWZkyQQ5Nw95Q4TDxsvoQzy24zXiUrgugfscbrkfrkYiFudffzjZDL9kuos",
+        "slot": 453488128,
+        "transactionIndex": 329
+      },
+      "duplicateOf": null
+    },
+    {
+      "caseId": "e0-classic-token-1",
+      "epoch": 0,
+      "program": "classic-token",
+      "rank": 1,
+      "selectionInfo": {
+        "blockTime": 1791178967,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "5wdqFEbjbLfZpDrfDMQgBBMC5mjt2ZaohNV6eXYic67M4VJU7AZszwfDWTg2Z7FJ2smmTx1iJVmPcDyVweEqFgP4",
+        "slot": 453488128,
+        "transactionIndex": 327
+      },
+      "duplicateOf": null
+    },
+    {
+      "caseId": "e0-classic-token-2",
+      "epoch": 0,
+      "program": "classic-token",
+      "rank": 2,
+      "selectionInfo": {
+        "blockTime": 1791178967,
+        "confirmationStatus": "finalized",
+        "err": {
+          "InstructionError": [
+            0,
+            {
+              "Custom": 6025
+            }
+          ]
+        },
+        "memo": null,
+        "signature": "3jimshwHrogZ5nKHcUxP2zqd4gc5K5HBXm95fPj7vdvNAmoKMJ6PnCj3wQUv13kfqPozcUkMoNEtL8s6KdCPnvwJ",
+        "slot": 453488128,
+        "transactionIndex": 326
+      },
+      "duplicateOf": null
+    },
+    {
+      "caseId": "e0-classic-token-3",
+      "epoch": 0,
+      "program": "classic-token",
+      "rank": 3,
+      "selectionInfo": {
+        "blockTime": 1791178967,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "R8PYrm4xza1BDGM4H8MJubzjgP71kACDFPmKQwZjbAor53AHFRVJg5rH5gK8h48t2Sa3kENf4iN3moQBE5kHvtR",
+        "slot": 453488128,
+        "transactionIndex": 324
+      },
+      "duplicateOf": null
+    },
+    {
+      "caseId": "e1-jupiter-0",
+      "epoch": 1,
+      "program": "jupiter",
+      "rank": 0,
+      "selectionInfo": {
+        "blockTime": 1791179247,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "wgNzC52hcCyBoaoS3uzoKDnxuejPZDNvgQiNN4XoCNRb5rm2hM8AYqsk7phpwVzX7jo3gTRv9Ud8f3M7oTj5iQL",
+        "slot": 453489180,
+        "transactionIndex": 1100
+      },
+      "duplicateOf": null
+    },
+    {
+      "caseId": "e1-jupiter-1",
+      "epoch": 1,
+      "program": "jupiter",
+      "rank": 1,
+      "selectionInfo": {
+        "blockTime": 1791179247,
+        "confirmationStatus": "finalized",
+        "err": {
+          "InstructionError": [
+            1,
+            {
+              "Custom": 5
+            }
+          ]
+        },
+        "memo": null,
+        "signature": "QcMXciMUknR36a7eyt3HkjKjpbmDBLRUhRMFRQcEjdJRKRgGZF1kzCUnmu4xtW1KjqFYDUBP6sLY7W8UaTM9fEx",
+        "slot": 453489180,
+        "transactionIndex": 1096
+      },
+      "duplicateOf": null
+    },
+    {
+      "caseId": "e1-jupiter-2",
+      "epoch": 1,
+      "program": "jupiter",
+      "rank": 2,
+      "selectionInfo": {
+        "blockTime": 1791179247,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "41dVjwhtRykzja9aBPnJA2Vz8umwQocQzZv8WHJGL5T3cvDPDM7QAHLBw3Zd33EFb2zfV2UWgAVML4pc3nvDC2vF",
+        "slot": 453489180,
+        "transactionIndex": 1095
+      },
+      "duplicateOf": null
+    },
+    {
+      "caseId": "e1-jupiter-3",
+      "epoch": 1,
+      "program": "jupiter",
+      "rank": 3,
+      "selectionInfo": {
+        "blockTime": 1791179247,
+        "confirmationStatus": "finalized",
+        "err": {
+          "InstructionError": [
+            2,
+            {
+              "Custom": 5
+            }
+          ]
+        },
+        "memo": null,
+        "signature": "sFDB7PTfYyrrmgt52pSYRMKxoyQmzaDutkHfGzUF2MPZ4VfJSHX2ieMUMa3htiWRieiv9oHGRY8aJ53EcbFYeoh",
+        "slot": 453489180,
+        "transactionIndex": 1093
+      },
+      "duplicateOf": null
+    },
+    {
+      "caseId": "e1-system-0",
+      "epoch": 1,
+      "program": "system",
+      "rank": 0,
+      "selectionInfo": {
+        "blockTime": 1791179257,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "3Xrs2Kr5jVwnYSMDdsgcSpJs9SZ2goAQPijACEhc64vuRv5SYmVxocQjDq5zZvbw8CGy9Gs7K3sUtuydcPkfXjrQ",
+        "slot": 453489218,
+        "transactionIndex": 970
+      },
+      "duplicateOf": null
+    },
+    {
+      "caseId": "e1-system-1",
+      "epoch": 1,
+      "program": "system",
+      "rank": 1,
+      "selectionInfo": {
+        "blockTime": 1791179257,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "5BbYwhoSwARkSWN2Pken9gLJ8fwmB6Wn3kFgYQPgtQE2MVJ5dosyXN2By1Y78iu5DmsNqfAUBPkAQDyivwZtACg8",
+        "slot": 453489218,
+        "transactionIndex": 969
+      },
+      "duplicateOf": null
+    },
+    {
+      "caseId": "e1-system-2",
+      "epoch": 1,
+      "program": "system",
+      "rank": 2,
+      "selectionInfo": {
+        "blockTime": 1791179257,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "5fJVWCvdrMmmmYscSdAV19RCFc2MTm6Naw35swZ9L3ECPPCCcPDg8ufvgfXNX5kGbR6PQ8c3dTcVL8ABtLWyQMMx",
+        "slot": 453489218,
+        "transactionIndex": 968
+      },
+      "duplicateOf": null
+    },
+    {
+      "caseId": "e1-system-3",
+      "epoch": 1,
+      "program": "system",
+      "rank": 3,
+      "selectionInfo": {
+        "blockTime": 1791179257,
+        "confirmationStatus": "finalized",
+        "err": {
+          "InstructionError": [
+            2,
+            {
+              "Custom": 1
+            }
+          ]
+        },
+        "memo": null,
+        "signature": "3pTTsrnBVbfpxea8r4kVonLCPQ7C6RN1dUR4KCT3vRMyNYuMeRtqsPHYh8t57Ue93VC2iwVzKhEsuQmDM5JPdLpR",
+        "slot": 453489218,
+        "transactionIndex": 967
+      },
+      "duplicateOf": null
+    },
+    {
+      "caseId": "e1-classic-token-0",
+      "epoch": 1,
+      "program": "classic-token",
+      "rank": 0,
+      "selectionInfo": {
+        "blockTime": 1791179267,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "4NC5HqVNKnKTpPsZdBJF8SvXoKtFfkhC1suk4CKWSx8Jfzssv5Grq5ddQUcFgDtuFdTg2o39qLqHcJG8u371exdW",
+        "slot": 453489259,
+        "transactionIndex": 1224
+      },
+      "duplicateOf": null
+    },
+    {
+      "caseId": "e1-classic-token-1",
+      "epoch": 1,
+      "program": "classic-token",
+      "rank": 1,
+      "selectionInfo": {
+        "blockTime": 1791179267,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "2kHdiWFsxysEKfvttqAD3Cu7UwM4AHnKEcyiBZsFcs3oKaSELDgoqL9LXCARbwmasBA7Gih58dfZCetZbWhmsKax",
+        "slot": 453489259,
+        "transactionIndex": 1221
+      },
+      "duplicateOf": null
+    },
+    {
+      "caseId": "e1-classic-token-2",
+      "epoch": 1,
+      "program": "classic-token",
+      "rank": 2,
+      "selectionInfo": {
+        "blockTime": 1791179267,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "5bfb5u38aSynBc7dicdmkcYwomMWCDAE71vEF5ADwY6dA15SW8LaRXGnHmVVpPf8CkYtNkdSbhBCgCgFTyigaEXr",
+        "slot": 453489259,
+        "transactionIndex": 1196
+      },
+      "duplicateOf": null
+    },
+    {
+      "caseId": "e1-classic-token-3",
+      "epoch": 1,
+      "program": "classic-token",
+      "rank": 3,
+      "selectionInfo": {
+        "blockTime": 1791179267,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "2A29wtVpPstWNYKqD66XBr6taePFvXZXvmwGPZi7y4PWpBhv8ADuCYGMg71rEXY32eXfXpjmHE7Wi8jCyac7SdM1",
+        "slot": 453489259,
+        "transactionIndex": 1181
+      },
+      "duplicateOf": null
+    },
+    {
+      "caseId": "e2-jupiter-0",
+      "epoch": 2,
+      "program": "jupiter",
+      "rank": 0,
+      "selectionInfo": {
+        "blockTime": 1791179547,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "5R7MoruzoFSaZoNdhRFs7GjnRtjwxgE5cLRMThSMamfGoAsN1QGnqkq2jgRSfKYv314kW2xZdRNNEu2szkDfH82u",
+        "slot": 453490308,
+        "transactionIndex": 1037
+      },
+      "duplicateOf": null
+    },
+    {
+      "caseId": "e2-jupiter-1",
+      "epoch": 2,
+      "program": "jupiter",
+      "rank": 1,
+      "selectionInfo": {
+        "blockTime": 1791179547,
+        "confirmationStatus": "finalized",
+        "err": {
+          "InstructionError": [
+            2,
+            {
+              "Custom": 5
+            }
+          ]
+        },
+        "memo": null,
+        "signature": "y1QqhqY9PaRyvamYXM78mWBP4XaGEJ2LGVQGCSWKgFGod6JTtcS1XeQEwMk6rATHJgrtQ3N19YHweh4nbYmxL3r",
+        "slot": 453490308,
+        "transactionIndex": 1033
+      },
+      "duplicateOf": null
+    },
+    {
+      "caseId": "e2-jupiter-2",
+      "epoch": 2,
+      "program": "jupiter",
+      "rank": 2,
+      "selectionInfo": {
+        "blockTime": 1791179547,
+        "confirmationStatus": "finalized",
+        "err": {
+          "InstructionError": [
+            0,
+            {
+              "Custom": 7
+            }
+          ]
+        },
+        "memo": null,
+        "signature": "4tvF9GQVg9Q7KXs4TrExwjn6qvKJsck6xGWW4uvzi3sQ5qgCpZice7SSA1qPNEXLM7W6Gw4xV3C8YwBB3JHMwvp",
+        "slot": 453490308,
+        "transactionIndex": 1032
+      },
+      "duplicateOf": null
+    },
+    {
+      "caseId": "e2-jupiter-3",
+      "epoch": 2,
+      "program": "jupiter",
+      "rank": 3,
+      "selectionInfo": {
+        "blockTime": 1791179547,
+        "confirmationStatus": "finalized",
+        "err": {
+          "InstructionError": [
+            2,
+            {
+              "Custom": 5
+            }
+          ]
+        },
+        "memo": null,
+        "signature": "3JnC39diFNCRFN7SDxCbzHRDcEWjMgXZp1XNm7o73kSWbgYTiiiLDLzYQS5eZ4WndfdpkKfZmphjM9N3CGNNMeXz",
+        "slot": 453490308,
+        "transactionIndex": 1031
+      },
+      "duplicateOf": null
+    },
+    {
+      "caseId": "e2-system-0",
+      "epoch": 2,
+      "program": "system",
+      "rank": 0,
+      "selectionInfo": {
+        "blockTime": 1791179557,
+        "confirmationStatus": "finalized",
+        "err": {
+          "InstructionError": [
+            3,
+            {
+              "Custom": 1234
+            }
+          ]
+        },
+        "memo": null,
+        "signature": "2x45Uu2kFTZkDY832xtMG2mMeQnPWpF6dyhAckSZXXyGZeUBM2vVo2Ut2YGmwao71KQZXpiq2urwqMiHfyBMGXJb",
+        "slot": 453490345,
+        "transactionIndex": 653
+      },
+      "duplicateOf": null
+    },
+    {
+      "caseId": "e2-system-1",
+      "epoch": 2,
+      "program": "system",
+      "rank": 1,
+      "selectionInfo": {
+        "blockTime": 1791179557,
+        "confirmationStatus": "finalized",
+        "err": {
+          "InstructionError": [
+            3,
+            {
+              "Custom": 81
+            }
+          ]
+        },
+        "memo": null,
+        "signature": "3rujHjBdj65rj1y5d3KFWdYyxCcamRiYf3BP3eYcvsjaqy53dsvn6mjin8kcTsFZQKJh81FkDkxBSfE8t1hSoxgo",
+        "slot": 453490345,
+        "transactionIndex": 652
+      },
+      "duplicateOf": null
+    },
+    {
+      "caseId": "e2-system-2",
+      "epoch": 2,
+      "program": "system",
+      "rank": 2,
+      "selectionInfo": {
+        "blockTime": 1791179557,
+        "confirmationStatus": "finalized",
+        "err": {
+          "InstructionError": [
+            3,
+            {
+              "Custom": 5000
+            }
+          ]
+        },
+        "memo": null,
+        "signature": "4AvjRGiqBiCLHj1Qcs3jkhUdpV92pNTZMEeFesWCfy1xDMjxm49ffXoGBHz61EWsdHMKNz1Va1KAEiCns8gB7QhB",
+        "slot": 453490345,
+        "transactionIndex": 651
+      },
+      "duplicateOf": null
+    },
+    {
+      "caseId": "e2-system-3",
+      "epoch": 2,
+      "program": "system",
+      "rank": 3,
+      "selectionInfo": {
+        "blockTime": 1791179557,
+        "confirmationStatus": "finalized",
+        "err": {
+          "InstructionError": [
+            5,
+            {
+              "Custom": 7
+            }
+          ]
+        },
+        "memo": null,
+        "signature": "xRdZX9DfJSxAskbmaJzvynWqHRXUhQGBPitXuwV6WmtyUJpHHyiyJdT7Pc2mFERMzBotUXmV8Sv3LPVGLLTj6EK",
+        "slot": 453490345,
+        "transactionIndex": 650
+      },
+      "duplicateOf": null
+    },
+    {
+      "caseId": "e2-classic-token-0",
+      "epoch": 2,
+      "program": "classic-token",
+      "rank": 0,
+      "selectionInfo": {
+        "blockTime": 1791179565,
+        "confirmationStatus": "finalized",
+        "err": {
+          "InstructionError": [
+            3,
+            {
+              "Custom": 81
+            }
+          ]
+        },
+        "memo": null,
+        "signature": "3McNvrrzVsXWrdK6U7wYC8eqgnTLpGG2cPuMFPc2oqUGMD25HRdQeQQWWAGjCbPYDw3C2TbArLnNrApAPZxEwAAZ",
+        "slot": 453490377,
+        "transactionIndex": 1104
+      },
+      "duplicateOf": null
+    },
+    {
+      "caseId": "e2-classic-token-1",
+      "epoch": 2,
+      "program": "classic-token",
+      "rank": 1,
+      "selectionInfo": {
+        "blockTime": 1791179565,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "4vbDQsFVfe4iypHBpsdDDApyX3bpmgPd5i9sBbSNpHyuzKhXek8tpxTqn518HLg3X131rEuSUz7z8sRgYp8nUjZx",
+        "slot": 453490377,
+        "transactionIndex": 1103
+      },
+      "duplicateOf": null
+    },
+    {
+      "caseId": "e2-classic-token-2",
+      "epoch": 2,
+      "program": "classic-token",
+      "rank": 2,
+      "selectionInfo": {
+        "blockTime": 1791179565,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "4RaJSjJLCYrzgiSjKk52PD1BPw4QJZbpgjAy3z9LbhUWQoEnyfFjxRvFphUvBH9q2A4Qwbfx6u6KM8EvsAK3qsq6",
+        "slot": 453490377,
+        "transactionIndex": 1102
+      },
+      "duplicateOf": null
+    },
+    {
+      "caseId": "e2-classic-token-3",
+      "epoch": 2,
+      "program": "classic-token",
+      "rank": 3,
+      "selectionInfo": {
+        "blockTime": 1791179565,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "5UPCYBLJ16Wu3cY2BVQ6tf9KsGqTww3fsmG25QNMSWZEyi754nVfdkjDTHN2rBgJnSc4qvqP9yBAqt1ByZbhVa26",
+        "slot": 453490377,
+        "transactionIndex": 1094
+      },
+      "duplicateOf": null
+    }
+  ],
+  "failedListings": "Deliberately refetch all15 failed signature listings too. Productionclient skips those transaction fetches, so capture/compatibility counts are not app unavailability counts.",
+  "retry": {
+    "maximumAttemptsPerRequest": 2,
+    "retryOnly": "HTTP429/5xx or transport failure",
+    "backoffSeconds": 10,
+    "longRetryAfter": "If server Retry-After exceeds10 seconds, do not retry; retain error. Same request only."
+  },
+  "requestPacingSeconds": 2,
+  "scope": "Post-fix same-sample read-compatibility confirmation; not held-out parser accuracy, independent labels, production owner live app flow or new trades. No wallet/DB/signature/assets.",
+  "replayGate": "Fetch may happen during code editing. Offline replay waits until root compatibility patch and focused tests finish; record current candidate parser fileSHA and source candidate accurately, never label as baseline0c5 parser.",
+  "perspective": "First transaction signer uniformly when response is available; no owner identity assumption."
+}

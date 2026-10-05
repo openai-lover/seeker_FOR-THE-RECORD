@@ -1,0 +1,48 @@
+00:00 +0: loading C:/Users/kk454/Documents/Codex/2026-09-20/2-codex-codex-ui-ux/work/for-the-record/test/public_parser_protocol_0511_test.dart
+00:00 +0: unavailable selections remain honest listing error cannot become a transaction
+00:00 +1: unavailable selections remain honest transaction transport/RPC error cannot become a transaction
+00:00 +2: unavailable selections remain honest transaction-null fetchState stays unreplayed
+00:00 +3: unavailable selections remain honest raw null cannot invent a signer perspective
+00:00 +4: unavailable selections remain honest raw rpc-error cannot invent a signer perspective
+00:00 +5: unavailable selections remain honest raw missing-first-signer cannot invent a signer perspective
+00:00 +6: all36 fixed selection positions remain, including errors and duplicates
+00:00 +7: protocol frozen before first fetch and hash retained
+00:00 +8: raw request-attempt bytes and every failure hash reproduce
+00:00 +9: classified mechanical proofs all pass; not independent accuracy
+00:00 +10: retained e0-jupiter-0 replays its saved current-parser outcome
+00:00 +11: retained e0-jupiter-1 replays its saved current-parser outcome
+00:00 +12: retained e0-jupiter-2 replays its saved current-parser outcome
+00:00 +13: retained e0-jupiter-3 replays its saved current-parser outcome
+00:00 +14: retained e0-system-0 replays its saved current-parser outcome
+00:00 +15: retained e0-system-1 replays its saved current-parser outcome
+00:00 +16: retained e0-system-2 replays its saved current-parser outcome
+00:00 +17: retained e0-system-3 replays its saved current-parser outcome
+00:00 +18: retained e0-classic-token-0 replays its saved current-parser outcome
+00:00 +19: retained e0-classic-token-1 replays its saved current-parser outcome
+00:00 +20: retained e0-classic-token-2 replays its saved current-parser outcome
+00:00 +21: retained e0-classic-token-3 replays its saved current-parser outcome
+00:00 +22: retained e1-jupiter-0 replays its saved current-parser outcome
+00:00 +23: retained e1-jupiter-1 replays its saved current-parser outcome
+00:00 +24: retained e1-jupiter-2 replays its saved current-parser outcome
+00:00 +25: retained e1-jupiter-3 replays its saved current-parser outcome
+00:00 +26: retained e1-system-0 replays its saved current-parser outcome
+00:00 +27: retained e1-system-1 replays its saved current-parser outcome
+00:00 +28: retained e1-system-2 replays its saved current-parser outcome
+00:00 +29: retained e1-system-3 replays its saved current-parser outcome
+00:00 +30: retained e1-classic-token-0 replays its saved current-parser outcome
+00:00 +31: retained e1-classic-token-1 replays its saved current-parser outcome
+00:00 +32: retained e1-classic-token-2 replays its saved current-parser outcome
+00:00 +33: retained e1-classic-token-3 replays its saved current-parser outcome
+00:00 +34: retained e2-jupiter-0 replays its saved current-parser outcome
+00:00 +35: retained e2-jupiter-1 replays its saved current-parser outcome
+00:00 +36: retained e2-jupiter-2 replays its saved current-parser outcome
+00:00 +37: retained e2-jupiter-3 replays its saved current-parser outcome
+00:00 +38: retained e2-system-0 replays its saved current-parser outcome
+00:00 +39: retained e2-system-1 replays its saved current-parser outcome
+00:00 +40: retained e2-system-2 replays its saved current-parser outcome
+00:00 +41: retained e2-system-3 replays its saved current-parser outcome
+00:00 +42: retained e2-classic-token-0 replays its saved current-parser outcome
+00:00 +43: retained e2-classic-token-1 replays its saved current-parser outcome
+00:00 +44: retained e2-classic-token-2 replays its saved current-parser outcome
+00:00 +45: retained e2-classic-token-3 replays its saved current-parser outcome
+00:00 +46: All tests passed!

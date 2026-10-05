@@ -37,6 +37,7 @@ Map<String, dynamic> fixture({String? signatureValue}) {
     'uiTokenAmount': {'amount': amount, 'decimals': decimals},
   };
   return {
+    'version': 'legacy',
     'blockTime': 1700000000,
     'transaction': {
       'signatures': [signatureValue ?? signature()],
@@ -286,7 +287,7 @@ void main() {
         {
           'commitment': 'finalized',
           'encoding': 'jsonParsed',
-          'maxSupportedTransactionVersion': 0,
+          'maxSupportedTransactionVersion': 1,
         },
       ]);
       expect(

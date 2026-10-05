@@ -1,0 +1,276 @@
+{
+  "observedAtKST": "2026-10-05T14:47:56+09:00",
+  "appVersion": "0.5.11+18",
+  "appSource": "0c5dfd70243940d6598804e9ff3d111ae920051d",
+  "historicalAuditSource": "414acebb41d0b23169ff15e16456ec175b1ac67c",
+  "comparisonAppSource": "9de8139614cfd0c6374036e0b0ceb68abeee7602",
+  "tool": "Android build-tools 36.0.0 aapt dump xmltree APK AndroidManifest.xml",
+  "artifactHashesVerifiedBeforeDump": true,
+  "newBuildPerformed": false,
+  "testsOrGatesRerun": false,
+  "newPortalAudit": false,
+  "independentHumanSecurityAudit": false,
+  "unchangedSourcePaths": {
+    "functions/src/index.ts": {
+      "unchangedFrom0510": true,
+      "gitBlobContentSha256": "a39a37bb70613722f265a8a53e486f417e0339bc82f2d049c04e9e78cc0535b6"
+    },
+    "functions/src/activity.ts": {
+      "unchangedFrom0510": true,
+      "gitBlobContentSha256": "dfb8489d1d804e50d5e022ad2d22fe51343284e9e3a7dd6037b31487fc8e64e7"
+    },
+    "android/app/src/main/AndroidManifest.xml": {
+      "unchangedFrom0510": true,
+      "gitBlobContentSha256": "33bd9a65c33c2d06ef0ee27fd3578abaa9013d0f9e719392a30474b0d8b5a64a"
+    },
+    "android/app/src/main/kotlin/app/workroom/seeker_workroom/WorkroomActivity.kt": {
+      "unchangedFrom0510": true,
+      "gitBlobContentSha256": "eeb105dfd9bd16be81f589b3377041a764adff194f62fc09c364b512ac588d72"
+    },
+    "tools/verify-release.ps1": {
+      "unchangedFrom0510": true,
+      "gitBlobContentSha256": "16e0b40e83938c1510d49ab47ea78b8086abf6ce5801692f70f354e70e54c18d"
+    }
+  },
+  "existingExecutedProof": {
+    "dateKST": "2026-10-04",
+    "malformedBodies": 21,
+    "targetedChecks": 25,
+    "completeBackendChecks": 69,
+    "scope": "Actual service/provider code with mocked authentication, rate limit and network; no deployed Firebase HTTP verification.",
+    "receipt": "../security-0510/receipt.json",
+    "currentPackageChecks": "../ui-0511/package-checks.json"
+  },
+  "artifacts": [
+    {
+      "abi": "arm64-v8a",
+      "apkBytes": 37717677,
+      "apkSha256": "29ba3bc74bad0221246aef3a5306681f81a5282f4da8518045c87cfa3339786c",
+      "versionCode": 2018,
+      "rawFilename": "packaged-arm64-v8a-manifest.txt",
+      "rawBytes": 16123,
+      "rawSha256": "d26936f4518bba9d5b6830ee2b6795e7ad2992de92fc55966cb6660a0a6a930d",
+      "components": [
+        {
+          "type": "activity",
+          "name": "app.workroom.seeker_workroom.WorkroomActivity",
+          "mergedXmlLine": 51,
+          "explicitExported": true,
+          "permission": null
+        },
+        {
+          "type": "receiver",
+          "name": "app.workroom.seeker_workroom.FocusAlarmReceiver",
+          "mergedXmlLine": 78,
+          "explicitExported": false,
+          "permission": null
+        },
+        {
+          "type": "service",
+          "name": "com.google.firebase.components.ComponentDiscoveryService",
+          "mergedXmlLine": 89,
+          "explicitExported": false,
+          "permission": null
+        },
+        {
+          "type": "activity",
+          "name": "com.google.firebase.auth.internal.GenericIdpActivity",
+          "mergedXmlLine": 116,
+          "explicitExported": true,
+          "permission": null
+        },
+        {
+          "type": "activity",
+          "name": "com.google.firebase.auth.internal.RecaptchaActivity",
+          "mergedXmlLine": 134,
+          "explicitExported": true,
+          "permission": null
+        },
+        {
+          "type": "provider",
+          "name": "com.google.firebase.provider.FirebaseInitProvider",
+          "mergedXmlLine": 153,
+          "explicitExported": false,
+          "permission": null
+        },
+        {
+          "type": "service",
+          "name": "androidx.credentials.playservices.CredentialProviderMetadataHolder",
+          "mergedXmlLine": 160,
+          "explicitExported": false,
+          "permission": null
+        },
+        {
+          "type": "activity",
+          "name": "androidx.credentials.playservices.HiddenActivity",
+          "mergedXmlLine": 169,
+          "explicitExported": false,
+          "permission": null
+        },
+        {
+          "type": "activity",
+          "name": "com.google.android.gms.auth.api.signin.internal.SignInHubActivity",
+          "mergedXmlLine": 177,
+          "explicitExported": false,
+          "permission": null
+        },
+        {
+          "type": "service",
+          "name": "com.google.android.gms.auth.api.signin.RevocationBoundService",
+          "mergedXmlLine": 186,
+          "explicitExported": true,
+          "permission": "com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+        },
+        {
+          "type": "activity",
+          "name": "com.google.android.gms.common.api.GoogleApiActivity",
+          "mergedXmlLine": 199,
+          "explicitExported": false,
+          "permission": null
+        },
+        {
+          "type": "provider",
+          "name": "androidx.startup.InitializationProvider",
+          "mergedXmlLine": 204,
+          "explicitExported": false,
+          "permission": null
+        },
+        {
+          "type": "receiver",
+          "name": "androidx.profileinstaller.ProfileInstallReceiver",
+          "mergedXmlLine": 220,
+          "explicitExported": true,
+          "permission": "android.permission.DUMP"
+        },
+        {
+          "type": "activity",
+          "name": "com.google.android.play.core.common.PlayCoreDialogWrapperActivity",
+          "mergedXmlLine": 239,
+          "explicitExported": false,
+          "permission": null
+        }
+      ]
+    },
+    {
+      "abi": "x86_64",
+      "apkBytes": 39675145,
+      "apkSha256": "978a0c353939124c1bb8a261ff15adc90b910ea4ad85fe56417efaec9f486374",
+      "versionCode": 4018,
+      "rawFilename": "packaged-x86_64-manifest.txt",
+      "rawBytes": 16123,
+      "rawSha256": "f52fda32c3be456deeb6d07e58e5c70e95a8919ebca2a57b9b9bbcd66e78fe9e",
+      "components": [
+        {
+          "type": "activity",
+          "name": "app.workroom.seeker_workroom.WorkroomActivity",
+          "mergedXmlLine": 51,
+          "explicitExported": true,
+          "permission": null
+        },
+        {
+          "type": "receiver",
+          "name": "app.workroom.seeker_workroom.FocusAlarmReceiver",
+          "mergedXmlLine": 78,
+          "explicitExported": false,
+          "permission": null
+        },
+        {
+          "type": "service",
+          "name": "com.google.firebase.components.ComponentDiscoveryService",
+          "mergedXmlLine": 89,
+          "explicitExported": false,
+          "permission": null
+        },
+        {
+          "type": "activity",
+          "name": "com.google.firebase.auth.internal.GenericIdpActivity",
+          "mergedXmlLine": 116,
+          "explicitExported": true,
+          "permission": null
+        },
+        {
+          "type": "activity",
+          "name": "com.google.firebase.auth.internal.RecaptchaActivity",
+          "mergedXmlLine": 134,
+          "explicitExported": true,
+          "permission": null
+        },
+        {
+          "type": "provider",
+          "name": "com.google.firebase.provider.FirebaseInitProvider",
+          "mergedXmlLine": 153,
+          "explicitExported": false,
+          "permission": null
+        },
+        {
+          "type": "service",
+          "name": "androidx.credentials.playservices.CredentialProviderMetadataHolder",
+          "mergedXmlLine": 160,
+          "explicitExported": false,
+          "permission": null
+        },
+        {
+          "type": "activity",
+          "name": "androidx.credentials.playservices.HiddenActivity",
+          "mergedXmlLine": 169,
+          "explicitExported": false,
+          "permission": null
+        },
+        {
+          "type": "activity",
+          "name": "com.google.android.gms.auth.api.signin.internal.SignInHubActivity",
+          "mergedXmlLine": 177,
+          "explicitExported": false,
+          "permission": null
+        },
+        {
+          "type": "service",
+          "name": "com.google.android.gms.auth.api.signin.RevocationBoundService",
+          "mergedXmlLine": 186,
+          "explicitExported": true,
+          "permission": "com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+        },
+        {
+          "type": "activity",
+          "name": "com.google.android.gms.common.api.GoogleApiActivity",
+          "mergedXmlLine": 199,
+          "explicitExported": false,
+          "permission": null
+        },
+        {
+          "type": "provider",
+          "name": "androidx.startup.InitializationProvider",
+          "mergedXmlLine": 204,
+          "explicitExported": false,
+          "permission": null
+        },
+        {
+          "type": "receiver",
+          "name": "androidx.profileinstaller.ProfileInstallReceiver",
+          "mergedXmlLine": 220,
+          "explicitExported": true,
+          "permission": "android.permission.DUMP"
+        },
+        {
+          "type": "activity",
+          "name": "com.google.android.play.core.common.PlayCoreDialogWrapperActivity",
+          "mergedXmlLine": 239,
+          "explicitExported": false,
+          "permission": null
+        }
+      ]
+    }
+  ],
+  "previouslyRemovedTestActivities": [
+    "androidx.test.core.app.InstrumentationActivityInvoker$BootstrapActivity",
+    "androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity",
+    "androidx.test.core.app.InstrumentationActivityInvoker$EmptyFloatingActivity"
+  ],
+  "limits": [
+    "Agent source/artifact review; not independent security clearance or penetration testing.",
+    "No SQL sink found in this activity path; other routes and all possible inputs not exhaustively reviewed.",
+    "Remaining SDK components and inherited Flutter intent behavior not comprehensively audited.",
+    "Three optional undeployed-backend advisories and two historical web3.js v1 migration leads remain.",
+    "No phone data, private files, credentials or wallets used."
+  ]
+}

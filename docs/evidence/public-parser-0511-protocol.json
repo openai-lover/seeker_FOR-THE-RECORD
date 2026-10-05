@@ -1,0 +1,2103 @@
+{
+  "scope": "Public RPC fixture replay at current0.5.11 parser, not current owner live app flow. No signatures/trades/assets/model/app/DB changes.",
+  "appSource": "0c5dfd70243940d6598804e9ff3d111ae920051d",
+  "protocolSha256": "abc98638dcebe6472604e4e2305f43079c2953c5b1a11cfa68265da1feca72d7",
+  "completedFetchAtUtc": "2026-10-05T05:53:04.854215+00:00",
+  "rows": [
+    {
+      "caseId": "e0-jupiter-0",
+      "epoch": 0,
+      "program": "jupiter",
+      "rank": 0,
+      "listRequestId": 1,
+      "selectionInfo": {
+        "blockTime": 1791178947,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "p45ufD64H5bSthKjHePDcrCwcgyAwZ7btC8at1rQNsNSG4S6FVNJuNwG7o4mv5jDkxBkvuikVXSzdKRsZ5urxuT",
+        "slot": 453488052,
+        "transactionIndex": 1275
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 2,
+      "fetchState": "transaction-request-error",
+      "transactionFile": "raw/e0-jupiter-0-attempt1.json",
+      "perspective": "First transaction signer; public fixture, not personal-wallet ownership",
+      "parserInvoked": false,
+      "listingFailed": false,
+      "productionFetchNote": "A successful listing still requires supported available transaction/context before parser replay.",
+      "captureRpcError": {
+        "code": -32015,
+        "message": "Transaction version (1) is not supported by the requesting client. Please try the request again with the following configuration parameter: \"maxSupportedTransactionVersion\": 1"
+      },
+      "evaluationState": "not-replayed-unavailable-selection-or-response"
+    },
+    {
+      "caseId": "e0-jupiter-1",
+      "epoch": 0,
+      "program": "jupiter",
+      "rank": 1,
+      "listRequestId": 1,
+      "selectionInfo": {
+        "blockTime": 1791178947,
+        "confirmationStatus": "finalized",
+        "err": {
+          "InstructionError": [
+            1,
+            {
+              "Custom": 5
+            }
+          ]
+        },
+        "memo": null,
+        "signature": "2Uk4bv6RrwRyXgHPLvi7uyer6TRPhaWmS9HYGpBnQ46REMPSLBiksaMcuUiDQX8pBJ6QdJK7y8ojuB5KVkmMQCVH",
+        "slot": 453488052,
+        "transactionIndex": 1253
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 3,
+      "fetchState": "transaction-request-error",
+      "transactionFile": "raw/e0-jupiter-1-attempt1.json",
+      "perspective": "First transaction signer; public fixture, not personal-wallet ownership",
+      "parserInvoked": false,
+      "listingFailed": true,
+      "productionFetchNote": "Production client skips getTransaction and preserves failed listing; this evidence protocol deliberately fetched all selected rows.",
+      "captureRpcError": {
+        "code": -32015,
+        "message": "Transaction version (1) is not supported by the requesting client. Please try the request again with the following configuration parameter: \"maxSupportedTransactionVersion\": 1"
+      },
+      "evaluationState": "not-replayed-unavailable-selection-or-response"
+    },
+    {
+      "caseId": "e0-jupiter-2",
+      "epoch": 0,
+      "program": "jupiter",
+      "rank": 2,
+      "listRequestId": 1,
+      "selectionInfo": {
+        "blockTime": 1791178947,
+        "confirmationStatus": "finalized",
+        "err": {
+          "InstructionError": [
+            1,
+            {
+              "Custom": 5
+            }
+          ]
+        },
+        "memo": null,
+        "signature": "4DcnHvsjUQKyNsoVzKw1ejYJwGKsXTXvQpBU7xuPZRPkbYgfypcq9Waqvn2DuMGpfwWdm1s9JqQ1qn2PXGzvAefT",
+        "slot": 453488052,
+        "transactionIndex": 1076
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 4,
+      "fetchState": "transaction-request-error",
+      "transactionFile": "raw/e0-jupiter-2-attempt1.json",
+      "perspective": "First transaction signer; public fixture, not personal-wallet ownership",
+      "parserInvoked": false,
+      "listingFailed": true,
+      "productionFetchNote": "Production client skips getTransaction and preserves failed listing; this evidence protocol deliberately fetched all selected rows.",
+      "captureRpcError": {
+        "code": -32015,
+        "message": "Transaction version (1) is not supported by the requesting client. Please try the request again with the following configuration parameter: \"maxSupportedTransactionVersion\": 1"
+      },
+      "evaluationState": "not-replayed-unavailable-selection-or-response"
+    },
+    {
+      "caseId": "e0-jupiter-3",
+      "epoch": 0,
+      "program": "jupiter",
+      "rank": 3,
+      "listRequestId": 1,
+      "selectionInfo": {
+        "blockTime": 1791178947,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "5n8kzPjP5DKvshzn4JKE9MzhoLZV3gstqh7ysav93aXesKNHLevM1y2tqpoPp8ae9mW9PVSkbm9X9Uu6VTGNE75J",
+        "slot": 453488052,
+        "transactionIndex": 1030
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 5,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e0-jupiter-3-attempt1.json",
+      "perspective": "First transaction signer; public fixture, not personal-wallet ownership",
+      "parserInvoked": true,
+      "listingFailed": false,
+      "productionFetchNote": "A successful listing still requires supported available transaction/context before parser replay.",
+      "evaluationState": "replayed",
+      "context": "7JCe3GHwkEr3feHgtLXnmuJ1yB3A7coSeyynxTBgdG8k",
+      "signerCount": 1,
+      "transactionSlot": 453488052,
+      "listingSlotMatches": true,
+      "listingConfirmationStatus": "finalized",
+      "rpcFailed": false,
+      "activity": {
+        "id": "5n8kzPjP5DKvshzn4JKE9MzhoLZV3gstqh7ysav93aXesKNHLevM1y2tqpoPp8ae9mW9PVSkbm9X9Uu6VTGNE75J",
+        "signature": "5n8kzPjP5DKvshzn4JKE9MzhoLZV3gstqh7ysav93aXesKNHLevM1y2tqpoPp8ae9mW9PVSkbm9X9Uu6VTGNE75J",
+        "blockTime": 1791178947,
+        "status": "success",
+        "type": "other",
+        "source": null,
+        "fee": "0.000136219",
+        "input": null,
+        "output": null,
+        "issue": "unsupported-activity"
+      },
+      "topLevelPrograms": [
+        "ComputeBudget111111111111111111111111111111",
+        "ComputeBudget111111111111111111111111111111",
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+        "58PMEdUAwvLytNNwCbzrYyhLoh3jpsNV4fW9dT9ibuRc",
+        "11111111111111111111111111111111"
+      ],
+      "topLevelJupiterCount": 1
+    },
+    {
+      "caseId": "e0-system-0",
+      "epoch": 0,
+      "program": "system",
+      "rank": 0,
+      "listRequestId": 6,
+      "selectionInfo": {
+        "blockTime": 1791178957,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "5Tfcbe6MM8aNeSLK82EPptoxfmwpMZ46CWY7v8V9BLdqSu8U43CN9S9V6ZEme2WcCQKAf2Se1RnBG4Z9U3ewm4n4",
+        "slot": 453488090,
+        "transactionIndex": 1075
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 7,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e0-system-0-attempt1.json",
+      "perspective": "First transaction signer; public fixture, not personal-wallet ownership",
+      "parserInvoked": true,
+      "listingFailed": false,
+      "productionFetchNote": "A successful listing still requires supported available transaction/context before parser replay.",
+      "evaluationState": "replayed",
+      "context": "HL15tKDEe4aL6obUSeUcWp9qGvBvSFHdqWgH8HUSNVou",
+      "signerCount": 1,
+      "transactionSlot": 453488090,
+      "listingSlotMatches": true,
+      "listingConfirmationStatus": "finalized",
+      "rpcFailed": false,
+      "activity": {
+        "id": "5Tfcbe6MM8aNeSLK82EPptoxfmwpMZ46CWY7v8V9BLdqSu8U43CN9S9V6ZEme2WcCQKAf2Se1RnBG4Z9U3ewm4n4",
+        "signature": "5Tfcbe6MM8aNeSLK82EPptoxfmwpMZ46CWY7v8V9BLdqSu8U43CN9S9V6ZEme2WcCQKAf2Se1RnBG4Z9U3ewm4n4",
+        "blockTime": 1791178957,
+        "status": "success",
+        "type": "other",
+        "source": null,
+        "fee": "0.000005151",
+        "input": null,
+        "output": null,
+        "issue": "unsupported-activity"
+      },
+      "topLevelPrograms": [
+        "ComputeBudget111111111111111111111111111111",
+        "ComputeBudget111111111111111111111111111111",
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+        "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "topLevelJupiterCount": 0
+    },
+    {
+      "caseId": "e0-system-1",
+      "epoch": 0,
+      "program": "system",
+      "rank": 1,
+      "listRequestId": 6,
+      "selectionInfo": {
+        "blockTime": 1791178957,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "3qyaB3ryM6hB4jpQzTHQWcCnXiFwgxBBe1KbWX8caSme4WABDHkVkNgmjR5E7azgGXxw5MxU8cxznQqYZjjkih3S",
+        "slot": 453488090,
+        "transactionIndex": 1074
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 8,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e0-system-1-attempt1.json",
+      "perspective": "First transaction signer; public fixture, not personal-wallet ownership",
+      "parserInvoked": true,
+      "listingFailed": false,
+      "productionFetchNote": "A successful listing still requires supported available transaction/context before parser replay.",
+      "evaluationState": "replayed",
+      "context": "ADe8ZhhfhWMsS3jmhvi7UiC8RH3f5KnK9DMk5oH8vU74",
+      "signerCount": 1,
+      "transactionSlot": 453488090,
+      "listingSlotMatches": true,
+      "listingConfirmationStatus": "finalized",
+      "rpcFailed": false,
+      "activity": {
+        "id": "3qyaB3ryM6hB4jpQzTHQWcCnXiFwgxBBe1KbWX8caSme4WABDHkVkNgmjR5E7azgGXxw5MxU8cxznQqYZjjkih3S",
+        "signature": "3qyaB3ryM6hB4jpQzTHQWcCnXiFwgxBBe1KbWX8caSme4WABDHkVkNgmjR5E7azgGXxw5MxU8cxznQqYZjjkih3S",
+        "blockTime": 1791178957,
+        "status": "success",
+        "type": "other",
+        "source": null,
+        "fee": "0.00000505",
+        "input": null,
+        "output": null,
+        "issue": "unsupported-activity"
+      },
+      "topLevelPrograms": [
+        "11111111111111111111111111111111",
+        "EtrnLzgbS7nMMy5fbD42kXiUzGg8XQzJ972Xtk1cjWih",
+        "ComputeBudget111111111111111111111111111111",
+        "ComputeBudget111111111111111111111111111111"
+      ],
+      "topLevelJupiterCount": 0
+    },
+    {
+      "caseId": "e0-system-2",
+      "epoch": 0,
+      "program": "system",
+      "rank": 2,
+      "listRequestId": 6,
+      "selectionInfo": {
+        "blockTime": 1791178957,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "25ERDAmHb1H9ZUArLfCVkLW5gRzANzAx1AauAXw4VJXwdcJp6Gbh6Q4sMb6cQ2GEVGy1k1NwjZuiVaqRRj9QrjVq",
+        "slot": 453488090,
+        "transactionIndex": 1073
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 9,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e0-system-2-attempt1.json",
+      "perspective": "First transaction signer; public fixture, not personal-wallet ownership",
+      "parserInvoked": true,
+      "listingFailed": false,
+      "productionFetchNote": "A successful listing still requires supported available transaction/context before parser replay.",
+      "evaluationState": "replayed",
+      "context": "DsCJ5siuJTPQtQa3A9N69azGZaWtUPzi9VPp2G9Jfpx9",
+      "signerCount": 1,
+      "transactionSlot": 453488090,
+      "listingSlotMatches": true,
+      "listingConfirmationStatus": "finalized",
+      "rpcFailed": false,
+      "activity": {
+        "id": "25ERDAmHb1H9ZUArLfCVkLW5gRzANzAx1AauAXw4VJXwdcJp6Gbh6Q4sMb6cQ2GEVGy1k1NwjZuiVaqRRj9QrjVq",
+        "signature": "25ERDAmHb1H9ZUArLfCVkLW5gRzANzAx1AauAXw4VJXwdcJp6Gbh6Q4sMb6cQ2GEVGy1k1NwjZuiVaqRRj9QrjVq",
+        "blockTime": 1791178957,
+        "status": "success",
+        "type": "other",
+        "source": null,
+        "fee": "0.000005347",
+        "input": null,
+        "output": null,
+        "issue": "unsupported-activity"
+      },
+      "topLevelPrograms": [
+        "ComputeBudget111111111111111111111111111111",
+        "ComputeBudget111111111111111111111111111111",
+        "3QUnrcMqCQoiGB73s1A6uDzxziywaNFpTLiZiiZbEUoN",
+        "ComputeBudget111111111111111111111111111111"
+      ],
+      "topLevelJupiterCount": 0
+    },
+    {
+      "caseId": "e0-system-3",
+      "epoch": 0,
+      "program": "system",
+      "rank": 3,
+      "listRequestId": 6,
+      "selectionInfo": {
+        "blockTime": 1791178957,
+        "confirmationStatus": "finalized",
+        "err": {
+          "InstructionError": [
+            2,
+            {
+              "Custom": 5000
+            }
+          ]
+        },
+        "memo": null,
+        "signature": "3miDgA5qcYuQsybGb1ynbE75deqy9J41wewjTTFZcNkStbZtSq4hv1QMvto1y1FcxRB3RdSQtVBu1SaD1yhnWaJy",
+        "slot": 453488090,
+        "transactionIndex": 1071
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 10,
+      "fetchState": "transaction-request-error",
+      "transactionFile": "raw/e0-system-3-attempt1.json",
+      "perspective": "First transaction signer; public fixture, not personal-wallet ownership",
+      "parserInvoked": false,
+      "listingFailed": true,
+      "productionFetchNote": "Production client skips getTransaction and preserves failed listing; this evidence protocol deliberately fetched all selected rows.",
+      "captureRpcError": {
+        "code": -32015,
+        "message": "Transaction version (1) is not supported by the requesting client. Please try the request again with the following configuration parameter: \"maxSupportedTransactionVersion\": 1"
+      },
+      "evaluationState": "not-replayed-unavailable-selection-or-response"
+    },
+    {
+      "caseId": "e0-classic-token-0",
+      "epoch": 0,
+      "program": "classic-token",
+      "rank": 0,
+      "listRequestId": 11,
+      "selectionInfo": {
+        "blockTime": 1791178967,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "31aK1xsNaf1cvHMnpUUE2JEs7ma3VCWZkyQQ5Nw95Q4TDxsvoQzy24zXiUrgugfscbrkfrkYiFudffzjZDL9kuos",
+        "slot": 453488128,
+        "transactionIndex": 329
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 12,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e0-classic-token-0-attempt1.json",
+      "perspective": "First transaction signer; public fixture, not personal-wallet ownership",
+      "parserInvoked": true,
+      "listingFailed": false,
+      "productionFetchNote": "A successful listing still requires supported available transaction/context before parser replay.",
+      "evaluationState": "replayed",
+      "context": "AgmLJBMDCqWynYnQiPCuj9ewsNNsBJXyzoUhD9LJzN51",
+      "signerCount": 2,
+      "transactionSlot": 453488128,
+      "listingSlotMatches": true,
+      "listingConfirmationStatus": "finalized",
+      "rpcFailed": false,
+      "activity": {
+        "id": "31aK1xsNaf1cvHMnpUUE2JEs7ma3VCWZkyQQ5Nw95Q4TDxsvoQzy24zXiUrgugfscbrkfrkYiFudffzjZDL9kuos",
+        "signature": "31aK1xsNaf1cvHMnpUUE2JEs7ma3VCWZkyQQ5Nw95Q4TDxsvoQzy24zXiUrgugfscbrkfrkYiFudffzjZDL9kuos",
+        "blockTime": 1791178967,
+        "status": "success",
+        "type": "other",
+        "source": null,
+        "fee": "0.000352791",
+        "input": null,
+        "output": null,
+        "issue": "unsupported-activity"
+      },
+      "topLevelPrograms": [
+        "ComputeBudget111111111111111111111111111111",
+        "ComputeBudget111111111111111111111111111111",
+        "DF1ow4tspfHX9JwWJsAb9epbkA8hmpSEAtxXy1V27QBH",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "topLevelJupiterCount": 0
+    },
+    {
+      "caseId": "e0-classic-token-1",
+      "epoch": 0,
+      "program": "classic-token",
+      "rank": 1,
+      "listRequestId": 11,
+      "selectionInfo": {
+        "blockTime": 1791178967,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "5wdqFEbjbLfZpDrfDMQgBBMC5mjt2ZaohNV6eXYic67M4VJU7AZszwfDWTg2Z7FJ2smmTx1iJVmPcDyVweEqFgP4",
+        "slot": 453488128,
+        "transactionIndex": 327
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 13,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e0-classic-token-1-attempt1.json",
+      "perspective": "First transaction signer; public fixture, not personal-wallet ownership",
+      "parserInvoked": true,
+      "listingFailed": false,
+      "productionFetchNote": "A successful listing still requires supported available transaction/context before parser replay.",
+      "evaluationState": "replayed",
+      "context": "EHc2K8AJusekJNiK14Qvkbu4nTShWFNFQUgYGQRtzZq7",
+      "signerCount": 1,
+      "transactionSlot": 453488128,
+      "listingSlotMatches": true,
+      "listingConfirmationStatus": "finalized",
+      "rpcFailed": false,
+      "activity": {
+        "id": "5wdqFEbjbLfZpDrfDMQgBBMC5mjt2ZaohNV6eXYic67M4VJU7AZszwfDWTg2Z7FJ2smmTx1iJVmPcDyVweEqFgP4",
+        "signature": "5wdqFEbjbLfZpDrfDMQgBBMC5mjt2ZaohNV6eXYic67M4VJU7AZszwfDWTg2Z7FJ2smmTx1iJVmPcDyVweEqFgP4",
+        "blockTime": 1791178967,
+        "status": "success",
+        "type": "other",
+        "source": null,
+        "fee": "0.000005",
+        "input": null,
+        "output": null,
+        "issue": "unsupported-activity"
+      },
+      "topLevelPrograms": [
+        "ComputeBudget111111111111111111111111111111",
+        "CcmRKTuZCGJBWQwMHvDYApBRvSZNHqGJXkznqpDTSQUr",
+        "CcmRKTuZCGJBWQwMHvDYApBRvSZNHqGJXkznqpDTSQUr",
+        "CcmRKTuZCGJBWQwMHvDYApBRvSZNHqGJXkznqpDTSQUr",
+        "CcmRKTuZCGJBWQwMHvDYApBRvSZNHqGJXkznqpDTSQUr",
+        "CcmRKTuZCGJBWQwMHvDYApBRvSZNHqGJXkznqpDTSQUr",
+        "CcmRKTuZCGJBWQwMHvDYApBRvSZNHqGJXkznqpDTSQUr",
+        "CcmRKTuZCGJBWQwMHvDYApBRvSZNHqGJXkznqpDTSQUr",
+        "CcmRKTuZCGJBWQwMHvDYApBRvSZNHqGJXkznqpDTSQUr",
+        "CcmRKTuZCGJBWQwMHvDYApBRvSZNHqGJXkznqpDTSQUr",
+        "CcmRKTuZCGJBWQwMHvDYApBRvSZNHqGJXkznqpDTSQUr"
+      ],
+      "topLevelJupiterCount": 0
+    },
+    {
+      "caseId": "e0-classic-token-2",
+      "epoch": 0,
+      "program": "classic-token",
+      "rank": 2,
+      "listRequestId": 11,
+      "selectionInfo": {
+        "blockTime": 1791178967,
+        "confirmationStatus": "finalized",
+        "err": {
+          "InstructionError": [
+            0,
+            {
+              "Custom": 6025
+            }
+          ]
+        },
+        "memo": null,
+        "signature": "3jimshwHrogZ5nKHcUxP2zqd4gc5K5HBXm95fPj7vdvNAmoKMJ6PnCj3wQUv13kfqPozcUkMoNEtL8s6KdCPnvwJ",
+        "slot": 453488128,
+        "transactionIndex": 326
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 14,
+      "fetchState": "transaction-request-error",
+      "transactionFile": "raw/e0-classic-token-2-attempt1.json",
+      "perspective": "First transaction signer; public fixture, not personal-wallet ownership",
+      "parserInvoked": false,
+      "listingFailed": true,
+      "productionFetchNote": "Production client skips getTransaction and preserves failed listing; this evidence protocol deliberately fetched all selected rows.",
+      "captureRpcError": {
+        "code": -32015,
+        "message": "Transaction version (1) is not supported by the requesting client. Please try the request again with the following configuration parameter: \"maxSupportedTransactionVersion\": 1"
+      },
+      "evaluationState": "not-replayed-unavailable-selection-or-response"
+    },
+    {
+      "caseId": "e0-classic-token-3",
+      "epoch": 0,
+      "program": "classic-token",
+      "rank": 3,
+      "listRequestId": 11,
+      "selectionInfo": {
+        "blockTime": 1791178967,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "R8PYrm4xza1BDGM4H8MJubzjgP71kACDFPmKQwZjbAor53AHFRVJg5rH5gK8h48t2Sa3kENf4iN3moQBE5kHvtR",
+        "slot": 453488128,
+        "transactionIndex": 324
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 15,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e0-classic-token-3-attempt1.json",
+      "perspective": "First transaction signer; public fixture, not personal-wallet ownership",
+      "parserInvoked": true,
+      "listingFailed": false,
+      "productionFetchNote": "A successful listing still requires supported available transaction/context before parser replay.",
+      "evaluationState": "replayed",
+      "context": "AgmLJBMDCqWynYnQiPCuj9ewsNNsBJXyzoUhD9LJzN51",
+      "signerCount": 2,
+      "transactionSlot": 453488128,
+      "listingSlotMatches": true,
+      "listingConfirmationStatus": "finalized",
+      "rpcFailed": false,
+      "activity": {
+        "id": "R8PYrm4xza1BDGM4H8MJubzjgP71kACDFPmKQwZjbAor53AHFRVJg5rH5gK8h48t2Sa3kENf4iN3moQBE5kHvtR",
+        "signature": "R8PYrm4xza1BDGM4H8MJubzjgP71kACDFPmKQwZjbAor53AHFRVJg5rH5gK8h48t2Sa3kENf4iN3moQBE5kHvtR",
+        "blockTime": 1791178967,
+        "status": "success",
+        "type": "other",
+        "source": null,
+        "fee": "0.00049028",
+        "input": null,
+        "output": null,
+        "issue": "unsupported-activity"
+      },
+      "topLevelPrograms": [
+        "ComputeBudget111111111111111111111111111111",
+        "ComputeBudget111111111111111111111111111111",
+        "DF1ow4tspfHX9JwWJsAb9epbkA8hmpSEAtxXy1V27QBH",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "topLevelJupiterCount": 0
+    },
+    {
+      "caseId": "e1-jupiter-0",
+      "epoch": 1,
+      "program": "jupiter",
+      "rank": 0,
+      "listRequestId": 16,
+      "selectionInfo": {
+        "blockTime": 1791179247,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "wgNzC52hcCyBoaoS3uzoKDnxuejPZDNvgQiNN4XoCNRb5rm2hM8AYqsk7phpwVzX7jo3gTRv9Ud8f3M7oTj5iQL",
+        "slot": 453489180,
+        "transactionIndex": 1100
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 17,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e1-jupiter-0-attempt1.json",
+      "perspective": "First transaction signer; public fixture, not personal-wallet ownership",
+      "parserInvoked": true,
+      "listingFailed": false,
+      "productionFetchNote": "A successful listing still requires supported available transaction/context before parser replay.",
+      "evaluationState": "replayed",
+      "context": "DcuSoFj4tS6LdEzXJoh6Gv3s2gmp9EQNWwAGCMQVYmZo",
+      "signerCount": 1,
+      "transactionSlot": 453489180,
+      "listingSlotMatches": true,
+      "listingConfirmationStatus": "finalized",
+      "rpcFailed": false,
+      "activity": {
+        "id": "wgNzC52hcCyBoaoS3uzoKDnxuejPZDNvgQiNN4XoCNRb5rm2hM8AYqsk7phpwVzX7jo3gTRv9Ud8f3M7oTj5iQL",
+        "signature": "wgNzC52hcCyBoaoS3uzoKDnxuejPZDNvgQiNN4XoCNRb5rm2hM8AYqsk7phpwVzX7jo3gTRv9Ud8f3M7oTj5iQL",
+        "blockTime": 1791179247,
+        "status": "success",
+        "type": "other",
+        "source": null,
+        "fee": "0.000605",
+        "input": null,
+        "output": null,
+        "issue": "unsupported-activity"
+      },
+      "topLevelPrograms": [
+        "ComputeBudget111111111111111111111111111111",
+        "ComputeBudget111111111111111111111111111111",
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4"
+      ],
+      "topLevelJupiterCount": 1
+    },
+    {
+      "caseId": "e1-jupiter-1",
+      "epoch": 1,
+      "program": "jupiter",
+      "rank": 1,
+      "listRequestId": 16,
+      "selectionInfo": {
+        "blockTime": 1791179247,
+        "confirmationStatus": "finalized",
+        "err": {
+          "InstructionError": [
+            1,
+            {
+              "Custom": 5
+            }
+          ]
+        },
+        "memo": null,
+        "signature": "QcMXciMUknR36a7eyt3HkjKjpbmDBLRUhRMFRQcEjdJRKRgGZF1kzCUnmu4xtW1KjqFYDUBP6sLY7W8UaTM9fEx",
+        "slot": 453489180,
+        "transactionIndex": 1096
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 18,
+      "fetchState": "transaction-request-error",
+      "transactionFile": "raw/e1-jupiter-1-attempt1.json",
+      "perspective": "First transaction signer; public fixture, not personal-wallet ownership",
+      "parserInvoked": false,
+      "listingFailed": true,
+      "productionFetchNote": "Production client skips getTransaction and preserves failed listing; this evidence protocol deliberately fetched all selected rows.",
+      "captureRpcError": {
+        "code": -32015,
+        "message": "Transaction version (1) is not supported by the requesting client. Please try the request again with the following configuration parameter: \"maxSupportedTransactionVersion\": 1"
+      },
+      "evaluationState": "not-replayed-unavailable-selection-or-response"
+    },
+    {
+      "caseId": "e1-jupiter-2",
+      "epoch": 1,
+      "program": "jupiter",
+      "rank": 2,
+      "listRequestId": 16,
+      "selectionInfo": {
+        "blockTime": 1791179247,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "41dVjwhtRykzja9aBPnJA2Vz8umwQocQzZv8WHJGL5T3cvDPDM7QAHLBw3Zd33EFb2zfV2UWgAVML4pc3nvDC2vF",
+        "slot": 453489180,
+        "transactionIndex": 1095
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 19,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e1-jupiter-2-attempt1.json",
+      "perspective": "First transaction signer; public fixture, not personal-wallet ownership",
+      "parserInvoked": true,
+      "listingFailed": false,
+      "productionFetchNote": "A successful listing still requires supported available transaction/context before parser replay.",
+      "evaluationState": "replayed",
+      "context": "HzEz9N1jg32MA1aaw8U1o5wqe9JkoKnQAdqpCR42adi1",
+      "signerCount": 1,
+      "transactionSlot": 453489180,
+      "listingSlotMatches": true,
+      "listingConfirmationStatus": "finalized",
+      "rpcFailed": false,
+      "activity": {
+        "id": "41dVjwhtRykzja9aBPnJA2Vz8umwQocQzZv8WHJGL5T3cvDPDM7QAHLBw3Zd33EFb2zfV2UWgAVML4pc3nvDC2vF",
+        "signature": "41dVjwhtRykzja9aBPnJA2Vz8umwQocQzZv8WHJGL5T3cvDPDM7QAHLBw3Zd33EFb2zfV2UWgAVML4pc3nvDC2vF",
+        "blockTime": 1791179247,
+        "status": "success",
+        "type": "other",
+        "source": null,
+        "fee": "0.000025",
+        "input": null,
+        "output": null,
+        "issue": "unsupported-activity"
+      },
+      "topLevelPrograms": [
+        "ComputeBudget111111111111111111111111111111",
+        "ComputeBudget111111111111111111111111111111",
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+        "11111111111111111111111111111111",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "topLevelJupiterCount": 1
+    },
+    {
+      "caseId": "e1-jupiter-3",
+      "epoch": 1,
+      "program": "jupiter",
+      "rank": 3,
+      "listRequestId": 16,
+      "selectionInfo": {
+        "blockTime": 1791179247,
+        "confirmationStatus": "finalized",
+        "err": {
+          "InstructionError": [
+            2,
+            {
+              "Custom": 5
+            }
+          ]
+        },
+        "memo": null,
+        "signature": "sFDB7PTfYyrrmgt52pSYRMKxoyQmzaDutkHfGzUF2MPZ4VfJSHX2ieMUMa3htiWRieiv9oHGRY8aJ53EcbFYeoh",
+        "slot": 453489180,
+        "transactionIndex": 1093
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 20,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e1-jupiter-3-attempt1.json",
+      "perspective": "First transaction signer; public fixture, not personal-wallet ownership",
+      "parserInvoked": true,
+      "listingFailed": true,
+      "productionFetchNote": "Production client skips getTransaction and preserves failed listing; this evidence protocol deliberately fetched all selected rows.",
+      "evaluationState": "replayed",
+      "context": "FfAJbv3prDQUybTNkS3EGaoSbkkbSLy1Eahe5MMxMG9t",
+      "signerCount": 1,
+      "transactionSlot": 453489180,
+      "listingSlotMatches": true,
+      "listingConfirmationStatus": "finalized",
+      "rpcFailed": true,
+      "activity": {
+        "id": "sFDB7PTfYyrrmgt52pSYRMKxoyQmzaDutkHfGzUF2MPZ4VfJSHX2ieMUMa3htiWRieiv9oHGRY8aJ53EcbFYeoh",
+        "signature": "sFDB7PTfYyrrmgt52pSYRMKxoyQmzaDutkHfGzUF2MPZ4VfJSHX2ieMUMa3htiWRieiv9oHGRY8aJ53EcbFYeoh",
+        "blockTime": 1791179247,
+        "status": "failed",
+        "type": "other",
+        "source": null,
+        "fee": null,
+        "input": null,
+        "output": null,
+        "issue": null
+      },
+      "topLevelPrograms": [
+        "ComputeBudget111111111111111111111111111111",
+        "ComputeBudget111111111111111111111111111111",
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4"
+      ],
+      "topLevelJupiterCount": 1
+    },
+    {
+      "caseId": "e1-system-0",
+      "epoch": 1,
+      "program": "system",
+      "rank": 0,
+      "listRequestId": 21,
+      "selectionInfo": {
+        "blockTime": 1791179257,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "3Xrs2Kr5jVwnYSMDdsgcSpJs9SZ2goAQPijACEhc64vuRv5SYmVxocQjDq5zZvbw8CGy9Gs7K3sUtuydcPkfXjrQ",
+        "slot": 453489218,
+        "transactionIndex": 970
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 22,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e1-system-0-attempt1.json",
+      "perspective": "First transaction signer; public fixture, not personal-wallet ownership",
+      "parserInvoked": true,
+      "listingFailed": false,
+      "productionFetchNote": "A successful listing still requires supported available transaction/context before parser replay.",
+      "evaluationState": "replayed",
+      "context": "FtVtD57bcihJ7juvzuCgcnKt8ETCnM2KUdU6mVX8VSp",
+      "signerCount": 1,
+      "transactionSlot": 453489218,
+      "listingSlotMatches": true,
+      "listingConfirmationStatus": "finalized",
+      "rpcFailed": false,
+      "activity": {
+        "id": "3Xrs2Kr5jVwnYSMDdsgcSpJs9SZ2goAQPijACEhc64vuRv5SYmVxocQjDq5zZvbw8CGy9Gs7K3sUtuydcPkfXjrQ",
+        "signature": "3Xrs2Kr5jVwnYSMDdsgcSpJs9SZ2goAQPijACEhc64vuRv5SYmVxocQjDq5zZvbw8CGy9Gs7K3sUtuydcPkfXjrQ",
+        "blockTime": 1791179257,
+        "status": "success",
+        "type": "other",
+        "source": null,
+        "fee": "0.000005",
+        "input": null,
+        "output": null,
+        "issue": "unsupported-activity"
+      },
+      "topLevelPrograms": [
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+        "11111111111111111111111111111111",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+        "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "topLevelJupiterCount": 0
+    },
+    {
+      "caseId": "e1-system-1",
+      "epoch": 1,
+      "program": "system",
+      "rank": 1,
+      "listRequestId": 21,
+      "selectionInfo": {
+        "blockTime": 1791179257,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "5BbYwhoSwARkSWN2Pken9gLJ8fwmB6Wn3kFgYQPgtQE2MVJ5dosyXN2By1Y78iu5DmsNqfAUBPkAQDyivwZtACg8",
+        "slot": 453489218,
+        "transactionIndex": 969
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 23,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e1-system-1-attempt1.json",
+      "perspective": "First transaction signer; public fixture, not personal-wallet ownership",
+      "parserInvoked": true,
+      "listingFailed": false,
+      "productionFetchNote": "A successful listing still requires supported available transaction/context before parser replay.",
+      "evaluationState": "replayed",
+      "context": "6Lz1qzW3pRAC1ULrHw23G4DckPtMgbcE3nucpGVwMJa5",
+      "signerCount": 1,
+      "transactionSlot": 453489218,
+      "listingSlotMatches": true,
+      "listingConfirmationStatus": "finalized",
+      "rpcFailed": false,
+      "activity": {
+        "id": "5BbYwhoSwARkSWN2Pken9gLJ8fwmB6Wn3kFgYQPgtQE2MVJ5dosyXN2By1Y78iu5DmsNqfAUBPkAQDyivwZtACg8",
+        "signature": "5BbYwhoSwARkSWN2Pken9gLJ8fwmB6Wn3kFgYQPgtQE2MVJ5dosyXN2By1Y78iu5DmsNqfAUBPkAQDyivwZtACg8",
+        "blockTime": 1791179257,
+        "status": "success",
+        "type": "other",
+        "source": null,
+        "fee": "0.000005",
+        "input": null,
+        "output": null,
+        "issue": "unsupported-activity"
+      },
+      "topLevelPrograms": [
+        "ComputeBudget111111111111111111111111111111",
+        "ComputeBudget111111111111111111111111111111",
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+        "11111111111111111111111111111111",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "topLevelJupiterCount": 0
+    },
+    {
+      "caseId": "e1-system-2",
+      "epoch": 1,
+      "program": "system",
+      "rank": 2,
+      "listRequestId": 21,
+      "selectionInfo": {
+        "blockTime": 1791179257,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "5fJVWCvdrMmmmYscSdAV19RCFc2MTm6Naw35swZ9L3ECPPCCcPDg8ufvgfXNX5kGbR6PQ8c3dTcVL8ABtLWyQMMx",
+        "slot": 453489218,
+        "transactionIndex": 968
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 24,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e1-system-2-attempt1.json",
+      "perspective": "First transaction signer; public fixture, not personal-wallet ownership",
+      "parserInvoked": true,
+      "listingFailed": false,
+      "productionFetchNote": "A successful listing still requires supported available transaction/context before parser replay.",
+      "evaluationState": "replayed",
+      "context": "BtcAPfq9ts3PZszB9YqZ7AmNFeCb3piiFYtqmyF3yxNh",
+      "signerCount": 1,
+      "transactionSlot": 453489218,
+      "listingSlotMatches": true,
+      "listingConfirmationStatus": "finalized",
+      "rpcFailed": false,
+      "activity": {
+        "id": "5fJVWCvdrMmmmYscSdAV19RCFc2MTm6Naw35swZ9L3ECPPCCcPDg8ufvgfXNX5kGbR6PQ8c3dTcVL8ABtLWyQMMx",
+        "signature": "5fJVWCvdrMmmmYscSdAV19RCFc2MTm6Naw35swZ9L3ECPPCCcPDg8ufvgfXNX5kGbR6PQ8c3dTcVL8ABtLWyQMMx",
+        "blockTime": 1791179257,
+        "status": "success",
+        "type": "other",
+        "source": null,
+        "fee": "0.00000541",
+        "input": null,
+        "output": null,
+        "issue": "unsupported-activity"
+      },
+      "topLevelPrograms": [
+        "ComputeBudget111111111111111111111111111111",
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+        "cpamdpZCGKUy5JxQXB4dcpGPiikHawvSWAd6mEn1sGG",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "topLevelJupiterCount": 0
+    },
+    {
+      "caseId": "e1-system-3",
+      "epoch": 1,
+      "program": "system",
+      "rank": 3,
+      "listRequestId": 21,
+      "selectionInfo": {
+        "blockTime": 1791179257,
+        "confirmationStatus": "finalized",
+        "err": {
+          "InstructionError": [
+            2,
+            {
+              "Custom": 1
+            }
+          ]
+        },
+        "memo": null,
+        "signature": "3pTTsrnBVbfpxea8r4kVonLCPQ7C6RN1dUR4KCT3vRMyNYuMeRtqsPHYh8t57Ue93VC2iwVzKhEsuQmDM5JPdLpR",
+        "slot": 453489218,
+        "transactionIndex": 967
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 25,
+      "fetchState": "transaction-request-error",
+      "transactionFile": "raw/e1-system-3-attempt1.json",
+      "perspective": "First transaction signer; public fixture, not personal-wallet ownership",
+      "parserInvoked": false,
+      "listingFailed": true,
+      "productionFetchNote": "Production client skips getTransaction and preserves failed listing; this evidence protocol deliberately fetched all selected rows.",
+      "captureRpcError": {
+        "code": -32015,
+        "message": "Transaction version (1) is not supported by the requesting client. Please try the request again with the following configuration parameter: \"maxSupportedTransactionVersion\": 1"
+      },
+      "evaluationState": "not-replayed-unavailable-selection-or-response"
+    },
+    {
+      "caseId": "e1-classic-token-0",
+      "epoch": 1,
+      "program": "classic-token",
+      "rank": 0,
+      "listRequestId": 26,
+      "selectionInfo": {
+        "blockTime": 1791179267,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "4NC5HqVNKnKTpPsZdBJF8SvXoKtFfkhC1suk4CKWSx8Jfzssv5Grq5ddQUcFgDtuFdTg2o39qLqHcJG8u371exdW",
+        "slot": 453489259,
+        "transactionIndex": 1224
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 27,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e1-classic-token-0-attempt1.json",
+      "perspective": "First transaction signer; public fixture, not personal-wallet ownership",
+      "parserInvoked": true,
+      "listingFailed": false,
+      "productionFetchNote": "A successful listing still requires supported available transaction/context before parser replay.",
+      "evaluationState": "replayed",
+      "context": "DKMeHfVdGjFJfor87u3N2ud93Ww6Sf2Jky6bAuDG8H1c",
+      "signerCount": 1,
+      "transactionSlot": 453489259,
+      "listingSlotMatches": true,
+      "listingConfirmationStatus": "finalized",
+      "rpcFailed": false,
+      "activity": {
+        "id": "4NC5HqVNKnKTpPsZdBJF8SvXoKtFfkhC1suk4CKWSx8Jfzssv5Grq5ddQUcFgDtuFdTg2o39qLqHcJG8u371exdW",
+        "signature": "4NC5HqVNKnKTpPsZdBJF8SvXoKtFfkhC1suk4CKWSx8Jfzssv5Grq5ddQUcFgDtuFdTg2o39qLqHcJG8u371exdW",
+        "blockTime": 1791179267,
+        "status": "success",
+        "type": "other",
+        "source": null,
+        "fee": "0.000015",
+        "input": null,
+        "output": null,
+        "issue": "unsupported-activity"
+      },
+      "topLevelPrograms": [
+        "ComputeBudget111111111111111111111111111111",
+        "ComputeBudget111111111111111111111111111111",
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+        "11111111111111111111111111111111",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+        "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "topLevelJupiterCount": 0
+    },
+    {
+      "caseId": "e1-classic-token-1",
+      "epoch": 1,
+      "program": "classic-token",
+      "rank": 1,
+      "listRequestId": 26,
+      "selectionInfo": {
+        "blockTime": 1791179267,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "2kHdiWFsxysEKfvttqAD3Cu7UwM4AHnKEcyiBZsFcs3oKaSELDgoqL9LXCARbwmasBA7Gih58dfZCetZbWhmsKax",
+        "slot": 453489259,
+        "transactionIndex": 1221
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 28,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e1-classic-token-1-attempt1.json",
+      "perspective": "First transaction signer; public fixture, not personal-wallet ownership",
+      "parserInvoked": true,
+      "listingFailed": false,
+      "productionFetchNote": "A successful listing still requires supported available transaction/context before parser replay.",
+      "evaluationState": "replayed",
+      "context": "8NwsHvYV2EYFccZ646dbkMRQsPNLfou7XZGyMkv9tAr8",
+      "signerCount": 1,
+      "transactionSlot": 453489259,
+      "listingSlotMatches": true,
+      "listingConfirmationStatus": "finalized",
+      "rpcFailed": false,
+      "activity": {
+        "id": "2kHdiWFsxysEKfvttqAD3Cu7UwM4AHnKEcyiBZsFcs3oKaSELDgoqL9LXCARbwmasBA7Gih58dfZCetZbWhmsKax",
+        "signature": "2kHdiWFsxysEKfvttqAD3Cu7UwM4AHnKEcyiBZsFcs3oKaSELDgoqL9LXCARbwmasBA7Gih58dfZCetZbWhmsKax",
+        "blockTime": 1791179267,
+        "status": "success",
+        "type": "other",
+        "source": null,
+        "fee": "0.000005",
+        "input": null,
+        "output": null,
+        "issue": "unsupported-activity"
+      },
+      "topLevelPrograms": [
+        "ComputeBudget111111111111111111111111111111",
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+        "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "topLevelJupiterCount": 0
+    },
+    {
+      "caseId": "e1-classic-token-2",
+      "epoch": 1,
+      "program": "classic-token",
+      "rank": 2,
+      "listRequestId": 26,
+      "selectionInfo": {
+        "blockTime": 1791179267,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "5bfb5u38aSynBc7dicdmkcYwomMWCDAE71vEF5ADwY6dA15SW8LaRXGnHmVVpPf8CkYtNkdSbhBCgCgFTyigaEXr",
+        "slot": 453489259,
+        "transactionIndex": 1196
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 29,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e1-classic-token-2-attempt1.json",
+      "perspective": "First transaction signer; public fixture, not personal-wallet ownership",
+      "parserInvoked": true,
+      "listingFailed": false,
+      "productionFetchNote": "A successful listing still requires supported available transaction/context before parser replay.",
+      "evaluationState": "replayed",
+      "context": "6zpz6p6EyPxy1kSjP86hjLGwegoMDabD7f6yPnZnp7Ju",
+      "signerCount": 2,
+      "transactionSlot": 453489259,
+      "listingSlotMatches": true,
+      "listingConfirmationStatus": "finalized",
+      "rpcFailed": false,
+      "activity": {
+        "id": "5bfb5u38aSynBc7dicdmkcYwomMWCDAE71vEF5ADwY6dA15SW8LaRXGnHmVVpPf8CkYtNkdSbhBCgCgFTyigaEXr",
+        "signature": "5bfb5u38aSynBc7dicdmkcYwomMWCDAE71vEF5ADwY6dA15SW8LaRXGnHmVVpPf8CkYtNkdSbhBCgCgFTyigaEXr",
+        "blockTime": 1791179267,
+        "status": "success",
+        "type": "other",
+        "source": null,
+        "fee": "0.000012206",
+        "input": null,
+        "output": null,
+        "issue": "unsupported-activity"
+      },
+      "topLevelPrograms": [
+        "ComputeBudget111111111111111111111111111111",
+        "ComputeBudget111111111111111111111111111111",
+        "1oopBoJG58DgkUVKkEzKgyG9dvRmpgeEm1AVjoHkF78",
+        "1oopBoJG58DgkUVKkEzKgyG9dvRmpgeEm1AVjoHkF78"
+      ],
+      "topLevelJupiterCount": 0
+    },
+    {
+      "caseId": "e1-classic-token-3",
+      "epoch": 1,
+      "program": "classic-token",
+      "rank": 3,
+      "listRequestId": 26,
+      "selectionInfo": {
+        "blockTime": 1791179267,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "2A29wtVpPstWNYKqD66XBr6taePFvXZXvmwGPZi7y4PWpBhv8ADuCYGMg71rEXY32eXfXpjmHE7Wi8jCyac7SdM1",
+        "slot": 453489259,
+        "transactionIndex": 1181
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 30,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e1-classic-token-3-attempt1.json",
+      "perspective": "First transaction signer; public fixture, not personal-wallet ownership",
+      "parserInvoked": true,
+      "listingFailed": false,
+      "productionFetchNote": "A successful listing still requires supported available transaction/context before parser replay.",
+      "evaluationState": "replayed",
+      "context": "EJp2KRDkBqZecyJ1uhiukwGuZCK6LXLvTYr9bsfFqhWE",
+      "signerCount": 1,
+      "transactionSlot": 453489259,
+      "listingSlotMatches": true,
+      "listingConfirmationStatus": "finalized",
+      "rpcFailed": false,
+      "activity": {
+        "id": "2A29wtVpPstWNYKqD66XBr6taePFvXZXvmwGPZi7y4PWpBhv8ADuCYGMg71rEXY32eXfXpjmHE7Wi8jCyac7SdM1",
+        "signature": "2A29wtVpPstWNYKqD66XBr6taePFvXZXvmwGPZi7y4PWpBhv8ADuCYGMg71rEXY32eXfXpjmHE7Wi8jCyac7SdM1",
+        "blockTime": 1791179267,
+        "status": "success",
+        "type": "other",
+        "source": null,
+        "fee": "0.000005",
+        "input": null,
+        "output": null,
+        "issue": "unsupported-activity"
+      },
+      "topLevelPrograms": [
+        "ComputeBudget111111111111111111111111111111",
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+        "11111111111111111111111111111111",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+        "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "topLevelJupiterCount": 0
+    },
+    {
+      "caseId": "e2-jupiter-0",
+      "epoch": 2,
+      "program": "jupiter",
+      "rank": 0,
+      "listRequestId": 31,
+      "selectionInfo": {
+        "blockTime": 1791179547,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "5R7MoruzoFSaZoNdhRFs7GjnRtjwxgE5cLRMThSMamfGoAsN1QGnqkq2jgRSfKYv314kW2xZdRNNEu2szkDfH82u",
+        "slot": 453490308,
+        "transactionIndex": 1037
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 32,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e2-jupiter-0-attempt1.json",
+      "perspective": "First transaction signer; public fixture, not personal-wallet ownership",
+      "parserInvoked": true,
+      "listingFailed": false,
+      "productionFetchNote": "A successful listing still requires supported available transaction/context before parser replay.",
+      "evaluationState": "replayed",
+      "context": "BwcC6JzYGB4mq8QfnEZ8cyzUdJxDwzzmM4iWrmCVXoEF",
+      "signerCount": 1,
+      "transactionSlot": 453490308,
+      "listingSlotMatches": true,
+      "listingConfirmationStatus": "finalized",
+      "rpcFailed": false,
+      "activity": {
+        "id": "5R7MoruzoFSaZoNdhRFs7GjnRtjwxgE5cLRMThSMamfGoAsN1QGnqkq2jgRSfKYv314kW2xZdRNNEu2szkDfH82u",
+        "signature": "5R7MoruzoFSaZoNdhRFs7GjnRtjwxgE5cLRMThSMamfGoAsN1QGnqkq2jgRSfKYv314kW2xZdRNNEu2szkDfH82u",
+        "blockTime": 1791179547,
+        "status": "success",
+        "type": "other",
+        "source": null,
+        "fee": "0.000005192",
+        "input": null,
+        "output": null,
+        "issue": "unsupported-activity"
+      },
+      "topLevelPrograms": [
+        "ComputeBudget111111111111111111111111111111",
+        "ComputeBudget111111111111111111111111111111",
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+        "11111111111111111111111111111111",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "topLevelJupiterCount": 1
+    },
+    {
+      "caseId": "e2-jupiter-1",
+      "epoch": 2,
+      "program": "jupiter",
+      "rank": 1,
+      "listRequestId": 31,
+      "selectionInfo": {
+        "blockTime": 1791179547,
+        "confirmationStatus": "finalized",
+        "err": {
+          "InstructionError": [
+            2,
+            {
+              "Custom": 5
+            }
+          ]
+        },
+        "memo": null,
+        "signature": "y1QqhqY9PaRyvamYXM78mWBP4XaGEJ2LGVQGCSWKgFGod6JTtcS1XeQEwMk6rATHJgrtQ3N19YHweh4nbYmxL3r",
+        "slot": 453490308,
+        "transactionIndex": 1033
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 33,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e2-jupiter-1-attempt1.json",
+      "perspective": "First transaction signer; public fixture, not personal-wallet ownership",
+      "parserInvoked": true,
+      "listingFailed": true,
+      "productionFetchNote": "Production client skips getTransaction and preserves failed listing; this evidence protocol deliberately fetched all selected rows.",
+      "evaluationState": "replayed",
+      "context": "FfAJbv3prDQUybTNkS3EGaoSbkkbSLy1Eahe5MMxMG9t",
+      "signerCount": 1,
+      "transactionSlot": 453490308,
+      "listingSlotMatches": true,
+      "listingConfirmationStatus": "finalized",
+      "rpcFailed": true,
+      "activity": {
+        "id": "y1QqhqY9PaRyvamYXM78mWBP4XaGEJ2LGVQGCSWKgFGod6JTtcS1XeQEwMk6rATHJgrtQ3N19YHweh4nbYmxL3r",
+        "signature": "y1QqhqY9PaRyvamYXM78mWBP4XaGEJ2LGVQGCSWKgFGod6JTtcS1XeQEwMk6rATHJgrtQ3N19YHweh4nbYmxL3r",
+        "blockTime": 1791179547,
+        "status": "failed",
+        "type": "other",
+        "source": null,
+        "fee": null,
+        "input": null,
+        "output": null,
+        "issue": null
+      },
+      "topLevelPrograms": [
+        "ComputeBudget111111111111111111111111111111",
+        "ComputeBudget111111111111111111111111111111",
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4"
+      ],
+      "topLevelJupiterCount": 1
+    },
+    {
+      "caseId": "e2-jupiter-2",
+      "epoch": 2,
+      "program": "jupiter",
+      "rank": 2,
+      "listRequestId": 31,
+      "selectionInfo": {
+        "blockTime": 1791179547,
+        "confirmationStatus": "finalized",
+        "err": {
+          "InstructionError": [
+            0,
+            {
+              "Custom": 7
+            }
+          ]
+        },
+        "memo": null,
+        "signature": "4tvF9GQVg9Q7KXs4TrExwjn6qvKJsck6xGWW4uvzi3sQ5qgCpZice7SSA1qPNEXLM7W6Gw4xV3C8YwBB3JHMwvp",
+        "slot": 453490308,
+        "transactionIndex": 1032
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 34,
+      "fetchState": "transaction-request-error",
+      "transactionFile": "raw/e2-jupiter-2-attempt1.json",
+      "perspective": "First transaction signer; public fixture, not personal-wallet ownership",
+      "parserInvoked": false,
+      "listingFailed": true,
+      "productionFetchNote": "Production client skips getTransaction and preserves failed listing; this evidence protocol deliberately fetched all selected rows.",
+      "captureRpcError": {
+        "code": -32015,
+        "message": "Transaction version (1) is not supported by the requesting client. Please try the request again with the following configuration parameter: \"maxSupportedTransactionVersion\": 1"
+      },
+      "evaluationState": "not-replayed-unavailable-selection-or-response"
+    },
+    {
+      "caseId": "e2-jupiter-3",
+      "epoch": 2,
+      "program": "jupiter",
+      "rank": 3,
+      "listRequestId": 31,
+      "selectionInfo": {
+        "blockTime": 1791179547,
+        "confirmationStatus": "finalized",
+        "err": {
+          "InstructionError": [
+            2,
+            {
+              "Custom": 5
+            }
+          ]
+        },
+        "memo": null,
+        "signature": "3JnC39diFNCRFN7SDxCbzHRDcEWjMgXZp1XNm7o73kSWbgYTiiiLDLzYQS5eZ4WndfdpkKfZmphjM9N3CGNNMeXz",
+        "slot": 453490308,
+        "transactionIndex": 1031
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 35,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e2-jupiter-3-attempt1.json",
+      "perspective": "First transaction signer; public fixture, not personal-wallet ownership",
+      "parserInvoked": true,
+      "listingFailed": true,
+      "productionFetchNote": "Production client skips getTransaction and preserves failed listing; this evidence protocol deliberately fetched all selected rows.",
+      "evaluationState": "replayed",
+      "context": "FfAJbv3prDQUybTNkS3EGaoSbkkbSLy1Eahe5MMxMG9t",
+      "signerCount": 1,
+      "transactionSlot": 453490308,
+      "listingSlotMatches": true,
+      "listingConfirmationStatus": "finalized",
+      "rpcFailed": true,
+      "activity": {
+        "id": "3JnC39diFNCRFN7SDxCbzHRDcEWjMgXZp1XNm7o73kSWbgYTiiiLDLzYQS5eZ4WndfdpkKfZmphjM9N3CGNNMeXz",
+        "signature": "3JnC39diFNCRFN7SDxCbzHRDcEWjMgXZp1XNm7o73kSWbgYTiiiLDLzYQS5eZ4WndfdpkKfZmphjM9N3CGNNMeXz",
+        "blockTime": 1791179547,
+        "status": "failed",
+        "type": "other",
+        "source": null,
+        "fee": null,
+        "input": null,
+        "output": null,
+        "issue": null
+      },
+      "topLevelPrograms": [
+        "ComputeBudget111111111111111111111111111111",
+        "ComputeBudget111111111111111111111111111111",
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4"
+      ],
+      "topLevelJupiterCount": 1
+    },
+    {
+      "caseId": "e2-system-0",
+      "epoch": 2,
+      "program": "system",
+      "rank": 0,
+      "listRequestId": 36,
+      "selectionInfo": {
+        "blockTime": 1791179557,
+        "confirmationStatus": "finalized",
+        "err": {
+          "InstructionError": [
+            3,
+            {
+              "Custom": 1234
+            }
+          ]
+        },
+        "memo": null,
+        "signature": "2x45Uu2kFTZkDY832xtMG2mMeQnPWpF6dyhAckSZXXyGZeUBM2vVo2Ut2YGmwao71KQZXpiq2urwqMiHfyBMGXJb",
+        "slot": 453490345,
+        "transactionIndex": 653
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 37,
+      "fetchState": "transaction-request-error",
+      "transactionFile": "raw/e2-system-0-attempt1.json",
+      "perspective": "First transaction signer; public fixture, not personal-wallet ownership",
+      "parserInvoked": false,
+      "listingFailed": true,
+      "productionFetchNote": "Production client skips getTransaction and preserves failed listing; this evidence protocol deliberately fetched all selected rows.",
+      "captureRpcError": {
+        "code": -32015,
+        "message": "Transaction version (1) is not supported by the requesting client. Please try the request again with the following configuration parameter: \"maxSupportedTransactionVersion\": 1"
+      },
+      "evaluationState": "not-replayed-unavailable-selection-or-response"
+    },
+    {
+      "caseId": "e2-system-1",
+      "epoch": 2,
+      "program": "system",
+      "rank": 1,
+      "listRequestId": 36,
+      "selectionInfo": {
+        "blockTime": 1791179557,
+        "confirmationStatus": "finalized",
+        "err": {
+          "InstructionError": [
+            3,
+            {
+              "Custom": 81
+            }
+          ]
+        },
+        "memo": null,
+        "signature": "3rujHjBdj65rj1y5d3KFWdYyxCcamRiYf3BP3eYcvsjaqy53dsvn6mjin8kcTsFZQKJh81FkDkxBSfE8t1hSoxgo",
+        "slot": 453490345,
+        "transactionIndex": 652
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 38,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e2-system-1-attempt1.json",
+      "perspective": "First transaction signer; public fixture, not personal-wallet ownership",
+      "parserInvoked": true,
+      "listingFailed": true,
+      "productionFetchNote": "Production client skips getTransaction and preserves failed listing; this evidence protocol deliberately fetched all selected rows.",
+      "evaluationState": "replayed",
+      "context": "628tuaH9DuYK7W36wW6s9aPpwcUcWoropaWWL3HfeS6f",
+      "signerCount": 1,
+      "transactionSlot": 453490345,
+      "listingSlotMatches": true,
+      "listingConfirmationStatus": "finalized",
+      "rpcFailed": true,
+      "activity": {
+        "id": "3rujHjBdj65rj1y5d3KFWdYyxCcamRiYf3BP3eYcvsjaqy53dsvn6mjin8kcTsFZQKJh81FkDkxBSfE8t1hSoxgo",
+        "signature": "3rujHjBdj65rj1y5d3KFWdYyxCcamRiYf3BP3eYcvsjaqy53dsvn6mjin8kcTsFZQKJh81FkDkxBSfE8t1hSoxgo",
+        "blockTime": 1791179557,
+        "status": "failed",
+        "type": "other",
+        "source": null,
+        "fee": null,
+        "input": null,
+        "output": null,
+        "issue": null
+      },
+      "topLevelPrograms": [
+        "ComputeBudget111111111111111111111111111111",
+        "ComputeBudget111111111111111111111111111111",
+        "ComputeBudget111111111111111111111111111111",
+        "4Qv3mbzcq1bKmrhGG4voS3EemfPd7f838FLUU7wBHSyi",
+        "11111111111111111111111111111111"
+      ],
+      "topLevelJupiterCount": 0
+    },
+    {
+      "caseId": "e2-system-2",
+      "epoch": 2,
+      "program": "system",
+      "rank": 2,
+      "listRequestId": 36,
+      "selectionInfo": {
+        "blockTime": 1791179557,
+        "confirmationStatus": "finalized",
+        "err": {
+          "InstructionError": [
+            3,
+            {
+              "Custom": 5000
+            }
+          ]
+        },
+        "memo": null,
+        "signature": "4AvjRGiqBiCLHj1Qcs3jkhUdpV92pNTZMEeFesWCfy1xDMjxm49ffXoGBHz61EWsdHMKNz1Va1KAEiCns8gB7QhB",
+        "slot": 453490345,
+        "transactionIndex": 651
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 39,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e2-system-2-attempt1.json",
+      "perspective": "First transaction signer; public fixture, not personal-wallet ownership",
+      "parserInvoked": true,
+      "listingFailed": true,
+      "productionFetchNote": "Production client skips getTransaction and preserves failed listing; this evidence protocol deliberately fetched all selected rows.",
+      "evaluationState": "replayed",
+      "context": "CP2PtWw94Ki2cM7TbJ4qU19wVPNMpxgx5hdkxHfva5Sh",
+      "signerCount": 1,
+      "transactionSlot": 453490345,
+      "listingSlotMatches": true,
+      "listingConfirmationStatus": "finalized",
+      "rpcFailed": true,
+      "activity": {
+        "id": "4AvjRGiqBiCLHj1Qcs3jkhUdpV92pNTZMEeFesWCfy1xDMjxm49ffXoGBHz61EWsdHMKNz1Va1KAEiCns8gB7QhB",
+        "signature": "4AvjRGiqBiCLHj1Qcs3jkhUdpV92pNTZMEeFesWCfy1xDMjxm49ffXoGBHz61EWsdHMKNz1Va1KAEiCns8gB7QhB",
+        "blockTime": 1791179557,
+        "status": "failed",
+        "type": "other",
+        "source": null,
+        "fee": null,
+        "input": null,
+        "output": null,
+        "issue": null
+      },
+      "topLevelPrograms": [
+        "ComputeBudget111111111111111111111111111111",
+        "ComputeBudget111111111111111111111111111111",
+        "ComputeBudget111111111111111111111111111111",
+        "Prism8hsRo6Ww5jiN5Zeh3YDPLZHqHduCPSAV7JF7qv"
+      ],
+      "topLevelJupiterCount": 0
+    },
+    {
+      "caseId": "e2-system-3",
+      "epoch": 2,
+      "program": "system",
+      "rank": 3,
+      "listRequestId": 36,
+      "selectionInfo": {
+        "blockTime": 1791179557,
+        "confirmationStatus": "finalized",
+        "err": {
+          "InstructionError": [
+            5,
+            {
+              "Custom": 7
+            }
+          ]
+        },
+        "memo": null,
+        "signature": "xRdZX9DfJSxAskbmaJzvynWqHRXUhQGBPitXuwV6WmtyUJpHHyiyJdT7Pc2mFERMzBotUXmV8Sv3LPVGLLTj6EK",
+        "slot": 453490345,
+        "transactionIndex": 650
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 40,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e2-system-3-attempt1.json",
+      "perspective": "First transaction signer; public fixture, not personal-wallet ownership",
+      "parserInvoked": true,
+      "listingFailed": true,
+      "productionFetchNote": "Production client skips getTransaction and preserves failed listing; this evidence protocol deliberately fetched all selected rows.",
+      "evaluationState": "replayed",
+      "context": "DiABuyNFgAFuMJGPDjRc1qSvWm345n7sk3DXz4jo3fbR",
+      "signerCount": 1,
+      "transactionSlot": 453490345,
+      "listingSlotMatches": true,
+      "listingConfirmationStatus": "finalized",
+      "rpcFailed": true,
+      "activity": {
+        "id": "xRdZX9DfJSxAskbmaJzvynWqHRXUhQGBPitXuwV6WmtyUJpHHyiyJdT7Pc2mFERMzBotUXmV8Sv3LPVGLLTj6EK",
+        "signature": "xRdZX9DfJSxAskbmaJzvynWqHRXUhQGBPitXuwV6WmtyUJpHHyiyJdT7Pc2mFERMzBotUXmV8Sv3LPVGLLTj6EK",
+        "blockTime": 1791179557,
+        "status": "failed",
+        "type": "other",
+        "source": null,
+        "fee": null,
+        "input": null,
+        "output": null,
+        "issue": null
+      },
+      "topLevelPrograms": [
+        "11111111111111111111111111111111",
+        "11111111111111111111111111111111",
+        "ComputeBudget111111111111111111111111111111",
+        "ComputeBudget111111111111111111111111111111",
+        "ComputeBudget111111111111111111111111111111",
+        "DiabLokxisGR8P4Qqp2QL6PmBhhVsdzPstCE4WoLxc5z"
+      ],
+      "topLevelJupiterCount": 0
+    },
+    {
+      "caseId": "e2-classic-token-0",
+      "epoch": 2,
+      "program": "classic-token",
+      "rank": 0,
+      "listRequestId": 41,
+      "selectionInfo": {
+        "blockTime": 1791179565,
+        "confirmationStatus": "finalized",
+        "err": {
+          "InstructionError": [
+            3,
+            {
+              "Custom": 81
+            }
+          ]
+        },
+        "memo": null,
+        "signature": "3McNvrrzVsXWrdK6U7wYC8eqgnTLpGG2cPuMFPc2oqUGMD25HRdQeQQWWAGjCbPYDw3C2TbArLnNrApAPZxEwAAZ",
+        "slot": 453490377,
+        "transactionIndex": 1104
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 42,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e2-classic-token-0-attempt1.json",
+      "perspective": "First transaction signer; public fixture, not personal-wallet ownership",
+      "parserInvoked": true,
+      "listingFailed": true,
+      "productionFetchNote": "Production client skips getTransaction and preserves failed listing; this evidence protocol deliberately fetched all selected rows.",
+      "evaluationState": "replayed",
+      "context": "628tuaH9DuYK7W36wW6s9aPpwcUcWoropaWWL3HfeS6f",
+      "signerCount": 1,
+      "transactionSlot": 453490377,
+      "listingSlotMatches": true,
+      "listingConfirmationStatus": "finalized",
+      "rpcFailed": true,
+      "activity": {
+        "id": "3McNvrrzVsXWrdK6U7wYC8eqgnTLpGG2cPuMFPc2oqUGMD25HRdQeQQWWAGjCbPYDw3C2TbArLnNrApAPZxEwAAZ",
+        "signature": "3McNvrrzVsXWrdK6U7wYC8eqgnTLpGG2cPuMFPc2oqUGMD25HRdQeQQWWAGjCbPYDw3C2TbArLnNrApAPZxEwAAZ",
+        "blockTime": 1791179565,
+        "status": "failed",
+        "type": "other",
+        "source": null,
+        "fee": null,
+        "input": null,
+        "output": null,
+        "issue": null
+      },
+      "topLevelPrograms": [
+        "ComputeBudget111111111111111111111111111111",
+        "ComputeBudget111111111111111111111111111111",
+        "ComputeBudget111111111111111111111111111111",
+        "4Qv3mbzcq1bKmrhGG4voS3EemfPd7f838FLUU7wBHSyi",
+        "11111111111111111111111111111111"
+      ],
+      "topLevelJupiterCount": 0
+    },
+    {
+      "caseId": "e2-classic-token-1",
+      "epoch": 2,
+      "program": "classic-token",
+      "rank": 1,
+      "listRequestId": 41,
+      "selectionInfo": {
+        "blockTime": 1791179565,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "4vbDQsFVfe4iypHBpsdDDApyX3bpmgPd5i9sBbSNpHyuzKhXek8tpxTqn518HLg3X131rEuSUz7z8sRgYp8nUjZx",
+        "slot": 453490377,
+        "transactionIndex": 1103
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 43,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e2-classic-token-1-attempt1.json",
+      "perspective": "First transaction signer; public fixture, not personal-wallet ownership",
+      "parserInvoked": true,
+      "listingFailed": false,
+      "productionFetchNote": "A successful listing still requires supported available transaction/context before parser replay.",
+      "evaluationState": "replayed",
+      "context": "HQNjckpHk5SPUdL42Buj75Gby9m37E54te9dk53VCEtV",
+      "signerCount": 1,
+      "transactionSlot": 453490377,
+      "listingSlotMatches": true,
+      "listingConfirmationStatus": "finalized",
+      "rpcFailed": false,
+      "activity": {
+        "id": "4vbDQsFVfe4iypHBpsdDDApyX3bpmgPd5i9sBbSNpHyuzKhXek8tpxTqn518HLg3X131rEuSUz7z8sRgYp8nUjZx",
+        "signature": "4vbDQsFVfe4iypHBpsdDDApyX3bpmgPd5i9sBbSNpHyuzKhXek8tpxTqn518HLg3X131rEuSUz7z8sRgYp8nUjZx",
+        "blockTime": 1791179565,
+        "status": "success",
+        "type": "other",
+        "source": null,
+        "fee": "0.000005",
+        "input": null,
+        "output": null,
+        "issue": "unsupported-activity"
+      },
+      "topLevelPrograms": [
+        "ComputeBudget111111111111111111111111111111",
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+        "11111111111111111111111111111111",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "11111111111111111111111111111111"
+      ],
+      "topLevelJupiterCount": 0
+    },
+    {
+      "caseId": "e2-classic-token-2",
+      "epoch": 2,
+      "program": "classic-token",
+      "rank": 2,
+      "listRequestId": 41,
+      "selectionInfo": {
+        "blockTime": 1791179565,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "4RaJSjJLCYrzgiSjKk52PD1BPw4QJZbpgjAy3z9LbhUWQoEnyfFjxRvFphUvBH9q2A4Qwbfx6u6KM8EvsAK3qsq6",
+        "slot": 453490377,
+        "transactionIndex": 1102
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 44,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e2-classic-token-2-attempt1.json",
+      "perspective": "First transaction signer; public fixture, not personal-wallet ownership",
+      "parserInvoked": true,
+      "listingFailed": false,
+      "productionFetchNote": "A successful listing still requires supported available transaction/context before parser replay.",
+      "evaluationState": "replayed",
+      "context": "HQNjckpHk5SPUdL42Buj75Gby9m37E54te9dk53VCEtV",
+      "signerCount": 1,
+      "transactionSlot": 453490377,
+      "listingSlotMatches": true,
+      "listingConfirmationStatus": "finalized",
+      "rpcFailed": false,
+      "activity": {
+        "id": "4RaJSjJLCYrzgiSjKk52PD1BPw4QJZbpgjAy3z9LbhUWQoEnyfFjxRvFphUvBH9q2A4Qwbfx6u6KM8EvsAK3qsq6",
+        "signature": "4RaJSjJLCYrzgiSjKk52PD1BPw4QJZbpgjAy3z9LbhUWQoEnyfFjxRvFphUvBH9q2A4Qwbfx6u6KM8EvsAK3qsq6",
+        "blockTime": 1791179565,
+        "status": "success",
+        "type": "other",
+        "source": null,
+        "fee": "0.000005",
+        "input": null,
+        "output": null,
+        "issue": "unsupported-activity"
+      },
+      "topLevelPrograms": [
+        "ComputeBudget111111111111111111111111111111",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+        "11111111111111111111111111111111",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "topLevelJupiterCount": 0
+    },
+    {
+      "caseId": "e2-classic-token-3",
+      "epoch": 2,
+      "program": "classic-token",
+      "rank": 3,
+      "listRequestId": 41,
+      "selectionInfo": {
+        "blockTime": 1791179565,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "5UPCYBLJ16Wu3cY2BVQ6tf9KsGqTww3fsmG25QNMSWZEyi754nVfdkjDTHN2rBgJnSc4qvqP9yBAqt1ByZbhVa26",
+        "slot": 453490377,
+        "transactionIndex": 1094
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 45,
+      "fetchState": "transaction-request-error",
+      "transactionFile": "raw/e2-classic-token-3-attempt1.json",
+      "perspective": "First transaction signer; public fixture, not personal-wallet ownership",
+      "parserInvoked": false,
+      "listingFailed": false,
+      "productionFetchNote": "A successful listing still requires supported available transaction/context before parser replay.",
+      "captureRpcError": {
+        "code": -32015,
+        "message": "Transaction version (1) is not supported by the requesting client. Please try the request again with the following configuration parameter: \"maxSupportedTransactionVersion\": 1"
+      },
+      "evaluationState": "not-replayed-unavailable-selection-or-response"
+    }
+  ],
+  "perEpochProgramOutcomes": {
+    "epoch0/jupiter": {
+      "unavailable/unsupported-transaction-version": 3,
+      "success/other": 1
+    },
+    "epoch0/system": {
+      "success/other": 3,
+      "unavailable/unsupported-transaction-version": 1
+    },
+    "epoch0/classic-token": {
+      "success/other": 3,
+      "unavailable/unsupported-transaction-version": 1
+    },
+    "epoch1/jupiter": {
+      "success/other": 2,
+      "unavailable/unsupported-transaction-version": 1,
+      "failed/other": 1
+    },
+    "epoch1/system": {
+      "success/other": 3,
+      "unavailable/unsupported-transaction-version": 1
+    },
+    "epoch1/classic-token": {
+      "success/other": 4
+    },
+    "epoch2/jupiter": {
+      "success/other": 1,
+      "failed/other": 2,
+      "unavailable/unsupported-transaction-version": 1
+    },
+    "epoch2/system": {
+      "unavailable/unsupported-transaction-version": 1,
+      "failed/other": 3
+    },
+    "epoch2/classic-token": {
+      "failed/other": 1,
+      "success/other": 2,
+      "unavailable/unsupported-transaction-version": 1
+    }
+  },
+  "selectionPositions": 36,
+  "uniqueSignatures": 36,
+  "duplicateSelectionPositions": 0,
+  "parserInvoked": 26,
+  "listingFailedPositions": 15,
+  "unreplayedWithSuccessfulListingPositions": 2,
+  "classifiedProofFailures": 0,
+  "provenance": {
+    "productionAppVersion": "0.5.11+18",
+    "productionAppSource": "0c5dfd70243940d6598804e9ff3d111ae920051d",
+    "productionParserGitBlob": "141439990f154ad58683f6a1e13d2fced0175dcf",
+    "productionParserFileSha256": "6ddd4790be2a16272ba9f76e72d9c0d5d81c6527338b7e455f47f193fd0864d7",
+    "runnerSha256": "00a24c205b3d1b92e9f2a939cf261a637deebf1b3c49088b0dcb1b2f59e9213a",
+    "testSha256": "3ed39c56e0dfe8211b1d7f5d966a037989243eaeccb38ed910fb20222d9a40d2",
+    "fetchReceiptSha256": "90a88d773d02232a81f9c56187fdd1d0363fc6abf29f3a147aeeef51ac1e3738",
+    "collectorSha256": "c056b6d80e2a073817c13693a86ecba19dab44ab23e8a04578449d1462f63ab4",
+    "fixedSelectionNotHeldoutAccuracy": true,
+    "ownerWalletQueried": false,
+    "noProductCodeChangesInBaseline": true
+  },
+  "rawArtifactManifest": [
+    {
+      "path": "fetch-receipt.json",
+      "bytes": 78376,
+      "sha256": "90a88d773d02232a81f9c56187fdd1d0363fc6abf29f3a147aeeef51ac1e3738"
+    },
+    {
+      "path": "fetch_fixed.py",
+      "bytes": 5701,
+      "sha256": "c056b6d80e2a073817c13693a86ecba19dab44ab23e8a04578449d1462f63ab4"
+    },
+    {
+      "path": "protocol-v1-unused.json",
+      "bytes": 2614,
+      "sha256": "26783561f0d678c2cbd2f619b0e406bf30a48f6fff9897aeadcc11176e969dd9"
+    },
+    {
+      "path": "protocol.json",
+      "bytes": 2975,
+      "sha256": "abc98638dcebe6472604e4e2305f43079c2953c5b1a11cfa68265da1feca72d7"
+    },
+    {
+      "path": "protocol.sha256",
+      "bytes": 81,
+      "sha256": "2d31bdb3bc9b95af0fbed1088d0c1bd5424bf37e0e87107552a3eff93632046c"
+    },
+    {
+      "path": "raw/e0-classic-token-0-attempt1.json",
+      "bytes": 30982,
+      "sha256": "08070e14e872c1c7aac316e64ee07ae25169b8ef5cdb78825d4d10841327b428"
+    },
+    {
+      "path": "raw/e0-classic-token-1-attempt1.json",
+      "bytes": 14491,
+      "sha256": "11af123b82898fc493fca399c58d97d630d8e82356a8e8340fa5907b695544d0"
+    },
+    {
+      "path": "raw/e0-classic-token-2-attempt1.json",
+      "bytes": 240,
+      "sha256": "168dd5f108cb23f50c39b03c60816cb871ae31ab45c001d49984d86b9f036877"
+    },
+    {
+      "path": "raw/e0-classic-token-3-attempt1.json",
+      "bytes": 38875,
+      "sha256": "eb59f9361b3bb9cf97cd0a62bc106bc0bf9e898d9f802e658e365fe5f0f16066"
+    },
+    {
+      "path": "raw/e0-classic-token-list-attempt1.json",
+      "bytes": 968,
+      "sha256": "f72dd468fa4ddb1b17b4d1372bec7055d608e9cca3b16d667f964d706d17a91c"
+    },
+    {
+      "path": "raw/e0-jupiter-0-attempt1.json",
+      "bytes": 239,
+      "sha256": "f7f000b325679c8711f7ef345cb9485eb963a54e3acf526dba9c131e63ff9780"
+    },
+    {
+      "path": "raw/e0-jupiter-1-attempt1.json",
+      "bytes": 239,
+      "sha256": "925bf9def4d445ed77126387468b913e892f06be9bbc2a66ec3e66aa011b057f"
+    },
+    {
+      "path": "raw/e0-jupiter-2-attempt1.json",
+      "bytes": 239,
+      "sha256": "c18a8b086b7838b2694f482b779bfb561dbac4ee7eb8f1f693f48a20cbc51bdc"
+    },
+    {
+      "path": "raw/e0-jupiter-3-attempt1.json",
+      "bytes": 21616,
+      "sha256": "fc54317c640b7a1fe8fb18508c454245eb7532f5179c450554655b5cc7b7437e"
+    },
+    {
+      "path": "raw/e0-jupiter-list-attempt1.json",
+      "bytes": 1001,
+      "sha256": "eabad4b1a3a06c0599a246b78bd8d7635b043ef6e7062b1e1d53016e88fc729a"
+    },
+    {
+      "path": "raw/e0-system-0-attempt1.json",
+      "bytes": 18155,
+      "sha256": "c2b72d572bb036723d8e84ab507e960e4be0d9292412994f82f571e110d35243"
+    },
+    {
+      "path": "raw/e0-system-1-attempt1.json",
+      "bytes": 10533,
+      "sha256": "71ee8dc381b3d220426c513d0356b77aa40670485e94988a66891f97d27f8203"
+    },
+    {
+      "path": "raw/e0-system-2-attempt1.json",
+      "bytes": 22602,
+      "sha256": "a0194713385602acd1428d6688ceed1fdfd65dbfa8cfe8285eb7778edc5de7ac"
+    },
+    {
+      "path": "raw/e0-system-3-attempt1.json",
+      "bytes": 240,
+      "sha256": "dc1cea6b99c4334197396abbe07e3774814b57f4c2141c2a8511e74ccb603a3c"
+    },
+    {
+      "path": "raw/e0-system-list-attempt1.json",
+      "bytes": 972,
+      "sha256": "d60830d4237d65883f34886901bfa25a4f5e9bd339136d41133bc9d7f9b207b5"
+    },
+    {
+      "path": "raw/e1-classic-token-0-attempt1.json",
+      "bytes": 20434,
+      "sha256": "38b9047dbe26422f5c354e17fed67fff0e01861004faeaf9850c8cff140fd43f"
+    },
+    {
+      "path": "raw/e1-classic-token-1-attempt1.json",
+      "bytes": 17900,
+      "sha256": "88e6f3f684023e92ffcf7abba88d1b1b5f39c572aaab112f219864c01ac44b67"
+    },
+    {
+      "path": "raw/e1-classic-token-2-attempt1.json",
+      "bytes": 17404,
+      "sha256": "1660f7f2d29bbb1126aa45d657e0f6a00e3e41c5b9f40be92206d065ab720ed4"
+    },
+    {
+      "path": "raw/e1-classic-token-3-attempt1.json",
+      "bytes": 20686,
+      "sha256": "0a9b4ca6142ee4f482e1897aff096bff0fa60d8bf96e1e21286fa704320f1029"
+    },
+    {
+      "path": "raw/e1-classic-token-list-attempt1.json",
+      "bytes": 937,
+      "sha256": "48abda441b1d5672775338dc2ee04d5064ac324ccac787772eb7f414ddc01759"
+    },
+    {
+      "path": "raw/e1-jupiter-0-attempt1.json",
+      "bytes": 41244,
+      "sha256": "76cb4a6efee99910b67cbf1c3fc39cb269cae8d401430907bb5aa6b5b8b016e8"
+    },
+    {
+      "path": "raw/e1-jupiter-1-attempt1.json",
+      "bytes": 240,
+      "sha256": "8d3b651c57e3a02bbba47168fd0214869477fb3eed81082b12d0010505139bc3"
+    },
+    {
+      "path": "raw/e1-jupiter-2-attempt1.json",
+      "bytes": 17961,
+      "sha256": "20de2844ef009baf8baa5d1a8585cb1d5d2d031f0185649987e9d53efc868a09"
+    },
+    {
+      "path": "raw/e1-jupiter-3-attempt1.json",
+      "bytes": 9859,
+      "sha256": "283e94387f6b7132512e8fa0ee1f2ac9e627d15161269e9d980241d77a6ca63a"
+    },
+    {
+      "path": "raw/e1-jupiter-list-attempt1.json",
+      "bytes": 1000,
+      "sha256": "96b348eabebc95a2358f313c50d149eccb309a7eb6582db1df02311446ce2f1b"
+    },
+    {
+      "path": "raw/e1-system-0-attempt1.json",
+      "bytes": 19901,
+      "sha256": "a1d6796559dee6090908dc8578ccb39df02d88506b4d5f6c5046725a35abec4a"
+    },
+    {
+      "path": "raw/e1-system-1-attempt1.json",
+      "bytes": 19536,
+      "sha256": "fb2ecd2cd0c649399bbef57d148964639f6ae66cbadec449d2f77878344bab6e"
+    },
+    {
+      "path": "raw/e1-system-2-attempt1.json",
+      "bytes": 11832,
+      "sha256": "c85e2a12625b301ef6e670faab1bc2cfe14eac9faa161c9f8f3ed939a6b69442"
+    },
+    {
+      "path": "raw/e1-system-3-attempt1.json",
+      "bytes": 240,
+      "sha256": "f2563d457fd0d03ffa9c681b88ab8a1257e93bc593014170d09aeb7f8cb99365"
+    },
+    {
+      "path": "raw/e1-system-list-attempt1.json",
+      "bytes": 966,
+      "sha256": "62e13d64e1d38abcfe202667e2d772db85ce6fd0138383792b7fadd69b23dfa2"
+    },
+    {
+      "path": "raw/e2-classic-token-0-attempt1.json",
+      "bytes": 25965,
+      "sha256": "96a2d267d1950b069ecb25392f8c48203957655e56eb2f0a23539111aeec9e14"
+    },
+    {
+      "path": "raw/e2-classic-token-1-attempt1.json",
+      "bytes": 13090,
+      "sha256": "204242b624a4b0e109dcc31707ae0528e81e06a03c99dc6905bdaa0a8faaf752"
+    },
+    {
+      "path": "raw/e2-classic-token-2-attempt1.json",
+      "bytes": 13109,
+      "sha256": "66548bcdf31d5b3ca3050f47fdb425ef7a973ba30682b9e7bf1d0ad1ccf08b72"
+    },
+    {
+      "path": "raw/e2-classic-token-3-attempt1.json",
+      "bytes": 240,
+      "sha256": "3f8e949a499bb2e9b22d6c491ee97ced25696eddad393f96e7aac0e90ec1f209"
+    },
+    {
+      "path": "raw/e2-classic-token-list-attempt1.json",
+      "bytes": 971,
+      "sha256": "10ba617c880507ba8d03167dc367c7fd1982a9f7edefae8334e3d49579dc08b6"
+    },
+    {
+      "path": "raw/e2-jupiter-0-attempt1.json",
+      "bytes": 20432,
+      "sha256": "30b1f770fe85a22c1ae58b6677f5aaf7e782189d635d819352bd1774dfeec122"
+    },
+    {
+      "path": "raw/e2-jupiter-1-attempt1.json",
+      "bytes": 9856,
+      "sha256": "b00d12daa8a34427cddb785ec28eec537d732cb22aecdf8a84c7a8d62d08ede0"
+    },
+    {
+      "path": "raw/e2-jupiter-2-attempt1.json",
+      "bytes": 240,
+      "sha256": "00de84f92ad5dc54182285c23c107c31db948a896781edfbb6e18c13e4083b35"
+    },
+    {
+      "path": "raw/e2-jupiter-3-attempt1.json",
+      "bytes": 9860,
+      "sha256": "770d2e435f42ef55f61a2eb5eec7c9a99ff307303f9c565a75d64f9ad45a859d"
+    },
+    {
+      "path": "raw/e2-jupiter-list-attempt1.json",
+      "bytes": 1034,
+      "sha256": "1be5cd6f419983e9ac05cc798bf3a128bd7cdb27681439e63c0dd1f71c64a617"
+    },
+    {
+      "path": "raw/e2-system-0-attempt1.json",
+      "bytes": 240,
+      "sha256": "669d28cc9f6ba93166392e4e4e162c459ca0dc3edd7318d2f957daa39aae61b0"
+    },
+    {
+      "path": "raw/e2-system-1-attempt1.json",
+      "bytes": 25965,
+      "sha256": "af602b712cfd175c818749142dce05d2dd0ebef5c3e1bb41e56599ed6237373a"
+    },
+    {
+      "path": "raw/e2-system-2-attempt1.json",
+      "bytes": 26254,
+      "sha256": "a00c7c1775e809b709af657ece0c4de093703a828ddbb05278b17b2983ff18e7"
+    },
+    {
+      "path": "raw/e2-system-3-attempt1.json",
+      "bytes": 28186,
+      "sha256": "a7e80fc5facc855b868af15778229ca3cae24ec01f322e89c363f22b34ef5309"
+    },
+    {
+      "path": "raw/e2-system-list-attempt1.json",
+      "bytes": 1071,
+      "sha256": "aeef1a73513aa2e45c3386599464328df9ee8fea0b13e9f752f4d5ad145cbce2"
+    },
+    {
+      "path": "replay-results.json",
+      "bytes": 69183,
+      "sha256": "07569910353d4ce7ece55e7f36dc90ac01c3653c95c69274c51e2ef78e191ce0"
+    },
+    {
+      "path": "focused-test-output.txt",
+      "bytes": 3862,
+      "sha256": "0d0b991e84898d1bcd2e3aedb073bbbd20d2cd49cfdfee021ec529e63f2ebdbf"
+    }
+  ],
+  "baselineSummary": {
+    "selectionPositions": 36,
+    "uniqueSignatures": 36,
+    "duplicates": 0,
+    "distinctListingSlots": 9,
+    "listingSlotRange": [
+      453488052,
+      453490377
+    ],
+    "availableParserInvocations": 26,
+    "observedSuccessfulOther": 19,
+    "observedFailedOther": 7,
+    "observedSupportedSwapOrTransfer": 0,
+    "unreplayedRpcUnsupportedVersion1": 10,
+    "unsupportedVersion1WithFailedListing": 8,
+    "unsupportedVersion1WithSuccessfulListing": 2,
+    "totalFailedSignatureListings": 15,
+    "rawRequests": 45,
+    "rawRequestAttempts": 45,
+    "mechanicalPositiveProofs": "None because no new sample classified as swap or transfer. Zero proof failures is not positive proof or accuracy."
+  },
+  "focusedRegressionVerification": {
+    "checks": 46,
+    "passed": true,
+    "scope": "Only the new evidence replay/error/hash regression file; not full155test rerun, not independent accuracy, not production device test.",
+    "command": "flutter test --no-pub --reporter expanded test/public_parser_protocol_0511_test.dart",
+    "logPath": "test/fixtures/public_mainnet_0511_protocol/focused-test-output.txt",
+    "logSha256": "0d0b991e84898d1bcd2e3aedb073bbbd20d2cd49cfdfee021ec529e63f2ebdbf"
+  },
+  "postExecutionStyleProvenance": {
+    "executedRunnerSourcePath": "test/fixtures/public_mainnet_0511_protocol/executed-public-parser-tool-source.txt",
+    "executedRunnerSha256": "00a24c205b3d1b92e9f2a939cf261a637deebf1b3c49088b0dcb1b2f59e9213a",
+    "finalStyleOnlyRunnerSha256": "42c4c8ea4791baae897e35160e8076fd8e885e83c3091452a2c2f313fff3d933",
+    "changes": "Braces and null-aware collection elements only; no data/parser/results changes. Original executed provenance remains unchanged."
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "protocolId": "public-parser-2026-10-05-fixed-three-epochs-v2",
+  "frozenAtUtc": "2026-10-05T05:41:11.433053+00:00",
+  "epochOffsetsSeconds": [
+    0,
+    300,
+    600
+  ],
+  "rpc": "https://api.mainnet-beta.solana.com",
+  "programs": [
+    {
+      "name": "jupiter",
+      "address": "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4"
+    },
+    {
+      "name": "system",
+      "address": "11111111111111111111111111111111"
+    },
+    {
+      "name": "classic-token",
+      "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+    }
+  ],
+  "signaturesPerProgramEpoch": 4,
+  "listingParams": {
+    "commitment": "finalized",
+    "limit": 4
+  },
+  "transactionParams": {
+    "commitment": "finalized",
+    "encoding": "jsonParsed",
+    "maxSupportedTransactionVersion": 0
+  },
+  "maxSelectionPositions": 36,
+  "selection": "Four newest signatures per program per epoch in returned order. No success-based expansion, replacements, filtering, provider switching or follow-up search.",
+  "duplicates": "Retain every selection position. Report duplicate signatures separately; fetch each selected position including duplicates.",
+  "failures": "Retain raw HTTP/RPC errors, nulls and unavailable positions. Failed signature rows are fetched, not discarded. Missing list positions are explicit unavailable selections.",
+  "retry": {
+    "maximumAttemptsPerRequest": 2,
+    "retryOnly": "HTTP429/5xx or transport failure",
+    "backoffSeconds": 10,
+    "longRetryAfter": "If server Retry-After exceeds10 seconds, do not retry this request; retain error. Same request only."
+  },
+  "requestPacingSeconds": 2,
+  "perspective": "First transaction signer for every available response. This is public fixture context, not connected personal-wallet ownership. Sponsored/multi-signer perspective limitations are retained.",
+  "evaluation": "Unchanged current production Dart normalizeDirectActivity; no app/lib/model/parser changes. Supported results additionally checked from exact route/authority/owned endpoints/program/balances/atomic deltas.",
+  "appVersion": "0.5.11+18",
+  "appSource": "0c5dfd70243940d6598804e9ff3d111ae920051d",
+  "scope": "Public RPC fixture at current version, not current owner live app flow, no new signature/trade/asset movement. Program sampling is not representative/general accuracy or independent human validation.",
+  "officialDocsReadBeforeFetchAtUtc": "2026-10-05T05:40:32.540685+00:00",
+  "officialDocs": [
+    "https://solana.com/docs/rpc/http/getsignaturesforaddress",
+    "https://solana.com/docs/rpc/http/gettransaction"
+  ],
+  "supersedesUnusedProtocolSha256": "26783561f0d678c2cbd2f619b0e406bf30a48f6fff9897aeadcc11176e969dd9",
+  "supersessionReason": "No RPC calls made. Define epoch0 as actual fetch-run start so script preparation cannot compress the frozen five-minute intervals.",
+  "epoch0Anchor": "UTC and monotonic time immediately before first listing request in fetch-run; subsequent target epochs are anchor+300 and+600 seconds."
+}

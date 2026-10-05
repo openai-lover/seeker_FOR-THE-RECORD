@@ -114,7 +114,7 @@ test('accepted input reaches only fixed read-only JSON-RPC methods and structure
     {url, method: 'POST', body: {jsonrpc: '2.0', id: 1, method: 'getSignaturesForAddress',
       params: [wallet, {commitment: 'finalized', limit: 20, before: cursor}]}},
     {url, method: 'POST', body: {jsonrpc: '2.0', id: 1, method: 'getTransaction',
-      params: [signature, {commitment: 'finalized', encoding: 'jsonParsed', maxSupportedTransactionVersion: 0}]}},
+      params: [signature, {commitment: 'finalized', encoding: 'jsonParsed', maxSupportedTransactionVersion: 1}]}},
   ]);
   assert.equal(page.items[0]?.status, 'unavailable');
   assert.equal(page.items[0]?.type, 'other');

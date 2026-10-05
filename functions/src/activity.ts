@@ -46,12 +46,28 @@ const routes = [
   {name:'shared_accounts_route',authority:2,source:3,destination:6},
   {name:'shared_accounts_exact_out_route',authority:2,source:3,destination:6},
 ].map(r=>({...r,tag:createHash('sha256').update(`global:${r.name}`).digest().subarray(0,8).toString('hex')}));
+
+const transactionConfig = z.object({
+  computeUnitLimit:z.number().int().nonnegative().max(0xffffffff).nullable(),
+  heapSize:z.number().int().nonnegative().max(0xffffffff).nullable(),
+  loadedAccountsDataSizeLimit:z.number().int().nonnegative().max(0xffffffff).nullable(),
+  priorityFee:z.number().int().nonnegative().max(Number.MAX_SAFE_INTEGER).nullable(),
+}).strict();
+function supportedTransactionEnvelope(raw:unknown):boolean {
+  const record=(value:unknown):value is Record<string,unknown> =>
+    typeof value==='object' && value!==null && !Array.isArray(value);
+  if(!record(raw) || !record(raw.transaction) || !record(raw.transaction.message)) return false;
+  const message=raw.transaction.message;
+  if(raw.version==='legacy' || raw.version===0) return !Object.hasOwn(message,'transactionConfig');
+  return raw.version===1 && transactionConfig.safeParse(message.transactionConfig).success;
+}
+
 export function normalizeActivity(wallet:string, info:SignatureInfo, raw:unknown):WalletActivity {
   const base:WalletActivity={id:info.signature,signature:info.signature,blockTime:info.blockTime,status:info.err!=null?'failed':'unavailable',
     type:'other',source:null,fee:null,input:null,output:null,issue:null,explorerUrl:`https://explorer.solana.com/tx/${info.signature}`};
   if(info.err!=null) return base;
   const parsed=transaction.safeParse(raw);
-  if(!parsed.success) return {...base,issue:raw==null?'transaction-unavailable':'parse-unavailable'};
+  if(!parsed.success || !supportedTransactionEnvelope(raw)) return {...base,issue:raw==null?'transaction-unavailable':'parse-unavailable'};
   const tx=parsed.data;
   if(tx.transaction.signatures[0]!==info.signature) return {...base,issue:'parse-unavailable'};
   base.fee=decimal(BigInt(tx.meta.fee),9);
@@ -128,7 +144,7 @@ export class SolanaActivityProvider implements ActivityProvider {
     requireThat(parsed.success,'rpc-unavailable',503);
     return parsed.data.map(s => ({...s, err:s.err}));
   }
-  transaction(signature:string):Promise<unknown> {return this.call('getTransaction',[signature,{commitment:'finalized',encoding:'jsonParsed',maxSupportedTransactionVersion:0}]);}
+  transaction(signature:string):Promise<unknown> {return this.call('getTransaction',[signature,{commitment:'finalized',encoding:'jsonParsed',maxSupportedTransactionVersion:1}]);}
 }
 const request=z.object({before:z.string().refine(s=>{try{return bs58.decode(s).length===64;}catch{return false;}}).optional()}).strict();
 export type ActivityUser={uid:string;wallet:string};

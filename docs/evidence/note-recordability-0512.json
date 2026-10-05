@@ -1,0 +1,16 @@
+{
+  "scope": "Actual unchanged WalletActivity getters applied offline to currentcandidate publicsame36replay; not productdeviceUIoraccountownership.",
+  "candidateParserFileSha256": "5acb14ea6c56ac658766bf4d3ba5e0199762afc2e7313f997631568083a30760",
+  "domainFileSha256": "f4b2fe9b722e0f6b4760d374a81dc3f9803b54913027a5a23c54fc72fab6ae94",
+  "canRecordReasonTrue": 21,
+  "canJournalTrue": 0,
+  "isTransferTrue": 0,
+  "getterInputs": "Retained exact-same36 public candidate activities; no owner wallet or personal DB.",
+  "newSuccessfulV1Cases": [
+    "e0-jupiter-0",
+    "e2-classic-token-3"
+  ],
+  "newSuccessfulV1CanRecordReason": 2,
+  "failedListingsCanRecordReason": 0,
+  "classifiedSwapOrTransfer": 0
+}

@@ -33,6 +33,7 @@ Map<String, dynamic> fixtureTransaction() {
     'uiTokenAmount': {'amount': amount, 'decimals': decimals},
   };
   return {
+    'version': 'legacy',
     'blockTime': 1700000000,
     'transaction': {
       'signatures': [fixtureSignature],

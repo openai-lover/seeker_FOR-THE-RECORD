@@ -46,6 +46,41 @@ bool _base58Size(Object? value, int size) {
 bool _safeInt(Object? value) =>
     value is int && value >= 0 && value <= 9007199254740991;
 
+// RPC ceiling 1 includes legacy and v0. Validate envelopes before attributing
+// balances; transaction config never estimates or replaces the total meta fee.
+bool _supportedTransactionEnvelope(Map tx, Map message) {
+  final version = tx['version'];
+  if (version == 'legacy' || (version is int && version == 0)) {
+    return !message.containsKey('transactionConfig');
+  }
+  if (version is! int || version != 1) return false;
+  final config = message['transactionConfig'];
+  const fields = {
+    'computeUnitLimit',
+    'heapSize',
+    'loadedAccountsDataSizeLimit',
+    'priorityFee',
+  };
+  if (config is! Map ||
+      config.length != fields.length ||
+      fields.any((field) => !config.containsKey(field)) ||
+      config.keys.any((key) => !fields.contains(key))) {
+    return false;
+  }
+  for (final field in [
+    'computeUnitLimit',
+    'heapSize',
+    'loadedAccountsDataSizeLimit',
+  ]) {
+    final value = config[field];
+    if (value != null && (!_safeInt(value) || value > 0xffffffff)) {
+      return false;
+    }
+  }
+  final priority = config['priorityFee'];
+  return priority == null || _safeInt(priority);
+}
+
 String _decimal(BigInt amount, int places) {
   final digits = amount.toString().padLeft(places + 1, '0');
   if (places == 0) return digits;
@@ -87,6 +122,9 @@ WalletActivity normalizeDirectActivity(
     final transaction = tx['transaction'] as Map;
     final meta = tx['meta'] as Map;
     final message = transaction['message'] as Map;
+    if (!_supportedTransactionEnvelope(tx, message)) {
+      return result(issue: 'parse-unavailable');
+    }
     final keys = (message['accountKeys'] as List).cast<Map>();
     final instructions = (message['instructions'] as List).cast<Map>();
     final pre = (meta['preTokenBalances'] as List).cast<Map>();
@@ -490,7 +528,7 @@ class DirectActivityClient {
                     {
                       'commitment': 'finalized',
                       'encoding': 'jsonParsed',
-                      'maxSupportedTransactionVersion': 0,
+                      'maxSupportedTransactionVersion': 1,
                     },
                   ]);
             return normalizeDirectActivity(wallet, info, raw).toJson();

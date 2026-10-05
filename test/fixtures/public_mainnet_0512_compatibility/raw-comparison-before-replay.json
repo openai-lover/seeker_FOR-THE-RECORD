@@ -1,0 +1,334 @@
+{
+  "scope": "Raw structural comparison before candidate parser replay; no classification/accuracy claim.",
+  "same36SelectionInfo": true,
+  "previouslyAvailableRows": 26,
+  "previouslyAvailableRawResultChanges": 0,
+  "allJsonParsedAccountShapes": true,
+  "allTopLevelProgramIdShapes": true,
+  "rows": [
+    {
+      "caseId": "e0-jupiter-0",
+      "version": 1,
+      "signatureListingFailed": false,
+      "previouslyAvailableRawResultUnchanged": null,
+      "jsonParsedAccountShape": true,
+      "parsedTopLevelProgramIdShape": true,
+      "metaErrorPresent": false
+    },
+    {
+      "caseId": "e0-jupiter-1",
+      "version": 1,
+      "signatureListingFailed": true,
+      "previouslyAvailableRawResultUnchanged": null,
+      "jsonParsedAccountShape": true,
+      "parsedTopLevelProgramIdShape": true,
+      "metaErrorPresent": true
+    },
+    {
+      "caseId": "e0-jupiter-2",
+      "version": 1,
+      "signatureListingFailed": true,
+      "previouslyAvailableRawResultUnchanged": null,
+      "jsonParsedAccountShape": true,
+      "parsedTopLevelProgramIdShape": true,
+      "metaErrorPresent": true
+    },
+    {
+      "caseId": "e0-jupiter-3",
+      "version": 0,
+      "signatureListingFailed": false,
+      "previouslyAvailableRawResultUnchanged": true,
+      "jsonParsedAccountShape": true,
+      "parsedTopLevelProgramIdShape": true,
+      "metaErrorPresent": false
+    },
+    {
+      "caseId": "e0-system-0",
+      "version": 0,
+      "signatureListingFailed": false,
+      "previouslyAvailableRawResultUnchanged": true,
+      "jsonParsedAccountShape": true,
+      "parsedTopLevelProgramIdShape": true,
+      "metaErrorPresent": false
+    },
+    {
+      "caseId": "e0-system-1",
+      "version": "legacy",
+      "signatureListingFailed": false,
+      "previouslyAvailableRawResultUnchanged": true,
+      "jsonParsedAccountShape": true,
+      "parsedTopLevelProgramIdShape": true,
+      "metaErrorPresent": false
+    },
+    {
+      "caseId": "e0-system-2",
+      "version": 0,
+      "signatureListingFailed": false,
+      "previouslyAvailableRawResultUnchanged": true,
+      "jsonParsedAccountShape": true,
+      "parsedTopLevelProgramIdShape": true,
+      "metaErrorPresent": false
+    },
+    {
+      "caseId": "e0-system-3",
+      "version": 1,
+      "signatureListingFailed": true,
+      "previouslyAvailableRawResultUnchanged": null,
+      "jsonParsedAccountShape": true,
+      "parsedTopLevelProgramIdShape": true,
+      "metaErrorPresent": true
+    },
+    {
+      "caseId": "e0-classic-token-0",
+      "version": 0,
+      "signatureListingFailed": false,
+      "previouslyAvailableRawResultUnchanged": true,
+      "jsonParsedAccountShape": true,
+      "parsedTopLevelProgramIdShape": true,
+      "metaErrorPresent": false
+    },
+    {
+      "caseId": "e0-classic-token-1",
+      "version": 0,
+      "signatureListingFailed": false,
+      "previouslyAvailableRawResultUnchanged": true,
+      "jsonParsedAccountShape": true,
+      "parsedTopLevelProgramIdShape": true,
+      "metaErrorPresent": false
+    },
+    {
+      "caseId": "e0-classic-token-2",
+      "version": 1,
+      "signatureListingFailed": true,
+      "previouslyAvailableRawResultUnchanged": null,
+      "jsonParsedAccountShape": true,
+      "parsedTopLevelProgramIdShape": true,
+      "metaErrorPresent": true
+    },
+    {
+      "caseId": "e0-classic-token-3",
+      "version": 0,
+      "signatureListingFailed": false,
+      "previouslyAvailableRawResultUnchanged": true,
+      "jsonParsedAccountShape": true,
+      "parsedTopLevelProgramIdShape": true,
+      "metaErrorPresent": false
+    },
+    {
+      "caseId": "e1-jupiter-0",
+      "version": 0,
+      "signatureListingFailed": false,
+      "previouslyAvailableRawResultUnchanged": true,
+      "jsonParsedAccountShape": true,
+      "parsedTopLevelProgramIdShape": true,
+      "metaErrorPresent": false
+    },
+    {
+      "caseId": "e1-jupiter-1",
+      "version": 1,
+      "signatureListingFailed": true,
+      "previouslyAvailableRawResultUnchanged": null,
+      "jsonParsedAccountShape": true,
+      "parsedTopLevelProgramIdShape": true,
+      "metaErrorPresent": true
+    },
+    {
+      "caseId": "e1-jupiter-2",
+      "version": 0,
+      "signatureListingFailed": false,
+      "previouslyAvailableRawResultUnchanged": true,
+      "jsonParsedAccountShape": true,
+      "parsedTopLevelProgramIdShape": true,
+      "metaErrorPresent": false
+    },
+    {
+      "caseId": "e1-jupiter-3",
+      "version": 0,
+      "signatureListingFailed": true,
+      "previouslyAvailableRawResultUnchanged": true,
+      "jsonParsedAccountShape": true,
+      "parsedTopLevelProgramIdShape": true,
+      "metaErrorPresent": true
+    },
+    {
+      "caseId": "e1-system-0",
+      "version": "legacy",
+      "signatureListingFailed": false,
+      "previouslyAvailableRawResultUnchanged": true,
+      "jsonParsedAccountShape": true,
+      "parsedTopLevelProgramIdShape": true,
+      "metaErrorPresent": false
+    },
+    {
+      "caseId": "e1-system-1",
+      "version": 0,
+      "signatureListingFailed": false,
+      "previouslyAvailableRawResultUnchanged": true,
+      "jsonParsedAccountShape": true,
+      "parsedTopLevelProgramIdShape": true,
+      "metaErrorPresent": false
+    },
+    {
+      "caseId": "e1-system-2",
+      "version": 0,
+      "signatureListingFailed": false,
+      "previouslyAvailableRawResultUnchanged": true,
+      "jsonParsedAccountShape": true,
+      "parsedTopLevelProgramIdShape": true,
+      "metaErrorPresent": false
+    },
+    {
+      "caseId": "e1-system-3",
+      "version": 1,
+      "signatureListingFailed": true,
+      "previouslyAvailableRawResultUnchanged": null,
+      "jsonParsedAccountShape": true,
+      "parsedTopLevelProgramIdShape": true,
+      "metaErrorPresent": true
+    },
+    {
+      "caseId": "e1-classic-token-0",
+      "version": "legacy",
+      "signatureListingFailed": false,
+      "previouslyAvailableRawResultUnchanged": true,
+      "jsonParsedAccountShape": true,
+      "parsedTopLevelProgramIdShape": true,
+      "metaErrorPresent": false
+    },
+    {
+      "caseId": "e1-classic-token-1",
+      "version": 0,
+      "signatureListingFailed": false,
+      "previouslyAvailableRawResultUnchanged": true,
+      "jsonParsedAccountShape": true,
+      "parsedTopLevelProgramIdShape": true,
+      "metaErrorPresent": false
+    },
+    {
+      "caseId": "e1-classic-token-2",
+      "version": 0,
+      "signatureListingFailed": false,
+      "previouslyAvailableRawResultUnchanged": true,
+      "jsonParsedAccountShape": true,
+      "parsedTopLevelProgramIdShape": true,
+      "metaErrorPresent": false
+    },
+    {
+      "caseId": "e1-classic-token-3",
+      "version": 0,
+      "signatureListingFailed": false,
+      "previouslyAvailableRawResultUnchanged": true,
+      "jsonParsedAccountShape": true,
+      "parsedTopLevelProgramIdShape": true,
+      "metaErrorPresent": false
+    },
+    {
+      "caseId": "e2-jupiter-0",
+      "version": 0,
+      "signatureListingFailed": false,
+      "previouslyAvailableRawResultUnchanged": true,
+      "jsonParsedAccountShape": true,
+      "parsedTopLevelProgramIdShape": true,
+      "metaErrorPresent": false
+    },
+    {
+      "caseId": "e2-jupiter-1",
+      "version": 0,
+      "signatureListingFailed": true,
+      "previouslyAvailableRawResultUnchanged": true,
+      "jsonParsedAccountShape": true,
+      "parsedTopLevelProgramIdShape": true,
+      "metaErrorPresent": true
+    },
+    {
+      "caseId": "e2-jupiter-2",
+      "version": 1,
+      "signatureListingFailed": true,
+      "previouslyAvailableRawResultUnchanged": null,
+      "jsonParsedAccountShape": true,
+      "parsedTopLevelProgramIdShape": true,
+      "metaErrorPresent": true
+    },
+    {
+      "caseId": "e2-jupiter-3",
+      "version": 0,
+      "signatureListingFailed": true,
+      "previouslyAvailableRawResultUnchanged": true,
+      "jsonParsedAccountShape": true,
+      "parsedTopLevelProgramIdShape": true,
+      "metaErrorPresent": true
+    },
+    {
+      "caseId": "e2-system-0",
+      "version": 1,
+      "signatureListingFailed": true,
+      "previouslyAvailableRawResultUnchanged": null,
+      "jsonParsedAccountShape": true,
+      "parsedTopLevelProgramIdShape": true,
+      "metaErrorPresent": true
+    },
+    {
+      "caseId": "e2-system-1",
+      "version": 0,
+      "signatureListingFailed": true,
+      "previouslyAvailableRawResultUnchanged": true,
+      "jsonParsedAccountShape": true,
+      "parsedTopLevelProgramIdShape": true,
+      "metaErrorPresent": true
+    },
+    {
+      "caseId": "e2-system-2",
+      "version": 0,
+      "signatureListingFailed": true,
+      "previouslyAvailableRawResultUnchanged": true,
+      "jsonParsedAccountShape": true,
+      "parsedTopLevelProgramIdShape": true,
+      "metaErrorPresent": true
+    },
+    {
+      "caseId": "e2-system-3",
+      "version": 0,
+      "signatureListingFailed": true,
+      "previouslyAvailableRawResultUnchanged": true,
+      "jsonParsedAccountShape": true,
+      "parsedTopLevelProgramIdShape": true,
+      "metaErrorPresent": true
+    },
+    {
+      "caseId": "e2-classic-token-0",
+      "version": 0,
+      "signatureListingFailed": true,
+      "previouslyAvailableRawResultUnchanged": true,
+      "jsonParsedAccountShape": true,
+      "parsedTopLevelProgramIdShape": true,
+      "metaErrorPresent": true
+    },
+    {
+      "caseId": "e2-classic-token-1",
+      "version": "legacy",
+      "signatureListingFailed": false,
+      "previouslyAvailableRawResultUnchanged": true,
+      "jsonParsedAccountShape": true,
+      "parsedTopLevelProgramIdShape": true,
+      "metaErrorPresent": false
+    },
+    {
+      "caseId": "e2-classic-token-2",
+      "version": "legacy",
+      "signatureListingFailed": false,
+      "previouslyAvailableRawResultUnchanged": true,
+      "jsonParsedAccountShape": true,
+      "parsedTopLevelProgramIdShape": true,
+      "metaErrorPresent": false
+    },
+    {
+      "caseId": "e2-classic-token-3",
+      "version": 1,
+      "signatureListingFailed": false,
+      "previouslyAvailableRawResultUnchanged": null,
+      "jsonParsedAccountShape": true,
+      "parsedTopLevelProgramIdShape": true,
+      "metaErrorPresent": false
+    }
+  ]
+}

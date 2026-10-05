@@ -1,0 +1,137 @@
+import 'dart:convert';
+import 'dart:io';
+import 'package:crypto/crypto.dart';
+import 'public_parser_protocol_0511.dart' show evaluateCapturedRow;
+
+// Same-sample post-fix read confirmation. No RPC, wallet, DB or model access.
+void main(List<String> args) {
+  if (args.length != 5)
+    throw ArgumentError(
+      'Usage: dart --packages=.dart_tool/package_config.json tool/replay_public_compatibility_0512.dart captureFolder output.json expectedCandidateParserSha256 candidateSourceLabel baselineReplayResults.json',
+    );
+  final folder = Directory(args[0]);
+  final parserFile = File('lib/data/direct_activity.dart');
+  final before = sha256.convert(parserFile.readAsBytesSync()).toString();
+  if (before != args[2])
+    throw StateError(
+      'Candidate parser hash changed or was not authorized ready; no replay.',
+    );
+  final receipt =
+      jsonDecode(File('${folder.path}/fetch-receipt.json').readAsStringSync())
+          as Map;
+  final protocol =
+      jsonDecode(File('${folder.path}/protocol.json').readAsStringSync())
+          as Map;
+  if (receipt['completedAtUtc'] == null ||
+      protocol['method'] != 'getTransaction' ||
+      (protocol['params'] as Map)['maxSupportedTransactionVersion'] != 1)
+    throw StateError('Incomplete/unapproved compatibility capture');
+  final protocolSha = sha256
+      .convert(File('${folder.path}/protocol.json').readAsBytesSync())
+      .toString();
+  if (protocolSha != receipt['protocolSha256'])
+    throw StateError('Protocol hash mismatch');
+  final baseline = jsonDecode(File(args[4]).readAsStringSync()) as Map;
+  final oldRows = {
+    for (final row in (baseline['rows'] as List).cast<Map>())
+      row['caseId']: row,
+  };
+  final rows = <Map<String, Object?>>[];
+  final groups = <String, Map<String, int>>{};
+  for (final selected in (receipt['rows'] as List).cast<Map>()) {
+    final old = oldRows[selected['caseId']]!;
+    if ((old['selectionInfo'] as Map)['signature'] !=
+        (selected['selectionInfo'] as Map)['signature'])
+      throw StateError('Selection changed');
+    final row = evaluateCapturedRow(selected, folder);
+    final env = jsonDecode(
+      File('${folder.path}/${selected['transactionFile']}').readAsStringSync(),
+    );
+    row['responseTransactionVersion'] = env is Map && env['result'] is Map
+        ? (env['result'] as Map)['version']
+        : null;
+    row['baselineFetchState'] = old['fetchState'];
+    row['baselineParserInvoked'] = old['parserInvoked'];
+    row['baselineActivity'] = old['activity'];
+    row['previouslyAvailableActivityUnchanged'] = old['parserInvoked'] == true
+        ? jsonEncode(old['activity']) == jsonEncode(row['activity'])
+        : null;
+    final activity = row['activity'] as Map?;
+    final outcome = activity == null
+        ? '${row['fetchState']}/${row['evaluationState']}'
+        : '${activity['status']}/${activity['type']}';
+    final group = groups.putIfAbsent(
+      'epoch${row['epoch']}/${row['program']}',
+      () => {},
+    );
+    group[outcome] = (group[outcome] ?? 0) + 1;
+    rows.add(row);
+  }
+  if (rows.length != 36 || oldRows.length != 36)
+    throw StateError('Same36 protocol invariant');
+  final after = sha256.convert(parserFile.readAsBytesSync()).toString();
+  if (after != before)
+    throw StateError('Candidate parser changed during replay');
+  final versions = <String, int>{};
+  for (final row in rows) {
+    final key = '${row['responseTransactionVersion']}';
+    versions[key] = (versions[key] ?? 0) + 1;
+  }
+  final result = {
+    'scope':
+        'Post-fix exact-same36 public RPC read-compatibility confirmation, not held-out/independent accuracy/currentowner liveapp flow/newtrade.',
+    'candidateVersion': '0.5.12+19',
+    'candidateSourceLabel': args[3],
+    'candidateParserFileSha256': before,
+    'baselineVersion': '0.5.11+18',
+    'baselineAppSource': '0c5dfd70243940d6598804e9ff3d111ae920051d',
+    'baselineProtocolSha256': protocol['baselineProtocolSha256'],
+    'baselineFetchReceiptSha256': protocol['baselineFetchReceiptSha256'],
+    'protocolSha256': protocolSha,
+    'completedFetchAtUtc': receipt['completedAtUtc'],
+    'selectionPositions': rows.length,
+    'uniqueSignatures': receipt['uniqueSignatures'],
+    'duplicateSelectionPositions': receipt['duplicateSelectionPositions'],
+    'parserInvoked': rows.where((r) => r['parserInvoked'] == true).length,
+    'listingFailedPositions': rows
+        .where((r) => r['listingFailed'] == true)
+        .length,
+    'previouslyUnavailableNowReplayed': rows
+        .where(
+          (r) =>
+              r['baselineParserInvoked'] == false && r['parserInvoked'] == true,
+        )
+        .length,
+    'previouslyAvailableActivityChanged': rows
+        .where((r) => r['previouslyAvailableActivityUnchanged'] == false)
+        .length,
+    'classifiedProofFailures': rows
+        .where(
+          (r) =>
+              r['classifiedProof'] is Map &&
+              (r['classifiedProof'] as Map)['allChecksPass'] != true,
+        )
+        .length,
+    'responseVersions': versions,
+    'perEpochProgramOutcomes': groups,
+    'rows': rows,
+  };
+  File(args[1]).writeAsStringSync(
+    '${const JsonEncoder.withIndent('  ').convert(result)}\n',
+  );
+  stdout.writeln(
+    jsonEncode({
+      for (final k in [
+        'selectionPositions',
+        'parserInvoked',
+        'listingFailedPositions',
+        'previouslyUnavailableNowReplayed',
+        'previouslyAvailableActivityChanged',
+        'classifiedProofFailures',
+        'responseVersions',
+        'perEpochProgramOutcomes',
+      ])
+        k: result[k],
+    }),
+  );
+}

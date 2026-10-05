@@ -1,0 +1,2344 @@
+{
+  "protocolSha256": "abc98638dcebe6472604e4e2305f43079c2953c5b1a11cfa68265da1feca72d7",
+  "scope": "Public RPC fixture at current version, not current owner live app flow, no new signature/trade/asset movement. Program sampling is not representative/general accuracy or independent human validation.",
+  "rpc": "https://api.mainnet-beta.solana.com",
+  "startedAtUtc": "2026-10-05T05:42:36.393053+00:00",
+  "requests": [
+    {
+      "requestId": 1,
+      "label": "e0-jupiter-list",
+      "method": "getSignaturesForAddress",
+      "params": [
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+        {
+          "commitment": "finalized",
+          "limit": 4
+        }
+      ],
+      "requestSha256": "cc378a25fcbf0bf161c2b455f61d9b1a30e3062e9812be709698b0264c05360d",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAtUtc": "2026-10-05T05:42:36.394055+00:00",
+          "completedAtUtc": "2026-10-05T05:42:36.626043+00:00",
+          "httpStatus": 200,
+          "responseFile": "raw/e0-jupiter-list-attempt1.json",
+          "responseBytes": 1001,
+          "responseSha256": "eabad4b1a3a06c0599a246b78bd8d7635b043ef6e7062b1e1d53016e88fc729a",
+          "retryAfter": null,
+          "transportError": null,
+          "rpcError": null
+        }
+      ],
+      "chosenAttempt": 1,
+      "httpOk": true,
+      "rpcOk": true
+    },
+    {
+      "requestId": 2,
+      "label": "e0-jupiter-0",
+      "method": "getTransaction",
+      "params": [
+        "p45ufD64H5bSthKjHePDcrCwcgyAwZ7btC8at1rQNsNSG4S6FVNJuNwG7o4mv5jDkxBkvuikVXSzdKRsZ5urxuT",
+        {
+          "commitment": "finalized",
+          "encoding": "jsonParsed",
+          "maxSupportedTransactionVersion": 0
+        }
+      ],
+      "requestSha256": "c1d3872c3479886e125df753dde0bfd1fdf8622cc4f8164667e6214e438a72a4",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAtUtc": "2026-10-05T05:42:38.394851+00:00",
+          "completedAtUtc": "2026-10-05T05:42:38.823323+00:00",
+          "httpStatus": 200,
+          "responseFile": "raw/e0-jupiter-0-attempt1.json",
+          "responseBytes": 239,
+          "responseSha256": "f7f000b325679c8711f7ef345cb9485eb963a54e3acf526dba9c131e63ff9780",
+          "retryAfter": null,
+          "transportError": null,
+          "rpcError": {
+            "code": -32015,
+            "message": "Transaction version (1) is not supported by the requesting client. Please try the request again with the following configuration parameter: \"maxSupportedTransactionVersion\": 1"
+          }
+        }
+      ],
+      "chosenAttempt": 1,
+      "httpOk": true,
+      "rpcOk": false
+    },
+    {
+      "requestId": 3,
+      "label": "e0-jupiter-1",
+      "method": "getTransaction",
+      "params": [
+        "2Uk4bv6RrwRyXgHPLvi7uyer6TRPhaWmS9HYGpBnQ46REMPSLBiksaMcuUiDQX8pBJ6QdJK7y8ojuB5KVkmMQCVH",
+        {
+          "commitment": "finalized",
+          "encoding": "jsonParsed",
+          "maxSupportedTransactionVersion": 0
+        }
+      ],
+      "requestSha256": "8d74ec56f3dd21bf203f0488f60f1ac7ce7d8436beb6f34a1601947840daa41b",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAtUtc": "2026-10-05T05:42:40.405200+00:00",
+          "completedAtUtc": "2026-10-05T05:42:40.820423+00:00",
+          "httpStatus": 200,
+          "responseFile": "raw/e0-jupiter-1-attempt1.json",
+          "responseBytes": 239,
+          "responseSha256": "925bf9def4d445ed77126387468b913e892f06be9bbc2a66ec3e66aa011b057f",
+          "retryAfter": null,
+          "transportError": null,
+          "rpcError": {
+            "code": -32015,
+            "message": "Transaction version (1) is not supported by the requesting client. Please try the request again with the following configuration parameter: \"maxSupportedTransactionVersion\": 1"
+          }
+        }
+      ],
+      "chosenAttempt": 1,
+      "httpOk": true,
+      "rpcOk": false
+    },
+    {
+      "requestId": 4,
+      "label": "e0-jupiter-2",
+      "method": "getTransaction",
+      "params": [
+        "4DcnHvsjUQKyNsoVzKw1ejYJwGKsXTXvQpBU7xuPZRPkbYgfypcq9Waqvn2DuMGpfwWdm1s9JqQ1qn2PXGzvAefT",
+        {
+          "commitment": "finalized",
+          "encoding": "jsonParsed",
+          "maxSupportedTransactionVersion": 0
+        }
+      ],
+      "requestSha256": "b17dda1e2ed8ccb732d963639e1e510a51dcdc709cac7d688bc6c54fce3069d2",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAtUtc": "2026-10-05T05:42:42.417312+00:00",
+          "completedAtUtc": "2026-10-05T05:42:42.976832+00:00",
+          "httpStatus": 200,
+          "responseFile": "raw/e0-jupiter-2-attempt1.json",
+          "responseBytes": 239,
+          "responseSha256": "c18a8b086b7838b2694f482b779bfb561dbac4ee7eb8f1f693f48a20cbc51bdc",
+          "retryAfter": null,
+          "transportError": null,
+          "rpcError": {
+            "code": -32015,
+            "message": "Transaction version (1) is not supported by the requesting client. Please try the request again with the following configuration parameter: \"maxSupportedTransactionVersion\": 1"
+          }
+        }
+      ],
+      "chosenAttempt": 1,
+      "httpOk": true,
+      "rpcOk": false
+    },
+    {
+      "requestId": 5,
+      "label": "e0-jupiter-3",
+      "method": "getTransaction",
+      "params": [
+        "5n8kzPjP5DKvshzn4JKE9MzhoLZV3gstqh7ysav93aXesKNHLevM1y2tqpoPp8ae9mW9PVSkbm9X9Uu6VTGNE75J",
+        {
+          "commitment": "finalized",
+          "encoding": "jsonParsed",
+          "maxSupportedTransactionVersion": 0
+        }
+      ],
+      "requestSha256": "d2b960b8aa8e4679b3416a111f6997c4cb1bb0881068ebfe7b055dd4c5024338",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAtUtc": "2026-10-05T05:42:44.419221+00:00",
+          "completedAtUtc": "2026-10-05T05:42:44.605060+00:00",
+          "httpStatus": 200,
+          "responseFile": "raw/e0-jupiter-3-attempt1.json",
+          "responseBytes": 21616,
+          "responseSha256": "fc54317c640b7a1fe8fb18508c454245eb7532f5179c450554655b5cc7b7437e",
+          "retryAfter": null,
+          "transportError": null,
+          "rpcError": null
+        }
+      ],
+      "chosenAttempt": 1,
+      "httpOk": true,
+      "rpcOk": true
+    },
+    {
+      "requestId": 6,
+      "label": "e0-system-list",
+      "method": "getSignaturesForAddress",
+      "params": [
+        "11111111111111111111111111111111",
+        {
+          "commitment": "finalized",
+          "limit": 4
+        }
+      ],
+      "requestSha256": "7c8fa74a30c5ed852adbdb90f7c879fc6f232db310b5e684f30dca571ac9fefc",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAtUtc": "2026-10-05T05:42:46.421060+00:00",
+          "completedAtUtc": "2026-10-05T05:42:46.554073+00:00",
+          "httpStatus": 200,
+          "responseFile": "raw/e0-system-list-attempt1.json",
+          "responseBytes": 972,
+          "responseSha256": "d60830d4237d65883f34886901bfa25a4f5e9bd339136d41133bc9d7f9b207b5",
+          "retryAfter": null,
+          "transportError": null,
+          "rpcError": null
+        }
+      ],
+      "chosenAttempt": 1,
+      "httpOk": true,
+      "rpcOk": true
+    },
+    {
+      "requestId": 7,
+      "label": "e0-system-0",
+      "method": "getTransaction",
+      "params": [
+        "5Tfcbe6MM8aNeSLK82EPptoxfmwpMZ46CWY7v8V9BLdqSu8U43CN9S9V6ZEme2WcCQKAf2Se1RnBG4Z9U3ewm4n4",
+        {
+          "commitment": "finalized",
+          "encoding": "jsonParsed",
+          "maxSupportedTransactionVersion": 0
+        }
+      ],
+      "requestSha256": "0841e99e97756194bedd116d468d44c629389a82702623d7ad62bcee3002fa96",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAtUtc": "2026-10-05T05:42:48.433081+00:00",
+          "completedAtUtc": "2026-10-05T05:42:48.579207+00:00",
+          "httpStatus": 200,
+          "responseFile": "raw/e0-system-0-attempt1.json",
+          "responseBytes": 18155,
+          "responseSha256": "c2b72d572bb036723d8e84ab507e960e4be0d9292412994f82f571e110d35243",
+          "retryAfter": null,
+          "transportError": null,
+          "rpcError": null
+        }
+      ],
+      "chosenAttempt": 1,
+      "httpOk": true,
+      "rpcOk": true
+    },
+    {
+      "requestId": 8,
+      "label": "e0-system-1",
+      "method": "getTransaction",
+      "params": [
+        "3qyaB3ryM6hB4jpQzTHQWcCnXiFwgxBBe1KbWX8caSme4WABDHkVkNgmjR5E7azgGXxw5MxU8cxznQqYZjjkih3S",
+        {
+          "commitment": "finalized",
+          "encoding": "jsonParsed",
+          "maxSupportedTransactionVersion": 0
+        }
+      ],
+      "requestSha256": "37797f9e058e387e36af20ac46c0ed915080f02d81fdbbdee2c033702e48009c",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAtUtc": "2026-10-05T05:42:50.425898+00:00",
+          "completedAtUtc": "2026-10-05T05:42:50.553496+00:00",
+          "httpStatus": 200,
+          "responseFile": "raw/e0-system-1-attempt1.json",
+          "responseBytes": 10533,
+          "responseSha256": "71ee8dc381b3d220426c513d0356b77aa40670485e94988a66891f97d27f8203",
+          "retryAfter": null,
+          "transportError": null,
+          "rpcError": null
+        }
+      ],
+      "chosenAttempt": 1,
+      "httpOk": true,
+      "rpcOk": true
+    },
+    {
+      "requestId": 9,
+      "label": "e0-system-2",
+      "method": "getTransaction",
+      "params": [
+        "25ERDAmHb1H9ZUArLfCVkLW5gRzANzAx1AauAXw4VJXwdcJp6Gbh6Q4sMb6cQ2GEVGy1k1NwjZuiVaqRRj9QrjVq",
+        {
+          "commitment": "finalized",
+          "encoding": "jsonParsed",
+          "maxSupportedTransactionVersion": 0
+        }
+      ],
+      "requestSha256": "8ddf2a15081cdf48d2318e94c7f8901c5f0f8800cb5592e369d0af1c98e2de47",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAtUtc": "2026-10-05T05:42:52.432750+00:00",
+          "completedAtUtc": "2026-10-05T05:42:52.587765+00:00",
+          "httpStatus": 200,
+          "responseFile": "raw/e0-system-2-attempt1.json",
+          "responseBytes": 22602,
+          "responseSha256": "a0194713385602acd1428d6688ceed1fdfd65dbfa8cfe8285eb7778edc5de7ac",
+          "retryAfter": null,
+          "transportError": null,
+          "rpcError": null
+        }
+      ],
+      "chosenAttempt": 1,
+      "httpOk": true,
+      "rpcOk": true
+    },
+    {
+      "requestId": 10,
+      "label": "e0-system-3",
+      "method": "getTransaction",
+      "params": [
+        "3miDgA5qcYuQsybGb1ynbE75deqy9J41wewjTTFZcNkStbZtSq4hv1QMvto1y1FcxRB3RdSQtVBu1SaD1yhnWaJy",
+        {
+          "commitment": "finalized",
+          "encoding": "jsonParsed",
+          "maxSupportedTransactionVersion": 0
+        }
+      ],
+      "requestSha256": "8584f9df7134b037629be36c021a29fd174043863b3f80507fb84daf90564d1f",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAtUtc": "2026-10-05T05:42:54.435103+00:00",
+          "completedAtUtc": "2026-10-05T05:42:54.918619+00:00",
+          "httpStatus": 200,
+          "responseFile": "raw/e0-system-3-attempt1.json",
+          "responseBytes": 240,
+          "responseSha256": "dc1cea6b99c4334197396abbe07e3774814b57f4c2141c2a8511e74ccb603a3c",
+          "retryAfter": null,
+          "transportError": null,
+          "rpcError": {
+            "code": -32015,
+            "message": "Transaction version (1) is not supported by the requesting client. Please try the request again with the following configuration parameter: \"maxSupportedTransactionVersion\": 1"
+          }
+        }
+      ],
+      "chosenAttempt": 1,
+      "httpOk": true,
+      "rpcOk": false
+    },
+    {
+      "requestId": 11,
+      "label": "e0-classic-token-list",
+      "method": "getSignaturesForAddress",
+      "params": [
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        {
+          "commitment": "finalized",
+          "limit": 4
+        }
+      ],
+      "requestSha256": "de3f1b1940c166afc40d31ab86e035b5eb849a86cd8721f739905b80940742c5",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAtUtc": "2026-10-05T05:42:56.423245+00:00",
+          "completedAtUtc": "2026-10-05T05:42:56.567760+00:00",
+          "httpStatus": 200,
+          "responseFile": "raw/e0-classic-token-list-attempt1.json",
+          "responseBytes": 968,
+          "responseSha256": "f72dd468fa4ddb1b17b4d1372bec7055d608e9cca3b16d667f964d706d17a91c",
+          "retryAfter": null,
+          "transportError": null,
+          "rpcError": null
+        }
+      ],
+      "chosenAttempt": 1,
+      "httpOk": true,
+      "rpcOk": true
+    },
+    {
+      "requestId": 12,
+      "label": "e0-classic-token-0",
+      "method": "getTransaction",
+      "params": [
+        "31aK1xsNaf1cvHMnpUUE2JEs7ma3VCWZkyQQ5Nw95Q4TDxsvoQzy24zXiUrgugfscbrkfrkYiFudffzjZDL9kuos",
+        {
+          "commitment": "finalized",
+          "encoding": "jsonParsed",
+          "maxSupportedTransactionVersion": 0
+        }
+      ],
+      "requestSha256": "2d0b1ee903f03e9d62270d3a2ad0de48927b4f87d1f479eb0d303d09c63df76d",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAtUtc": "2026-10-05T05:42:58.431055+00:00",
+          "completedAtUtc": "2026-10-05T05:42:59.002108+00:00",
+          "httpStatus": 200,
+          "responseFile": "raw/e0-classic-token-0-attempt1.json",
+          "responseBytes": 30982,
+          "responseSha256": "08070e14e872c1c7aac316e64ee07ae25169b8ef5cdb78825d4d10841327b428",
+          "retryAfter": null,
+          "transportError": null,
+          "rpcError": null
+        }
+      ],
+      "chosenAttempt": 1,
+      "httpOk": true,
+      "rpcOk": true
+    },
+    {
+      "requestId": 13,
+      "label": "e0-classic-token-1",
+      "method": "getTransaction",
+      "params": [
+        "5wdqFEbjbLfZpDrfDMQgBBMC5mjt2ZaohNV6eXYic67M4VJU7AZszwfDWTg2Z7FJ2smmTx1iJVmPcDyVweEqFgP4",
+        {
+          "commitment": "finalized",
+          "encoding": "jsonParsed",
+          "maxSupportedTransactionVersion": 0
+        }
+      ],
+      "requestSha256": "b8639f7e74b094be27859f88ebceb9e24af867bdb0a165558d3e7103d46257f2",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAtUtc": "2026-10-05T05:43:00.428746+00:00",
+          "completedAtUtc": "2026-10-05T05:43:00.587293+00:00",
+          "httpStatus": 200,
+          "responseFile": "raw/e0-classic-token-1-attempt1.json",
+          "responseBytes": 14491,
+          "responseSha256": "11af123b82898fc493fca399c58d97d630d8e82356a8e8340fa5907b695544d0",
+          "retryAfter": null,
+          "transportError": null,
+          "rpcError": null
+        }
+      ],
+      "chosenAttempt": 1,
+      "httpOk": true,
+      "rpcOk": true
+    },
+    {
+      "requestId": 14,
+      "label": "e0-classic-token-2",
+      "method": "getTransaction",
+      "params": [
+        "3jimshwHrogZ5nKHcUxP2zqd4gc5K5HBXm95fPj7vdvNAmoKMJ6PnCj3wQUv13kfqPozcUkMoNEtL8s6KdCPnvwJ",
+        {
+          "commitment": "finalized",
+          "encoding": "jsonParsed",
+          "maxSupportedTransactionVersion": 0
+        }
+      ],
+      "requestSha256": "c3840262ec478c684489afd8615c863bc3f25fb36a2a699849bd70cb297a0bb4",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAtUtc": "2026-10-05T05:43:02.435531+00:00",
+          "completedAtUtc": "2026-10-05T05:43:02.550077+00:00",
+          "httpStatus": 200,
+          "responseFile": "raw/e0-classic-token-2-attempt1.json",
+          "responseBytes": 240,
+          "responseSha256": "168dd5f108cb23f50c39b03c60816cb871ae31ab45c001d49984d86b9f036877",
+          "retryAfter": null,
+          "transportError": null,
+          "rpcError": {
+            "code": -32015,
+            "message": "Transaction version (1) is not supported by the requesting client. Please try the request again with the following configuration parameter: \"maxSupportedTransactionVersion\": 1"
+          }
+        }
+      ],
+      "chosenAttempt": 1,
+      "httpOk": true,
+      "rpcOk": false
+    },
+    {
+      "requestId": 15,
+      "label": "e0-classic-token-3",
+      "method": "getTransaction",
+      "params": [
+        "R8PYrm4xza1BDGM4H8MJubzjgP71kACDFPmKQwZjbAor53AHFRVJg5rH5gK8h48t2Sa3kENf4iN3moQBE5kHvtR",
+        {
+          "commitment": "finalized",
+          "encoding": "jsonParsed",
+          "maxSupportedTransactionVersion": 0
+        }
+      ],
+      "requestSha256": "e17f84090b88384125a5464a873325f357bba38c73f910815fcd49185020943a",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAtUtc": "2026-10-05T05:43:04.429369+00:00",
+          "completedAtUtc": "2026-10-05T05:43:04.622916+00:00",
+          "httpStatus": 200,
+          "responseFile": "raw/e0-classic-token-3-attempt1.json",
+          "responseBytes": 38875,
+          "responseSha256": "eb59f9361b3bb9cf97cd0a62bc106bc0bf9e898d9f802e658e365fe5f0f16066",
+          "retryAfter": null,
+          "transportError": null,
+          "rpcError": null
+        }
+      ],
+      "chosenAttempt": 1,
+      "httpOk": true,
+      "rpcOk": true
+    },
+    {
+      "requestId": 16,
+      "label": "e1-jupiter-list",
+      "method": "getSignaturesForAddress",
+      "params": [
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+        {
+          "commitment": "finalized",
+          "limit": 4
+        }
+      ],
+      "requestSha256": "66319fb6db1e88a3c4584b2af052a91eb8dc85bfe4f64cbad005700f2683b6f5",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAtUtc": "2026-10-05T05:47:36.403004+00:00",
+          "completedAtUtc": "2026-10-05T05:47:36.861662+00:00",
+          "httpStatus": 200,
+          "responseFile": "raw/e1-jupiter-list-attempt1.json",
+          "responseBytes": 1000,
+          "responseSha256": "96b348eabebc95a2358f313c50d149eccb309a7eb6582db1df02311446ce2f1b",
+          "retryAfter": null,
+          "transportError": null,
+          "rpcError": null
+        }
+      ],
+      "chosenAttempt": 1,
+      "httpOk": true,
+      "rpcOk": true
+    },
+    {
+      "requestId": 17,
+      "label": "e1-jupiter-0",
+      "method": "getTransaction",
+      "params": [
+        "wgNzC52hcCyBoaoS3uzoKDnxuejPZDNvgQiNN4XoCNRb5rm2hM8AYqsk7phpwVzX7jo3gTRv9Ud8f3M7oTj5iQL",
+        {
+          "commitment": "finalized",
+          "encoding": "jsonParsed",
+          "maxSupportedTransactionVersion": 0
+        }
+      ],
+      "requestSha256": "3a2b8e632cb981cc47c6205015f633797b42d2e720e1c9c240190732bfdedd6d",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAtUtc": "2026-10-05T05:47:38.397456+00:00",
+          "completedAtUtc": "2026-10-05T05:47:38.576694+00:00",
+          "httpStatus": 200,
+          "responseFile": "raw/e1-jupiter-0-attempt1.json",
+          "responseBytes": 41244,
+          "responseSha256": "76cb4a6efee99910b67cbf1c3fc39cb269cae8d401430907bb5aa6b5b8b016e8",
+          "retryAfter": null,
+          "transportError": null,
+          "rpcError": null
+        }
+      ],
+      "chosenAttempt": 1,
+      "httpOk": true,
+      "rpcOk": true
+    },
+    {
+      "requestId": 18,
+      "label": "e1-jupiter-1",
+      "method": "getTransaction",
+      "params": [
+        "QcMXciMUknR36a7eyt3HkjKjpbmDBLRUhRMFRQcEjdJRKRgGZF1kzCUnmu4xtW1KjqFYDUBP6sLY7W8UaTM9fEx",
+        {
+          "commitment": "finalized",
+          "encoding": "jsonParsed",
+          "maxSupportedTransactionVersion": 0
+        }
+      ],
+      "requestSha256": "28eb99f13b1e844c86fa6f6fff5d07fc2ed553a6a7153e49cf28709ff0c656bf",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAtUtc": "2026-10-05T05:47:40.394094+00:00",
+          "completedAtUtc": "2026-10-05T05:47:40.836212+00:00",
+          "httpStatus": 200,
+          "responseFile": "raw/e1-jupiter-1-attempt1.json",
+          "responseBytes": 240,
+          "responseSha256": "8d3b651c57e3a02bbba47168fd0214869477fb3eed81082b12d0010505139bc3",
+          "retryAfter": null,
+          "transportError": null,
+          "rpcError": {
+            "code": -32015,
+            "message": "Transaction version (1) is not supported by the requesting client. Please try the request again with the following configuration parameter: \"maxSupportedTransactionVersion\": 1"
+          }
+        }
+      ],
+      "chosenAttempt": 1,
+      "httpOk": true,
+      "rpcOk": false
+    },
+    {
+      "requestId": 19,
+      "label": "e1-jupiter-2",
+      "method": "getTransaction",
+      "params": [
+        "41dVjwhtRykzja9aBPnJA2Vz8umwQocQzZv8WHJGL5T3cvDPDM7QAHLBw3Zd33EFb2zfV2UWgAVML4pc3nvDC2vF",
+        {
+          "commitment": "finalized",
+          "encoding": "jsonParsed",
+          "maxSupportedTransactionVersion": 0
+        }
+      ],
+      "requestSha256": "1f592247ab1b45f16f80c083c94d2cedee1036d48c6effcf22ffaec82ecd4634",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAtUtc": "2026-10-05T05:47:42.402657+00:00",
+          "completedAtUtc": "2026-10-05T05:47:42.855217+00:00",
+          "httpStatus": 200,
+          "responseFile": "raw/e1-jupiter-2-attempt1.json",
+          "responseBytes": 17961,
+          "responseSha256": "20de2844ef009baf8baa5d1a8585cb1d5d2d031f0185649987e9d53efc868a09",
+          "retryAfter": null,
+          "transportError": null,
+          "rpcError": null
+        }
+      ],
+      "chosenAttempt": 1,
+      "httpOk": true,
+      "rpcOk": true
+    },
+    {
+      "requestId": 20,
+      "label": "e1-jupiter-3",
+      "method": "getTransaction",
+      "params": [
+        "sFDB7PTfYyrrmgt52pSYRMKxoyQmzaDutkHfGzUF2MPZ4VfJSHX2ieMUMa3htiWRieiv9oHGRY8aJ53EcbFYeoh",
+        {
+          "commitment": "finalized",
+          "encoding": "jsonParsed",
+          "maxSupportedTransactionVersion": 0
+        }
+      ],
+      "requestSha256": "271fae70faf57c61aa0c8784ba5586127e89fcadde315e974a74764c0b2df601",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAtUtc": "2026-10-05T05:47:44.391665+00:00",
+          "completedAtUtc": "2026-10-05T05:47:44.825006+00:00",
+          "httpStatus": 200,
+          "responseFile": "raw/e1-jupiter-3-attempt1.json",
+          "responseBytes": 9859,
+          "responseSha256": "283e94387f6b7132512e8fa0ee1f2ac9e627d15161269e9d980241d77a6ca63a",
+          "retryAfter": null,
+          "transportError": null,
+          "rpcError": null
+        }
+      ],
+      "chosenAttempt": 1,
+      "httpOk": true,
+      "rpcOk": true
+    },
+    {
+      "requestId": 21,
+      "label": "e1-system-list",
+      "method": "getSignaturesForAddress",
+      "params": [
+        "11111111111111111111111111111111",
+        {
+          "commitment": "finalized",
+          "limit": 4
+        }
+      ],
+      "requestSha256": "0d2020ef56960783c7f440191c3a67fd763970e2afcc6cb61bcf8cdd3c3aa602",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAtUtc": "2026-10-05T05:47:46.392291+00:00",
+          "completedAtUtc": "2026-10-05T05:47:46.515297+00:00",
+          "httpStatus": 200,
+          "responseFile": "raw/e1-system-list-attempt1.json",
+          "responseBytes": 966,
+          "responseSha256": "62e13d64e1d38abcfe202667e2d772db85ce6fd0138383792b7fadd69b23dfa2",
+          "retryAfter": null,
+          "transportError": null,
+          "rpcError": null
+        }
+      ],
+      "chosenAttempt": 1,
+      "httpOk": true,
+      "rpcOk": true
+    },
+    {
+      "requestId": 22,
+      "label": "e1-system-0",
+      "method": "getTransaction",
+      "params": [
+        "3Xrs2Kr5jVwnYSMDdsgcSpJs9SZ2goAQPijACEhc64vuRv5SYmVxocQjDq5zZvbw8CGy9Gs7K3sUtuydcPkfXjrQ",
+        {
+          "commitment": "finalized",
+          "encoding": "jsonParsed",
+          "maxSupportedTransactionVersion": 0
+        }
+      ],
+      "requestSha256": "62f5817efe1224b0577524cd26f2d3f584e59a631c73a2461d733b87d6b6f3ad",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAtUtc": "2026-10-05T05:47:48.395593+00:00",
+          "completedAtUtc": "2026-10-05T05:47:48.959401+00:00",
+          "httpStatus": 200,
+          "responseFile": "raw/e1-system-0-attempt1.json",
+          "responseBytes": 19901,
+          "responseSha256": "a1d6796559dee6090908dc8578ccb39df02d88506b4d5f6c5046725a35abec4a",
+          "retryAfter": null,
+          "transportError": null,
+          "rpcError": null
+        }
+      ],
+      "chosenAttempt": 1,
+      "httpOk": true,
+      "rpcOk": true
+    },
+    {
+      "requestId": 23,
+      "label": "e1-system-1",
+      "method": "getTransaction",
+      "params": [
+        "5BbYwhoSwARkSWN2Pken9gLJ8fwmB6Wn3kFgYQPgtQE2MVJ5dosyXN2By1Y78iu5DmsNqfAUBPkAQDyivwZtACg8",
+        {
+          "commitment": "finalized",
+          "encoding": "jsonParsed",
+          "maxSupportedTransactionVersion": 0
+        }
+      ],
+      "requestSha256": "7b3e710a018268cfbbc71a143495a38908ae32460f2b9cd4cd68854022ee1334",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAtUtc": "2026-10-05T05:47:50.403551+00:00",
+          "completedAtUtc": "2026-10-05T05:47:50.980063+00:00",
+          "httpStatus": 200,
+          "responseFile": "raw/e1-system-1-attempt1.json",
+          "responseBytes": 19536,
+          "responseSha256": "fb2ecd2cd0c649399bbef57d148964639f6ae66cbadec449d2f77878344bab6e",
+          "retryAfter": null,
+          "transportError": null,
+          "rpcError": null
+        }
+      ],
+      "chosenAttempt": 1,
+      "httpOk": true,
+      "rpcOk": true
+    },
+    {
+      "requestId": 24,
+      "label": "e1-system-2",
+      "method": "getTransaction",
+      "params": [
+        "5fJVWCvdrMmmmYscSdAV19RCFc2MTm6Naw35swZ9L3ECPPCCcPDg8ufvgfXNX5kGbR6PQ8c3dTcVL8ABtLWyQMMx",
+        {
+          "commitment": "finalized",
+          "encoding": "jsonParsed",
+          "maxSupportedTransactionVersion": 0
+        }
+      ],
+      "requestSha256": "7d5ca59a56f3a59b5d97715189d48a035044bac490ae261b5830787f7274a864",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAtUtc": "2026-10-05T05:47:52.391837+00:00",
+          "completedAtUtc": "2026-10-05T05:47:52.511534+00:00",
+          "httpStatus": 200,
+          "responseFile": "raw/e1-system-2-attempt1.json",
+          "responseBytes": 11832,
+          "responseSha256": "c85e2a12625b301ef6e670faab1bc2cfe14eac9faa161c9f8f3ed939a6b69442",
+          "retryAfter": null,
+          "transportError": null,
+          "rpcError": null
+        }
+      ],
+      "chosenAttempt": 1,
+      "httpOk": true,
+      "rpcOk": true
+    },
+    {
+      "requestId": 25,
+      "label": "e1-system-3",
+      "method": "getTransaction",
+      "params": [
+        "3pTTsrnBVbfpxea8r4kVonLCPQ7C6RN1dUR4KCT3vRMyNYuMeRtqsPHYh8t57Ue93VC2iwVzKhEsuQmDM5JPdLpR",
+        {
+          "commitment": "finalized",
+          "encoding": "jsonParsed",
+          "maxSupportedTransactionVersion": 0
+        }
+      ],
+      "requestSha256": "2ab824b28a2be1efe21da26ef4603a2d3d63ce12eabdb203cf330d82bf5d0706",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAtUtc": "2026-10-05T05:47:54.391790+00:00",
+          "completedAtUtc": "2026-10-05T05:47:54.512798+00:00",
+          "httpStatus": 200,
+          "responseFile": "raw/e1-system-3-attempt1.json",
+          "responseBytes": 240,
+          "responseSha256": "f2563d457fd0d03ffa9c681b88ab8a1257e93bc593014170d09aeb7f8cb99365",
+          "retryAfter": null,
+          "transportError": null,
+          "rpcError": {
+            "code": -32015,
+            "message": "Transaction version (1) is not supported by the requesting client. Please try the request again with the following configuration parameter: \"maxSupportedTransactionVersion\": 1"
+          }
+        }
+      ],
+      "chosenAttempt": 1,
+      "httpOk": true,
+      "rpcOk": false
+    },
+    {
+      "requestId": 26,
+      "label": "e1-classic-token-list",
+      "method": "getSignaturesForAddress",
+      "params": [
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        {
+          "commitment": "finalized",
+          "limit": 4
+        }
+      ],
+      "requestSha256": "cf30a709f5430de6af7febb0beeb9292a9f97aa541282a0fc7f169546e8d2225",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAtUtc": "2026-10-05T05:47:56.394915+00:00",
+          "completedAtUtc": "2026-10-05T05:47:56.834752+00:00",
+          "httpStatus": 200,
+          "responseFile": "raw/e1-classic-token-list-attempt1.json",
+          "responseBytes": 937,
+          "responseSha256": "48abda441b1d5672775338dc2ee04d5064ac324ccac787772eb7f414ddc01759",
+          "retryAfter": null,
+          "transportError": null,
+          "rpcError": null
+        }
+      ],
+      "chosenAttempt": 1,
+      "httpOk": true,
+      "rpcOk": true
+    },
+    {
+      "requestId": 27,
+      "label": "e1-classic-token-0",
+      "method": "getTransaction",
+      "params": [
+        "4NC5HqVNKnKTpPsZdBJF8SvXoKtFfkhC1suk4CKWSx8Jfzssv5Grq5ddQUcFgDtuFdTg2o39qLqHcJG8u371exdW",
+        {
+          "commitment": "finalized",
+          "encoding": "jsonParsed",
+          "maxSupportedTransactionVersion": 0
+        }
+      ],
+      "requestSha256": "503e336a0d1d428c21ef1873cba138b94900ca648ba6a9808ba78f6bd83614d1",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAtUtc": "2026-10-05T05:47:58.403338+00:00",
+          "completedAtUtc": "2026-10-05T05:47:58.981848+00:00",
+          "httpStatus": 200,
+          "responseFile": "raw/e1-classic-token-0-attempt1.json",
+          "responseBytes": 20434,
+          "responseSha256": "38b9047dbe26422f5c354e17fed67fff0e01861004faeaf9850c8cff140fd43f",
+          "retryAfter": null,
+          "transportError": null,
+          "rpcError": null
+        }
+      ],
+      "chosenAttempt": 1,
+      "httpOk": true,
+      "rpcOk": true
+    },
+    {
+      "requestId": 28,
+      "label": "e1-classic-token-1",
+      "method": "getTransaction",
+      "params": [
+        "2kHdiWFsxysEKfvttqAD3Cu7UwM4AHnKEcyiBZsFcs3oKaSELDgoqL9LXCARbwmasBA7Gih58dfZCetZbWhmsKax",
+        {
+          "commitment": "finalized",
+          "encoding": "jsonParsed",
+          "maxSupportedTransactionVersion": 0
+        }
+      ],
+      "requestSha256": "fbe745058cdb80efc3821b1a415611f4d6f2cfc40009e11f319095da1f9b6d76",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAtUtc": "2026-10-05T05:48:00.392824+00:00",
+          "completedAtUtc": "2026-10-05T05:48:00.538339+00:00",
+          "httpStatus": 200,
+          "responseFile": "raw/e1-classic-token-1-attempt1.json",
+          "responseBytes": 17900,
+          "responseSha256": "88e6f3f684023e92ffcf7abba88d1b1b5f39c572aaab112f219864c01ac44b67",
+          "retryAfter": null,
+          "transportError": null,
+          "rpcError": null
+        }
+      ],
+      "chosenAttempt": 1,
+      "httpOk": true,
+      "rpcOk": true
+    },
+    {
+      "requestId": 29,
+      "label": "e1-classic-token-2",
+      "method": "getTransaction",
+      "params": [
+        "5bfb5u38aSynBc7dicdmkcYwomMWCDAE71vEF5ADwY6dA15SW8LaRXGnHmVVpPf8CkYtNkdSbhBCgCgFTyigaEXr",
+        {
+          "commitment": "finalized",
+          "encoding": "jsonParsed",
+          "maxSupportedTransactionVersion": 0
+        }
+      ],
+      "requestSha256": "a61842c4af6148664d8b90c37c034433ae9a12cf1d8382a5ca54aff4c1847140",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAtUtc": "2026-10-05T05:48:02.404184+00:00",
+          "completedAtUtc": "2026-10-05T05:48:02.557203+00:00",
+          "httpStatus": 200,
+          "responseFile": "raw/e1-classic-token-2-attempt1.json",
+          "responseBytes": 17404,
+          "responseSha256": "1660f7f2d29bbb1126aa45d657e0f6a00e3e41c5b9f40be92206d065ab720ed4",
+          "retryAfter": null,
+          "transportError": null,
+          "rpcError": null
+        }
+      ],
+      "chosenAttempt": 1,
+      "httpOk": true,
+      "rpcOk": true
+    },
+    {
+      "requestId": 30,
+      "label": "e1-classic-token-3",
+      "method": "getTransaction",
+      "params": [
+        "2A29wtVpPstWNYKqD66XBr6taePFvXZXvmwGPZi7y4PWpBhv8ADuCYGMg71rEXY32eXfXpjmHE7Wi8jCyac7SdM1",
+        {
+          "commitment": "finalized",
+          "encoding": "jsonParsed",
+          "maxSupportedTransactionVersion": 0
+        }
+      ],
+      "requestSha256": "d8178da62d39062405aff28bb278cb663dac6303f5af0748f8ba13d2a4b0263a",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAtUtc": "2026-10-05T05:48:04.391200+00:00",
+          "completedAtUtc": "2026-10-05T05:48:04.975541+00:00",
+          "httpStatus": 200,
+          "responseFile": "raw/e1-classic-token-3-attempt1.json",
+          "responseBytes": 20686,
+          "responseSha256": "0a9b4ca6142ee4f482e1897aff096bff0fa60d8bf96e1e21286fa704320f1029",
+          "retryAfter": null,
+          "transportError": null,
+          "rpcError": null
+        }
+      ],
+      "chosenAttempt": 1,
+      "httpOk": true,
+      "rpcOk": true
+    },
+    {
+      "requestId": 31,
+      "label": "e2-jupiter-list",
+      "method": "getSignaturesForAddress",
+      "params": [
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+        {
+          "commitment": "finalized",
+          "limit": 4
+        }
+      ],
+      "requestSha256": "9617cd728c79c4cde297827a84d29fb8f89a536746ae55da317ded3f1bd5915c",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAtUtc": "2026-10-05T05:52:36.404883+00:00",
+          "completedAtUtc": "2026-10-05T05:52:36.802141+00:00",
+          "httpStatus": 200,
+          "responseFile": "raw/e2-jupiter-list-attempt1.json",
+          "responseBytes": 1034,
+          "responseSha256": "1be5cd6f419983e9ac05cc798bf3a128bd7cdb27681439e63c0dd1f71c64a617",
+          "retryAfter": null,
+          "transportError": null,
+          "rpcError": null
+        }
+      ],
+      "chosenAttempt": 1,
+      "httpOk": true,
+      "rpcOk": true
+    },
+    {
+      "requestId": 32,
+      "label": "e2-jupiter-0",
+      "method": "getTransaction",
+      "params": [
+        "5R7MoruzoFSaZoNdhRFs7GjnRtjwxgE5cLRMThSMamfGoAsN1QGnqkq2jgRSfKYv314kW2xZdRNNEu2szkDfH82u",
+        {
+          "commitment": "finalized",
+          "encoding": "jsonParsed",
+          "maxSupportedTransactionVersion": 0
+        }
+      ],
+      "requestSha256": "7dc5d433b68a0a169c7471a992eddf355bbb0111d6ac8a10179eea062abf8039",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAtUtc": "2026-10-05T05:52:38.402702+00:00",
+          "completedAtUtc": "2026-10-05T05:52:38.890745+00:00",
+          "httpStatus": 200,
+          "responseFile": "raw/e2-jupiter-0-attempt1.json",
+          "responseBytes": 20432,
+          "responseSha256": "30b1f770fe85a22c1ae58b6677f5aaf7e782189d635d819352bd1774dfeec122",
+          "retryAfter": null,
+          "transportError": null,
+          "rpcError": null
+        }
+      ],
+      "chosenAttempt": 1,
+      "httpOk": true,
+      "rpcOk": true
+    },
+    {
+      "requestId": 33,
+      "label": "e2-jupiter-1",
+      "method": "getTransaction",
+      "params": [
+        "y1QqhqY9PaRyvamYXM78mWBP4XaGEJ2LGVQGCSWKgFGod6JTtcS1XeQEwMk6rATHJgrtQ3N19YHweh4nbYmxL3r",
+        {
+          "commitment": "finalized",
+          "encoding": "jsonParsed",
+          "maxSupportedTransactionVersion": 0
+        }
+      ],
+      "requestSha256": "ff00520fbab0f32711b72a41970cd6a577a16c8f9837093905a339b7ee65c2f3",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAtUtc": "2026-10-05T05:52:40.397099+00:00",
+          "completedAtUtc": "2026-10-05T05:52:40.912646+00:00",
+          "httpStatus": 200,
+          "responseFile": "raw/e2-jupiter-1-attempt1.json",
+          "responseBytes": 9856,
+          "responseSha256": "b00d12daa8a34427cddb785ec28eec537d732cb22aecdf8a84c7a8d62d08ede0",
+          "retryAfter": null,
+          "transportError": null,
+          "rpcError": null
+        }
+      ],
+      "chosenAttempt": 1,
+      "httpOk": true,
+      "rpcOk": true
+    },
+    {
+      "requestId": 34,
+      "label": "e2-jupiter-2",
+      "method": "getTransaction",
+      "params": [
+        "4tvF9GQVg9Q7KXs4TrExwjn6qvKJsck6xGWW4uvzi3sQ5qgCpZice7SSA1qPNEXLM7W6Gw4xV3C8YwBB3JHMwvp",
+        {
+          "commitment": "finalized",
+          "encoding": "jsonParsed",
+          "maxSupportedTransactionVersion": 0
+        }
+      ],
+      "requestSha256": "d4629b3c0c1896f6ca4b6505117f55dbbf7be4a93a539a7449576a6643afe050",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAtUtc": "2026-10-05T05:52:42.405163+00:00",
+          "completedAtUtc": "2026-10-05T05:52:42.775173+00:00",
+          "httpStatus": 200,
+          "responseFile": "raw/e2-jupiter-2-attempt1.json",
+          "responseBytes": 240,
+          "responseSha256": "00de84f92ad5dc54182285c23c107c31db948a896781edfbb6e18c13e4083b35",
+          "retryAfter": null,
+          "transportError": null,
+          "rpcError": {
+            "code": -32015,
+            "message": "Transaction version (1) is not supported by the requesting client. Please try the request again with the following configuration parameter: \"maxSupportedTransactionVersion\": 1"
+          }
+        }
+      ],
+      "chosenAttempt": 1,
+      "httpOk": true,
+      "rpcOk": false
+    },
+    {
+      "requestId": 35,
+      "label": "e2-jupiter-3",
+      "method": "getTransaction",
+      "params": [
+        "3JnC39diFNCRFN7SDxCbzHRDcEWjMgXZp1XNm7o73kSWbgYTiiiLDLzYQS5eZ4WndfdpkKfZmphjM9N3CGNNMeXz",
+        {
+          "commitment": "finalized",
+          "encoding": "jsonParsed",
+          "maxSupportedTransactionVersion": 0
+        }
+      ],
+      "requestSha256": "c04cce713f1ae607d4c7275191d4c4dd85cb789a579d8a08adc988727b84f0ba",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAtUtc": "2026-10-05T05:52:44.390348+00:00",
+          "completedAtUtc": "2026-10-05T05:52:45.953453+00:00",
+          "httpStatus": 200,
+          "responseFile": "raw/e2-jupiter-3-attempt1.json",
+          "responseBytes": 9860,
+          "responseSha256": "770d2e435f42ef55f61a2eb5eec7c9a99ff307303f9c565a75d64f9ad45a859d",
+          "retryAfter": null,
+          "transportError": null,
+          "rpcError": null
+        }
+      ],
+      "chosenAttempt": 1,
+      "httpOk": true,
+      "rpcOk": true
+    },
+    {
+      "requestId": 36,
+      "label": "e2-system-list",
+      "method": "getSignaturesForAddress",
+      "params": [
+        "11111111111111111111111111111111",
+        {
+          "commitment": "finalized",
+          "limit": 4
+        }
+      ],
+      "requestSha256": "6879618d9815e39d08ef3f4520df3690fdf006b6bef5f33f51dce141d2e030b0",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAtUtc": "2026-10-05T05:52:46.384466+00:00",
+          "completedAtUtc": "2026-10-05T05:52:46.832517+00:00",
+          "httpStatus": 200,
+          "responseFile": "raw/e2-system-list-attempt1.json",
+          "responseBytes": 1071,
+          "responseSha256": "aeef1a73513aa2e45c3386599464328df9ee8fea0b13e9f752f4d5ad145cbce2",
+          "retryAfter": null,
+          "transportError": null,
+          "rpcError": null
+        }
+      ],
+      "chosenAttempt": 1,
+      "httpOk": true,
+      "rpcOk": true
+    },
+    {
+      "requestId": 37,
+      "label": "e2-system-0",
+      "method": "getTransaction",
+      "params": [
+        "2x45Uu2kFTZkDY832xtMG2mMeQnPWpF6dyhAckSZXXyGZeUBM2vVo2Ut2YGmwao71KQZXpiq2urwqMiHfyBMGXJb",
+        {
+          "commitment": "finalized",
+          "encoding": "jsonParsed",
+          "maxSupportedTransactionVersion": 0
+        }
+      ],
+      "requestSha256": "90c1009d170ba8329faa36ea04f64113888d5bb540129f037500f8f70a0983cf",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAtUtc": "2026-10-05T05:52:48.385998+00:00",
+          "completedAtUtc": "2026-10-05T05:52:48.760546+00:00",
+          "httpStatus": 200,
+          "responseFile": "raw/e2-system-0-attempt1.json",
+          "responseBytes": 240,
+          "responseSha256": "669d28cc9f6ba93166392e4e4e162c459ca0dc3edd7318d2f957daa39aae61b0",
+          "retryAfter": null,
+          "transportError": null,
+          "rpcError": {
+            "code": -32015,
+            "message": "Transaction version (1) is not supported by the requesting client. Please try the request again with the following configuration parameter: \"maxSupportedTransactionVersion\": 1"
+          }
+        }
+      ],
+      "chosenAttempt": 1,
+      "httpOk": true,
+      "rpcOk": false
+    },
+    {
+      "requestId": 38,
+      "label": "e2-system-1",
+      "method": "getTransaction",
+      "params": [
+        "3rujHjBdj65rj1y5d3KFWdYyxCcamRiYf3BP3eYcvsjaqy53dsvn6mjin8kcTsFZQKJh81FkDkxBSfE8t1hSoxgo",
+        {
+          "commitment": "finalized",
+          "encoding": "jsonParsed",
+          "maxSupportedTransactionVersion": 0
+        }
+      ],
+      "requestSha256": "5a42fc9507f22147bb72dac4d305106ac0e5de4475c3d8d29d85154bc64a019e",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAtUtc": "2026-10-05T05:52:50.380431+00:00",
+          "completedAtUtc": "2026-10-05T05:52:50.953477+00:00",
+          "httpStatus": 200,
+          "responseFile": "raw/e2-system-1-attempt1.json",
+          "responseBytes": 25965,
+          "responseSha256": "af602b712cfd175c818749142dce05d2dd0ebef5c3e1bb41e56599ed6237373a",
+          "retryAfter": null,
+          "transportError": null,
+          "rpcError": null
+        }
+      ],
+      "chosenAttempt": 1,
+      "httpOk": true,
+      "rpcOk": true
+    },
+    {
+      "requestId": 39,
+      "label": "e2-system-2",
+      "method": "getTransaction",
+      "params": [
+        "4AvjRGiqBiCLHj1Qcs3jkhUdpV92pNTZMEeFesWCfy1xDMjxm49ffXoGBHz61EWsdHMKNz1Va1KAEiCns8gB7QhB",
+        {
+          "commitment": "finalized",
+          "encoding": "jsonParsed",
+          "maxSupportedTransactionVersion": 0
+        }
+      ],
+      "requestSha256": "2a4c5f63d72a7072c19009565d856270b7eb96e88ef0f0eef90968a1808e7ddb",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAtUtc": "2026-10-05T05:52:52.383499+00:00",
+          "completedAtUtc": "2026-10-05T05:52:52.949597+00:00",
+          "httpStatus": 200,
+          "responseFile": "raw/e2-system-2-attempt1.json",
+          "responseBytes": 26254,
+          "responseSha256": "a00c7c1775e809b709af657ece0c4de093703a828ddbb05278b17b2983ff18e7",
+          "retryAfter": null,
+          "transportError": null,
+          "rpcError": null
+        }
+      ],
+      "chosenAttempt": 1,
+      "httpOk": true,
+      "rpcOk": true
+    },
+    {
+      "requestId": 40,
+      "label": "e2-system-3",
+      "method": "getTransaction",
+      "params": [
+        "xRdZX9DfJSxAskbmaJzvynWqHRXUhQGBPitXuwV6WmtyUJpHHyiyJdT7Pc2mFERMzBotUXmV8Sv3LPVGLLTj6EK",
+        {
+          "commitment": "finalized",
+          "encoding": "jsonParsed",
+          "maxSupportedTransactionVersion": 0
+        }
+      ],
+      "requestSha256": "ce6818198f2b58b6e963db5a360a2340c065203a2cb8f739ac8a8f005f5cc888",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAtUtc": "2026-10-05T05:52:54.379638+00:00",
+          "completedAtUtc": "2026-10-05T05:52:54.941445+00:00",
+          "httpStatus": 200,
+          "responseFile": "raw/e2-system-3-attempt1.json",
+          "responseBytes": 28186,
+          "responseSha256": "a7e80fc5facc855b868af15778229ca3cae24ec01f322e89c363f22b34ef5309",
+          "retryAfter": null,
+          "transportError": null,
+          "rpcError": null
+        }
+      ],
+      "chosenAttempt": 1,
+      "httpOk": true,
+      "rpcOk": true
+    },
+    {
+      "requestId": 41,
+      "label": "e2-classic-token-list",
+      "method": "getSignaturesForAddress",
+      "params": [
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        {
+          "commitment": "finalized",
+          "limit": 4
+        }
+      ],
+      "requestSha256": "3c967f998fd2989f6ff1e0e92d5bd0a6c33e05480bc3949828b6ac789f9e4700",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAtUtc": "2026-10-05T05:52:56.386448+00:00",
+          "completedAtUtc": "2026-10-05T05:52:56.769201+00:00",
+          "httpStatus": 200,
+          "responseFile": "raw/e2-classic-token-list-attempt1.json",
+          "responseBytes": 971,
+          "responseSha256": "10ba617c880507ba8d03167dc367c7fd1982a9f7edefae8334e3d49579dc08b6",
+          "retryAfter": null,
+          "transportError": null,
+          "rpcError": null
+        }
+      ],
+      "chosenAttempt": 1,
+      "httpOk": true,
+      "rpcOk": true
+    },
+    {
+      "requestId": 42,
+      "label": "e2-classic-token-0",
+      "method": "getTransaction",
+      "params": [
+        "3McNvrrzVsXWrdK6U7wYC8eqgnTLpGG2cPuMFPc2oqUGMD25HRdQeQQWWAGjCbPYDw3C2TbArLnNrApAPZxEwAAZ",
+        {
+          "commitment": "finalized",
+          "encoding": "jsonParsed",
+          "maxSupportedTransactionVersion": 0
+        }
+      ],
+      "requestSha256": "624eaa41a7fbcf9aacd47b13c90da20a5275dab4a9e9d040a33fa0b035b3367d",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAtUtc": "2026-10-05T05:52:58.385548+00:00",
+          "completedAtUtc": "2026-10-05T05:52:58.897966+00:00",
+          "httpStatus": 200,
+          "responseFile": "raw/e2-classic-token-0-attempt1.json",
+          "responseBytes": 25965,
+          "responseSha256": "96a2d267d1950b069ecb25392f8c48203957655e56eb2f0a23539111aeec9e14",
+          "retryAfter": null,
+          "transportError": null,
+          "rpcError": null
+        }
+      ],
+      "chosenAttempt": 1,
+      "httpOk": true,
+      "rpcOk": true
+    },
+    {
+      "requestId": 43,
+      "label": "e2-classic-token-1",
+      "method": "getTransaction",
+      "params": [
+        "4vbDQsFVfe4iypHBpsdDDApyX3bpmgPd5i9sBbSNpHyuzKhXek8tpxTqn518HLg3X131rEuSUz7z8sRgYp8nUjZx",
+        {
+          "commitment": "finalized",
+          "encoding": "jsonParsed",
+          "maxSupportedTransactionVersion": 0
+        }
+      ],
+      "requestSha256": "7f1efc53bd3d6541515a2bd59a8e6e9dcd24a9c2a5870e19ed996c186d15449b",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAtUtc": "2026-10-05T05:53:00.389050+00:00",
+          "completedAtUtc": "2026-10-05T05:53:00.769081+00:00",
+          "httpStatus": 200,
+          "responseFile": "raw/e2-classic-token-1-attempt1.json",
+          "responseBytes": 13090,
+          "responseSha256": "204242b624a4b0e109dcc31707ae0528e81e06a03c99dc6905bdaa0a8faaf752",
+          "retryAfter": null,
+          "transportError": null,
+          "rpcError": null
+        }
+      ],
+      "chosenAttempt": 1,
+      "httpOk": true,
+      "rpcOk": true
+    },
+    {
+      "requestId": 44,
+      "label": "e2-classic-token-2",
+      "method": "getTransaction",
+      "params": [
+        "4RaJSjJLCYrzgiSjKk52PD1BPw4QJZbpgjAy3z9LbhUWQoEnyfFjxRvFphUvBH9q2A4Qwbfx6u6KM8EvsAK3qsq6",
+        {
+          "commitment": "finalized",
+          "encoding": "jsonParsed",
+          "maxSupportedTransactionVersion": 0
+        }
+      ],
+      "requestSha256": "ff78bae66956c74b7422f771d1a648188f68ca2f16850806a4bf2bc8a2a3ba46",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAtUtc": "2026-10-05T05:53:02.386119+00:00",
+          "completedAtUtc": "2026-10-05T05:53:02.786670+00:00",
+          "httpStatus": 200,
+          "responseFile": "raw/e2-classic-token-2-attempt1.json",
+          "responseBytes": 13109,
+          "responseSha256": "66548bcdf31d5b3ca3050f47fdb425ef7a973ba30682b9e7bf1d0ad1ccf08b72",
+          "retryAfter": null,
+          "transportError": null,
+          "rpcError": null
+        }
+      ],
+      "chosenAttempt": 1,
+      "httpOk": true,
+      "rpcOk": true
+    },
+    {
+      "requestId": 45,
+      "label": "e2-classic-token-3",
+      "method": "getTransaction",
+      "params": [
+        "5UPCYBLJ16Wu3cY2BVQ6tf9KsGqTww3fsmG25QNMSWZEyi754nVfdkjDTHN2rBgJnSc4qvqP9yBAqt1ByZbhVa26",
+        {
+          "commitment": "finalized",
+          "encoding": "jsonParsed",
+          "maxSupportedTransactionVersion": 0
+        }
+      ],
+      "requestSha256": "cdbac3143aa5e79a6ff8e545c15c9e1b131a00733a514ea296399d31329cf6cb",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAtUtc": "2026-10-05T05:53:04.389172+00:00",
+          "completedAtUtc": "2026-10-05T05:53:04.844177+00:00",
+          "httpStatus": 200,
+          "responseFile": "raw/e2-classic-token-3-attempt1.json",
+          "responseBytes": 240,
+          "responseSha256": "3f8e949a499bb2e9b22d6c491ee97ced25696eddad393f96e7aac0e90ec1f209",
+          "retryAfter": null,
+          "transportError": null,
+          "rpcError": {
+            "code": -32015,
+            "message": "Transaction version (1) is not supported by the requesting client. Please try the request again with the following configuration parameter: \"maxSupportedTransactionVersion\": 1"
+          }
+        }
+      ],
+      "chosenAttempt": 1,
+      "httpOk": true,
+      "rpcOk": false
+    }
+  ],
+  "epochs": [
+    {
+      "epoch": 0,
+      "targetAtUtc": "2026-10-05T05:42:36.393053+00:00",
+      "startedAtUtc": "2026-10-05T05:42:36.394055+00:00",
+      "programs": [
+        {
+          "program": "jupiter",
+          "address": "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+          "listRequestId": 1,
+          "listingAvailable": true,
+          "returnedPositions": 4
+        },
+        {
+          "program": "system",
+          "address": "11111111111111111111111111111111",
+          "listRequestId": 6,
+          "listingAvailable": true,
+          "returnedPositions": 4
+        },
+        {
+          "program": "classic-token",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+          "listRequestId": 11,
+          "listingAvailable": true,
+          "returnedPositions": 4
+        }
+      ],
+      "completedAtUtc": "2026-10-05T05:43:04.625909+00:00"
+    },
+    {
+      "epoch": 1,
+      "targetAtUtc": "2026-10-05T05:47:36.393053+00:00",
+      "startedAtUtc": "2026-10-05T05:47:36.401890+00:00",
+      "programs": [
+        {
+          "program": "jupiter",
+          "address": "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+          "listRequestId": 16,
+          "listingAvailable": true,
+          "returnedPositions": 4
+        },
+        {
+          "program": "system",
+          "address": "11111111111111111111111111111111",
+          "listRequestId": 21,
+          "listingAvailable": true,
+          "returnedPositions": 4
+        },
+        {
+          "program": "classic-token",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+          "listRequestId": 26,
+          "listingAvailable": true,
+          "returnedPositions": 4
+        }
+      ],
+      "completedAtUtc": "2026-10-05T05:48:04.980540+00:00"
+    },
+    {
+      "epoch": 2,
+      "targetAtUtc": "2026-10-05T05:52:36.393053+00:00",
+      "startedAtUtc": "2026-10-05T05:52:36.403879+00:00",
+      "programs": [
+        {
+          "program": "jupiter",
+          "address": "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+          "listRequestId": 31,
+          "listingAvailable": true,
+          "returnedPositions": 4
+        },
+        {
+          "program": "system",
+          "address": "11111111111111111111111111111111",
+          "listRequestId": 36,
+          "listingAvailable": true,
+          "returnedPositions": 4
+        },
+        {
+          "program": "classic-token",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+          "listRequestId": 41,
+          "listingAvailable": true,
+          "returnedPositions": 4
+        }
+      ],
+      "completedAtUtc": "2026-10-05T05:53:04.852211+00:00"
+    }
+  ],
+  "rows": [
+    {
+      "caseId": "e0-jupiter-0",
+      "epoch": 0,
+      "program": "jupiter",
+      "rank": 0,
+      "listRequestId": 1,
+      "selectionInfo": {
+        "blockTime": 1791178947,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "p45ufD64H5bSthKjHePDcrCwcgyAwZ7btC8at1rQNsNSG4S6FVNJuNwG7o4mv5jDkxBkvuikVXSzdKRsZ5urxuT",
+        "slot": 453488052,
+        "transactionIndex": 1275
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 2,
+      "fetchState": "transaction-request-error",
+      "transactionFile": "raw/e0-jupiter-0-attempt1.json"
+    },
+    {
+      "caseId": "e0-jupiter-1",
+      "epoch": 0,
+      "program": "jupiter",
+      "rank": 1,
+      "listRequestId": 1,
+      "selectionInfo": {
+        "blockTime": 1791178947,
+        "confirmationStatus": "finalized",
+        "err": {
+          "InstructionError": [
+            1,
+            {
+              "Custom": 5
+            }
+          ]
+        },
+        "memo": null,
+        "signature": "2Uk4bv6RrwRyXgHPLvi7uyer6TRPhaWmS9HYGpBnQ46REMPSLBiksaMcuUiDQX8pBJ6QdJK7y8ojuB5KVkmMQCVH",
+        "slot": 453488052,
+        "transactionIndex": 1253
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 3,
+      "fetchState": "transaction-request-error",
+      "transactionFile": "raw/e0-jupiter-1-attempt1.json"
+    },
+    {
+      "caseId": "e0-jupiter-2",
+      "epoch": 0,
+      "program": "jupiter",
+      "rank": 2,
+      "listRequestId": 1,
+      "selectionInfo": {
+        "blockTime": 1791178947,
+        "confirmationStatus": "finalized",
+        "err": {
+          "InstructionError": [
+            1,
+            {
+              "Custom": 5
+            }
+          ]
+        },
+        "memo": null,
+        "signature": "4DcnHvsjUQKyNsoVzKw1ejYJwGKsXTXvQpBU7xuPZRPkbYgfypcq9Waqvn2DuMGpfwWdm1s9JqQ1qn2PXGzvAefT",
+        "slot": 453488052,
+        "transactionIndex": 1076
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 4,
+      "fetchState": "transaction-request-error",
+      "transactionFile": "raw/e0-jupiter-2-attempt1.json"
+    },
+    {
+      "caseId": "e0-jupiter-3",
+      "epoch": 0,
+      "program": "jupiter",
+      "rank": 3,
+      "listRequestId": 1,
+      "selectionInfo": {
+        "blockTime": 1791178947,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "5n8kzPjP5DKvshzn4JKE9MzhoLZV3gstqh7ysav93aXesKNHLevM1y2tqpoPp8ae9mW9PVSkbm9X9Uu6VTGNE75J",
+        "slot": 453488052,
+        "transactionIndex": 1030
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 5,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e0-jupiter-3-attempt1.json"
+    },
+    {
+      "caseId": "e0-system-0",
+      "epoch": 0,
+      "program": "system",
+      "rank": 0,
+      "listRequestId": 6,
+      "selectionInfo": {
+        "blockTime": 1791178957,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "5Tfcbe6MM8aNeSLK82EPptoxfmwpMZ46CWY7v8V9BLdqSu8U43CN9S9V6ZEme2WcCQKAf2Se1RnBG4Z9U3ewm4n4",
+        "slot": 453488090,
+        "transactionIndex": 1075
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 7,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e0-system-0-attempt1.json"
+    },
+    {
+      "caseId": "e0-system-1",
+      "epoch": 0,
+      "program": "system",
+      "rank": 1,
+      "listRequestId": 6,
+      "selectionInfo": {
+        "blockTime": 1791178957,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "3qyaB3ryM6hB4jpQzTHQWcCnXiFwgxBBe1KbWX8caSme4WABDHkVkNgmjR5E7azgGXxw5MxU8cxznQqYZjjkih3S",
+        "slot": 453488090,
+        "transactionIndex": 1074
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 8,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e0-system-1-attempt1.json"
+    },
+    {
+      "caseId": "e0-system-2",
+      "epoch": 0,
+      "program": "system",
+      "rank": 2,
+      "listRequestId": 6,
+      "selectionInfo": {
+        "blockTime": 1791178957,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "25ERDAmHb1H9ZUArLfCVkLW5gRzANzAx1AauAXw4VJXwdcJp6Gbh6Q4sMb6cQ2GEVGy1k1NwjZuiVaqRRj9QrjVq",
+        "slot": 453488090,
+        "transactionIndex": 1073
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 9,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e0-system-2-attempt1.json"
+    },
+    {
+      "caseId": "e0-system-3",
+      "epoch": 0,
+      "program": "system",
+      "rank": 3,
+      "listRequestId": 6,
+      "selectionInfo": {
+        "blockTime": 1791178957,
+        "confirmationStatus": "finalized",
+        "err": {
+          "InstructionError": [
+            2,
+            {
+              "Custom": 5000
+            }
+          ]
+        },
+        "memo": null,
+        "signature": "3miDgA5qcYuQsybGb1ynbE75deqy9J41wewjTTFZcNkStbZtSq4hv1QMvto1y1FcxRB3RdSQtVBu1SaD1yhnWaJy",
+        "slot": 453488090,
+        "transactionIndex": 1071
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 10,
+      "fetchState": "transaction-request-error",
+      "transactionFile": "raw/e0-system-3-attempt1.json"
+    },
+    {
+      "caseId": "e0-classic-token-0",
+      "epoch": 0,
+      "program": "classic-token",
+      "rank": 0,
+      "listRequestId": 11,
+      "selectionInfo": {
+        "blockTime": 1791178967,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "31aK1xsNaf1cvHMnpUUE2JEs7ma3VCWZkyQQ5Nw95Q4TDxsvoQzy24zXiUrgugfscbrkfrkYiFudffzjZDL9kuos",
+        "slot": 453488128,
+        "transactionIndex": 329
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 12,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e0-classic-token-0-attempt1.json"
+    },
+    {
+      "caseId": "e0-classic-token-1",
+      "epoch": 0,
+      "program": "classic-token",
+      "rank": 1,
+      "listRequestId": 11,
+      "selectionInfo": {
+        "blockTime": 1791178967,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "5wdqFEbjbLfZpDrfDMQgBBMC5mjt2ZaohNV6eXYic67M4VJU7AZszwfDWTg2Z7FJ2smmTx1iJVmPcDyVweEqFgP4",
+        "slot": 453488128,
+        "transactionIndex": 327
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 13,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e0-classic-token-1-attempt1.json"
+    },
+    {
+      "caseId": "e0-classic-token-2",
+      "epoch": 0,
+      "program": "classic-token",
+      "rank": 2,
+      "listRequestId": 11,
+      "selectionInfo": {
+        "blockTime": 1791178967,
+        "confirmationStatus": "finalized",
+        "err": {
+          "InstructionError": [
+            0,
+            {
+              "Custom": 6025
+            }
+          ]
+        },
+        "memo": null,
+        "signature": "3jimshwHrogZ5nKHcUxP2zqd4gc5K5HBXm95fPj7vdvNAmoKMJ6PnCj3wQUv13kfqPozcUkMoNEtL8s6KdCPnvwJ",
+        "slot": 453488128,
+        "transactionIndex": 326
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 14,
+      "fetchState": "transaction-request-error",
+      "transactionFile": "raw/e0-classic-token-2-attempt1.json"
+    },
+    {
+      "caseId": "e0-classic-token-3",
+      "epoch": 0,
+      "program": "classic-token",
+      "rank": 3,
+      "listRequestId": 11,
+      "selectionInfo": {
+        "blockTime": 1791178967,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "R8PYrm4xza1BDGM4H8MJubzjgP71kACDFPmKQwZjbAor53AHFRVJg5rH5gK8h48t2Sa3kENf4iN3moQBE5kHvtR",
+        "slot": 453488128,
+        "transactionIndex": 324
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 15,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e0-classic-token-3-attempt1.json"
+    },
+    {
+      "caseId": "e1-jupiter-0",
+      "epoch": 1,
+      "program": "jupiter",
+      "rank": 0,
+      "listRequestId": 16,
+      "selectionInfo": {
+        "blockTime": 1791179247,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "wgNzC52hcCyBoaoS3uzoKDnxuejPZDNvgQiNN4XoCNRb5rm2hM8AYqsk7phpwVzX7jo3gTRv9Ud8f3M7oTj5iQL",
+        "slot": 453489180,
+        "transactionIndex": 1100
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 17,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e1-jupiter-0-attempt1.json"
+    },
+    {
+      "caseId": "e1-jupiter-1",
+      "epoch": 1,
+      "program": "jupiter",
+      "rank": 1,
+      "listRequestId": 16,
+      "selectionInfo": {
+        "blockTime": 1791179247,
+        "confirmationStatus": "finalized",
+        "err": {
+          "InstructionError": [
+            1,
+            {
+              "Custom": 5
+            }
+          ]
+        },
+        "memo": null,
+        "signature": "QcMXciMUknR36a7eyt3HkjKjpbmDBLRUhRMFRQcEjdJRKRgGZF1kzCUnmu4xtW1KjqFYDUBP6sLY7W8UaTM9fEx",
+        "slot": 453489180,
+        "transactionIndex": 1096
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 18,
+      "fetchState": "transaction-request-error",
+      "transactionFile": "raw/e1-jupiter-1-attempt1.json"
+    },
+    {
+      "caseId": "e1-jupiter-2",
+      "epoch": 1,
+      "program": "jupiter",
+      "rank": 2,
+      "listRequestId": 16,
+      "selectionInfo": {
+        "blockTime": 1791179247,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "41dVjwhtRykzja9aBPnJA2Vz8umwQocQzZv8WHJGL5T3cvDPDM7QAHLBw3Zd33EFb2zfV2UWgAVML4pc3nvDC2vF",
+        "slot": 453489180,
+        "transactionIndex": 1095
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 19,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e1-jupiter-2-attempt1.json"
+    },
+    {
+      "caseId": "e1-jupiter-3",
+      "epoch": 1,
+      "program": "jupiter",
+      "rank": 3,
+      "listRequestId": 16,
+      "selectionInfo": {
+        "blockTime": 1791179247,
+        "confirmationStatus": "finalized",
+        "err": {
+          "InstructionError": [
+            2,
+            {
+              "Custom": 5
+            }
+          ]
+        },
+        "memo": null,
+        "signature": "sFDB7PTfYyrrmgt52pSYRMKxoyQmzaDutkHfGzUF2MPZ4VfJSHX2ieMUMa3htiWRieiv9oHGRY8aJ53EcbFYeoh",
+        "slot": 453489180,
+        "transactionIndex": 1093
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 20,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e1-jupiter-3-attempt1.json"
+    },
+    {
+      "caseId": "e1-system-0",
+      "epoch": 1,
+      "program": "system",
+      "rank": 0,
+      "listRequestId": 21,
+      "selectionInfo": {
+        "blockTime": 1791179257,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "3Xrs2Kr5jVwnYSMDdsgcSpJs9SZ2goAQPijACEhc64vuRv5SYmVxocQjDq5zZvbw8CGy9Gs7K3sUtuydcPkfXjrQ",
+        "slot": 453489218,
+        "transactionIndex": 970
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 22,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e1-system-0-attempt1.json"
+    },
+    {
+      "caseId": "e1-system-1",
+      "epoch": 1,
+      "program": "system",
+      "rank": 1,
+      "listRequestId": 21,
+      "selectionInfo": {
+        "blockTime": 1791179257,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "5BbYwhoSwARkSWN2Pken9gLJ8fwmB6Wn3kFgYQPgtQE2MVJ5dosyXN2By1Y78iu5DmsNqfAUBPkAQDyivwZtACg8",
+        "slot": 453489218,
+        "transactionIndex": 969
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 23,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e1-system-1-attempt1.json"
+    },
+    {
+      "caseId": "e1-system-2",
+      "epoch": 1,
+      "program": "system",
+      "rank": 2,
+      "listRequestId": 21,
+      "selectionInfo": {
+        "blockTime": 1791179257,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "5fJVWCvdrMmmmYscSdAV19RCFc2MTm6Naw35swZ9L3ECPPCCcPDg8ufvgfXNX5kGbR6PQ8c3dTcVL8ABtLWyQMMx",
+        "slot": 453489218,
+        "transactionIndex": 968
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 24,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e1-system-2-attempt1.json"
+    },
+    {
+      "caseId": "e1-system-3",
+      "epoch": 1,
+      "program": "system",
+      "rank": 3,
+      "listRequestId": 21,
+      "selectionInfo": {
+        "blockTime": 1791179257,
+        "confirmationStatus": "finalized",
+        "err": {
+          "InstructionError": [
+            2,
+            {
+              "Custom": 1
+            }
+          ]
+        },
+        "memo": null,
+        "signature": "3pTTsrnBVbfpxea8r4kVonLCPQ7C6RN1dUR4KCT3vRMyNYuMeRtqsPHYh8t57Ue93VC2iwVzKhEsuQmDM5JPdLpR",
+        "slot": 453489218,
+        "transactionIndex": 967
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 25,
+      "fetchState": "transaction-request-error",
+      "transactionFile": "raw/e1-system-3-attempt1.json"
+    },
+    {
+      "caseId": "e1-classic-token-0",
+      "epoch": 1,
+      "program": "classic-token",
+      "rank": 0,
+      "listRequestId": 26,
+      "selectionInfo": {
+        "blockTime": 1791179267,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "4NC5HqVNKnKTpPsZdBJF8SvXoKtFfkhC1suk4CKWSx8Jfzssv5Grq5ddQUcFgDtuFdTg2o39qLqHcJG8u371exdW",
+        "slot": 453489259,
+        "transactionIndex": 1224
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 27,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e1-classic-token-0-attempt1.json"
+    },
+    {
+      "caseId": "e1-classic-token-1",
+      "epoch": 1,
+      "program": "classic-token",
+      "rank": 1,
+      "listRequestId": 26,
+      "selectionInfo": {
+        "blockTime": 1791179267,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "2kHdiWFsxysEKfvttqAD3Cu7UwM4AHnKEcyiBZsFcs3oKaSELDgoqL9LXCARbwmasBA7Gih58dfZCetZbWhmsKax",
+        "slot": 453489259,
+        "transactionIndex": 1221
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 28,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e1-classic-token-1-attempt1.json"
+    },
+    {
+      "caseId": "e1-classic-token-2",
+      "epoch": 1,
+      "program": "classic-token",
+      "rank": 2,
+      "listRequestId": 26,
+      "selectionInfo": {
+        "blockTime": 1791179267,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "5bfb5u38aSynBc7dicdmkcYwomMWCDAE71vEF5ADwY6dA15SW8LaRXGnHmVVpPf8CkYtNkdSbhBCgCgFTyigaEXr",
+        "slot": 453489259,
+        "transactionIndex": 1196
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 29,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e1-classic-token-2-attempt1.json"
+    },
+    {
+      "caseId": "e1-classic-token-3",
+      "epoch": 1,
+      "program": "classic-token",
+      "rank": 3,
+      "listRequestId": 26,
+      "selectionInfo": {
+        "blockTime": 1791179267,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "2A29wtVpPstWNYKqD66XBr6taePFvXZXvmwGPZi7y4PWpBhv8ADuCYGMg71rEXY32eXfXpjmHE7Wi8jCyac7SdM1",
+        "slot": 453489259,
+        "transactionIndex": 1181
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 30,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e1-classic-token-3-attempt1.json"
+    },
+    {
+      "caseId": "e2-jupiter-0",
+      "epoch": 2,
+      "program": "jupiter",
+      "rank": 0,
+      "listRequestId": 31,
+      "selectionInfo": {
+        "blockTime": 1791179547,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "5R7MoruzoFSaZoNdhRFs7GjnRtjwxgE5cLRMThSMamfGoAsN1QGnqkq2jgRSfKYv314kW2xZdRNNEu2szkDfH82u",
+        "slot": 453490308,
+        "transactionIndex": 1037
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 32,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e2-jupiter-0-attempt1.json"
+    },
+    {
+      "caseId": "e2-jupiter-1",
+      "epoch": 2,
+      "program": "jupiter",
+      "rank": 1,
+      "listRequestId": 31,
+      "selectionInfo": {
+        "blockTime": 1791179547,
+        "confirmationStatus": "finalized",
+        "err": {
+          "InstructionError": [
+            2,
+            {
+              "Custom": 5
+            }
+          ]
+        },
+        "memo": null,
+        "signature": "y1QqhqY9PaRyvamYXM78mWBP4XaGEJ2LGVQGCSWKgFGod6JTtcS1XeQEwMk6rATHJgrtQ3N19YHweh4nbYmxL3r",
+        "slot": 453490308,
+        "transactionIndex": 1033
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 33,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e2-jupiter-1-attempt1.json"
+    },
+    {
+      "caseId": "e2-jupiter-2",
+      "epoch": 2,
+      "program": "jupiter",
+      "rank": 2,
+      "listRequestId": 31,
+      "selectionInfo": {
+        "blockTime": 1791179547,
+        "confirmationStatus": "finalized",
+        "err": {
+          "InstructionError": [
+            0,
+            {
+              "Custom": 7
+            }
+          ]
+        },
+        "memo": null,
+        "signature": "4tvF9GQVg9Q7KXs4TrExwjn6qvKJsck6xGWW4uvzi3sQ5qgCpZice7SSA1qPNEXLM7W6Gw4xV3C8YwBB3JHMwvp",
+        "slot": 453490308,
+        "transactionIndex": 1032
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 34,
+      "fetchState": "transaction-request-error",
+      "transactionFile": "raw/e2-jupiter-2-attempt1.json"
+    },
+    {
+      "caseId": "e2-jupiter-3",
+      "epoch": 2,
+      "program": "jupiter",
+      "rank": 3,
+      "listRequestId": 31,
+      "selectionInfo": {
+        "blockTime": 1791179547,
+        "confirmationStatus": "finalized",
+        "err": {
+          "InstructionError": [
+            2,
+            {
+              "Custom": 5
+            }
+          ]
+        },
+        "memo": null,
+        "signature": "3JnC39diFNCRFN7SDxCbzHRDcEWjMgXZp1XNm7o73kSWbgYTiiiLDLzYQS5eZ4WndfdpkKfZmphjM9N3CGNNMeXz",
+        "slot": 453490308,
+        "transactionIndex": 1031
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 35,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e2-jupiter-3-attempt1.json"
+    },
+    {
+      "caseId": "e2-system-0",
+      "epoch": 2,
+      "program": "system",
+      "rank": 0,
+      "listRequestId": 36,
+      "selectionInfo": {
+        "blockTime": 1791179557,
+        "confirmationStatus": "finalized",
+        "err": {
+          "InstructionError": [
+            3,
+            {
+              "Custom": 1234
+            }
+          ]
+        },
+        "memo": null,
+        "signature": "2x45Uu2kFTZkDY832xtMG2mMeQnPWpF6dyhAckSZXXyGZeUBM2vVo2Ut2YGmwao71KQZXpiq2urwqMiHfyBMGXJb",
+        "slot": 453490345,
+        "transactionIndex": 653
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 37,
+      "fetchState": "transaction-request-error",
+      "transactionFile": "raw/e2-system-0-attempt1.json"
+    },
+    {
+      "caseId": "e2-system-1",
+      "epoch": 2,
+      "program": "system",
+      "rank": 1,
+      "listRequestId": 36,
+      "selectionInfo": {
+        "blockTime": 1791179557,
+        "confirmationStatus": "finalized",
+        "err": {
+          "InstructionError": [
+            3,
+            {
+              "Custom": 81
+            }
+          ]
+        },
+        "memo": null,
+        "signature": "3rujHjBdj65rj1y5d3KFWdYyxCcamRiYf3BP3eYcvsjaqy53dsvn6mjin8kcTsFZQKJh81FkDkxBSfE8t1hSoxgo",
+        "slot": 453490345,
+        "transactionIndex": 652
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 38,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e2-system-1-attempt1.json"
+    },
+    {
+      "caseId": "e2-system-2",
+      "epoch": 2,
+      "program": "system",
+      "rank": 2,
+      "listRequestId": 36,
+      "selectionInfo": {
+        "blockTime": 1791179557,
+        "confirmationStatus": "finalized",
+        "err": {
+          "InstructionError": [
+            3,
+            {
+              "Custom": 5000
+            }
+          ]
+        },
+        "memo": null,
+        "signature": "4AvjRGiqBiCLHj1Qcs3jkhUdpV92pNTZMEeFesWCfy1xDMjxm49ffXoGBHz61EWsdHMKNz1Va1KAEiCns8gB7QhB",
+        "slot": 453490345,
+        "transactionIndex": 651
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 39,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e2-system-2-attempt1.json"
+    },
+    {
+      "caseId": "e2-system-3",
+      "epoch": 2,
+      "program": "system",
+      "rank": 3,
+      "listRequestId": 36,
+      "selectionInfo": {
+        "blockTime": 1791179557,
+        "confirmationStatus": "finalized",
+        "err": {
+          "InstructionError": [
+            5,
+            {
+              "Custom": 7
+            }
+          ]
+        },
+        "memo": null,
+        "signature": "xRdZX9DfJSxAskbmaJzvynWqHRXUhQGBPitXuwV6WmtyUJpHHyiyJdT7Pc2mFERMzBotUXmV8Sv3LPVGLLTj6EK",
+        "slot": 453490345,
+        "transactionIndex": 650
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 40,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e2-system-3-attempt1.json"
+    },
+    {
+      "caseId": "e2-classic-token-0",
+      "epoch": 2,
+      "program": "classic-token",
+      "rank": 0,
+      "listRequestId": 41,
+      "selectionInfo": {
+        "blockTime": 1791179565,
+        "confirmationStatus": "finalized",
+        "err": {
+          "InstructionError": [
+            3,
+            {
+              "Custom": 81
+            }
+          ]
+        },
+        "memo": null,
+        "signature": "3McNvrrzVsXWrdK6U7wYC8eqgnTLpGG2cPuMFPc2oqUGMD25HRdQeQQWWAGjCbPYDw3C2TbArLnNrApAPZxEwAAZ",
+        "slot": 453490377,
+        "transactionIndex": 1104
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 42,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e2-classic-token-0-attempt1.json"
+    },
+    {
+      "caseId": "e2-classic-token-1",
+      "epoch": 2,
+      "program": "classic-token",
+      "rank": 1,
+      "listRequestId": 41,
+      "selectionInfo": {
+        "blockTime": 1791179565,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "4vbDQsFVfe4iypHBpsdDDApyX3bpmgPd5i9sBbSNpHyuzKhXek8tpxTqn518HLg3X131rEuSUz7z8sRgYp8nUjZx",
+        "slot": 453490377,
+        "transactionIndex": 1103
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 43,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e2-classic-token-1-attempt1.json"
+    },
+    {
+      "caseId": "e2-classic-token-2",
+      "epoch": 2,
+      "program": "classic-token",
+      "rank": 2,
+      "listRequestId": 41,
+      "selectionInfo": {
+        "blockTime": 1791179565,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "4RaJSjJLCYrzgiSjKk52PD1BPw4QJZbpgjAy3z9LbhUWQoEnyfFjxRvFphUvBH9q2A4Qwbfx6u6KM8EvsAK3qsq6",
+        "slot": 453490377,
+        "transactionIndex": 1102
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 44,
+      "fetchState": "transaction-available",
+      "transactionFile": "raw/e2-classic-token-2-attempt1.json"
+    },
+    {
+      "caseId": "e2-classic-token-3",
+      "epoch": 2,
+      "program": "classic-token",
+      "rank": 3,
+      "listRequestId": 41,
+      "selectionInfo": {
+        "blockTime": 1791179565,
+        "confirmationStatus": "finalized",
+        "err": null,
+        "memo": null,
+        "signature": "5UPCYBLJ16Wu3cY2BVQ6tf9KsGqTww3fsmG25QNMSWZEyi754nVfdkjDTHN2rBgJnSc4qvqP9yBAqt1ByZbhVa26",
+        "slot": 453490377,
+        "transactionIndex": 1094
+      },
+      "duplicateOf": null,
+      "transactionRequestId": 45,
+      "fetchState": "transaction-request-error",
+      "transactionFile": "raw/e2-classic-token-3-attempt1.json"
+    }
+  ],
+  "epoch0AnchorUtc": "2026-10-05T05:42:36.393053+00:00",
+  "completedAtUtc": "2026-10-05T05:53:04.854215+00:00",
+  "uniqueSignatures": 36,
+  "duplicateSelectionPositions": 0
+}

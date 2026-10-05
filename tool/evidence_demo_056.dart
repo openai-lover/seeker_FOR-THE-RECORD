@@ -29,6 +29,7 @@ WalletActivity demoTransfer(int id, {bool spl = false}) {
     demoWallet,
     {'signature': sig, 'err': null, 'blockTime': 1791082800},
     {
+      'version': 'legacy',
       'transaction': {
         'signatures': [sig],
         'message': {
