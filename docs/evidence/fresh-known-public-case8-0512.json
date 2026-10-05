@@ -1,0 +1,295 @@
+{
+  "schema": "ftr-fresh-known-public-case8-0512-v3",
+  "selection": "One deliberately selected historical already-public supported case8 signature. No new search, replacement, success sampling, owner account or trade.",
+  "historicalTransactionSignature": "2vCgWskb1AV9UVvhmv1vuQdh8pdH5tAWyoqzsgXnF5z3ohpT9RALaPFb7tGiN8xCViJb7kdcLgBXWqe3pvGLuSY8",
+  "historicalSlot": 453197269,
+  "frozenAtUtc": "2026-10-05T08:06:10.532723+00:00",
+  "protocolSha256": "346de1e3ec7ffd1a2cab6a5ea7d2d2886546a058a270213e9d44e0da38fd1fc3",
+  "collectorSha256": "84d4f2ea792fb051e0de4c1dc2d0b00a303296c6c87bf5bebb3eff2c0feaf1db",
+  "sourceAppTag": "ee650639670c7ab35081a92e3435a185b73a6642",
+  "productionParserSha256": "5acb14ea6c56ac658766bf4d3ba5e0199762afc2e7313f997631568083a30760",
+  "method": "getTransaction",
+  "rpc": "https://api.mainnet-beta.solana.com",
+  "params": {
+    "encoding": "jsonParsed",
+    "maxSupportedTransactionVersion": 1,
+    "commitment": "finalized"
+  },
+  "currentRpcAvailable": true,
+  "responseEqualsHistoricalResult": true,
+  "rawEqualsHistoricalFixtureSha256": true,
+  "parsedOfflineCurrentProductionCode": {
+    "version": 0,
+    "slot": 453197269,
+    "status": "success",
+    "type": "swap",
+    "issue": null,
+    "canJournal": true,
+    "canRecordReason": true,
+    "input": {
+      "mint": "BPxxfRCXkUVhig4HS1Lh7kZqV6SPJhzfEk4x6fVBjPCy",
+      "symbol": "BPxx\u2026jPCy",
+      "amount": "278.854695534"
+    },
+    "output": {
+      "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "symbol": "USDC",
+      "amount": "348.72045"
+    },
+    "perspective": "First signer from public returned transaction; ownership not asserted."
+  },
+  "limits": [
+    "Two fresh physical Seeker RPC reads of exactly one deliberately selected known historical immutable public transaction; not a new live trade, owner wallet or held-out/general parser sample.",
+    "The isolated debug harness exercised current production parser/product UI and a new real SQLite/native exporter. It is not the installed production account/MWA path.",
+    "The product UI Refresh consumes the freshly fetched snapshot. It is not another RPC request. The second actual RPC request occurred after force-stop and relaunch.",
+    "Only manual question4 was selected in this phone proof; no new AI inference, model quality, independent user labels, repeat-use or retention was measured.",
+    "Both private exports were validated outside the phone UI. Raw exports, raw phone video, personal notes and private paths remain private. The exact privacy-covered CFR derivative is root-approved but not yet published.",
+    "The older delayed-due DB main-file hash was preserved, but native alarm continuity and an actual due UI transition have not been established.",
+    "A zero-internal-cut 1x recorded timeline exists, but the initial fetch tap was not recorded because the first request was already in flight. The second fresh request after force-stop is captured. This is not a complete initial-tap-to-end recording."
+  ],
+  "fixtureFiles": [
+    {
+      "path": "test/fixtures/public_mainnet_0512_known_refresh/frozen-protocol.json",
+      "sha256": "346de1e3ec7ffd1a2cab6a5ea7d2d2886546a058a270213e9d44e0da38fd1fc3"
+    },
+    {
+      "path": "test/fixtures/public_mainnet_0512_known_refresh/freeze-receipt.json",
+      "sha256": "2ed6229600eeb9633d320d1f300e522f7a3e25a06ba1b2f5540da0bbc40582b6"
+    },
+    {
+      "path": "test/fixtures/public_mainnet_0512_known_refresh/request.json",
+      "sha256": "f3952c240e96819e72232b378c506d13bd6c76afe1b0c0b139edfd87a88fc2a2"
+    },
+    {
+      "path": "test/fixtures/public_mainnet_0512_known_refresh/response-attempt-1.json",
+      "sha256": "c88cc8ad756dbbd3cff75f7193ed62cab35b1b16dfd9b79c243816faf5009380"
+    },
+    {
+      "path": "test/fixtures/public_mainnet_0512_known_refresh/fetch-receipt.json",
+      "sha256": "e31b3c38ec0fabd71bde166a64c06c260fea717dff6364c26554eca0b749e0c5"
+    },
+    {
+      "path": "test/fixtures/public_mainnet_0512_known_refresh/current-parser-check.json",
+      "sha256": "2bf1a758d9b109c69e7d2e00c9756266abb083e9e72a27aa9ef6753aa82a13a1"
+    }
+  ],
+  "harnessPreparationHistory": {
+    "file": "tool/live_public_case8_0512.dart",
+    "sha256": "358eb6dd447ad843559a722e30a978c157c8ebb157e6cc52e3b1e682f8d5841a",
+    "checkerFile": "tool/check_refreshed_case8_0512.dart",
+    "checkerSha256": "8be54827ff3d2b6974197a7791a77aee4d765531d9f0f7f5e488696de33e3d4f",
+    "analysis": "Only these two new tools analyzed; no issues found.",
+    "built": false,
+    "installed": false,
+    "phoneNetworkFetchExecuted": false,
+    "nativeSqliteExportExecuted": false,
+    "actualStorageGuard": "Refuses before RPC/openDatabase unless Android database root contains the exact .integration package name.",
+    "networkGuard": "One manually initiated known-signature fetch; at most3transport attempts; null/RPCerror terminal; no cached response fallback.",
+    "isolatedDb": "known-public-case8-flow-0512.sqlite",
+    "existingDueDatabasePreserved": true,
+    "previousPreparedHarnessSha256": "9f59d3095a94620988d1a6facc9ae5deaba51033801170119b19cfbcc59d27ae",
+    "rootMediaQueryCorrection": {
+      "prepared": true,
+      "change": "Builder creates MediaQuery.fromView(View.of(context)) above Directionality, Column and permanent SafeArea overlay; WorkroomApp retains its own MaterialApp.",
+      "reason": "Replacing runApp with a bare Directionality/Column left the outer SafeArea without explicit MediaQuery context.",
+      "focusedAnalysis": "Only harness/checker analyzed again: no issues found.",
+      "phoneRuntimeValidated": false,
+      "builtInstalledCaptured": false
+    },
+    "stateAtPreparationOnlyUtc": "2026-10-05T08:23:17.681649+00:00",
+    "currentExecutionStateRecordedSeparately": true
+  },
+  "executedIsolatedPhoneProof": {
+    "completedAtKst": "2026-10-05T17:49:55.997556+09:00",
+    "package": "app.workroom.seeker_workroom.integration",
+    "versionName": "0.5.12",
+    "versionCode": 2019,
+    "harness": "tool/live_public_case8_0512.dart",
+    "harnessSha256": "358eb6dd447ad843559a722e30a978c157c8ebb157e6cc52e3b1e682f8d5841a",
+    "debugApkBytes": 105612661,
+    "debugApkSha256": "cd76486cc2cffc01ff98adc12d8345e739a2e632f915571a485a1735f66f2b65",
+    "rootVerifiedPackage": {
+      "arm64": true,
+      "debuggable": true,
+      "internetPermission": true,
+      "mandatoryAssetsAndKernelChecked": true
+    },
+    "built": true,
+    "installedInPlace": true,
+    "phoneNetworkFetchExecuted": true,
+    "currentProductUiSupportedSwapObservedByOperator": true,
+    "nativeSqliteExportExecuted": true,
+    "sessions": [
+      {
+        "session": 1,
+        "afterForceStop": false,
+        "requestStartedAtUtc": "2026-10-05T08:36:43.635985Z",
+        "requestFinishedAtUtc": "2026-10-05T08:36:44.697428Z",
+        "freshFetchedAtUtc": "2026-10-05T08:36:44.705465Z",
+        "attemptCount": 1,
+        "httpStatus": 200,
+        "transportError": null,
+        "rpcError": null,
+        "resultNull": false,
+        "requestSha256": "f3952c240e96819e72232b378c506d13bd6c76afe1b0c0b139edfd87a88fc2a2",
+        "rawResponseSha256": "c88cc8ad756dbbd3cff75f7193ed62cab35b1b16dfd9b79c243816faf5009380",
+        "rawResponseBytes": 10636,
+        "privateReadReceiptSha256": "1bf62614d0635b8384603a40f741a607aa68abc02f7d77b219f15fc7a20ad967",
+        "requestEqualsExistingPublicFixture": true,
+        "rawResponseEqualsExistingPublicFixture": true,
+        "publicRequestFixture": "test/fixtures/public_mainnet_0512_known_refresh/request.json",
+        "publicRawResponseFixture": "test/fixtures/public_mainnet_0512_known_refresh/response-attempt-1.json",
+        "version": 0,
+        "slot": 453197269,
+        "status": "success",
+        "type": "swap",
+        "canJournal": true,
+        "canRecordReason": true,
+        "input": {
+          "mint": "BPxxfRCXkUVhig4HS1Lh7kZqV6SPJhzfEk4x6fVBjPCy",
+          "symbol": "BPxx\u2026jPCy",
+          "amount": "278.854695534"
+        },
+        "output": {
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "symbol": "USDC",
+          "amount": "348.72045"
+        },
+        "noCachedResponseFallback": true,
+        "walletConnection": false,
+        "requestBytes": 238
+      },
+      {
+        "session": 2,
+        "afterForceStop": true,
+        "requestStartedAtUtc": "2026-10-05T08:47:34.163245Z",
+        "requestFinishedAtUtc": "2026-10-05T08:47:35.332659Z",
+        "freshFetchedAtUtc": "2026-10-05T08:47:35.340824Z",
+        "attemptCount": 1,
+        "httpStatus": 200,
+        "transportError": null,
+        "rpcError": null,
+        "resultNull": false,
+        "requestSha256": "f3952c240e96819e72232b378c506d13bd6c76afe1b0c0b139edfd87a88fc2a2",
+        "rawResponseSha256": "c88cc8ad756dbbd3cff75f7193ed62cab35b1b16dfd9b79c243816faf5009380",
+        "rawResponseBytes": 10636,
+        "privateReadReceiptSha256": "78acdd36a8066a4bd2a242213ba72fe2e5eb61a1882260ce405637ba7d27f5c5",
+        "requestEqualsExistingPublicFixture": true,
+        "rawResponseEqualsExistingPublicFixture": true,
+        "publicRequestFixture": "test/fixtures/public_mainnet_0512_known_refresh/request.json",
+        "publicRawResponseFixture": "test/fixtures/public_mainnet_0512_known_refresh/response-attempt-1.json",
+        "version": 0,
+        "slot": 453197269,
+        "status": "success",
+        "type": "swap",
+        "canJournal": true,
+        "canRecordReason": true,
+        "input": {
+          "mint": "BPxxfRCXkUVhig4HS1Lh7kZqV6SPJhzfEk4x6fVBjPCy",
+          "symbol": "BPxx\u2026jPCy",
+          "amount": "278.854695534"
+        },
+        "output": {
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "symbol": "USDC",
+          "amount": "348.72045"
+        },
+        "noCachedResponseFallback": true,
+        "walletConnection": false,
+        "requestBytes": 238
+      }
+    ],
+    "isolatedDatabase": "known-public-case8-flow-0512.sqlite",
+    "writing": "One operator-authored DEMO reason, manual reflection and lesson. It does not represent the public trader motive.",
+    "manualQuestion": {
+      "questionId": 4,
+      "source": "manual"
+    },
+    "newAiInference": false,
+    "exportVerification": {
+      "firstExportBytes": 2392,
+      "firstExportSha256": "acf209d576edefffad63eabe9e2b7773b7e6766b759b5c5680e1e0a4787fe1b1",
+      "firstValidatedBeforeForceStopAtKst": "2026-10-05T17:47:14.104703+09:00",
+      "secondExportBytes": 2392,
+      "secondExportSha256": "c4017a4a6333a369eeaa850a26725b4b24b15661a94ff145b3cc7d93bcf1ffd9",
+      "secondValidatedAtKst": "2026-10-05T17:49:55.997556+09:00",
+      "journalCount": 1,
+      "wholeJournalPayloadIdentical": true,
+      "exportedAtDifferent": true,
+      "originalReasonPreserved": true,
+      "firstBaselineSavedAtPreserved": true,
+      "reviewDueAtBothNull": true,
+      "reviewAndLessonNonempty": true,
+      "rawExportsPrivate": true
+    },
+    "separateDelayedDueDatabase": {
+      "name": "public-mainnet-flow-0510.sqlite",
+      "beforeAndAfterMainFileSha256ReportedByOperator": "099ea4ba6b8d0525806cf6cdac1b9763766fadc5ba2fe1ba96dfeab33a6fd31a",
+      "notOpenedByThisHarness": true,
+      "notEvidenceOfAlarmContinuity": true,
+      "actualDueTimeOrDueUiNotYetVerified": true
+    },
+    "productionForegroundRestoredReportedByOperator": true,
+    "productionPackageDatabaseNotAccessed": true,
+    "rawPhoneFilesPublished": false,
+    "recording": {
+      "sourceDurationSecondsReportedByRoot": 790.7306,
+      "approvedDerivativeDurationSeconds": 790.75,
+      "approvedDerivativeBytes": 7877505,
+      "approvedDerivativeSha256": "67981381e3fe2fcc0d9768b30481e1b3cb8a36e02b9827044c857741525860b7",
+      "rawContinuousRecordingCapturedReportedByRoot": true,
+      "constantFrameRateDerivative": true,
+      "internalCutCount": 0,
+      "actionSpeed": 1,
+      "silent": true,
+      "initialFetchAlreadyInFlightAtRecordingStart": true,
+      "initialFetchTapCaptured": false,
+      "secondRequestAfterForceStopCaptured": true,
+      "completeInitialTapToEndRecording": false,
+      "rootPrivacyQaApproved": true,
+      "approvalSource": "Root agent independently approved this exact derivative SHA256 after visual review of all 791 one-second samples and 14 dense contact sheets.",
+      "rootQaCovered": "Status bar, keyboard, picker and restart views received privacy covers.",
+      "derivativePublicationState": "approved, pending publication",
+      "derivativePublished": false,
+      "rawPublished": false,
+      "safeReceipt": "docs/evidence/fresh-public-case8-recording-0512.json",
+      "scope": "Continuous recorded timeline for the isolated known historical case proof; the first fetch was already in flight before recording. No production account/MWA, new trade, owner assertion, human study or new AI inference."
+    }
+  },
+  "reminderSourceInspection": {
+    "loadRefreshAndPlainSettingDoNotCallAlarm": true,
+    "journalDueIsForegroundDatePredicate": "reviewDueAt != null && reviewDueAt <= actualNow && reviewedAt == null",
+    "journalNativeAlarmSchedulingFound": false,
+    "focusAlarmIdentity": "Package-scoped requestCode17 PendingIntent and notification17, shared by all databases in that package.",
+    "possibleFocusAlarmChangingOperations": [
+      "start/pause/finish/save/cancel/configureNotifications/deleteAll",
+      "denied notification setting",
+      "package replacement or force-stop effects were not measured"
+    ],
+    "limitation": "Unchanged SQLite bytes do not prove an untouched Android alarm. No background reminder firing is claimed.",
+    "safeNextDueCheck": "After actual 2026-10-05 21:29:52.880+09:00, compare the exact preserved row from a read-only DB+WAL snapshot, then use a guarded existing-DB-only home preview with real clock/no seeding/no settings writes. Do not claim human repeat-use or a native journal notification.",
+    "files": [
+      "lib/domain/controller.dart",
+      "lib/domain/trade_journal.dart",
+      "lib/ui/app.dart",
+      "lib/ui/home.dart",
+      "lib/platform/native.dart",
+      "android/app/src/main/kotlin/app/workroom/seeker_workroom/WorkroomActivity.kt"
+    ]
+  },
+  "desktopFetchAttempts": [
+    {
+      "attempt": 1,
+      "requestStartedAtUtc": "2026-10-05T08:06:26.795379+00:00",
+      "requestFinishedAtUtc": "2026-10-05T08:06:27.235377+00:00",
+      "httpStatus": 200,
+      "responseFile": "response-attempt-1.json",
+      "rawSha256": "c88cc8ad756dbbd3cff75f7193ed62cab35b1b16dfd9b79c243816faf5009380",
+      "bytes": 10636,
+      "transportError": null,
+      "rpcError": null,
+      "resultNull": false
+    }
+  ],
+  "desktopCheckScope": "Historical preparation/desktop verification at 08:06 UTC. Executed physical phone proof is recorded separately below."
+}

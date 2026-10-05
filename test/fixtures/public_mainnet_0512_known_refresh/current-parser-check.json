@@ -1,0 +1,50 @@
+{
+  "appSource": "ee650639670c7ab35081a92e3435a185b73a6642",
+  "parserSha256": "5acb14ea6c56ac658766bf4d3ba5e0199762afc2e7313f997631568083a30760",
+  "protocolSha256": "346de1e3ec7ffd1a2cab6a5ea7d2d2886546a058a270213e9d44e0da38fd1fc3",
+  "responseAvailable": true,
+  "sameKnownHistoricalCase": true,
+  "notHeldOutOrOwnerFlow": true,
+  "deviceExecuted": false,
+  "scope": "Current production parser, executed offline against one freshly retrieved known historical public RPC response.",
+  "responseSha256": "c88cc8ad756dbbd3cff75f7193ed62cab35b1b16dfd9b79c243816faf5009380",
+  "resultEqualsHistoricalFixture": true,
+  "perspective": "First signer from the public response; ownership not asserted.",
+  "version": 0,
+  "slot": 453197269,
+  "status": "success",
+  "type": "swap",
+  "issue": null,
+  "canJournal": true,
+  "canRecordReason": true,
+  "input": {
+    "mint": "BPxxfRCXkUVhig4HS1Lh7kZqV6SPJhzfEk4x6fVBjPCy",
+    "symbol": "BPxx…jPCy",
+    "amount": "278.854695534"
+  },
+  "output": {
+    "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+    "symbol": "USDC",
+    "amount": "348.72045"
+  },
+  "activity": {
+    "id": "2vCgWskb1AV9UVvhmv1vuQdh8pdH5tAWyoqzsgXnF5z3ohpT9RALaPFb7tGiN8xCViJb7kdcLgBXWqe3pvGLuSY8",
+    "signature": "2vCgWskb1AV9UVvhmv1vuQdh8pdH5tAWyoqzsgXnF5z3ohpT9RALaPFb7tGiN8xCViJb7kdcLgBXWqe3pvGLuSY8",
+    "blockTime": 1791101054,
+    "status": "success",
+    "type": "swap",
+    "source": "Jupiter",
+    "fee": "0.000008405",
+    "input": {
+      "mint": "BPxxfRCXkUVhig4HS1Lh7kZqV6SPJhzfEk4x6fVBjPCy",
+      "symbol": "BPxx…jPCy",
+      "amount": "278.854695534"
+    },
+    "output": {
+      "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "symbol": "USDC",
+      "amount": "348.72045"
+    },
+    "issue": null
+  }
+}

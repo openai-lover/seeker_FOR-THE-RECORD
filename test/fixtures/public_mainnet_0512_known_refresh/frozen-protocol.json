@@ -1,0 +1,55 @@
+{
+  "schema": "ftr-known-public-case8-refresh-0512-v1",
+  "frozenAtUtc": "2026-10-05T08:06:10.532723+00:00",
+  "selection": "Exactly already-public historical supported case8; deliberately selected known case, not held-out/new transaction search.",
+  "signature": "2vCgWskb1AV9UVvhmv1vuQdh8pdH5tAWyoqzsgXnF5z3ohpT9RALaPFb7tGiN8xCViJb7kdcLgBXWqe3pvGLuSY8",
+  "historicalSignatureInfo": {
+    "blockTime": 1791101054,
+    "confirmationStatus": "finalized",
+    "err": null,
+    "memo": null,
+    "signature": "2vCgWskb1AV9UVvhmv1vuQdh8pdH5tAWyoqzsgXnF5z3ohpT9RALaPFb7tGiN8xCViJb7kdcLgBXWqe3pvGLuSY8",
+    "slot": 453197269,
+    "transactionIndex": 237
+  },
+  "historicalFixtureSha256": "c88cc8ad756dbbd3cff75f7193ed62cab35b1b16dfd9b79c243816faf5009380",
+  "sourceAppTag": "ee650639670c7ab35081a92e3435a185b73a6642",
+  "currentParserSha256": "5acb14ea6c56ac658766bf4d3ba5e0199762afc2e7313f997631568083a30760",
+  "rpc": "https://api.mainnet-beta.solana.com",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "getTransaction",
+    "params": [
+      "2vCgWskb1AV9UVvhmv1vuQdh8pdH5tAWyoqzsgXnF5z3ohpT9RALaPFb7tGiN8xCViJb7kdcLgBXWqe3pvGLuSY8",
+      {
+        "encoding": "jsonParsed",
+        "maxSupportedTransactionVersion": 1,
+        "commitment": "finalized"
+      }
+    ]
+  },
+  "boundedRetry": {
+    "maxAttempts": 3,
+    "timeoutSeconds": 25,
+    "backoffSeconds": [
+      2,
+      4
+    ],
+    "retryOnlyHttpCodes": [
+      429,
+      500,
+      502,
+      503,
+      504
+    ],
+    "retryNetworkTimeouts": true,
+    "rpcErrorOrNullIsTerminal": true,
+    "noReplacementSignatureOrProvider": true
+  },
+  "parserContext": "First transaction signer from returned parsed accountKeys, public perspective without ownership.",
+  "noPersonalWalletOrDatabase": true,
+  "noDeviceInstallOrCapture": true,
+  "noTradeSigningOrSending": true,
+  "officialMethodDocs": "https://solana.com/docs/rpc/http/gettransaction"
+}
