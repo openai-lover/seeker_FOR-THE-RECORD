@@ -1,0 +1,137 @@
+{
+  "schema": "ftr-real-day-due-0512-v3",
+  "appSourceTag": "ee650639670c7ab35081a92e3435a185b73a6642",
+  "appVersion": "0.5.12+19",
+  "build": {
+    "separateDebugPackage": "app.workroom.seeker_workroom.integration",
+    "sourceHarnessSha256": "3b0a79005b09d54befe3db2d3d236656752feadae30c4fb37111ba37e10cc8d9",
+    "sourceHeaderPreparedOnlyIsHistoricalPreparationAnnotation": true,
+    "executionReceiptSupersedesPreparationAnnotation": true,
+    "productionAppChanged": false,
+    "diagnosticSourcePubliclyUploaded": false,
+    "diagnosticSourceDisclosureAutoReviewBlockedExcluded": true
+  },
+  "safeExecutionReceiptSha256": "6929cf0123a414f75ac56a0237a34cdce7ed75753a1dd30ff3f7558db3a79f16",
+  "observed": {
+    "savedAtUnixMs": 1791116995564,
+    "savedAtKst": "2026-10-04T21:29:55.564+09:00",
+    "scheduledDueAtUnixMs": 1791203392880,
+    "scheduledDueAtKst": "2026-10-05T21:29:52.880+09:00",
+    "scheduledDueMinusSavedMilliseconds": 86397316,
+    "actualObservedUnixMs": 1791209898666,
+    "actualObservedUtc": "2026-10-05T14:18:18.666Z",
+    "actualObservedKst": "2026-10-05T23:18:18.666+09:00",
+    "hoursSinceSave": 25.806417222222223,
+    "isDue": true,
+    "dueCount": 1,
+    "screenshotObservedKstReportedByRoot": "2026-10-05T23:19:30.758+09:00",
+    "currentProductHomeLabelVisibleReportedByRoot": "Revisit my reason",
+    "originalAuthoredDemoReasonVisibleReportedByRoot": true,
+    "observedContinuousCrossingOfDueBoundary": false
+  },
+  "preservation": {
+    "onPhonePrePostDueAndSeparateKnownCaseDatabaseWalFingerprintsEqual": true,
+    "originalElevenAuthoredDemoRowsAndSettingsPreservedByExactFingerprints": true,
+    "fingerprints": {
+      "dueDatabase": "099ea4ba6b8d0525806cf6cdac1b9763766fadc5ba2fe1ba96dfeab33a6fd31a",
+      "dueWal": "5fb6a0e1fb997228755b9a1a5082452ee4bf269ea43e712efed1f1c6c74a7e1d",
+      "separateKnownCaseDatabase": "4131cae5fe5d0b9969eb24f011c858d5a732d92d0bc2c56899f09e4ab341421b",
+      "separateKnownCaseWal": "111094be66ccb3e4b7a0ba3512e78f9e4c0ffffcda54165fdbaa1b3e9d360698"
+    },
+    "basis": "On-phone hashes against previously validated snapshots and before/after guarded read; no new raw database transfer.",
+    "inactiveIsolatedWriterReportedByRoot": true,
+    "newRawPhoneDatabaseTransfer": false,
+    "newProcessForceStop": false,
+    "productionDatabaseAccessed": false,
+    "databaseConnectionClosedBeforeUi": true,
+    "uiRepository": "Read-only in-memory snapshot of the existing isolated database",
+    "uiInputAbsorbed": true,
+    "writesSeedingClockChangesNativeAndRemoteCallsBlocked": true
+  },
+  "runtimeLog": {
+    "truncated": true,
+    "completeJsonAvailable": false,
+    "usableParsedPrefix": "Stored saved/due/actual timestamps, isDue=true and dueCount=1.",
+    "fullJsonOrAllRuntimeFieldsClaimed": false,
+    "separateEvidence": "Post-read fingerprints and root visual home observation are separate evidence, not recovered fields from the truncated log."
+  },
+  "proofScope": {
+    "technicalExistingRowAfterRealScheduledTime": true,
+    "normalProductionOwnedAccountFlow": false,
+    "reflectionSaved": false,
+    "nativeJournalNotificationVerified": false,
+    "independentHumanReturnVerified": false,
+    "independentHumanParticipants": 0,
+    "threeOrSevenDayCaseVerified": false,
+    "newAiInference": false,
+    "retentionMeasured": false
+  },
+  "productSourceLinks": {
+    "defaultClock": "https://github.com/openai-lover/seeker_FOR-THE-RECORD/blob/ee650639670c7ab35081a92e3435a185b73a6642/lib/domain/controller.dart#L13",
+    "duePredicate": "https://github.com/openai-lover/seeker_FOR-THE-RECORD/blob/ee650639670c7ab35081a92e3435a185b73a6642/lib/domain/trade_journal.dart#L120",
+    "homeFilter": "https://github.com/openai-lover/seeker_FOR-THE-RECORD/blob/ee650639670c7ab35081a92e3435a185b73a6642/lib/ui/home.dart#L23",
+    "homeActionLabel": "https://github.com/openai-lover/seeker_FOR-THE-RECORD/blob/ee650639670c7ab35081a92e3435a185b73a6642/lib/ui/home.dart#L173",
+    "foregroundRefresh": "https://github.com/openai-lover/seeker_FOR-THE-RECORD/blob/ee650639670c7ab35081a92e3435a185b73a6642/lib/ui/app.dart#L229"
+  },
+  "publicMedia": {
+    "rootFinalAssetReviewPending": false,
+    "screenshotPublished": false,
+    "clipPublished": true,
+    "rawMediaPublished": false,
+    "approvedSafeNamesAndHashesPending": false,
+    "rootVisualQa": {
+      "all20CfrSamplesInspected": true,
+      "nineBoundarySamplesInspected": true,
+      "jpegInspected": true,
+      "authority": "Root agent; not independent human validation."
+    },
+    "approvedClip": {
+      "bytes": 1520691,
+      "sha256": "d218ad8607efe0fc5b1e6af3ab6bbd7b9a00163c1707b21828db2c18c0ffbc3a",
+      "durationSeconds": 19.875,
+      "rootApproved": true,
+      "published": true,
+      "publicationState": "Published in existing v0.5.12; exact GitHub server digest verified by root.",
+      "publicUrl": "https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.12/FOR-THE-RECORD-real-day-due-0.5.12.mp4",
+      "serverDigest": "sha256:d218ad8607efe0fc5b1e6af3ab6bbd7b9a00163c1707b21828db2c18c0ffbc3a",
+      "verifiedAtUtc": "2026-10-05T14:51:02.086229+00:00",
+      "releaseName": "FOR-THE-RECORD-real-day-due-0.5.12.mp4"
+    },
+    "approvedScreenshot": {
+      "bytes": 169174,
+      "sha256": "de6ccb21a9a850aa6087ff59eba4ae3dbc8bd2918b548722caa72ad289a861f0",
+      "rootApproved": true,
+      "published": false,
+      "publicationState": "Root-approved exact local repository image; staged as reported by root. Source commit/push not yet verified at note preparation.",
+      "repositoryPath": "docs/evidence/real-day-due-0512.jpg",
+      "localBytesAndHashVerified": true,
+      "stagedReportedByRoot": true,
+      "sourcePushVerified": false,
+      "includedInThisSourceCommit": true
+    },
+    "scope": "Short technical post-due observation; does not record a whole day or the instant the due boundary crossed."
+  },
+  "reviewContext": {
+    "lastActualCoachAtPreparation": 77,
+    "criteria": {
+      "AI": 78,
+      "SKR": 78,
+      "UX": 84,
+      "UI": 82,
+      "innovation": 74,
+      "ecosystem": 67
+    },
+    "statusAtPreparation": "DRAFT",
+    "newEvidenceReassessed": false
+  },
+  "qaAuthority": "Root/agent technical observation/source checks; no independent human validation, production reminder or retention claim.",
+  "publication": {
+    "sourceSixAssetReceiptSha256": "9bfc61bb8759c6b5239d27da059fb5f9e309a88ea2eb280c13b202418a7be073",
+    "releaseTag": "v0.5.12",
+    "verifiedAtUtc": "2026-10-05T14:51:02.086229+00:00",
+    "allSixServerDigestsMatched": true,
+    "existingReleaseAssetsApksAndTagPreserved": true,
+    "newCoachReassessmentPerformed": false,
+    "competitionFinalSubmissionPerformed": false
+  }
+}

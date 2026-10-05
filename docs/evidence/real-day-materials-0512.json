@@ -1,0 +1,66 @@
+{
+  "appSource": "ee650639670c7ab35081a92e3435a185b73a6642",
+  "releaseTag": "v0.5.12",
+  "nativeDeckRevision": "opsUTfuDiqqjIw",
+  "assets": [
+    {
+      "role": "main_video",
+      "name": "FOR-THE-RECORD-demo-0.5.12-due-3min.mp4",
+      "bytes": 5943585,
+      "sha256": "ce713e22c8f4131b9797b12a7473151f80a35aaac855681082d2ab059ef694fb",
+      "serverDigest": "sha256:ce713e22c8f4131b9797b12a7473151f80a35aaac855681082d2ab059ef694fb",
+      "url": "https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.12/FOR-THE-RECORD-demo-0.5.12-due-3min.mp4",
+      "disposition": "uploaded new asset"
+    },
+    {
+      "role": "main_srt",
+      "name": "FOR-THE-RECORD-demo-0.5.12-due-3min.srt",
+      "bytes": 2527,
+      "sha256": "e220b5c90a7493f5e51a29a887bcb8bbd9244afee166f8b070b0dd5d874193e1",
+      "serverDigest": "sha256:e220b5c90a7493f5e51a29a887bcb8bbd9244afee166f8b070b0dd5d874193e1",
+      "url": "https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.12/FOR-THE-RECORD-demo-0.5.12-due-3min.srt",
+      "disposition": "uploaded new asset"
+    },
+    {
+      "role": "main_transcript",
+      "name": "FOR-THE-RECORD-demo-0.5.12-due-3min-transcript.txt",
+      "bytes": 1694,
+      "sha256": "4e42d34f218561b8b456793744aeed04beb2ad0fbab31b97bb1a851552f00c0e",
+      "serverDigest": "sha256:4e42d34f218561b8b456793744aeed04beb2ad0fbab31b97bb1a851552f00c0e",
+      "url": "https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.12/FOR-THE-RECORD-demo-0.5.12-due-3min-transcript.txt",
+      "disposition": "uploaded new asset"
+    },
+    {
+      "role": "due_video",
+      "name": "FOR-THE-RECORD-real-day-due-0.5.12.mp4",
+      "bytes": 1520691,
+      "sha256": "d218ad8607efe0fc5b1e6af3ab6bbd7b9a00163c1707b21828db2c18c0ffbc3a",
+      "serverDigest": "sha256:d218ad8607efe0fc5b1e6af3ab6bbd7b9a00163c1707b21828db2c18c0ffbc3a",
+      "url": "https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.12/FOR-THE-RECORD-real-day-due-0.5.12.mp4",
+      "disposition": "uploaded new asset"
+    },
+    {
+      "role": "pitch_pdf",
+      "name": "FOR-THE-RECORD-pitch-0.5.12-due-proof.pdf",
+      "bytes": 1021318,
+      "sha256": "a3c0a096a478a8d501de7930fd98d8d69ab203a99e5e718c7e1b7d394df2bf65",
+      "serverDigest": "sha256:a3c0a096a478a8d501de7930fd98d8d69ab203a99e5e718c7e1b7d394df2bf65",
+      "url": "https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.12/FOR-THE-RECORD-pitch-0.5.12-due-proof.pdf",
+      "disposition": "uploaded new asset"
+    },
+    {
+      "role": "pitch_pptx",
+      "name": "FOR-THE-RECORD-pitch-0.5.12-due-proof.pptx",
+      "bytes": 7952541,
+      "sha256": "19218147485c6a7ad5f44f7dc35fef7e273f970ab50ee730ace857ecff7aece9",
+      "serverDigest": "sha256:19218147485c6a7ad5f44f7dc35fef7e273f970ab50ee730ace857ecff7aece9",
+      "url": "https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.12/FOR-THE-RECORD-pitch-0.5.12-due-proof.pptx",
+      "disposition": "uploaded new asset"
+    }
+  ],
+  "tagPreserved": true,
+  "scoreStill": 77,
+  "coachReassessmentNotRun": true,
+  "competitionSubmissionNotRun": true,
+  "verifiedAtUtc": "2026-10-05T14:51:02.086229+00:00"
+}
