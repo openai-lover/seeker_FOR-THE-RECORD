@@ -1,10 +1,10 @@
-# Production Seeker flow — 0.5.11
+# Production Seeker flow - 0.5.11
 
-**Verified and published on 5 October 2026.** The privacy-covered continuous video and matching production PPT/PDF, captions and transcript are published in the v0.5.11 release with server SHA256 values matching local files. The latest AI Coach score remains **80/100**, from before these new materials, and the entry remains **DRAFT**. Independent human participants: **0**.
+**Verified and published on 5 October 2026.** The main demo is **3:00 edited production highlights**, using original-speed clips with internal cuts. Separate supplemental proof preserves the complete **10:08** production timeline at 1x with zero internal cuts. Both have privacy covers and English synthetic narration. Latest actual Coach: **75/100**, **DRAFT**, **DECK NOT READ** on the prior Drive PDF. Independent participants: **0**.
 
-[Watch the continuous production video](https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.11/FOR-THE-RECORD-continuous-production-0.5.11.mp4) · [Read the current 11-page Drive PDF](https://drive.google.com/file/d/10Ufl93M7msDwvBAv1l84lMBhdES4tUmf/view?usp=drivesdk) · [Download the matching PPT](https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.11/FOR-THE-RECORD-pitch-0.5.11-production.pptx) · [Download the matching PDF](https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.11/FOR-THE-RECORD-pitch-0.5.11-production.pdf)
+[Main highlights](https://drive.google.com/file/d/1JeE2C5iJb-CIFL8v9uv40Cn15s_BIfwl/view?usp=drivesdk) / [immutable main MP4](https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.11/FOR-THE-RECORD-demo-0.5.11-production-3min.mp4) / [supplemental continuous full proof](https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.11/FOR-THE-RECORD-continuous-production-0.5.11.mp4) / [current native presentation](https://docs.google.com/presentation/d/1tO0GQsr-iQCSKIODwrkbODu2ENiVbRopWM78R8wwcNA/edit?usp=drivesdk) / [final PPTX](https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.11/FOR-THE-RECORD-pitch-0.5.11-final-production.pptx) / [final PDF](https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.11/FOR-THE-RECORD-pitch-0.5.11-final-production.pdf).
 
-[Public-safe production receipt](../evidence/production-0511.json) · [Current material provenance](MATERIALS_PRODUCTION_0511.md).
+[Public-safe production receipt](../evidence/production-0511.json) / [Matched material provenance and hashes](MATERIALS_PRODUCTION_0511.md).
 
 ## Exact app and recording
 
@@ -38,7 +38,9 @@ This is one operator-run production observation. It is not an offline benchmark,
 
 The user explicitly permitted this new recording and JSON to be stored privately for verification. Raw personal data is not uploaded. The public derivative uses visible covers for wallet/activity identifiers, earlier personal writing, notifications and file-picker listings while preserving the original timeline. Complete public-candidate privacy review was performed before publication.
 
-The published video is 14,643,788 bytes, SHA256 `566203f7a5b343c1ce03b64c34f320586ca2f01aa063ad6dc47d0a274921dd8f`. The current native deck and production PPT/PDF describe this new flow; all 11 rendered slides were inspected and all native/PPT speaker-note bodies match exactly. The earlier 180-second edited overview is superseded as current submission evidence and remains a dated historical asset. The new Drive PDF/video were verified by remote hashes. The Coach has not yet reassessed this new ingestion route, so the cause of its earlier version description remains unproven.
+The supplemental continuous video is 14,643,788 bytes, SHA256 `566203f7a5b343c1ce03b64c34f320586ca2f01aa063ad6dc47d0a274921dd8f`. It preserves the complete timeline. The edited main MP4 is 180.00 seconds and 6,038,681 bytes, SHA256 `5b0739bf2def69e365d665414f2708a30ee5ae9b26d20131774c3ce3a040a573`; selected clips retain original speed but have cuts.
+
+Current native revision `OfMGtLtERoC9GA` and final-production PDF/PPT distinguish the video roles. All 11 slides were rendered and visually inspected, and all 11 native/PPT speaker notes match exactly. Previous production pitch exports and the older 180-second overview remain historical. The previous Drive PDF failed Coach ingestion despite matching downloadable, unencrypted 11-page bytes; cause unproven. Canonical native Slides is prepared for review, without claiming ingestion success or saved fields.
 
 ## Separate dated evidence
 

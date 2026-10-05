@@ -53,5 +53,21 @@
   "remotePdfSha256Matched": true,
   "all11NativePptNotesExactMatch": true,
   "all11RendersInspected": true,
-  "actualIndependentParticipants": 0
+  "actualIndependentParticipants": 0,
+  "historicalDriveVideoRoleAtCoach75": "The Drive URL held the10:08fullproof when75wasreviewed; it is now replaced by3:00editedmain.",
+  "supplementalPublicVideoUrl": "https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.11/FOR-THE-RECORD-continuous-production-0.5.11.mp4",
+  "currentMainDemo": {
+    "filename": "FOR-THE-RECORD-demo-0.5.11-production-3min.mp4",
+    "seconds": 180.0,
+    "bytes": 6038681,
+    "sha256": "5b0739bf2def69e365d665414f2708a30ee5ae9b26d20131774c3ce3a040a573",
+    "editedHighlights": true,
+    "selections": 14,
+    "internalCuts": 13,
+    "actionSpeed": 1,
+    "continuousThreeMinuteClaim": false,
+    "driveUrl": "https://drive.google.com/file/d/1JeE2C5iJb-CIFL8v9uv40Cn15s_BIfwl/view?usp=drivesdk",
+    "driveRemoteHashMatches": true,
+    "driveStreaming": "Latest observed viewer says processing; downloadable bytes and portal audio extraction work"
+  }
 }

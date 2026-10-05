@@ -1,0 +1,108 @@
+{
+  "appVersion": "0.5.11+18",
+  "versionCode": 2018,
+  "appSource": "0c5dfd70243940d6598804e9ff3d111ae920051d",
+  "appCodeUnchanged": true,
+  "publicSafe": true,
+  "mainVideo": {
+    "filename": "FOR-THE-RECORD-demo-0.5.11-production-3min.mp4",
+    "seconds": 180.0,
+    "bytes": 6038681,
+    "sha256": "5b0739bf2def69e365d665414f2708a30ee5ae9b26d20131774c3ce3a040a573",
+    "editedHighlights": true,
+    "selections": 14,
+    "internalCuts": 13,
+    "actionSpeed": 1,
+    "continuousThreeMinuteClaim": false,
+    "driveUrl": "https://drive.google.com/file/d/1JeE2C5iJb-CIFL8v9uv40Cn15s_BIfwl/view?usp=drivesdk",
+    "driveRemoteHashMatches": true,
+    "driveStreaming": "Latest observed viewer says processing; downloadable bytes and portal audio extraction work"
+  },
+  "supplementalVideo": {
+    "filename": "FOR-THE-RECORD-continuous-production-0.5.11.mp4",
+    "seconds": 608.08,
+    "sha256": "566203f7a5b343c1ce03b64c34f320586ca2f01aa063ad6dc47d0a274921dd8f",
+    "internalCuts": 0,
+    "actionSpeed": 1,
+    "url": "https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.11/FOR-THE-RECORD-continuous-production-0.5.11.mp4"
+  },
+  "nativeSlidesRevision": "OfMGtLtERoC9GA",
+  "all11NotesMatched": true,
+  "all11RendersInspected": true,
+  "reviewedSourceOnly": true,
+  "rawPrivateFileUsedForThisEdit": false,
+  "visualQa": {
+    "all180OneSecondPhoneSamplesInspected": true,
+    "all29LayoutsInspected": true,
+    "rootIndependent29LayoutsAndFinalToastInspected": true,
+    "noExposedPersonalIdentifiersObserved": true,
+    "limits": "Agent sampling/technical QA, not independent humans or every-frame manual review"
+  },
+  "audioSubtitleQa": {
+    "35CuesTextMatchesNarration": true,
+    "noOverlapOrClipping": true,
+    "finalNarrationPCMMatchesFreshText": true,
+    "syntheticEnglishNarration": true
+  },
+  "portalAudio": {
+    "characters": 2213,
+    "regeneratedAfterVideoChange": true,
+    "minorASRError": "JSON transcribed as JSO and",
+    "scopeMetricsReadCorrectly": true,
+    "noNewCoachReviewYet": true
+  },
+  "releaseAssets": [
+    {
+      "serverDigest": "sha256:7d6650cb41db9ab4c71cdb3168cca04a37700276afece17dee28811b278d95b3",
+      "name": "FOR-THE-RECORD-pitch-0.5.11-final-production.pptx",
+      "bytes": 9242241,
+      "url": "https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.11/FOR-THE-RECORD-pitch-0.5.11-final-production.pptx",
+      "sha256": "7d6650cb41db9ab4c71cdb3168cca04a37700276afece17dee28811b278d95b3"
+    },
+    {
+      "serverDigest": "sha256:a2b2f48d23ffcb61768f35f5725adc9ad2e2b9c728b0d2d4faa596fdd6ddf9eb",
+      "name": "FOR-THE-RECORD-pitch-0.5.11-final-production.pdf",
+      "bytes": 1681098,
+      "url": "https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.11/FOR-THE-RECORD-pitch-0.5.11-final-production.pdf",
+      "sha256": "a2b2f48d23ffcb61768f35f5725adc9ad2e2b9c728b0d2d4faa596fdd6ddf9eb"
+    },
+    {
+      "serverDigest": "sha256:5b0739bf2def69e365d665414f2708a30ee5ae9b26d20131774c3ce3a040a573",
+      "name": "FOR-THE-RECORD-demo-0.5.11-production-3min.mp4",
+      "bytes": 6038681,
+      "url": "https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.11/FOR-THE-RECORD-demo-0.5.11-production-3min.mp4",
+      "sha256": "5b0739bf2def69e365d665414f2708a30ee5ae9b26d20131774c3ce3a040a573"
+    },
+    {
+      "serverDigest": "sha256:5a9903a94855b1643e1d6f99d45039235d25165b7bdfc0fe2a0a7a3a7392064f",
+      "name": "FOR-THE-RECORD-demo-0.5.11-production-3min.srt",
+      "bytes": 3466,
+      "url": "https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.11/FOR-THE-RECORD-demo-0.5.11-production-3min.srt",
+      "sha256": "5a9903a94855b1643e1d6f99d45039235d25165b7bdfc0fe2a0a7a3a7392064f"
+    },
+    {
+      "serverDigest": "sha256:bbe8404d8d1680b9bcbd74c5e8fc5f1ac5eeda31344c1b8c7af336d465b8e292",
+      "name": "FOR-THE-RECORD-demo-0.5.11-production-3min-transcript.txt",
+      "bytes": 2294,
+      "url": "https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.11/FOR-THE-RECORD-demo-0.5.11-production-3min-transcript.txt",
+      "sha256": "bbe8404d8d1680b9bcbd74c5e8fc5f1ac5eeda31344c1b8c7af336d465b8e292"
+    }
+  ],
+  "actualIndependentParticipants": 0,
+  "limits": [
+    "Current production 0.5.11+18 on actual Seeker; new writing explicitly authored DEMO.",
+    "Existing MWA/Seed Vault authorization and actual read-only RPC; selected successful activity remains Other.",
+    "Immediate manual revisit; no delayed due wait, live supported swap, signing or asset movement.",
+    "One local question-selector native observation: 2373 ms, prepared model and network available; candidates 1 and 5, operator chose 1. No general accuracy or offline benchmark.",
+    "Private checks in the full source verification confirmed both completed exports 2009 bytes with identical whole journal payload. Checks themselves are not displayed in this edit.",
+    "Only the new demo entry was edited; whole prior database equality was not verified.",
+    "No independent human study, retention metric or fabricated participant."
+  ],
+  "latestActualCoach": {
+    "score": 75,
+    "deck": "NOT READ on previous publicPDF route",
+    "productionFullFlowCredited": true,
+    "restoredCanonicalSlidesIngestionNotYetVerified": true,
+    "DRAFT": true
+  }
+}

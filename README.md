@@ -9,7 +9,7 @@
 
 [View the still brand image](docs/brand/github-hero.png).
 
-A private Android journal for meaningful work and wallet decisions. Keep what you did, why you did it, and the next step worth remembering.
+A private Android journal for meaningful work and wallet decisions. For Seeker owners who already review wallet activity: save a reason, revisit it, and reuse a lesson before the next choice. User research and measured repeat use remain pending.
 
 **Version 0.5.11+18 · Development-signed Android app · English by default**
 
@@ -40,13 +40,16 @@ failures and scope boundaries are in the linked report.
 The 0.5.11 production build passed 155 Flutter tests and clean analysis; both release
 packages passed the manifest gate. Focused backend follow-up passed 25 targeted
 checks and 69 full-suite checks. These do not establish a complete security audit.
-A new **10:08 uninterrupted 0.5.11 production flow** now verifies existing read-only
-MWA authorization, actual RPC activity, authored DEMO writing, native export and
-restart locally. Both exports are 2,009 bytes with identical journal payloads.
-The selected activity remains successful Other. A reviewed public video and
-matching 11-slide presentation are now published; real-user impact and independent
-labels remain open.
-The latest AI Coach score is **80/100** and the contest entry remains **DRAFT**.
+A current **10:08 uninterrupted 0.5.11 production flow** verifies existing read-only
+MWA authorization, actual RPC, agent-authored DEMO writing, native export and
+restart. Both exports are 2,009 bytes with identical complete journal payloads.
+The selected activity remains successful Other. **Main 3:00 demo is edited**
+from original-speed clips; **supplemental 10:08 proof is uncut**.
+[Matched material roles and hashes](docs/submission/MATERIALS_PRODUCTION_0511.md).
+
+Latest Coach: **75/100**, **DRAFT**, **DECK NOT READ** on the prior Drive PDF.
+Cause unproven; canonical native Slides is prepared for the next eligible review.
+Independent labels and a consented repeat-use pilot remain open.
 
 Earlier release observations are preserved in [development history](DEVELOPMENT_HISTORY.md).
 
@@ -85,7 +88,7 @@ The new 0.5.11 production recording uses existing MWA authorization and actual
 read-only RPC activity on Seeker. Its successful Other activity supports an
 authored DEMO note, immediate reflection, completed export and reopening. It does
 not verify a supported live swap. The raw recording and JSON remain private; the
-privacy-covered public derivative preserves time without internal cuts. No edits to prior personal records
+supplemental privacy-covered derivative preserves time without internal cuts; main highlights are explicitly edited. No edits to prior personal records
 were observed; whole prior database equality was not verified. Independent
 repeat-use outcomes remain unverified. No new transaction is necessary to
 inspect existing activity or use the local journal.
@@ -126,13 +129,16 @@ flutter drive --driver=test_driver/walkthrough.dart --target=integration_test/fi
 
 ## Competition materials
 
-The [current English materials index](docs/submission/README.md) links the exact
-APK, source, current deck, continuous production video and dated public-replay
-evidence. Current isolated UI screenshots are identified as 0.5.11; multilingual
-AI/public-replay measurements remain dated 0.5.10. The new production video is
-10:08 at 1× with visible privacy covers and no internal cuts. Matching production
-PPT/PDF and exact asset hashes are in [the material record](docs/submission/MATERIALS_PRODUCTION_0511.md). Historical recordings retain their original version and scope.
-The entry remains DRAFT, with no final submission performed.
+The [English materials index](docs/submission/README.md) links the exact APK and
+source, current native deck, **3:00 edited production main demo**, separate
+**10:08 uncut production proof**, and dated public-response replay.
+Current isolated UI screenshots are 0.5.11; AI/replay measurements are dated
+0.5.10. Main-demo clips retain original 1x speed with cuts. Supplemental proof
+preserves the complete timeline with privacy covers and no internal cuts.
+
+All 11 fresh renders were inspected; native and final-production PPT notes match
+exactly. [Provenance](docs/submission/MATERIALS_PRODUCTION_0511.md) records assets
+and hashes. Historical files retain their scope. Entry: DRAFT; not submitted.
 
 ## Privacy and project history
 
