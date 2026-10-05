@@ -1,0 +1,206 @@
+{
+  "schema": "ftr-current-production-0512-public-aggregate-v1",
+  "appVersion": "0.5.12+19",
+  "versionCode": 2019,
+  "appSource": "ee650639670c7ab35081a92e3435a185b73a6642",
+  "apkBytes": 37713101,
+  "apkSha256": "ac4b86ef0f32616f88b0dc4e66b212d013c33a1f01f8e3192b935e970c9a23e3",
+  "dateKst": "2026-10-05",
+  "normalProductionApp": true,
+  "physicalDevice": "SolanaSeeker",
+  "capture": {
+    "durationSeconds": 557.41,
+    "singleSession": true,
+    "speed": 1,
+    "internalCuts": 0,
+    "rawPublic": false,
+    "decodeWarningObserved": true,
+    "derivativeQaPending": false,
+    "rootIndependentPrivacyAndLayoutReviewPassed": true,
+    "sourceWarningCoveredSeconds": [
+      137,
+      158
+    ]
+  },
+  "flow": {
+    "existingReadOnlyMwaReconnect": true,
+    "actualDirectRpcRefresh": true,
+    "activity": "successfulOther",
+    "supportedLiveSwap": false,
+    "ownerV1ActivityVerified": false,
+    "agentAuthoredDemo": true,
+    "manualImmediateReflection": true,
+    "dateSelection": "No date",
+    "lessonSaved": true,
+    "signingOrAssets": false,
+    "koreanRoomRestoredAfterRecording": true
+  },
+  "ai": {
+    "nativeMilliseconds": 2355,
+    "cold": true,
+    "preparedModel": true,
+    "networkAvailable": true,
+    "candidates": [
+      5,
+      2
+    ],
+    "operatorChoice": 5,
+    "requestCount": 1,
+    "generalAccuracyClaim": false,
+    "offlineClaim": false
+  },
+  "exports": {
+    "count": 2,
+    "bytes": [
+      2029,
+      2029
+    ],
+    "schemaVersion": 1,
+    "tradeJournalCount": 1,
+    "firstValidatedBeforeForceStop": true,
+    "firstValidationKst": "2026-10-05T15:53:19+09:00",
+    "forceStopKst": "2026-10-05T15:53:41+09:00",
+    "secondValidationKst": "2026-10-05T15:55:32+09:00",
+    "wholeTradeJournalsIdentical": true,
+    "exportTimestampsDifferent": true,
+    "originalReasonPreserved": true,
+    "firstNoteTimestampPreserved": true,
+    "cancellationRetryObserved": false,
+    "validationExternalToPhoneRecording": true
+  },
+  "priorRecords": {
+    "editsObserved": false,
+    "wholeDatabaseEqualityVerified": false
+  },
+  "independentParticipants": 0,
+  "publicSafe": true,
+  "published": true,
+  "publicAssets": {
+    "main": {
+      "filename": "FOR-THE-RECORD-demo-0.5.12-production-3min.mp4",
+      "bytes": 6083905,
+      "sha256": "785545e0547494684ca81f26129fff93d0a040c1f3d09175780cf22a13b5988b",
+      "seconds": 180,
+      "clips": 15,
+      "internalCuts": 14,
+      "retainedClipSpeed": 1,
+      "publicDriveUrl": "https://drive.google.com/file/d/1JeE2C5iJb-CIFL8v9uv40Cn15s_BIfwl/view?usp=drivesdk",
+      "remoteHashVerified": true,
+      "playbackObserved": true,
+      "releaseUrl": "https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.12/FOR-THE-RECORD-demo-0.5.12-production-3min.mp4",
+      "serverDigest": "sha256:785545e0547494684ca81f26129fff93d0a040c1f3d09175780cf22a13b5988b"
+    },
+    "full": {
+      "filename": "FOR-THE-RECORD-continuous-production-0.5.12.mp4",
+      "bytes": 12608444,
+      "sha256": "6c8b172dd984733bd2b57f8435f794ed2ed845fd45783b15d19ee89667d88761",
+      "sourceSeconds": 557.41,
+      "containerSeconds": 557.416667,
+      "internalCuts": 0,
+      "speed": 1,
+      "rootReviewed": true,
+      "releasePublished": true,
+      "releaseUrl": "https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.12/FOR-THE-RECORD-continuous-production-0.5.12.mp4",
+      "serverDigest": "sha256:6c8b172dd984733bd2b57f8435f794ed2ed845fd45783b15d19ee89667d88761"
+    }
+  },
+  "actualCoach": {
+    "score": 75,
+    "status": "DRAFT",
+    "deckReadStatus": "NOT READ"
+  },
+  "releaseChecks": {
+    "flutter": 274,
+    "backend": 97,
+    "cleanAnalysis": true,
+    "bothAbiGates": true,
+    "nonemptyFlutterAssetsPerApk": 17
+  },
+  "limits": [
+    "Agent-authored writing and operator QA; no independent human study.",
+    "No live supported swap, owner-v1 proof, delayed due wait, signing, trade or asset movement.",
+    "One prepared-model, network-available AI observation; not general accuracy or an offline benchmark.",
+    "No prior-note edits observed; whole prior database equality unverified.",
+    "Raw video and personal JSON are never public. Opaque covers retain time but hide content.",
+    "English narration is synthetic. Edited main has 14 cuts; supplemental full proof has none."
+  ],
+  "publicationStatus": "Eight reviewed materials public in v0.5.12; all server/local hashes match. Main Drive remote hash and playback verified.",
+  "verifiedAt": "2026-10-05T16:53:59.5295334+09:00",
+  "rootIndependentPrivacyAndDeckReviewPassed": true,
+  "publicReleaseAssets": [
+    {
+      "name": "FOR-THE-RECORD-demo-0.5.12-production-3min.mp4",
+      "url": "https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.12/FOR-THE-RECORD-demo-0.5.12-production-3min.mp4",
+      "serverDigest": "sha256:785545e0547494684ca81f26129fff93d0a040c1f3d09175780cf22a13b5988b",
+      "sha256": "785545e0547494684ca81f26129fff93d0a040c1f3d09175780cf22a13b5988b",
+      "bytes": 6083905,
+      "role": "main_video"
+    },
+    {
+      "name": "FOR-THE-RECORD-continuous-production-0.5.12.mp4",
+      "url": "https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.12/FOR-THE-RECORD-continuous-production-0.5.12.mp4",
+      "serverDigest": "sha256:6c8b172dd984733bd2b57f8435f794ed2ed845fd45783b15d19ee89667d88761",
+      "sha256": "6c8b172dd984733bd2b57f8435f794ed2ed845fd45783b15d19ee89667d88761",
+      "bytes": 12608444,
+      "role": "full_video"
+    },
+    {
+      "name": "FOR-THE-RECORD-demo-0.5.12-production-3min.srt",
+      "url": "https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.12/FOR-THE-RECORD-demo-0.5.12-production-3min.srt",
+      "serverDigest": "sha256:fee0830c53f61f259710ab03b9bb9ca8f52e3c0e0c52f9521274597ff467db05",
+      "sha256": "fee0830c53f61f259710ab03b9bb9ca8f52e3c0e0c52f9521274597ff467db05",
+      "bytes": 2805,
+      "role": "main_srt"
+    },
+    {
+      "name": "FOR-THE-RECORD-continuous-production-0.5.12.srt",
+      "url": "https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.12/FOR-THE-RECORD-continuous-production-0.5.12.srt",
+      "serverDigest": "sha256:05b74f167bed624c5e9a8c76d4c1fe5a196dc29aef24dbf6b605be2b91f24073",
+      "sha256": "05b74f167bed624c5e9a8c76d4c1fe5a196dc29aef24dbf6b605be2b91f24073",
+      "bytes": 4717,
+      "role": "full_srt"
+    },
+    {
+      "name": "FOR-THE-RECORD-demo-0.5.12-production-3min-transcript.txt",
+      "url": "https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.12/FOR-THE-RECORD-demo-0.5.12-production-3min-transcript.txt",
+      "serverDigest": "sha256:b97858e4ba73c8b20663c1ae8947c661df08773df70849153b7c5f63ea57a559",
+      "sha256": "b97858e4ba73c8b20663c1ae8947c661df08773df70849153b7c5f63ea57a559",
+      "bytes": 1802,
+      "role": "main_transcript"
+    },
+    {
+      "name": "FOR-THE-RECORD-continuous-production-0.5.12-transcript.txt",
+      "url": "https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.12/FOR-THE-RECORD-continuous-production-0.5.12-transcript.txt",
+      "serverDigest": "sha256:61ef26ef476683a6b255daa41f1f4a16d4a600636c955487539d09b1ca7edbc7",
+      "sha256": "61ef26ef476683a6b255daa41f1f4a16d4a600636c955487539d09b1ca7edbc7",
+      "bytes": 3272,
+      "role": "full_transcript"
+    },
+    {
+      "name": "FOR-THE-RECORD-pitch-0.5.12-production.pdf",
+      "url": "https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.12/FOR-THE-RECORD-pitch-0.5.12-production.pdf",
+      "serverDigest": "sha256:a94c5f37161769d1ee9d0d748e797d4fb1a0d79de5f21677ada4b4d62dd0d926",
+      "sha256": "a94c5f37161769d1ee9d0d748e797d4fb1a0d79de5f21677ada4b4d62dd0d926",
+      "bytes": 1288212,
+      "role": "pitch_pdf"
+    },
+    {
+      "name": "FOR-THE-RECORD-pitch-0.5.12-production.pptx",
+      "url": "https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.12/FOR-THE-RECORD-pitch-0.5.12-production.pptx",
+      "serverDigest": "sha256:67a3275df17ff3d99a19f43ad321c01fad9a583215394133c1188b440fa35804",
+      "sha256": "67a3275df17ff3d99a19f43ad321c01fad9a583215394133c1188b440fa35804",
+      "bytes": 8754408,
+      "role": "pitch_pptx"
+    }
+  ],
+  "nativeDeck": {
+    "id": "1tO0GQsr-iQCSKIODwrkbODu2ENiVbRopWM78R8wwcNA",
+    "revision": "h9ixIdTN_f6E5A",
+    "pages": 11,
+    "allNativePptNotesExactMatch": true,
+    "allSlidesVisualReviewed": true,
+    "rootIndependentReviewPassed": true,
+    "canonicalPortalIngestionConfirmed": false
+  },
+  "portalCurrentAudioTranscriptCharacters": 1676
+}

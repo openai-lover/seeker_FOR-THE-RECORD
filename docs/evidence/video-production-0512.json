@@ -1,0 +1,124 @@
+{
+  "schema": "ftr-production-video-0512-public-v1",
+  "appVersion": "0.5.12+19",
+  "versionCodeArm64": 2019,
+  "appSource": "ee650639670c7ab35081a92e3435a185b73a6642",
+  "installedArm64ApkSha256": "ac4b86ef0f32616f88b0dc4e66b212d013c33a1f01f8e3192b935e970c9a23e3",
+  "recordedDate": "2026-10-05",
+  "fullSupplement": {
+    "sha256": "6c8b172dd984733bd2b57f8435f794ed2ed845fd45783b15d19ee89667d88761",
+    "bytes": 12608444,
+    "sourceSeconds": 557.41,
+    "cfrContainerSeconds": 557.416667,
+    "sourceSpeed": 1,
+    "internalCuts": 0,
+    "allPausesRetained": true,
+    "opaquePrivacyCoverFirst": true,
+    "originalDeviceAudioIncluded": false,
+    "englishSyntheticNarration": true,
+    "sourceDecoderWarning": "One raw H264 warning observed; approximate138.102-156.046second progress window is not an exact defective-frame measurement. A full opaque phone cover spans137-158seconds, without cutting or speeding the session.",
+    "derivativeFullDecodeExit": 0,
+    "derivativeDecodeWarnings": 0
+  },
+  "editedMain": {
+    "sha256": "785545e0547494684ca81f26129fff93d0a040c1f3d09175780cf22a13b5988b",
+    "bytes": 6083905,
+    "seconds": 180,
+    "clips": 15,
+    "cuts": 14,
+    "speedWithinClips": 1,
+    "notContinuousFlow": true,
+    "onlyApprovedMaskedFullUsed": true,
+    "originalDeviceAudioIncluded": false,
+    "englishSyntheticNarration": true,
+    "fullDecodeExit": 0,
+    "decodeWarnings": 0,
+    "lastNarrationPcmEndSeconds": 179.5795,
+    "subtitleCues": 30,
+    "subtitleMaxEndSeconds": 179.58
+  },
+  "observedFlow": [
+    "Existing read-only MWA/SeedVault reconnect.",
+    "Actual direct RPC successful Other activity; no live supported swap claim.",
+    "New agent-authored DEMO reason; No date; immediate manual reflection.",
+    "Prepared local model native2355ms cold/network available; candidates5,2; operator5.",
+    "New authored reflection and lesson.",
+    "Completed first native export privately validated before force-stop.",
+    "Reopen same record and complete second native export."
+  ],
+  "privateValidation": {
+    "firstExportBytes": 2029,
+    "secondExportBytes": 2029,
+    "wholeTradeJournalsPayloadEqual": true,
+    "differentExportTimestamps": true,
+    "originalReasonAndFirstNoteTimestampPreserved": true,
+    "firstValidAtKst": "2026-10-05T15:53:19+09:00",
+    "forceStopAtKst": "2026-10-05T15:53:41+09:00",
+    "jsonComparisonNotShownAsPhoneAction": true,
+    "wholePriorDatabaseEqualityVerified": false
+  },
+  "qa": {
+    "programmaticMaskGeometryFrames": 13378,
+    "fullIntegerSecondFramesRepresented": 558,
+    "fullPhoneContactSheetsAgentViewed": 14,
+    "denseMaskBoundaryFramesRepresented": 953,
+    "denseBoundarySheetsAgentViewed": 24,
+    "mainIntegerSecondFramesRepresented": 180,
+    "mainPhoneContactSheetsRootAndAgentViewed": 5,
+    "mainLayoutFramesRepresented": 68,
+    "mainLayoutSheetsRootAndAgentViewed": 5,
+    "rootVisualFullCorrectedScope": "Seven full layouts, four changed contacts, four dense boundary contacts; initial full was independently reviewed and rejected.",
+    "twoAgentReview": true,
+    "independentHumanPrivacyOrUserStudy": false,
+    "approvedOnlyExactDerivativeShas": true,
+    "rawVideoPrivateJsonAndRawFramesNotPublished": true
+  },
+  "limits": [
+    "Agent-operated technical QA, not an independent human study or repeat-use pilot.",
+    "Other activity is not a supported live swap, ownership proof of sampled public fixtures, delayed due wait or parser coverage estimate.",
+    "One prepared-model network-available native observation is not an offline, general accuracy or production latency distribution benchmark.",
+    "No cancellation or retry in this recording.",
+    "Korean restoration occurred after recording; it is not depicted as footage.",
+    "External JSON validity and comparison are private checks; raw account data is excluded.",
+    "No whole prior-database equality claim."
+  ],
+  "assets": [
+    {
+      "filename": "FOR-THE-RECORD-continuous-production-0.5.12.mp4",
+      "bytes": 12608444,
+      "sha256": "6c8b172dd984733bd2b57f8435f794ed2ed845fd45783b15d19ee89667d88761",
+      "role": "full supplement"
+    },
+    {
+      "filename": "FOR-THE-RECORD-continuous-production-0.5.12.srt",
+      "bytes": 4717,
+      "sha256": "05b74f167bed624c5e9a8c76d4c1fe5a196dc29aef24dbf6b605be2b91f24073",
+      "role": "full supplement subtitles"
+    },
+    {
+      "filename": "FOR-THE-RECORD-continuous-production-0.5.12-transcript.txt",
+      "bytes": 3272,
+      "sha256": "61ef26ef476683a6b255daa41f1f4a16d4a600636c955487539d09b1ca7edbc7",
+      "role": "full supplement transcript"
+    },
+    {
+      "filename": "FOR-THE-RECORD-demo-0.5.12-production-3min.mp4",
+      "bytes": 6083905,
+      "sha256": "785545e0547494684ca81f26129fff93d0a040c1f3d09175780cf22a13b5988b",
+      "role": "edited main"
+    },
+    {
+      "filename": "FOR-THE-RECORD-demo-0.5.12-production-3min.srt",
+      "bytes": 2805,
+      "sha256": "fee0830c53f61f259710ab03b9bb9ca8f52e3c0e0c52f9521274597ff467db05",
+      "role": "edited main subtitles"
+    },
+    {
+      "filename": "FOR-THE-RECORD-demo-0.5.12-production-3min-transcript.txt",
+      "bytes": 1802,
+      "sha256": "b97858e4ba73c8b20663c1ae8947c661df08773df70849153b7c5f63ea57a559",
+      "role": "edited main transcript"
+    }
+  ],
+  "status": "Eight current material assets are public in v0.5.12 with matching server/local digests; main Drive download hash and beginning playback verified."
+}
