@@ -13,10 +13,11 @@ A private Android journal for meaningful work and wallet decisions. Keep what yo
 
 **Version 0.5.11+18 · Development-signed Android app · English by default**
 
-## Current release and evidence — 4 October 2026
+## Current release and evidence — 5 October 2026
 
 - [Install 0.5.11 and identify its exact source/APK](docs/submission/DOWNLOAD_LINKS.md).
 - [Current product walkthrough](docs/submission/JUDGE_QUICKSTART.md).
+- [Current 0.5.11 production flow, completed export and restart](docs/submission/PRODUCTION_FLOW_0511.md).
 - [Dated 0.5.10 public-mainnet replay, export/restart and AI evaluation](docs/submission/CURRENT_PROOF_0510.md).
 - [Crafted-input regression proof and packaged-manifest outputs](docs/submission/SECURITY_PROOF_0510.md).
 
@@ -39,8 +40,13 @@ failures and scope boundaries are in the linked report.
 The 0.5.11 production build passed 155 Flutter tests and clean analysis; both release
 packages passed the manifest gate. Focused backend follow-up passed 25 targeted
 checks and 69 full-suite checks. These do not establish a complete security audit.
-Real-user impact and a current continuous production account-to-RPC flow remain
-open. The contest entry remains **DRAFT**.
+A new **10:08 uninterrupted 0.5.11 production flow** now verifies existing read-only
+MWA authorization, actual RPC activity, authored DEMO writing, native export and
+restart locally. Both exports are 2,009 bytes with identical journal payloads.
+The selected activity remains successful Other. A reviewed public video and
+matching 11-slide presentation are now published; real-user impact and independent
+labels remain open.
+The latest AI Coach score is **80/100** and the contest entry remains **DRAFT**.
 
 Earlier release observations are preserved in [development history](DEVELOPMENT_HISTORY.md).
 
@@ -75,11 +81,14 @@ Compound, CPI, Token2022 and uncertain activity stays Other. Successful Other
 can hold a sourced personal note; failed or unreadable activity cannot. This is
 not a complete trading history or profit/loss service.
 
-The current production app was installed on Seeker and its read-only MWA
-connection confirmed. Current end-to-end evidence uses isolated public replay;
-the complete production recording remains the dated 0.5.5 run. A supported live
-owner transaction and independent repeat-use outcomes remain unverified. No new
-transaction is necessary to inspect existing activity or use the local journal.
+The new 0.5.11 production recording uses existing MWA authorization and actual
+read-only RPC activity on Seeker. Its successful Other activity supports an
+authored DEMO note, immediate reflection, completed export and reopening. It does
+not verify a supported live swap. The raw recording and JSON remain private; the
+privacy-covered public derivative preserves time without internal cuts. No edits to prior personal records
+were observed; whole prior database equality was not verified. Independent
+repeat-use outcomes remain unverified. No new transaction is necessary to
+inspect existing activity or use the local journal.
 
 Shared rooms, SGT verification and purchases are hidden in the default edition.
 Their optional backend is undeployed and has three unresolved production
@@ -118,9 +127,11 @@ flutter drive --driver=test_driver/walkthrough.dart --target=integration_test/fi
 ## Competition materials
 
 The [current English materials index](docs/submission/README.md) links the exact
-APK, source, native deck, narrated overview and full continuous public-replay
-evidence. Current screenshots and new measurements are identified as 0.5.10;
-historical production recordings retain their original version and scope.
+APK, source, current deck, continuous production video and dated public-replay
+evidence. Current isolated UI screenshots are identified as 0.5.11; multilingual
+AI/public-replay measurements remain dated 0.5.10. The new production video is
+10:08 at 1× with visible privacy covers and no internal cuts. Matching production
+PPT/PDF and exact asset hashes are in [the material record](docs/submission/MATERIALS_PRODUCTION_0511.md). Historical recordings retain their original version and scope.
 The entry remains DRAFT, with no final submission performed.
 
 ## Privacy and project history

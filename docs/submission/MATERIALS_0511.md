@@ -1,3 +1,5 @@
+> Superseded for current production proof on5October2026 by [MATERIALS_PRODUCTION_0511.md](MATERIALS_PRODUCTION_0511.md). This page preserves the dated180-second edited overview and original pitch provenance.
+
 # 0.5.11 materials and provenance
 
 App source/tag `0c5dfd70243940d6598804e9ff3d111ae920051d`, version 0.5.11+18. Current product UI cleanup is described in [PRODUCT_UI_0511.md](PRODUCT_UI_0511.md). The ARM64 update was installed in place and launched on Seeker as versionCode 2018.
