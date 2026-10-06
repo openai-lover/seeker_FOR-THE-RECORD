@@ -29,7 +29,7 @@ String errorText(String code) => switch (code) {
   'sgt-check-unavailable' ||
   'service-unavailable' => '서버에서 확인하지 못했어요. 잠시 후 다시 시도해 주세요. 개인 기록은 안전합니다.',
   'no-wallet' => 'MWA 호환 지갑을 찾지 못했어요. Seeker의 Seed Vault Wallet을 설정해 주세요.',
-  'wallet-declined' => '지갑 승인이 취소되었습니다. 전송하지 않은 주문은 다시 확인할 수 있어요.',
+  'wallet-declined' => '지갑 요청을 취소했어요. 필요할 때 다시 시도할 수 있어요.',
   'account-changed' => '선택한 지갑 계정이 바뀌었습니다. 다시 연결해 주세요.',
   'sign-in-required' ||
   'sign-in-expired' ||

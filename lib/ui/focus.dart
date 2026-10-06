@@ -87,15 +87,28 @@ class _PrepareState extends State<_Prepare> {
                     builder: (context) => StatefulBuilder(
                       builder: (context, updateDialog) => AlertDialog(
                         title: const LocalizedText('집중 시간'),
+                        scrollable: true,
                         content: TextField(
                           controller: custom,
                           keyboardType: TextInputType.number,
                           decoration: InputDecoration(
-                            errorText: validation,
+                            error: validation == null
+                                ? null
+                                : Text(
+                                    validation!,
+                                    softWrap: true,
+                                    style: TextStyle(
+                                      color: Theme.of(
+                                        context,
+                                      ).colorScheme.error,
+                                      fontSize: 12,
+                                    ),
+                                  ),
                             labelText: uiText(context, '1~180분'),
-                            helperText: uiText(
-                              context,
-                              '1분으로 알림과 복구를 먼저 확인할 수 있어요.',
+                            helper: Text(
+                              uiText(context, '집중 시간을 1~180분으로 정해 주세요.'),
+                              softWrap: true,
+                              style: Theme.of(context).textTheme.bodySmall,
                             ),
                           ),
                         ),

@@ -539,9 +539,12 @@ class _ProjectForm extends StatefulWidget {
 class _ProjectFormState extends State<_ProjectForm> {
   final title = TextEditingController(), definition = TextEditingController();
   int color = 0;
+  final titleFocus = FocusNode();
+  String? titleError;
   @override
   void dispose() {
     title.dispose();
+    titleFocus.dispose();
     definition.dispose();
     super.dispose();
   }
@@ -573,10 +576,18 @@ class _ProjectFormState extends State<_ProjectForm> {
           const SizedBox(height: 20),
           TextField(
             controller: title,
+            focusNode: titleFocus,
+            onChanged: (value) {
+              if (titleError != null && value.trim().isNotEmpty) {
+                setState(() => titleError = null);
+              }
+            },
             maxLength: 60,
             textInputAction: TextInputAction.next,
             decoration: InputDecoration(
               labelText: uiText(context, '프로젝트 이름'),
+              errorText: titleError,
+              errorMaxLines: 4,
               hintText: uiText(context, '예: 나의 첫 Android 앱'),
             ),
           ),
@@ -613,6 +624,13 @@ class _ProjectFormState extends State<_ProjectForm> {
             label: uiText(context, '책 만들기'),
             icon: Icons.auto_stories_rounded,
             action: () async {
+              if (title.text.trim().isEmpty) {
+                setState(
+                  () => titleError = uiText(context, '프로젝트 이름을 입력해 주세요.'),
+                );
+                titleFocus.requestFocus();
+                return;
+              }
               final id = await widget.c.addProject(
                 title.text,
                 definition.text,

@@ -1,11 +1,32 @@
 // Product-facing copy. Order: ja, zh, hi, es, pt, fr.
 const productEnglishCatalog = <String, String>{
+  '지갑 요청을 취소했어요. 필요할 때 다시 시도할 수 있어요.':
+      'Wallet request cancelled. You can try again when you are ready.',
+  '집중 시간을 1~180분으로 정해 주세요.': 'Choose 1–180 minutes for this session.',
+
   "프로젝트·진행 중인 집중·저장한 결과·매매일지·설정이 삭제됩니다. 내보내지 않은 기록은 복구할 수 없습니다.":
       "Projects, active focus, saved results, journals and settings will be deleted. Unexported records cannot be recovered.",
   "지금은 지갑을 연결할 수 없어요. 잠시 후 다시 시도해 주세요.":
       "Wallet connection is unavailable. Please try again later.",
 };
 const productCatalog = <String, List<String>>{
+  'Wallet request cancelled. You can try again when you are ready.': [
+    'ウォレットのリクエストをキャンセルしました。必要なときに再試行できます。',
+    '已取消钱包请求。需要时可以重试。',
+    'वॉलेट अनुरोध रद्द कर दिया गया। तैयार होने पर फिर कोशिश कर सकते हैं।',
+    'Solicitud de cartera cancelada. Puedes intentarlo de nuevo cuando quieras.',
+    'Solicitação da carteira cancelada. Você pode tentar novamente quando quiser.',
+    'Demande de portefeuille annulée. Vous pourrez réessayer quand vous le souhaitez.',
+  ],
+  'Choose 1–180 minutes for this session.': [
+    'このセッションの時間を1～180分で選んでください。',
+    '为本次专注选择 1–180 分钟。',
+    'इस सत्र के लिए 1–180 मिनट चुनें।',
+    'Elige entre 1 y 180 minutos para esta sesión.',
+    'Escolha de 1 a 180 minutos para esta sessão.',
+    'Choisissez de 1 à 180 minutes pour cette séance.',
+  ],
+
   "Export records": [
     "記録を書き出す",
     "导出记录",
