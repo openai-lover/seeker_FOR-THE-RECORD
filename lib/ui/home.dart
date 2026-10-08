@@ -192,6 +192,13 @@ class _Home extends StatelessWidget {
           ),
         ],
         const SizedBox(height: 16),
+        OutlinedButton.icon(
+          key: const ValueKey('home-recall-open'),
+          onPressed: () => openPage(context, _Recall(journals: c.journals)),
+          icon: const Icon(Icons.manage_search),
+          label: Text(tr(context, '저장한 기록 찾기', 'Recall saved notes')),
+        ),
+        const SizedBox(height: 16),
         if (dueEntries.isEmpty && c.journals.entries.isNotEmpty) ...[
           PaperCard(
             padding: const EdgeInsets.all(18),

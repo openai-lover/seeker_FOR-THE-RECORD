@@ -1,5 +1,54 @@
 // Interface translations only. Saved personal writing remains verbatim.
 const relatedCatalog = <String, List<String>>{
+  'Recall saved notes': [
+    '保存した記録を探す',
+    '查找已保存的记录',
+    'सहेजे नोट्स खोजें',
+    'Buscar notas guardadas',
+    'Buscar notas salvas',
+    'Retrouver mes notes',
+  ],
+  'Browse offline. AI search needs a model prepared on this device.': [
+    'オフラインで記録を読めます。AI検索にはこの端末に準備したモデルが必要です。',
+    '可离线浏览。AI 搜索需要此设备上已准备好的模型。',
+    'ऑफ़लाइन पढ़ें। AI खोज के लिए इस डिवाइस पर तैयार मॉडल चाहिए।',
+    'Consulta sin conexión. La búsqueda con IA necesita un modelo preparado en este dispositivo.',
+    'Leia offline. A busca com IA precisa de um modelo preparado neste dispositivo.',
+    'Consultez hors ligne. La recherche par IA nécessite un modèle préparé sur cet appareil.',
+  ],
+  'No saved records on this device yet.': [
+    'この端末にはまだ記録がありません。',
+    '此设备上尚无已保存的记录。',
+    'इस डिवाइस पर अभी कोई रिकॉर्ड सहेजा नहीं गया है।',
+    'Aún no hay registros guardados en este dispositivo.',
+    'Ainda não há registros salvos neste dispositivo.',
+    'Aucune note enregistrée sur cet appareil pour le moment.',
+  ],
+  'Saved wallet': [
+    '保存済みウォレット',
+    '已保存的钱包',
+    'सहेजा वॉलेट',
+    'Cartera guardada',
+    'Carteira salva',
+    'Portefeuille enregistré',
+  ],
+  'Choose a saved wallet.': [
+    '保存済みウォレットを選んでください。',
+    '请选择已保存的钱包。',
+    'सहेजा वॉलेट चुनें।',
+    'Elige una cartera guardada.',
+    'Escolha uma carteira salva.',
+    'Choisissez un portefeuille enregistré.',
+  ],
+  'What would you like to recall?': [
+    'どのような記録を探しますか？',
+    '想找回什么记录？',
+    'आप कौन सा रिकॉर्ड खोजना चाहते हैं?',
+    '¿Qué te gustaría recordar?',
+    'O que você gostaria de relembrar?',
+    'Que souhaitez-vous retrouver ?',
+  ],
+
   'Export in progress…': [
     'エクスポート中…',
     '正在导出…',

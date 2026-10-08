@@ -31,6 +31,7 @@ part 'shared.dart';
 part 'trade_journal.dart';
 part 'decision_replay.dart';
 part 'related_records.dart';
+part 'recall.dart';
 part 'room_experience.dart';
 
 Future<bool> perform(

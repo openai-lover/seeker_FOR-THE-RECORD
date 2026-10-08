@@ -6,11 +6,13 @@ class _RelatedRecordsPanel extends StatefulWidget {
     required this.wallet,
     required this.currentId,
     required this.query,
+    this.initiallyExpanded = false,
   });
   final TradeJournalController journals;
   final String wallet;
   final String? currentId;
   final String Function() query;
+  final bool initiallyExpanded;
   @override
   State<_RelatedRecordsPanel> createState() => _RelatedRecordsPanelState();
 }
@@ -27,12 +29,24 @@ class _RelatedRecordsPanelState extends State<_RelatedRecordsPanel> {
   }
 
   void _recordsChanged() {
-    generation++;
-    if (mounted) {
-      setState(() {
-        matches = null;
-        searched = null;
-      });
+    if (mounted) setState(_invalidateSearch);
+  }
+
+  void _invalidateSearch() {
+    final token = ++generation;
+    matches = null;
+    searched = null;
+    error = null;
+    if (busy) unawaited(_cancelSearch(token));
+  }
+
+  Future<void> _cancelSearch(int token) async {
+    try {
+      await const ReflectionAssistant().cancel();
+    } catch (_) {
+      // Stale responses remain invalid even when native cancellation fails.
+    } finally {
+      if (mounted && token == generation) setState(() => busy = false);
     }
   }
 
@@ -47,10 +61,7 @@ class _RelatedRecordsPanelState extends State<_RelatedRecordsPanel> {
         oldWidget.wallet != widget.wallet ||
         oldWidget.currentId != widget.currentId ||
         (searched != null && searched != RelatedRecords.clip(widget.query()))) {
-      generation++;
-      matches = null;
-      searched = null;
-      error = null;
+      _invalidateSearch();
     }
   }
 
@@ -65,6 +76,7 @@ class _RelatedRecordsPanelState extends State<_RelatedRecordsPanel> {
   }
 
   Future<void> search() async {
+    if (busy) return;
     final query = RelatedRecords.clip(widget.query());
     if (query.isEmpty) {
       setState(
@@ -120,7 +132,7 @@ class _RelatedRecordsPanelState extends State<_RelatedRecordsPanel> {
         );
       }
     } finally {
-      if (mounted) setState(() => busy = false);
+      if (mounted && token == generation) setState(() => busy = false);
     }
   }
 
@@ -201,6 +213,7 @@ class _RelatedRecordsPanelState extends State<_RelatedRecordsPanel> {
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
       child: ExpansionTile(
         key: const ValueKey('related-records-expand'),
+        initiallyExpanded: widget.initiallyExpanded,
         tilePadding: EdgeInsets.zero,
         childrenPadding: const EdgeInsets.only(bottom: 12),
         shape: const Border(),
@@ -234,8 +247,8 @@ class _RelatedRecordsPanelState extends State<_RelatedRecordsPanel> {
                   )
                 : tr(
                     context,
-                    '이 지갑에 남긴 최근 기록에서 찾아요. 글은 기기 밖으로 보내지 않아요.',
-                    'Search recent notes for this wallet. Your writing stays on this device.',
+                    '이 지갑에 남긴 최근 기록 32개까지 찾아요. 글은 기기 밖으로 보내지 않아요.',
+                    'Search up to 32 recent records for this wallet. Your writing stays on this device.',
                   ),
             style: const TextStyle(color: muted, fontSize: 13),
           ),
@@ -254,10 +267,7 @@ class _RelatedRecordsPanelState extends State<_RelatedRecordsPanel> {
             if (busy) ...[
               const LinearProgressIndicator(),
               TextButton(
-                onPressed: () async {
-                  generation++;
-                  await const ReflectionAssistant().cancel();
-                },
+                onPressed: _recordsChanged,
                 child: Text(tr(context, '취소', 'Cancel')),
               ),
             ],
