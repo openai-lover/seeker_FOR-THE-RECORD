@@ -1,0 +1,48 @@
+{
+  "version": "0.5.14+21",
+  "appSource": "740e9c45a9ddf06a13ac679e5ee0afba0bd5739f",
+  "deckRevision": "PLtARoeQx32g9w",
+  "slides": 11,
+  "allNativeAndPptNotesMatch": true,
+  "structuralIssues": 0,
+  "operatorPrivacyReview": "180 sampled scene frames and dense final transitions; only authored DEMO/public fixture contexts",
+  "videoSeconds": 180,
+  "capture": "physical Seeker isolated memory/noInternet; not production persistence or independent accuracy",
+  "assets": [
+    {
+      "name": "FOR-THE-RECORD-0.5.14-arm64.apk",
+      "bytes": 37778637,
+      "sha256": "a391769d3f3b455eaf3f226d7c563bd95476c593d1163c3707ffea80fc10b413"
+    },
+    {
+      "name": "FOR-THE-RECORD-0.5.14-x64.apk",
+      "bytes": 39670569,
+      "sha256": "c22159db1a9c714b4c5e750f80e12376994cccf2cac614aa575687d1b495e4d4"
+    },
+    {
+      "name": "FOR-THE-RECORD-demo-0.5.14-transcript.txt",
+      "bytes": 1971,
+      "sha256": "92c08b7d8d62e321eac829832ccd60e89757cfc721f85b3f5a82ed856f8248b3"
+    },
+    {
+      "name": "FOR-THE-RECORD-demo-0.5.14.mp4",
+      "bytes": 2569441,
+      "sha256": "691a6bed468b264173081cd4e054f376de8b607afd38958deb0652272bfbf409"
+    },
+    {
+      "name": "FOR-THE-RECORD-demo-0.5.14.srt",
+      "bytes": 3162,
+      "sha256": "352c6dc0712b31c136cf5d143de346077933f2ec797794ac37bf9f8e24131cbd"
+    },
+    {
+      "name": "FOR-THE-RECORD-pitch-0.5.14-final.pdf",
+      "bytes": 1697482,
+      "sha256": "1fe63e538c524e759b06ff81ccbf224a410413b20fd738256805bfaf90d60a7e"
+    },
+    {
+      "name": "FOR-THE-RECORD-pitch-0.5.14-final.pptx",
+      "bytes": 8177866,
+      "sha256": "43b16e3fef5781c21996864f51b7d2dc0663e5a6b00962e0c8b6206c76be7e1a"
+    }
+  ]
+}
