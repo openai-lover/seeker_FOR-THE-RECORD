@@ -11,47 +11,25 @@
 
 A private Android journal for meaningful work and wallet decisions. For Seeker owners who already review wallet activity: save a reason, revisit it, and reuse a lesson before the next choice. User research and measured repeat use remain pending.
 
-**Version 0.5.11+18 · Development-signed Android app · English by default**
+**Version 0.5.14+21 · Development-signed Android app · English by default**
 
-## Current release and evidence — 5 October 2026
+## Current release and evidence — 8 October 2026
 
-- [Install 0.5.11 and identify its exact source/APK](docs/submission/DOWNLOAD_LINKS.md).
+- [Install 0.5.14 and identify the exact source/APK](docs/submission/DOWNLOAD_LINKS.md).
+- [Home recall and its verification](docs/submission/HOME_RECALL_0514.md).
 - [Current product walkthrough](docs/submission/JUDGE_QUICKSTART.md).
-- [Current 0.5.11 production flow, completed export and restart](docs/submission/PRODUCTION_FLOW_0511.md).
-- [Dated 0.5.10 public-mainnet replay, export/restart and AI evaluation](docs/submission/CURRENT_PROOF_0510.md).
-- [Crafted-input regression proof and packaged-manifest outputs](docs/submission/SECURITY_PROOF_0510.md).
+- [Matched 0.5.14 deck/video and evidence scope](docs/submission/MATERIALS_0514.md).
+- [Actual76/100 Coach feedback](docs/submission/REVIEW_076_0514.md).
 
-The 0.5.11 update removes development footers, internal model/build labels, raw unexpected errors and empty transaction rows. Privacy, licenses and deletion confirmation remain available. [UI changes and checks](docs/submission/PRODUCT_UI_0511.md).
+Save why, revisit, then recall the original before the next similar choice. Home now opens saved-note recall without an active wallet connection or another transaction. Choose a saved wallet before seeing notes, browse exact reasons/reflections/lessons offline, or use the unchanged optional local model. Wallet/query/record changes invalidate stale replies; read errors offer Retry.
 
-The room now opens saved reasons and lessons first. One reason is enough to
-save; optional details stay secondary. Local semantic recall shows one original
-record, and JSON export distinguishes pending, saved, cancelled and failed
-states. The 0.5.10 release also removes three unnecessary AndroidX test activities
-from the packaged app. The current 0.5.11 app source is `0c5dfd7`; later documentation commits do not change that APK.
+The app/tag source is `740e9c4`, **0.5.14+21**, ARM versionCode2021. All 287 Flutter tests, clean analysis and both ABI assets/native/manifest gates passed. The normal Seeker received the in-place update. Room art, onboarding, eight languages, reduced motion, SQLite identity, model/parser/export behavior and permissions are preserved.
 
-Dated 0.5.10 evidence includes an **8:08 continuous physical Seeker replay** using
-actual public mainnet responses, authored notes, the 0.5.10 UI and isolated
-SQLite. It is not a production wallet connection or new live trade. Two native
-exports are 2,264 bytes with identical journal payloads after restart. A fresh,
-frozen 48-query evaluation reports wrong suggestions and abstentions separately;
-labels are assistant-authored, not independent user research. Full methods,
-failures and scope boundaries are in the linked report.
+The current 3-minute main shows physical Seeker0.5.14 in a separate no INTERNET debug package with four authored DEMO notes in memory. It demonstrates Home recall, wallet scope, original browsing/search and scope clearing; it does not prove current production persistence or independent accuracy. All 11 native/PPT notes and renders match. No private wallet writing or raw video is public.
 
-The 0.5.11 production build passed 155 Flutter tests and clean analysis; both release
-packages passed the manifest gate. Focused backend follow-up passed 25 targeted
-checks and 69 full-suite checks. These do not establish a complete security audit.
-A current **10:08 uninterrupted 0.5.11 production flow** verifies existing read-only
-MWA authorization, actual RPC, agent-authored DEMO writing, native export and
-restart. Both exports are 2,009 bytes with identical complete journal payloads.
-The selected activity remains successful Other. **Main 3:00 demo is edited**
-from original-speed clips; **supplemental 10:08 proof is uncut**.
-[Matched material roles and hashes](docs/submission/MATERIALS_PRODUCTION_0511.md).
+Historical 0.5.12 normal-production9:17, selected public-RPC swap and25.8-hour due-card evidence retain their dates. The0.5.10 authored multilingual AI evaluation retains every failure. One owner personally reviewed0.5.12; external participants and independent AI raters remain zero. Existing scoped security/input/package triage is not comprehensive clearance; historical partial-audit leads and optional undeployed-backend advisories remain. No paid audit or asset movement.
 
-Latest Coach: **75/100**, **DRAFT**, **DECK NOT READ** on the prior Drive PDF.
-Cause unproven; canonical native Slides is prepared for the next eligible review.
-Independent labels and a consented repeat-use pilot remain open.
-
-Earlier release observations are preserved in [development history](DEVELOPMENT_HISTORY.md).
+Latest actual Coach **76/100**, all evidence READ, entry **DRAFT**. This is advisory feedback, not a contest result. Ordinary final submission remains blocked by the portal's GitHub recognition gate. The user stopped the recurring automation; no periodic review is running.
 
 ## Existing work loop
 

@@ -1,31 +1,31 @@
-# FOR THE RECORD - Release links
+# FOR THE RECORD — Release links
 
-## Current app: 0.5.11+18 / 4 October 2026
+## Current app: 0.5.14+21 / 8 October 2026
 
 | Material | Link / scope |
 |---|---|
-| ARM64 APK | [0.5.11 download](https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.11/FOR-THE-RECORD-0.5.11-arm64.apk) |
-| App source | [v0.5.11 tag](https://github.com/openai-lover/seeker_FOR-THE-RECORD/tree/v0.5.11), commit `0c5dfd70243940d6598804e9ff3d111ae920051d` |
-| Main demo | [Drive](https://drive.google.com/file/d/1JeE2C5iJb-CIFL8v9uv40Cn15s_BIfwl/view?usp=drivesdk) / [MP4](https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.11/FOR-THE-RECORD-demo-0.5.11-production-3min.mp4); 3:00 edited highlights, selected clips at 1x |
-| Supplemental proof | [Continuous MP4](https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.11/FOR-THE-RECORD-continuous-production-0.5.11.mp4); original 608.07 / container 608.08 seconds, 1x, zero internal cuts |
+| ARM64 APK | [0.5.14 download](https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.14/FOR-THE-RECORD-0.5.14-arm64.apk) |
+| x64 APK | [0.5.14 download](https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.14/FOR-THE-RECORD-0.5.14-x64.apk) |
+| Exact app source | [v0.5.14 tag](https://github.com/openai-lover/seeker_FOR-THE-RECORD/tree/v0.5.14), commit`740e9c45a9ddf06a13ac679e5ee0afba0bd5739f` |
+| Main demo | [Drive](https://drive.google.com/file/d/1JeE2C5iJb-CIFL8v9uv40Cn15s_BIfwl/view?usp=drivesdk) / [immutable MP4](https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.14/FOR-THE-RECORD-demo-0.5.14.mp4);180s edited actual-Seeker isolated DEMO memory footage/stills, actions1x |
 | Native presentation | [11 Google Slides](https://docs.google.com/presentation/d/1tO0GQsr-iQCSKIODwrkbODu2ENiVbRopWM78R8wwcNA/edit?usp=drivesdk) |
-| Final matching PPT | [Exact download](https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.11/FOR-THE-RECORD-pitch-0.5.11-final-production.pptx) |
-| Final matching PDF | [Exact download](https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.11/FOR-THE-RECORD-pitch-0.5.11-final-production.pdf); 11 pages, no encryption |
-| Production method / receipt | [Current flow](PRODUCTION_FLOW_0511.md) |
-| Material provenance / hashes | [Main and supplemental roles](MATERIALS_PRODUCTION_0511.md) |
-| Dated 0.5.10 replay and AI | [Methods, results and limits](CURRENT_PROOF_0510.md) |
-| English assets and captions | [v0.5.11 release](https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/tag/v0.5.11) |
+| Matching PDF / PPT | [PDF](https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.14/FOR-THE-RECORD-pitch-0.5.14-final.pdf) / [PPTX](https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.14/FOR-THE-RECORD-pitch-0.5.14-final.pptx) |
+| Captions / narration | [SRT](https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.14/FOR-THE-RECORD-demo-0.5.14.srt) / [transcript](https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/download/v0.5.14/FOR-THE-RECORD-demo-0.5.14-transcript.txt) |
+| Feature and materials scope | [Home recall](HOME_RECALL_0514.md) / [matching receipt](MATERIALS_0514.md) |
+| Historical 0.5.12 proof | [Production](PRODUCTION_FLOW_0512.md), [known public RPC](FRESH_PUBLIC_CASE8_0512.md), [technical due](REAL_DAY_DUE_0512.md) |
+| Dated 0.5.10 AI / security | [AI/proof](CURRENT_PROOF_0510.md), [input/package proof](SECURITY_PROOF_0510.md) |
+| Actual current review | [76/100, allREAD, DRAFT](REVIEW_076_0514.md) |
+| Immutable assets | [v0.5.14 release](https://github.com/openai-lover/seeker_FOR-THE-RECORD/releases/tag/v0.5.14) |
 
-ARM64 versionCode **2018**, minimum API **26**, **37,717,677 bytes**, development signing. SHA256:
-`29ba3bc74bad0221246aef3a5306681f81a5282f4da8518045c87cfa3339786c`.
+ARM versionCode**2021**, minimum API**26**, development signing; **37,778,637bytes**.
+SHA256:`a391769d3f3b455eaf3f226d7c563bd95476c593d1163c3707ffea80fc10b413`.
+x64**39,670,569bytes**, SHA256:`c22159db1a9c714b4c5e750f80e12376994cccf2cac614aa575687d1b495e4d4`.
 
-The APK retains the UI cleanup in [PRODUCT_UI_0511.md](PRODUCT_UI_0511.md). Later main documentation does not change this release APK, model, parser, SQLite or export bridge.
+All 287 Flutter tests, clean analysis and both release package gates passed. Source/model/parser/schema/export/permission scope is documented above. Current capture does not use the production database or MWA/RPC. Current production persistence, independent AI labels and an external multi-day pilot remain unverified. Older captures keep their versions; shared Slides/Drive URLs follow current content, while immutable downloads retain names.
 
-Production proof uses existing read-only MWA authorization and actual RPC, successful Other, authored DEMO writing and native export/restart. Two 2,009-byte exports have identical journal payloads. No supported live swap, independent human study, whole prior-database equality or general AI accuracy is claimed. Main edited video and supplemental uncut proof have distinct roles; the older overview and prior pitch exports are historical.
+The latest portal deadline observed October 8 is **October 12,2026 at20:59KST**. StatusDRAFT; SUBMIT PROJECT is disabled by GitHub recognition. The advisory76 score is not a contest result. Recurring automation was deleted at the user's request.
 
-Latest observed Coach **75/100**, **DRAFT**. WRITEUP, DEMO and CODE were READ; **DECK NOT READ** on the earlier public Drive PDF. Its valid, downloadable bytes match the published artifact; failure cause unproven. Canonical native Slides is prepared for the next eligible review, without claiming saved fields or ingestion success. This advisory score is not a contest result.
-
-Older material below retains its dates. Shared native Slides and Drive video track current content; immutable exports retain their filenames.
+Older material below is historical, including its earlier deadlines and validation status.
 
 ## Historical 0.3.1 materials
 

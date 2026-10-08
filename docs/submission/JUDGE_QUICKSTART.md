@@ -1,6 +1,6 @@
 # FOR THE RECORD · Current product walkthrough
 
-**0.5.11+18**, development-signed ARM64 app. [Download and exact checksum](DOWNLOAD_LINKS.md). This page describes the current interface; versioned old walkthroughs remain historical.
+**0.5.14+21**, development-signed ARM64 app. [Download and exact checksum](DOWNLOAD_LINKS.md). This page describes the current interface; versioned old walkthroughs remain historical.
 
 ## The room and personal work
 
@@ -17,14 +17,18 @@ Three welcome pages support swipe and Skip. The desk opens the decision journal,
 
 The optional multilingual-e5-small Q8 model is 132,439,008 bytes. It retrieves existing text; it does not generate a person's reason or lesson. After preparation, inference works without app Internet access. The normal activity reader still needs an available RPC connection; public infrastructure can rate-limit.
 
+## Home recall before the next choice
+
+1. From Home choose **Recall saved notes**; no new transaction or active wallet connection is required.
+2. Select a locally saved wallet explicitly before note content appears.
+3. Open **Browse saved records** to read the exact original reason/reflection/lesson/source without the optional model.
+4. With a prepared model, ask a question to search up to 32recent notes in that wallet. Read the one original suggestion, or browse manually if no close record is found. Suggestions can be wrong.
+5. Changing wallets clears the query/results. Query/record changes, cancel and leaving invalidate late replies. A local read failure offers Retry.
+
 ## Reproduction and evidence
 
-[PRODUCTION_FLOW_0511.md](PRODUCTION_FLOW_0511.md) records current production verification of the installed production app: one 608.07-second / 10:08 session at 1× with no internal cuts, existing MWA authorization, actual direct read-only RPC, successful Other, agent-authored DEMO writing, immediate reflection/question choice, lesson, completed 2,009-byte export and force-stop/reopen. A second 2,009-byte export had identical `tradeJournals` data and a different export timestamp. The supplemental public video is published at 1x with no internal cuts. The main 3:00 video uses edited original-speed highlights; matching presentation and hashes are in [MATERIALS_PRODUCTION_0511.md](MATERIALS_PRODUCTION_0511.md). No supported live swap, delayed due completion or independent human study is claimed. No edits to prior personal records were observed; whole prior database equality was not verified.
+[HOME_RECALL_0514.md](HOME_RECALL_0514.md) records the current feature checks:287 Flutter tests, clean analysis, both release package gates, actual Seeker isolated authored-DEMO browsing/search and wallet clearing. Current3-minute edited footage uses MemoryRepository, no Internet/MWA/RPC or productionSQLite. It does not prove current production persistence or independent accuracy. [Matched materials](MATERIALS_0514.md) records the11 slides/notes and video scope.
 
-The question selector took 2,373 ms once with the model prepared and network available. The operator chose 1 from candidates 1 and 5. This is a single production observation, not an offline benchmark or general accuracy.
+Historical [PRODUCTION_FLOW_0512.md](PRODUCTION_FLOW_0512.md) records9:17normal production read-onlyMWA/RPC successfulOther, authoredDEMO, reflection/lesson, completed export/restart and two 2,029Bjournals matching except export timestamps. One prepared/network-available request2355ms is not a distribution or accuracy claim. The selected [public historical swap](FRESH_PUBLIC_CASE8_0512.md) is isolated, not owned/newtrade/heldout; the [25.8-hour due card](REAL_DAY_DUE_0512.md) is technical foreground state, not human retention or a notification.
 
-[CURRENT_PROOF_0510.md](CURRENT_PROOF_0510.md) documents an 8:08 continuous physical Seeker run of the 0.5.10 UI, parser, real isolated SQLite and native AI with public finalized response fixtures and authored notes. Both 2,264-byte exports have identical journal payloads after restart. The separate `.integration` app has no INTERNET permission and never opens the production database. Its displayed account context comes from public response fixtures, not wallet ownership or authorization.
-
-The 0.5.11 UI cleanup retains the same parser, AI and export behavior. [PRODUCT_UI_0511.md](PRODUCT_UI_0511.md) describes the new user-facing copy and current checks.
-
-The same dated report includes 48 fresh frozen authored queries and all false positives/abstentions, not independent human accuracy. [SECURITY_PROOF_0510.md](SECURITY_PROOF_0510.md) gives focused malformed-input regressions and actual packaging outputs. The new production verification and older public recordings are separately dated; raw files remain private and only the reviewed privacy-covered derivative is public. No supported live user trade, consented repeat-use pilot or comprehensive security clearance is asserted.
+The dated [0.5.10AI/proof report](CURRENT_PROOF_0510.md) keeps authored labels and every failure. [Scoped input/package proof](SECURITY_PROOF_0510.md) and [current audit addendum](AUDIT_LEAD_ADDENDUM_0512.md) are not comprehensive clearance. One owner review; no independent raters/external pilot. [Actual76-point Coach feedback](REVIEW_076_0514.md). Raw personal data remains private; no financial transaction or new signature was performed.
